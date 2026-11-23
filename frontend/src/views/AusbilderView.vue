@@ -72,7 +72,7 @@ function reiterTaste(ereignis: KeyboardEvent): void {
                     <p v-if="listenFehler" class="m-0 text-sm text-fehler" role="alert">{{ listenFehler }}</p>
                     <p v-if="ungespeichert" class="m-0 text-xs text-gedaempft">{{ t('pool.erstSpeichern') }}</p>
                     <button type="button" :disabled="!graph || ungespeichert" class="self-start rounded bg-tinte px-3 py-1.5 text-sm font-semibold text-white disabled:opacity-40" @click="editor.neu">{{ t('pool.neu') }}</button>
-                    <GeneratorPanel :erzeugung="zustand.erzeugung" :auto-generieren="zustand.engine.parameter.autoGenerieren" :absicht="absicht"/>
+                    <GeneratorPanel :erzeugung="zustand.erzeugung" :graph="graph ?? undefined" :auto-generieren="zustand.engine.parameter.autoGenerieren" :absicht="absicht"/>
                     <PoolDatei :code="code" :absicht="absicht" @exportiert="exportiert"/>
                     <p v-if="geaendert" class="m-0 text-xs text-warnung">{{ t('pool.nichtGesichert') }}</p>
                 </section>
