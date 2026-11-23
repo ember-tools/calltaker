@@ -2,7 +2,8 @@
 
 The trainee's view holds these entries and sends them whole whenever they change; the server
 keeps them on the call, so the trainer sees them and the debrief compares them with the truth.
-The server stamps when the location and when the code were first entered, from its own clock.
+The server stamps, from its own clock, when the location and the code were first entered, when
+CPR guidance first started and when each instruction to the caller was first ticked.
 Whether the questioning has reached a code is decided by the view, with the same rules that
 decide whether the call is complete, and sent as `codeErreicht`; the server only times it.
 """
@@ -80,6 +81,14 @@ class Zeiten(Modell):
     adresse: float | None = None
     code: float | None = None
     anleitungen: dict[str, float] = Field(default_factory=dict)
+    reanimation: float | None = None
+
+
+class Reanimationseintrag(Modell):
+    """The CPR guidance: whether its beat runs, and at how many beats a minute."""
+
+    laeuft: bool = False
+    takt: int = Field(100, ge=100, le=120)
 
 
 class Anleitungseintrag(Modell):
@@ -99,6 +108,7 @@ class Eintraege(Modell):
     abfrage: Abfrageeintrag = Field(default_factory=Abfrageeintrag)
     hinweise: str = Field("", max_length=LANGER_TEXT)
     anleitung: Anleitungseintrag = Field(default_factory=Anleitungseintrag)
+    reanimation: Reanimationseintrag = Field(default_factory=Reanimationseintrag)
     zeiten: Zeiten = Field(default_factory=Zeiten)
 
     def nach_aussen(self) -> dict:
@@ -109,11 +119,14 @@ class Eintraege(Modell):
 def uebernehmen(bisher: Eintraege, neu: Eintraege, jetzt: float) -> Eintraege:
     """Take new entries from the trainee, keeping the server's times and stamping new ones.
 
-    The location counts as entered once it has a point; the code once the view reports it; an
-    instruction once it is ticked, and its time stays even if the tick is taken back. At most
-    `ANLEITUNGEN_HOECHSTENS` instructions are timed, so a client cannot grow the times without end.
+    The location counts as entered once it has a point; the code once the view reports it; CPR
+    once its beat first runs; an instruction once it is ticked, and its time stays even if the
+    tick is taken back. At most `ANLEITUNGEN_HOECHSTENS` instructions are timed, so a client
+    cannot grow the times without end.
     """
     zeiten = bisher.zeiten.model_copy(deep=True)
+    if zeiten.reanimation is None and neu.reanimation.laeuft:
+        zeiten.reanimation = jetzt
     for id_ in neu.anleitung.gegeben:
         if id_ in zeiten.anleitungen or len(zeiten.anleitungen) < ANLEITUNGEN_HOECHSTENS:
             zeiten.anleitungen.setdefault(id_, jetzt)

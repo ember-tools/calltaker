@@ -8,6 +8,7 @@ import type {AnrufSicht} from '../modell/uebung'
 import {phasenstand} from '../phasen/register'
 import EinsatzMaske from './EinsatzMaske.vue'
 import HinweisListe from './HinweisListe.vue'
+import ReanimationsLeiste from './ReanimationsLeiste.vue'
 import SchrittLeiste from './SchrittLeiste.vue'
 import SnaFenster from './SnaFenster.vue'
 
@@ -49,6 +50,7 @@ defineExpose({snaZeigen, maskeZeigen, hinweiseZeigen})
         <div class="flex flex-wrap gap-4">
             <EinsatzMaske ref="maske" v-model="eintraege" v-model:suche="suche" class="max-w-lg min-w-0 flex-[1_1_26rem]" :anruf="anruf" :ruhig="ruhig" :stichwort="ergebnis ? `${ergebnis.code} · ${ergebnis.kategorie}` : ''" :alter="alter" @sna="snaZeigen" @sofort="emit('sofort')"/>
             <div class="flex min-w-0 flex-[999_1_36rem] flex-col gap-3">
+                <ReanimationsLeiste v-model="eintraege" :graph="graph" :ruhig="ruhig" @sofort="emit('sofort')"/>
                 <SnaFenster ref="sna" v-model="eintraege.abfrage" v-model:ui="ui" :graph="graph" :schwerste="schwerste" :gesperrt="!eintraege.ort.koordinaten" :seit="anruf.angenommenUm" @sofort="emit('sofort')"/>
                 <HinweisListe ref="hinweise" v-model="eintraege" :graph="graph" @sofort="emit('sofort')"/>
             </div>

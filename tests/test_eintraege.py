@@ -120,3 +120,14 @@ def test_anleitungen_sind_begrenzt():
         )
         bisher = uebernehmen(bisher, neu, float(runde))
     assert len(bisher.zeiten.anleitungen) == 100
+
+
+def test_der_erste_start_der_reanimation_wird_gestempelt():
+    laeuft = Eintraege.model_validate({"reanimation": {"laeuft": True, "takt": 110}})
+    erste = uebernehmen(Eintraege(), laeuft, 10.0)
+    angehalten = uebernehmen(erste, Eintraege(), 20.0)
+    wieder = uebernehmen(angehalten, laeuft, 30.0)
+    assert (erste.zeiten.reanimation, wieder.zeiten.reanimation) == (10.0, 10.0)
+    for takt in (99, 121):
+        with pytest.raises(ValidationError):
+            Eintraege.model_validate({"reanimation": {"takt": takt}})

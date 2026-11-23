@@ -41,7 +41,9 @@ export interface Eintraege {
     hinweise: string
     /** The instructions to the caller ticked as given, by id. */
     anleitung: {gegeben: string[]}
-    zeiten: {adresse?: number, code?: number, anleitungen?: Record<string, number>}
+    /** The CPR guidance: whether its beat runs, and at how many beats a minute. */
+    reanimation: {laeuft: boolean, takt: number}
+    zeiten: {adresse?: number, code?: number, anleitungen?: Record<string, number>, reanimation?: number}
 }
 
 /**
@@ -57,6 +59,7 @@ export function leereEintraege(): Eintraege {
         abfrage: {pfad: []},
         hinweise: '',
         anleitung: {gegeben: []},
+        reanimation: {laeuft: false, takt: 100},
         zeiten: {},
     }
 }
