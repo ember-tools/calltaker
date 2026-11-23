@@ -4,6 +4,7 @@ import {useI18n} from 'vue-i18n'
 import CodeAnzeige from '../components/CodeAnzeige.vue'
 import GetrenntHinweis from '../components/GetrenntHinweis.vue'
 import KopfLeiste from '../components/KopfLeiste.vue'
+import GeneratorPanel from '../components/GeneratorPanel.vue'
 import PoolDatei from '../components/PoolDatei.vue'
 import PoolListe from '../components/PoolListe.vue'
 import SzenarioEditor from '../components/SzenarioEditor.vue'
@@ -47,6 +48,7 @@ const {geaendert, exportiert} = useExportErinnerung(poolStand)
                 <p v-if="listenFehler" class="m-0 text-sm text-fehler" role="alert">{{ listenFehler }}</p>
                 <p v-if="ungespeichert" class="m-0 text-xs text-gedaempft">{{ t('pool.erstSpeichern') }}</p>
                 <button type="button" :disabled="!graph || ungespeichert" class="self-start rounded bg-tinte px-3 py-1.5 text-sm font-semibold text-white disabled:opacity-40" @click="editor.neu">{{ t('pool.neu') }}</button>
+                <GeneratorPanel :erzeugung="zustand.erzeugung" :auto-generieren="zustand.engine.parameter.autoGenerieren" :absicht="absicht"/>
                 <PoolDatei :code="code" :absicht="absicht" @exportiert="exportiert"/>
                 <p v-if="geaendert" class="m-0 text-xs text-warnung">{{ t('pool.nichtGesichert') }}</p>
             </section>

@@ -3,12 +3,13 @@ import {computed, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import type {Ergebnis} from '../modell/abfrageweg'
-import type {Ortsangabe} from '../modell/ort'
+import {ausAdresse, type Adressvorschlag, type Ortsangabe} from '../modell/ort'
 import {fehltZumSpeichern, type Entwurf} from '../modell/szenarioentwurf'
 import type {Befund, Ort} from '../modell/szenario'
 import EditorAnrufer from './EditorAnrufer.vue'
 import {BESCHRIFTUNG, FELD} from './formular'
 import OrtWahl from './OrtWahl.vue'
+import ZufallsAdresse from './ZufallsAdresse.vue'
 import PfadWahl from './PfadWahl.vue'
 
 const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, befunde: Befund[], fehler: string, hinweis: string}>()
@@ -26,6 +27,11 @@ const ort = computed<Ortsangabe>({
     },
 })
 const fehlt = computed(() => fehltZumSpeichern(entwurf.value))
+
+function zufaellig(vorschlag: Adressvorschlag): void {
+    ort.value = ausAdresse(vorschlag, ort.value)
+    suche.value = ''
+}
 const allgemein = computed(() => props.befunde.filter(b => !b.knoten))
 </script>
 
@@ -37,6 +43,7 @@ const allgemein = computed(() => props.befunde.filter(b => !b.knoten))
         <label :class="BESCHRIFTUNG">{{ t('editor.szenarioTitel') }}<input v-model="entwurf.titel" :placeholder="t('editor.titelBeispiel')" :class="FELD"/></label>
         <fieldset class="m-0 flex flex-col gap-2 rounded border border-rand p-3">
             <legend class="px-1 text-sm font-bold">{{ t('editor.ort') }}</legend>
+            <ZufallsAdresse @adresse="zufaellig"/>
             <OrtWahl v-model="ort" v-model:text="suche"/>
             <div class="grid grid-cols-2 gap-2">
                 <label :class="['col-span-2', BESCHRIFTUNG]">{{ t('maske.objekt') }}<input v-model="entwurf.ort.objekt" :class="FELD"/></label>

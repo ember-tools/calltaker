@@ -54,6 +54,7 @@ export interface AusbilderZustand {
     poolBefunde: Record<string, Befund[]>
     /** Counts the trainer's changes to the pool; drawing and returning by the engine leave it. */
     poolStand: number
+    erzeugung: Erzeugung
     anrufe: Anruf[]
     spiegel: Record<string, unknown>
 }
@@ -71,6 +72,18 @@ export interface EngineParameter {
     geduldMin: number
     geduldMax: number
     zurueckInPool: boolean
+    /** Whether an empty pool makes up scenarios instead of leaving the queue quiet. */
+    autoGenerieren: boolean
+}
+
+/** What the trainer sets for made-up scenarios: weights per discipline, a category, an area. */
+export interface Erzeugung {
+    gewichtRd: number
+    gewichtBrand: number
+    gewichtTh: number
+    kategorie: string
+    ortsteil: string
+    bezirk: string
 }
 
 /** The queue engine's state as the trainee sees it. */

@@ -2,8 +2,9 @@
 
 import asyncio
 import logging
+import random
 import threading
-from collections.abc import AsyncIterator
+from collections.abc import AsyncIterator, Callable
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
@@ -17,12 +18,14 @@ import kacheln
 import orte_api
 import uebung_api
 from adressen import Adressen
-from api import abfragebuendel, router
+from api import abfragebuendel, abfragegraph, router
 from einstellungen import einstellungen
 from fehlermeldung import deutsch
 from frontend import frontend_einbinden
 from grenzen import KoerperGrenze
-from orte import orte_laden
+from orte import Orte, orte_laden
+from szenario import Szenario
+from szenariogenerator import Erzeugung, Quellen, generieren
 from uebung import Uebungen
 
 AUFRAEUMEN_ALLE = 60
@@ -104,6 +107,16 @@ async def ungueltige_anfrage(_: Request, fehler: RequestValidationError) -> JSON
     return JSONResponse(status_code=422, content={"detail": deutsch(fehler.errors())})
 
 
+def erzeuger(adressen: Adressen, orte: Orte) -> Callable[[Erzeugung], Szenario]:
+    """Return what makes up scenarios: the graph, addresses or places, and a fresh random source."""
+    quellen = Quellen(adresse=adressen.zufall, ort=orte.zufall)
+
+    def erzeugen(erzeugung: Erzeugung) -> Szenario:
+        return generieren(abfragegraph(), quellen, erzeugung, random.Random())
+
+    return erzeugen
+
+
 def anwendung_bauen() -> FastAPI:
     """Build the application with its routes, CORS policy and the built frontend."""
     app = FastAPI(title="Calltaker", lifespan=lebenszyklus)
@@ -112,6 +125,7 @@ def anwendung_bauen() -> FastAPI:
     app.state.uebungen = Uebungen(
         hoechstens=einstellungen().uebungen_hoechstens,
         frist=einstellungen().uebung_lebensdauer_stunden * 3600,
+        erzeuger=erzeuger(app.state.adressen, app.state.orte),
     )
     app.add_middleware(KoerperGrenze, hoechstens=ANFRAGE_HOECHSTENS)
     app.add_middleware(GZipMiddleware, minimum_size=1024)

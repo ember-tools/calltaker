@@ -1,6 +1,8 @@
-"""HTTP routes of the address list: whether it is there, and what it suggests for a text."""
+"""HTTP routes of the address list: whether it is there, what it suggests, and random addresses."""
 
-from fastapi import APIRouter, Request
+import random
+
+from fastapi import APIRouter, HTTPException, Request
 
 from adressen import Adressen
 
@@ -22,3 +24,18 @@ def status(request: Request) -> dict:
 def suche(request: Request, q: str = "") -> list[dict]:
     """Return streets while a name is typed, and doors once a house number follows it."""
     return adressen(request).suchen(q[:100])
+
+
+@router.get("/zufall")
+def zufall(request: Request, ortsteil: str = "", bezirk: str = "") -> dict:
+    """Return a random address, optionally within an Ortsteil or a Bezirk."""
+    adresse = adressen(request).zufall(random.Random(), ortsteil[:80], bezirk[:80])
+    if adresse is None:
+        raise HTTPException(status_code=404, detail="Keine Adresse gefunden.")
+    return adresse
+
+
+@router.get("/gebiete")
+def gebiete(request: Request) -> dict[str, list[str]]:
+    """Return the Bezirke with their Ortsteile, for choosing where addresses are drawn from."""
+    return adressen(request).gebiete()

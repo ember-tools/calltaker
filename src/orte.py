@@ -12,6 +12,7 @@ leaves the search empty and is logged, so the server starts without it.
 import gzip
 import json
 import logging
+import random
 import re
 from dataclasses import dataclass
 from functools import lru_cache
@@ -79,6 +80,11 @@ class Orte:
             )
         )
         return [ort.nach_aussen() for ort in treffer[:grenze]]
+
+    def zufall(self, zufall: random.Random, ortsteil: str = "") -> dict | None:
+        """Return a random place, optionally within an Ortsteil, or None when there is none."""
+        auswahl = [ort for ort in self.orte if not ortsteil or ort.ortsteil == ortsteil]
+        return zufall.choice(auswahl).nach_aussen() if auswahl else None
 
 
 def lesen(datei: Path) -> list:

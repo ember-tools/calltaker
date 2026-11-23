@@ -16,10 +16,11 @@ import re
 import sqlite3
 import tempfile
 import threading
-from collections.abc import Iterator
+from collections.abc import Callable, Iterator
 from contextlib import contextmanager
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
+from typing import Any
 
 import httpx
 
@@ -65,6 +66,8 @@ class Adressen:
         """Keep the list in a file, fetching it again once older than the given days."""
         self.datei = datei
         self.hoechstalter = timedelta(days=hoechstalter_tage)
+        self._merker: dict[object, Any] = {}
+        self._merker_stempel: int | None = None
 
     @contextmanager
     def _lesen(self) -> Iterator[sqlite3.Connection | None]:
@@ -129,25 +132,66 @@ class Adressen:
             return tueren(verbindung, anfaenge, hnr, grenze)
 
     def zufall(self, zufall: random.Random, ortsteil: str = "", bezirk: str = "") -> dict | None:
-        """Return a random address, optionally within an Ortsteil or a Bezirk."""
-        bedingung, werte = "1 = 1", []
-        if ortsteil:
-            bedingung, werte = "ortsteil = ?", [ortsteil]
-        elif bezirk:
-            bedingung, werte = "bezirk = ?", [bezirk]
+        """Return a random address, optionally within an Ortsteil or a Bezirk.
+
+        Without an area a random row id is looked up, which the list's own key answers at once;
+        within an area the count is remembered until the list is replaced, and the draw walks the
+        area's index only.
+        """
         with self._lesen() as verbindung:
             if verbindung is None:
                 return None
-            anzahl = verbindung.execute(
-                f"SELECT count(*) FROM adressen WHERE {bedingung}", werte
-            ).fetchone()[0]
+            if not ortsteil and not bezirk:
+                hoechste = self._gemerkt(
+                    "hoechste",
+                    lambda: verbindung.execute("SELECT max(rowid) FROM adressen").fetchone()[0],
+                )
+                if not hoechste:
+                    return None
+                zeile = verbindung.execute(
+                    "SELECT * FROM adressen WHERE rowid >= ? LIMIT 1", [zufall.randint(1, hoechste)]
+                ).fetchone()
+                return tuer(zeile) if zeile else None
+            spalte, wert = ("ortsteil", ortsteil) if ortsteil else ("bezirk", bezirk)
+            anzahl = self._gemerkt(
+                (spalte, wert),
+                lambda: verbindung.execute(
+                    f"SELECT count(*) FROM adressen WHERE {spalte} = ?", [wert]
+                ).fetchone()[0],
+            )
             if anzahl == 0:
                 return None
             zeile = verbindung.execute(
-                f"SELECT * FROM adressen WHERE {bedingung} LIMIT 1 OFFSET ?",
-                [*werte, zufall.randrange(anzahl)],
+                f"SELECT * FROM adressen WHERE {spalte} = ? LIMIT 1 OFFSET ?",
+                [wert, zufall.randrange(anzahl)],
             ).fetchone()
-            return tuer(zeile)
+            return tuer(zeile) if zeile else None
+
+    def _gemerkt(self, schluessel: object, berechnen: Callable[[], Any]) -> Any:
+        """Return a value worked out from the list, remembered until the list file changes."""
+        stempel = self.datei.stat().st_mtime_ns
+        if self._merker_stempel != stempel:
+            self._merker = {}
+            self._merker_stempel = stempel
+        if schluessel not in self._merker:
+            self._merker[schluessel] = berechnen()
+        return self._merker[schluessel]
+
+    def gebiete(self) -> dict[str, list[str]]:
+        """Return each Bezirk with its Ortsteile, both sorted, or nothing before the first load."""
+        with self._lesen() as verbindung:
+            if verbindung is None:
+                return {}
+
+            def lesen() -> dict[str, list[str]]:
+                gebiete: dict[str, list[str]] = {}
+                for zeile in verbindung.execute(
+                    "SELECT DISTINCT bezirk, ortsteil FROM adressen ORDER BY bezirk, ortsteil"
+                ):
+                    gebiete.setdefault(zeile["bezirk"], []).append(zeile["ortsteil"])
+                return gebiete
+
+            return self._gemerkt("gebiete", lesen)
 
     def laden(
         self, client: httpx.Client | None = None, stopp: threading.Event | None = None

@@ -309,3 +309,64 @@ def test_nur_aenderungen_des_ausbilders_zaehlen_fuer_den_pool_stand(client, code
     uebung, _ = client.app.state.uebungen.finden(code)
     uebung.pool_entnehmen()
     assert stand() == vorher + 1
+
+
+def test_der_ausbilder_generiert_szenarien(client, codes):
+    code = codes["ausbilderCode"]
+    hinzu = absicht(client, code, art="pool.generieren", anzahl=3)
+    assert hinzu.status_code == 200
+    assert len(hinzu.json()["ergebnis"]["szenarioIds"]) == 3
+    zustand = client.get(f"/api/uebung/{code}/zustand").json()["zustand"]
+    assert [s["herkunft"] for s in zustand["pool"]] == ["generiert"] * 3
+    assert zustand["poolStand"] == 1
+    zu_viele = absicht(client, code, art="pool.generieren", anzahl=21)
+    assert zu_viele.status_code == 400
+
+
+def test_der_ausbilder_stellt_die_erzeugung_ein(client, codes):
+    code = codes["ausbilderCode"]
+    assert (
+        absicht(client, code, art="erzeugung.einstellen", erzeugung={"gewichtRd": 0}).status_code
+        == 200
+    )
+    zustand = client.get(f"/api/uebung/{code}/zustand").json()["zustand"]
+    assert zustand["erzeugung"]["gewichtRd"] == 0
+    assert zustand["erzeugung"]["gewichtBrand"] == 12
+    falsch = absicht(client, code, art="erzeugung.einstellen", erzeugung={"gewichtRd": 500})
+    assert falsch.status_code == 422
+    leer = absicht(client, code, art="erzeugung.einstellen", erzeugung={"kategorie": "GIBTESNICHT"})
+    assert leer.status_code == 200
+    assert absicht(client, code, art="pool.generieren").status_code == 409
+
+
+def test_ein_leerer_pool_generiert_nur_wenn_eingestellt(client, codes):
+    uebung, _ = client.app.state.uebungen.finden(codes["ausbilderCode"])
+    assert uebung.pool_entnehmen().herkunft == "generiert"
+    uebung.engine.parameter = uebung.engine.parameter.model_copy(update={"auto_generieren": False})
+    assert uebung.pool_entnehmen() is None
+
+
+def test_ein_fehler_beim_generieren_haelt_die_warteschlange_nicht_an(client, codes):
+    import sqlite3
+
+    uebung, _ = client.app.state.uebungen.finden(codes["ausbilderCode"])
+
+    def kaputt(_):
+        raise sqlite3.DatabaseError("file is not a database")
+
+    uebung.erzeuger = kaputt
+    assert uebung.pool_entnehmen() is None
+    client.get(f"/api/uebung/{codes['traineeCode']}/zustand")
+    client.get(f"/api/uebung/{codes['ausbilderCode']}/zustand")
+    uebung.engine.starten()
+    uebung.engine.naechstes_klingeln = uebung.engine.queue_zeit()
+    uebung.erzeuger = lambda _: (_ for _ in ()).throw(RuntimeError("unerwartet"))
+    with pytest.raises(RuntimeError):
+        uebung.engine.takt()
+    assert uebung.engine.naechstes_klingeln is not None
+
+
+def test_null_szenarien_werden_abgelehnt(client, codes):
+    assert (
+        absicht(client, codes["ausbilderCode"], art="pool.generieren", anzahl=0).status_code == 400
+    )

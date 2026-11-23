@@ -54,6 +54,7 @@ class Parameter(BaseModel):
     geduld_min: float = Field(60, gt=0, le=7200)
     geduld_max: float = Field(300, gt=0, le=7200)
     zurueck_in_pool: bool = True
+    auto_generieren: bool = True
 
     @model_validator(mode="after")
     def spannen(self) -> Self:
@@ -115,10 +116,12 @@ class Engine:
         self._auflegen_lassen(jetzt)
         if self.naechstes_klingeln is not None and jetzt >= self.naechstes_klingeln:
             self.naechstes_klingeln = None
-            if len(self.wartende()) < self.parameter.max_schlange:
-                self._klingeln(self.uebung.pool_entnehmen())
-            self._neu_planen()
-            self.uebung.geaendert()
+            try:
+                if len(self.wartende()) < self.parameter.max_schlange:
+                    self._klingeln(self.uebung.pool_entnehmen())
+            finally:
+                self._neu_planen()
+                self.uebung.geaendert()
 
     def annehmen(self, anruf_id: str) -> Anruf:
         """Take the longest waiting call; refuse any other, or a second conversation."""

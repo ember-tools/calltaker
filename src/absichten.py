@@ -13,6 +13,7 @@ from fehlermeldung import deutsch
 from pool import PoolVoll, UngueltigeDatei, befunde_nach_aussen
 from rolle import Rolle
 from szenario import Szenario
+from szenariogenerator import Erzeugung, NichtsZuZiehen
 from uebung import Uebung
 
 SPIEGEL_HOECHSTENS = 4096
@@ -44,6 +45,8 @@ class Absicht(BaseModel):
     eintraege: dict[str, Any] | None = None
     an: bool | None = None
     parameter: dict[str, Any] | None = None
+    anzahl: int | None = None
+    erzeugung: dict[str, Any] | None = None
 
 
 Ausfuehrung = Callable[[Uebung, Absicht, Abfragegraph], dict[str, Any]]
@@ -233,12 +236,52 @@ def parameter_setzen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
     return {}
 
 
+GENERIEREN_HOECHSTENS = 20
+
+
+def pool_generieren(uebung: Uebung, absicht: Absicht, graph: Abfragegraph) -> dict:
+    """Make up scenarios with the trainer's settings and add them to the pool."""
+    anzahl = 1 if absicht.anzahl is None else absicht.anzahl
+    if not 1 <= anzahl <= GENERIEREN_HOECHSTENS:
+        raise AbsichtAbgelehnt(
+            f"Es lassen sich 1 bis {GENERIEREN_HOECHSTENS} auf einmal generieren."
+        )
+    ids = []
+    try:
+        for _ in range(anzahl):
+            szenario = uebung.pool.hinzufuegen(uebung.erzeugen())
+            befunde_von(uebung, szenario, graph)
+            ids.append(szenario.id)
+    except NichtsZuZiehen as fehler:
+        raise AbsichtAbgelehnt(str(fehler), status=409) from fehler
+    except PoolVoll as fehler:
+        raise AbsichtAbgelehnt(str(fehler), status=409) from fehler
+    finally:
+        if ids:
+            uebung.pool.stand += 1
+            uebung.geaendert()
+    return {"szenarioIds": ids}
+
+
+def erzeugung_einstellen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Change the settings for made-up scenarios; those not given keep their values."""
+    bisher = uebung.erzeugung.model_dump(by_alias=True)
+    try:
+        uebung.erzeugung = Erzeugung.model_validate({**bisher, **(absicht.erzeugung or {})})
+    except ValidationError as fehler:
+        raise AbsichtAbgelehnt(deutsch(fehler.errors()), status=422) from fehler
+    uebung.geaendert()
+    return {}
+
+
 ABSICHTEN: dict[str, tuple[set[Rolle], Ausfuehrung]] = {
     "pool.hinzufuegen": ({Rolle.AUSBILDER}, pool_hinzufuegen),
     "pool.ersetzen": ({Rolle.AUSBILDER}, pool_ersetzen),
     "pool.entfernen": ({Rolle.AUSBILDER}, pool_entfernen),
     "pool.verschieben": ({Rolle.AUSBILDER}, pool_verschieben),
     "pool.importieren": ({Rolle.AUSBILDER}, pool_importieren),
+    "pool.generieren": ({Rolle.AUSBILDER}, pool_generieren),
+    "erzeugung.einstellen": ({Rolle.AUSBILDER}, erzeugung_einstellen),
     "spiegeln": ({Rolle.TRAINEE}, spiegeln),
     "bereit": ({Rolle.TRAINEE}, bereit),
     "annehmen": ({Rolle.TRAINEE}, annehmen),

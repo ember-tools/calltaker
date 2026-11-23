@@ -251,3 +251,21 @@ def test_das_hintergrundladen_meldet_was_geschah(adressen, tmp_path, monkeypatch
     monkeypatch.setattr(kaputt, "laden", scheitern)
     assert asyncio.run(adressen_holen(kaputt, stopp)) == "fehler"
     assert "Adressverzeichnis nicht geladen" in caplog.text
+
+
+def test_zufall_und_gebiete_ueber_die_routen(adressen):
+    with TestClient(anwendung_bauen()) as client:
+        client.app.state.adressen = adressen
+        zufall = client.get("/api/adressen/zufall", params={"bezirk": "Spandau"}).json()
+        keine = client.get("/api/adressen/zufall", params={"ortsteil": "Atlantis"})
+        gebiete = client.get("/api/adressen/gebiete").json()
+    assert zufall["strasse"] == "Werderstraße"
+    assert keine.status_code == 404
+    assert gebiete["Friedrichshain-Kreuzberg"] == ["Friedrichshain"]
+    assert gebiete["Neukölln"] == ["Neukölln"]
+
+
+def test_zufall_ohne_gebiet_findet_jede_adresse(adressen):
+    zufall = random.Random(1)
+    gezogen = {adressen.zufall(zufall)["strasse"] for _ in range(300)}
+    assert gezogen == {"Karl-Marx-Straße", "Karl-Marx-Allee", "Werderstraße", "Stralauer Allee"}

@@ -7,6 +7,7 @@ import {BIS_SITUATION, testgraph} from '../modell/testgraph.test-hilfe'
 import SzenarioEditor from './SzenarioEditor.vue'
 
 vi.mock('../api/adressen', () => ({adresslisteVerfuegbar: vi.fn().mockResolvedValue(true), sucheAdressen: vi.fn().mockResolvedValue([])}))
+vi.mock('../api/gebiete', () => ({ladeGebiete: vi.fn().mockResolvedValue({}), zufallsAdresse: vi.fn()}))
 vi.mock('./KarteLeaflet.vue', () => ({default: {template: '<div/>'}}))
 
 const graph = testgraph()
@@ -64,6 +65,18 @@ describe('SzenarioEditor', () => {
     it('zeigt die Ablehnung des Servers', () => {
         const ansicht = editor(vollstaendig(), 'ohne Unterdrückung ist eine Rufnummer Pflicht')
         expect(ansicht.get('[role=alert]').text()).toContain('Pflicht')
+        ansicht.unmount()
+    })
+})
+
+describe('SzenarioEditor mit Zufallsadresse', () => {
+    it('übernimmt eine zufällige Tür mit Punkt', async () => {
+        const {zufallsAdresse} = await import('../api/gebiete')
+        vi.mocked(zufallsAdresse).mockResolvedValue({beschriftung: '', strasse: 'Werderstraße', hausnummer: '20', plz: '13587', ortsteil: 'Hakenfelde', bezirk: 'Spandau', breite: 52.56, laenge: 13.21})
+        const ansicht = editor(leererEntwurf(1))
+        await ansicht.findAll('button').find(b => b.text() === 'Zufällige Adresse')!.trigger('click')
+        await new Promise(r => setTimeout(r, 0))
+        expect(ansicht.props('modelValue').ort).toMatchObject({adresse: {strasse: 'Werderstraße', hausnummer: '20'}, koordinaten: [52.56, 13.21]})
         ansicht.unmount()
     })
 })
