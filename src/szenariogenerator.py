@@ -27,7 +27,7 @@ from typing import Literal
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
-from abfrage import Abfragegraph, Endpunkt, Knoten
+from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
 from generator import festnetznummer, mobilnummer, zufallsname
 from szenario import (
     Adresse,
@@ -47,6 +47,7 @@ ANDERE_RUECKRUF_ANTEIL = 0.05
 ERWACHSEN = (18, 90)
 PLATZ_VERSUCHE = 5
 STILLSTAND_PROTOKOLL = "rd.09"
+NICHT_VOR_ORT_ANTWORT = {"fw.brand.gebaeudebrand.fluchtweg": "nicht-im-gebaeude"}
 GEWICHT_NEUGEBORENE = 0.1
 UMWEGE_SCHLUESSEL = "_nur_ueber_stillstand"
 EINSATZORTE = frozenset(
@@ -262,6 +263,7 @@ class Person:
     bewusstlos: bool = False
     atemnot: bool = False
     alter_bekannt: bool = True
+    vor_ort: bool = True
 
 
 STILLSTAND = re.compile(
@@ -554,6 +556,24 @@ def titel_von(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
     return f"{protokoll.label} ({endpunkt.code})" if protokoll else endpunkt.code
 
 
+def gleichwertige(
+    graph: Abfragegraph, knoten_id: str, antwort_id: str, person: Person, zufall: random.Random
+) -> Antwort | None:
+    """Return the answer at a node, or by chance another one when the node does not decide the way.
+
+    Some questions do not change the code but what the caller is told, such as whether the way
+    out of a burning building is clear: all their answers lead on to the same question. Drawing
+    among them varies the scenarios. A caller who is not on site is not in the building either.
+    """
+    gewaehlt = graph.antwort(knoten_id, antwort_id)
+    antworten = graph.knoten[knoten_id].antworten or []
+    if gewaehlt is None or len({antwort.ziel for antwort in antworten}) != 1:
+        return gewaehlt
+    if knoten_id in NICHT_VOR_ORT_ANTWORT and not person.vor_ort:
+        return graph.antwort(knoten_id, NICHT_VOR_ORT_ANTWORT[knoten_id])
+    return zufall.choice(antworten)
+
+
 def generieren(
     graph: Abfragegraph, quellen: Quellen, erzeugung: Erzeugung, zufall: random.Random
 ) -> Szenario:
@@ -563,10 +583,13 @@ def generieren(
     rd = endpunkt.fachrichtung == "rd"
     person = person_ziehen(graph, endpunkt, zufall) if rd else Person(0, False, False)
     antworten = eroeffnung(graph, endpunkt, person, zufall)
+    vor_ort = antworten.get("eroeffnung.vor-ort")
+    person.vor_ort = vor_ort is None or vor_ort.antwort == "ja-der-anrufer-ist-vor-ort"
     for schritt in endpunkt.pfad:
-        antwort = graph.antwort(schritt.knoten, schritt.antwort or "")
+        antwort = gleichwertige(graph, schritt.knoten, schritt.antwort or "", person, zufall)
         antworten[schritt.knoten] = Wahl(
-            antwort=schritt.antwort, label=antwort.label if antwort else None
+            antwort=antwort.id if antwort else schritt.antwort,
+            label=antwort.label if antwort else None,
         )
     betroffen = zufallsname(zufall, person.weiblich) if rd else ""
     anrufer_name = betroffen if person.anrufer_selbst else zufallsname(zufall)

@@ -6,6 +6,7 @@ from functools import lru_cache
 from fastapi import APIRouter, Body, HTTPException
 from fastapi.responses import Response
 
+import anleitungen
 from abfrage import Abfragegraph, laden
 from einstellungen import einstellungen
 from pool import Pool, PoolVoll, UngueltigeDatei, befunde_nach_aussen
@@ -57,6 +58,16 @@ def abfragegraph() -> Abfragegraph:
 
 
 @lru_cache
+def anleitungskatalog() -> list[anleitungen.Anleitung]:
+    """Load and check the instructions to the caller once per process."""
+    return anleitungen.laden(einstellungen().anleitungen_verzeichnis, abfragegraph())
+
+
+@lru_cache
 def abfragebuendel() -> bytes:
-    """Serialise the question graph for the frontend once per process."""
-    return json.dumps(abfragegraph().buendel(), ensure_ascii=False, separators=(",", ":")).encode()
+    """Serialise the question graph and the instructions for the frontend once per process."""
+    buendel = {
+        **abfragegraph().buendel(),
+        "anleitungen": anleitungen.nach_aussen(anleitungskatalog()),
+    }
+    return json.dumps(buendel, ensure_ascii=False, separators=(",", ":")).encode()

@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "wurzel": "fachrichtung",
   "quelle": "Abgeleitet aus alarmzettel (f7f0e751ce83), dort aus den offenen Daten der Berliner Feuerwehr, Stand 2026-05-21.",
   "hinweise": {
@@ -115,6 +115,16 @@
         "rd.07",
         "rd.27"
       ]
+    }
+  ],
+  "abwesend": [
+    {
+      "knoten": "eroeffnung.vor-ort",
+      "antwort": "nein-nicht-mehr-vor-ort"
+    },
+    {
+      "knoten": "eroeffnung.vor-ort",
+      "antwort": "nein-war-nicht-vor-ort"
     }
   ]
 }

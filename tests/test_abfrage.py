@@ -361,3 +361,16 @@ def test_falsche_personenknoten_werden_genannt(tmp_path, person, meldung):
                 tmp_path, {**META, "person": person}, a={"start": auswahl("ende"), "ende": ENDE}
             )
         )
+
+
+def test_abwesende_antworten_werden_geprueft(tmp_path):
+    meta = {**META, "abwesend": [{"knoten": "start", "antwort": "x"}]}
+    with pytest.raises(ValueError, match="Abwesend: Antwort x an start"):
+        laden(schreiben(tmp_path, meta, a={"start": auswahl("ende"), "ende": ENDE}))
+
+
+def test_der_graph_kennt_die_antworten_ohne_anrufer_vor_ort(graph):
+    assert {g.antwort for g in graph.meta.abwesend} == {
+        "nein-nicht-mehr-vor-ort",
+        "nein-war-nicht-vor-ort",
+    }

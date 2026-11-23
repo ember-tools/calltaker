@@ -278,3 +278,24 @@ def test_frauenantworten_geben_eine_frau(graph):
         person = person_ziehen(graph, endpunkt, random.Random(1))
         assert person.weiblich is True
         assert 12 <= person.alter <= 50 or endpunkt.protokoll != "rd.31"
+
+
+def test_gleichwertige_antworten_werden_gestreut(graph):
+    brand = viele(graph, 300, Erzeugung(gewicht_rd=0, gewicht_th=0, gewicht_brand=1))
+    flucht = "fw.brand.gebaeudebrand.fluchtweg"
+    mit = [s for s in brand if flucht in s.antworten]
+    wege = {s.antworten[flucht].antwort for s in mit}
+    assert {"weg-frei", "weg-verraucht"} <= wege
+    for szenario in mit:
+        if szenario.antworten["eroeffnung.vor-ort"].antwort != "ja-der-anrufer-ist-vor-ort":
+            assert szenario.antworten[flucht].antwort == "nicht-im-gebaeude"
+
+
+def test_antworten_die_den_weg_bestimmen_bleiben_wie_im_pfad(graph):
+    endpunkte = {e.knoten: e for e in graph.endpunkte}
+    for szenario in viele(graph, 300):
+        endpunkt = endpunkte[szenario.ziel.knoten]
+        for schritt in endpunkt.pfad:
+            ziele = {a.ziel for a in graph.knoten[schritt.knoten].antworten or []}
+            if len(ziele) > 1:
+                assert szenario.antworten[schritt.knoten].antwort == schritt.antwort

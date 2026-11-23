@@ -147,8 +147,19 @@ class Person(Modell):
     geschlecht: dict[str, Literal["w", "m"]]
 
 
+class Gegebene(Modell):
+    """An answer given at a node."""
+
+    knoten: str
+    antwort: str
+
+
 class Meta(Modell):
-    """The graph's version, its root, the notes on its data, and how the questioning narrows."""
+    """The graph's version, its root, the notes on its data, and how the questioning narrows.
+
+    `abwesend` names the answers that mean the caller is not on site, so instructions that need
+    someone there are not due.
+    """
 
     version: int
     wurzel: str
@@ -157,6 +168,7 @@ class Meta(Modell):
     notfallkategorien: dict[str, str] = Field(default_factory=dict)
     person: Person | None = None
     eingrenzung: list[Eingrenzung] = Field(default_factory=list)
+    abwesend: list[Gegebene] = Field(default_factory=list)
 
 
 class Schritt(Modell):
@@ -292,6 +304,11 @@ def eingrenzungsfehler(graph: Abfragegraph) -> list[str]:
             for antwort in person.geschlecht
             if graph.antwort(person.geschlecht_knoten, antwort) is None
         )
+    fehler.extend(
+        f"Abwesend: Antwort {gegeben.antwort} an {gegeben.knoten} gibt es nicht"
+        for gegeben in graph.meta.abwesend
+        if graph.antwort(gegeben.knoten, gegeben.antwort) is None
+    )
     for regel in graph.meta.eingrenzung:
         knoten = graph.knoten.get(regel.knoten)
         if knoten is None or not knoten.antworten:

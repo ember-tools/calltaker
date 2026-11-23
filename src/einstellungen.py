@@ -22,6 +22,7 @@ class Einstellungen(BaseSettings):
     uebungen_hoechstens: int = 500
     abfrage_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "abfrage"
     orte_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "orte"
+    anleitungen_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "anleitungen"
 
     def adressen_datei(self) -> Path:
         """Return where the address list is kept: in the data folder."""

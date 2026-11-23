@@ -79,6 +79,8 @@ export interface Meta {
     notfallkategorien: Record<string, string>
     person?: Person
     eingrenzung?: Eingrenzung[]
+    /** The answers that mean the caller is not on site. */
+    abwesend?: {knoten: string, antwort: string}[]
 }
 
 /** One step of a path through the graph: the node and the answer taken there. */
@@ -99,9 +101,33 @@ export interface Endpunkt {
     pfad: Schritt[]
 }
 
-/** The question graph as the server hands it over. */
+/** One set of conditions that together make an instruction due; left-out conditions do not count. */
+export interface Wenn {
+    fachrichtung?: 'rd' | 'brand' | 'th'
+    protokolle?: string[]
+    antworten?: {knoten: string, antwort: string}[]
+    /** None of these answers may have been given. */
+    nicht?: {knoten: string, antwort: string}[]
+    kategorien?: string[]
+}
+
+/** An instruction to the caller: sentences to read out, whether it must be given, when it is due. */
+export interface Anleitung {
+    id: string
+    titel: string
+    saetze: string[]
+    pflicht?: boolean
+    wenn: Wenn[]
+    schliesstAus?: string[]
+    /** Due even when the caller is not on site. */
+    auchOhneVorOrt?: boolean
+    quelle: string
+}
+
+/** The question graph as the server hands it over, with the instructions to the caller. */
 export interface Abfragegraph {
     meta: Meta
     knoten: Record<string, Knoten>
     endpunkte: Endpunkt[]
+    anleitungen?: Anleitung[]
 }

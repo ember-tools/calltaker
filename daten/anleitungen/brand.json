@@ -1,0 +1,237 @@
+{
+  "anleitungen": [
+    {
+      "id": "brand.sicherheit",
+      "titel": "In Sicherheit bringen, nicht selbst löschen",
+      "saetze": [
+        "Bringen Sie sich und andere in Sicherheit.",
+        "Versuchen Sie nicht zu löschen, wenn Sie sich dabei in Gefahr bringen.",
+        "Halten Sie Abstand zum Feuer und zum Rauch."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "fachrichtung": "brand"
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "brand.einweisen",
+      "titel": "Feuerwehr einweisen",
+      "saetze": [
+        "Wenn es gefahrlos geht, schicken Sie jemanden an die Straße, der die Feuerwehr einweist.",
+        "Halten Sie die Zufahrt frei."
+      ],
+      "pflicht": false,
+      "wenn": [
+        {
+          "fachrichtung": "brand"
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "brand.wohnung.verlassen",
+      "titel": "Gebäude verlassen, Tür schließen",
+      "saetze": [
+        "Verlassen Sie die Wohnung und das Gebäude.",
+        "Schließen Sie die Wohnungstür hinter sich, schließen Sie sie aber nicht ab.",
+        "Benutzen Sie keinen Aufzug.",
+        "Warnen Sie die Nachbarn, wenn es auf dem Weg geht.",
+        "Warten Sie draußen auf die Feuerwehr."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.gebaeudebrand.fluchtweg",
+              "antwort": "weg-frei"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)",
+      "schliesstAus": [
+        "brand.wohnung.bleiben"
+      ]
+    },
+    {
+      "id": "brand.wohnung.bleiben",
+      "titel": "In der Wohnung bleiben, ans Fenster",
+      "saetze": [
+        "Bleiben Sie in der Wohnung, gehen Sie nicht ins verrauchte Treppenhaus.",
+        "Brennt es in Ihrer eigenen Wohnung, gehen Sie in einen Raum möglichst weit weg vom Feuer.",
+        "Schließen Sie die Türen zum Brand und zum Treppenhaus.",
+        "Dichten Sie die Türritzen mit nassen Tüchern ab.",
+        "Gehen Sie an ein Fenster zur Straße und machen Sie sich bemerkbar.",
+        "Springen Sie nicht aus dem Fenster, die Feuerwehr kommt zu Ihnen."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.gebaeudebrand.fluchtweg",
+              "antwort": "weg-verraucht"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)",
+      "schliesstAus": [
+        "brand.wohnung.verlassen"
+      ]
+    },
+    {
+      "id": "brand.wohnung.pruefen",
+      "titel": "Weg prüfen, im Zweifel bleiben",
+      "saetze": [
+        "Öffnen Sie die Wohnungstür nur, wenn sie sich nicht heiß anfühlt.",
+        "Ist das Treppenhaus rauchfrei, verlassen Sie das Gebäude und schließen die Tür hinter sich.",
+        "Ist es verraucht, bleiben Sie in der Wohnung, schließen die Tür und gehen ans Fenster."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.gebaeudebrand.fluchtweg",
+              "antwort": "unklar"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "brand.freien",
+      "titel": "Weg vom Feuer, nicht löschen",
+      "saetze": [
+        "Gehen Sie vom Feuer weg und halten Sie Abstand.",
+        "Versuchen Sie nicht, das Feuer zu löschen.",
+        "Achten Sie darauf, wohin der Rauch zieht, und stellen Sie sich nicht hinein.",
+        "Warnen Sie andere und halten Sie sie fern."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.brand.brand-im-freien",
+            "fw.brand.fahrzeugbrand"
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "brand.rauch",
+      "titel": "Fenster und Türen geschlossen halten",
+      "saetze": [
+        "Halten Sie Fenster und Türen Ihrer Wohnung geschlossen, damit kein Rauch hereinkommt.",
+        "Gehen Sie nicht nachsehen, wenn es dabei gefährlich werden kann."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.rauchentwicklung-brandgeruch.k0",
+              "antwort": "rauch-aus-einem-gebaeude"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.rauchentwicklung-brandgeruch.k0",
+              "antwort": "rauch-im-freien-ursache-unklar"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "brand.geruch",
+      "titel": "Nicht selbst suchen, bei Rauch hinaus",
+      "saetze": [
+        "Suchen Sie die Ursache nicht selbst, wenn es dabei gefährlich werden kann.",
+        "Ist Rauch in Ihrer Wohnung, verlassen Sie sie und schließen die Tür hinter sich.",
+        "Warnen Sie die Nachbarn."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.rauchentwicklung-brandgeruch.k0",
+              "antwort": "brandgeruch-im-gebaeude"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "brand.kohlenmonoxid",
+      "titel": "Sofort ins Freie",
+      "saetze": [
+        "Verlassen Sie sofort die Wohnung und nehmen Sie alle mit.",
+        "Öffnen Sie im Hinausgehen Fenster, wenn das ohne Aufenthalt geht.",
+        "Gehen Sie nicht zurück, auch nicht, um etwas zu holen."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.rauchentwicklung-brandgeruch.k0",
+              "antwort": "kohlenmonoxid-warner"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k0",
+              "antwort": "kohlenmonoxid-alarm-personen-ohne"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k0",
+              "antwort": "kohlenmonoxid-alarm-automatischer-alarm"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)",
+      "schliesstAus": [
+        "brand.rauch",
+        "th.gefahrstoffe"
+      ]
+    },
+    {
+      "id": "brand.explosion",
+      "titel": "Abstand, keine Zündquellen",
+      "saetze": [
+        "Entfernen Sie sich vom Ort der Explosion.",
+        "Betätigen Sie keine Lichtschalter und machen Sie kein Feuer.",
+        "Betreten Sie beschädigte Gebäude nicht."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.brand.explosion"
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    }
+  ]
+}

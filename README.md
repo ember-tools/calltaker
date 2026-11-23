@@ -52,3 +52,8 @@ from the Berlin fire brigade's open data
 ([BF-Open-Data](https://github.com/Berliner-Feuerwehr/BF-Open-Data)) and remain under the fire
 brigade's own terms. The fire and technical rescue protocols are invented placeholders: the real
 Alarm- und Ausrückeordnung is not public.
+
+The instructions to the caller in `daten/anleitungen/` (what to do until help arrives) are written
+for training from general public guidance: the fire brigades' fire safety advice and the ERC
+guidelines 2021 for first aid and basic life support. They have not been checked by a medical or
+fire service authority and are shown as written.
