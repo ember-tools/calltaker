@@ -3,11 +3,13 @@
 import json
 from functools import lru_cache
 
-from fastapi import APIRouter
+from fastapi import APIRouter, Body, HTTPException
 from fastapi.responses import Response
 
-from abfrage import laden
+from abfrage import Abfragegraph, laden
 from einstellungen import einstellungen
+from pool import Pool, UngueltigeDatei
+from szenario import Szenario, pruefen
 
 router = APIRouter(prefix="/api")
 
@@ -24,8 +26,40 @@ async def abfrage() -> Response:
     return Response(content=abfragebuendel(), media_type="application/json")
 
 
+@router.post("/szenario/pruefen")
+async def szenario_pruefen(szenario: Szenario) -> dict:
+    """Check a scenario against the question graph and return it with what the check found."""
+    befunde = pruefen(szenario, abfragegraph())
+    return {
+        "szenario": szenario.nach_aussen(),
+        "befunde": [befund.nach_aussen() for befund in befunde],
+    }
+
+
+@router.post("/pool/pruefen")
+async def pool_pruefen(datei: object = Body()) -> dict:
+    """Read an uploaded pool file and return its scenarios with what the check found for each."""
+    pool = Pool()
+    try:
+        befunde = pool.importieren(datei, "ersetzen", abfragegraph())
+    except UngueltigeDatei as fehler:
+        raise HTTPException(status_code=422, detail=str(fehler)) from fehler
+    return {
+        "szenarien": [szenario.nach_aussen() for szenario in pool.szenarien],
+        "befunde": {
+            szenario_id: [befund.nach_aussen() for befund in liste]
+            for szenario_id, liste in befunde.items()
+        },
+    }
+
+
+@lru_cache
+def abfragegraph() -> Abfragegraph:
+    """Load and check the question graph once per process."""
+    return laden(einstellungen().abfrage_verzeichnis)
+
+
 @lru_cache
 def abfragebuendel() -> bytes:
-    """Load, check and serialise the question graph once per process."""
-    graph = laden(einstellungen().abfrage_verzeichnis)
-    return json.dumps(graph.buendel(), ensure_ascii=False, separators=(",", ":")).encode()
+    """Serialise the question graph for the frontend once per process."""
+    return json.dumps(abfragegraph().buendel(), ensure_ascii=False, separators=(",", ":")).encode()

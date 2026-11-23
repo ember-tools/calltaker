@@ -1,0 +1,228 @@
+"""Scenarios: the truth behind a call, and how a scenario is checked against the question graph.
+
+A scenario's path through the graph is keyed by node id, not by order, so the answers to nodes the
+trainee also visits stay valid when the trainee takes another turn. Field names follow the
+frontend's camel case on the wire.
+"""
+
+import uuid
+from enum import StrEnum
+from typing import Any, Literal, Self
+
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
+from pydantic.alias_generators import to_camel
+
+from abfrage import Abfragegraph
+from rufnummer import normalisieren
+
+SZENARIO_VERSION = 1
+
+
+def neue_id() -> str:
+    """Return a fresh scenario id."""
+    return uuid.uuid4().hex
+
+
+class Modell(BaseModel):
+    """Base of the scenario models: camel case on the wire, unknown fields refused."""
+
+    model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True, extra="forbid")
+
+
+class Adresse(Modell):
+    """A postal address in Berlin."""
+
+    strasse: str = ""
+    hausnummer: str = ""
+    plz: str = ""
+    ortsteil: str = ""
+
+
+class Ort(Modell):
+    """Where the emergency is: address, point and what a crew needs to find it.
+
+    `koordinaten` is (latitude, longitude) in WGS 84, Leaflet's order, not GeoJSON's.
+    """
+
+    adresse: Adresse = Field(default_factory=Adresse)
+    koordinaten: tuple[float, float] | None = None
+    objekt: str = ""
+    geschoss: str = ""
+    klingel: str = ""
+    anfahrt: str = ""
+    gefahren: str = ""
+
+
+class Anrufer(Modell):
+    """Who calls: the name, the number shown, and the number the caller is reachable under."""
+
+    name: str
+    rufnummer: str | None = None
+    rufnummer_unterdrueckt: bool = False
+    rueckrufnummer: str | None = None
+
+    @field_validator("rufnummer", "rueckrufnummer")
+    @classmethod
+    def nur_ziffern(cls, wert: str | None) -> str | None:
+        """Store numbers as digits with the country code, however they were typed."""
+        return normalisieren(wert) or None if wert else None
+
+    @model_validator(mode="after")
+    def nummer_vorhanden(self) -> Self:
+        """Require a shown number, or a callback number and no shown one when it is withheld."""
+        if self.rufnummer_unterdrueckt and self.rufnummer:
+            raise ValueError("eine unterdrückte Rufnummer wird nicht angezeigt")
+        if self.rufnummer_unterdrueckt and not self.rueckrufnummer:
+            raise ValueError("bei unterdrückter Rufnummer ist eine Rückrufnummer Pflicht")
+        if not self.rufnummer_unterdrueckt and not self.rufnummer:
+            raise ValueError("ohne Unterdrückung ist eine Rufnummer Pflicht")
+        return self
+
+    def erreichbar_unter(self) -> str:
+        """Return the number the caller can actually be called back on."""
+        return self.rueckrufnummer or self.rufnummer or ""
+
+
+class Betroffener(Modell):
+    """The person the call is about, when it is not the caller."""
+
+    name: str = ""
+
+
+class Wahl(Modell):
+    """What the caller answers at one node: an answer id, or a typed value.
+
+    `label` keeps the answer's label as it read when the scenario was written, so a later change
+    of the graph can be pointed out.
+    """
+
+    antwort: str | None = None
+    label: str | None = None
+    wert: str | None = None
+
+
+class Ziel(Modell):
+    """The endpoint the scenario's path ends in, by node, with its code for reading."""
+
+    knoten: str
+    code: str
+
+
+class Rolle(Modell):
+    """How the trainer plays the caller; not part of the debrief."""
+
+    stimmung: Literal["ruhig", "aufgeregt", "panisch", "verwirrt"] | None = None
+    sprache: str = ""
+    notizen: str = ""
+
+
+class Herkunft(StrEnum):
+    """Whether a scenario was written by hand or generated."""
+
+    VORBEREITET = "vorbereitet"
+    GENERIERT = "generiert"
+
+
+class Szenario(Modell):
+    """The truth behind one call."""
+
+    id: str = Field(default_factory=neue_id)
+    version: Literal[1] = SZENARIO_VERSION
+    abfrage_version: int
+    titel: str
+    herkunft: Herkunft = Herkunft.VORBEREITET
+    ort: Ort
+    anrufer: Anrufer
+    betroffener: Betroffener | None = None
+    antworten: dict[str, Wahl] = Field(default_factory=dict)
+    ziel: Ziel
+    rolle: Rolle = Field(default_factory=Rolle)
+    erweiterungen: dict[str, Any] = Field(default_factory=dict)
+
+    def nach_aussen(self) -> dict:
+        """Return the scenario as the frontend and the pool file carry it."""
+        return self.model_dump(mode="json", by_alias=True, exclude_none=True)
+
+
+class Befund(Modell):
+    """One thing a check found: an error to correct, or a warning to look at."""
+
+    art: Literal["fehler", "warnung"]
+    knoten: str | None = None
+    meldung: str
+
+    def nach_aussen(self) -> dict:
+        """Return the finding as the frontend reads it."""
+        return self.model_dump(by_alias=True, exclude_none=True)
+
+
+def pruefen(szenario: Szenario, graph: Abfragegraph) -> list[Befund]:
+    """Check a scenario against the current graph and return what does not fit."""
+    befunde: list[Befund] = []
+    if szenario.abfrage_version != graph.meta.version:
+        befunde.append(
+            Befund(
+                art="warnung",
+                meldung=(
+                    f"geschrieben für Abfragegraph {szenario.abfrage_version}, "
+                    f"aktuell ist {graph.meta.version}"
+                ),
+            )
+        )
+    for knoten_id, wahl in szenario.antworten.items():
+        befunde.extend(wahlbefunde(graph, knoten_id, wahl))
+    befunde.extend(zielbefunde(graph, szenario.ziel))
+    return befunde
+
+
+def zielbefunde(graph: Abfragegraph, ziel: Ziel) -> list[Befund]:
+    """Check that the scenario's endpoint exists and still carries its code."""
+    knoten = graph.knoten.get(ziel.knoten)
+    if knoten is None or knoten.code is None:
+        return [Befund(art="fehler", knoten=ziel.knoten, meldung="Endpunkt gibt es nicht mehr")]
+    if knoten.code != ziel.code:
+        return [
+            Befund(
+                art="warnung",
+                knoten=ziel.knoten,
+                meldung=f"Endpunkt trägt jetzt Code {knoten.code} statt {ziel.code}",
+            )
+        ]
+    return []
+
+
+def wahlbefunde(graph: Abfragegraph, knoten_id: str, wahl: Wahl) -> list[Befund]:
+    """Check the answer a scenario gives at one node."""
+    knoten = graph.knoten.get(knoten_id)
+    if knoten is None:
+        return [Befund(art="fehler", knoten=knoten_id, meldung="Knoten gibt es nicht mehr")]
+    if knoten.eingabe is not None:
+        if wahl.antwort is not None:
+            return [
+                Befund(art="fehler", knoten=knoten_id, meldung="hier wird getippt, nicht gewählt")
+            ]
+        if not wahl.wert and knoten.eingabe.leer is None:
+            return [Befund(art="fehler", knoten=knoten_id, meldung="hier fehlt der getippte Wert")]
+        return []
+    if knoten.antworten is None:
+        return [
+            Befund(art="fehler", knoten=knoten_id, meldung="an diesem Knoten wird nicht gefragt")
+        ]
+    if wahl.antwort is None:
+        return [Befund(art="fehler", knoten=knoten_id, meldung="hier wird gewählt, nicht getippt")]
+    antwort = graph.antwort(knoten_id, wahl.antwort)
+    if antwort is None:
+        return [
+            Befund(
+                art="fehler", knoten=knoten_id, meldung=f"Antwort {wahl.antwort} gibt es nicht mehr"
+            )
+        ]
+    if wahl.label is not None and wahl.label != antwort.label:
+        return [
+            Befund(
+                art="warnung",
+                knoten=knoten_id,
+                meldung=f"Antwort heißt jetzt „{antwort.label}“ statt „{wahl.label}“",
+            )
+        ]
+    return []

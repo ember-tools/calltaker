@@ -19,11 +19,12 @@ const LOCALE_FILES = ['src/i18n/de.ts']
 /**
  * Which layer may not reach which, as `import-x/no-restricted-paths` zones.
  *
- * <p>The bottom layers do not import from the ones above them: the API clients, the catalogue and
- * the call phases stand on nothing of the interface, and components and composables stand on no
- * view.
+ * <p>The bottom layers do not import from the ones above them: the domain model, the API
+ * clients, the catalogue and the call phases stand on nothing of the interface, and components
+ * and composables stand on no view.
  */
 const LAYERS = [
+    {layer: 'modell', above: ['views', 'components', 'composables', 'phasen', 'api']},
     {layer: 'api', above: ['views', 'components', 'composables', 'phasen']},
     {layer: 'i18n', above: ['views', 'components', 'composables', 'phasen', 'api']},
     {layer: 'phasen', above: ['views', 'components', 'composables']},

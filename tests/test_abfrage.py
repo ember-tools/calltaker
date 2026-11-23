@@ -15,11 +15,6 @@ META = {"version": 1, "wurzel": "start", "quelle": "Test"}
 ENDE = {"code": "01A01", "kategorie": "RD5."}
 
 
-@pytest.fixture(scope="module")
-def graph():
-    return laden(einstellungen().abfrage_verzeichnis)
-
-
 def schreiben(verzeichnis: Path, meta: dict = META, **dateien: dict) -> Path:
     (verzeichnis / "meta.json").write_text(json.dumps(meta))
     for name, knoten in dateien.items():
@@ -210,11 +205,13 @@ def test_kaputte_dateien_werden_mit_namen_gemeldet(tmp_path, inhalt, meldung):
 def test_ein_kaputter_graph_verhindert_den_start(tmp_path, monkeypatch):
     schreiben(tmp_path, a={"start": auswahl("fehlt")})
     monkeypatch.setattr(einstellungen(), "abfrage_verzeichnis", tmp_path)
+    api.abfragegraph.cache_clear()
     api.abfragebuendel.cache_clear()
     try:
         with pytest.raises(ValueError, match="Ziel fehlt"), TestClient(anwendung_bauen()):
             pass
     finally:
+        api.abfragegraph.cache_clear()
         api.abfragebuendel.cache_clear()
 
 
