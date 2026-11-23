@@ -8,3 +8,4 @@
 frontend/node_modules
 src/frontend_dist
 tests
+.daten

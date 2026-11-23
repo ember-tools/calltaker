@@ -15,7 +15,7 @@ class Einstellungen(BaseSettings):
 
     cors_origins: str = "https://calltaker.chojo.dev,http://localhost:5173"
     frontend_verzeichnis: Path = QUELLVERZEICHNIS / "frontend_dist"
-    daten_verzeichnis: Path = Path("/data")
+    daten_verzeichnis: Path = QUELLVERZEICHNIS.parent / ".daten"
     uebung_lebensdauer_stunden: float = 12
     uebungen_hoechstens: int = 500
     abfrage_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "abfrage"

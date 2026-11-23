@@ -50,6 +50,9 @@ export default {
         text: 'Der Code ist falsch, oder die Übung wurde beendet, weil sie lange niemand geöffnet hat.',
         zurueck: 'Zur Startseite',
     },
+    karte: {
+        mitwirkende: 'OpenStreetMap-Mitwirkende',
+    },
     allgemein: {
         laden: 'Lädt …',
     },

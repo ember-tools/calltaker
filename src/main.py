@@ -12,6 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
 
+import kacheln
 import uebung_api
 from api import abfragebuendel, router
 from einstellungen import einstellungen
@@ -34,11 +35,17 @@ async def lebenszyklus(app: FastAPI) -> AsyncIterator[None]:
     long are dropped.
     """
     abfragebuendel()
+    client = kacheln.kachel_client()
+    app.state.kachelcache = kacheln.Kachelcache(
+        einstellungen().daten_verzeichnis / "kacheln", client
+    )
     aufgabe = asyncio.create_task(pflegen(app.state.uebungen))
     yield
     aufgabe.cancel()
     with contextlib.suppress(asyncio.CancelledError):
         await aufgabe
+    await app.state.kachelcache.schliessen()
+    await client.aclose()
 
 
 async def pflegen(uebungen: Uebungen) -> None:
@@ -80,6 +87,7 @@ def anwendung_bauen() -> FastAPI:
     app.add_exception_handler(RequestValidationError, ungueltige_anfrage)
     app.include_router(router)
     app.include_router(uebung_api.router)
+    app.include_router(kacheln.router)
     frontend_einbinden(app, einstellungen().frontend_verzeichnis)
     return app
 
