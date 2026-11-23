@@ -183,18 +183,21 @@ export function zwischenergebnis(graph: Abfragegraph, abfrage: Abfrageeintrag, s
 }
 
 /**
- * The endpoints of a protocol more urgent than a category, most urgent first, once per code.
+ * The endpoints of a protocol more urgent than a category, most urgent first, once per code. For a
+ * cardiac arrest, codes as urgent are offered too, so a cause found later can still be named: an
+ * arrest reached straight from "atmet nicht" can become one by hanging or drowning.
  *
  * @param graph the graph
  * @param protokoll the protocol's id
- * @param ab the category to go beyond
+ * @param ab the category to start from
+ * @param ohne the current code, which is not offered
  * @returns the endpoints to upgrade to
  */
-export function hoehereEndpunkte(graph: Abfragegraph, protokoll: string, ab: string): Endpunkt[] {
+export function hoehereEndpunkte(graph: Abfragegraph, protokoll: string, ab: string, ohne = ''): Endpunkt[] {
     const grenze = schwere(ab)
     const gesehen = new Set<string>()
     return graph.endpunkte
-        .filter(e => e.protokoll === protokoll && schwere(e.kategorie) > grenze)
+        .filter(e => e.protokoll === protokoll && e.code !== ohne && (schwere(e.kategorie) > grenze || (schwere(e.kategorie) === grenze && istStillstand(ab))))
         .sort((a, b) => schwere(b.kategorie) - schwere(a.kategorie) || a.code.localeCompare(b.code))
         .filter(e => !gesehen.has(e.code) && gesehen.add(e.code))
 }
@@ -246,4 +249,37 @@ function kurz(ergebnis: Ergebnis | undefined): string {
  */
 function anlassVon(graph: Abfragegraph, ergebnis: Ergebnis | undefined): string {
     return ergebnis ? graph.knoten[ergebnis.knoten]?.anlass ?? '' : ''
+}
+
+/**
+ * Whether a category is a cardiac arrest: resuscitation, or resuscitation of a newborn.
+ *
+ * @param kategorie the category
+ * @returns true for an arrest category
+ */
+export function istStillstand(kategorie: string): boolean {
+    return kategorie.startsWith('RD1NC REA') || kategorie.startsWith('RD1NC NNAD')
+}
+
+/**
+ * Whether one node can be reached from another along answers, inputs and switches.
+ *
+ * @param graph the graph
+ * @param von the node to start at
+ * @param ziel the node to reach
+ * @returns true when a way leads there
+ */
+export function erreichbar(graph: Abfragegraph, von: string, ziel: string): boolean {
+    const gesehen = new Set<string>()
+    const offen = [von]
+    while (offen.length) {
+        const id = offen.pop()!
+        if (id === ziel) return true
+        if (gesehen.has(id)) continue
+        gesehen.add(id)
+        const knoten = graph.knoten[id]
+        if (!knoten) continue
+        offen.push(...(knoten.antworten ?? []).map(a => a.ziel), ...(knoten.ziel ? [knoten.ziel] : []), ...Object.values(knoten.weiche?.ziele ?? {}))
+    }
+    return false
 }

@@ -41,7 +41,7 @@ const zwischen = computed(() => zwischenergebnis(props.graph, abfrage.value, pro
 const protokoll = computed(() => gewaehltesProtokoll(props.graph, abfrage.value.pfad))
 const fachrichtung = computed(() => abfrage.value.pfad.find(s => s.knoten === props.graph.meta.wurzel)?.antwort)
 const zusaetze = computed(() => (knoten.value ? unterscheidungen(knoten.value, props.schwerste, props.graph) : new Map<string, string>()))
-const hoeher = computed(() => (protokoll.value?.protokoll ? hoehereEndpunkte(props.graph, protokoll.value.protokoll, zwischen.value?.kategorie ?? '') : []))
+const hoeher = computed(() => (protokoll.value?.protokoll ? hoehereEndpunkte(props.graph, protokoll.value.protokoll, zwischen.value?.kategorie ?? '', zwischen.value?.code) : []))
 const pfadText = computed(() => abfrage.value.pfad.map(schritt => {
     const antwort = props.graph.knoten[schritt.knoten]?.antworten?.find(a => a.id === schritt.antwort)
     return `${props.graph.knoten[schritt.knoten]?.frage ?? schritt.knoten}: ${antwort?.label ?? schritt.wert ?? ''}`

@@ -46,6 +46,9 @@ UNTERDRUECKT_ANTEIL = 0.05
 ANDERE_RUECKRUF_ANTEIL = 0.05
 ERWACHSEN = (18, 90)
 PLATZ_VERSUCHE = 5
+STILLSTAND_PROTOKOLL = "rd.09"
+GEWICHT_NEUGEBORENE = 0.1
+UMWEGE_SCHLUESSEL = "_nur_ueber_stillstand"
 EINSATZORTE = frozenset(
     {
         "Bahnhof",
@@ -147,11 +150,19 @@ def disziplin_von(endpunkt: Endpunkt) -> Disziplin:
 def ziehbare(
     graph: Abfragegraph, erzeugung: Erzeugung
 ) -> dict[Disziplin, dict[str, list[Endpunkt]]]:
-    """Return the endpoints that may be drawn, by discipline and protocol."""
+    """Return the endpoints that may be drawn, by discipline and protocol.
+
+    A person who does not breathe is a cardiac arrest whatever else happened, and the questioning
+    goes straight there from "atmet nicht". So an arrest is only drawn as such: the endpoints
+    reached through that shortcut. Codes of other protocols that would need a person who does not
+    breathe are left out; their cause can go into the role notes.
+    """
     filter_ = erzeugung.kategorie.strip().lower()
     nach: dict[Disziplin, dict[str, list[Endpunkt]]] = {}
     for endpunkt in graph.endpunkte:
         if endpunkt.kategorie in NICHT_ZIEHBAR or not endpunkt.pfad:
+            continue
+        if (endpunkt.protokoll, endpunkt.knoten) in nur_ueber_stillstand(graph):
             continue
         if filter_ and not endpunkt.kategorie.lower().startswith(filter_):
             continue
@@ -162,14 +173,32 @@ def ziehbare(
 
 
 def endpunkt_ziehen(graph: Abfragegraph, erzeugung: Erzeugung, zufall: random.Random) -> Endpunkt:
-    """Draw a discipline by weight, then a protocol and a code of it with equal chance."""
+    """Draw a discipline by weight, then a protocol, then a code by `gewichte_der_codes`."""
     nach = ziehbare(graph, erzeugung)
     gewichte = {d: g for d, g in erzeugung.gewichte().items() if g > 0 and d in nach}
     if not gewichte:
         raise NichtsZuZiehen("Kein Code passt zu diesen Einstellungen.")
     disziplin = zufall.choices(list(gewichte), weights=list(gewichte.values()))[0]
     protokoll = zufall.choice(sorted(nach[disziplin]))
-    return zufall.choice(nach[disziplin][protokoll])
+    kandidaten = nach[disziplin][protokoll]
+    return zufall.choices(kandidaten, weights=gewichte_der_codes(kandidaten))[0]
+
+
+def gewichte_der_codes(kandidaten: list[Endpunkt]) -> list[float]:
+    """Return each endpoint's chance within its protocol: every code once, its variants sharing it.
+
+    A code with variants (09B01a to f for the signs of death; adult, child and newborn of 09E01)
+    is drawn as often as a code without, so variants do not crowd out the rest. Newborns get a
+    tenth of a variant's share, since they are rare among the calls.
+    """
+    roh = [GEWICHT_NEUGEBORENE if "NNAD" in e.kategorie else 1.0 for e in kandidaten]
+    summe: dict[str, float] = {}
+    for endpunkt, gewicht in zip(kandidaten, roh, strict=True):
+        summe[endpunkt.code[:5]] = summe.get(endpunkt.code[:5], 0.0) + gewicht
+    return [
+        gewicht / summe[endpunkt.code[:5]]
+        for endpunkt, gewicht in zip(kandidaten, roh, strict=True)
+    ]
 
 
 def altersspanne(graph: Abfragegraph, endpunkt: Endpunkt) -> tuple[int, int]:
@@ -246,6 +275,43 @@ VOR_ORT = {
     FUER_ANDERE: {"ja-der-anrufer-ist-vor-ort": 60, "nein-war-nicht-vor-ort": 40},
     GEHOERT: {"nein-war-nicht-vor-ort": 70, "unbekannt": 30},
 }
+
+
+def stillstand_wahl(graph: Abfragegraph) -> str:
+    """Return the node where cardiac arrest is first chosen: its protocol's shallowest choice."""
+    wahlen = [
+        id_
+        for id_, knoten in graph.knoten.items()
+        if any(antwort.protokoll == STILLSTAND_PROTOKOLL for antwort in knoten.antworten or [])
+    ]
+    return min(wahlen, key=lambda id_: graph.tiefen.get(id_, len(graph.knoten)), default="")
+
+
+def nur_ueber_stillstand(graph: Abfragegraph) -> frozenset[tuple[str, str]]:
+    """Return the endpoints that need an arrest but are not reached through its shortcut.
+
+    Worked out once per graph, since it reads the path of every endpoint, and kept on the graph
+    the way its own cached properties are.
+    """
+    gemerkt = graph.__dict__.get(UMWEGE_SCHLUESSEL)
+    if gemerkt is None:
+        wahl = stillstand_wahl(graph)
+        gemerkt = frozenset(
+            (e.protokoll, e.knoten)
+            for e in graph.endpunkte
+            if e.pfad and e.pfad[0].knoten != wahl and stillstand_von(graph, e)
+        )
+        graph.__dict__[UMWEGE_SCHLUESSEL] = gemerkt
+    return gemerkt
+
+
+def stillstand_von(graph: Abfragegraph, endpunkt: Endpunkt) -> bool:
+    """Tell whether a code needs a person who does not breathe."""
+    return (
+        endpunkt.protokoll == STILLSTAND_PROTOKOLL
+        or endpunkt.kategorie.startswith(("RD1NC REA", "RD1NC NNAD"))
+        or bool(STILLSTAND.search(pfadtext(graph, endpunkt)))
+    )
 
 
 def pfadtext(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
@@ -451,11 +517,7 @@ def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random
     alter = zufall.randint(unten, oben)
     text = pfadtext(graph, endpunkt)
     weiblich = bool(re.search(r"schwanger|geburt|frauen", text)) or zufall.random() < 0.5
-    stillstand = (
-        endpunkt.protokoll == "rd.09"
-        or endpunkt.kategorie.startswith("RD1NC REA")
-        or bool(STILLSTAND.search(text))
-    )
+    stillstand = stillstand_von(graph, endpunkt)
     bewusstlos = stillstand or bool(BEWUSSTLOS.search(text))
     anrufer_selbst = (
         alter >= 14

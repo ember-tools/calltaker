@@ -1,5 +1,5 @@
 import type {Abfragegraph, Endpunkt} from './abfragegraph'
-import {aktuellerKnoten} from './abfrageweg'
+import {aktuellerKnoten, erreichbar} from './abfrageweg'
 import type {Schritteintrag} from './eintraege'
 import type {Szenario, Wahl, Ziel} from './szenario'
 
@@ -77,7 +77,8 @@ export function antwortenAusPfad(graph: Abfragegraph, pfad: Schritteintrag[], bi
  *
  * The longest start of the path so far that reaches the endpoint's protocol choice is kept.
  * Otherwise an opening is laid from the root: the endpoint's Fachrichtung, the answers the path
- * so far gave to the same questions, and the first answer or an empty input elsewhere.
+ * so far gave to the same questions as long as they still lead to the protocol's choice, and
+ * elsewhere the first answer that does, or an empty input.
  *
  * @param graph the graph
  * @param bisher the path so far
@@ -108,12 +109,12 @@ function eroeffnung(graph: Abfragegraph, bisher: Schritteintrag[], fachrichtung:
     const anfang: Schritteintrag[] = []
     for (let id = aktuellerKnoten(graph, anfang).knoten; id !== wahl && anfang.length < 50; id = aktuellerKnoten(graph, anfang).knoten) {
         const knoten = graph.knoten[id]
-        const passt = (s?: Schritteintrag) => s && (knoten?.eingabe || knoten?.antworten?.some(a => a.id === s.antwort))
+        const passt = (s?: Schritteintrag) => s && (knoten?.eingabe || knoten?.antworten?.some(a => a.id === s.antwort && erreichbar(graph, a.ziel, wahl)))
         const alt = frueher.get(id)
         if (id === graph.meta.wurzel) anfang.push({knoten: id, antwort: fachrichtung})
         else if (passt(alt)) anfang.push(alt!)
         else if (knoten?.eingabe) anfang.push({knoten: id})
-        else if (knoten?.antworten?.[0]) anfang.push({knoten: id, antwort: knoten.antworten[0].id})
+        else if (knoten?.antworten?.length) anfang.push({knoten: id, antwort: (knoten.antworten.find(a => erreichbar(graph, a.ziel, wahl)) ?? knoten.antworten[0]!).id})
         else break
     }
     return anfang

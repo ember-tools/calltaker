@@ -162,6 +162,11 @@ class Abfragegraph(BaseModel):
         return self
 
     @cached_property
+    def tiefen(self) -> dict[str, int]:
+        """Return how many steps each node lies from the root at the fewest."""
+        return tiefen(self)
+
+    @cached_property
     def endpunkte(self) -> list[Endpunkt]:
         """Every endpoint, once per protocol that reaches it, with the first path found to it."""
         return endpunkte(self)
@@ -247,7 +252,7 @@ def idfehler(graph: Abfragegraph) -> list[str]:
         for id_ in graph.knoten
         if not ID_MUSTER.match(id_)
     ]
-    protokolle: set[str] = set()
+    wahlen: dict[str, list[tuple[str, str]]] = {}
     for id_, knoten in graph.knoten.items():
         gesehen: set[str] = set()
         for antwort in knoten.antworten or []:
@@ -256,11 +261,17 @@ def idfehler(graph: Abfragegraph) -> list[str]:
             if antwort.id in gesehen:
                 fehler.append(f"{id_}: Antwort-ID {antwort.id} doppelt")
             gesehen.add(antwort.id)
-            if antwort.protokoll in protokolle:
-                fehler.append(f"{id_}: Protokoll {antwort.protokoll} doppelt")
             if antwort.protokoll:
-                protokolle.add(antwort.protokoll)
+                wahlen.setdefault(antwort.protokoll, []).append((id_, antwort.ziel))
                 fehler.extend(protokollfehler(graph, id_, antwort.protokoll))
+    for protokoll, orte in wahlen.items():
+        if len(orte) > 1:
+            fehler.extend(
+                f"{id_}: Protokoll {protokoll} wird mehrfach gewählt, "
+                "führt hier aber nicht in seine eigenen Knoten"
+                for id_, ziel in orte
+                if not ziel.startswith(f"{protokoll}.")
+            )
     return fehler
 
 
@@ -363,17 +374,43 @@ def erreichbar_ohne(graph: Abfragegraph, ausgelassen: str) -> set[str]:
 
 
 def endpunkte(graph: Abfragegraph) -> list[Endpunkt]:
-    """Index every endpoint once per protocol, with the first path found from the protocol's choice.
+    """Index every endpoint once per protocol, with the shortest way to it from the root.
 
     Several endpoints of one protocol may share a code and differ in category or reason, the
     child's variant of a determinant for instance, so endpoints are indexed by node, not by code.
+    A protocol can be chosen in more than one place: cardiac arrest from the main complaints and,
+    straight away, from "atmet nicht" in the opening. Each endpoint keeps the path whose whole way
+    from the root is shortest, which is the one a call takes.
     """
-    gefunden: list[Endpunkt] = []
+    tiefe = graph.tiefen
+    kuerzeste: dict[tuple[str, str], Endpunkt] = {}
     for id_, knoten in graph.knoten.items():
         for antwort in knoten.antworten or []:
             if antwort.protokoll:
-                gefunden.extend(protokollendpunkte(graph, id_, antwort))
-    return gefunden
+                for gefunden in protokollendpunkte(graph, id_, antwort):
+                    schluessel = (gefunden.protokoll, gefunden.knoten)
+                    bisher = kuerzeste.get(schluessel)
+                    if bisher is None or weg(tiefe, gefunden) < weg(tiefe, bisher):
+                        kuerzeste[schluessel] = gefunden
+    return list(kuerzeste.values())
+
+
+def weg(tiefe: dict[str, int], endpunkt: Endpunkt) -> int:
+    """Return the steps from the root to an endpoint along its indexed path."""
+    return tiefe.get(endpunkt.pfad[0].knoten, len(tiefe)) + len(endpunkt.pfad)
+
+
+def tiefen(graph: Abfragegraph) -> dict[str, int]:
+    """Return each node's fewest steps from the root, walking every answer, input and switch."""
+    tiefe = {graph.meta.wurzel: 0}
+    offen = deque([graph.meta.wurzel])
+    while offen:
+        id_ = offen.popleft()
+        for ziel in graph.knoten[id_].nachfolger():
+            if ziel not in tiefe:
+                tiefe[ziel] = tiefe[id_] + 1
+                offen.append(ziel)
+    return tiefe
 
 
 def fachrichtung_von(protokoll: str) -> str:

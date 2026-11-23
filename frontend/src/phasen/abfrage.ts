@@ -1,7 +1,10 @@
 import type {Abfragegraph} from '../modell/abfragegraph'
-import {endergebnis, type Ergebnis} from '../modell/abfrageweg'
+import {endergebnis, istStillstand, type Ergebnis} from '../modell/abfrageweg'
 import type {Ziel} from '../modell/szenario'
 import type {Bewertung, Codestufe, Phase, Urteil} from './typen'
+
+/** The code a person who does not breathe ends at straight away. */
+const STILLSTAND_CODE = '09E01'
 
 /** Categories that say nothing about the resources alerted. */
 const OHNE_KATEGORIE = new Set(['', 'Aufwertung entfällt.'])
@@ -34,6 +37,7 @@ function protokollVon(graph: Abfragegraph, knoten: string): string {
  */
 export function codestufe(graph: Abfragegraph, soll: Ziel, ist: Ergebnis): Codestufe {
     if (ist.knoten === soll.knoten || ist.code === soll.code) return 'exakt'
+    if (istStillstand(graph.knoten[soll.knoten]?.kategorie ?? '') && ist.code === STILLSTAND_CODE) return 'exakt'
     const protokoll = protokollVon(graph, soll.knoten)
     if (protokoll && protokoll === protokollVon(graph, ist.knoten)) return 'protokoll'
     const wahr = graph.knoten[soll.knoten]?.kategorie ?? ''

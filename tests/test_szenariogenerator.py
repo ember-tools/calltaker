@@ -82,15 +82,18 @@ def test_meldehand_und_vor_ort_passen_zusammen(graph):
         assert vor_ort in VOR_ORT[hand]
 
 
-def test_tote_personen_im_protokoll_09_atmen_nicht(graph):
-    tote = Erzeugung(kategorie="RD5.")
-    endpunkte = {e.knoten: e for e in graph.endpunkte}
-    gesehen = 0
-    for szenario in viele(graph, 400, tote):
-        if endpunkte[szenario.ziel.knoten].protokoll == "rd.09":
-            gesehen += 1
-            assert szenario.antworten["rd.atmung"].antwort == "atmet-nicht"
-    assert gesehen > 0
+def test_stillstaende_kommen_nur_ueber_atmet_nicht_zu_09e01(graph):
+    szenarien = viele(graph, 300, Erzeugung(kategorie="RD1NC"))
+    stillstand = [s for s in szenarien if s.antworten["rd.atmung"].antwort == "atmet-nicht"]
+    assert stillstand
+    assert {s.ziel.code[:5] for s in stillstand} <= {"09E01", "09B01"}
+    assert "09E01" in {s.ziel.code for s in stillstand}
+    assert all("rd.hauptbeschwerde" not in s.antworten for s in stillstand)
+    assert all(
+        s.ziel.code.startswith("09B01")
+        for s in viele(graph, 200, Erzeugung(kategorie="RD5."))
+        if s.antworten["rd.atmung"].antwort == "atmet-nicht"
+    )
 
 
 def test_titel_ohne_eigenen_anlass_nennen_das_protokoll(graph):
@@ -199,3 +202,35 @@ def test_ein_ort_ausserhalb_des_bezirks_wird_nicht_genommen(graph):
     )
     szenario = viele(graph, 1, Erzeugung(anteil_orte=100, bezirk="Neukölln"), quellen=quellen)[0]
     assert szenario.ort.objekt == ""
+
+
+def test_neugeborene_sind_unter_den_stillstaenden_selten(graph):
+    endpunkte = {e.knoten: e for e in graph.endpunkte}
+    stillstand = [
+        s for s in viele(graph, 600, Erzeugung(kategorie="RD1NC")) if s.ziel.code == "09E01"
+    ]
+    neugeboren = sum("NNAD" in endpunkte[s.ziel.knoten].kategorie for s in stillstand)
+    assert stillstand
+    assert neugeboren / len(stillstand) < 0.15
+
+
+def test_sichere_todeszeichen_werden_ueber_atmet_nicht_gezogen(graph):
+    tot = viele(graph, 300, Erzeugung(kategorie="RD5."))
+    am_ende = [s for s in tot if s.ziel.code.startswith("09B01")]
+    assert am_ende
+    assert all(s.antworten["rd.atmung"].antwort == "atmet-nicht" for s in am_ende)
+    assert all("rd.09.todeszeichen" in s.antworten for s in am_ende)
+
+
+def test_varianten_eines_codes_teilen_sich_seine_chance(graph):
+    from szenariogenerator import gewichte_der_codes
+
+    neunzehn = [
+        e for e in graph.endpunkte if e.protokoll == "rd.09" and e.pfad[0].knoten == "rd.atmung"
+    ]
+    gewichte = dict(zip([e.knoten for e in neunzehn], gewichte_der_codes(neunzehn), strict=True))
+    tod = sum(g for k, g in gewichte.items() if "09b01" in k)
+    stillstand = sum(g for k, g in gewichte.items() if "09e01" in k)
+    assert tod == pytest.approx(1.0)
+    assert stillstand == pytest.approx(1.0)
+    assert gewichte["rd.09.09e01-2"] < gewichte["rd.09.09e01"] / 5

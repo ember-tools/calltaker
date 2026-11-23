@@ -1223,6 +1223,54 @@
       "kategorie": "RD5.",
       "anlass": "09O01y",
       "stichwort": "RD5."
+    },
+    "rd.09.todeszeichen": {
+      "frage": "Gibt es sichere Todeszeichen?",
+      "hinweis": "Nur bei sicheren Todeszeichen keine Reanimation. Im Zweifel immer reanimieren lassen.",
+      "antworten": [
+        {
+          "id": "keine",
+          "label": "Keine sicheren Todeszeichen / unklar: Reanimation",
+          "aussage": "Es gibt keine sicheren Todeszeichen.",
+          "ziel": "rd.09.k6"
+        },
+        {
+          "id": "kalt-und-steif-in-warmer-umgebung",
+          "label": "Kalt und steif in warmer Umgebung",
+          "ziel": "rd.09.09b01a",
+          "aussage": "Kalt und steif in warmer Umgebung"
+        },
+        {
+          "id": "enthauptung",
+          "label": "Enthauptung",
+          "ziel": "rd.09.09b01b",
+          "aussage": "Enthauptung"
+        },
+        {
+          "id": "verwesung",
+          "label": "Verwesung",
+          "ziel": "rd.09.09b01c",
+          "aussage": "Verwesung"
+        },
+        {
+          "id": "verbrennung-verkohlung",
+          "label": "Verbrennung/Verkohlung",
+          "ziel": "rd.09.09b01d",
+          "aussage": "Verbrennung/Verkohlung"
+        },
+        {
+          "id": "schon-lange-tot-aelteres-ereignis",
+          "label": "Schon lange tot (ÄLTERES EREIGNIS)",
+          "ziel": "rd.09.09b01e",
+          "aussage": "Schon lange tot (ÄLTERES EREIGNIS)"
+        },
+        {
+          "id": "schwerste-mit-dem-leben-nicht-zu",
+          "label": "Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "ziel": "rd.09.09b01f",
+          "aussage": "Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen"
+        }
+      ]
     }
   }
 }
