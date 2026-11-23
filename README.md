@@ -57,3 +57,10 @@ The instructions to the caller in `daten/anleitungen/` (what to do until help ar
 for training from general public guidance: the fire brigades' fire safety advice and the ERC
 guidelines 2021 for first aid and basic life support. They have not been checked by a medical or
 fire service authority and are shown as written.
+
+The list of UN numbers in `daten/gefahrstoffe/` is taken from
+[chemie.de](https://www.chemie.de/lexikon/Liste_der_UN-Nummern.html), which carries the German
+Wikipedia's [Liste der UN-Nummern](https://de.wikipedia.org/wiki/Liste_der_UN-Nummern) under the
+GNU Free Documentation License; its authors are listed in the
+[article history](https://de.wikipedia.org/w/index.php?title=Liste_der_UN-Nummern&action=history).
+`./toolchain.sh data-un` takes it again.

@@ -14,11 +14,12 @@ from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import JSONResponse
 
 import adressen_api
+import gefahrstoffe
 import kacheln
 import orte_api
 import uebung_api
 from adressen import Adressen
-from api import abfragebuendel, abfragegraph, router
+from api import abfragebuendel, abfragegraph, gefahrstoffe_geladen, router
 from einstellungen import einstellungen
 from fehlermeldung import deutsch
 from frontend import frontend_einbinden
@@ -109,7 +110,12 @@ async def ungueltige_anfrage(_: Request, fehler: RequestValidationError) -> JSON
 
 def erzeuger(adressen: Adressen, orte: Orte) -> Callable[[Erzeugung], Szenario]:
     """Return what makes up scenarios: the graph, addresses or places, and a fresh random source."""
-    quellen = Quellen(adresse=adressen.zufall, ort=orte.zufall, naechste=adressen.naechste)
+    quellen = Quellen(
+        adresse=adressen.zufall,
+        ort=orte.zufall,
+        naechste=adressen.naechste,
+        gefahrstoffe=gefahrstoffe.mit_warntafel(gefahrstoffe_geladen()),
+    )
 
     def erzeugen(erzeugung: Erzeugung) -> Szenario:
         return generieren(abfragegraph(), quellen, erzeugung, random.Random())

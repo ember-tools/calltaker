@@ -130,4 +130,6 @@ export interface Abfragegraph {
     knoten: Record<string, Knoten>
     endpunkte: Endpunkt[]
     anleitungen?: Anleitung[]
+    /** When a call can involve an orange plate: by protocol, or by an answer saying so. */
+    warntafel?: {protokolle: string[], antworten: {knoten: string, antwort: string}[]}
 }

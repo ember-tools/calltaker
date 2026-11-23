@@ -51,6 +51,7 @@ export const standort: Phase = {
             bewertungen.push(vergleich('bewertung.objekt', wahr.objekt, eintraege.ort.objekt, ist => vergleichsform(ist).includes(vergleichsform(wahr.objekt))))
         }
         bewertungen.push(...punkt(eintraege, szenario))
+        if (wahr.gefahrgut) bewertungen.push(vergleich('bewertung.gefahrgut', wahr.gefahrgut.un, eintraege.ort.gefahrgut?.un ?? '', ist => ist.trim() === wahr.gefahrgut?.un))
         if (wahr.geschoss) bewertungen.push(vergleich('bewertung.geschoss', wahr.geschoss, eintraege.ort.geschoss, ist => vergleichsform(ist) === vergleichsform(wahr.geschoss)))
         return bewertungen
     },

@@ -1,4 +1,5 @@
 import type {Adresse} from './szenario'
+import type {Warntafel} from './gefahrstoffe'
 
 /** One step of the trainee's path: the node, and the answer chosen or the value typed. */
 export interface Schritteintrag {
@@ -34,6 +35,8 @@ export interface Eintraege {
         klingel: string
         anfahrt: string
         gefahren: string
+        /** The orange plate as read out by the caller. */
+        gefahrgut?: Warntafel
     }
     anrufer: {name: string, rufnummerBestaetigt: boolean, rueckrufnummer: string}
     betroffener: string

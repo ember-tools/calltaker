@@ -23,6 +23,7 @@ class Einstellungen(BaseSettings):
     abfrage_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "abfrage"
     orte_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "orte"
     anleitungen_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "anleitungen"
+    gefahrstoffe_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "gefahrstoffe"
 
     def adressen_datei(self) -> Path:
         """Return where the address list is kept: in the data folder."""

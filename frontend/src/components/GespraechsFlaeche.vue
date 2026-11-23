@@ -2,6 +2,7 @@
 import {computed, ref} from 'vue'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import {endergebnis, type Ergebnis} from '../modell/abfrageweg'
+import {mitWarntafel} from '../modell/warntafel'
 import type {Eintraege} from '../modell/eintraege'
 import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
 import type {AnrufSicht} from '../modell/uebung'
@@ -21,6 +22,7 @@ const emit = defineEmits<{sofort: []}>()
 const staende = computed(() => phasenstand(eintraege.value, {graph: props.graph, anruf: props.anruf}))
 const aktivePhase = computed(() => staende.value.find(stand => stand.fehlend.length > 0)?.phase.id ?? '')
 const ergebnis = computed(() => endergebnis(props.graph, eintraege.value.abfrage))
+const warntafel = computed(() => mitWarntafel(props.graph, eintraege.value.abfrage.pfad))
 const alter = computed(() => eintraege.value.abfrage.pfad.find(schritt => schritt.knoten === 'rd.alter')?.wert)
 const sna = ref<InstanceType<typeof SnaFenster> | null>(null)
 const maske = ref<InstanceType<typeof EinsatzMaske> | null>(null)
@@ -48,7 +50,7 @@ defineExpose({snaZeigen, maskeZeigen, hinweiseZeigen})
     <div class="flex flex-col gap-3">
         <SchrittLeiste :staende="staende" :aktiv="aktivePhase"/>
         <div class="flex flex-wrap gap-4">
-            <EinsatzMaske ref="maske" v-model="eintraege" v-model:suche="suche" class="max-w-lg min-w-0 flex-[1_1_26rem]" :anruf="anruf" :ruhig="ruhig" :stichwort="ergebnis ? `${ergebnis.code} · ${ergebnis.kategorie}` : ''" :alter="alter" @sna="snaZeigen" @sofort="emit('sofort')"/>
+            <EinsatzMaske ref="maske" v-model="eintraege" v-model:suche="suche" class="max-w-lg min-w-0 flex-[1_1_26rem]" :anruf="anruf" :ruhig="ruhig" :stichwort="ergebnis ? `${ergebnis.code} · ${ergebnis.kategorie}` : ''" :alter="alter" :warntafel="warntafel" @sna="snaZeigen" @sofort="emit('sofort')"/>
             <div class="flex min-w-0 flex-[999_1_36rem] flex-col gap-3">
                 <ReanimationsLeiste v-model="eintraege" :graph="graph" :ruhig="ruhig" @sofort="emit('sofort')"/>
                 <SnaFenster ref="sna" v-model="eintraege.abfrage" v-model:ui="ui" :graph="graph" :schwerste="schwerste" :gesperrt="!eintraege.ort.koordinaten" :seit="anruf.angenommenUm" @sofort="emit('sofort')"/>

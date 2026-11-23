@@ -7,6 +7,7 @@ from fastapi import APIRouter, Body, HTTPException
 from fastapi.responses import Response
 
 import anleitungen
+import gefahrstoffe
 from abfrage import Abfragegraph, laden
 from einstellungen import einstellungen
 from pool import Pool, PoolVoll, UngueltigeDatei, befunde_nach_aussen
@@ -25,6 +26,12 @@ async def gesundheit() -> dict[str, str]:
 async def abfrage() -> Response:
     """Return the question graph with its code index, as the frontend loads it."""
     return Response(content=abfragebuendel(), media_type="application/json")
+
+
+@router.get("/gefahrstoffe")
+async def gefahrstoffliste() -> Response:
+    """Return the hazardous goods by UN number with where the list comes from."""
+    return Response(content=gefahrstoffbuendel(), media_type="application/json")
 
 
 @router.post("/szenario/pruefen")
@@ -64,10 +71,27 @@ def anleitungskatalog() -> list[anleitungen.Anleitung]:
 
 
 @lru_cache
+def gefahrstoffe_geladen() -> list[gefahrstoffe.Stoff]:
+    """Load the hazardous goods once per process."""
+    return gefahrstoffe.laden(einstellungen().gefahrstoffe_verzeichnis)
+
+
+@lru_cache
+def gefahrstoffbuendel() -> bytes:
+    """Serialise the hazardous goods for the frontend once per process."""
+    buendel = {
+        "herkunft": gefahrstoffe.herkunft(einstellungen().gefahrstoffe_verzeichnis),
+        "stoffe": [stoff.model_dump() for stoff in gefahrstoffe_geladen()],
+    }
+    return json.dumps(buendel, ensure_ascii=False, separators=(",", ":")).encode()
+
+
+@lru_cache
 def abfragebuendel() -> bytes:
     """Serialise the question graph and the instructions for the frontend once per process."""
     buendel = {
         **abfragegraph().buendel(),
         "anleitungen": anleitungen.nach_aussen(anleitungskatalog()),
+        "warntafel": gefahrstoffe.warntafel_regeln(),
     }
     return json.dumps(buendel, ensure_ascii=False, separators=(",", ":")).encode()

@@ -10,6 +10,7 @@ import {bewerten} from '../phasen/register'
 import {zeile} from '../phasen/standort'
 import type {Urteil} from '../phasen/typen'
 import PfadVergleichListe from './PfadVergleichListe.vue'
+import WarntafelAnzeige from './WarntafelAnzeige.vue'
 
 const props = defineProps<{graph: Abfragegraph, anruf: Anruf}>()
 const emit = defineEmits<{korrigieren: [anleitung: string, gegeben: boolean]}>()
@@ -52,6 +53,10 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
             </template>
             <dt class="text-gedaempft">{{ t('wahrheit.ort') }}</dt>
             <dd class="m-0">{{ adresse }}</dd>
+            <template v-if="szenario.ort.gefahrgut">
+                <dt class="text-gedaempft">{{ t('warntafel.titel') }}</dt>
+                <dd class="m-0"><WarntafelAnzeige :tafel="szenario.ort.gefahrgut"/></dd>
+            </template>
             <template v-for="angabe in ortsangaben" :key="angabe.feld">
                 <dt class="text-gedaempft">{{ t(`maske.${angabe.feld}`) }}</dt>
                 <dd class="m-0">{{ angabe.wert }}</dd>

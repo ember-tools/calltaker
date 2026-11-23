@@ -370,13 +370,38 @@
         "Gehen Sie vom Stoff weg, mit dem Wind im Rücken.",
         "Fassen Sie nichts an und atmen Sie nichts ein.",
         "Rauchen Sie nicht und machen Sie kein Feuer.",
-        "Halten Sie andere fern."
+        "Halten Sie andere fern.",
+        "Bei einer Warntafel: Lesen Sie mir die Zahlen vor, oben und unten, aber gehen Sie dafür nicht näher heran."
       ],
       "pflicht": true,
       "wenn": [
         {
           "protokolle": [
             "fw.th.gefahrstoffe"
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.th.verkehrsunfall.k3",
+              "antwort": "gefahrgut"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.fahrzeugbrand.k2",
+              "antwort": "gefahrgut"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.industrie-und-gewerbebrand.k0",
+              "antwort": "anlage-mit-gefahrstoffen"
+            }
           ]
         },
         {

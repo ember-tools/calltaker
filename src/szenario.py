@@ -39,6 +39,13 @@ class Adresse(Modell):
     ortsteil: str = ""
 
 
+class Gefahrgut(Modell):
+    """The orange plate on a vehicle or tank: hazard number on top, UN number below."""
+
+    un: str = Field(pattern=r"^\d{4}$")
+    gefahrenzahl: str = Field("", max_length=8)
+
+
 class Ort(Modell):
     """Where the emergency is: address, point and what a crew needs to find it.
 
@@ -52,6 +59,7 @@ class Ort(Modell):
     klingel: str = ""
     anfahrt: str = ""
     gefahren: str = ""
+    gefahrgut: Gefahrgut | None = None
 
 
 class Anrufer(Modell):

@@ -158,6 +158,7 @@ export default {
         sekunden: '{sekunden} s',
     },
     bewertung: {
+        gefahrgut: 'UN-Nummer',
         anleitung: 'Hinweis',
         adresse: 'Adresse',
         objekt: 'Objekt',
@@ -168,6 +169,14 @@ export default {
         rueckrufnummer: 'Rückrufnummer',
         codeVorAufwertung: 'Code vor der Aufwertung',
         abbruch: 'Abbruch mit Begründung',
+    },
+    warntafel: {
+        titel: 'Warntafel',
+        gefahrenzahl: 'Gefahrenzahl (oben)',
+        un: 'UN-Nummer (unten)',
+        klasse: 'Klasse {klasse}',
+        unbekannt: 'Diese UN-Nummer steht nicht in der Liste.',
+        name: 'Stoff nach Namen suchen',
     },
     reanimation: {
         titel: 'Telefonreanimation',

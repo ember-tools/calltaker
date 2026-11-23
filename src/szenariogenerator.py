@@ -21,18 +21,20 @@ gets a child.
 import random
 import re
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
 from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
+from gefahrstoffe import GEFAHRGUT_ANTWORTEN, GEFAHRGUT_PROTOKOLL, Stoff
 from generator import festnetznummer, mobilnummer, zufallsname
 from szenario import (
     Adresse,
     Anrufer,
     Betroffener,
+    Gefahrgut,
     Herkunft,
     Ort,
     Rolle,
@@ -137,6 +139,7 @@ class Quellen:
     adresse: Callable[[random.Random, str, str], dict | None]
     ort: Callable[..., dict | None]
     naechste: Callable[[float, float], dict | None] = lambda *_: None
+    gefahrstoffe: list[Stoff] = field(default_factory=list)
 
 
 def disziplin_von(endpunkt: Endpunkt) -> Disziplin:
@@ -574,6 +577,13 @@ def gleichwertige(
     return zufall.choice(antworten)
 
 
+def mit_gefahrgut(endpunkt: Endpunkt, antworten: dict[str, Wahl]) -> bool:
+    """Tell whether a scenario carries hazardous goods, by its protocol or an answer saying so."""
+    if endpunkt.protokoll == GEFAHRGUT_PROTOKOLL:
+        return True
+    return any((knoten, wahl.antwort) in GEFAHRGUT_ANTWORTEN for knoten, wahl in antworten.items())
+
+
 def generieren(
     graph: Abfragegraph, quellen: Quellen, erzeugung: Erzeugung, zufall: random.Random
 ) -> Szenario:
@@ -597,6 +607,9 @@ def generieren(
         an_tuer = bool(ort.adresse.hausnummer) and not ort.objekt
         ort.geschoss = zufall.choice(GESCHOSSE) if an_tuer else ""
         ort.klingel = betroffen.split()[-1] if an_tuer else ""
+    if quellen.gefahrstoffe and mit_gefahrgut(endpunkt, antworten):
+        stoff = zufall.choice(quellen.gefahrstoffe)
+        ort.gefahrgut = Gefahrgut(un=stoff.un, gefahrenzahl=stoff.gefahrenzahl)
     stimmungen = STIMMUNGEN[stufe(endpunkt.kategorie)]
     stimmung = zufall.choices(list(stimmungen), weights=list(stimmungen.values()))[0]
     return Szenario(

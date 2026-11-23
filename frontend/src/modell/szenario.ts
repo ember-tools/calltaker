@@ -1,3 +1,5 @@
+import type {Warntafel} from './gefahrstoffe'
+
 /** A postal address in Berlin. */
 export interface Adresse {
     strasse: string
@@ -18,6 +20,8 @@ export interface Ort {
     klingel: string
     anfahrt: string
     gefahren: string
+    /** The orange plate the scenario's vehicle or tank carries. */
+    gefahrgut?: Warntafel
 }
 
 /** Who calls: the name, the number shown, and the number the caller is reachable under. */
