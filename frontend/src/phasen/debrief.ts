@@ -4,6 +4,7 @@ import type {Szenario} from '../modell/szenario'
 import type {AnrufSicht} from '../modell/uebung'
 import {vergleichePfad, type Pfadvergleich} from '../modell/wahrheitspfad'
 import {bewerten, nochOffen, type Phasenbewertung} from './register'
+import {reanimationBewerten, reanimationsphase, STANDARDZIELE, uebergabeBewerten, uebergabephase, type Zielzeiten} from './zeitbewertung'
 
 /** The times of a call in seconds; a step not reached stays undefined. */
 export interface Gespraechszeiten {
@@ -13,6 +14,10 @@ export interface Gespraechszeiten {
     adresse?: number
     /** From accepting to a code. */
     code?: number
+    /** From accepting to starting CPR guidance. */
+    reanimation?: number
+    /** From accepting to handing over to dispatch. */
+    uebergabe?: number
     /** From accepting to ending. */
     gespraech?: number
 }
@@ -38,9 +43,9 @@ function spanne(von?: number, bis?: number): number | undefined {
 }
 
 /**
- * The times of a call: ringing to accepting, accepting to the location, to the code, and the
- * length of the conversation. The location and code moments are the server's, stamped when they
- * were first entered.
+ * The times of a call: ringing to accepting, accepting to the location, to the code, to CPR
+ * guidance and to the handover, and the length of the conversation. Those moments are the
+ * server's, stamped when they first happened.
  *
  * @param anruf the call
  * @returns its times
@@ -51,6 +56,8 @@ export function zeitenVon(anruf: AnrufSicht): Gespraechszeiten {
         annahme: spanne(anruf.klingeltSeit, anruf.angenommenUm),
         adresse: spanne(anruf.angenommenUm, zeiten.adresse),
         code: spanne(anruf.angenommenUm, zeiten.code),
+        reanimation: spanne(anruf.angenommenUm, zeiten.reanimation),
+        uebergabe: spanne(anruf.angenommenUm, zeiten.uebergabe),
         gespraech: spanne(anruf.angenommenUm, anruf.beendetUm),
     }
 }
@@ -62,12 +69,17 @@ export function zeitenVon(anruf: AnrufSicht): Gespraechszeiten {
  * @param graph the graph
  * @param anruf the call as the trainee sees it
  * @param szenario its truth
+ * @param ziele the target times for CPR and the handover
  * @returns the debrief
  */
-export function debrief(graph: Abfragegraph, anruf: AnrufSicht, szenario: Szenario): Debrief {
+export function debrief(graph: Abfragegraph, anruf: AnrufSicht, szenario: Szenario, ziele: Zielzeiten = STANDARDZIELE): Debrief {
     const eintraege = mitKorrektur(anruf.eintraege ?? leereEintraege(), anruf.korrektur)
     return {
-        phasen: bewerten(eintraege, szenario, graph),
+        phasen: [
+            ...bewerten(eintraege, szenario, graph),
+            {phase: reanimationsphase, bewertungen: reanimationBewerten(graph, anruf, szenario, ziele)},
+            {phase: uebergabephase, bewertungen: uebergabeBewerten(graph, anruf, szenario, ziele)},
+        ],
         pfad: vergleichePfad(graph, szenario.antworten, eintraege.abfrage.pfad),
         zeiten: zeitenVon(anruf),
         fehlend: nochOffen(eintraege, {graph, anruf}),

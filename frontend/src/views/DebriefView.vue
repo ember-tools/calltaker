@@ -28,7 +28,7 @@ const eintrag = computed(() => ausgewertet.value.find(a => a.anruf.id === props.
         <main v-else class="mx-auto max-w-4xl p-5">
             <p v-if="fehler" role="alert" class="m-0 text-fehler">{{ t('trainee.graphFehlt', {fehler}) }}</p>
             <p v-else-if="!zustand || !graph" class="m-0 text-gedaempft">{{ t('allgemein.laden') }}</p>
-            <DebriefAnsicht v-else-if="eintrag" :graph="graph" :anruf="eintrag.anruf" :szenario="eintrag.szenario"/>
+            <DebriefAnsicht v-else-if="eintrag" :graph="graph" :anruf="eintrag.anruf" :szenario="eintrag.szenario" :ziele="eintrag.ziele"/>
             <p v-else class="m-0 text-gedaempft">{{ t('debrief.keiner') }}</p>
         </main>
     </div>

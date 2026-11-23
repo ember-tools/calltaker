@@ -15,14 +15,15 @@ export function useAuswertung(zustand: Ref<ZustandFuer<Rolle> | null>, rolle: Ro
     const anrufe = computed(() => zustand.value?.anrufe ?? [])
     const ausgewertet = computed<Ausgewertet[]>(() => {
         if (!zustand.value) return []
+        const ziele = zustand.value.engine.ziele
         if (rolle === 'ausbilder') {
             return (zustand.value as ZustandFuer<'ausbilder'>).anrufe
                 .filter(a => a.zustand === 'beendet')
-                .map(a => ({anruf: sichtVon(a), szenario: a.szenario}))
+                .map(a => ({anruf: sichtVon(a), szenario: a.szenario, ziele}))
         }
         return (zustand.value as ZustandFuer<'trainee'>).anrufe
             .filter(a => a.zustand === 'beendet' && a.szenario)
-            .map(a => ({anruf: a, szenario: a.szenario!}))
+            .map(a => ({anruf: a, szenario: a.szenario!, ziele}))
     })
     return {anrufe, ausgewertet}
 }

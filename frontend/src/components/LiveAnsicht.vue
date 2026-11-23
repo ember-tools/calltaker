@@ -36,7 +36,7 @@ watch(() => gespraech.value?.id, id => {
             <SpiegelAnsicht v-if="anruf && anruf.zustand === 'gespraech'" class="min-w-0 flex-[2_1_40rem]" :graph="graph" :schwerste="schwerste" :anruf="anruf" :spiegel="zustand.spiegel"/>
             <div class="flex min-w-0 flex-[1_1_24rem] flex-col gap-3">
                 <template v-if="anruf">
-                    <WahrheitsKarte :graph="graph" :anruf="anruf" @korrigieren="(anleitung, gegeben) => absicht('anleitung.korrigieren', {anrufId: anruf!.id, anleitung, gegeben})"/>
+                    <WahrheitsKarte :graph="graph" :anruf="anruf" :ziele="zustand.engine.ziele" @korrigieren="(anleitung, gegeben) => absicht('anleitung.korrigieren', {anrufId: anruf!.id, anleitung, gegeben})"/>
                     <OrtVergleich :anruf="anruf"/>
                 </template>
                 <p v-else class="m-0 text-sm text-gedaempft">{{ t('live.keinAnruf') }}</p>

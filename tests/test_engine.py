@@ -329,3 +329,10 @@ def test_das_naechste_klingeln_liegt_fuer_den_ausbilder_nie_in_der_vergangenheit
     laufen(uebung, uhr, 300)
     uebung.engine.sofort_klingeln(uebung.pool.szenarien[0].id)
     assert uebung.engine.zustand(Rolle.AUSBILDER)["naechstesKlingeln"] >= uhr.jetzt
+
+
+def test_beide_rollen_sehen_die_zielzeiten(uebung):
+    engine = uebung.engine
+    engine.parameter_setzen(engine.parameter.model_copy(update={"ziel_reanimation": 90}))
+    for rolle in Rolle:
+        assert engine.zustand(rolle)["ziele"] == {"reanimation": 90, "uebergabe": 60}

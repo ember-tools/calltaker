@@ -1,5 +1,6 @@
 import type {Eintraege} from './eintraege'
 import type {Befund, Szenario} from './szenario'
+import type {Zielzeiten} from './zeit'
 
 /** Which role a code stands for. */
 export type Rolle = 'ausbilder' | 'trainee'
@@ -78,6 +79,8 @@ export interface EngineParameter {
     zurueckInPool: boolean
     /** Whether an empty pool makes up scenarios instead of leaving the queue quiet. */
     autoGenerieren: boolean
+    zielReanimation: number
+    zielUebergabe: number
 }
 
 /** What the trainer sets for made-up scenarios: weights per discipline, a category, an area. */
@@ -98,6 +101,7 @@ export interface EngineSicht {
     pausiert: boolean
     automatischPausiert: boolean
     pausiertSeit?: number
+    ziele?: Zielzeiten
 }
 
 /** The queue engine's state as the trainer sees it. */

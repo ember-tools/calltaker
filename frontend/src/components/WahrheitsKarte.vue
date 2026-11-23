@@ -8,22 +8,31 @@ import {mitKorrektur} from '../modell/eintraege'
 import {dauer} from '../composables/useUhr'
 import {anzeigen} from '../modell/rufnummer'
 import {nachtraege} from '../modell/uebergabe'
-import type {Anruf} from '../modell/uebung'
+import {sichtVon, type Anruf} from '../modell/uebung'
 import {vergleichePfad} from '../modell/wahrheitspfad'
 import {bewerten} from '../phasen/register'
+import {reanimationBewerten, STANDARDZIELE, uebergabeBewerten, type Zielzeiten} from '../phasen/zeitbewertung'
 import {zeile} from '../phasen/standort'
 import type {Urteil} from '../phasen/typen'
 import PfadVergleichListe from './PfadVergleichListe.vue'
 import WarntafelAnzeige from './WarntafelAnzeige.vue'
 
-const props = defineProps<{graph: Abfragegraph, anruf: Anruf}>()
+const props = defineProps<{graph: Abfragegraph, anruf: Anruf, ziele?: Zielzeiten}>()
 const emit = defineEmits<{korrigieren: [anleitung: string, gegeben: boolean]}>()
 
 const {t} = useI18n()
 const szenario = computed(() => props.anruf.szenario)
 const ziel = computed(() => props.graph.knoten[szenario.value.ziel.knoten])
 const vergleich = computed(() => vergleichePfad(props.graph, szenario.value.antworten, props.anruf.eintraege.abfrage.pfad))
-const bewertungen = computed(() => bewerten(mitKorrektur(props.anruf.eintraege, props.anruf.korrektur), szenario.value, props.graph).flatMap(p => p.bewertungen))
+const bewertungen = computed(() => {
+    const sicht = sichtVon(props.anruf)
+    const ziele = props.ziele ?? STANDARDZIELE
+    return [
+        ...bewerten(mitKorrektur(props.anruf.eintraege, props.anruf.korrektur), szenario.value, props.graph).flatMap(p => p.bewertungen),
+        ...reanimationBewerten(props.graph, sicht, szenario.value, ziele),
+        ...(props.anruf.zustand === 'beendet' || props.anruf.eintraege.zeiten.uebergabe ? uebergabeBewerten(props.graph, sicht, szenario.value, ziele) : []),
+    ]
+})
 const adresse = computed(() => zeile(szenario.value.ort.adresse))
 const rolle = computed(() => {
     const {stimmung, sprache} = szenario.value.rolle

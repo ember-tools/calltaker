@@ -40,7 +40,7 @@ export function zustandMit(anrufe: Anruf[]): AusbilderZustand {
         verbunden: {ausbilder: true, trainee: true},
         engine: {
             gestartet: true, pausiert: false, automatischPausiert: false, manuellPausiert: false, naechstesKlingeln: null,
-            parameter: {erstesKlingelnMin: 5, erstesKlingelnMax: 10, basisAbstand: 45, abstandFaktor: 1.6, maxSchlange: 5, geduldMin: 60, geduldMax: 300, zurueckInPool: true, autoGenerieren: true},
+            parameter: {erstesKlingelnMin: 5, erstesKlingelnMax: 10, basisAbstand: 45, abstandFaktor: 1.6, maxSchlange: 5, geduldMin: 60, geduldMax: 300, zurueckInPool: true, autoGenerieren: true, zielReanimation: 120, zielUebergabe: 60},
         },
         pool: [anrufMit('p').szenario],
         poolBefunde: {},

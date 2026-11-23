@@ -8,10 +8,12 @@ import type {Uebersichtszeile} from '../phasen/uebersicht'
 defineProps<{zeilen: Uebersichtszeile[], code: string, rolle: Rolle}>()
 
 const {t} = useI18n()
+const TEXTFELDER = new Set(['bewertung.reanimation', 'bewertung.uebergabe', 'bewertung.anleitung'])
 const FARBE: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-warnung', falsch: 'text-fehler', offen: 'text-fehler', hinweis: ''}
 
 /**
- * A comparison as a short mark for the table.
+ * A comparison as a short mark for the table: a distance, a code's closeness, a time or a count, or
+ * the verdict.
  *
  * @param bewertung the comparison, if the call has one for this field
  * @returns the mark
@@ -20,6 +22,7 @@ function marke(bewertung?: Bewertung): string {
     if (!bewertung) return ''
     if (bewertung.abstand !== undefined) return `${bewertung.abstand} m`
     if (bewertung.stufe) return t(`stufe.${bewertung.stufe}`)
+    if (TEXTFELDER.has(bewertung.feld)) return bewertung.ist || t(`debrief.urteil.${bewertung.urteil}`)
     return t(`debrief.urteil.${bewertung.urteil}`)
 }
 
@@ -44,6 +47,9 @@ function zeit(sekunden?: number): string {
                 <th class="py-1 pr-2">{{ t('bewertung.adresse') }}</th>
                 <th class="py-1 pr-2">{{ t('bewertung.punkt') }}</th>
                 <th class="py-1 pr-2">{{ t('bewertung.rueckrufnummer') }}</th>
+                <th class="py-1 pr-2">{{ t('phase.anleitung') }}</th>
+                <th class="py-1 pr-2">{{ t('bewertung.reanimation') }}</th>
+                <th class="py-1 pr-2">{{ t('bewertung.uebergabe') }}</th>
                 <th class="py-1 pr-2">{{ t('debrief.zeit.code') }}</th>
                 <th class="py-1">{{ t('debrief.zeit.gespraech') }}</th>
             </tr>
@@ -53,7 +59,7 @@ function zeit(sekunden?: number): string {
                 <th scope="row" class="py-1 pr-2 text-left font-normal">
                     <RouterLink :to="{name: `${rolle}-debrief`, params: {code, anrufId: zeile.id}}" class="underline">{{ zeile.titel }}</RouterLink>
                 </th>
-                <td v-for="(bewertung, spalte) in [zeile.code, zeile.adresse, zeile.punkt, zeile.rueckrufnummer]" :key="spalte" :class="['py-1 pr-2', bewertung ? FARBE[bewertung.urteil] : '']">{{ marke(bewertung) }}</td>
+                <td v-for="(bewertung, spalte) in [zeile.code, zeile.adresse, zeile.punkt, zeile.rueckrufnummer, zeile.anleitung, zeile.reanimation, zeile.uebergabe]" :key="spalte" :class="['py-1 pr-2', bewertung ? FARBE[bewertung.urteil] : '']">{{ marke(bewertung) }}</td>
                 <td class="py-1 pr-2 font-mono">{{ zeit(zeile.zeiten.code) }}</td>
                 <td class="py-1 font-mono">{{ zeit(zeile.zeiten.gespraech) }}</td>
             </tr>

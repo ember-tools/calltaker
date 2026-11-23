@@ -427,3 +427,17 @@ def test_der_ausbilder_korrigiert_gegebene_anleitungen(client, codes):
         gegeben=False,
     )
     assert wieder.status_code == 200
+
+
+def test_zielzeiten_sind_begrenzt_und_fuer_beide_sichtbar(client, codes):
+    a, t = codes["ausbilderCode"], codes["traineeCode"]
+    for wert in (5, 1000):
+        zu = absicht(client, a, art="engine.parameter", parameter={"zielReanimation": wert})
+        assert zu.status_code == 422
+    assert (
+        absicht(client, a, art="engine.parameter", parameter={"zielUebergabe": 90}).status_code
+        == 200
+    )
+    engine = zustand_von(client, t)["engine"]
+    assert engine["ziele"] == {"reanimation": 120, "uebergabe": 90}
+    assert "parameter" not in engine

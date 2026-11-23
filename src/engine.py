@@ -42,7 +42,11 @@ Z_95 = 1.6449
 
 
 class Parameter(BaseModel):
-    """The engine's settings, which the trainer may change while the exercise runs."""
+    """The engine's settings, which the trainer may change while the exercise runs.
+
+    Besides the queue, they hold the target times the debrief measures against: from answering to
+    starting CPR guidance, and to handing a fire or rescue call over to dispatch.
+    """
 
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True, extra="forbid")
 
@@ -55,6 +59,8 @@ class Parameter(BaseModel):
     geduld_max: float = Field(300, gt=0, le=7200)
     zurueck_in_pool: bool = True
     auto_generieren: bool = True
+    ziel_reanimation: float = Field(120, ge=10, le=900)
+    ziel_uebergabe: float = Field(60, ge=10, le=900)
 
     @model_validator(mode="after")
     def spannen(self) -> Self:
@@ -198,6 +204,10 @@ class Engine:
             "gestartet": self.gestartet,
             "pausiert": self.pausiert,
             "automatischPausiert": self.automatisch_pausiert,
+            "ziele": {
+                "reanimation": self.parameter.ziel_reanimation,
+                "uebergabe": self.parameter.ziel_uebergabe,
+            },
         }
         if rolle == Rolle.AUSBILDER:
             sicht["manuellPausiert"] = self.manuell_pausiert

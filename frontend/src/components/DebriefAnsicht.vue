@@ -6,15 +6,16 @@ import type {Abfragegraph} from '../modell/abfragegraph'
 import type {Szenario} from '../modell/szenario'
 import type {AnrufSicht} from '../modell/uebung'
 import {debrief} from '../phasen/debrief'
+import type {Zielzeiten} from '../phasen/zeitbewertung'
 import type {Bewertung, Urteil} from '../phasen/typen'
 import PfadVergleichListe from './PfadVergleichListe.vue'
 
-const props = defineProps<{graph: Abfragegraph, anruf: AnrufSicht, szenario: Szenario}>()
+const props = defineProps<{graph: Abfragegraph, anruf: AnrufSicht, szenario: Szenario, ziele?: Zielzeiten}>()
 
 const {t} = useI18n()
-const ergebnis = computed(() => debrief(props.graph, props.anruf, props.szenario))
+const ergebnis = computed(() => debrief(props.graph, props.anruf, props.szenario, props.ziele))
 const ziel = computed(() => props.graph.knoten[props.szenario.ziel.knoten])
-const ZEITEN = ['annahme', 'adresse', 'code', 'gespraech'] as const
+const ZEITEN = ['annahme', 'adresse', 'code', 'reanimation', 'uebergabe', 'gespraech'] as const
 const URTEIL: Record<Urteil, string> = {richtig: 'bg-green-50 text-ok', teilweise: 'bg-amber-50 text-warnung', falsch: 'bg-red-50 text-fehler', offen: 'bg-red-50 text-fehler', hinweis: ''}
 
 /**
