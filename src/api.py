@@ -8,7 +8,7 @@ from fastapi.responses import Response
 
 from abfrage import Abfragegraph, laden
 from einstellungen import einstellungen
-from pool import Pool, UngueltigeDatei
+from pool import Pool, PoolVoll, UngueltigeDatei, befunde_nach_aussen
 from szenario import Szenario, pruefen
 
 router = APIRouter(prefix="/api")
@@ -42,14 +42,11 @@ async def pool_pruefen(datei: object = Body()) -> dict:
     pool = Pool()
     try:
         befunde = pool.importieren(datei, "ersetzen", abfragegraph())
-    except UngueltigeDatei as fehler:
+    except (UngueltigeDatei, PoolVoll) as fehler:
         raise HTTPException(status_code=422, detail=str(fehler)) from fehler
     return {
         "szenarien": [szenario.nach_aussen() for szenario in pool.szenarien],
-        "befunde": {
-            szenario_id: [befund.nach_aussen() for befund in liste]
-            for szenario_id, liste in befunde.items()
-        },
+        "befunde": befunde_nach_aussen(befunde),
     }
 
 

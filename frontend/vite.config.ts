@@ -15,7 +15,6 @@ export default defineConfig({
         proxy: {
             '/api': backend,
             '/kacheln': backend,
-            '/ws': {target: backend.replace(/^http/, 'ws'), ws: true},
         },
     },
     test: {

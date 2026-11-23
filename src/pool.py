@@ -10,6 +10,7 @@ from szenario import Befund, Modell, Szenario, neue_id, pruefen
 
 POOL_FORMAT = "calltaker-pool"
 POOL_VERSION = 1
+POOL_HOECHSTENS = 200
 
 
 class Pooldatei(Modell):
@@ -19,6 +20,14 @@ class Pooldatei(Modell):
     version: Literal[1]
     abfrage_version: int
     szenarien: list[Szenario] = Field(default_factory=list)
+
+
+class PoolVoll(ValueError):
+    """A pool that already holds as many scenarios as it may."""
+
+    def __init__(self) -> None:
+        """Say so in German."""
+        super().__init__(f"Ein Pool hält höchstens {POOL_HOECHSTENS} Szenarien.")
 
 
 class UngueltigeDatei(ValueError):
@@ -39,6 +48,8 @@ class Pool:
 
     def hinzufuegen(self, szenario: Szenario) -> Szenario:
         """Append a scenario; an id already in the pool gets a new one."""
+        if len(self._szenarien) >= POOL_HOECHSTENS:
+            raise PoolVoll
         if self.finden(szenario.id) is not None:
             szenario = szenario.model_copy(update={"id": neue_id()})
         self._szenarien.append(szenario)
@@ -80,6 +91,9 @@ class Pool:
         taken all the same, so the trainer can correct it in the editor.
         """
         datei = lesen(roh)
+        bestand = 0 if modus == "ersetzen" else len(self._szenarien)
+        if bestand + len(datei.szenarien) > POOL_HOECHSTENS:
+            raise PoolVoll
         if modus == "ersetzen":
             self._szenarien = []
         befunde = {}
@@ -102,3 +116,8 @@ def lesen(roh: object) -> Pooldatei:
         return Pooldatei.model_validate(roh)
     except ValidationError as fehler:
         raise UngueltigeDatei(deutsch(fehler.errors())) from fehler
+
+
+def befunde_nach_aussen(befunde: dict[str, list[Befund]]) -> dict[str, list[dict]]:
+    """Return the findings per scenario as the views read them."""
+    return {szenario_id: [b.nach_aussen() for b in liste] for szenario_id, liste in befunde.items()}

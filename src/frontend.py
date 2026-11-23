@@ -5,13 +5,13 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 
-RESERVIERTE_PRAEFIXE = ("api", "ws", "kacheln")
+RESERVIERTE_PRAEFIXE = ("api", "kacheln")
 
 
 def frontend_einbinden(app: FastAPI, verzeichnis: Path) -> None:
     """Serve the files of the built frontend, and its index for every client-side route.
 
-    Paths under the API, the WebSocket and the tile proxy are never answered with the index, so
+    Paths under the API and the tile proxy are never answered with the index, so
     a mistyped API call fails as a 404 instead of returning HTML.
     """
     index = verzeichnis / "index.html"
@@ -27,6 +27,6 @@ def frontend_einbinden(app: FastAPI, verzeichnis: Path) -> None:
 
 
 def ist_reserviert(pfad: str) -> bool:
-    """Tell whether a path belongs to the API, the WebSocket or the tile proxy."""
+    """Tell whether a path belongs to the API or the tile proxy."""
     erstes = pfad.split("/", 1)[0]
     return erstes in RESERVIERTE_PRAEFIXE

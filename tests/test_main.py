@@ -33,7 +33,7 @@ def test_frontend_liefert_dateien_und_index(tmp_path):
 
 def test_frontend_beantwortet_api_pfade_nicht(tmp_path):
     client = _frontend_app(tmp_path)
-    for pfad in ("/api", "/api/unbekannt", "/ws", "/ws/A-3KX9", "/kacheln", "/kacheln/1/2/3.png"):
+    for pfad in ("/api", "/api/unbekannt", "/kacheln", "/kacheln/1/2/3.png"):
         assert client.get(pfad).status_code == 404, pfad
 
 

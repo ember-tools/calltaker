@@ -2,7 +2,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from main import anwendung_bauen
-from pool import Pool, UngueltigeDatei
+from pool import Pool, PoolVoll, UngueltigeDatei
 from szenario import Szenario
 
 
@@ -103,3 +103,18 @@ def test_die_route_prueft_eine_pooldatei(szenario_daten, graph):
     assert "format: muss 'calltaker-pool' sein" in schlecht.json()["detail"]
     assert "version: fehlt" in schlecht.json()["detail"]
     assert set(gut.json()["befunde"]) == {s["id"] for s in gut.json()["szenarien"]}
+
+
+def test_ein_pool_ist_begrenzt(szenario_daten, graph, monkeypatch):
+    import pool as pool_modul
+
+    monkeypatch.setattr(pool_modul, "POOL_HOECHSTENS", 2)
+    pool = Pool()
+    pool.hinzufuegen(szenario(szenario_daten))
+    pool.hinzufuegen(szenario(szenario_daten))
+    with pytest.raises(PoolVoll):
+        pool.hinzufuegen(szenario(szenario_daten))
+    datei = pool.exportieren(graph)
+    with pytest.raises(PoolVoll):
+        pool.importieren(datei, "anhaengen", graph)
+    assert len(pool.importieren(datei, "ersetzen", graph)) == 2
