@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {useGefahrstoffe} from '../composables/useGefahrstoffe'
@@ -35,7 +37,7 @@ function waehlen(stoff: Stoff): void {
                 <p v-for="stoff in stoffe" :key="`${stoff.klasse}-${stoff.bezeichnung}`" class="m-0"><b>{{ stoff.bezeichnung }}</b> · {{ t('warntafel.klasse', {klasse: stoff.klasse}) }}</p>
                 <p v-if="tafel.un.length === 4 && liste && !stoffe.length" class="m-0 text-gedaempft">{{ t('warntafel.unbekannt') }}</p>
                 <ul v-if="deutung.length" class="m-0 pl-5">
-                    <li v-for="gefahr in deutung" :key="gefahr" :class="gefahr.includes('Wasser') ? 'font-semibold text-fehler' : ''">{{ gefahr }}</li>
+                    <li v-for="gefahr in deutung" :key="gefahr" :class="gefahr.includes('Wasser') ? 'font-semibold text-fehler' : ''"><FontAwesomeIcon v-if="gefahr.includes('Wasser')" :icon="faTriangleExclamation" class="mr-1" aria-hidden="true"/>{{ gefahr }}</li>
                 </ul>
                 <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
                     {{ t('warntafel.name') }}

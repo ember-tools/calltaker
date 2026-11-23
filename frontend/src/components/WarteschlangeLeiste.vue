@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faBell, faHeadset, faPause, faPhone, faPhoneVolume, faUserSecret} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {gespraechsdauer, useUhr, wartezeit} from '../composables/useUhr'
@@ -28,16 +30,19 @@ function nummer(anruf: AnrufSicht): string {
         <span class="text-xs font-semibold tracking-wider text-slate-300">{{ t('warteschlange.titel') }}</span>
         <span v-if="wartend.length === 0" class="text-sm text-slate-400">{{ t('warteschlange.leer') }}</span>
         <div v-for="(anruf, stelle) in wartend" :key="anruf.id" :class="['flex items-center gap-2.5 rounded-md border px-3 py-1', stelle === 0 ? 'border-amber-400 bg-amber-950' : 'border-slate-600 bg-slate-800']">
+            <FontAwesomeIcon :icon="anruf.rufnummer ? faPhoneVolume : faUserSecret" class="text-amber-300" aria-hidden="true"/>
             <span class="font-mono text-sm">{{ nummer(anruf) }}</span>
             <span class="font-mono text-sm text-amber-300">{{ wartezeit(anruf.klingeltSeit, jetzt, zustand.engine.pausiertSeit) }}</span>
-            <button v-if="stelle === 0 && !gespraech" type="button" class="h-7 rounded bg-amber-500 px-2.5 text-sm font-semibold text-slate-900" @click="emit('annehmen', anruf.id)">{{ t('warteschlange.annehmen') }}</button>
+            <button v-if="stelle === 0 && !gespraech" type="button" class="h-7 rounded bg-amber-500 px-2.5 text-sm font-semibold text-slate-900" @click="emit('annehmen', anruf.id)"><FontAwesomeIcon :icon="faPhone" class="mr-1" aria-hidden="true"/>{{ t('warteschlange.annehmen') }}</button>
         </div>
-        <span v-if="zustand.engine.pausiert" class="rounded bg-slate-600 px-2 py-0.5 text-xs font-semibold">{{ t(zustand.engine.automatischPausiert ? 'warteschlange.automatisch' : 'warteschlange.pausiert') }}</span>
+        <span v-if="zustand.engine.pausiert" class="rounded bg-slate-600 px-2 py-0.5 text-xs font-semibold"><FontAwesomeIcon :icon="faPause" class="mr-1" aria-hidden="true"/>{{ t(zustand.engine.automatischPausiert ? 'warteschlange.automatisch' : 'warteschlange.pausiert') }}</span>
         <label class="ml-auto flex items-center gap-1.5 text-xs text-slate-300">
             <input v-model="klingelton" type="checkbox"/>
+            <FontAwesomeIcon :icon="faBell" aria-hidden="true"/>
             {{ t('warteschlange.klingelton') }}
         </label>
         <div v-if="gespraech" class="flex items-center gap-2.5 rounded-md border border-green-400 bg-green-950 px-3 py-1">
+            <FontAwesomeIcon :icon="faHeadset" class="text-green-300" aria-hidden="true"/>
             <span class="text-xs font-bold text-green-300">{{ t('warteschlange.imGespraech') }}</span>
             <span class="font-mono">{{ nummer(gespraech) }}</span>
             <span class="font-mono text-green-300">{{ gespraechsdauer(gespraech.angenommenUm, jetzt) }}</span>

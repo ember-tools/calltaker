@@ -190,6 +190,8 @@ export default {
         start: 'Takt starten',
         stopp: 'Takt anhalten',
         takt: 'Takt pro Minute',
+        tonAn: 'Ton an',
+        tonAus: 'Ton aus, zum Einschalten einmal klicken',
         schlaege: '{anzahl} Kompressionen',
         seit: 'seit {dauer}',
         schritt: {
@@ -311,7 +313,7 @@ export default {
         name: 'Name',
         telefon: 'Telefon (angezeigt)',
         bestaetigen: 'Nummer bestätigt',
-        bestaetigt: 'Nummer bestätigt ✓',
+        bestaetigt: 'Nummer bestätigt',
         andere: 'Andere Rückrufnummer',
         rueckruf: 'Rückrufnummer',
         einsatzort: 'Einsatzort',

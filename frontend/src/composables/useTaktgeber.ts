@@ -9,10 +9,12 @@ import {getCurrentInstance, onBeforeUnmount, ref, watch} from 'vue'
  * @param laeuft whether it runs
  * @param takt beats a minute
  * @param stumm whether it stays silent
- * @returns the beats since the last start, and `freischalten` to call from a click so audio may play
+ * @returns the beats since the last start, whether audio is unlocked, and `freischalten` to call
+ * from a click so audio may play
  */
 export function useTaktgeber(laeuft: () => boolean, takt: () => number, stumm: () => boolean) {
     const schlaege = ref(0)
+    const hoerbar = ref(false)
     let kontext: AudioContext | undefined
     let zeitgeber: ReturnType<typeof setTimeout> | undefined
     let naechster = 0
@@ -21,6 +23,7 @@ export function useTaktgeber(laeuft: () => boolean, takt: () => number, stumm: (
         if (stumm() || typeof AudioContext === 'undefined') return
         kontext ??= new AudioContext()
         void kontext.resume()
+        hoerbar.value = true
     }
 
     function klicken(): void {
@@ -75,5 +78,5 @@ export function useTaktgeber(laeuft: () => boolean, takt: () => number, stumm: (
         entfernen()
         void kontext?.close()
     })
-    return {schlaege, freischalten}
+    return {schlaege, hoerbar, freischalten}
 }

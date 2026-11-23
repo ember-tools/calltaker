@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faCheck} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, onMounted, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Eintraege} from '../modell/eintraege'
@@ -80,6 +82,7 @@ defineExpose({fokussieren})
             </div>
             <div v-if="!anruf.rufnummerUnterdrueckt" class="flex flex-wrap gap-2">
                 <button type="button" :class="['h-8 rounded border px-3 text-sm font-semibold', eintraege.anrufer.rufnummerBestaetigt ? 'border-ok bg-green-50 text-ok' : 'border-akzent bg-sky-50 text-akzent']" @click="bestaetigen">
+                    <FontAwesomeIcon v-if="eintraege.anrufer.rufnummerBestaetigt" :icon="faCheck" class="mr-1" aria-hidden="true"/>
                     {{ eintraege.anrufer.rufnummerBestaetigt ? t('maske.bestaetigt') : t('maske.bestaetigen') }}
                 </button>
                 <button type="button" class="h-8 rounded border border-slate-400 px-3 text-sm font-semibold" @click="andere">{{ t('maske.andere') }}</button>

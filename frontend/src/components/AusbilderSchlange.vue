@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faBolt, faPause, faPhoneSlash, faPlay} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {dauer, gespraechsdauer, useUhr, wartezeit} from '../composables/useUhr'
@@ -41,7 +43,7 @@ async function sofort(): Promise<void> {
             <span v-if="!engine.gestartet" class="text-gedaempft">{{ t('steuerung.wartetAufTrainee') }}</span>
             <span v-else-if="engine.automatischPausiert" class="rounded bg-slate-200 px-2 py-0.5 text-xs font-semibold">{{ t('warteschlange.automatisch') }}</span>
             <span v-else-if="naechstes !== undefined" class="text-gedaempft">{{ t('steuerung.naechstes', {zeit: dauer(naechstes)}) }}</span>
-            <button type="button" class="rounded border border-slate-400 px-3 py-1 font-semibold" @click="senden('engine.pausieren', {an: !engine.manuellPausiert})">{{ engine.manuellPausiert ? t('steuerung.weiter') : t('steuerung.pause') }}</button>
+            <button type="button" class="rounded border border-slate-400 px-3 py-1 font-semibold" @click="senden('engine.pausieren', {an: !engine.manuellPausiert})"><FontAwesomeIcon :icon="engine.manuellPausiert ? faPlay : faPause" class="mr-1" aria-hidden="true"/>{{ engine.manuellPausiert ? t('steuerung.weiter') : t('steuerung.pause') }}</button>
             <label class="flex items-center gap-1.5">
                 <span class="sr-only">{{ t('steuerung.sofortWahl') }}</span>
                 <select v-model="sofortId" class="max-w-56 rounded border border-slate-400 px-1.5 py-1">
@@ -49,7 +51,7 @@ async function sofort(): Promise<void> {
                     <option v-for="szenario in zustand.pool" :key="szenario.id" :value="szenario.id">{{ szenario.titel }}</option>
                 </select>
             </label>
-            <button type="button" :disabled="!sofortId" class="rounded border border-slate-400 px-3 py-1 font-semibold disabled:opacity-40" @click="sofort">{{ t('steuerung.sofort') }}</button>
+            <button type="button" :disabled="!sofortId" class="rounded border border-slate-400 px-3 py-1 font-semibold disabled:opacity-40" @click="sofort"><FontAwesomeIcon :icon="faBolt" class="mr-1" aria-hidden="true"/>{{ t('steuerung.sofort') }}</button>
         </div>
         <ul class="m-0 flex list-none flex-wrap gap-2 p-0">
             <li v-if="gespraech" class="flex items-center gap-2 rounded border border-green-600 bg-green-50 px-2 py-1">
@@ -57,7 +59,7 @@ async function sofort(): Promise<void> {
             </li>
             <li v-for="anruf in wartend" :key="anruf.id" class="flex items-center gap-2 rounded border border-amber-400 bg-amber-50 px-2 py-1">
                 {{ anruf.szenario.titel }} <span class="font-mono">{{ wartezeit(anruf.klingeltSeit, jetzt, engine.pausiertSeit) }}</span>
-                <button type="button" class="text-xs underline" @click="senden('anruf.auflegen', {anrufId: anruf.id})">{{ t('steuerung.auflegen') }}</button>
+                <button type="button" class="text-xs underline" @click="senden('anruf.auflegen', {anrufId: anruf.id})"><FontAwesomeIcon :icon="faPhoneSlash" class="mr-1" aria-hidden="true"/>{{ t('steuerung.auflegen') }}</button>
             </li>
             <li v-if="!gespraech && wartend.length === 0" class="text-gedaempft">{{ t('warteschlange.leer') }}</li>
         </ul>

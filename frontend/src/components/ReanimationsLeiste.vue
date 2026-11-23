@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faPause, faPlay, faVolumeHigh, faVolumeXmark} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, nextTick, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {useTaktgeber} from '../composables/useTaktgeber'
@@ -17,7 +19,7 @@ const {t} = useI18n()
 const jetzt = useUhr()
 const faellig = computed(() => reanimationFaellig(props.graph, eintraege.value.abfrage))
 const reanimation = computed(() => eintraege.value.reanimation)
-const {schlaege, freischalten} = useTaktgeber(() => faellig.value && reanimation.value.laeuft, () => reanimation.value.takt, () => Boolean(props.ruhig))
+const {schlaege, hoerbar, freischalten} = useTaktgeber(() => faellig.value && reanimation.value.laeuft, () => reanimation.value.takt, () => Boolean(props.ruhig))
 const knopf = ref<HTMLButtonElement | null>(null)
 
 function setzen(aenderung: Partial<Eintraege['reanimation']>): void {
@@ -52,7 +54,10 @@ watch(faellig, an => {
     <section v-if="faellig" :aria-label="t('reanimation.titel')" class="flex flex-col gap-2 rounded-lg border-2 border-red-700 bg-red-50 p-3">
         <div class="flex flex-wrap items-center gap-3">
             <h2 class="m-0 text-base font-bold text-red-800">{{ t('reanimation.titel') }}</h2>
-            <button ref="knopf" type="button" :class="['h-10 rounded px-4 font-semibold text-white', reanimation.laeuft ? 'bg-slate-700' : 'bg-red-700']" @click="umschalten">{{ reanimation.laeuft ? t('reanimation.stopp') : t('reanimation.start') }}</button>
+            <button ref="knopf" type="button" :class="['h-10 rounded px-4 font-semibold text-white', reanimation.laeuft ? 'bg-slate-700' : 'bg-red-700']" @click="umschalten"><FontAwesomeIcon :icon="reanimation.laeuft ? faPause : faPlay" class="mr-1.5" aria-hidden="true"/>{{ reanimation.laeuft ? t('reanimation.stopp') : t('reanimation.start') }}</button>
+            <span v-if="reanimation.laeuft" :title="hoerbar && !ruhig ? t('reanimation.tonAn') : t('reanimation.tonAus')" :aria-label="hoerbar && !ruhig ? t('reanimation.tonAn') : t('reanimation.tonAus')" role="img">
+                <FontAwesomeIcon :icon="hoerbar && !ruhig ? faVolumeHigh : faVolumeXmark" aria-hidden="true"/>
+            </span>
             <span v-if="reanimation.laeuft" :key="schlaege" class="schlag size-5 rounded-full bg-red-600" aria-hidden="true"/>
             <span v-if="reanimation.laeuft" role="status" class="font-mono text-sm">{{ t('reanimation.schlaege', {anzahl: schlaege}) }}</span>
             <span v-if="eintraege.zeiten.reanimation" class="font-mono text-sm text-gedaempft">{{ t('reanimation.seit', {dauer: dauer(jetzt - eintraege.zeiten.reanimation)}) }}</span>

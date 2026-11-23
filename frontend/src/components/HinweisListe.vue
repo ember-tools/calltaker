@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
@@ -39,7 +41,7 @@ defineExpose({fokussieren})
             <label class="flex items-center gap-2 text-sm font-semibold">
                 <input type="checkbox" :checked="gegeben.has(anleitung.id)" @change="umschalten(anleitung.id, ($event.target as HTMLInputElement).checked)"/>
                 {{ anleitung.titel }}
-                <span v-if="anleitung.pflicht" class="rounded bg-amber-200 px-1.5 text-xs">{{ t('hinweise.pflicht') }}</span>
+                <span v-if="anleitung.pflicht" class="rounded bg-amber-200 px-1.5 text-xs"><FontAwesomeIcon :icon="faTriangleExclamation" class="mr-1" aria-hidden="true"/>{{ t('hinweise.pflicht') }}</span>
             </label>
             <ol v-if="!gegeben.has(anleitung.id)" class="m-0 mt-1 flex flex-col gap-0.5 pl-6 text-sm">
                 <li v-for="satz in anleitung.saetze" :key="satz">{{ satz }}</li>

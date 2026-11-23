@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faCheck} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {useI18n} from 'vue-i18n'
 import type {Phasenstand} from '../phasen/register'
 
@@ -14,7 +16,7 @@ const {t} = useI18n()
             :key="stand.phase.id"
             :class="['flex items-center gap-1.5 rounded-full px-3 py-1 text-sm font-semibold', stand.fehlend.length === 0 ? 'bg-green-100 text-ok' : stand.phase.id === aktiv ? 'bg-akzent text-white' : 'border border-slate-300 bg-white text-gedaempft']"
         >
-            <svg v-if="stand.fehlend.length === 0" class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            <FontAwesomeIcon v-if="stand.fehlend.length === 0" :icon="faCheck" class="size-3.5" aria-hidden="true"/>
             {{ stelle + 1 }} {{ t(stand.phase.titel) }}
         </span>
     </nav>
