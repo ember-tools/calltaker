@@ -1,0 +1,514 @@
+{
+  "knoten": {
+    "fw.brand.fahrzeugbrand.k0": {
+      "frage": "Welches Fahrzeug brennt?",
+      "antworten": [
+        {
+          "id": "pkw",
+          "label": "PKW",
+          "ziel": "fw.brand.fahrzeugbrand.k1",
+          "aussage": "Ein PKW brennt."
+        },
+        {
+          "id": "lkw-bus",
+          "label": "LKW, Bus",
+          "ziel": "fw.brand.fahrzeugbrand.k2",
+          "aussage": "Ein LKW oder Bus brennt."
+        },
+        {
+          "id": "schienenfahrzeug",
+          "label": "Schienenfahrzeug",
+          "ziel": "fw.brand.fahrzeugbrand.k3",
+          "aussage": "Ein Schienenfahrzeug brennt."
+        },
+        {
+          "id": "boot-schiff",
+          "label": "Boot, Schiff",
+          "ziel": "fw.brand.fahrzeugbrand.k4",
+          "aussage": "Ein Boot oder Schiff brennt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k1": {
+      "frage": "Wo steht das Fahrzeug?",
+      "antworten": [
+        {
+          "id": "im-freien",
+          "label": "Im Freien",
+          "ziel": "fw.brand.fahrzeugbrand.k5",
+          "aussage": "Das Fahrzeug steht im Freien."
+        },
+        {
+          "id": "in-tiefgarage-oder-gebaeude",
+          "label": "In Tiefgarage oder Gebäude",
+          "ziel": "fw.brand.fahrzeugbrand.k6",
+          "aussage": "Das Fahrzeug steht in einer Tiefgarage oder einem Gebäude."
+        },
+        {
+          "id": "fahrzeug-mit-hochvoltbatterie",
+          "label": "Fahrzeug mit Hochvoltbatterie",
+          "ziel": "fw.brand.fahrzeugbrand.k7",
+          "aussage": "Es handelt sich um ein Fahrzeug mit Hochvoltbatterie."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k2": {
+      "frage": "Wird Gefahrgut mitgeführt?",
+      "antworten": [
+        {
+          "id": "kein-gefahrgut",
+          "label": "Kein Gefahrgut",
+          "ziel": "fw.brand.fahrzeugbrand.k8",
+          "aussage": "Gefahrgut wird nicht mitgeführt."
+        },
+        {
+          "id": "gefahrgut",
+          "label": "Gefahrgut",
+          "ziel": "fw.brand.fahrzeugbrand.k9",
+          "aussage": "Das Fahrzeug führt Gefahrgut mit."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k3": {
+      "frage": "Wo befindet es sich?",
+      "antworten": [
+        {
+          "id": "im-tunnel-oder-bahnhof",
+          "label": "Im Tunnel oder Bahnhof",
+          "ziel": "fw.brand.fahrzeugbrand.k10",
+          "aussage": "Das Fahrzeug befindet sich im Tunnel oder Bahnhof."
+        },
+        {
+          "id": "auf-freier-strecke",
+          "label": "Auf freier Strecke",
+          "ziel": "fw.brand.fahrzeugbrand.k11",
+          "aussage": "Das Fahrzeug befindet sich auf freier Strecke."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k4": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.fahrzeugbrand.71c08",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.fahrzeugbrand.71d08",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.fahrzeugbrand.71e08",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.fahrzeugbrand.71d08u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k5": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.fahrzeugbrand.71c01",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.fahrzeugbrand.71d01",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.fahrzeugbrand.71e01",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.fahrzeugbrand.71d01u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k6": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.fahrzeugbrand.71c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.fahrzeugbrand.71d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.fahrzeugbrand.71e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.fahrzeugbrand.71d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k7": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.fahrzeugbrand.71c03",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.fahrzeugbrand.71d03",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.fahrzeugbrand.71e03",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.fahrzeugbrand.71d03u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k8": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.fahrzeugbrand.71c04",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.fahrzeugbrand.71d04",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.fahrzeugbrand.71e04",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.fahrzeugbrand.71d04u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k9": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.fahrzeugbrand.71c05",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.fahrzeugbrand.71d05",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.fahrzeugbrand.71e05",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.fahrzeugbrand.71d05u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k10": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.fahrzeugbrand.71c06",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.fahrzeugbrand.71d06",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.fahrzeugbrand.71e06",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.fahrzeugbrand.71d06u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.k11": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.fahrzeugbrand.71c07",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.fahrzeugbrand.71d07",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.fahrzeugbrand.71e07",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.fahrzeugbrand.71d07u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.fahrzeugbrand.71c08": {
+      "code": "71C08",
+      "kategorie": "BRAND 2",
+      "anlass": "Bootsbrand",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.fahrzeugbrand.71d08": {
+      "code": "71D08",
+      "kategorie": "BRAND 3",
+      "anlass": "Bootsbrand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.fahrzeugbrand.71e08": {
+      "code": "71E08",
+      "kategorie": "BRAND 4",
+      "anlass": "Bootsbrand - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.fahrzeugbrand.71d08u": {
+      "code": "71D08U",
+      "kategorie": "BRAND 3",
+      "anlass": "Bootsbrand - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.fahrzeugbrand.71c01": {
+      "code": "71C01",
+      "kategorie": "BRAND K.",
+      "anlass": "PKW-Brand",
+      "stichwort": "BRAND K."
+    },
+    "fw.brand.fahrzeugbrand.71d01": {
+      "code": "71D01",
+      "kategorie": "BRAND M.",
+      "anlass": "PKW-Brand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.fahrzeugbrand.71e01": {
+      "code": "71E01",
+      "kategorie": "BRAND 2",
+      "anlass": "PKW-Brand - Menschenrettung",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.fahrzeugbrand.71d01u": {
+      "code": "71D01U",
+      "kategorie": "BRAND M.",
+      "anlass": "PKW-Brand - Betroffenheit unbekannt",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.fahrzeugbrand.71c02": {
+      "code": "71C02",
+      "kategorie": "BRAND 3",
+      "anlass": "Fahrzeugbrand in Tiefgarage",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.fahrzeugbrand.71d02": {
+      "code": "71D02",
+      "kategorie": "BRAND 4",
+      "anlass": "Fahrzeugbrand in Tiefgarage - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.fahrzeugbrand.71e02": {
+      "code": "71E02",
+      "kategorie": "BRAND 6",
+      "anlass": "Fahrzeugbrand in Tiefgarage - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.fahrzeugbrand.71d02u": {
+      "code": "71D02U",
+      "kategorie": "BRAND 4",
+      "anlass": "Fahrzeugbrand in Tiefgarage - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.fahrzeugbrand.71c03": {
+      "code": "71C03",
+      "kategorie": "BRAND M.",
+      "anlass": "Fahrzeugbrand - Hochvoltbatterie",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.fahrzeugbrand.71d03": {
+      "code": "71D03",
+      "kategorie": "BRAND 2",
+      "anlass": "Fahrzeugbrand - Hochvoltbatterie - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.fahrzeugbrand.71e03": {
+      "code": "71E03",
+      "kategorie": "BRAND 3",
+      "anlass": "Fahrzeugbrand - Hochvoltbatterie - Menschenrettung",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.fahrzeugbrand.71d03u": {
+      "code": "71D03U",
+      "kategorie": "BRAND 2",
+      "anlass": "Fahrzeugbrand - Hochvoltbatterie - Betroffenheit unbekannt",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.fahrzeugbrand.71c04": {
+      "code": "71C04",
+      "kategorie": "BRAND 1",
+      "anlass": "LKW-Brand",
+      "stichwort": "BRAND 1"
+    },
+    "fw.brand.fahrzeugbrand.71d04": {
+      "code": "71D04",
+      "kategorie": "BRAND 2",
+      "anlass": "LKW-Brand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.fahrzeugbrand.71e04": {
+      "code": "71E04",
+      "kategorie": "BRAND 3",
+      "anlass": "LKW-Brand - Menschenrettung",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.fahrzeugbrand.71d04u": {
+      "code": "71D04U",
+      "kategorie": "BRAND 2",
+      "anlass": "LKW-Brand - Betroffenheit unbekannt",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.fahrzeugbrand.71c05": {
+      "code": "71C05",
+      "kategorie": "BRAND 4",
+      "anlass": "LKW-Brand mit Gefahrgut",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.fahrzeugbrand.71d05": {
+      "code": "71D05",
+      "kategorie": "BRAND 6",
+      "anlass": "LKW-Brand mit Gefahrgut - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.fahrzeugbrand.71e05": {
+      "code": "71E05",
+      "kategorie": "BRAND 8",
+      "anlass": "LKW-Brand mit Gefahrgut - Menschenrettung",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.fahrzeugbrand.71d05u": {
+      "code": "71D05U",
+      "kategorie": "BRAND 6",
+      "anlass": "LKW-Brand mit Gefahrgut - Betroffenheit unbekannt",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.fahrzeugbrand.71c06": {
+      "code": "71C06",
+      "kategorie": "BRAND 8",
+      "anlass": "Schienenfahrzeugbrand im Tunnel",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.fahrzeugbrand.71d06": {
+      "code": "71D06",
+      "kategorie": "BRAND 8",
+      "anlass": "Schienenfahrzeugbrand im Tunnel - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.fahrzeugbrand.71e06": {
+      "code": "71E06",
+      "kategorie": "BRAND 10",
+      "anlass": "Schienenfahrzeugbrand im Tunnel - Menschenrettung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.fahrzeugbrand.71d06u": {
+      "code": "71D06U",
+      "kategorie": "BRAND 8",
+      "anlass": "Schienenfahrzeugbrand im Tunnel - Betroffenheit unbekannt",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.fahrzeugbrand.71c07": {
+      "code": "71C07",
+      "kategorie": "BRAND 4",
+      "anlass": "Schienenfahrzeugbrand",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.fahrzeugbrand.71d07": {
+      "code": "71D07",
+      "kategorie": "BRAND 4",
+      "anlass": "Schienenfahrzeugbrand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.fahrzeugbrand.71e07": {
+      "code": "71E07",
+      "kategorie": "BRAND 6",
+      "anlass": "Schienenfahrzeugbrand - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.fahrzeugbrand.71d07u": {
+      "code": "71D07U",
+      "kategorie": "BRAND 4",
+      "anlass": "Schienenfahrzeugbrand - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    }
+  }
+}

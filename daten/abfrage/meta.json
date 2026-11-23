@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "wurzel": "fachrichtung",
+  "quelle": "Abgeleitet aus alarmzettel (f7f0e751ce83), dort aus den offenen Daten der Berliner Feuerwehr, Stand 2026-05-21.",
+  "hinweise": {
+    "rd": "Die Codes und Anlässe stammen aus den offenen Daten der Berliner Feuerwehr. Die Fragen der Eröffnung (Hand der Meldung, Anrufer vor Ort, Anzahl der Betroffenen, Alter, Geschlecht, Reaktion, Atmung) sind ergänzt.",
+    "fw": "Erfundene Beispieldaten. Die Alarm- und Ausrückeordnung der Berliner Feuerwehr ist als Verschlusssache \"Nur für den Dienstgebrauch\" eingestuft und die FPDS-Determinanten sind lizenzierte IAED-Inhalte, daher steht dieser Baum nicht öffentlich zur Verfügung. Vor dem Einsatz durch die echte AAO ersetzen."
+  },
+  "notfallkategorien": {
+    "RD1NC REA.": "RTW-C mit der schnellsten Eintreffzeitprognose + schnellstes notarztbesetztes Rettungsmittel + First Responder-Prüfung + ggf. Aktivierung des Ersthelfenden Systems KATRETTER",
+    "RD1NC FR.": "RTW-C mit der schnellsten Eintreffzeitprognose + schnellstes notarztbesetztes Rettungsmittel + First Responder-Prüfung",
+    "RD1NC NNAD.": "RTW-C mit der schnellsten Eintreffzeitprognose + schnellstes notarztbesetztes Rettungsmittel + Sonderrettungsmittel Neonatologisches Klinikteam + First Responder-Prüfung",
+    "RD2NC FR.": "RTW-C mit der schnellsten Eintreffzeitprognose + notarztbesetztes Rettungsmittel + First Responder-Prüfung",
+    "RD2NC.": "RTW-C mit der schnellsten Eintreffzeitprognose + notarztbesetztes Rettungsmittel",
+    "RD2C FR.": "RTW-C mit der schnellsten Eintreffzeitprognose + First Responder-Prüfung",
+    "RD2C.": "RTW-C mit der schnellsten Eintreffzeitprognose",
+    "RD3C.": "Örtlich zuständiger RTW-C",
+    "RD4C.": "Örtlich zuständiger RTW-C ohne Sondersignal",
+    "RD2B FR.": "RTW mit der schnellsten Eintreffzeitprognose",
+    "RD3B.": "Örtlich zuständiger RTW-B",
+    "RD4B.": "Örtlich zuständiger RTW-B ohne Sondersignal",
+    "RD5.": "Weiterleitung des Einsatzes an Dritte - entweder die Leitstelle der Kassenärztlichen Vereinigung zur Nachtriage mittels SmED (Strukturierte medizinische Ersteinschätzung in Deutschland) oder an die Polizei",
+    "RD_BT_RTW": "RTW-C mit der schnellsten Eintreffzeitprognose + Einsatzkräfte der Brandbekämpfung und Hilfeleistung",
+    "RD_BT_NA": "RTW-C mit der schnellsten Eintreffzeitprognose + notarztbesetztes Rettungsmittel + Einsatzkräfte der Brandbekämpfung und Hilfeleistung",
+    "RD_Mehrere Patienten": "Entsendung von mehreren Rettungsmitteln + ggf. Führungs- und Sonderfahrzeuge"
+  }
+}

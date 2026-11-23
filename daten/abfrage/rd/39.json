@@ -1,0 +1,20 @@
+{
+  "knoten": {
+    "rd.39.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.39.39e01"
+        }
+      ]
+    },
+    "rd.39.39e01": {
+      "code": "39E01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Lebensbedrohliche Einsatzlage - LebEL, ACHTUNG! Weitere Anweisungen beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    }
+  }
+}

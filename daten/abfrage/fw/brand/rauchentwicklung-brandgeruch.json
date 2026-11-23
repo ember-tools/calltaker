@@ -1,0 +1,291 @@
+{
+  "knoten": {
+    "fw.brand.rauchentwicklung-brandgeruch.k0": {
+      "frage": "Was wird wahrgenommen?",
+      "antworten": [
+        {
+          "id": "brandgeruch-im-gebaeude",
+          "label": "Brandgeruch im Gebäude",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.k1",
+          "aussage": "Im Gebäude ist Brandgeruch wahrnehmbar."
+        },
+        {
+          "id": "rauch-aus-einem-gebaeude",
+          "label": "Rauch aus einem Gebäude",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.k2",
+          "aussage": "Aus dem Gebäude tritt Rauch aus."
+        },
+        {
+          "id": "kohlenmonoxid-warner",
+          "label": "Kohlenmonoxid-Warner",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.k3",
+          "aussage": "Ein Kohlenmonoxid-Warner hat ausgelöst."
+        },
+        {
+          "id": "rauch-im-freien-ursache-unklar",
+          "label": "Rauch im Freien, Ursache unklar",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.k4",
+          "aussage": "Im Freien ist Rauch sichtbar, die Ursache ist unklar."
+        }
+      ]
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.k1": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72c01",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d01",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72e01",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d01u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.k2": {
+      "frage": "Wie stark ist der Rauch?",
+      "antworten": [
+        {
+          "id": "leichte-rauchentwicklung",
+          "label": "Leichte Rauchentwicklung",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.k5",
+          "aussage": "Es liegt eine leichte Rauchentwicklung vor."
+        },
+        {
+          "id": "starke-rauchentwicklung",
+          "label": "Starke Rauchentwicklung",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.k6",
+          "aussage": "Es liegt eine starke Rauchentwicklung vor."
+        }
+      ]
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.k3": {
+      "frage": "Klagen Betroffene über Beschwerden?",
+      "antworten": [
+        {
+          "id": "ohne-beschwerden",
+          "label": "Ohne Beschwerden",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72b04",
+          "aussage": "Beschwerden werden nicht angegeben."
+        },
+        {
+          "id": "mit-beschwerden",
+          "label": "Mit Beschwerden",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d04",
+          "aussage": "Betroffene klagen über Beschwerden."
+        }
+      ]
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.k4": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72c05",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d05",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72e05",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d05u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72c01": {
+      "code": "72C01",
+      "kategorie": "BRAND K.",
+      "anlass": "Brandgeruch - Ursache unklar",
+      "stichwort": "BRAND K."
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d01": {
+      "code": "72D01",
+      "kategorie": "BRAND M.",
+      "anlass": "Brandgeruch - Ursache unklar - Personen im Gefahrenbereich",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72e01": {
+      "code": "72E01",
+      "kategorie": "BRAND 2",
+      "anlass": "Brandgeruch - Ursache unklar - Menschenrettung",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d01u": {
+      "code": "72D01U",
+      "kategorie": "BRAND M.",
+      "anlass": "Brandgeruch - Ursache unklar - Betroffenheit unbekannt",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.k5": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.k6": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72c03",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d03",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72e03",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.72d03u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72b04": {
+      "code": "72B04",
+      "kategorie": "BRAND M.",
+      "anlass": "CO-Warnmeldung",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d04": {
+      "code": "72D04",
+      "kategorie": "BRAND 2",
+      "anlass": "CO-Warnmeldung mit Betroffenen",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72c05": {
+      "code": "72C05",
+      "kategorie": "BRAND K.",
+      "anlass": "Rauch im Freien - Ursache unklar",
+      "stichwort": "BRAND K."
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d05": {
+      "code": "72D05",
+      "kategorie": "BRAND M.",
+      "anlass": "Rauch im Freien - Ursache unklar - Personen im Gefahrenbereich",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72e05": {
+      "code": "72E05",
+      "kategorie": "BRAND 2",
+      "anlass": "Rauch im Freien - Ursache unklar - Menschenrettung",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d05u": {
+      "code": "72D05U",
+      "kategorie": "BRAND M.",
+      "anlass": "Rauch im Freien - Ursache unklar - Betroffenheit unbekannt",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72c02": {
+      "code": "72C02",
+      "kategorie": "BRAND M.",
+      "anlass": "Rauchentwicklung aus Gebäude",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d02": {
+      "code": "72D02",
+      "kategorie": "BRAND 2",
+      "anlass": "Rauchentwicklung aus Gebäude - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72e02": {
+      "code": "72E02",
+      "kategorie": "BRAND 3",
+      "anlass": "Rauchentwicklung aus Gebäude - Menschenrettung",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d02u": {
+      "code": "72D02U",
+      "kategorie": "BRAND 2",
+      "anlass": "Rauchentwicklung aus Gebäude - Betroffenheit unbekannt",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72c03": {
+      "code": "72C03",
+      "kategorie": "BRAND 3",
+      "anlass": "Starke Rauchentwicklung aus Gebäude",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d03": {
+      "code": "72D03",
+      "kategorie": "BRAND 4",
+      "anlass": "Starke Rauchentwicklung aus Gebäude - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72e03": {
+      "code": "72E03",
+      "kategorie": "BRAND 6",
+      "anlass": "Starke Rauchentwicklung aus Gebäude - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.rauchentwicklung-brandgeruch.72d03u": {
+      "code": "72D03U",
+      "kategorie": "BRAND 4",
+      "anlass": "Starke Rauchentwicklung aus Gebäude - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    }
+  }
+}

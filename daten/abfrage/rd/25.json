@@ -1,0 +1,2191 @@
+{
+  "knoten": {
+    "rd.25.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.25.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "nicht-suizidgefaehrdet-und-wach",
+          "label": "NICHT SUIZIDGEFÄHRDET und wach",
+          "ziel": "rd.25.k2",
+          "aussage": "NICHT SUIZIDGEFÄHRDET und wach"
+        },
+        {
+          "id": "suizidgedanken-und-wach",
+          "label": "SUIZIDGEDANKEN und wach",
+          "ziel": "rd.25.k3",
+          "aussage": "SUIZIDGEDANKEN und wach"
+        },
+        {
+          "id": "suizidgedanken-und-wach-einnahme-von",
+          "label": "SUIZIDGEDANKEN und wach (Einnahme von Medikamenten/Substanzen)",
+          "ziel": "rd.25.k4",
+          "aussage": "SUIZIDGEDANKEN und wach (Einnahme von Medikamenten/Substanzen)"
+        },
+        {
+          "id": "starke-blutung",
+          "label": "Starke Blutung",
+          "ziel": "rd.25.k5",
+          "aussage": "Starke Blutung"
+        },
+        {
+          "id": "nicht-starke-oder-schwache-blutung",
+          "label": "Nicht starke oder schwache Blutung",
+          "ziel": "rd.25.k6",
+          "aussage": "Nicht starke oder schwache Blutung"
+        },
+        {
+          "id": "suizidabsicht",
+          "label": "Suizidabsicht",
+          "ziel": "rd.25.k7",
+          "aussage": "Suizidabsicht"
+        },
+        {
+          "id": "person-droht-zu-springen",
+          "label": "Person droht zu springen",
+          "ziel": "rd.25.k8",
+          "aussage": "Person droht zu springen"
+        },
+        {
+          "id": "beinahe-erhaengen-strangulierung-oder",
+          "label": "Beinahe Erhängen, -Strangulierung oder -Ersticken (wach ohne Atemschwierigkeiten)",
+          "ziel": "rd.25.k9",
+          "aussage": "Beinahe Erhängen, -Strangulierung oder -Ersticken (wach ohne Atemschwierigkeiten)"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.25.k10",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "veraenderte-bewusstseinslage",
+          "label": "VERÄNDERTE BEWUSSTSEINSLAGE (Vorgeschichte PSYCHISCHER ERKRANKUNGEN)",
+          "ziel": "rd.25.k11",
+          "aussage": "VERÄNDERTE BEWUSSTSEINSLAGE (Vorgeschichte PSYCHISCHER ERKRANKUNGEN)"
+        },
+        {
+          "id": "veraenderte-bewusstseinslage-keine-oder",
+          "label": "VERÄNDERTE BEWUSSTSEINSLAGE (keine oder unbekannte Vorgeschichte PSYCHISCHE ERKRANKUNGEN)",
+          "ziel": "rd.25.k12",
+          "aussage": "VERÄNDERTE BEWUSSTSEINSLAGE (keine oder unbekannte Vorgeschichte PSYCHISCHE ERKRANKUNGEN)"
+        },
+        {
+          "id": "veraenderte-bewusstseinslage-einnahme",
+          "label": "VERÄNDERTE BEWUSSTSEINSLAGE (Einnahme von Medikamenten/Substanzen)",
+          "ziel": "rd.25.k13",
+          "aussage": "VERÄNDERTE BEWUSSTSEINSLAGE (Einnahme von Medikamenten/Substanzen)"
+        },
+        {
+          "id": "veraenderte-bewusstseinslage-ploetzliche",
+          "label": "VERÄNDERTE BEWUSSTSEINSLAGE (plötzliche Veränderung des Verhaltens/der Persönlichkeit)",
+          "ziel": "rd.25.k14",
+          "aussage": "VERÄNDERTE BEWUSSTSEINSLAGE (plötzliche Veränderung des Verhaltens/der Persönlichkeit)"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.25.25d01",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.25.25d02",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.25.k15",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "gefaehrliche-blutung",
+          "label": "Gefährliche Blutung",
+          "ziel": "rd.25.k16",
+          "aussage": "Gefährliche Blutung"
+        },
+        {
+          "id": "beinahe-erhaengen-strangulierung-oder-2",
+          "label": "Beinahe-Erhängen, -Strangulierung oder -Ersticken (wach mit Atemschwierigkeiten)",
+          "ziel": "rd.25.k17",
+          "aussage": "Beinahe-Erhängen, -Strangulierung oder -Ersticken (wach mit Atemschwierigkeiten)"
+        },
+        {
+          "id": "gerade-gesprungen",
+          "label": "Gerade gesprungen",
+          "ziel": "rd.25.k18",
+          "aussage": "Gerade gesprungen"
+        },
+        {
+          "id": "nicht-suizidgefaehrdet-und-wach-2",
+          "label": "NICHT SUIZIDGEFÄHRDET und wach (Vorgeschichte PSYCHISCHER ERKRANKUNGEN)",
+          "ziel": "rd.25.k19",
+          "aussage": "NICHT SUIZIDGEFÄHRDET und wach (Vorgeschichte PSYCHISCHER ERKRANKUNGEN)"
+        },
+        {
+          "id": "suizidgedanken-und-wach-vorgeschichte",
+          "label": "SUIZIDGEDANKEN und wach (Vorgeschichte PSYCHISCHER ERKRANKUNGEN)",
+          "ziel": "rd.25.k20",
+          "aussage": "SUIZIDGEDANKEN und wach (Vorgeschichte PSYCHISCHER ERKRANKUNGEN)"
+        }
+      ]
+    },
+    "rd.25.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.25.25a00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25a00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25a00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "beides-gewalttaetig-und-bewaffnet",
+          "label": "Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25a00b",
+          "aussage": "Beides (gewalttätig und bewaffnet)"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25a00v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25a00w",
+          "aussage": "Bewaffnet"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25b00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-gewalttaetig-und-bewaffnet-2",
+          "label": "Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25b00b",
+          "aussage": "Beides (gewalttätig und bewaffnet)"
+        },
+        {
+          "id": "gewalttaetig-2",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25b00v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet-2",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25b00w",
+          "aussage": "Bewaffnet"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25c00b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "angedrohte-selbstverbrennung",
+          "label": "Angedrohte Selbstverbrennung",
+          "ziel": "rd.25.25c00t",
+          "aussage": "Angedrohte Selbstverbrennung"
+        },
+        {
+          "id": "gewalttaetig-3",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25c00v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet-3",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25c00w",
+          "aussage": "Bewaffnet"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig-2",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25d00b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "angedrohte-selbstverbrennung-2",
+          "label": "Angedrohte Selbstverbrennung",
+          "ziel": "rd.25.25d00t",
+          "aussage": "Angedrohte Selbstverbrennung"
+        },
+        {
+          "id": "gewalttaetig-4",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25d00v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet-4",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25d00w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-13-bis-17-jahre",
+          "label": "bei Patientenalter 13 bis 17 Jahre",
+          "ziel": "rd.25.25a01",
+          "aussage": "bei Patientenalter 13 bis 17 Jahre",
+          "alter": {
+            "min": 13,
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25a01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25a01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre",
+          "label": "bei Patientenalter älter 17 Jahre",
+          "ziel": "rd.25.25a01",
+          "aussage": "bei Patientenalter älter 17 Jahre",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25a01b",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25a01b-2",
+          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25a01v",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25a01v-2",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25a01w",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25a01w-2",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-13-bis-17-jahre",
+          "label": "bei Patientenalter 13 bis 17 Jahre",
+          "ziel": "rd.25.25a02",
+          "aussage": "bei Patientenalter 13 bis 17 Jahre",
+          "alter": {
+            "min": 13,
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25a02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25a02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre",
+          "label": "bei Patientenalter älter 17 Jahre",
+          "ziel": "rd.25.25a02",
+          "aussage": "bei Patientenalter älter 17 Jahre",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25a02b",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25a02b-2",
+          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25a02v",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25a02v-2",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25a02w",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25a02w-2",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-13-bis-17-jahre",
+          "label": "bei Patientenalter 13 bis 17 Jahre",
+          "ziel": "rd.25.25a03",
+          "aussage": "bei Patientenalter 13 bis 17 Jahre",
+          "alter": {
+            "min": 13,
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25a03-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25a03",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre",
+          "label": "bei Patientenalter älter 17 Jahre",
+          "ziel": "rd.25.25a03",
+          "aussage": "bei Patientenalter älter 17 Jahre",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25a03b",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25a03b-2",
+          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25a03v",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25a03v-2",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25a03w",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25a03w-2",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.25.25b01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25b01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25b01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25b01b",
+          "aussage": "bei Patientenalter älter 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25b01b-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
+          "ziel": "rd.25.25b01b",
+          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25b01v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25b01v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25b01v",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25b01w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Bewaffnet",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25b01w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25b01w",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25b02",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25b02-2",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b02b",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b02b-2",
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25b02v",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25b02v-2",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25b02w",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25b02w-2",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.25.25b03",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25b03",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25b03-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b03b",
+          "aussage": "bei Patientenalter älter 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b03b",
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b03b-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "angedrohte-selbstverbrennung",
+          "label": "Angedrohte Selbstverbrennung",
+          "ziel": "rd.25.25b03t",
+          "aussage": "Angedrohte Selbstverbrennung"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25b03v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25b03v",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25b03v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25b03w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Bewaffnet",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25b03w",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25b03w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.25.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25b04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b04b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25b04v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25b04w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25b05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b05b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25b05v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25b05w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-13-bis-17-jahre",
+          "label": "bei Patientenalter 13 bis 17 Jahre",
+          "ziel": "rd.25.25b06",
+          "aussage": "bei Patientenalter 13 bis 17 Jahre",
+          "alter": {
+            "min": 13,
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25b06-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25b06",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre",
+          "label": "bei Patientenalter älter 17 Jahre",
+          "ziel": "rd.25.25b06",
+          "aussage": "bei Patientenalter älter 17 Jahre",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b06b",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25b06b-2",
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25b06v",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25b06v-2",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25b06w",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25b06w-2",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25c01b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "angedrohte-selbstverbrennung",
+          "label": "Angedrohte Selbstverbrennung",
+          "ziel": "rd.25.25c01t",
+          "aussage": "Angedrohte Selbstverbrennung"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25c01v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25c01w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25c02b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "angedrohte-selbstverbrennung",
+          "label": "Angedrohte Selbstverbrennung",
+          "ziel": "rd.25.25c02t",
+          "aussage": "Angedrohte Selbstverbrennung"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25c02v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25c02w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25c03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25c03b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "angedrohte-selbstverbrennung",
+          "label": "Angedrohte Selbstverbrennung",
+          "ziel": "rd.25.25c03t",
+          "aussage": "Angedrohte Selbstverbrennung"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25c03v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25c03w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25c04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25c04b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "angedrohte-selbstverbrennung",
+          "label": "Angedrohte Selbstverbrennung",
+          "ziel": "rd.25.25c04t",
+          "aussage": "Angedrohte Selbstverbrennung"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25c04v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25c04w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.25d01": {
+      "code": "25D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach psychiatrischem Notfall",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.25.25d02": {
+      "code": "25D02",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach psychiatrischen Notfall",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.25.k15": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25d03b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25d03v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25d03w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k16": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25d04b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25d04v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25d04w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k17": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25d05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25d05b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25d05v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25d05w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k18": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.25.25d06",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "beides-bewaffnet-und-gewalttaetig",
+          "label": "Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25d06b",
+          "aussage": "Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "gewalttaetig",
+          "label": "Gewalttätig",
+          "ziel": "rd.25.25d06v",
+          "aussage": "Gewalttätig"
+        },
+        {
+          "id": "bewaffnet",
+          "label": "Bewaffnet",
+          "ziel": "rd.25.25d06w",
+          "aussage": "Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k19": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-13-bis-17-jahre",
+          "label": "bei Patientenalter 13 bis 17 Jahre",
+          "ziel": "rd.25.25o01",
+          "aussage": "bei Patientenalter 13 bis 17 Jahre",
+          "alter": {
+            "min": 13,
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25o01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25o01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre",
+          "label": "bei Patientenalter älter 17 Jahre",
+          "ziel": "rd.25.25o01",
+          "aussage": "bei Patientenalter älter 17 Jahre",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25o01b",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25o01b-2",
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25o01v",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25o01v-2",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25o01w",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25o01w-2",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.k20": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-13-bis-17-jahre",
+          "label": "bei Patientenalter 13 bis 17 Jahre",
+          "ziel": "rd.25.25o02",
+          "aussage": "bei Patientenalter 13 bis 17 Jahre",
+          "alter": {
+            "min": 13,
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.25.25o02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.25.25o02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre",
+          "label": "bei Patientenalter älter 17 Jahre",
+          "ziel": "rd.25.25o02",
+          "aussage": "bei Patientenalter älter 17 Jahre",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-beides",
+          "label": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25o02b",
+          "aussage": "bei Patientenalter bis 12 Jahre, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-beides",
+          "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "ziel": "rd.25.25o02b-2",
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "ziel": "rd.25.25o02v",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig",
+          "ziel": "rd.25.25o02v-2",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "ziel": "rd.25.25o02w",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bewaffnet",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bewaffnet",
+          "label": "bei Patientenalter unbekannt, Bewaffnet",
+          "ziel": "rd.25.25o02w-2",
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+        }
+      ]
+    },
+    "rd.25.25a00": {
+      "code": "25A00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25a00-2": {
+      "code": "25A00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, Kind",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25a00b": {
+      "code": "25A00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25a00v": {
+      "code": "25A00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25a00w": {
+      "code": "25A00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25b00": {
+      "code": "25B00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25b00b": {
+      "code": "25B00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25b00v": {
+      "code": "25B00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25b00w": {
+      "code": "25B00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25c00": {
+      "code": "25C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25c00b": {
+      "code": "25C00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25c00t": {
+      "code": "25C00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Angedrohte Selbstverbrennung, ACHTUNG!",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25c00v": {
+      "code": "25C00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25c00w": {
+      "code": "25C00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25d00": {
+      "code": "25D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25d00b": {
+      "code": "25D00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25d00t": {
+      "code": "25D00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Angedrohte Selbstverbrennung, ACHTUNG!",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25d00v": {
+      "code": "25D00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25d00w": {
+      "code": "25D00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.25.25a01": {
+      "code": "25A01",
+      "kategorie": "RD4B.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, nicht suizidgefährdet",
+      "stichwort": "RD4B."
+    },
+    "rd.25.25a01-2": {
+      "code": "25A01",
+      "kategorie": "RD4C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, nicht suizidgefährdet, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.25.25a01b": {
+      "code": "25A01B",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, nicht suizidgefährdet, ACHTUNG! Kind ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a01b-2": {
+      "code": "25A01B",
+      "kategorie": "RD3B.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, nicht suizidgefährdet, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25a01v": {
+      "code": "25A01V",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, nicht suizidgefährdet, ACHTUNG! Kind ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a01v-2": {
+      "code": "25A01V",
+      "kategorie": "RD3B.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, nicht suizidgefährdet, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25a01w": {
+      "code": "25A01W",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, nicht suizidgefährdet, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a01w-2": {
+      "code": "25A01W",
+      "kategorie": "RD3B.",
+      "anlass": "Psychiatrie / Abnormales Verhalten, nicht suizidgefährdet, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25a02": {
+      "code": "25A02",
+      "kategorie": "RD4B.",
+      "anlass": "Suizidgedanken",
+      "stichwort": "RD4B."
+    },
+    "rd.25.25a02-2": {
+      "code": "25A02",
+      "kategorie": "RD4C.",
+      "anlass": "Suizidgedanken, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.25.25a02b": {
+      "code": "25A02B",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken, ACHTUNG! Kind ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a02b-2": {
+      "code": "25A02B",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25a02v": {
+      "code": "25A02V",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken, ACHTUNG! Kind ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a02v-2": {
+      "code": "25A02V",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25a02w": {
+      "code": "25A02W",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a02w-2": {
+      "code": "25A02W",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25a03": {
+      "code": "25A03",
+      "kategorie": "RD4B.",
+      "anlass": "Suizidgedanken bei Einnahme von Medikamenten/Substanzen",
+      "stichwort": "RD4B."
+    },
+    "rd.25.25a03-2": {
+      "code": "25A03",
+      "kategorie": "RD4C.",
+      "anlass": "Suizidgedanken bei Einnahme von Medikamenten/Substanzen, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.25.25a03b": {
+      "code": "25A03B",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken bei Einnahme von Medikamenten/Substanzen, ACHTUNG! Kind ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a03b-2": {
+      "code": "25A03B",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken bei Einnahme von Medikamenten/Substanzen, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25a03v": {
+      "code": "25A03V",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken bei Einnahme von Medikamenten/Substanzen, ACHTUNG! Kind ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a03v-2": {
+      "code": "25A03V",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken bei Einnahme von Medikamenten/Substanzen, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25a03w": {
+      "code": "25A03W",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken bei Einnahme von Medikamenten/Substanzen, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25a03w-2": {
+      "code": "25A03W",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken bei Einnahme von Medikamenten/Substanzen, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25b01": {
+      "code": "25B01",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung - Psychiatrie / Abnormales Verhalten",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b01-2": {
+      "code": "25B01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung - Psychiatrie / Abnormales Verhalten, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b01b": {
+      "code": "25B01B",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b01b-2": {
+      "code": "25B01B",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist gewalttätig und bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b01v": {
+      "code": "25B01V",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b01v-2": {
+      "code": "25B01V",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist gewalttätig",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b01w": {
+      "code": "25B01W",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b01w-2": {
+      "code": "25B01W",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b02": {
+      "code": "25B02",
+      "kategorie": "RD2C FR.",
+      "anlass": "Blutung - Psychiatrie / Abnormales Verhalten, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b02-2": {
+      "code": "25B02",
+      "kategorie": "RD2B FR.",
+      "anlass": "Blutung - Psychiatrie / Abnormales Verhalten",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b02b": {
+      "code": "25B02B",
+      "kategorie": "RD2C FR.",
+      "anlass": "Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist gewalttätig und bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b02b-2": {
+      "code": "25B02B",
+      "kategorie": "RD2B FR.",
+      "anlass": "Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b02v": {
+      "code": "25B02V",
+      "kategorie": "RD2C FR.",
+      "anlass": "Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist gewalttätig",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b02v-2": {
+      "code": "25B02V",
+      "kategorie": "RD2B FR.",
+      "anlass": "Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b02w": {
+      "code": "25B02W",
+      "kategorie": "RD2C FR.",
+      "anlass": "Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b02w-2": {
+      "code": "25B02W",
+      "kategorie": "RD2B FR.",
+      "anlass": "Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b03": {
+      "code": "25B03",
+      "kategorie": "RD2B FR.",
+      "anlass": "Suizidabsicht",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b03-2": {
+      "code": "25B03",
+      "kategorie": "RD2C FR.",
+      "anlass": "Suizidabsicht, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b03b": {
+      "code": "25B03B",
+      "kategorie": "RD2B FR.",
+      "anlass": "Suizidabsicht, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b03b-2": {
+      "code": "25B03B",
+      "kategorie": "RD2C FR.",
+      "anlass": "Suizidabsicht, Kind, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b03t": {
+      "code": "25B03T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Angedrohte Selbstverbrennung, ACHTUNG!",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25b03v": {
+      "code": "25B03V",
+      "kategorie": "RD2B FR.",
+      "anlass": "Suizidabsicht, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b03v-2": {
+      "code": "25B03V",
+      "kategorie": "RD2C FR.",
+      "anlass": "Suizidabsicht, Kind, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b03w": {
+      "code": "25B03W",
+      "kategorie": "RD2B FR.",
+      "anlass": "Suizidabsicht, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2B FR."
+    },
+    "rd.25.25b03w-2": {
+      "code": "25B03W",
+      "kategorie": "RD2C FR.",
+      "anlass": "Suizidabsicht, Kind, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b04": {
+      "code": "25B04",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Person droht zu springen",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25b04b": {
+      "code": "25B04B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Person droht zu springen, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25b04v": {
+      "code": "25B04V",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Person droht zu springen, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25b04w": {
+      "code": "25B04W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Person droht zu springen, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25b05": {
+      "code": "25B05",
+      "kategorie": "RD2C FR.",
+      "anlass": "Beinahe Strangulierung/ Erhängen, jetzt wach ohne Atembeschwerden",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b05b": {
+      "code": "25B05B",
+      "kategorie": "RD2C FR.",
+      "anlass": "Beinahe Strangulierung/ Erhängen, jetzt wach ohne Atembeschwerden, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b05v": {
+      "code": "25B05V",
+      "kategorie": "RD2C FR.",
+      "anlass": "Beinahe Strangulierung/ Erhängen, jetzt wach ohne Atembeschwerden, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b05w": {
+      "code": "25B05W",
+      "kategorie": "RD2C FR.",
+      "anlass": "Beinahe Strangulierung/ Erhängen, jetzt wach ohne Atembeschwerden, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25b06": {
+      "code": "25B06",
+      "kategorie": "RD4B.",
+      "anlass": "Unbekannter Zustand - Psychiatrie / Abnormales Verhalten",
+      "stichwort": "RD4B."
+    },
+    "rd.25.25b06-2": {
+      "code": "25B06",
+      "kategorie": "RD4C.",
+      "anlass": "Unbekannter Zustand - Psychiatrie / Abnormales Verhalten, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.25.25b06b": {
+      "code": "25B06B",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25b06b-2": {
+      "code": "25B06B",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25b06v": {
+      "code": "25B06V",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25b06v-2": {
+      "code": "25B06V",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25b06w": {
+      "code": "25B06W",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand - Psychiatrie / Abnormales Verhalten, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25b06w-2": {
+      "code": "25B06W",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25c01": {
+      "code": "25C01",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c01b": {
+      "code": "25C01B",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c01t": {
+      "code": "25C01T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Angedrohte Selbstverbrennung, ACHTUNG!",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25c01v": {
+      "code": "25C01V",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c01w": {
+      "code": "25C01W",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c02": {
+      "code": "25C02",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c02b": {
+      "code": "25C02B",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c02t": {
+      "code": "25C02T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Angedrohte Selbstverbrennung, ACHTUNG!",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25c02v": {
+      "code": "25C02V",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c02w": {
+      "code": "25C02W",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c03": {
+      "code": "25C03",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c03b": {
+      "code": "25C03B",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c03t": {
+      "code": "25C03T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Angedrohte Selbstverbrennung, ACHTUNG!",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25c03v": {
+      "code": "25C03V",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c03w": {
+      "code": "25C03W",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c04": {
+      "code": "25C04",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c04b": {
+      "code": "25C04B",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c04t": {
+      "code": "25C04T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Angedrohte Selbstverbrennung, ACHTUNG!",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25c04v": {
+      "code": "25C04V",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25c04w": {
+      "code": "25C04W",
+      "kategorie": "RD3C.",
+      "anlass": "Psychiatrie / Abnormales Verhalten mit veränderter Bewusstseinslage, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25d03": {
+      "code": "25D03",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinstrübung - Psychiatrie / Abnormales Verhalten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25d03b": {
+      "code": "25D03B",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinstrübung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25d03v": {
+      "code": "25D03V",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinstrübung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25d03w": {
+      "code": "25D03W",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinstrübung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25d04": {
+      "code": "25D04",
+      "kategorie": "RD2C FR.",
+      "anlass": "Gefährliche Blutung - Psychiatrie / Abnormales Verhalten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25d04b": {
+      "code": "25D04B",
+      "kategorie": "RD2C FR.",
+      "anlass": "Gefährliche Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25d04v": {
+      "code": "25D04V",
+      "kategorie": "RD2C FR.",
+      "anlass": "Gefährliche Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25d04w": {
+      "code": "25D04W",
+      "kategorie": "RD2C FR.",
+      "anlass": "Gefährliche Blutung - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.25.25d05": {
+      "code": "25D05",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Beinahe Strangulierung/ Erhängen, jetzt wach mit Atembeschwerden",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.25.25d05b": {
+      "code": "25D05B",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Beinahe Strangulierung/ Erhängen mit Atembeschwerden, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.25.25d05v": {
+      "code": "25D05V",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Beinahe Strangulierung/ Erhängen, jetzt wach mit Atembeschwerden, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.25.25d05w": {
+      "code": "25D05W",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Beinahe Strangulierung/ Erhängen, jetzt wach mit Atembeschwerden, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.25.25d06": {
+      "code": "25D06",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gerade gesprungen - Psychiatrie / Abnormales Verhalten",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25d06b": {
+      "code": "25D06B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gerade gesprungen - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25d06v": {
+      "code": "25D06V",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gerade gesprungen - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25d06w": {
+      "code": "25D06W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gerade gesprungen - Psychiatrie / Abnormales Verhalten, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.25.25o01": {
+      "code": "25O01",
+      "kategorie": "RD4B.",
+      "anlass": "Vorgeschichte psychischer Erkrankungen, nicht suizidgefährdet",
+      "stichwort": "RD4B."
+    },
+    "rd.25.25o01-2": {
+      "code": "25O01",
+      "kategorie": "RD4C.",
+      "anlass": "Vorgeschichte psychischer Erkrankungen, nicht suizidgefährdet, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.25.25o01b": {
+      "code": "25O01B",
+      "kategorie": "RD3C.",
+      "anlass": "Vorgeschichte psychischer Erkrankungen, nicht suizidgefährdet, ACHTUNG! Kind ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25o01b-2": {
+      "code": "25O01B",
+      "kategorie": "RD3B.",
+      "anlass": "Vorgeschichte psychischer Erkrankungen, nicht suizidgefährdet, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25o01v": {
+      "code": "25O01V",
+      "kategorie": "RD3C.",
+      "anlass": "Vorgeschichte psychischer Erkrankungen, nicht suizidgefährdet, ACHTUNG! Kind ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25o01v-2": {
+      "code": "25O01V",
+      "kategorie": "RD3B.",
+      "anlass": "Vorgeschichte psychischer Erkrankungen, nicht suizidgefährdet, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25o01w": {
+      "code": "25O01W",
+      "kategorie": "RD3C.",
+      "anlass": "Vorgeschichte psychischer Erkrankungen, nicht suizidgefährdet, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25o01w-2": {
+      "code": "25O01W",
+      "kategorie": "RD3B.",
+      "anlass": "Vorgeschichte psychischer Erkrankungen, nicht suizidgefährdet, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25o02": {
+      "code": "25O02",
+      "kategorie": "RD4B.",
+      "anlass": "Suizidgedanken bei Vorgeschichte psychischer Erkrankungen",
+      "stichwort": "RD4B."
+    },
+    "rd.25.25o02-2": {
+      "code": "25O02",
+      "kategorie": "RD4C.",
+      "anlass": "Suizidgedanken bei Vorgeschichte psychischer Erkrankungen, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.25.25o02b": {
+      "code": "25O02B",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken bei Vorgeschichte psychischer Erkrankungen, ACHTUNG! Kind ist gewalttätig und bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25o02b-2": {
+      "code": "25O02B",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken bei Vorgeschichte psychischer Erkrankungen, ACHTUNG! Patient ist gewalttätig und bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25o02v": {
+      "code": "25O02V",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken bei Vorgeschichte psychischer Erkrankungen, ACHTUNG! Kind ist gewalttätig",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25o02v-2": {
+      "code": "25O02V",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken bei Vorgeschichte psychischer Erkrankungen, ACHTUNG! Patient ist gewalttätig",
+      "stichwort": "RD3B."
+    },
+    "rd.25.25o02w": {
+      "code": "25O02W",
+      "kategorie": "RD3C.",
+      "anlass": "Suizidgedanken bei Vorgeschichte psychischer Erkrankungen, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.25.25o02w-2": {
+      "code": "25O02W",
+      "kategorie": "RD3B.",
+      "anlass": "Suizidgedanken bei Vorgeschichte psychischer Erkrankungen, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3B."
+    }
+  }
+}

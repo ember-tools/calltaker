@@ -1,0 +1,703 @@
+{
+  "knoten": {
+    "rd.12.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "nicht-mehr-krampfend-und-effektive",
+          "label": "Nicht mehr krampfend und effektive Atmung überprüft (bekannte Epilepsie)",
+          "ziel": "rd.12.12a01e",
+          "aussage": "Nicht mehr krampfend und effektive Atmung überprüft (bekannte Epilepsie)"
+        },
+        {
+          "id": "nicht-mehr-krampfend-und-effektive-2",
+          "label": "Nicht mehr krampfend und effektive Atmung überprüft (Epilepsie unbekannt)",
+          "ziel": "rd.12.12a02",
+          "aussage": "Nicht mehr krampfend und effektive Atmung überprüft (Epilepsie unbekannt)"
+        },
+        {
+          "id": "nicht-mehr-krampfend-und-effektive-3",
+          "label": "Nicht mehr krampfend und effektive Atmung überprüft (≤ 6, keine Epilepsie bestätigt)",
+          "ziel": "rd.12.12a03",
+          "aussage": "Nicht mehr krampfend und effektive Atmung überprüft (≤ 6, keine Epilepsie bestätigt)",
+          "alter": {
+            "max": 6
+          }
+        },
+        {
+          "id": "fokaler-absence-krampfanfall-ansprechbar",
+          "label": "FOKALER/ABSENCE-Krampfanfall (ansprechbar)",
+          "ziel": "rd.12.k1",
+          "aussage": "FOKALER/ABSENCE-Krampfanfall (ansprechbar)"
+        },
+        {
+          "id": "drohender-krampfanfall-aura",
+          "label": "Drohender Krampfanfall (Aura)",
+          "ziel": "rd.12.k2",
+          "aussage": "Drohender Krampfanfall (Aura)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.12.k3",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "effektive-atmung-nicht-ueberprueft-35",
+          "label": "Effektive Atmung nicht überprüft < 35",
+          "ziel": "rd.12.k4",
+          "aussage": "Effektive Atmung nicht überprüft < 35",
+          "alter": {
+            "max": 34
+          }
+        },
+        {
+          "id": "fokaler-absence-krampfanfall-nicht",
+          "label": "FOKALER/ABSENCE-Krampfanfall (nicht ansprechbar)",
+          "ziel": "rd.12.k5",
+          "aussage": "FOKALER/ABSENCE-Krampfanfall (nicht ansprechbar)"
+        },
+        {
+          "id": "schwangerschaft-postpartale-eklampsie",
+          "label": "Schwangerschaft/POSTPARTALE Eklampsie",
+          "ziel": "rd.12.k6",
+          "aussage": "Schwangerschaft/POSTPARTALE Eklampsie"
+        },
+        {
+          "id": "diabetiker",
+          "label": "Diabetiker",
+          "ziel": "rd.12.k7",
+          "aussage": "Diabetiker"
+        },
+        {
+          "id": "nicht-mehr-krampfend-und-effektive-4",
+          "label": "Nicht mehr krampfend und effektive Atmung überprüft (> 6, keine Epilepsie bestätigt)",
+          "ziel": "rd.12.12c04",
+          "aussage": "Nicht mehr krampfend und effektive Atmung überprüft (> 6, keine Epilepsie bestätigt)",
+          "alter": {
+            "min": 7
+          }
+        },
+        {
+          "id": "schlaganfall-oder-gehirntumor",
+          "label": "SCHLAGANFALL- oder Gehirntumor-Vorgeschichte",
+          "ziel": "rd.12.k8",
+          "aussage": "SCHLAGANFALL- oder Gehirntumor-Vorgeschichte"
+        },
+        {
+          "id": "ueberdosis-vergiftung-einnahme",
+          "label": "ÜBERDOSIS/VERGIFTUNG (Einnahme)",
+          "ziel": "rd.12.k9",
+          "aussage": "ÜBERDOSIS/VERGIFTUNG (Einnahme)"
+        },
+        {
+          "id": "atypischer-krampfanfall",
+          "label": "ATYPISCHER Krampfanfall",
+          "ziel": "rd.12.k10",
+          "aussage": "ATYPISCHER Krampfanfall"
+        },
+        {
+          "id": "atemstillstand-nach-den-schluesselfragen",
+          "label": "Atemstillstand (nach den Schlüsselfragen)",
+          "ziel": "rd.12.k11",
+          "aussage": "Atemstillstand (nach den Schlüsselfragen)"
+        },
+        {
+          "id": "andauernder-oder-multiple-krampfanfaelle",
+          "label": "ANDAUERNDER oder MULTIPLE Krampfanfälle",
+          "ziel": "rd.12.k12",
+          "aussage": "ANDAUERNDER oder MULTIPLE Krampfanfälle"
+        },
+        {
+          "id": "agonale-ineffektive-atmung",
+          "label": "AGONALE/INEFFEKTIVE ATMUNG",
+          "ziel": "rd.12.k13",
+          "aussage": "AGONALE/INEFFEKTIVE ATMUNG"
+        },
+        {
+          "id": "effektive-atmung-nicht-ueberprueft-35-2",
+          "label": "Effektive Atmung nicht überprüft ≥ 35",
+          "ziel": "rd.12.k14",
+          "aussage": "Effektive Atmung nicht überprüft ≥ 35",
+          "alter": {
+            "min": 35
+          }
+        }
+      ]
+    },
+    "rd.12.12a01e": {
+      "code": "12A01E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Beendeter Krampfanfall - Effektive Atmung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.12a02": {
+      "code": "12A02",
+      "kategorie": "RD2C FR.",
+      "anlass": "Beendeter Krampfanfall - Effektive Atmung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.12a03": {
+      "code": "12A03",
+      "kategorie": "RD2C.",
+      "anlass": "Beendeter Krampfanfall bei Kleinkind - Effektive Atmung",
+      "stichwort": "RD2C."
+    },
+    "rd.12.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12a04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12a04e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12a05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12a05e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12b00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12b00e",
+          "aussage": "Krampfleiden"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden-2",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12c00e",
+          "aussage": "Krampfleiden"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden-3",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12d00e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12b01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12b01e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12c01e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12c02e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12c03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12c03e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.12c04": {
+      "code": "12C04",
+      "kategorie": "RD2C FR.",
+      "anlass": "Beendeter Krampfanfall - Effektive Atmung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12c05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12c05e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12c06",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12c06e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12c07",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12c07e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.12.12d01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.12.12d01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.12.12d01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Krampfleiden",
+          "ziel": "rd.12.12d01e",
+          "aussage": "bei Patientenalter unbekannt, Krampfleiden"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Krampfleiden",
+          "ziel": "rd.12.12d01e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Krampfleiden",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Krampfleiden",
+          "ziel": "rd.12.12d01e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Krampfleiden",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.12.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12d02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12d02e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.12.12d03",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.12.12d03-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.12.12d03",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Krampfleiden",
+          "ziel": "rd.12.12d03e",
+          "aussage": "bei Patientenalter unbekannt, Krampfleiden"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Krampfleiden",
+          "ziel": "rd.12.12d03e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Krampfleiden",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Krampfleiden",
+          "ziel": "rd.12.12d03e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Krampfleiden",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.12.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.12.12d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "krampfleiden",
+          "label": "Krampfleiden",
+          "ziel": "rd.12.12d04e",
+          "aussage": "Krampfleiden"
+        }
+      ]
+    },
+    "rd.12.12a04": {
+      "code": "12A04",
+      "kategorie": "RD3C.",
+      "anlass": "Fokaler Krampfanfall/Absence (ansprechbar)",
+      "stichwort": "RD3C."
+    },
+    "rd.12.12a04e": {
+      "code": "12A04E",
+      "kategorie": "RD3C.",
+      "anlass": "Fokaler Krampfanfall/Absence (ansprechbar)",
+      "stichwort": "RD3C."
+    },
+    "rd.12.12a05": {
+      "code": "12A05",
+      "kategorie": "RD3C.",
+      "anlass": "Drohender Krampfanfall (Aura)",
+      "stichwort": "RD3C."
+    },
+    "rd.12.12a05e": {
+      "code": "12A05E",
+      "kategorie": "RD3C.",
+      "anlass": "Drohender Krampfanfall (Aura)",
+      "stichwort": "RD3C."
+    },
+    "rd.12.12b00": {
+      "code": "12B00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Krampfanfall",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.12.12b00e": {
+      "code": "12B00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Krampfanfall",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.12.12c00": {
+      "code": "12C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Krampfanfall",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.12.12c00e": {
+      "code": "12C00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Krampfanfall",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.12.12d00": {
+      "code": "12D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Krampfanfall",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.12.12d00e": {
+      "code": "12D00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Krampfanfall",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.12.12b01": {
+      "code": "12B01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Krampfanfall - Ungewisse Atmung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.12b01e": {
+      "code": "12B01E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Krampfanfall - Ungewisse Atmung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.12c01": {
+      "code": "12C01",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Fokaler Krampfanfall/Absence (nicht ansprechbar)",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.12.12c01e": {
+      "code": "12C01E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Fokaler Krampfanfall/Absence (nicht ansprechbar)",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.12.12c02": {
+      "code": "12C02",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Krampfanfall in der Schwangerschaft",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.12.12c02e": {
+      "code": "12C02E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Krampfanfall in der Schwangerschaft",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.12.12c03": {
+      "code": "12C03",
+      "kategorie": "RD2C FR.",
+      "anlass": "Krampfanfall bei bekanntem Diabetes",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.12c03e": {
+      "code": "12C03E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Krampfanfall bei bekanntem Diabetes",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.12c05": {
+      "code": "12C05",
+      "kategorie": "RD2C FR.",
+      "anlass": "Krampfanfall bei Schlaganfall- oder Gehirntumor-Vorgeschichte",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.12c05e": {
+      "code": "12C05E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Krampfanfall bei Schlaganfall- oder Gehirntumor-Vorgeschichte",
+      "stichwort": "RD2C FR."
+    },
+    "rd.12.12c06": {
+      "code": "12C06",
+      "kategorie": "RD2C.",
+      "anlass": "Krampfanfall nach Überdosis/ Vergiftung",
+      "stichwort": "RD2C."
+    },
+    "rd.12.12c06e": {
+      "code": "12C06E",
+      "kategorie": "RD2C.",
+      "anlass": "Krampfanfall nach Überdosis/ Vergiftung",
+      "stichwort": "RD2C."
+    },
+    "rd.12.12c07": {
+      "code": "12C07",
+      "kategorie": "RD2C.",
+      "anlass": "Atypischer Krampfanfall",
+      "stichwort": "RD2C."
+    },
+    "rd.12.12c07e": {
+      "code": "12C07E",
+      "kategorie": "RD2C.",
+      "anlass": "Atypischer Krampfanfall",
+      "stichwort": "RD2C."
+    },
+    "rd.12.12d01": {
+      "code": "12D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.12.12d01-2": {
+      "code": "12D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.12.12d01e": {
+      "code": "12D01E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.12.12d01e-2": {
+      "code": "12D01E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.12.12d02": {
+      "code": "12D02",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Anhaltender Krampfanfall",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.12.12d02e": {
+      "code": "12D02E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Anhaltender Krampfanfall",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.12.12d03": {
+      "code": "12D03",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.12.12d03-2": {
+      "code": "12D03",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.12.12d03e": {
+      "code": "12D03E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.12.12d03e-2": {
+      "code": "12D03E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.12.12d04": {
+      "code": "12D04",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Krampfanfall - Ungewisse Atmung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.12.12d04e": {
+      "code": "12D04E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Krampfanfall - Ungewisse Atmung",
+      "stichwort": "RD1NC FR."
+    }
+  }
+}

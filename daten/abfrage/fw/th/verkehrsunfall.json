@@ -1,0 +1,149 @@
+{
+  "knoten": {
+    "fw.th.verkehrsunfall.k0": {
+      "frage": "Sind Personen eingeklemmt?",
+      "antworten": [
+        {
+          "id": "keine-person-eingeklemmt",
+          "label": "Keine Person eingeklemmt",
+          "ziel": "fw.th.verkehrsunfall.k1",
+          "aussage": "Es ist niemand eingeklemmt."
+        },
+        {
+          "id": "person-eingeklemmt",
+          "label": "Person eingeklemmt",
+          "ziel": "fw.th.verkehrsunfall.k2",
+          "aussage": "Mindestens eine Person ist eingeklemmt."
+        },
+        {
+          "id": "lkw-oder-bus-beteiligt",
+          "label": "LKW oder Bus beteiligt",
+          "ziel": "fw.th.verkehrsunfall.k3",
+          "aussage": "Ein LKW oder Bus ist beteiligt."
+        },
+        {
+          "id": "schienenfahrzeug-beteiligt",
+          "label": "Schienenfahrzeug beteiligt",
+          "ziel": "fw.th.verkehrsunfall.k4",
+          "aussage": "Ein Schienenfahrzeug ist beteiligt."
+        }
+      ]
+    },
+    "fw.th.verkehrsunfall.k1": {
+      "frage": "Wie viele Fahrzeuge sind beteiligt?",
+      "antworten": [
+        {
+          "id": "ein-fahrzeug",
+          "label": "Ein Fahrzeug",
+          "ziel": "fw.th.verkehrsunfall.29b10",
+          "aussage": "Ein Fahrzeug ist beteiligt."
+        },
+        {
+          "id": "zwei-oder-mehr-fahrzeuge",
+          "label": "Zwei oder mehr Fahrzeuge",
+          "ziel": "fw.th.verkehrsunfall.29c10",
+          "aussage": "Zwei oder mehr Fahrzeuge sind beteiligt."
+        }
+      ]
+    },
+    "fw.th.verkehrsunfall.k2": {
+      "frage": "Wie viele Personen?",
+      "antworten": [
+        {
+          "id": "eine-person",
+          "label": "Eine Person",
+          "ziel": "fw.th.verkehrsunfall.29d11",
+          "aussage": "Eine Person ist eingeklemmt."
+        },
+        {
+          "id": "mehrere-personen",
+          "label": "Mehrere Personen",
+          "ziel": "fw.th.verkehrsunfall.29d12",
+          "aussage": "Mehrere Personen sind eingeklemmt."
+        }
+      ]
+    },
+    "fw.th.verkehrsunfall.k3": {
+      "frage": "Wird Gefahrgut mitgeführt?",
+      "antworten": [
+        {
+          "id": "kein-gefahrgut",
+          "label": "Kein Gefahrgut",
+          "ziel": "fw.th.verkehrsunfall.29d13",
+          "aussage": "Gefahrgut wird nicht mitgeführt."
+        },
+        {
+          "id": "gefahrgut",
+          "label": "Gefahrgut",
+          "ziel": "fw.th.verkehrsunfall.29e13",
+          "aussage": "Das Fahrzeug führt Gefahrgut mit."
+        }
+      ]
+    },
+    "fw.th.verkehrsunfall.k4": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "person-im-gleisbereich",
+          "label": "Person im Gleisbereich",
+          "ziel": "fw.th.verkehrsunfall.29e14",
+          "aussage": "Eine Person befindet sich im Gleisbereich."
+        },
+        {
+          "id": "niemand-im-gleisbereich",
+          "label": "Niemand im Gleisbereich",
+          "ziel": "fw.th.verkehrsunfall.29d14",
+          "aussage": "Im Gleisbereich befindet sich niemand."
+        }
+      ]
+    },
+    "fw.th.verkehrsunfall.29b10": {
+      "code": "29B10",
+      "kategorie": "TH K.",
+      "anlass": "Verkehrsunfall ohne eingeklemmte Person",
+      "stichwort": "TH K."
+    },
+    "fw.th.verkehrsunfall.29c10": {
+      "code": "29C10",
+      "kategorie": "TH M.",
+      "anlass": "Verkehrsunfall - mehrere Fahrzeuge",
+      "stichwort": "TH M."
+    },
+    "fw.th.verkehrsunfall.29d11": {
+      "code": "29D11",
+      "kategorie": "TH 1",
+      "anlass": "Verkehrsunfall mit eingeklemmter Person",
+      "stichwort": "TH 1"
+    },
+    "fw.th.verkehrsunfall.29d12": {
+      "code": "29D12",
+      "kategorie": "TH 2",
+      "anlass": "Verkehrsunfall mit mehreren eingeklemmten Personen",
+      "stichwort": "TH 2"
+    },
+    "fw.th.verkehrsunfall.29d13": {
+      "code": "29D13",
+      "kategorie": "TH 2",
+      "anlass": "Verkehrsunfall mit LKW oder Bus",
+      "stichwort": "TH 2"
+    },
+    "fw.th.verkehrsunfall.29e13": {
+      "code": "29E13",
+      "kategorie": "TH 3",
+      "anlass": "Verkehrsunfall mit Gefahrgut",
+      "stichwort": "TH 3"
+    },
+    "fw.th.verkehrsunfall.29e14": {
+      "code": "29E14",
+      "kategorie": "TH 3",
+      "anlass": "Verkehrsunfall im Gleisbereich",
+      "stichwort": "TH 3"
+    },
+    "fw.th.verkehrsunfall.29d14": {
+      "code": "29D14",
+      "kategorie": "TH 2",
+      "anlass": "Verkehrsunfall an Bahnanlage",
+      "stichwort": "TH 2"
+    }
+  }
+}

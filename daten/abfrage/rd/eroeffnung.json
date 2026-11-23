@@ -1,0 +1,382 @@
+{
+  "knoten": {
+    "rd.anzahl": {
+      "frage": "Wie viele Personen sind betroffen?",
+      "antworten": [
+        {
+          "id": "eine-person",
+          "label": "Eine Person",
+          "ziel": "rd.alter",
+          "aussage": "Eine Person ist betroffen."
+        },
+        {
+          "id": "zwei-personen",
+          "label": "Zwei Personen",
+          "ziel": "rd.alter",
+          "aussage": "Zwei Personen sind betroffen."
+        },
+        {
+          "id": "drei-oder-mehr",
+          "label": "Drei oder mehr",
+          "ziel": "rd.alter",
+          "aussage": "Drei oder mehr Personen sind betroffen."
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.alter",
+          "aussage": "Wie viele Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "rd.alter": {
+      "frage": "Wie alt ist die betroffene Person?",
+      "eingabe": {
+        "vorlage": "Die betroffene Person ist {wert} Jahre alt.",
+        "platzhalter": "Alter in Jahren, z. B. 54 oder ungefähr 60",
+        "leer": {
+          "label": "Alter unbekannt",
+          "aussage": "Das Alter der betroffenen Person ist nicht bekannt."
+        }
+      },
+      "ziel": "rd.geschlecht"
+    },
+    "rd.geschlecht": {
+      "frage": "Mann oder Frau?",
+      "antworten": [
+        {
+          "id": "mann",
+          "label": "Mann",
+          "ziel": "rd.reaktion",
+          "aussage": "Die betroffene Person ist männlich."
+        },
+        {
+          "id": "frau",
+          "label": "Frau",
+          "ziel": "rd.reaktion",
+          "aussage": "Die betroffene Person ist weiblich."
+        },
+        {
+          "id": "divers",
+          "label": "Divers",
+          "ziel": "rd.reaktion",
+          "aussage": "Die betroffene Person ist divers."
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.reaktion",
+          "aussage": "Das Geschlecht der betroffenen Person ist nicht bekannt."
+        }
+      ]
+    },
+    "rd.reaktion": {
+      "frage": "Reagiert die Person normal?",
+      "antworten": [
+        {
+          "id": "ja-wach-und-ansprechbar",
+          "label": "Ja, wach und ansprechbar",
+          "ziel": "rd.atmung",
+          "aussage": "Die Person ist wach und ansprechbar."
+        },
+        {
+          "id": "reagiert-aber-nicht-normal",
+          "label": "Reagiert, aber nicht normal",
+          "ziel": "rd.atmung",
+          "aussage": "Die Person reagiert, aber nicht normal."
+        },
+        {
+          "id": "reagiert-nicht",
+          "label": "Reagiert nicht",
+          "ziel": "rd.atmung",
+          "aussage": "Die Person reagiert nicht."
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.atmung",
+          "aussage": "Ob die Person normal reagiert, ist nicht bekannt."
+        }
+      ]
+    },
+    "rd.atmung": {
+      "frage": "Atmet die Person normal?",
+      "antworten": [
+        {
+          "id": "ja-normale-atmung",
+          "label": "Ja, normale Atmung",
+          "ziel": "rd.hauptbeschwerde",
+          "aussage": "Die Atmung ist normal."
+        },
+        {
+          "id": "atmung-auffaellig",
+          "label": "Atmung auffällig",
+          "ziel": "rd.hauptbeschwerde",
+          "aussage": "Die Atmung ist auffällig."
+        },
+        {
+          "id": "atmet-nicht",
+          "label": "Atmet nicht",
+          "ziel": "rd.hauptbeschwerde",
+          "aussage": "Die Person atmet nicht."
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.hauptbeschwerde",
+          "aussage": "Ob die Person normal atmet, ist nicht bekannt."
+        }
+      ]
+    },
+    "rd.hauptbeschwerde": {
+      "frage": "Welche Hauptbeschwerde liegt vor?",
+      "antworten": [
+        {
+          "id": "bauchschmerzen-beschwerden",
+          "label": "Bauchschmerzen, -beschwerden",
+          "ziel": "rd.01.k0",
+          "protokoll": "rd.01",
+          "nr": "01"
+        },
+        {
+          "id": "allergie-ueberreaktion-kontakt-mit",
+          "label": "Allergie (Überreaktion) / Kontakt mit giftigen Tieren (Stiche, Bisse)",
+          "ziel": "rd.02.k0",
+          "protokoll": "rd.02",
+          "nr": "02"
+        },
+        {
+          "id": "tierbiss-tierangriff",
+          "label": "Tierbiss / Tierangriff",
+          "ziel": "rd.03.k0",
+          "protokoll": "rd.03",
+          "nr": "03"
+        },
+        {
+          "id": "koerperverletzung-sexualdelikt",
+          "label": "Körperverletzung / Sexualdelikt / Elektroschocker",
+          "ziel": "rd.04.k0",
+          "protokoll": "rd.04",
+          "nr": "04"
+        },
+        {
+          "id": "rueckenschmerzen-nicht-traumatische",
+          "label": "Rückenschmerzen (Nicht traumatische Rückenschmerzen oder ältere Verletzung)",
+          "ziel": "rd.05.k0",
+          "protokoll": "rd.05",
+          "nr": "05"
+        },
+        {
+          "id": "atembeschwerden",
+          "label": "Atembeschwerden",
+          "ziel": "rd.06.k0",
+          "protokoll": "rd.06",
+          "nr": "06"
+        },
+        {
+          "id": "verbrennungen-verbruehungen-explosion",
+          "label": "Verbrennungen (Verbrühungen) / Explosion (Detonation)",
+          "ziel": "rd.07.k0",
+          "protokoll": "rd.07",
+          "nr": "07"
+        },
+        {
+          "id": "kohlenmonoxid-inhalation-gefahrgut-cbrn",
+          "label": "Kohlenmonoxid / Inhalation / Gefahrgut / CBRN",
+          "ziel": "rd.08.k0",
+          "protokoll": "rd.08",
+          "nr": "08"
+        },
+        {
+          "id": "kreislauf-atemstillstand-tote-person",
+          "label": "Kreislauf-, Atemstillstand / Tote Person",
+          "ziel": "rd.09.k0",
+          "protokoll": "rd.09",
+          "nr": "09"
+        },
+        {
+          "id": "brustschmerzen-andere-beschwerden-in-der",
+          "label": "Brustschmerzen / Andere Beschwerden in der Brust (Nicht Traumatisch)",
+          "ziel": "rd.10.k0",
+          "protokoll": "rd.10",
+          "nr": "10"
+        },
+        {
+          "id": "atemwegsverlegung-durch-fremdkoerper",
+          "label": "Atemwegsverlegung (Durch Fremdkörper)",
+          "ziel": "rd.11.k0",
+          "protokoll": "rd.11",
+          "nr": "11"
+        },
+        {
+          "id": "krampfanfall",
+          "label": "Krampfanfall",
+          "ziel": "rd.12.k0",
+          "protokoll": "rd.12",
+          "nr": "12"
+        },
+        {
+          "id": "blutzuckerentgleisungen",
+          "label": "Blutzuckerentgleisungen",
+          "ziel": "rd.13.k0",
+          "protokoll": "rd.13",
+          "nr": "13"
+        },
+        {
+          "id": "ertrinken-beinahe-ertrinken-kopfsprung",
+          "label": "Ertrinken / Beinahe-Ertrinken / Kopfsprung / Gerätetauchunfall",
+          "ziel": "rd.14.k0",
+          "protokoll": "rd.14",
+          "nr": "14"
+        },
+        {
+          "id": "stromunfall-blitzschlag",
+          "label": "Stromunfall / Blitzschlag",
+          "ziel": "rd.15.k0",
+          "protokoll": "rd.15",
+          "nr": "15"
+        },
+        {
+          "id": "augenprobleme-verletzungen",
+          "label": "Augenprobleme / Verletzungen",
+          "ziel": "rd.16.k0",
+          "protokoll": "rd.16",
+          "nr": "16"
+        },
+        {
+          "id": "sturz-absturz",
+          "label": "Sturz / Absturz",
+          "ziel": "rd.17.k0",
+          "protokoll": "rd.17",
+          "nr": "17"
+        },
+        {
+          "id": "kopfschmerzen",
+          "label": "Kopfschmerzen",
+          "ziel": "rd.18.k0",
+          "protokoll": "rd.18",
+          "nr": "18"
+        },
+        {
+          "id": "herzbeschwerden-implantierter",
+          "label": "Herzbeschwerden / Implantierter Defibrillator",
+          "ziel": "rd.19.k0",
+          "protokoll": "rd.19",
+          "nr": "19"
+        },
+        {
+          "id": "hitze-kaelteprobleme",
+          "label": "Hitze-, Kälteprobleme",
+          "ziel": "rd.20.k0",
+          "protokoll": "rd.20",
+          "nr": "20"
+        },
+        {
+          "id": "blutung-wunden",
+          "label": "Blutung / Wunden",
+          "ziel": "rd.21.k0",
+          "protokoll": "rd.21",
+          "nr": "21"
+        },
+        {
+          "id": "unzugaengliche-verschuettete",
+          "label": "Unzugängliche / Verschüttete / Eingeklemmte / Eingeschlossene Person (Nicht verkehrsbedingt)",
+          "ziel": "rd.22.k0",
+          "protokoll": "rd.22",
+          "nr": "22"
+        },
+        {
+          "id": "ueberdosis-vergiftung-einnahme",
+          "label": "Überdosis / Vergiftung (Einnahme)",
+          "ziel": "rd.23.k0",
+          "protokoll": "rd.23",
+          "nr": "23"
+        },
+        {
+          "id": "schwangerschaft-geburt-fehlgeburt",
+          "label": "Schwangerschaft / Geburt / Fehlgeburt",
+          "ziel": "rd.24.k0",
+          "protokoll": "rd.24",
+          "nr": "24"
+        },
+        {
+          "id": "psychiatrie-abnormales-verhalten",
+          "label": "Psychiatrie / Abnormales Verhalten / Suizidversuch",
+          "ziel": "rd.25.k0",
+          "protokoll": "rd.25",
+          "nr": "25"
+        },
+        {
+          "id": "kranke-person-spezielle-krankheitsbilder",
+          "label": "Kranke Person (Spezielle Krankheitsbilder)",
+          "ziel": "rd.26.k0",
+          "protokoll": "rd.26",
+          "nr": "26"
+        },
+        {
+          "id": "stich-schuss-pfaehlungsverletzung",
+          "label": "Stich-, Schuss-, Pfählungsverletzung",
+          "ziel": "rd.27.k0",
+          "protokoll": "rd.27",
+          "nr": "27"
+        },
+        {
+          "id": "schlaganfall-transitorische-ischaemische",
+          "label": "Schlaganfall / Transitorische Ischämische Attacke (TIA)",
+          "ziel": "rd.28.k0",
+          "protokoll": "rd.28",
+          "nr": "28"
+        },
+        {
+          "id": "verkehrsunfall",
+          "label": "Verkehrsunfall",
+          "ziel": "rd.29.k0",
+          "protokoll": "rd.29",
+          "nr": "29"
+        },
+        {
+          "id": "verletzungen",
+          "label": "Verletzungen",
+          "ziel": "rd.30.k0",
+          "protokoll": "rd.30",
+          "nr": "30"
+        },
+        {
+          "id": "bewusstlosigkeit-ohnmacht-beinahe",
+          "label": "Bewusstlosigkeit / Ohnmacht (Beinahe-)",
+          "ziel": "rd.31.k0",
+          "protokoll": "rd.31",
+          "nr": "31"
+        },
+        {
+          "id": "unklares-geschehen-person-in-notlage",
+          "label": "Unklares Geschehen (Person in Notlage)",
+          "ziel": "rd.32.k0",
+          "protokoll": "rd.32",
+          "nr": "32"
+        },
+        {
+          "id": "anforderung-von-rettungsmittel-durch",
+          "label": "Anforderung von Rettungsmittel durch Versorgungseinrichtung / Palliative Medizin / Einweisung",
+          "ziel": "rd.33.k0",
+          "protokoll": "rd.33",
+          "nr": "33"
+        },
+        {
+          "id": "aum-automatische-unfallmeldung",
+          "label": "AUM (Automatische Unfallmeldung)",
+          "ziel": "rd.34.k0",
+          "protokoll": "rd.34",
+          "nr": "34"
+        },
+        {
+          "id": "amoklage",
+          "label": "Amoklage",
+          "ziel": "rd.39.k0",
+          "protokoll": "rd.39",
+          "nr": "39"
+        }
+      ]
+    }
+  }
+}

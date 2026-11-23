@@ -1,1 +1,8 @@
 .concept/
+.direnv/
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+src/frontend_dist/
+.daten/

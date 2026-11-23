@@ -1,0 +1,753 @@
+{
+  "knoten": {
+    "rd.02.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "keine-atem-oder-schluckbeschwerden",
+          "label": "Keine Atem- oder Schluckbeschwerden (Ausschlag oder Juckreiz kann vorhanden sein)",
+          "ziel": "rd.02.k1",
+          "aussage": "Keine Atem- oder Schluckbeschwerden (Ausschlag oder Juckreiz kann vorhanden sein)"
+        },
+        {
+          "id": "spinnenbiss",
+          "label": "Spinnenbiss",
+          "ziel": "rd.02.k2",
+          "aussage": "Spinnenbiss"
+        },
+        {
+          "id": "asymptomatische-allergische-reaktion",
+          "label": "Asymptomatische allergische Reaktion (keine schwere Reaktion in Vorgeschichte)",
+          "ziel": "rd.02.k3",
+          "aussage": "Asymptomatische allergische Reaktion (keine schwere Reaktion in Vorgeschichte)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.02.k4",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.02.k5",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "atem-oder-schluckbeschwerden",
+          "label": "Atem- oder Schluckbeschwerden",
+          "ziel": "rd.02.k6",
+          "aussage": "Atem- oder Schluckbeschwerden"
+        },
+        {
+          "id": "schwere-allergische-reaktion",
+          "label": "Schwere allergische Reaktion-Vorgeschichte",
+          "ziel": "rd.02.k7",
+          "aussage": "Schwere allergische Reaktion-Vorgeschichte"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.02.k8",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "sprachschwierigkeiten-zwischen",
+          "label": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN",
+          "ziel": "rd.02.k9",
+          "aussage": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN"
+        },
+        {
+          "id": "angriff-von-insektenschwarm-bienen",
+          "label": "Angriff von INSEKTENSCHWARM (Bienen, Wespen, Hornissen etc.)",
+          "ziel": "rd.02.k10",
+          "aussage": "Angriff von INSEKTENSCHWARM (Bienen, Wespen, Hornissen etc.)"
+        },
+        {
+          "id": "schlangenbiss",
+          "label": "Schlangenbiss",
+          "ziel": "rd.02.k11",
+          "aussage": "Schlangenbiss"
+        },
+        {
+          "id": "ineffektive-atmung",
+          "label": "INEFFEKTIVE ATMUNG",
+          "ziel": "rd.02.k12",
+          "aussage": "INEFFEKTIVE ATMUNG"
+        }
+      ]
+    },
+    "rd.02.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02a01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02a01i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02a01m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02a02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02a02i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02a02m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02a03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02a03i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02a03m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.02.02b00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.02.02b00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.02.02b00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02b00i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Injektion verabreicht oder angewiesen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02b00i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Injektion verabreicht oder angewiesen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-injektion",
+          "label": "bei Patientenalter unbekannt, Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02b00i",
+          "aussage": "bei Patientenalter unbekannt, Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02b00m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Medikamente verabreicht oder angewiesen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02b00m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Medikamente verabreicht oder angewiesen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-medikamente",
+          "label": "bei Patientenalter unbekannt, Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02b00m",
+          "aussage": "bei Patientenalter unbekannt, Medikamente verabreicht oder angewiesen"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02c00i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02c00m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen-2",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02d00i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen-2",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02d00m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02e00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen-3",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02e00i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen-3",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02e00m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02b01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02b01i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02b01m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02c01i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02c01m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02c02i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02c02m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02d01i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02d01m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02d02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02d02i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02d02m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02d03i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02d03m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02d04i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02d04m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.02.02e01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "injektion-verabreicht-oder-angewiesen",
+          "label": "Injektion verabreicht oder angewiesen",
+          "ziel": "rd.02.02e01i",
+          "aussage": "Injektion verabreicht oder angewiesen"
+        },
+        {
+          "id": "medikamente-verabreicht-oder-angewiesen",
+          "label": "Medikamente verabreicht oder angewiesen",
+          "ziel": "rd.02.02e01m",
+          "aussage": "Medikamente verabreicht oder angewiesen"
+        }
+      ]
+    },
+    "rd.02.02a01": {
+      "code": "02A01",
+      "kategorie": "RD5.",
+      "anlass": "02A01",
+      "stichwort": "RD5."
+    },
+    "rd.02.02a01i": {
+      "code": "02A01I",
+      "kategorie": "RD2C.",
+      "anlass": "Allergische Reaktion ohne Atem- / Schluckbeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.02.02a01m": {
+      "code": "02A01M",
+      "kategorie": "RD5.",
+      "anlass": "02A01M",
+      "stichwort": "RD5."
+    },
+    "rd.02.02a02": {
+      "code": "02A02",
+      "kategorie": "RD5.",
+      "anlass": "02A02",
+      "stichwort": "RD5."
+    },
+    "rd.02.02a02i": {
+      "code": "02A02I",
+      "kategorie": "RD5.",
+      "anlass": "02A02I",
+      "stichwort": "RD5."
+    },
+    "rd.02.02a02m": {
+      "code": "02A02M",
+      "kategorie": "RD5.",
+      "anlass": "02A02M",
+      "stichwort": "RD5."
+    },
+    "rd.02.02a03": {
+      "code": "02A03",
+      "kategorie": "RD5.",
+      "anlass": "02A03",
+      "stichwort": "RD5."
+    },
+    "rd.02.02a03i": {
+      "code": "02A03I",
+      "kategorie": "RD2C.",
+      "anlass": "Allergische Reaktion ohne Atem- / Schluckbeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.02.02a03m": {
+      "code": "02A03M",
+      "kategorie": "RD5.",
+      "anlass": "02A03M",
+      "stichwort": "RD5."
+    },
+    "rd.02.02b00": {
+      "code": "02B00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Allergische Reaktion",
+      "stichwort": "RD4B."
+    },
+    "rd.02.02b00-2": {
+      "code": "02B00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Allergische Reaktion, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.02.02b00i": {
+      "code": "02B00I",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Allergische Reaktion",
+      "stichwort": "RD4B."
+    },
+    "rd.02.02b00i-2": {
+      "code": "02B00I",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Allergische Reaktion, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.02.02b00m": {
+      "code": "02B00M",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Allergische Reaktion",
+      "stichwort": "RD4B."
+    },
+    "rd.02.02b00m-2": {
+      "code": "02B00M",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Allergische Reaktion, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.02.02c00": {
+      "code": "02C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02c00i": {
+      "code": "02C00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02c00m": {
+      "code": "02C00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02d00": {
+      "code": "02D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02d00i": {
+      "code": "02D00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02d00m": {
+      "code": "02D00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02e00": {
+      "code": "02E00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02e00i": {
+      "code": "02E00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02e00m": {
+      "code": "02E00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Allergische Reaktion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.02.02b01": {
+      "code": "02B01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion, unbekannter Patientenzustand",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02b01i": {
+      "code": "02B01I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion, unbekannter Patientenzustand",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02b01m": {
+      "code": "02B01M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion, unbekannter Patientenzustand",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02c01": {
+      "code": "02C01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atem- / Schluckbeschwerden nach allergischer Reaktion",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02c01i": {
+      "code": "02C01I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atem- / Schluckbeschwerden nach allergischer Reaktion",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02c01m": {
+      "code": "02C01M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atem- / Schluckbeschwerden nach allergischer Reaktion",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02c02": {
+      "code": "02C02",
+      "kategorie": "RD2C FR.",
+      "anlass": "Schwere allergische Reaktion in Vorgeschichte bekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02c02i": {
+      "code": "02C02I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Schwere allergische Reaktion in Vorgeschichte bekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02c02m": {
+      "code": "02C02M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Schwere allergische Reaktion in Vorgeschichte bekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02d01": {
+      "code": "02D01",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach allergischer Reaktion",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.02.02d01i": {
+      "code": "02D01I",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach allergischer Reaktion",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.02.02d01m": {
+      "code": "02D01M",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach allergischer Reaktion",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.02.02d02": {
+      "code": "02D02",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot nach allergischer Reaktion",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.02.02d02i": {
+      "code": "02D02I",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot nach allergischer Reaktion",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.02.02d02m": {
+      "code": "02D02M",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot nach allergischer Reaktion",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.02.02d03": {
+      "code": "02D03",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion nach Angriff von Insektenschwarm",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02d03i": {
+      "code": "02D03I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion nach Angriff von Insektenschwarm",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02d03m": {
+      "code": "02D03M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion nach Angriff von Insektenschwarm",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02d04": {
+      "code": "02D04",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion nach Schlangenbiss",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02d04i": {
+      "code": "02D04I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion nach Schlangenbiss",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02d04m": {
+      "code": "02D04M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Allergische Reaktion nach Schlangenbiss",
+      "stichwort": "RD2C FR."
+    },
+    "rd.02.02e01": {
+      "code": "02E01",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ineffektive Atmung nach allergischer Reaktion",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.02.02e01i": {
+      "code": "02E01I",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ineffektive Atmung nach allergischer Reaktion",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.02.02e01m": {
+      "code": "02E01M",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ineffektive Atmung nach allergischer Reaktion",
+      "stichwort": "RD1NC FR."
+    }
+  }
+}

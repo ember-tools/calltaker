@@ -1,0 +1,2549 @@
+{
+  "knoten": {
+    "rd.22.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "nicht-mehr-eingeklemmmt-keine",
+          "label": "Nicht mehr eingeklemmmt (keine Verletzungen)",
+          "ziel": "rd.22.k1",
+          "aussage": "Nicht mehr eingeklemmmt (keine Verletzungen)"
+        },
+        {
+          "id": "eingeklemmt-eingeschlossen-finger-zehe",
+          "label": "Eingeklemmt / eingeschlossen (Finger, Zehe, Haar mit nichtschwerwiegenden, bekannten oder keinen offensichtlichen Verletzungen)",
+          "ziel": "rd.22.k2",
+          "aussage": "Eingeklemmt / eingeschlossen (Finger, Zehe, Haar mit nichtschwerwiegenden, bekannten oder keinen offensichtlichen Verletzungen)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.22.k3",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "eingeklemmt-eingeschlossen-hand",
+          "label": "Eingeklemmt / eingeschlossen (Hand, Handgelenk, Unterarm, Fuß, Unterschenkel)",
+          "ziel": "rd.22.k4",
+          "aussage": "Eingeklemmt / eingeschlossen (Hand, Handgelenk, Unterarm, Fuß, Unterschenkel)"
+        },
+        {
+          "id": "eingeklemmt-eingeschlossen-nicht",
+          "label": "Eingeklemmt / eingeschlossen (nicht gefährdet)",
+          "ziel": "rd.22.k5",
+          "aussage": "Eingeklemmt / eingeschlossen (nicht gefährdet)"
+        },
+        {
+          "id": "nicht-mehr-eingeklemmt-eingeschlossen",
+          "label": "Nicht mehr Eingeklemmt / eingeschlossen mit nichtschwerwiegenden / unbekannten Verletzungen",
+          "ziel": "rd.22.k6",
+          "aussage": "Nicht mehr Eingeklemmt / eingeschlossen mit nichtschwerwiegenden / unbekannten Verletzungen"
+        },
+        {
+          "id": "unbekannter-zustand-erkundung",
+          "label": "Unbekannter Zustand (Erkundung)",
+          "ziel": "rd.22.k7",
+          "aussage": "Unbekannter Zustand (Erkundung)"
+        },
+        {
+          "id": "eingeklemmt-eingeschlossen-hand-2",
+          "label": "Eingeklemmt / eingeschlossen (Hand, Handgelenk, Unterarm, Fuß, Unterschenkel mit schwerwiegenden Verletzungen oder unbekanntem Körperteil)",
+          "ziel": "rd.22.k8",
+          "aussage": "Eingeklemmt / eingeschlossen (Hand, Handgelenk, Unterarm, Fuß, Unterschenkel mit schwerwiegenden Verletzungen oder unbekanntem Körperteil)"
+        },
+        {
+          "id": "eingeklemmt-eingeschlossen-finger-zehe-2",
+          "label": "Eingeklemmt / eingeschlossen (Finger, Zehe, Haar mit schwerwiegenden Verletzungen)",
+          "ziel": "rd.22.k9",
+          "aussage": "Eingeklemmt / eingeschlossen (Finger, Zehe, Haar mit schwerwiegenden Verletzungen)"
+        },
+        {
+          "id": "nicht-mehr-eingeklemmt-eingeschlossen-2",
+          "label": "Nicht mehr eingeklemmt / eingeschlossen / verschüttet mit schwerwiegenden Verletzungen",
+          "ziel": "rd.22.k10",
+          "aussage": "Nicht mehr eingeklemmt / eingeschlossen / verschüttet mit schwerwiegenden Verletzungen"
+        },
+        {
+          "id": "im-kofferraum-eines-fahrzeugs",
+          "label": "Im Kofferraum eines Fahrzeugs eingeschlossen",
+          "ziel": "rd.22.k11",
+          "aussage": "Im Kofferraum eines Fahrzeugs eingeschlossen"
+        },
+        {
+          "id": "graben-einsturz-eingeklemmt",
+          "label": "Graben (Einsturz) - eingeklemmt / eingeschlossen / verschüttet unbestätigt",
+          "ziel": "rd.22.k12",
+          "aussage": "Graben (Einsturz) - eingeklemmt / eingeschlossen / verschüttet unbestätigt"
+        },
+        {
+          "id": "einsturz-gebaeude-bauwerk-eingeklemmt",
+          "label": "Einsturz - Gebäude / Bauwerk - eingeklemmt / eingeschlossen / verschüttet unbestätigt",
+          "ziel": "rd.22.k13",
+          "aussage": "Einsturz - Gebäude / Bauwerk - eingeklemmt / eingeschlossen / verschüttet unbestätigt"
+        },
+        {
+          "id": "gebaeude-bauwerkeinsturz-ins-wasser",
+          "label": "Gebäude- / Bauwerkeinsturz ins Wasser - eingeklemmt / eingeschlossen / verschüttet unbestätigt",
+          "ziel": "rd.22.k14",
+          "aussage": "Gebäude- / Bauwerkeinsturz ins Wasser - eingeklemmt / eingeschlossen / verschüttet unbestätigt"
+        },
+        {
+          "id": "raumenge-gebaeude-bauwerk-eingeklemmt",
+          "label": "Raumenge - Gebäude / Bauwerk - eingeklemmt / eingeschlossen / verschüttet unbestätigt",
+          "ziel": "rd.22.k15",
+          "aussage": "Raumenge - Gebäude / Bauwerk - eingeklemmt / eingeschlossen / verschüttet unbestätigt"
+        },
+        {
+          "id": "unzugaengliches-gelaende-eingeklemmt",
+          "label": "Unzugängliches Gelände - Eingeklemmt / eingeschlossen / verschüttet unbestätigt",
+          "ziel": "rd.22.k16",
+          "aussage": "Unzugängliches Gelände - Eingeklemmt / eingeschlossen / verschüttet unbestätigt"
+        },
+        {
+          "id": "lawine-erdrutsch-schlammlawine",
+          "label": "Lawine / Erdrutsch / Schlammlawine - eingeklemmt / eingeschlossen / verschüttet unbestätigt",
+          "ziel": "rd.22.k17",
+          "aussage": "Lawine / Erdrutsch / Schlammlawine - eingeklemmt / eingeschlossen / verschüttet unbestätigt"
+        },
+        {
+          "id": "erdfall-eingeklemmt-eingeschlossen",
+          "label": "Erdfall - eingeklemmt / eingeschlossen / verschüttet unbestätigt",
+          "ziel": "rd.22.k18",
+          "aussage": "Erdfall - eingeklemmt / eingeschlossen / verschüttet unbestätigt"
+        },
+        {
+          "id": "eingeklemmt-eingeschlossen-verschuettet",
+          "label": "Eingeklemmt / eingeschlossen / verschüttet (Ganzer Körper oder Kopf, Oberkörper/Torso/Brust, Oberarm, Oberschenkel)",
+          "ziel": "rd.22.k19",
+          "aussage": "Eingeklemmt / eingeschlossen / verschüttet (Ganzer Körper oder Kopf, Oberkörper/Torso/Brust, Oberarm, Oberschenkel)"
+        },
+        {
+          "id": "eingeklemmt-eingeschlossen-verschuettet-2",
+          "label": "Eingeklemmt / eingeschlossen / verschüttet (Ganzer Körper oder Kopf, Oberkörper/Torso/Brust, Oberarm, Oberschenkel) mit schwerwiegenden Verletzungen",
+          "ziel": "rd.22.k20",
+          "aussage": "Eingeklemmt / eingeschlossen / verschüttet (Ganzer Körper oder Kopf, Oberkörper/Torso/Brust, Oberarm, Oberschenkel) mit schwerwiegenden Verletzungen"
+        },
+        {
+          "id": "grabeneinsturz-eingeklemmt",
+          "label": "Grabeneinsturz - Eingeklemmt / eingeschlossen / verschüttet bestätigt",
+          "ziel": "rd.22.k21",
+          "aussage": "Grabeneinsturz - Eingeklemmt / eingeschlossen / verschüttet bestätigt"
+        },
+        {
+          "id": "einsturz-gebaeude-bauwerk-eingeklemmt-2",
+          "label": "Einsturz - Gebäude / Bauwerk - eingeklemmt / eingeschlossen / verschüttet bestätigt",
+          "ziel": "rd.22.k22",
+          "aussage": "Einsturz - Gebäude / Bauwerk - eingeklemmt / eingeschlossen / verschüttet bestätigt"
+        },
+        {
+          "id": "einsturz-gebaeude-bauwerk-ins-wasser",
+          "label": "Einsturz - Gebäude / Bauwerk ins Wasser - eingeklemmt / eingeschlossen / verschüttet bestätigt",
+          "ziel": "rd.22.k23",
+          "aussage": "Einsturz - Gebäude / Bauwerk ins Wasser - eingeklemmt / eingeschlossen / verschüttet bestätigt"
+        },
+        {
+          "id": "raumenge-gebaeude-bauwerk-eingeklemmt-2",
+          "label": "Raumenge - Gebäude / Bauwerk - eingeklemmt / eingeschlossen / verschüttet bestätigt",
+          "ziel": "rd.22.k24",
+          "aussage": "Raumenge - Gebäude / Bauwerk - eingeklemmt / eingeschlossen / verschüttet bestätigt"
+        },
+        {
+          "id": "unzugaengliches-gelaende-eingeklemmt-2",
+          "label": "Unzugängliches Gelände - Eingeklemmt / eingeschlossen / verschüttet oder schwerwiegenden Verletzungen bestätigt",
+          "ziel": "rd.22.k25",
+          "aussage": "Unzugängliches Gelände - Eingeklemmt / eingeschlossen / verschüttet oder schwerwiegenden Verletzungen bestätigt"
+        },
+        {
+          "id": "lawine-erdrutsch-schlammlawine-2",
+          "label": "Lawine / Erdrutsch / Schlammlawine - eingeklemmt / eingeschlossen / verschüttet bestätigt",
+          "ziel": "rd.22.k26",
+          "aussage": "Lawine / Erdrutsch / Schlammlawine - eingeklemmt / eingeschlossen / verschüttet bestätigt"
+        },
+        {
+          "id": "erdfall-eingeklemmt-eingeschlossen-2",
+          "label": "Erdfall - eingeklemmt / eingeschlossen / verschüttet bestätigt",
+          "ziel": "rd.22.k27",
+          "aussage": "Erdfall - eingeklemmt / eingeschlossen / verschüttet bestätigt"
+        },
+        {
+          "id": "unter-fahrzeug-wohnwagen-kein-vu",
+          "label": "Unter Fahrzeug / Wohnwagen (kein VU) - eingeklemmt / eingeschlossen / verschüttet bestätigt",
+          "ziel": "rd.22.k28",
+          "aussage": "Unter Fahrzeug / Wohnwagen (kein VU) - eingeklemmt / eingeschlossen / verschüttet bestätigt"
+        }
+      ]
+    },
+    "rd.22.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.22.22a01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "eine-verletzte-person",
+          "label": "Eine verletzte Person",
+          "ziel": "rd.22.22a01x",
+          "aussage": "Eine verletzte Person"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.22.22a01y",
+          "aussage": "Mehrere Verletzte"
+        }
+      ]
+    },
+    "rd.22.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22a02m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22a02n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22a02o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22a02s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22a02t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22a02u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.22.22b00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22b00m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22b00n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22b00o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22b00s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22b00t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22b00u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        },
+        {
+          "id": "eine-verletzte-person",
+          "label": "Eine verletzte Person",
+          "ziel": "rd.22.22b00x",
+          "aussage": "Eine verletzte Person"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.22.22b00y",
+          "aussage": "Mehrere Verletzte"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.22.22c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-4",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c00m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-5",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c00n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-4",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c00o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-5",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c00s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-6",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c00t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-6",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c00u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        },
+        {
+          "id": "eine-verletzte-person-2",
+          "label": "Eine verletzte Person",
+          "ziel": "rd.22.22c00x",
+          "aussage": "Eine verletzte Person"
+        },
+        {
+          "id": "mehrere-verletzte-2",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.22.22c00y",
+          "aussage": "Mehrere Verletzte"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.22.22d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-7",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d00m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-8",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d00n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-7",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d00o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-8",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d00s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-9",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d00t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-9",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d00u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        },
+        {
+          "id": "eine-verletzte-person-3",
+          "label": "Eine verletzte Person",
+          "ziel": "rd.22.22d00x",
+          "aussage": "Eine verletzte Person"
+        },
+        {
+          "id": "mehrere-verletzte-3",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.22.22d00y",
+          "aussage": "Mehrere Verletzte"
+        }
+      ]
+    },
+    "rd.22.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22b01m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22b01n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22b01o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22b01s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22b01t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22b01u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22b02m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22b02n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22b02o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22b02s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22b02t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22b02u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.22.22b03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "eine-verletzte-person",
+          "label": "Eine verletzte Person",
+          "ziel": "rd.22.22b03x",
+          "aussage": "Eine verletzte Person"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.22.22b03y",
+          "aussage": "Mehrere Verletzte"
+        }
+      ]
+    },
+    "rd.22.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.22.22b04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22b04m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22b04n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22b04o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22b04s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22b04t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22b04u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        },
+        {
+          "id": "eine-verletzte-person",
+          "label": "Eine verletzte Person",
+          "ziel": "rd.22.22b04x",
+          "aussage": "Eine verletzte Person"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.22.22b04y",
+          "aussage": "Mehrere Verletzte"
+        }
+      ]
+    },
+    "rd.22.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c01m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c01n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c01o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c01s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c01t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c01u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c02m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c02n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c02o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c02s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c02t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c02u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.22.22c03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "eine-verletzte-person",
+          "label": "Eine verletzte Person",
+          "ziel": "rd.22.22c03x",
+          "aussage": "Eine verletzte Person"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.22.22c03y",
+          "aussage": "Mehrere Verletzte"
+        }
+      ]
+    },
+    "rd.22.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c04m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c04n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c04o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c04s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c04t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c04u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c05m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c05n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c05o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c05s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c05t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c05u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c06m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c06n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c06o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c06s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c06t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c06u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c07m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c07n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c07o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c07s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c07t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c07u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k15": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c08m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c08n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c08o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c08s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c08t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c08u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k16": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c09m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c09n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c09o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c09s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c09t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c09u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k17": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c10m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c10n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c10o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c10s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c10t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c10u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k18": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22c11m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22c11n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22c11o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22c11s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22c11t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22c11u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k19": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d01m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d01n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d01o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d01s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d01t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d01u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k20": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d02m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d02n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d02o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d02s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d02t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d02u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k21": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d03m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d03n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d03o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d03s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d03t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d03u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k22": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d04m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d04n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d04o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d04s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d04t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d04u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k23": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d05m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d05n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d05o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d05s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d05t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d05u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k24": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d06m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d06n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d06o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d06s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d06t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d06u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k25": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.22.22d07",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d07m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d07n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d07o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d07s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d07t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d07u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        },
+        {
+          "id": "eine-verletzte-person",
+          "label": "Eine verletzte Person",
+          "ziel": "rd.22.22d07x",
+          "aussage": "Eine verletzte Person"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.22.22d07y",
+          "aussage": "Mehrere Verletzte"
+        }
+      ]
+    },
+    "rd.22.k26": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d08m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d08n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d08o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d08s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d08t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d08u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k27": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d09m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d09n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d09o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d09s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d09t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d09u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.k28": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen",
+          "ziel": "rd.22.22d10m",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und mehrere verletzte Personen"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-2",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person",
+          "ziel": "rd.22.22d10n",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte",
+          "ziel": "rd.22.22d10o",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und mehrere Verletzte"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-2",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person",
+          "ziel": "rd.22.22d10s",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person und eine verletzte Person"
+        },
+        {
+          "id": "eine-eingeklemmt-eingeschlossene-3",
+          "label": "Eine eingeklemmt / eingeschlossene / verschüttete Person",
+          "ziel": "rd.22.22d10t",
+          "aussage": "Eine eingeklemmt / eingeschlossene / verschüttete Person"
+        },
+        {
+          "id": "mehrere-eingeklemmte-eingeschlossene-3",
+          "label": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen",
+          "ziel": "rd.22.22d10u",
+          "aussage": "Mehrere eingeklemmte / eingeschlossene / verschüttete Personen"
+        }
+      ]
+    },
+    "rd.22.22a01": {
+      "code": "22A01",
+      "kategorie": "RD3C.",
+      "anlass": "Nicht mehr eingeklemmmt - keine Verletzungen offensichtlich",
+      "stichwort": "RD3C."
+    },
+    "rd.22.22a01x": {
+      "code": "22A01X",
+      "kategorie": "RD2NC.",
+      "anlass": "Nicht mehr eingeklemmmt - keine Verletzungen offensichtlich - 2 Verletzte",
+      "stichwort": "RD2NC."
+    },
+    "rd.22.22a01y": {
+      "code": "22A01Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Nicht mehr eingeklemmmt - keine Verletzungen offensichtlich - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22a02m": {
+      "code": "22A02M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22a02n": {
+      "code": "22A02N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22a02o": {
+      "code": "22A02O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22a02s": {
+      "code": "22A02S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22a02t": {
+      "code": "22A02T",
+      "kategorie": "RD3C.",
+      "anlass": "Periphere Einklemmung",
+      "stichwort": "RD3C."
+    },
+    "rd.22.22a02u": {
+      "code": "22A02U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b00": {
+      "code": "22B00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b00m": {
+      "code": "22B00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b00n": {
+      "code": "22B00N",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b00o": {
+      "code": "22B00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b00s": {
+      "code": "22B00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b00t": {
+      "code": "22B00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b00u": {
+      "code": "22B00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b00x": {
+      "code": "22B00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b00y": {
+      "code": "22B00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00": {
+      "code": "22C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00m": {
+      "code": "22C00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00n": {
+      "code": "22C00N",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00o": {
+      "code": "22C00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00s": {
+      "code": "22C00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00t": {
+      "code": "22C00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00u": {
+      "code": "22C00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00x": {
+      "code": "22C00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22c00y": {
+      "code": "22C00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00": {
+      "code": "22D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00m": {
+      "code": "22D00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00n": {
+      "code": "22D00N",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00o": {
+      "code": "22D00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00s": {
+      "code": "22D00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00t": {
+      "code": "22D00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00u": {
+      "code": "22D00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00x": {
+      "code": "22D00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22d00y": {
+      "code": "22D00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.22.22b01m": {
+      "code": "22B01M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b01n": {
+      "code": "22B01N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b01o": {
+      "code": "22B01O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b01s": {
+      "code": "22B01S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b01t": {
+      "code": "22B01T",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Eingeklemmte Person - Extremität betroffen",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.22.22b01u": {
+      "code": "22B01U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b02m": {
+      "code": "22B02M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b02n": {
+      "code": "22B02N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b02o": {
+      "code": "22B02O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b02s": {
+      "code": "22B02S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b02t": {
+      "code": "22B02T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b02u": {
+      "code": "22B02U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b03": {
+      "code": "22B03",
+      "kategorie": "RD2C.",
+      "anlass": "Verletzungen nach Einklemmung",
+      "stichwort": "RD2C."
+    },
+    "rd.22.22b03x": {
+      "code": "22B03X",
+      "kategorie": "RD2NC.",
+      "anlass": "Verletzungen nach Einklemmung - 2 Verletzte",
+      "stichwort": "RD2NC."
+    },
+    "rd.22.22b03y": {
+      "code": "22B03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verletzungen nach Einklemmung - Mehrere Verletze",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b04": {
+      "code": "22B04",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unbekannter Zustand - Möglicherweise Einklemmung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22b04m": {
+      "code": "22B04M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b04n": {
+      "code": "22B04N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b04o": {
+      "code": "22B04O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b04s": {
+      "code": "22B04S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b04t": {
+      "code": "22B04T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22b04u": {
+      "code": "22B04U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22b04x": {
+      "code": "22B04X",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unbekannter Zustand - Möglicherweise Einklemmung - 2 Verletzte",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22b04y": {
+      "code": "22B04Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unbekannter Zustand - Möglicherweise Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c01m": {
+      "code": "22C01M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c01n": {
+      "code": "22C01N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c01o": {
+      "code": "22C01O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c01s": {
+      "code": "22C01S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c01t": {
+      "code": "22C01T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Eingeklemmte Person - Extremität betroffen",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c01u": {
+      "code": "22C01U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c02m": {
+      "code": "22C02M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c02n": {
+      "code": "22C02N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c02o": {
+      "code": "22C02O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c02s": {
+      "code": "22C02S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c02t": {
+      "code": "22C02T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Periphere Einklemmung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c02u": {
+      "code": "22C02U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Periphere Einklemmung - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c03": {
+      "code": "22C03",
+      "kategorie": "RD2NC.",
+      "anlass": "Schwerwiegende Verletzungen nach Einklemmung",
+      "stichwort": "RD2NC."
+    },
+    "rd.22.22c03x": {
+      "code": "22C03X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schwerwiegende Verletzungen nach Einklemmung - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c03y": {
+      "code": "22C03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schwerwiegende Verletzungen nach Einklemmung - Mehrere Verletze",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c04m": {
+      "code": "22C04M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Im Kofferraum eines Fahrzeugs eingeschlossen - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c04n": {
+      "code": "22C04N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Im Kofferraum eines Fahrzeugs eingeschlossen - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c04o": {
+      "code": "22C04O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Im Kofferraum eines Fahrzeugs eingeschlossen - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c04s": {
+      "code": "22C04S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Im Kofferraum eines Fahrzeugs eingeschlossen - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c04t": {
+      "code": "22C04T",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Im Kofferraum eines Fahrzeugs eingeschlossen",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.22.22c04u": {
+      "code": "22C04U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Im Kofferraum eines Fahrzeugs eingeschlossen - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c05m": {
+      "code": "22C05M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c05n": {
+      "code": "22C05N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c05o": {
+      "code": "22C05O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c05s": {
+      "code": "22C05S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c05t": {
+      "code": "22C05T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Grabeneinsturz - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c05u": {
+      "code": "22C05U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c06m": {
+      "code": "22C06M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c06n": {
+      "code": "22C06N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c06o": {
+      "code": "22C06O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c06s": {
+      "code": "22C06S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c06t": {
+      "code": "22C06T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gebäudeeinsturz - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c06u": {
+      "code": "22C06U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c07m": {
+      "code": "22C07M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c07n": {
+      "code": "22C07N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c07o": {
+      "code": "22C07O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c07s": {
+      "code": "22C07S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c07t": {
+      "code": "22C07T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gebäudeeinsturz ins Wasser - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c07u": {
+      "code": "22C07U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c08m": {
+      "code": "22C08M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c08n": {
+      "code": "22C08N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c08o": {
+      "code": "22C08O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c08s": {
+      "code": "22C08S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c08t": {
+      "code": "22C08T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Raumenge - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c08u": {
+      "code": "22C08U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c09m": {
+      "code": "22C09M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c09n": {
+      "code": "22C09N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c09o": {
+      "code": "22C09O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c09s": {
+      "code": "22C09S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c09t": {
+      "code": "22C09T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unzugängliches Gelände - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c09u": {
+      "code": "22C09U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c10m": {
+      "code": "22C10M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c10n": {
+      "code": "22C10N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c10o": {
+      "code": "22C10O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c10s": {
+      "code": "22C10S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c10t": {
+      "code": "22C10T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Erdrutsch - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c10u": {
+      "code": "22C10U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c11m": {
+      "code": "22C11M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c11n": {
+      "code": "22C11N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c11o": {
+      "code": "22C11O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c11s": {
+      "code": "22C11S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22c11t": {
+      "code": "22C11T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Erdfall - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22c11u": {
+      "code": "22C11U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d01m": {
+      "code": "22D01M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d01n": {
+      "code": "22D01N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d01o": {
+      "code": "22D01O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d01s": {
+      "code": "22D01S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d01t": {
+      "code": "22D01T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d01u": {
+      "code": "22D01U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d02m": {
+      "code": "22D02M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d02n": {
+      "code": "22D02N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d02o": {
+      "code": "22D02O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d02s": {
+      "code": "22D02S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d02t": {
+      "code": "22D02T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d02u": {
+      "code": "22D02U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d03m": {
+      "code": "22D03M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d03n": {
+      "code": "22D03N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d03o": {
+      "code": "22D03O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d03s": {
+      "code": "22D03S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d03t": {
+      "code": "22D03T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Grabeneinsturz - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d03u": {
+      "code": "22D03U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Grabeneinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d04m": {
+      "code": "22D04M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d04n": {
+      "code": "22D04N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d04o": {
+      "code": "22D04O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d04s": {
+      "code": "22D04S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d04t": {
+      "code": "22D04T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gebäudeeinsturz - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d04u": {
+      "code": "22D04U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d05m": {
+      "code": "22D05M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d05n": {
+      "code": "22D05N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d05o": {
+      "code": "22D05O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d05s": {
+      "code": "22D05S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d05t": {
+      "code": "22D05T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gebäudeeinsturz ins Wasser - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d05u": {
+      "code": "22D05U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gebäudeeinsturz ins Wasser - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d06m": {
+      "code": "22D06M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d06n": {
+      "code": "22D06N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d06o": {
+      "code": "22D06O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d06s": {
+      "code": "22D06S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d06t": {
+      "code": "22D06T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Raumenge - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d06u": {
+      "code": "22D06U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Raumenge - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d07": {
+      "code": "22D07",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unzugängliches Gelände",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d07m": {
+      "code": "22D07M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d07n": {
+      "code": "22D07N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d07o": {
+      "code": "22D07O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d07s": {
+      "code": "22D07S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d07t": {
+      "code": "22D07T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unzugängliches Gelände - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d07u": {
+      "code": "22D07U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d07x": {
+      "code": "22D07X",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unzugängliches Gelände - 2 Verletzte",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d07y": {
+      "code": "22D07Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unzugängliches Gelände - Mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d08m": {
+      "code": "22D08M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d08n": {
+      "code": "22D08N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d08o": {
+      "code": "22D08O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d08s": {
+      "code": "22D08S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d08t": {
+      "code": "22D08T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Erdrutsch - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d08u": {
+      "code": "22D08U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdrutsch - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d09m": {
+      "code": "22D09M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d09n": {
+      "code": "22D09N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d09o": {
+      "code": "22D09O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d09s": {
+      "code": "22D09S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d09t": {
+      "code": "22D09T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Erdfall - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d09u": {
+      "code": "22D09U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Erdfall - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d10m": {
+      "code": "22D10M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unter Fahrzeug - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d10n": {
+      "code": "22D10N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unter Fahrzeug - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d10o": {
+      "code": "22D10O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unter Fahrzeug - Eingeklemmte Person und mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d10s": {
+      "code": "22D10S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unter Fahrzeug - Eingeklemmte Person und eine verletzte Person",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.22.22d10t": {
+      "code": "22D10T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unter Fahrzeug - Eingeklemmte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.22.22d10u": {
+      "code": "22D10U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unter Fahrzeug - Mehrere eingeklemmte Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    }
+  }
+}

@@ -1,0 +1,1796 @@
+{
+  "knoten": {
+    "rd.27.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "aeltere-6-h-periphere-wunde-ohne",
+          "label": "ÄLTERE (≥ 6 h) PERIPHERE Wunde (ohne Notfallleitsymptome)",
+          "ziel": "rd.27.k1",
+          "aussage": "ÄLTERE (≥ 6 h) PERIPHERE Wunde (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.27.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "einzelne-aeltere-6-h-zentrale-wunde",
+          "label": "Einzelne ÄLTERE (≥ 6 h) ZENTRALE Wunde",
+          "ziel": "rd.27.k3",
+          "aussage": "Einzelne ÄLTERE (≥ 6 h) ZENTRALE Wunde"
+        },
+        {
+          "id": "einzelne-bekannte-periphere-wunde",
+          "label": "Einzelne bekannte PERIPHERE Wunde",
+          "ziel": "rd.27.k4",
+          "aussage": "Einzelne bekannte PERIPHERE Wunde"
+        },
+        {
+          "id": "starke-blutung",
+          "label": "STARKE Blutung",
+          "ziel": "rd.27.k5",
+          "aussage": "STARKE Blutung"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.27.k6",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "offensichtlich-tote-person-unzweifelhaft",
+          "label": "OFFENSICHTLICH TOTE PERSON unzweifelhaft",
+          "ziel": "rd.27.k7",
+          "aussage": "OFFENSICHTLICH TOTE PERSON unzweifelhaft"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.27.k8",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.27.k9",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.27.k10",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "zentrale-wunden",
+          "label": "ZENTRALE Wunden",
+          "ziel": "rd.27.k11",
+          "aussage": "ZENTRALE Wunden"
+        },
+        {
+          "id": "mehrere-wunden",
+          "label": "Mehrere Wunden",
+          "ziel": "rd.27.k12",
+          "aussage": "Mehrere Wunden"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.27.k13",
+          "aussage": "Mehrere Verletzte"
+        }
+      ]
+    },
+    "rd.27.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27a01g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27a01g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Schussverletzung",
+          "ziel": "rd.27.27a01g",
+          "aussage": "bei Patientenalter unbekannt, Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27a01i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27a01p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27a01s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27a01x",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27a01x",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27a01x-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst-2",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27a01y",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27a01y-2",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst-2",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27a01y-2",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "schussverletzung",
+          "label": "Schussverletzung",
+          "ziel": "rd.27.27b00g",
+          "aussage": "Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27b00i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b00p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27b00s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "selbst-zugefuegte-schussverletzung",
+          "label": "Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b00x",
+          "aussage": "Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "selbst-zugefuegte-messer-stichwunde",
+          "label": "Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b00y",
+          "aussage": "Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        },
+        {
+          "id": "schussverletzung-2",
+          "label": "Schussverletzung",
+          "ziel": "rd.27.27d00g",
+          "aussage": "Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt-2",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d00i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr-2",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d00p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung-2",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27d00s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "selbst-zugefuegte-schussverletzung-2",
+          "label": "Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27d00x",
+          "aussage": "Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "selbst-zugefuegte-messer-stichwunde-2",
+          "label": "Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27d00y",
+          "aussage": "Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27b01g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Schussverletzung",
+          "ziel": "rd.27.27b01g",
+          "aussage": "bei Patientenalter unbekannt, Schussverletzung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27b01g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27b01i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b01p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b01p",
+          "aussage": "bei Patientenalter unbekannt, Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b01p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Stichverletzung",
+          "ziel": "rd.27.27b01s",
+          "aussage": "bei Patientenalter älter 12 Jahre, Stichverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Stichverletzung",
+          "ziel": "rd.27.27b01s",
+          "aussage": "bei Patientenalter unbekannt, Stichverletzung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Stichverletzung",
+          "ziel": "rd.27.27b01s-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Stichverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b01x",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b01x",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b01x-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b01y",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst-2",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b01y",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst-2",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b01y-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.27.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27b02g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Schussverletzung",
+          "ziel": "rd.27.27b02g",
+          "aussage": "bei Patientenalter unbekannt, Schussverletzung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27b02g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27b02i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b02p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b02p",
+          "aussage": "bei Patientenalter unbekannt, Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b02p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Stichverletzung",
+          "ziel": "rd.27.27b02s",
+          "aussage": "bei Patientenalter älter 12 Jahre, Stichverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Stichverletzung",
+          "ziel": "rd.27.27b02s",
+          "aussage": "bei Patientenalter unbekannt, Stichverletzung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Stichverletzung",
+          "ziel": "rd.27.27b02s-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Stichverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b02x",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b02x",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b02x-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b02y",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst-2",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b02y",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst-2",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b02y-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.27.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27b03g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Schussverletzung",
+          "ziel": "rd.27.27b03g",
+          "aussage": "bei Patientenalter unbekannt, Schussverletzung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27b03g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27b03i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b03p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b03p",
+          "aussage": "bei Patientenalter unbekannt, Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b03p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Stichverletzung",
+          "ziel": "rd.27.27b03s",
+          "aussage": "bei Patientenalter älter 12 Jahre, Stichverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Stichverletzung",
+          "ziel": "rd.27.27b03s",
+          "aussage": "bei Patientenalter unbekannt, Stichverletzung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Stichverletzung",
+          "ziel": "rd.27.27b03s-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Stichverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b03x",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b03x",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b03x-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b03y",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst-2",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b03y",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst-2",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b03y-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.27.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27b04g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Schussverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Schussverletzung",
+          "ziel": "rd.27.27b04g",
+          "aussage": "bei Patientenalter unbekannt, Schussverletzung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "ziel": "rd.27.27b04g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Schussverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27b04i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b04p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b04p",
+          "aussage": "bei Patientenalter unbekannt, Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b04p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Stichverletzung",
+          "ziel": "rd.27.27b04s",
+          "aussage": "bei Patientenalter älter 12 Jahre, Stichverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Stichverletzung",
+          "ziel": "rd.27.27b04s",
+          "aussage": "bei Patientenalter unbekannt, Stichverletzung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Stichverletzung",
+          "ziel": "rd.27.27b04s-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Stichverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b04x",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b04x",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b04x-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Schussverletzung (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b04y",
+          "aussage": "bei Patientenalter älter 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-selbst-2",
+          "label": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b04y",
+          "aussage": "bei Patientenalter unbekannt, Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-selbst-2",
+          "label": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b04y-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.27.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "schussverletzung",
+          "label": "Schussverletzung",
+          "ziel": "rd.27.27b05g",
+          "aussage": "Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27b05i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27b05p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27b05s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "selbst-zugefuegte-schussverletzung",
+          "label": "Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27b05x",
+          "aussage": "Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "selbst-zugefuegte-messer-stichwunde",
+          "label": "Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27b05y",
+          "aussage": "Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.27.27d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "schussverletzung",
+          "label": "Schussverletzung",
+          "ziel": "rd.27.27d01g",
+          "aussage": "Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d01i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d01p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27d01s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "selbst-zugefuegte-schussverletzung",
+          "label": "Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27d01x",
+          "aussage": "Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "selbst-zugefuegte-messer-stichwunde",
+          "label": "Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27d01y",
+          "aussage": "Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "schussverletzung",
+          "label": "Schussverletzung",
+          "ziel": "rd.27.27d02g",
+          "aussage": "Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d02i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d02p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27d02s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "selbst-zugefuegte-schussverletzung",
+          "label": "Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27d02x",
+          "aussage": "Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "selbst-zugefuegte-messer-stichwunde",
+          "label": "Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27d02y",
+          "aussage": "Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "schussverletzung",
+          "label": "Schussverletzung",
+          "ziel": "rd.27.27d03g",
+          "aussage": "Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d03i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d03p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27d03s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "selbst-zugefuegte-schussverletzung",
+          "label": "Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27d03x",
+          "aussage": "Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "selbst-zugefuegte-messer-stichwunde",
+          "label": "Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27d03y",
+          "aussage": "Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "schussverletzung",
+          "label": "Schussverletzung",
+          "ziel": "rd.27.27d04g",
+          "aussage": "Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d04i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d04p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27d04s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "selbst-zugefuegte-schussverletzung",
+          "label": "Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27d04x",
+          "aussage": "Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "selbst-zugefuegte-messer-stichwunde",
+          "label": "Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27d04y",
+          "aussage": "Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "schussverletzung",
+          "label": "Schussverletzung",
+          "ziel": "rd.27.27d05g",
+          "aussage": "Schussverletzung"
+        },
+        {
+          "id": "momentan-gepfaehlt",
+          "label": "Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d05i",
+          "aussage": "Momentan GEPFÄHLT"
+        },
+        {
+          "id": "pfaehlungsverletzung-nicht-mehr",
+          "label": "Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d05p",
+          "aussage": "Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "stichverletzung",
+          "label": "Stichverletzung",
+          "ziel": "rd.27.27d05s",
+          "aussage": "Stichverletzung"
+        },
+        {
+          "id": "selbst-zugefuegte-schussverletzung",
+          "label": "Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27d05x",
+          "aussage": "Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "selbst-zugefuegte-messer-stichwunde",
+          "label": "Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27d05y",
+          "aussage": "Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ab-patientenanzahl-2-schussverletzung",
+          "label": "ab Patientenanzahl 2, Schussverletzung",
+          "ziel": "rd.27.27d06g",
+          "aussage": "ab Patientenanzahl 2, Schussverletzung"
+        },
+        {
+          "id": "bei-patientenanzahl-2-momentan-gepfaehlt",
+          "label": "bei Patientenanzahl 2, Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d06i",
+          "aussage": "bei Patientenanzahl 2, Momentan GEPFÄHLT"
+        },
+        {
+          "id": "bei-patientenanzahl-3-momentan-gepfaehlt",
+          "label": "bei Patientenanzahl 3, Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d06i-2",
+          "aussage": "bei Patientenanzahl 3, Momentan GEPFÄHLT"
+        },
+        {
+          "id": "bei-patientenanzahl-4-momentan-gepfaehlt",
+          "label": "bei Patientenanzahl 4, Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d06i-3",
+          "aussage": "bei Patientenanzahl 4, Momentan GEPFÄHLT"
+        },
+        {
+          "id": "bei-patientenanzahl-5-momentan-gepfaehlt",
+          "label": "bei Patientenanzahl ≥ 5, Momentan GEPFÄHLT",
+          "ziel": "rd.27.27d06i-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Momentan GEPFÄHLT"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d06p",
+          "aussage": "bei Patientenanzahl 2, Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d06p-2",
+          "aussage": "bei Patientenanzahl 3, Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d06p-3",
+          "aussage": "bei Patientenanzahl 4, Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5, Pfählungsverletzung (nicht mehr GEPFÄHLT)",
+          "ziel": "rd.27.27d06p-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Pfählungsverletzung (nicht mehr GEPFÄHLT)"
+        },
+        {
+          "id": "ab-patientenanzahl-2-stichverletzung",
+          "label": "ab Patientenanzahl 2, Stichverletzung",
+          "ziel": "rd.27.27d06s",
+          "aussage": "ab Patientenanzahl 2, Stichverletzung"
+        },
+        {
+          "id": "ab-patientenanzahl-2-selbst-zugefuegte",
+          "label": "ab Patientenanzahl 2, Selbst zugefügte Schussverletzung (absichtlich)",
+          "ziel": "rd.27.27d06x",
+          "aussage": "ab Patientenanzahl 2, Selbst zugefügte Schussverletzung (absichtlich)"
+        },
+        {
+          "id": "ab-patientenanzahl-2-selbst-zugefuegte-2",
+          "label": "ab Patientenanzahl 2, Selbst zugefügte Messer-/Stichwunde (absichtlich)",
+          "ziel": "rd.27.27d06y",
+          "aussage": "ab Patientenanzahl 2, Selbst zugefügte Messer-/Stichwunde (absichtlich)"
+        }
+      ]
+    },
+    "rd.27.27a01g": {
+      "code": "27A01G",
+      "kategorie": "RD4B.",
+      "anlass": "Schussverletzung, ältere periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD4B."
+    },
+    "rd.27.27a01g-2": {
+      "code": "27A01G",
+      "kategorie": "RD4C.",
+      "anlass": "Schussverletzung, ältere periphere Wunde, Kind, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD4C."
+    },
+    "rd.27.27a01i": {
+      "code": "27A01I",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Pfählungsverletzung, noch gepfählt, ältere periphere Wunde",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.27.27a01p": {
+      "code": "27A01P",
+      "kategorie": "RD5.",
+      "anlass": "27A01P",
+      "stichwort": "RD5."
+    },
+    "rd.27.27a01s": {
+      "code": "27A01S",
+      "kategorie": "RD5.",
+      "anlass": "27A01S",
+      "stichwort": "RD5."
+    },
+    "rd.27.27a01x": {
+      "code": "27A01X",
+      "kategorie": "RD3B.",
+      "anlass": "Selbst zugefügte Schussverletzung, ältere periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27a01x-2": {
+      "code": "27A01X",
+      "kategorie": "RD3C.",
+      "anlass": "Selbst zugefügte Schussverletzung, Kind, ältere periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27a01y": {
+      "code": "27A01Y",
+      "kategorie": "RD3C.",
+      "anlass": "Selbst zugefügte Stichverletzung, Kind, ältere periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27a01y-2": {
+      "code": "27A01Y",
+      "kategorie": "RD3B.",
+      "anlass": "Selbst zugefügte Stichverletzung, ältere periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b00g": {
+      "code": "27B00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27b00i": {
+      "code": "27B00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Pfählungsverletzung, noch gepfählt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27b00p": {
+      "code": "27B00P",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Aufwertung Pfählungsverletzung, nicht mehr gepfählt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27b00s": {
+      "code": "27B00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Aufwertung Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27b00x": {
+      "code": "27B00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Selbst zugefügte Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27b00y": {
+      "code": "27B00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Selbst zugefügte Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27d00g": {
+      "code": "27D00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27d00i": {
+      "code": "27D00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Pfählungsverletzung, noch gepfählt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27d00p": {
+      "code": "27D00P",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Pfählungsverletzung, nicht mehr gepfählt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27d00s": {
+      "code": "27D00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27d00x": {
+      "code": "27D00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Selbst zugefügte Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27d00y": {
+      "code": "27D00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Selbst zugefügte Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.27.27b01g": {
+      "code": "27B01G",
+      "kategorie": "RD3B.",
+      "anlass": "Schussverletzung, zentrale Wunde älter 6 Std, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b01g-2": {
+      "code": "27B01G",
+      "kategorie": "RD3C.",
+      "anlass": "Schussverletzung, Kind, zentrale Wunde älter 6 Std, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b01i": {
+      "code": "27B01I",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Pfählungsverletzung, noch gepfählt, zentrale Wunde älter 6 Std",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.27.27b01p": {
+      "code": "27B01P",
+      "kategorie": "RD3B.",
+      "anlass": "Pfählungsverletzung, nicht mehr gepfählt, zentrale Wunde älter 6 Std",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b01p-2": {
+      "code": "27B01P",
+      "kategorie": "RD3C.",
+      "anlass": "Pfählungsverletzung, Kind, nicht mehr gepfählt, zentrale Wunde älter 6 Std",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b01s": {
+      "code": "27B01S",
+      "kategorie": "RD3B.",
+      "anlass": "Stichverletzung, zentrale Wunde älter 6 Std, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b01s-2": {
+      "code": "27B01S",
+      "kategorie": "RD3C.",
+      "anlass": "Stichverletzung, Kind, zentrale Wunde älter 6 Std, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b01x": {
+      "code": "27B01X",
+      "kategorie": "RD3B.",
+      "anlass": "Selbst zugefügte Schussverletzung, zentrale Wunde älter 6 Std, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b01x-2": {
+      "code": "27B01X",
+      "kategorie": "RD3C.",
+      "anlass": "Selbst zugefügte Schussverletzung, Kind, zentrale Wunde älter 6 Std, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b01y": {
+      "code": "27B01Y",
+      "kategorie": "RD3B.",
+      "anlass": "Selbst zugefügte Stichverletzung, zentrale Wunde älter 6 Std, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b01y-2": {
+      "code": "27B01Y",
+      "kategorie": "RD3C.",
+      "anlass": "Selbst zugefügte Stichverletzung, Kind, zentrale Wunde älter 6 Std, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b02g": {
+      "code": "27B02G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27b02g-2": {
+      "code": "27B02G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, Kind, periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27b02i": {
+      "code": "27B02I",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Pfählungsverletzung, noch gepfählt, periphere Wunde",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.27.27b02p": {
+      "code": "27B02P",
+      "kategorie": "RD3B.",
+      "anlass": "Pfählungsverletzung, nicht mehr gepfählt, periphere Wunde",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b02p-2": {
+      "code": "27B02P",
+      "kategorie": "RD3C.",
+      "anlass": "Pfählungsverletzung, Kind, nicht mehr gepfählt, periphere Wunde",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b02s": {
+      "code": "27B02S",
+      "kategorie": "RD3B.",
+      "anlass": "Stichverletzung, periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b02s-2": {
+      "code": "27B02S",
+      "kategorie": "RD3C.",
+      "anlass": "Stichverletzung, Kind, periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b02x": {
+      "code": "27B02X",
+      "kategorie": "RD3B.",
+      "anlass": "Selbst zugefügte Schussverletzung, periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b02x-2": {
+      "code": "27B02X",
+      "kategorie": "RD3C.",
+      "anlass": "Selbst zugefügte Schussverletzung, Kind, periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b02y": {
+      "code": "27B02Y",
+      "kategorie": "RD3B.",
+      "anlass": "Selbst zugefügte Stichverletzung, periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3B."
+    },
+    "rd.27.27b02y-2": {
+      "code": "27B02Y",
+      "kategorie": "RD3C.",
+      "anlass": "Selbst zugefügte Stichverletzung, Kind, periphere Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD3C."
+    },
+    "rd.27.27b03g": {
+      "code": "27B03G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, starke Blutung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27b03g-2": {
+      "code": "27B03G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, Kind, starke Blutung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27b03i": {
+      "code": "27B03I",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Pfählungsverletzung, noch gepfählt, starke Blutung",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.27.27b03p": {
+      "code": "27B03P",
+      "kategorie": "RD2B FR.",
+      "anlass": "Pfählungsverletzung, nicht mehr gepfählt, starke Blutung",
+      "stichwort": "RD2B FR."
+    },
+    "rd.27.27b03p-2": {
+      "code": "27B03P",
+      "kategorie": "RD2C FR.",
+      "anlass": "Pfählungsverletzung, Kind, nicht mehr gepfählt, starke Blutung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.27.27b03s": {
+      "code": "27B03S",
+      "kategorie": "RD2B FR.",
+      "anlass": "Stichverletzung, starke Blutung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2B FR."
+    },
+    "rd.27.27b03s-2": {
+      "code": "27B03S",
+      "kategorie": "RD2C FR.",
+      "anlass": "Stichverletzung, Kind, starke Blutung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2C FR."
+    },
+    "rd.27.27b03x": {
+      "code": "27B03X",
+      "kategorie": "RD2B FR.",
+      "anlass": "Selbst zugefügte Schussverletzung, starke Blutung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2B FR."
+    },
+    "rd.27.27b03x-2": {
+      "code": "27B03X",
+      "kategorie": "RD2C FR.",
+      "anlass": "Selbst zugefügte Schussverletzung, Kind, starke Blutung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2C FR."
+    },
+    "rd.27.27b03y": {
+      "code": "27B03Y",
+      "kategorie": "RD2B FR.",
+      "anlass": "Selbst zugefügte Stichverletzung, starke Blutung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2B FR."
+    },
+    "rd.27.27b03y-2": {
+      "code": "27B03Y",
+      "kategorie": "RD2C FR.",
+      "anlass": "Selbst zugefügte Stichverletzung, Kind, starke Blutung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2C FR."
+    },
+    "rd.27.27b04g": {
+      "code": "27B04G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, unbekannter Zustand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27b04g-2": {
+      "code": "27B04G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, Kind, unbekannter Zustand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27b04i": {
+      "code": "27B04I",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Pfählungsverletzung, noch gepfählt, unbekannter Zustand",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.27.27b04p": {
+      "code": "27B04P",
+      "kategorie": "RD2B FR.",
+      "anlass": "Pfählungsverletzung, nicht mehr gepfählt, unbekannter Zustand",
+      "stichwort": "RD2B FR."
+    },
+    "rd.27.27b04p-2": {
+      "code": "27B04P",
+      "kategorie": "RD2C FR.",
+      "anlass": "Pfählungsverletzung, Kind, nicht mehr gepfählt, unbekannter Zustand",
+      "stichwort": "RD2C FR."
+    },
+    "rd.27.27b04s": {
+      "code": "27B04S",
+      "kategorie": "RD2B FR.",
+      "anlass": "Stichverletzung, unbekannter Zustand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2B FR."
+    },
+    "rd.27.27b04s-2": {
+      "code": "27B04S",
+      "kategorie": "RD2C FR.",
+      "anlass": "Stichverletzung, Kind, unbekannter Zustand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2C FR."
+    },
+    "rd.27.27b04x": {
+      "code": "27B04X",
+      "kategorie": "RD2B FR.",
+      "anlass": "Selbst zugefügte Schussverletzung, unbekannter Zustand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2B FR."
+    },
+    "rd.27.27b04x-2": {
+      "code": "27B04X",
+      "kategorie": "RD2C FR.",
+      "anlass": "Selbst zugefügte Schussverletzung, Kind, unbekannter Zustand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2C FR."
+    },
+    "rd.27.27b04y": {
+      "code": "27B04Y",
+      "kategorie": "RD2B FR.",
+      "anlass": "Selbst zugefügte Stichverletzung, unbekannter Zustand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2B FR."
+    },
+    "rd.27.27b04y-2": {
+      "code": "27B04Y",
+      "kategorie": "RD2C FR.",
+      "anlass": "Selbst zugefügte Stichverletzung, Kind, unbekannter Zustand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2C FR."
+    },
+    "rd.27.27b05g": {
+      "code": "27B05G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vermutlich tote Person, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27b05i": {
+      "code": "27B05I",
+      "kategorie": "RD2NC.",
+      "anlass": "Vermutlich tote Person, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2NC."
+    },
+    "rd.27.27b05p": {
+      "code": "27B05P",
+      "kategorie": "RD2NC.",
+      "anlass": "Vermutlich tote Person, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2NC."
+    },
+    "rd.27.27b05s": {
+      "code": "27B05S",
+      "kategorie": "RD2NC.",
+      "anlass": "Vermutlich tote Person, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2NC."
+    },
+    "rd.27.27b05x": {
+      "code": "27B05X",
+      "kategorie": "RD2NC.",
+      "anlass": "Vermutlich tote Person, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2NC."
+    },
+    "rd.27.27b05y": {
+      "code": "27B05Y",
+      "kategorie": "RD2NC.",
+      "anlass": "Vermutlich tote Person, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD2NC."
+    },
+    "rd.27.27d01": {
+      "code": "27D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.27.27d01g": {
+      "code": "27D01G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Kreislaufstillstand nach Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d01i": {
+      "code": "27D01I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Kreislaufstillstand nach Pfählungsverletzung, noch gepfählt",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.27.27d01p": {
+      "code": "27D01P",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Pfählungsverletzung, nicht mehr gepfählt",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.27.27d01s": {
+      "code": "27D01S",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.27.27d01x": {
+      "code": "27D01X",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach selbst zugefügter Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.27.27d01y": {
+      "code": "27D01Y",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach selbst zugefügter Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.27.27d02g": {
+      "code": "27D02G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Bewusstlosigkeit nach Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d02i": {
+      "code": "27D02I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstlosigkeit nach Pfählungsverletzung, noch gepfählt",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.27.27d02p": {
+      "code": "27D02P",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Pfählungsverletzung, nicht mehr gepfählt",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d02s": {
+      "code": "27D02S",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d02x": {
+      "code": "27D02X",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach selbst zugefügter Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d02y": {
+      "code": "27D02Y",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach selbst zugefügter Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d03g": {
+      "code": "27D03G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Bewusstseinstrübung nach Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d03i": {
+      "code": "27D03I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstseinstrübung nach Pfählungsverletzung, noch gepfählt",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.27.27d03p": {
+      "code": "27D03P",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Pfählungsverletzung, nicht mehr gepfählt",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d03s": {
+      "code": "27D03S",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d03x": {
+      "code": "27D03X",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach selbst zugefügter Schussverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d03y": {
+      "code": "27D03Y",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach selbst zugefügter Stichverletzung, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d04g": {
+      "code": "27D04G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, zentrale Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d04i": {
+      "code": "27D04I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Pfählungsverletzung, noch gepfählt, zentrale Wunde",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.27.27d04p": {
+      "code": "27D04P",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Pfählungsverletzung, nicht mehr gepfählt, zentrale Wunde",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d04s": {
+      "code": "27D04S",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Stichverletzung, zentrale Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d04x": {
+      "code": "27D04X",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Selbst zugefügte Schussverletzung, zentrale Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d04y": {
+      "code": "27D04Y",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Selbst zugefügte Stichverletzung, zentrale Wunde, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d05g": {
+      "code": "27D05G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, mehrere Wunden, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d05i": {
+      "code": "27D05I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Pfählungsverletzung, noch gepfählt, mehrere Wunden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.27.27d05p": {
+      "code": "27D05P",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Pfählungsverletzung, nicht mehr gepfählt, mehrere Wunden",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d05s": {
+      "code": "27D05S",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Stichverletzung, mehrere Wunden, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d05x": {
+      "code": "27D05X",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Selbst zugefügte Schussverletzung, mehrere Wunden, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d05y": {
+      "code": "27D05Y",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Selbst zugefügte Stichverletzung, mehrere Wunden, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.27.27d06g": {
+      "code": "27D06G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, Mehrere Verletzte, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06i": {
+      "code": "27D06I",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Pfählungsverletzungen, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06i-2": {
+      "code": "27D06I",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Pfählungsverletzungen, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06i-3": {
+      "code": "27D06I",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Pfählungsverletzungen, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06i-4": {
+      "code": "27D06I",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Pfählungsverletzungen, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06p": {
+      "code": "27D06P",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Pfählungsverletzungen, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06p-2": {
+      "code": "27D06P",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Pfählungsverletzungen, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06p-3": {
+      "code": "27D06P",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Pfählungsverletzungen, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06p-4": {
+      "code": "27D06P",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Pfählungsverletzungen, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06s": {
+      "code": "27D06S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Stichverletzungen, Mehrere Verletzte, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06x": {
+      "code": "27D06X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Schussverletzung, Mehrere Verletzte, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.27.27d06y": {
+      "code": "27D06Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Stichverletzungen, Mehrere Verletzte, ACHTUNG! Gefahr durch Waffen",
+      "stichwort": "RD_Mehrere Patienten"
+    }
+  }
+}

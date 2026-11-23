@@ -1,0 +1,56 @@
+{
+  "knoten": {
+    "fw.th.tierrettung.k0": {
+      "frage": "Welches Tier und wo?",
+      "antworten": [
+        {
+          "id": "tier-in-notlage",
+          "label": "Tier in Notlage",
+          "ziel": "fw.th.tierrettung.k1",
+          "aussage": "Ein Tier befindet sich in einer Notlage."
+        }
+      ]
+    },
+    "fw.th.tierrettung.k1": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "katze-auf-baum-oder-dach",
+          "label": "Katze auf Baum oder Dach",
+          "ziel": "fw.th.tierrettung.56a01",
+          "aussage": "Ein Tier befindet sich auf einem Baum oder Dach."
+        },
+        {
+          "id": "tier-in-schacht-oder-kanal",
+          "label": "Tier in Schacht oder Kanal",
+          "ziel": "fw.th.tierrettung.56b01",
+          "aussage": "Ein Tier befindet sich in einem Schacht."
+        },
+        {
+          "id": "grosstier-verunfallt",
+          "label": "Großtier verunfallt",
+          "ziel": "fw.th.tierrettung.56c01",
+          "aussage": "Ein Großtier ist verunfallt."
+        }
+      ]
+    },
+    "fw.th.tierrettung.56a01": {
+      "code": "56A01",
+      "kategorie": "TH K.",
+      "anlass": "Tierrettung aus Höhe",
+      "stichwort": "TH K."
+    },
+    "fw.th.tierrettung.56b01": {
+      "code": "56B01",
+      "kategorie": "TH K.",
+      "anlass": "Tierrettung aus Tiefe",
+      "stichwort": "TH K."
+    },
+    "fw.th.tierrettung.56c01": {
+      "code": "56C01",
+      "kategorie": "TH M.",
+      "anlass": "Großtierrettung",
+      "stichwort": "TH M."
+    }
+  }
+}

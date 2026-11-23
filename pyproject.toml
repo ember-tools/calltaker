@@ -1,0 +1,18 @@
+[tool.ruff]
+line-length = 100
+target-version = "py314"
+src = ["src", "tests", "tools"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "pep257"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D100", "D103", "D104"]
+"tests/conftest.py" = ["D100", "D103", "E402"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "tools"]
+testpaths = ["tests"]

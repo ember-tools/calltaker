@@ -1,0 +1,1228 @@
+{
+  "knoten": {
+    "rd.09.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "offensichtlich-tote-person-unzweifelhaft",
+          "label": "OFFENSICHTLICH TOTE PERSON unzweifelhaft (a bis h)",
+          "ziel": "rd.09.k1",
+          "aussage": "OFFENSICHTLICH TOTE PERSON unzweifelhaft (a bis h)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.09.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "ineffektive-atmung",
+          "label": "INEFFEKTIVE ATMUNG",
+          "ziel": "rd.09.k3",
+          "aussage": "INEFFEKTIVE ATMUNG"
+        },
+        {
+          "id": "offensichtlicher-oder-erwarteter-tod",
+          "label": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z), Alter unbekannt",
+          "ziel": "rd.09.k4",
+          "aussage": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z)"
+        },
+        {
+          "id": "offensichtlicher-oder-erwarteter-tod-2",
+          "label": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z), Alter bekannt",
+          "ziel": "rd.09.k5",
+          "aussage": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z)"
+        },
+        {
+          "id": "atemstillstand",
+          "label": "Atemstillstand",
+          "ziel": "rd.09.k6",
+          "aussage": "Atemstillstand"
+        },
+        {
+          "id": "ungewisse-atmung",
+          "label": "UNGEWISSE ATMUNG",
+          "ziel": "rd.09.k7",
+          "aussage": "UNGEWISSE ATMUNG"
+        },
+        {
+          "id": "erhaengen",
+          "label": "Erhängen",
+          "ziel": "rd.09.k8",
+          "aussage": "Erhängen"
+        },
+        {
+          "id": "strangulierung",
+          "label": "Strangulierung",
+          "ziel": "rd.09.k9",
+          "aussage": "Strangulierung"
+        },
+        {
+          "id": "ersticken-aeussere-einfluesse",
+          "label": "Ersticken: äußere Einflüsse",
+          "ziel": "rd.09.k10",
+          "aussage": "Ersticken: äußere Einflüsse"
+        },
+        {
+          "id": "erwarteter-tod-unzweifelhaft-x-bis-z",
+          "label": "ERWARTETER TOD unzweifelhaft (x bis z)",
+          "ziel": "rd.09.k11",
+          "aussage": "ERWARTETER TOD unzweifelhaft (x bis z)"
+        }
+      ]
+    },
+    "rd.09.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "kalt-und-steif-in-warmer-umgebung",
+          "label": "Kalt und steif in warmer Umgebung",
+          "ziel": "rd.09.09b01a",
+          "aussage": "Kalt und steif in warmer Umgebung"
+        },
+        {
+          "id": "enthauptung",
+          "label": "Enthauptung",
+          "ziel": "rd.09.09b01b",
+          "aussage": "Enthauptung"
+        },
+        {
+          "id": "verwesung",
+          "label": "Verwesung",
+          "ziel": "rd.09.09b01c",
+          "aussage": "Verwesung"
+        },
+        {
+          "id": "verbrennung-verkohlung",
+          "label": "Verbrennung/Verkohlung",
+          "ziel": "rd.09.09b01d",
+          "aussage": "Verbrennung/Verkohlung"
+        },
+        {
+          "id": "schon-lange-tot-aelteres-ereignis",
+          "label": "Schon lange tot (ÄLTERES EREIGNIS)",
+          "ziel": "rd.09.09b01e",
+          "aussage": "Schon lange tot (ÄLTERES EREIGNIS)"
+        },
+        {
+          "id": "schwerste-mit-dem-leben-nicht-zu",
+          "label": "Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "ziel": "rd.09.09b01f",
+          "aussage": "Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen"
+        }
+      ]
+    },
+    "rd.09.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.09.09d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kalt-und-steif-in-warmer-umgebung",
+          "label": "Kalt und steif in warmer Umgebung",
+          "ziel": "rd.09.09d00a",
+          "aussage": "Kalt und steif in warmer Umgebung"
+        },
+        {
+          "id": "enthauptung",
+          "label": "Enthauptung",
+          "ziel": "rd.09.09d00b",
+          "aussage": "Enthauptung"
+        },
+        {
+          "id": "verwesung",
+          "label": "Verwesung",
+          "ziel": "rd.09.09d00c",
+          "aussage": "Verwesung"
+        },
+        {
+          "id": "verbrennung-verkohlung",
+          "label": "Verbrennung/Verkohlung",
+          "ziel": "rd.09.09d00d",
+          "aussage": "Verbrennung/Verkohlung"
+        },
+        {
+          "id": "schon-lange-tot-aelteres-ereignis",
+          "label": "Schon lange tot (ÄLTERES EREIGNIS)",
+          "ziel": "rd.09.09d00e",
+          "aussage": "Schon lange tot (ÄLTERES EREIGNIS)"
+        },
+        {
+          "id": "schwerste-mit-dem-leben-nicht-zu",
+          "label": "Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "ziel": "rd.09.09d00f",
+          "aussage": "Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen"
+        },
+        {
+          "id": "zustand-g-benutzerdefiniert",
+          "label": "Zustand \"g\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d00g",
+          "aussage": "Zustand \"g\" (benutzerdefiniert)"
+        },
+        {
+          "id": "zustand-h-benutzerdefiniert",
+          "label": "Zustand \"h\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d00h",
+          "aussage": "Zustand \"h\" (benutzerdefiniert)"
+        },
+        {
+          "id": "krankheit-im-endstadium",
+          "label": "Krankheit im Endstadium",
+          "ziel": "rd.09.09d00x",
+          "aussage": "Krankheit im Endstadium"
+        },
+        {
+          "id": "patientenverfuegung-vorhanden",
+          "label": "PATIENTENVERFÜGUNG vorhanden",
+          "ziel": "rd.09.09d00y",
+          "aussage": "PATIENTENVERFÜGUNG vorhanden"
+        },
+        {
+          "id": "zustand-z-benutzerdefiniert",
+          "label": "Zustand \"z\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d00z",
+          "aussage": "Zustand \"z\" (benutzerdefiniert)"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.09.09e00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-30-tage",
+          "label": "bei Patientenalter älter 30 Tage",
+          "ziel": "rd.09.09e00",
+          "aussage": "bei Patientenalter älter 30 Tage"
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage",
+          "label": "bei Patientenalter bis 30 Tage",
+          "ziel": "rd.09.09e00-2",
+          "aussage": "bei Patientenalter bis 30 Tage",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "kalt-und-steif-in-warmer-umgebung-2",
+          "label": "Kalt und steif in warmer Umgebung",
+          "ziel": "rd.09.09e00a",
+          "aussage": "Kalt und steif in warmer Umgebung"
+        },
+        {
+          "id": "enthauptung-2",
+          "label": "Enthauptung",
+          "ziel": "rd.09.09e00b",
+          "aussage": "Enthauptung"
+        },
+        {
+          "id": "verwesung-2",
+          "label": "Verwesung",
+          "ziel": "rd.09.09e00c",
+          "aussage": "Verwesung"
+        },
+        {
+          "id": "verbrennung-verkohlung-2",
+          "label": "Verbrennung/Verkohlung",
+          "ziel": "rd.09.09e00d",
+          "aussage": "Verbrennung/Verkohlung"
+        },
+        {
+          "id": "schon-lange-tot-aelteres-ereignis-2",
+          "label": "Schon lange tot (ÄLTERES EREIGNIS)",
+          "ziel": "rd.09.09e00e",
+          "aussage": "Schon lange tot (ÄLTERES EREIGNIS)"
+        },
+        {
+          "id": "schwerste-mit-dem-leben-nicht-zu-2",
+          "label": "Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "ziel": "rd.09.09e00f",
+          "aussage": "Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen"
+        },
+        {
+          "id": "zustand-g-benutzerdefiniert-2",
+          "label": "Zustand \"g\" (benutzerdefiniert)",
+          "ziel": "rd.09.09e00g",
+          "aussage": "Zustand \"g\" (benutzerdefiniert)"
+        },
+        {
+          "id": "zustand-h-benutzerdefiniert-2",
+          "label": "Zustand \"h\" (benutzerdefiniert)",
+          "ziel": "rd.09.09e00h",
+          "aussage": "Zustand \"h\" (benutzerdefiniert)"
+        },
+        {
+          "id": "krankheit-im-endstadium-2",
+          "label": "Krankheit im Endstadium",
+          "ziel": "rd.09.09e00x",
+          "aussage": "Krankheit im Endstadium"
+        },
+        {
+          "id": "patientenverfuegung-vorhanden-2",
+          "label": "PATIENTENVERFÜGUNG vorhanden",
+          "ziel": "rd.09.09e00y",
+          "aussage": "PATIENTENVERFÜGUNG vorhanden"
+        },
+        {
+          "id": "zustand-z-benutzerdefiniert-2",
+          "label": "Zustand \"z\" (benutzerdefiniert)",
+          "ziel": "rd.09.09e00z",
+          "aussage": "Zustand \"z\" (benutzerdefiniert)"
+        }
+      ]
+    },
+    "rd.09.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.09.09d01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.09.09d01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.09.09d01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.09.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.09.09d02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-kalt-und",
+          "label": "bei Patientenalter unbekannt, Kalt und steif in warmer Umgebung",
+          "ziel": "rd.09.09d02a",
+          "aussage": "bei Patientenalter unbekannt, Kalt und steif in warmer Umgebung"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-enthauptung",
+          "label": "bei Patientenalter unbekannt, Enthauptung",
+          "ziel": "rd.09.09d02b",
+          "aussage": "bei Patientenalter unbekannt, Enthauptung"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-verwesung",
+          "label": "bei Patientenalter unbekannt, Verwesung",
+          "ziel": "rd.09.09d02c",
+          "aussage": "bei Patientenalter unbekannt, Verwesung"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-verbrennung",
+          "label": "bei Patientenalter unbekannt, Verbrennung/Verkohlung",
+          "ziel": "rd.09.09d02d",
+          "aussage": "bei Patientenalter unbekannt, Verbrennung/Verkohlung"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-schon-lange",
+          "label": "bei Patientenalter unbekannt, Schon lange tot (ÄLTERES EREIGNIS)",
+          "ziel": "rd.09.09d02e",
+          "aussage": "bei Patientenalter unbekannt, Schon lange tot (ÄLTERES EREIGNIS)"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-schwerste",
+          "label": "bei Patientenalter unbekannt, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "ziel": "rd.09.09d02f",
+          "aussage": "bei Patientenalter unbekannt, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-zustand-g",
+          "label": "bei Patientenalter unbekannt, Zustand \"g\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02g",
+          "aussage": "bei Patientenalter unbekannt, Zustand \"g\" (benutzerdefiniert)"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-zustand-h",
+          "label": "bei Patientenalter unbekannt, Zustand \"h\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02h",
+          "aussage": "bei Patientenalter unbekannt, Zustand \"h\" (benutzerdefiniert)"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-krankheit",
+          "label": "bei Patientenalter unbekannt, Krankheit im Endstadium",
+          "ziel": "rd.09.09d02x",
+          "aussage": "bei Patientenalter unbekannt, Krankheit im Endstadium"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, PATIENTENVERFÜGUNG vorhanden",
+          "ziel": "rd.09.09d02y",
+          "aussage": "bei Patientenalter unbekannt, PATIENTENVERFÜGUNG vorhanden"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-zustand-z",
+          "label": "bei Patientenalter unbekannt, Zustand \"z\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02z",
+          "aussage": "bei Patientenalter unbekannt, Zustand \"z\" (benutzerdefiniert)"
+        }
+      ]
+    },
+    "rd.09.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.09.09d02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.09.09d02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-kalt-und",
+          "label": "bei Patientenalter bis 12 Jahre, Kalt und steif in warmer Umgebung",
+          "ziel": "rd.09.09d02a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Kalt und steif in warmer Umgebung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-kalt",
+          "label": "bei Patientenalter älter 12 Jahre, Kalt und steif in warmer Umgebung",
+          "ziel": "rd.09.09d02a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Kalt und steif in warmer Umgebung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Enthauptung",
+          "ziel": "rd.09.09d02b-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Enthauptung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Enthauptung",
+          "ziel": "rd.09.09d02b",
+          "aussage": "bei Patientenalter älter 12 Jahre, Enthauptung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Verwesung",
+          "ziel": "rd.09.09d02c-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Verwesung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Verwesung",
+          "ziel": "rd.09.09d02c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Verwesung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-4",
+          "label": "bei Patientenalter bis 12 Jahre, Verbrennung/Verkohlung",
+          "ziel": "rd.09.09d02d-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Verbrennung/Verkohlung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Verbrennung/Verkohlung",
+          "ziel": "rd.09.09d02d",
+          "aussage": "bei Patientenalter älter 12 Jahre, Verbrennung/Verkohlung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-schon",
+          "label": "bei Patientenalter bis 12 Jahre, Schon lange tot (ÄLTERES EREIGNIS)",
+          "ziel": "rd.09.09d02e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Schon lange tot (ÄLTERES EREIGNIS)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-schon",
+          "label": "bei Patientenalter älter 12 Jahre, Schon lange tot (ÄLTERES EREIGNIS)",
+          "ziel": "rd.09.09d02e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Schon lange tot (ÄLTERES EREIGNIS)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-5",
+          "label": "bei Patientenalter bis 12 Jahre, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "ziel": "rd.09.09d02f-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "ziel": "rd.09.09d02f",
+          "aussage": "bei Patientenalter älter 12 Jahre, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-zustand",
+          "label": "bei Patientenalter bis 12 Jahre, Zustand \"g\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Zustand \"g\" (benutzerdefiniert)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-6",
+          "label": "bei Patientenalter älter 12 Jahre, Zustand \"g\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Zustand \"g\" (benutzerdefiniert)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-zustand-2",
+          "label": "bei Patientenalter bis 12 Jahre, Zustand \"h\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02h-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Zustand \"h\" (benutzerdefiniert)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-7",
+          "label": "bei Patientenalter älter 12 Jahre, Zustand \"h\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02h",
+          "aussage": "bei Patientenalter älter 12 Jahre, Zustand \"h\" (benutzerdefiniert)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-6",
+          "label": "bei Patientenalter bis 12 Jahre, Krankheit im Endstadium",
+          "ziel": "rd.09.09d02x-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Krankheit im Endstadium",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-8",
+          "label": "bei Patientenalter älter 12 Jahre, Krankheit im Endstadium",
+          "ziel": "rd.09.09d02x",
+          "aussage": "bei Patientenalter älter 12 Jahre, Krankheit im Endstadium",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-7",
+          "label": "bei Patientenalter bis 12 Jahre, PATIENTENVERFÜGUNG vorhanden",
+          "ziel": "rd.09.09d02y-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, PATIENTENVERFÜGUNG vorhanden",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-9",
+          "label": "bei Patientenalter älter 12 Jahre, PATIENTENVERFÜGUNG vorhanden",
+          "ziel": "rd.09.09d02y",
+          "aussage": "bei Patientenalter älter 12 Jahre, PATIENTENVERFÜGUNG vorhanden",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-zustand-3",
+          "label": "bei Patientenalter bis 12 Jahre, Zustand \"z\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02z-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Zustand \"z\" (benutzerdefiniert)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-10",
+          "label": "bei Patientenalter älter 12 Jahre, Zustand \"z\" (benutzerdefiniert)",
+          "ziel": "rd.09.09d02z",
+          "aussage": "bei Patientenalter älter 12 Jahre, Zustand \"z\" (benutzerdefiniert)",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.09.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.09.09e01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.09.09e01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage",
+          "label": "bei Patientenalter bis 30 Tage",
+          "ziel": "rd.09.09e01-2",
+          "aussage": "bei Patientenalter bis 30 Tage",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.09.09e01-3",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.09.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.09.09e02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.09.09e02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage",
+          "label": "bei Patientenalter bis 30 Tage",
+          "ziel": "rd.09.09e02-2",
+          "aussage": "bei Patientenalter bis 30 Tage",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.09.09e02-3",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.09.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.09.09e03",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.09.09e03-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.09.09e03",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.09.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.09.09e04",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.09.09e04-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.09.09e04",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.09.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.09.09e05",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.09.09e05",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage",
+          "label": "bei Patientenalter bis 30 Tage",
+          "ziel": "rd.09.09e05-2",
+          "aussage": "bei Patientenalter bis 30 Tage",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.09.09e05-3",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.09.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "krankheit-im-endstadium",
+          "label": "Krankheit im Endstadium",
+          "ziel": "rd.09.09o01x",
+          "aussage": "Krankheit im Endstadium"
+        },
+        {
+          "id": "patientenverfuegung-vorhanden",
+          "label": "PATIENTENVERFÜGUNG vorhanden",
+          "ziel": "rd.09.09o01y",
+          "aussage": "PATIENTENVERFÜGUNG vorhanden"
+        }
+      ]
+    },
+    "rd.09.09b01a": {
+      "code": "09B01a",
+      "kategorie": "RD5.",
+      "anlass": "09B01a",
+      "stichwort": "RD5."
+    },
+    "rd.09.09b01b": {
+      "code": "09B01b",
+      "kategorie": "RD5.",
+      "anlass": "Unzweifelhaft tote Person",
+      "stichwort": "RD5."
+    },
+    "rd.09.09b01c": {
+      "code": "09B01c",
+      "kategorie": "RD5.",
+      "anlass": "09B01c",
+      "stichwort": "RD5."
+    },
+    "rd.09.09b01d": {
+      "code": "09B01d",
+      "kategorie": "RD5.",
+      "anlass": "Unzweifelhaft tote Person",
+      "stichwort": "RD5."
+    },
+    "rd.09.09b01e": {
+      "code": "09B01e",
+      "kategorie": "RD5.",
+      "anlass": "09B01e",
+      "stichwort": "RD5."
+    },
+    "rd.09.09b01f": {
+      "code": "09B01f",
+      "kategorie": "RD5.",
+      "anlass": "Unzweifelhaft tote Person",
+      "stichwort": "RD5."
+    },
+    "rd.09.09d00": {
+      "code": "09D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00a": {
+      "code": "09D00a",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00b": {
+      "code": "09D00b",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00c": {
+      "code": "09D00c",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00d": {
+      "code": "09D00d",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00e": {
+      "code": "09D00e",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00f": {
+      "code": "09D00f",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00g": {
+      "code": "09D00g",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00h": {
+      "code": "09D00h",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00x": {
+      "code": "09D00x",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00y": {
+      "code": "09D00y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d00z": {
+      "code": "09D00z",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00": {
+      "code": "09E00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00-2": {
+      "code": "09E00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand bei Neugeborenem",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00a": {
+      "code": "09E00a",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00b": {
+      "code": "09E00b",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00c": {
+      "code": "09E00c",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00d": {
+      "code": "09E00d",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00e": {
+      "code": "09E00e",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00f": {
+      "code": "09E00f",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00g": {
+      "code": "09E00g",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00h": {
+      "code": "09E00h",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00x": {
+      "code": "09E00x",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00y": {
+      "code": "09E00y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09e00z": {
+      "code": "09E00z",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.09.09d01": {
+      "code": "09D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09d01-2": {
+      "code": "09D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09d02": {
+      "code": "09D02",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02a": {
+      "code": "09D02a",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02b": {
+      "code": "09D02b",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02c": {
+      "code": "09D02c",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02d": {
+      "code": "09D02d",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02e": {
+      "code": "09D02e",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02f": {
+      "code": "09D02f",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02g": {
+      "code": "09D02g",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02h": {
+      "code": "09D02h",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02x": {
+      "code": "09D02x",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02y": {
+      "code": "09D02y",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02z": {
+      "code": "09D02z",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft tote Person",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02-2": {
+      "code": "09D02",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02a-2": {
+      "code": "09D02a",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02b-2": {
+      "code": "09D02b",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02c-2": {
+      "code": "09D02c",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02d-2": {
+      "code": "09D02d",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02e-2": {
+      "code": "09D02e",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02f-2": {
+      "code": "09D02f",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02g-2": {
+      "code": "09D02g",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02h-2": {
+      "code": "09D02h",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02x-2": {
+      "code": "09D02x",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02y-2": {
+      "code": "09D02y",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09d02z-2": {
+      "code": "09D02z",
+      "kategorie": "RD2NC.",
+      "anlass": "Zweifelhaft totes Kind",
+      "stichwort": "RD2NC."
+    },
+    "rd.09.09e01": {
+      "code": "09E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e01-2": {
+      "code": "09E01",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Kreislaufstillstand bei Neugeborenem",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.09.09e01-3": {
+      "code": "09E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e02": {
+      "code": "09E02",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e02-2": {
+      "code": "09E02",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Kreislaufstillstand bei Neugeborenem",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.09.09e02-3": {
+      "code": "09E02",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e03": {
+      "code": "09E03",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Soeben erhängt",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e03-2": {
+      "code": "09E03",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Soeben erhängt, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e04": {
+      "code": "09E04",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Strangulation",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e04-2": {
+      "code": "09E04",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Strangulation, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e05": {
+      "code": "09E05",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Ersticken",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09e05-2": {
+      "code": "09E05",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Kreislaufstillstand bei Neugeborenem - Ersticken",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.09.09e05-3": {
+      "code": "09E05",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Ersticken, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.09.09o01x": {
+      "code": "09O01x",
+      "kategorie": "RD5.",
+      "anlass": "09O01x",
+      "stichwort": "RD5."
+    },
+    "rd.09.09o01y": {
+      "code": "09O01y",
+      "kategorie": "RD5.",
+      "anlass": "09O01y",
+      "stichwort": "RD5."
+    }
+  }
+}

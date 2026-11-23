@@ -1,0 +1,775 @@
+{
+  "knoten": {
+    "rd.26.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.26.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "keine-notfallleitsymptome-beschwerden",
+          "label": "Keine Notfallleitsymptome (Beschwerden 2–12 nicht zu erkennen)",
+          "ziel": "rd.26.26a01",
+          "aussage": "Keine Notfallleitsymptome (Beschwerden 2–12 nicht zu erkennen)"
+        },
+        {
+          "id": "blutdruckprobleme-ohne-symptome",
+          "label": "Blutdruckprobleme (ohne Symptome)",
+          "ziel": "rd.26.26a02",
+          "aussage": "Blutdruckprobleme (ohne Symptome)"
+        },
+        {
+          "id": "schwindel-drehschwindel",
+          "label": "Schwindel/Drehschwindel",
+          "ziel": "rd.26.26a03",
+          "aussage": "Schwindel/Drehschwindel"
+        },
+        {
+          "id": "fieber-schuettelfrost",
+          "label": "Fieber/Schüttelfrost",
+          "ziel": "rd.26.26a04",
+          "aussage": "Fieber/Schüttelfrost"
+        },
+        {
+          "id": "reduzierter-allgemeinzustand",
+          "label": "Reduzierter Allgemeinzustand",
+          "ziel": "rd.26.26a05",
+          "aussage": "Reduzierter Allgemeinzustand"
+        },
+        {
+          "id": "uebelkeit",
+          "label": "Übelkeit",
+          "ziel": "rd.26.26a06",
+          "aussage": "Übelkeit"
+        },
+        {
+          "id": "akute-unbeweglichkeit-schwaeche",
+          "label": "Akute Unbeweglichkeit (Schwäche)",
+          "ziel": "rd.26.26a07",
+          "aussage": "Akute Unbeweglichkeit (Schwäche)"
+        },
+        {
+          "id": "andere-schmerzen-keine-omega-stufe",
+          "label": "Andere Schmerzen (keine OMEGA-Stufe)",
+          "ziel": "rd.26.26a08",
+          "aussage": "Andere Schmerzen (keine OMEGA-Stufe)"
+        },
+        {
+          "id": "nur-transportanforderung",
+          "label": "Nur Transportanforderung",
+          "ziel": "rd.26.26a09",
+          "aussage": "Nur Transportanforderung"
+        },
+        {
+          "id": "schlecht-krank",
+          "label": "Schlecht/Krank",
+          "ziel": "rd.26.26a10",
+          "aussage": "Schlecht/Krank"
+        },
+        {
+          "id": "erbrechen",
+          "label": "Erbrechen",
+          "ziel": "rd.26.26a11",
+          "aussage": "Erbrechen"
+        },
+        {
+          "id": "verdacht-auf-meningitis",
+          "label": "Verdacht auf Meningitis",
+          "ziel": "rd.26.26a12",
+          "aussage": "Verdacht auf Meningitis"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.26.k2",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "veraenderte-bewusstseinslage",
+          "label": "VERÄNDERTE BEWUSSTSEINSLAGE",
+          "ziel": "rd.26.26c01",
+          "aussage": "VERÄNDERTE BEWUSSTSEINSLAGE"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.26.26c02",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "sichelzellenanaemie-thalassaemie",
+          "label": "Sichelzellenanämie/Thalassämie",
+          "ziel": "rd.26.26c03",
+          "aussage": "Sichelzellenanämie/Thalassämie"
+        },
+        {
+          "id": "autonome-dysreflexie-hyperreflexie",
+          "label": "Autonome Dysreflexie/Hyperreflexie",
+          "ziel": "rd.26.26c04",
+          "aussage": "Autonome Dysreflexie/Hyperreflexie"
+        },
+        {
+          "id": "akute-nebenniereninsuffizienz-krise-oder",
+          "label": "Akute Nebenniereninsuffizienz/-krise oder Morbus Addison",
+          "ziel": "rd.26.26c05",
+          "aussage": "Akute Nebenniereninsuffizienz/-krise oder Morbus Addison"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.26.26d01",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "furunkel",
+          "label": "Furunkel",
+          "ziel": "rd.26.26o02",
+          "aussage": "Furunkel"
+        },
+        {
+          "id": "beulen-nicht-traumatisch",
+          "label": "Beulen (nicht traumatisch)",
+          "ziel": "rd.26.26o03",
+          "aussage": "Beulen (nicht traumatisch)"
+        },
+        {
+          "id": "schlafstoerungen",
+          "label": "Schlafstörungen",
+          "ziel": "rd.26.26o04",
+          "aussage": "Schlafstörungen"
+        },
+        {
+          "id": "kann-keinen-urin-lassen-ohne",
+          "label": "Kann keinen Urin lassen (ohne Bauchschmerzen)",
+          "ziel": "rd.26.26o05",
+          "aussage": "Kann keinen Urin lassen (ohne Bauchschmerzen)"
+        },
+        {
+          "id": "katheter-harn-liegend-entfernt-ohne",
+          "label": "Katheter (Harn: liegend/entfernt ohne Blutung)",
+          "ziel": "rd.26.26o06",
+          "aussage": "Katheter (Harn: liegend/entfernt ohne Blutung)"
+        },
+        {
+          "id": "verstopfung",
+          "label": "Verstopfung",
+          "ziel": "rd.26.26o07",
+          "aussage": "Verstopfung"
+        },
+        {
+          "id": "kraempfe-spasmen-gelenkschmerzen",
+          "label": "Krämpfe/Spasmen/Gelenkschmerzen (unterhalb Schulter/Hüfte und kein Trauma)",
+          "ziel": "rd.26.26o08",
+          "aussage": "Krämpfe/Spasmen/Gelenkschmerzen (unterhalb Schulter/Hüfte und kein Trauma)"
+        },
+        {
+          "id": "festsitzende-fingerringe",
+          "label": "Festsitzende Fingerringe",
+          "ziel": "rd.26.26o09",
+          "aussage": "Festsitzende Fingerringe"
+        },
+        {
+          "id": "taubheit-schwerhoerigkeit",
+          "label": "Taubheit/Schwerhörigkeit",
+          "ziel": "rd.26.26o10",
+          "aussage": "Taubheit/Schwerhörigkeit"
+        },
+        {
+          "id": "stuhlabgang",
+          "label": "Stuhlabgang",
+          "ziel": "rd.26.26o11",
+          "aussage": "Stuhlabgang"
+        },
+        {
+          "id": "ohrenschmerzen",
+          "label": "Ohrenschmerzen",
+          "ziel": "rd.26.26o12",
+          "aussage": "Ohrenschmerzen"
+        },
+        {
+          "id": "darmeinlauf",
+          "label": "Darmeinlauf",
+          "ziel": "rd.26.26o13",
+          "aussage": "Darmeinlauf"
+        },
+        {
+          "id": "gicht",
+          "label": "Gicht",
+          "ziel": "rd.26.26o14",
+          "aussage": "Gicht"
+        },
+        {
+          "id": "haemorrhoiden",
+          "label": "Hämorrhoiden",
+          "ziel": "rd.26.26o15",
+          "aussage": "Hämorrhoiden"
+        },
+        {
+          "id": "hepatitis",
+          "label": "Hepatitis",
+          "ziel": "rd.26.26o16",
+          "aussage": "Hepatitis"
+        },
+        {
+          "id": "schluckauf",
+          "label": "Schluckauf",
+          "ziel": "rd.26.26o17",
+          "aussage": "Schluckauf"
+        },
+        {
+          "id": "juckreiz",
+          "label": "Juckreiz",
+          "ziel": "rd.26.26o18",
+          "aussage": "Juckreiz"
+        },
+        {
+          "id": "nervositaet",
+          "label": "Nervosität",
+          "ziel": "rd.26.26o19",
+          "aussage": "Nervosität"
+        },
+        {
+          "id": "objekt-steckt-in-nase-ohr-vagina-rektum",
+          "label": "Objekt steckt in (Nase, Ohr, Vagina, Rektum, Penis)",
+          "ziel": "rd.26.26o20",
+          "aussage": "Objekt steckt in (Nase, Ohr, Vagina, Rektum, Penis)"
+        },
+        {
+          "id": "verschlucktes-objekt-ohne",
+          "label": "Verschlucktes Objekt (ohne Atemwegsverlegung und ohne Atembeschwerden, kann sprechen)",
+          "ziel": "rd.26.26o21",
+          "aussage": "Verschlucktes Objekt (ohne Atemwegsverlegung und ohne Atembeschwerden, kann sprechen)"
+        },
+        {
+          "id": "schmerzhaftes-wasserlassen",
+          "label": "Schmerzhaftes Wasserlassen",
+          "ziel": "rd.26.26o22",
+          "aussage": "Schmerzhaftes Wasserlassen"
+        },
+        {
+          "id": "penisprobleme-schmerzen",
+          "label": "Penisprobleme/Schmerzen",
+          "ziel": "rd.26.26o23",
+          "aussage": "Penisprobleme/Schmerzen"
+        },
+        {
+          "id": "ausschlag-hautveraenderungen-ohne-atem",
+          "label": "Ausschlag/Hautveränderungen (ohne Atem- oder Schluckbeschwerden)",
+          "ziel": "rd.26.26o24",
+          "aussage": "Ausschlag/Hautveränderungen (ohne Atem- oder Schluckbeschwerden)"
+        },
+        {
+          "id": "durch-geschlechtsverkehr-uebertragene",
+          "label": "Durch Geschlechtsverkehr übertragene Krankheit",
+          "ziel": "rd.26.26o25",
+          "aussage": "Durch Geschlechtsverkehr übertragene Krankheit"
+        },
+        {
+          "id": "halsentzuendung-ohne-atem-oder",
+          "label": "Halsentzündung (ohne Atem- oder Schluckbeschwerden)",
+          "ziel": "rd.26.26o26",
+          "aussage": "Halsentzündung (ohne Atem- oder Schluckbeschwerden)"
+        },
+        {
+          "id": "zahnschmerzen-ohne-kieferschmerzen",
+          "label": "Zahnschmerzen (ohne Kieferschmerzen)",
+          "ziel": "rd.26.26o27",
+          "aussage": "Zahnschmerzen (ohne Kieferschmerzen)"
+        },
+        {
+          "id": "infizierte-wunde-oertlich-oder",
+          "label": "Infizierte Wunde (örtlich oder oberflächlich)",
+          "ziel": "rd.26.26o28",
+          "aussage": "Infizierte Wunde (örtlich oder oberflächlich)"
+        }
+      ]
+    },
+    "rd.26.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.26.26a00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.26.26a00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.26.26a00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Verdacht auf Coronavirus-Erkrankung",
+          "ziel": "rd.26.26a00c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Verdacht auf Coronavirus-Erkrankung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-verdacht",
+          "label": "bei Patientenalter bis 12 Jahre, Verdacht auf Coronavirus-Erkrankung",
+          "ziel": "rd.26.26a00c-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Verdacht auf Coronavirus-Erkrankung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-verdacht",
+          "label": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung",
+          "ziel": "rd.26.26a00c",
+          "aussage": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.26.26b00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.26.26b00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.26.26b00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Verdacht auf Coronavirus-Erkrankung",
+          "ziel": "rd.26.26b00c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Verdacht auf Coronavirus-Erkrankung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-verdacht-2",
+          "label": "bei Patientenalter bis 12 Jahre, Verdacht auf Coronavirus-Erkrankung",
+          "ziel": "rd.26.26b00c-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Verdacht auf Coronavirus-Erkrankung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-verdacht-2",
+          "label": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung",
+          "ziel": "rd.26.26b00c",
+          "aussage": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.26.26c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.26.26d00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.26.26a01": {
+      "code": "26A01",
+      "kategorie": "RD5.",
+      "anlass": "26A01",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a02": {
+      "code": "26A02",
+      "kategorie": "RD5.",
+      "anlass": "26A02",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a03": {
+      "code": "26A03",
+      "kategorie": "RD5.",
+      "anlass": "26A03",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a04": {
+      "code": "26A04",
+      "kategorie": "RD5.",
+      "anlass": "26A04",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a05": {
+      "code": "26A05",
+      "kategorie": "RD5.",
+      "anlass": "26A05",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a06": {
+      "code": "26A06",
+      "kategorie": "RD5.",
+      "anlass": "26A06",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a07": {
+      "code": "26A07",
+      "kategorie": "RD5.",
+      "anlass": "26A07",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a08": {
+      "code": "26A08",
+      "kategorie": "RD5.",
+      "anlass": "26A08",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a09": {
+      "code": "26A09",
+      "kategorie": "RD5.",
+      "anlass": "26A09",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a10": {
+      "code": "26A10",
+      "kategorie": "RD5.",
+      "anlass": "26A10",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a11": {
+      "code": "26A11",
+      "kategorie": "RD5.",
+      "anlass": "26A11",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a12": {
+      "code": "26A12",
+      "kategorie": "RD5.",
+      "anlass": "26A12",
+      "stichwort": "RD5."
+    },
+    "rd.26.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.26.26b01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.26.26b01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.26.26b01",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.26.26c01": {
+      "code": "26C01",
+      "kategorie": "RD3C.",
+      "anlass": "Erkrankung mit veränderter Bewusstseinslage",
+      "stichwort": "RD3C."
+    },
+    "rd.26.26c02": {
+      "code": "26C02",
+      "kategorie": "RD2C.",
+      "anlass": "Erkrankung mit Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.26.26c03": {
+      "code": "26C03",
+      "kategorie": "RD3C.",
+      "anlass": "Sichelzellenanämie/ Thalassämie",
+      "stichwort": "RD3C."
+    },
+    "rd.26.26c04": {
+      "code": "26C04",
+      "kategorie": "RD3C.",
+      "anlass": "Autonome Dysreflexe/ Hyperreflexe",
+      "stichwort": "RD3C."
+    },
+    "rd.26.26c05": {
+      "code": "26C05",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Nebenniereninsuffizienz/-krise oder Morbus Addison",
+      "stichwort": "RD2C."
+    },
+    "rd.26.26d01": {
+      "code": "26D01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Erkrankung mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.26.26o02": {
+      "code": "26O02",
+      "kategorie": "RD5.",
+      "anlass": "26O02",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o03": {
+      "code": "26O03",
+      "kategorie": "RD5.",
+      "anlass": "26O03",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o04": {
+      "code": "26O04",
+      "kategorie": "RD5.",
+      "anlass": "26O04",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o05": {
+      "code": "26O05",
+      "kategorie": "RD5.",
+      "anlass": "26O05",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o06": {
+      "code": "26O06",
+      "kategorie": "RD5.",
+      "anlass": "26O06",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o07": {
+      "code": "26O07",
+      "kategorie": "RD5.",
+      "anlass": "26O07",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o08": {
+      "code": "26O08",
+      "kategorie": "RD5.",
+      "anlass": "26O08",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o09": {
+      "code": "26O09",
+      "kategorie": "RD5.",
+      "anlass": "26O09",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o10": {
+      "code": "26O10",
+      "kategorie": "RD5.",
+      "anlass": "26O10",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o11": {
+      "code": "26O11",
+      "kategorie": "RD5.",
+      "anlass": "26O11",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o12": {
+      "code": "26O12",
+      "kategorie": "RD5.",
+      "anlass": "26O12",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o13": {
+      "code": "26O13",
+      "kategorie": "RD5.",
+      "anlass": "26O13",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o14": {
+      "code": "26O14",
+      "kategorie": "RD5.",
+      "anlass": "26O14",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o15": {
+      "code": "26O15",
+      "kategorie": "RD5.",
+      "anlass": "26O15",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o16": {
+      "code": "26O16",
+      "kategorie": "RD5.",
+      "anlass": "26O16",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o17": {
+      "code": "26O17",
+      "kategorie": "RD5.",
+      "anlass": "26O17",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o18": {
+      "code": "26O18",
+      "kategorie": "RD5.",
+      "anlass": "26O18",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o19": {
+      "code": "26O19",
+      "kategorie": "RD5.",
+      "anlass": "26O19",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o20": {
+      "code": "26O20",
+      "kategorie": "RD5.",
+      "anlass": "26O20",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o21": {
+      "code": "26O21",
+      "kategorie": "RD5.",
+      "anlass": "26O21",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o22": {
+      "code": "26O22",
+      "kategorie": "RD5.",
+      "anlass": "26O22",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o23": {
+      "code": "26O23",
+      "kategorie": "RD5.",
+      "anlass": "26O23",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o24": {
+      "code": "26O24",
+      "kategorie": "RD5.",
+      "anlass": "26O24",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o25": {
+      "code": "26O25",
+      "kategorie": "RD5.",
+      "anlass": "26O25",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o26": {
+      "code": "26O26",
+      "kategorie": "RD5.",
+      "anlass": "26O26",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o27": {
+      "code": "26O27",
+      "kategorie": "RD5.",
+      "anlass": "26O27",
+      "stichwort": "RD5."
+    },
+    "rd.26.26o28": {
+      "code": "26O28",
+      "kategorie": "RD5.",
+      "anlass": "26O28",
+      "stichwort": "RD5."
+    },
+    "rd.26.26a00": {
+      "code": "26A00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Medizinisches Hilfeersuchen",
+      "stichwort": "RD4B."
+    },
+    "rd.26.26a00-2": {
+      "code": "26A00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Medizinisches Hilfeersuchen, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.26.26a00c": {
+      "code": "26A00C",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Medizinisches Hilfeersuchen ACHTUNG! ARE-Symptome",
+      "stichwort": "RD4B."
+    },
+    "rd.26.26a00c-2": {
+      "code": "26A00C",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Medizinisches Hilfeersuchen ACHTUNG! ARE-Symptome, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.26.26b00": {
+      "code": "26B00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Medizinisches Hilfeersuchen",
+      "stichwort": "RD4B."
+    },
+    "rd.26.26b00-2": {
+      "code": "26B00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Medizinisches Hilfeersuchen, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.26.26b00c": {
+      "code": "26B00C",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Medizinisches Hilfeersuchen ACHTUNG! ARE-Symptome",
+      "stichwort": "RD4B."
+    },
+    "rd.26.26b00c-2": {
+      "code": "26B00C",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Medizinisches Hilfeersuchen ACHTUNG! ARE-Symptome, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.26.26c00": {
+      "code": "26C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Aufwertung starke Schmerzen bei Erkrankung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.26.26d00": {
+      "code": "26D00",
+      "kategorie": "RD2C.",
+      "anlass": "Aufwertung starke Schmerzen bei Erkrankung",
+      "stichwort": "RD2C."
+    },
+    "rd.26.26b01": {
+      "code": "26B01",
+      "kategorie": "RD4B.",
+      "anlass": "Unbekannter Zustand bei medizinischem Hilfeersuchen",
+      "stichwort": "RD4B."
+    },
+    "rd.26.26b01-2": {
+      "code": "26B01",
+      "kategorie": "RD4C.",
+      "anlass": "Unbekannter Zustand bei medizinischem Hilfeersuchen, Kind",
+      "stichwort": "RD4C."
+    }
+  }
+}

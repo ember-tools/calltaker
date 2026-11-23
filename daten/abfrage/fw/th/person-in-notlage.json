@@ -1,0 +1,137 @@
+{
+  "knoten": {
+    "fw.th.person-in-notlage.k0": {
+      "frage": "Wo befindet sich die Person?",
+      "antworten": [
+        {
+          "id": "in-der-hoehe",
+          "label": "In der Höhe",
+          "ziel": "fw.th.person-in-notlage.k1",
+          "aussage": "Die Person befindet sich in der Höhe."
+        },
+        {
+          "id": "in-der-tiefe",
+          "label": "In der Tiefe",
+          "ziel": "fw.th.person-in-notlage.k2",
+          "aussage": "Die Person befindet sich in der Tiefe."
+        },
+        {
+          "id": "im-wasser",
+          "label": "Im Wasser",
+          "ziel": "fw.th.person-in-notlage.k3",
+          "aussage": "Die Person befindet sich im Wasser."
+        },
+        {
+          "id": "verschuettet-oder-eingeschlossen",
+          "label": "Verschüttet oder eingeschlossen",
+          "ziel": "fw.th.person-in-notlage.k4",
+          "aussage": "Die Person ist verschüttet oder eingeschlossen."
+        }
+      ]
+    },
+    "fw.th.person-in-notlage.k1": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "auf-einem-dach-oder-kran",
+          "label": "Auf einem Dach oder Kran",
+          "ziel": "fw.th.person-in-notlage.54d01",
+          "aussage": "Die Person befindet sich auf einem Dach oder Kran."
+        },
+        {
+          "id": "absturzgefahr",
+          "label": "Absturzgefahr",
+          "ziel": "fw.th.person-in-notlage.54e01",
+          "aussage": "Es besteht unmittelbare Absturzgefahr."
+        }
+      ]
+    },
+    "fw.th.person-in-notlage.k2": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "schacht-oder-grube",
+          "label": "Schacht oder Grube",
+          "ziel": "fw.th.person-in-notlage.54d02",
+          "aussage": "Die Person befindet sich in einem Schacht oder einer Grube."
+        },
+        {
+          "id": "baugrube-oder-silo",
+          "label": "Baugrube oder Silo",
+          "ziel": "fw.th.person-in-notlage.54e02",
+          "aussage": "Die Person befindet sich in einer Baugrube oder einem Silo."
+        }
+      ]
+    },
+    "fw.th.person-in-notlage.k3": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "person-treibt-oder-ruft-um-hilfe",
+          "label": "Person treibt oder ruft um Hilfe",
+          "ziel": "fw.th.person-in-notlage.54e03",
+          "aussage": "Die Person treibt im Wasser oder ruft um Hilfe."
+        },
+        {
+          "id": "person-auf-eisflaeche-eingebrochen",
+          "label": "Person auf Eisfläche eingebrochen",
+          "ziel": "fw.th.person-in-notlage.54e04",
+          "aussage": "Die Person ist in eine Eisfläche eingebrochen."
+        }
+      ]
+    },
+    "fw.th.person-in-notlage.k4": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "nach-einsturz",
+          "label": "Nach Einsturz",
+          "ziel": "fw.th.person-in-notlage.54e05",
+          "aussage": "Ein Einsturz ist vorausgegangen."
+        }
+      ]
+    },
+    "fw.th.person-in-notlage.54d01": {
+      "code": "54D01",
+      "kategorie": "TH 2",
+      "anlass": "Höhenrettung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.person-in-notlage.54e01": {
+      "code": "54E01",
+      "kategorie": "TH 3",
+      "anlass": "Höhenrettung mit Absturzgefahr",
+      "stichwort": "TH 3"
+    },
+    "fw.th.person-in-notlage.54d02": {
+      "code": "54D02",
+      "kategorie": "TH 2",
+      "anlass": "Rettung aus Tiefe",
+      "stichwort": "TH 2"
+    },
+    "fw.th.person-in-notlage.54e02": {
+      "code": "54E02",
+      "kategorie": "TH 3",
+      "anlass": "Rettung aus Baugrube",
+      "stichwort": "TH 3"
+    },
+    "fw.th.person-in-notlage.54e03": {
+      "code": "54E03",
+      "kategorie": "TH 3",
+      "anlass": "Wasserrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.person-in-notlage.54e04": {
+      "code": "54E04",
+      "kategorie": "TH 3",
+      "anlass": "Eisrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.person-in-notlage.54e05": {
+      "code": "54E05",
+      "kategorie": "TH 3",
+      "anlass": "Rettung nach Einsturz",
+      "stichwort": "TH 3"
+    }
+  }
+}

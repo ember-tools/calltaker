@@ -1,0 +1,447 @@
+{
+  "knoten": {
+    "rd.03.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "markierte-ungefaehrliche-koerperregion",
+          "label": "Markierte (*) UNGEFÄHRLICHE Körperregion mit Fehlstellung",
+          "ziel": "rd.03.03a01",
+          "aussage": "Markierte (*) UNGEFÄHRLICHE Körperregion mit Fehlstellung"
+        },
+        {
+          "id": "ungefaehrliche-koerperregion",
+          "label": "UNGEFÄHRLICHE Körperregion",
+          "ziel": "rd.03.k1",
+          "aussage": "UNGEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "aeltere-6-h-verletzungen-ohne",
+          "label": "ÄLTERE (≥ 6 h) Verletzungen (ohne Notfallleitsymptome)",
+          "ziel": "rd.03.03a03",
+          "aussage": "ÄLTERE (≥ 6 h) Verletzungen (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "oberflaechliche-verletzungen",
+          "label": "OBERFLÄCHLICHE Verletzungen",
+          "ziel": "rd.03.03a04",
+          "aussage": "OBERFLÄCHLICHE Verletzungen"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.03.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "moeglicherweise-gefaehrliche",
+          "label": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion",
+          "ziel": "rd.03.k3",
+          "aussage": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "starke-blutung",
+          "label": "STARKE Blutung",
+          "ziel": "rd.03.k4",
+          "aussage": "STARKE Blutung"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.03.k5",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "neurologische-symptome-erwaehnt-ohne",
+          "label": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)",
+          "ziel": "rd.03.k6",
+          "aussage": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.03.03d01",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.03.03d02",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.03.03d03",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "verletzungen-im-brust-oder-halsbereich",
+          "label": "Verletzungen im Brust- oder Halsbereich (mit Atembeschwerden)",
+          "ziel": "rd.03.03d04",
+          "aussage": "Verletzungen im Brust- oder Halsbereich (mit Atembeschwerden)"
+        },
+        {
+          "id": "gefaehrliche-koerperregion",
+          "label": "GEFÄHRLICHE Körperregion",
+          "ziel": "rd.03.03d05",
+          "aussage": "GEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "grosses-tier",
+          "label": "Großes Tier",
+          "ziel": "rd.03.03d06",
+          "aussage": "Großes Tier"
+        },
+        {
+          "id": "exotisches-tier",
+          "label": "EXOTISCHES Tier",
+          "ziel": "rd.03.03d07",
+          "aussage": "EXOTISCHES Tier"
+        },
+        {
+          "id": "angriff-durch-hund-oder-mehrere-tiere",
+          "label": "ANGRIFF DURCH HUND oder mehrere Tiere",
+          "ziel": "rd.03.03d08",
+          "aussage": "ANGRIFF DURCH HUND oder mehrere Tiere"
+        },
+        {
+          "id": "momentaner-angriff",
+          "label": "Momentaner Angriff",
+          "ziel": "rd.03.03d09",
+          "aussage": "Momentaner Angriff"
+        }
+      ]
+    },
+    "rd.03.03a01": {
+      "code": "03A01",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung nach Tierbiss / Tierangriff mit Fehlstellung",
+      "stichwort": "RD3C."
+    },
+    "rd.03.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.03.03a02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.03.03a02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.03.03a02",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.03.03a03": {
+      "code": "03A03",
+      "kategorie": "RD5.",
+      "anlass": "03A03",
+      "stichwort": "RD5."
+    },
+    "rd.03.03a04": {
+      "code": "03A04",
+      "kategorie": "RD5.",
+      "anlass": "03A04",
+      "stichwort": "RD5."
+    },
+    "rd.03.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.03.03b00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.03.03b00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.03.03b00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.03.03d00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.03.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.03.03b01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.03.03b01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.03.03b01",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.03.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.03.03b02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.03.03b02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.03.03b02",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.03.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.03.03b03",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.03.03b03-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.03.03b03",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.03.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.03.03b04",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.03.03b04-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.03.03b04",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.03.03d01": {
+      "code": "03D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Tierbiss/ Tierangriff",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.03.03d02": {
+      "code": "03D02",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Tierbiss/ Tierangriff",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.03.03d03": {
+      "code": "03D03",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinstrübung nach Tierbiss/ Tierangriff",
+      "stichwort": "RD2C FR."
+    },
+    "rd.03.03d04": {
+      "code": "03D04",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Tierbiss/ Tierangriff",
+      "stichwort": "RD2C FR."
+    },
+    "rd.03.03d05": {
+      "code": "03D05",
+      "kategorie": "RD2C FR.",
+      "anlass": "Tierbiss in gefährlicher Körperregion",
+      "stichwort": "RD2C FR."
+    },
+    "rd.03.03d06": {
+      "code": "03D06",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Tierangriff durch großes Tier",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.03.03d07": {
+      "code": "03D07",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Tierangriff durch exotisches Tier",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.03.03d08": {
+      "code": "03D08",
+      "kategorie": "RD2C FR.",
+      "anlass": "Hundeattacke oder Angriff durch mehrere Tiere",
+      "stichwort": "RD2C FR."
+    },
+    "rd.03.03d09": {
+      "code": "03D09",
+      "kategorie": "RD2C.",
+      "anlass": "ACHTUNG! Tierangriff noch im Gange",
+      "stichwort": "RD2C."
+    },
+    "rd.03.03a02": {
+      "code": "03A02",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzung nach Tierbiss/ Tierangriff",
+      "stichwort": "RD3B."
+    },
+    "rd.03.03a02-2": {
+      "code": "03A02",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung nach Tierbiss/ Tierangriff, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.03.03b00": {
+      "code": "03B00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Tierbiss/ Tierangriff",
+      "stichwort": "RD4B."
+    },
+    "rd.03.03b00-2": {
+      "code": "03B00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Tierbiss/ Tierangriff, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.03.03d00": {
+      "code": "03D00",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Tierbiss",
+      "stichwort": "RD2C FR."
+    },
+    "rd.03.03b01": {
+      "code": "03B01",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzte Person nach Tierbiss/ Tierangriff",
+      "stichwort": "RD3B."
+    },
+    "rd.03.03b01-2": {
+      "code": "03B01",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzte Person nach Tierbiss/ Tierangriff, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.03.03b02": {
+      "code": "03B02",
+      "kategorie": "RD2B FR.",
+      "anlass": "Tierbiss/ Tierangriff mit starker Blutung",
+      "stichwort": "RD2B FR."
+    },
+    "rd.03.03b02-2": {
+      "code": "03B02",
+      "kategorie": "RD2C FR.",
+      "anlass": "Tierbiss/ Tierangriff mit starker Blutung, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.03.03b03": {
+      "code": "03B03",
+      "kategorie": "RD3B.",
+      "anlass": "Tierbiss/ Tierangriff, unbekannte Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.03.03b03-2": {
+      "code": "03B03",
+      "kategorie": "RD3C.",
+      "anlass": "Tierbiss/ Tierangriff, unbekannte Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.03.03b04": {
+      "code": "03B04",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzung mit neurologischen Symptomen nach Tierbiss/ Tierangriff",
+      "stichwort": "RD3B."
+    },
+    "rd.03.03b04-2": {
+      "code": "03B04",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung mit neurologischen Symptomen nach Tierbiss/ Tierangriff, Kind",
+      "stichwort": "RD3C."
+    }
+  }
+}

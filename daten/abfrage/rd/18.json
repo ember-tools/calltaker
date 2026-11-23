@@ -1,0 +1,1668 @@
+{
+  "knoten": {
+    "rd.18.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "normale-atmung",
+          "label": "Normale Atmung",
+          "ziel": "rd.18.18a01",
+          "aussage": "Normale Atmung"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.18.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.18.k2",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.18.k3",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.18.k4",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "ploetzlich-aufgetretene-sprach-lese-oder",
+          "label": "Plötzlich aufgetretene Sprach-, Lese- oder Schreibstörungen",
+          "ziel": "rd.18.k5",
+          "aussage": "Plötzlich aufgetretene Sprach-, Lese- oder Schreibstörungen"
+        },
+        {
+          "id": "ploetzliches-einsetzen-von-starken",
+          "label": "Plötzliches Einsetzen von starken Schmerzen",
+          "ziel": "rd.18.k6",
+          "aussage": "Plötzliches Einsetzen von starken Schmerzen"
+        },
+        {
+          "id": "taubheitsgefuehl",
+          "label": "Taubheitsgefühl",
+          "ziel": "rd.18.k7",
+          "aussage": "Taubheitsgefühl"
+        },
+        {
+          "id": "laehmungserscheinungen",
+          "label": "Lähmungserscheinungen",
+          "ziel": "rd.18.k8",
+          "aussage": "Lähmungserscheinungen"
+        },
+        {
+          "id": "veraendertes-verhalten-3-h",
+          "label": "Verändertes Verhalten (≤ 3 h)",
+          "ziel": "rd.18.k9",
+          "aussage": "Verändertes Verhalten (≤ 3 h)"
+        }
+      ]
+    },
+    "rd.18.18a01": {
+      "code": "18A01",
+      "kategorie": "RD5.",
+      "anlass": "18A01",
+      "stichwort": "RD5."
+    },
+    "rd.18.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.18.18b00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.18.18b00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.18.18b00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.18.18c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c00c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c00d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c00e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c00f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c00g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c00h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c00i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c00j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c00k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c00l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c00m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.18.18c00u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c00x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.18.18c00y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c00z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.18.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.18.18b01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.18.18b01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.18.18b01",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.18.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.18.18c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c01c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c01d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c01e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c01f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c01g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c01h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c01i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c01j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c01k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c01l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c01m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.18.18c01u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c01x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.18.18c01y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c01z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.18.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.18.18c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c02c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c02d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c02e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c02f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c02g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c02h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c02i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c02j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c02k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c02l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c02m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.18.18c02u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c02x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.18.18c02y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c02z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.18.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c03c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c03d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c03e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c03f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c03g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c03h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c03i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c03j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c03k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c03l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c03m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.18.18c03u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c03x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.18.18c03y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c03z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.18.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c04c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c04d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c04e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c04f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c04g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c04h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c04i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c04j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c04k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c04l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c04m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.18.18c04u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c04x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.18.18c04y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c04z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.18.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c05c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c05d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c05e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c05f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c05g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c05h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c05i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c05j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c05k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c05l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c05m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.18.18c05u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c05x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.18.18c05y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c05z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.18.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c06c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c06d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c06e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c06f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c06g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c06h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c06i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c06j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c06k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c06l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c06m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.18.18c06u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c06x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.18.18c06y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c06z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.18.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c07c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c07d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c07e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c07f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c07g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c07h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c07i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c07j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.18.18c07k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.18.18c07l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c07m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.18.18c07u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.18.18c07x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.18.18c07y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.18.18c07z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.18.18b00": {
+      "code": "18B00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Kopfschmerzen",
+      "stichwort": "RD4B."
+    },
+    "rd.18.18b00-2": {
+      "code": "18B00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Kopfschmerzen, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.18.18c00": {
+      "code": "18C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Aufwertung starke Kopfschmerzen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00c": {
+      "code": "18C00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und unvollständige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00d": {
+      "code": "18C00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und unvollständige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00e": {
+      "code": "18C00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und unvollständige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00f": {
+      "code": "18C00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und starke Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00g": {
+      "code": "18C00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und mehr als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00h": {
+      "code": "18C00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und starke Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00i": {
+      "code": "18C00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und starke Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00j": {
+      "code": "18C00J",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und eindeutige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00k": {
+      "code": "18C00K",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und eindeutige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00l": {
+      "code": "18C00L",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und weniger als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00m": {
+      "code": "18C00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und eindeutige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00u": {
+      "code": "18C00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und unbekannt wann die Symptome einsetzten",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00x": {
+      "code": "18C00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und keine festgestellt. Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00y": {
+      "code": "18C00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und keine festgestellt. Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18c00z": {
+      "code": "18C00Z",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Akute Kopfschmerzen und keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.18.18b01": {
+      "code": "18B01",
+      "kategorie": "RD4B.",
+      "anlass": "Kopfschmerzen",
+      "stichwort": "RD4B."
+    },
+    "rd.18.18b01-2": {
+      "code": "18B01",
+      "kategorie": "RD4C.",
+      "anlass": "Kopfschmerzen, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.18.18c01": {
+      "code": "18C01",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01c": {
+      "code": "18C01C",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und unvollständige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01d": {
+      "code": "18C01D",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und unvollständige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01e": {
+      "code": "18C01E",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und unvollständige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01f": {
+      "code": "18C01F",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und starke Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01g": {
+      "code": "18C01G",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und mehr als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01h": {
+      "code": "18C01H",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und starke Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01i": {
+      "code": "18C01I",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und starke Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01j": {
+      "code": "18C01J",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und eindeutige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01k": {
+      "code": "18C01K",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und eindeutige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01l": {
+      "code": "18C01L",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und weniger als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01m": {
+      "code": "18C01M",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und eindeutige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01u": {
+      "code": "18C01U",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und unbekannt wann die Symptome einsetzten",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01x": {
+      "code": "18C01X",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und keine festgestellt. Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01y": {
+      "code": "18C01Y",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und keine festgestellt. Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c01z": {
+      "code": "18C01Z",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Bewusstseinstrübung und keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02": {
+      "code": "18C02",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02c": {
+      "code": "18C02C",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und unvollständige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02d": {
+      "code": "18C02D",
+      "kategorie": "RD3C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und unvollständige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c02e": {
+      "code": "18C02E",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und unvollständige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02f": {
+      "code": "18C02F",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und starke Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02g": {
+      "code": "18C02G",
+      "kategorie": "RD3C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und mehr als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c02h": {
+      "code": "18C02H",
+      "kategorie": "RD3C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und starke Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c02i": {
+      "code": "18C02I",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und starke Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02j": {
+      "code": "18C02J",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und eindeutige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02k": {
+      "code": "18C02K",
+      "kategorie": "RD3C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und eindeutige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c02l": {
+      "code": "18C02L",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und weniger als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02m": {
+      "code": "18C02M",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und eindeutige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02u": {
+      "code": "18C02U",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und unbekannt wann die Symptome einsetzten",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02x": {
+      "code": "18C02X",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und keine festgestellt. Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c02y": {
+      "code": "18C02Y",
+      "kategorie": "RD3C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und keine festgestellt. Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c02z": {
+      "code": "18C02Z",
+      "kategorie": "RD2C.",
+      "anlass": "Kopfschmerzen mit Atembeschwerden und keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03c": {
+      "code": "18C03C",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und unvollständige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03d": {
+      "code": "18C03D",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und unvollständige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03e": {
+      "code": "18C03E",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und unvollständige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03f": {
+      "code": "18C03F",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und starke Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03g": {
+      "code": "18C03G",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und mehr als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03h": {
+      "code": "18C03H",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und starke Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03i": {
+      "code": "18C03I",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und starke Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03j": {
+      "code": "18C03J",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und eindeutige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03k": {
+      "code": "18C03K",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und eindeutige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03l": {
+      "code": "18C03L",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und weniger als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03m": {
+      "code": "18C03M",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und eindeutige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03u": {
+      "code": "18C03U",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und unbekannt wann die Symptome einsetzten",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03x": {
+      "code": "18C03X",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und keine festgestellt. Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03y": {
+      "code": "18C03Y",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und keine festgestellt. Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c03z": {
+      "code": "18C03Z",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Sprachstörungen und keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04c": {
+      "code": "18C04C",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und unvollständige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04d": {
+      "code": "18C04D",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und unvollständige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c04e": {
+      "code": "18C04E",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und unvollständige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04f": {
+      "code": "18C04F",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und starke Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04g": {
+      "code": "18C04G",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und mehr als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c04h": {
+      "code": "18C04H",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und starke Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c04i": {
+      "code": "18C04I",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und starke Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04j": {
+      "code": "18C04J",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und eindeutige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04k": {
+      "code": "18C04K",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und eindeutige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c04l": {
+      "code": "18C04L",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und weniger als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04m": {
+      "code": "18C04M",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und eindeutige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04u": {
+      "code": "18C04U",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und unbekannt wann die Symptome einsetzten",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04x": {
+      "code": "18C04X",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und keine festgestellt. Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c04y": {
+      "code": "18C04Y",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und keine festgestellt. Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c04z": {
+      "code": "18C04Z",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit plötzlich einsetzenden starken Schmerzen und keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05c": {
+      "code": "18C05C",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und unvollständige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05d": {
+      "code": "18C05D",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und unvollständige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c05e": {
+      "code": "18C05E",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und unvollständige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05f": {
+      "code": "18C05F",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und starke Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05g": {
+      "code": "18C05G",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und mehr als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c05h": {
+      "code": "18C05H",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und starke Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c05i": {
+      "code": "18C05I",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und starke Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05j": {
+      "code": "18C05J",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und eindeutige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05k": {
+      "code": "18C05K",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und eindeutige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c05l": {
+      "code": "18C05L",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und weniger als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05m": {
+      "code": "18C05M",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und eindeutige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05u": {
+      "code": "18C05U",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und unbekannt wann die Symptome einsetzten",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05x": {
+      "code": "18C05X",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und keine festgestellt. Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c05y": {
+      "code": "18C05Y",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und keine festgestellt. Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c05z": {
+      "code": "18C05Z",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Taubheitsgefühl und keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06c": {
+      "code": "18C06C",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und unvollständige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06d": {
+      "code": "18C06D",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und unvollständige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06e": {
+      "code": "18C06E",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und unvollständige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06f": {
+      "code": "18C06F",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und starke Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06g": {
+      "code": "18C06G",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und mehr als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06h": {
+      "code": "18C06H",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und starke Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06i": {
+      "code": "18C06I",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und starke Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06j": {
+      "code": "18C06J",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und eindeutige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06k": {
+      "code": "18C06K",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und eindeutige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06l": {
+      "code": "18C06L",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und weniger als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06m": {
+      "code": "18C06M",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und eindeutige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06u": {
+      "code": "18C06U",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und unbekannt wann die Symptome einsetzten",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06x": {
+      "code": "18C06X",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und keine festgestellt. Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06y": {
+      "code": "18C06Y",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und keine festgestellt. Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c06z": {
+      "code": "18C06Z",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit Lähmungserscheinungen und keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07c": {
+      "code": "18C07C",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und unvollständige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07d": {
+      "code": "18C07D",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und unvollständige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c07e": {
+      "code": "18C07E",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und unvollständige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07f": {
+      "code": "18C07F",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und starke Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07g": {
+      "code": "18C07G",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und mehr als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c07h": {
+      "code": "18C07H",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und starke Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c07i": {
+      "code": "18C07I",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und starke Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07j": {
+      "code": "18C07J",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und eindeutige Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07k": {
+      "code": "18C07K",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und eindeutige Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c07l": {
+      "code": "18C07L",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und weniger als 4 Stunden seit dem Einsetzen der Symptome",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07m": {
+      "code": "18C07M",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und eindeutige Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07u": {
+      "code": "18C07U",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und unbekannt wann die Symptome einsetzten",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07x": {
+      "code": "18C07X",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und keine festgestellt. Anzeichen für einen Schlaganfall (< 4 Stunden)",
+      "stichwort": "RD2C."
+    },
+    "rd.18.18c07y": {
+      "code": "18C07Y",
+      "kategorie": "RD3C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und keine festgestellt. Anzeichen für einen Schlaganfall (≥ 4 Stunden)",
+      "stichwort": "RD3C."
+    },
+    "rd.18.18c07z": {
+      "code": "18C07Z",
+      "kategorie": "RD2C.",
+      "anlass": "Akute Kopfschmerzen mit verändertem Verhalten und keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+      "stichwort": "RD2C."
+    }
+  }
+}

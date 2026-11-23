@@ -1,0 +1,820 @@
+{
+  "knoten": {
+    "rd.11.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "jetzt-keine-atemwegsverlegung-kann-reden",
+          "label": "Jetzt keine Atemwegsverlegung (kann reden oder schreien, ist ansprechbar und atmet normal)",
+          "ziel": "rd.11.k1",
+          "aussage": "Jetzt keine Atemwegsverlegung (kann reden oder schreien, ist ansprechbar und atmet normal)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.11.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "abnorme-atmung-teilweise",
+          "label": "Abnorme Atmung (TEILWEISE Atemwegsverlegung)",
+          "ziel": "rd.11.k3",
+          "aussage": "Abnorme Atmung (TEILWEISE Atemwegsverlegung)"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.11.k4",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "komplette-atemwegsverlegung-ineffektive",
+          "label": "KOMPLETTE Atemwegsverlegung/INEFFEKTIVE ATMUNG",
+          "ziel": "rd.11.k5",
+          "aussage": "KOMPLETTE Atemwegsverlegung/INEFFEKTIVE ATMUNG"
+        }
+      ]
+    },
+    "rd.11.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bonbons-suessigkeiten-kaugummi",
+          "label": "Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11a01c",
+          "aussage": "Bonbons/Süßigkeiten/Kaugummi"
+        },
+        {
+          "id": "essen",
+          "label": "Essen",
+          "ziel": "rd.11.11a01f",
+          "aussage": "Essen"
+        },
+        {
+          "id": "milch-fluessigkeit-ungiftig",
+          "label": "Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11a01m",
+          "aussage": "Milch/Flüssigkeit (ungiftig)"
+        },
+        {
+          "id": "objekt-spielzeug",
+          "label": "Objekt/Spielzeug",
+          "ziel": "rd.11.11a01o",
+          "aussage": "Objekt/Spielzeug"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.11.11a01u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.11.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bonbons-suessigkeiten-kaugummi",
+          "label": "Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11d00c",
+          "aussage": "Bonbons/Süßigkeiten/Kaugummi"
+        },
+        {
+          "id": "essen",
+          "label": "Essen",
+          "ziel": "rd.11.11d00f",
+          "aussage": "Essen"
+        },
+        {
+          "id": "milch-fluessigkeit-ungiftig",
+          "label": "Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11d00m",
+          "aussage": "Milch/Flüssigkeit (ungiftig)"
+        },
+        {
+          "id": "objekt-spielzeug",
+          "label": "Objekt/Spielzeug",
+          "ziel": "rd.11.11d00o",
+          "aussage": "Objekt/Spielzeug"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.11.11d00u",
+          "aussage": "Unbekannt"
+        },
+        {
+          "id": "bonbons-suessigkeiten-kaugummi-2",
+          "label": "Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11e00c",
+          "aussage": "Bonbons/Süßigkeiten/Kaugummi"
+        },
+        {
+          "id": "essen-2",
+          "label": "Essen",
+          "ziel": "rd.11.11e00f",
+          "aussage": "Essen"
+        },
+        {
+          "id": "milch-fluessigkeit-ungiftig-2",
+          "label": "Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11e00m",
+          "aussage": "Milch/Flüssigkeit (ungiftig)"
+        },
+        {
+          "id": "objekt-spielzeug-2",
+          "label": "Objekt/Spielzeug",
+          "ziel": "rd.11.11e00o",
+          "aussage": "Objekt/Spielzeug"
+        },
+        {
+          "id": "unbekannt-2",
+          "label": "Unbekannt",
+          "ziel": "rd.11.11e00u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.11.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bonbons-suessigkeiten-kaugummi",
+          "label": "Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11d01c",
+          "aussage": "Bonbons/Süßigkeiten/Kaugummi"
+        },
+        {
+          "id": "essen",
+          "label": "Essen",
+          "ziel": "rd.11.11d01f",
+          "aussage": "Essen"
+        },
+        {
+          "id": "milch-fluessigkeit-ungiftig",
+          "label": "Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11d01m",
+          "aussage": "Milch/Flüssigkeit (ungiftig)"
+        },
+        {
+          "id": "objekt-spielzeug",
+          "label": "Objekt/Spielzeug",
+          "ziel": "rd.11.11d01o",
+          "aussage": "Objekt/Spielzeug"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.11.11d01u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.11.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.11.11d02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.11.11d02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.11.11d02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bonbons",
+          "label": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11d02c",
+          "aussage": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-bonbons",
+          "label": "bei Patientenalter bis 12 Jahre, Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11d02c-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bonbons/Süßigkeiten/Kaugummi",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11d02c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Bonbons/Süßigkeiten/Kaugummi",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-essen",
+          "label": "bei Patientenalter unbekannt, Essen",
+          "ziel": "rd.11.11d02f",
+          "aussage": "bei Patientenalter unbekannt, Essen"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-essen",
+          "label": "bei Patientenalter bis 12 Jahre, Essen",
+          "ziel": "rd.11.11d02f-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Essen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-essen",
+          "label": "bei Patientenalter älter 12 Jahre, Essen",
+          "ziel": "rd.11.11d02f",
+          "aussage": "bei Patientenalter älter 12 Jahre, Essen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-milch",
+          "label": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11d02m",
+          "aussage": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-milch",
+          "label": "bei Patientenalter bis 12 Jahre, Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11d02m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Milch/Flüssigkeit (ungiftig)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-milch",
+          "label": "bei Patientenalter älter 12 Jahre, Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11d02m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Milch/Flüssigkeit (ungiftig)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-objekt",
+          "label": "bei Patientenalter unbekannt, Objekt/Spielzeug",
+          "ziel": "rd.11.11d02o",
+          "aussage": "bei Patientenalter unbekannt, Objekt/Spielzeug"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-objekt",
+          "label": "bei Patientenalter bis 12 Jahre, Objekt/Spielzeug",
+          "ziel": "rd.11.11d02o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Objekt/Spielzeug",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Objekt/Spielzeug",
+          "ziel": "rd.11.11d02o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Objekt/Spielzeug",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-unbekannt",
+          "label": "bei Patientenalter unbekannt, Unbekannt",
+          "ziel": "rd.11.11d02u",
+          "aussage": "bei Patientenalter unbekannt, Unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Unbekannt",
+          "ziel": "rd.11.11d02u-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Unbekannt",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Unbekannt",
+          "ziel": "rd.11.11d02u",
+          "aussage": "bei Patientenalter älter 12 Jahre, Unbekannt",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.11.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.11.11e01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.11.11e01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage",
+          "label": "bei Patientenalter bis 30 Tage",
+          "ziel": "rd.11.11e01-2",
+          "aussage": "bei Patientenalter bis 30 Tage",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.11.11e01",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-bonbons",
+          "label": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11e01c",
+          "aussage": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11e01c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Bonbons/Süßigkeiten/Kaugummi",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage-bonbons",
+          "label": "bei Patientenalter bis 30 Tage, Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11e01c-2",
+          "aussage": "bei Patientenalter bis 30 Tage, Bonbons/Süßigkeiten/Kaugummi",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-bonbons",
+          "label": "bei Patientenalter bis 12 Jahre, Bonbons/Süßigkeiten/Kaugummi",
+          "ziel": "rd.11.11e01c-3",
+          "aussage": "bei Patientenalter bis 12 Jahre, Bonbons/Süßigkeiten/Kaugummi",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-essen",
+          "label": "bei Patientenalter unbekannt, Essen",
+          "ziel": "rd.11.11e01f",
+          "aussage": "bei Patientenalter unbekannt, Essen"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-essen",
+          "label": "bei Patientenalter älter 12 Jahre, Essen",
+          "ziel": "rd.11.11e01f",
+          "aussage": "bei Patientenalter älter 12 Jahre, Essen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage-essen",
+          "label": "bei Patientenalter bis 30 Tage, Essen",
+          "ziel": "rd.11.11e01f-2",
+          "aussage": "bei Patientenalter bis 30 Tage, Essen",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-essen",
+          "label": "bei Patientenalter bis 12 Jahre, Essen",
+          "ziel": "rd.11.11e01f-3",
+          "aussage": "bei Patientenalter bis 12 Jahre, Essen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-milch",
+          "label": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11e01m",
+          "aussage": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-milch",
+          "label": "bei Patientenalter älter 12 Jahre, Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11e01m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Milch/Flüssigkeit (ungiftig)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage-milch",
+          "label": "bei Patientenalter bis 30 Tage, Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11e01m-2",
+          "aussage": "bei Patientenalter bis 30 Tage, Milch/Flüssigkeit (ungiftig)",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-milch",
+          "label": "bei Patientenalter bis 12 Jahre, Milch/Flüssigkeit (ungiftig)",
+          "ziel": "rd.11.11e01m-3",
+          "aussage": "bei Patientenalter bis 12 Jahre, Milch/Flüssigkeit (ungiftig)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-objekt",
+          "label": "bei Patientenalter unbekannt, Objekt/Spielzeug",
+          "ziel": "rd.11.11e01o",
+          "aussage": "bei Patientenalter unbekannt, Objekt/Spielzeug"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Objekt/Spielzeug",
+          "ziel": "rd.11.11e01o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Objekt/Spielzeug",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage-objekt",
+          "label": "bei Patientenalter bis 30 Tage, Objekt/Spielzeug",
+          "ziel": "rd.11.11e01o-2",
+          "aussage": "bei Patientenalter bis 30 Tage, Objekt/Spielzeug",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-objekt",
+          "label": "bei Patientenalter bis 12 Jahre, Objekt/Spielzeug",
+          "ziel": "rd.11.11e01o-3",
+          "aussage": "bei Patientenalter bis 12 Jahre, Objekt/Spielzeug",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-unbekannt",
+          "label": "bei Patientenalter unbekannt, Unbekannt",
+          "ziel": "rd.11.11e01u",
+          "aussage": "bei Patientenalter unbekannt, Unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Unbekannt",
+          "ziel": "rd.11.11e01u",
+          "aussage": "bei Patientenalter älter 12 Jahre, Unbekannt",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage-unbekannt",
+          "label": "bei Patientenalter bis 30 Tage, Unbekannt",
+          "ziel": "rd.11.11e01u-2",
+          "aussage": "bei Patientenalter bis 30 Tage, Unbekannt",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Unbekannt",
+          "ziel": "rd.11.11e01u-3",
+          "aussage": "bei Patientenalter bis 12 Jahre, Unbekannt",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.11.11a01c": {
+      "code": "11A01C",
+      "kategorie": "RD5.",
+      "anlass": "11A01C",
+      "stichwort": "RD5."
+    },
+    "rd.11.11a01f": {
+      "code": "11A01F",
+      "kategorie": "RD5.",
+      "anlass": "11A01F",
+      "stichwort": "RD5."
+    },
+    "rd.11.11a01m": {
+      "code": "11A01M",
+      "kategorie": "RD5.",
+      "anlass": "11A01M",
+      "stichwort": "RD5."
+    },
+    "rd.11.11a01o": {
+      "code": "11A01O",
+      "kategorie": "RD5.",
+      "anlass": "11A01O",
+      "stichwort": "RD5."
+    },
+    "rd.11.11a01u": {
+      "code": "11A01U",
+      "kategorie": "RD5.",
+      "anlass": "11A01U",
+      "stichwort": "RD5."
+    },
+    "rd.11.11d00c": {
+      "code": "11D00C",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung Aspiration von Fremdkörper",
+      "stichwort": "RD3C."
+    },
+    "rd.11.11d00f": {
+      "code": "11D00F",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung Aspiration von Nahrungsresten",
+      "stichwort": "RD3C."
+    },
+    "rd.11.11d00m": {
+      "code": "11D00M",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung Aspiration von Flüssigkeit",
+      "stichwort": "RD3C."
+    },
+    "rd.11.11d00o": {
+      "code": "11D00O",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung Aspiration von Fremdkörper",
+      "stichwort": "RD3C."
+    },
+    "rd.11.11d00u": {
+      "code": "11D00U",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung Aspiration unklare Ursache",
+      "stichwort": "RD3C."
+    },
+    "rd.11.11e00c": {
+      "code": "11E00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Fremdkörper",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.11.11e00f": {
+      "code": "11E00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Nahrungsreste",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.11.11e00m": {
+      "code": "11E00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Flüssigkeit",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.11.11e00o": {
+      "code": "11E00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Fremdkörper",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.11.11e00u": {
+      "code": "11E00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - unklare Ursache",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.11.11d01c": {
+      "code": "11D01C",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sprechdyspnoe nach Aspiration von Fremdkörper",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d01f": {
+      "code": "11D01F",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sprechdyspnoe nach Aspiration von Nahrungsresten",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d01m": {
+      "code": "11D01M",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sprechdyspnoe nach Aspiration von Flüssigkeit",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d01o": {
+      "code": "11D01O",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sprechdyspnoe nach Aspiration von Fremdkörper",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d01u": {
+      "code": "11D01U",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sprechdyspnoe nach Aspiration unklare Ursache",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02": {
+      "code": "11D02",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02-2": {
+      "code": "11D02",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration, Kind",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02c": {
+      "code": "11D02C",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration von Fremdkörper",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02c-2": {
+      "code": "11D02C",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration von Fremdkörper, Kind",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02f": {
+      "code": "11D02F",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration von Nahrungsresten",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02f-2": {
+      "code": "11D02F",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration von Nahrungsresten, Kind",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02m": {
+      "code": "11D02M",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration von Flüssigkeit",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02m-2": {
+      "code": "11D02M",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration von Flüssigkeit, Kind",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02o": {
+      "code": "11D02O",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration von Fremdkörper",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02o-2": {
+      "code": "11D02O",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration von Fremdkörper, Kind",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02u": {
+      "code": "11D02U",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration unklare Ursache",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11d02u-2": {
+      "code": "11D02U",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstseinstrübung nach Aspiration unklare Ursache, Kind",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.11.11e01": {
+      "code": "11E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand nach Atemwegsverlegung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01-2": {
+      "code": "11E01",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Atemstillstand nach Atemwegsverlegung bei Neugeborenem",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.11.11e01c": {
+      "code": "11E01C",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Fremdkörper",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01c-2": {
+      "code": "11E01C",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Atemstillstand nach Atemwegsverlegung bei Neugeborenem - Fremdkörper",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.11.11e01c-3": {
+      "code": "11E01C",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Fremdkörper, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01f": {
+      "code": "11E01F",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Nahrungsreste",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01f-2": {
+      "code": "11E01F",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Atemstillstand nach Atemwegsverlegung bei Neugeborenem - Nahrungsreste",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.11.11e01f-3": {
+      "code": "11E01F",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Nahrungsreste, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01m": {
+      "code": "11E01M",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Flüssigkeit",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01m-2": {
+      "code": "11E01M",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Atemstillstand nach Atemwegsverlegung bei Neugeborenem - Flüssigkeit",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.11.11e01m-3": {
+      "code": "11E01M",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Flüssigkeit, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01o": {
+      "code": "11E01O",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Fremdkörper",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01o-2": {
+      "code": "11E01O",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Atemstillstand nach Atemwegsverlegung bei Neugeborenem - Fremdkörper",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.11.11e01o-3": {
+      "code": "11E01O",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - Fremdkörper, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01u": {
+      "code": "11E01U",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - unklare Ursache",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.11.11e01u-2": {
+      "code": "11E01U",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Atemstillstand nach Atemwegsverlegung bei Neugeborenem - unklare Ursache",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.11.11e01u-3": {
+      "code": "11E01U",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand / Atemwegsverlegung - unklare Ursache, Kind",
+      "stichwort": "RD1NC REA."
+    }
+  }
+}

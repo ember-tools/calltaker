@@ -1,0 +1,433 @@
+{
+  "knoten": {
+    "fw.brand.brand-im-freien.k0": {
+      "frage": "Was brennt im Freien?",
+      "antworten": [
+        {
+          "id": "muelltonne-container",
+          "label": "Mülltonne, Container",
+          "ziel": "fw.brand.brand-im-freien.k1",
+          "aussage": "Es handelt sich um einen Brand im Freien."
+        },
+        {
+          "id": "abfall-sperrmuell-im-freien",
+          "label": "Abfall, Sperrmüll im Freien",
+          "ziel": "fw.brand.brand-im-freien.k2",
+          "aussage": "Abfall im Freien brennt."
+        },
+        {
+          "id": "gartenlaube-schuppen",
+          "label": "Gartenlaube, Schuppen",
+          "ziel": "fw.brand.brand-im-freien.k3",
+          "aussage": "Eine Laube oder ein Schuppen brennt."
+        },
+        {
+          "id": "hecke-gebuesch-gruenflaeche",
+          "label": "Hecke, Gebüsch, Grünfläche",
+          "ziel": "fw.brand.brand-im-freien.k4",
+          "aussage": "Eine Grünfläche brennt."
+        },
+        {
+          "id": "unklar-was-brennt",
+          "label": "Unklar, was brennt",
+          "ziel": "fw.brand.brand-im-freien.k5",
+          "aussage": "Was brennt, ist dem Anrufer nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.k1": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-im-freien.67c01",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-im-freien.67d01",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-im-freien.67e01",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-im-freien.67d01u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.k2": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-im-freien.67c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-im-freien.67d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-im-freien.67e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-im-freien.67d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.k3": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-im-freien.67c03",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-im-freien.67d03",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-im-freien.67e03",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-im-freien.67d03u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.k4": {
+      "frage": "Wie groß ist die Fläche?",
+      "antworten": [
+        {
+          "id": "unter-100-m2",
+          "label": "Unter 100 m²",
+          "ziel": "fw.brand.brand-im-freien.k6",
+          "aussage": "Die brennende Fläche ist kleiner als 100 m²."
+        },
+        {
+          "id": "100-bis-1000-m2",
+          "label": "100 bis 1000 m²",
+          "ziel": "fw.brand.brand-im-freien.k7",
+          "aussage": "Die brennende Fläche beträgt 100 bis 1000 m²."
+        },
+        {
+          "id": "ueber-1000-m2",
+          "label": "Über 1000 m²",
+          "ziel": "fw.brand.brand-im-freien.k8",
+          "aussage": "Die brennende Fläche ist größer als 1000 m²."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.k5": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-im-freien.67c09",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-im-freien.67d09",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-im-freien.67e09",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-im-freien.67d09u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.67c01": {
+      "code": "67C01",
+      "kategorie": "BRAND K.",
+      "anlass": "Brand im Freien - Behälter",
+      "stichwort": "BRAND K."
+    },
+    "fw.brand.brand-im-freien.67d01": {
+      "code": "67D01",
+      "kategorie": "BRAND M.",
+      "anlass": "Brand im Freien - Behälter - Personen im Gefahrenbereich",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67e01": {
+      "code": "67E01",
+      "kategorie": "BRAND 2",
+      "anlass": "Brand im Freien - Behälter - Menschenrettung",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brand-im-freien.67d01u": {
+      "code": "67D01U",
+      "kategorie": "BRAND M.",
+      "anlass": "Brand im Freien - Behälter - Betroffenheit unbekannt",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67c02": {
+      "code": "67C02",
+      "kategorie": "BRAND K.",
+      "anlass": "Kleinbrand im Freien",
+      "stichwort": "BRAND K."
+    },
+    "fw.brand.brand-im-freien.67d02": {
+      "code": "67D02",
+      "kategorie": "BRAND M.",
+      "anlass": "Kleinbrand im Freien - Personen im Gefahrenbereich",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67e02": {
+      "code": "67E02",
+      "kategorie": "BRAND 2",
+      "anlass": "Kleinbrand im Freien - Menschenrettung",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brand-im-freien.67d02u": {
+      "code": "67D02U",
+      "kategorie": "BRAND M.",
+      "anlass": "Kleinbrand im Freien - Betroffenheit unbekannt",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67c03": {
+      "code": "67C03",
+      "kategorie": "BRAND M.",
+      "anlass": "Brand einer Laube",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67d03": {
+      "code": "67D03",
+      "kategorie": "BRAND 1",
+      "anlass": "Brand einer Laube - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 1"
+    },
+    "fw.brand.brand-im-freien.67e03": {
+      "code": "67E03",
+      "kategorie": "BRAND 2",
+      "anlass": "Brand einer Laube - Menschenrettung",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brand-im-freien.67d03u": {
+      "code": "67D03U",
+      "kategorie": "BRAND 1",
+      "anlass": "Brand einer Laube - Betroffenheit unbekannt",
+      "stichwort": "BRAND 1"
+    },
+    "fw.brand.brand-im-freien.k6": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-im-freien.67c05",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-im-freien.67d05",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-im-freien.67e05",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-im-freien.67d05u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.k7": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-im-freien.67c06",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-im-freien.67d06",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-im-freien.67e06",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-im-freien.67d06u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.k8": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-im-freien.67c07",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-im-freien.67d07",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-im-freien.67e07",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-im-freien.67d07u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-im-freien.67c09": {
+      "code": "67C09",
+      "kategorie": "BRAND K.",
+      "anlass": "Brand im Freien - Lage unklar",
+      "stichwort": "BRAND K."
+    },
+    "fw.brand.brand-im-freien.67d09": {
+      "code": "67D09",
+      "kategorie": "BRAND M.",
+      "anlass": "Brand im Freien - Lage unklar - Personen im Gefahrenbereich",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67e09": {
+      "code": "67E09",
+      "kategorie": "BRAND 2",
+      "anlass": "Brand im Freien - Lage unklar - Menschenrettung",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brand-im-freien.67d09u": {
+      "code": "67D09U",
+      "kategorie": "BRAND M.",
+      "anlass": "Brand im Freien - Lage unklar - Betroffenheit unbekannt",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67c05": {
+      "code": "67C05",
+      "kategorie": "BRAND K.",
+      "anlass": "Vegetationsbrand - Kleinfläche",
+      "stichwort": "BRAND K."
+    },
+    "fw.brand.brand-im-freien.67d05": {
+      "code": "67D05",
+      "kategorie": "BRAND M.",
+      "anlass": "Vegetationsbrand - Kleinfläche - Personen im Gefahrenbereich",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67e05": {
+      "code": "67E05",
+      "kategorie": "BRAND 2",
+      "anlass": "Vegetationsbrand - Kleinfläche - Menschenrettung",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brand-im-freien.67d05u": {
+      "code": "67D05U",
+      "kategorie": "BRAND M.",
+      "anlass": "Vegetationsbrand - Kleinfläche - Betroffenheit unbekannt",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.brand-im-freien.67c06": {
+      "code": "67C06",
+      "kategorie": "BRAND 1",
+      "anlass": "Vegetationsbrand - Mittlere Fläche",
+      "stichwort": "BRAND 1"
+    },
+    "fw.brand.brand-im-freien.67d06": {
+      "code": "67D06",
+      "kategorie": "BRAND 2",
+      "anlass": "Vegetationsbrand - Mittlere Fläche - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brand-im-freien.67e06": {
+      "code": "67E06",
+      "kategorie": "BRAND 3",
+      "anlass": "Vegetationsbrand - Mittlere Fläche - Menschenrettung",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brand-im-freien.67d06u": {
+      "code": "67D06U",
+      "kategorie": "BRAND 2",
+      "anlass": "Vegetationsbrand - Mittlere Fläche - Betroffenheit unbekannt",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brand-im-freien.67c07": {
+      "code": "67C07",
+      "kategorie": "BRAND 3",
+      "anlass": "Vegetationsbrand - Großfläche",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brand-im-freien.67d07": {
+      "code": "67D07",
+      "kategorie": "BRAND 4",
+      "anlass": "Vegetationsbrand - Großfläche - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brand-im-freien.67e07": {
+      "code": "67E07",
+      "kategorie": "BRAND 6",
+      "anlass": "Vegetationsbrand - Großfläche - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-im-freien.67d07u": {
+      "code": "67D07U",
+      "kategorie": "BRAND 4",
+      "anlass": "Vegetationsbrand - Großfläche - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "knoten": {
+    "fw.th.unterstuetzung-rettungsdienst.k0": {
+      "frage": "Worum wird gebeten?",
+      "antworten": [
+        {
+          "id": "tragehilfe",
+          "label": "Tragehilfe",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.k1",
+          "aussage": "Der Rettungsdienst bittet um Tragehilfe."
+        },
+        {
+          "id": "zugang-schaffen",
+          "label": "Zugang schaffen",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.k2",
+          "aussage": "Der Rettungsdienst bittet darum, Zugang zu schaffen."
+        },
+        {
+          "id": "absicherung-der-einsatzstelle",
+          "label": "Absicherung der Einsatzstelle",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.k3",
+          "aussage": "Die Einsatzstelle ist abzusichern."
+        }
+      ]
+    },
+    "fw.th.unterstuetzung-rettungsdienst.k1": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ohne-besondere-umstaende",
+          "label": "Ohne besondere Umstände",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.58a01",
+          "aussage": "Besondere Umstände liegen nicht vor."
+        },
+        {
+          "id": "schwergewichtiger-patient",
+          "label": "Schwergewichtiger Patient",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.58c01",
+          "aussage": "Der Patient ist schwergewichtig."
+        },
+        {
+          "id": "rettung-ueber-drehleiter-noetig",
+          "label": "Rettung über Drehleiter nötig",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.58c02",
+          "aussage": "Eine Rettung über die Drehleiter ist erforderlich."
+        }
+      ]
+    },
+    "fw.th.unterstuetzung-rettungsdienst.k2": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "tuer-verschlossen",
+          "label": "Tür verschlossen",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.58a03",
+          "aussage": "Die Tür ist verschlossen."
+        }
+      ]
+    },
+    "fw.th.unterstuetzung-rettungsdienst.k3": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "im-fliessenden-verkehr",
+          "label": "Im fließenden Verkehr",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.58b04",
+          "aussage": "Die Einsatzstelle liegt im fließenden Verkehr."
+        },
+        {
+          "id": "auf-der-autobahn",
+          "label": "Auf der Autobahn",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.58c04",
+          "aussage": "Die Einsatzstelle liegt auf der Autobahn."
+        }
+      ]
+    },
+    "fw.th.unterstuetzung-rettungsdienst.58a01": {
+      "code": "58A01",
+      "kategorie": "TH K.",
+      "anlass": "Tragehilfe",
+      "stichwort": "TH K."
+    },
+    "fw.th.unterstuetzung-rettungsdienst.58c01": {
+      "code": "58C01",
+      "kategorie": "TH M.",
+      "anlass": "Tragehilfe - schwergewichtiger Patient",
+      "stichwort": "TH M."
+    },
+    "fw.th.unterstuetzung-rettungsdienst.58c02": {
+      "code": "58C02",
+      "kategorie": "TH 1",
+      "anlass": "Tragehilfe über Drehleiter",
+      "stichwort": "TH 1"
+    },
+    "fw.th.unterstuetzung-rettungsdienst.58a03": {
+      "code": "58A03",
+      "kategorie": "TH K.",
+      "anlass": "Zugang für Rettungsdienst",
+      "stichwort": "TH K."
+    },
+    "fw.th.unterstuetzung-rettungsdienst.58b04": {
+      "code": "58B04",
+      "kategorie": "TH K.",
+      "anlass": "Absicherung im Verkehrsraum",
+      "stichwort": "TH K."
+    },
+    "fw.th.unterstuetzung-rettungsdienst.58c04": {
+      "code": "58C04",
+      "kategorie": "TH M.",
+      "anlass": "Absicherung auf der Autobahn",
+      "stichwort": "TH M."
+    }
+  }
+}

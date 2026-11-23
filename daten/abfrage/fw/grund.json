@@ -1,0 +1,142 @@
+{
+  "knoten": {
+    "fw.grund": {
+      "frage": "Warum benötigen Sie die Feuerwehr?",
+      "antworten": [
+        {
+          "id": "brand-im-freien",
+          "label": "Brand im Freien",
+          "ziel": "fw.brand.brand-im-freien.k0",
+          "protokoll": "fw.brand.brand-im-freien",
+          "nr": "67"
+        },
+        {
+          "id": "brand-in-verkehrsanlagen",
+          "label": "Brand in Verkehrsanlagen",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.k0",
+          "protokoll": "fw.brand.brand-in-verkehrsanlagen",
+          "nr": "68"
+        },
+        {
+          "id": "gebaeudebrand",
+          "label": "Gebäudebrand",
+          "ziel": "fw.brand.gebaeudebrand.k0",
+          "protokoll": "fw.brand.gebaeudebrand",
+          "nr": "69"
+        },
+        {
+          "id": "brandmeldeanlage",
+          "label": "Brandmeldeanlage",
+          "ziel": "fw.brand.brandmeldeanlage.k0",
+          "protokoll": "fw.brand.brandmeldeanlage",
+          "nr": "70"
+        },
+        {
+          "id": "fahrzeugbrand",
+          "label": "Fahrzeugbrand",
+          "ziel": "fw.brand.fahrzeugbrand.k0",
+          "protokoll": "fw.brand.fahrzeugbrand",
+          "nr": "71"
+        },
+        {
+          "id": "rauchentwicklung-brandgeruch",
+          "label": "Rauchentwicklung, Brandgeruch",
+          "ziel": "fw.brand.rauchentwicklung-brandgeruch.k0",
+          "protokoll": "fw.brand.rauchentwicklung-brandgeruch",
+          "nr": "72"
+        },
+        {
+          "id": "industrie-und-gewerbebrand",
+          "label": "Industrie- und Gewerbebrand",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.k0",
+          "protokoll": "fw.brand.industrie-und-gewerbebrand",
+          "nr": "73"
+        },
+        {
+          "id": "brand-in-sonderobjekt",
+          "label": "Brand in Sonderobjekt",
+          "ziel": "fw.brand.brand-in-sonderobjekt.k0",
+          "protokoll": "fw.brand.brand-in-sonderobjekt",
+          "nr": "74"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "fw.brand.explosion.k0",
+          "protokoll": "fw.brand.explosion",
+          "nr": "75"
+        },
+        {
+          "id": "verkehrsunfall",
+          "label": "Verkehrsunfall",
+          "ziel": "fw.th.verkehrsunfall.k0",
+          "protokoll": "fw.th.verkehrsunfall",
+          "nr": "29"
+        },
+        {
+          "id": "tueroeffnung",
+          "label": "Türöffnung",
+          "ziel": "fw.th.tueroeffnung.k0",
+          "protokoll": "fw.th.tueroeffnung",
+          "nr": "50"
+        },
+        {
+          "id": "aufzugnotbefreiung",
+          "label": "Aufzugnotbefreiung",
+          "ziel": "fw.th.aufzugnotbefreiung.k0",
+          "protokoll": "fw.th.aufzugnotbefreiung",
+          "nr": "51"
+        },
+        {
+          "id": "wasserschaden",
+          "label": "Wasserschaden",
+          "ziel": "fw.th.wasserschaden.k0",
+          "protokoll": "fw.th.wasserschaden",
+          "nr": "52"
+        },
+        {
+          "id": "sturmschaden",
+          "label": "Sturmschaden",
+          "ziel": "fw.th.sturmschaden.k0",
+          "protokoll": "fw.th.sturmschaden",
+          "nr": "53"
+        },
+        {
+          "id": "person-in-notlage",
+          "label": "Person in Notlage",
+          "ziel": "fw.th.person-in-notlage.k0",
+          "protokoll": "fw.th.person-in-notlage",
+          "nr": "54"
+        },
+        {
+          "id": "gefahrstoffe",
+          "label": "Gefahrstoffe",
+          "ziel": "fw.th.gefahrstoffe.k0",
+          "protokoll": "fw.th.gefahrstoffe",
+          "nr": "55"
+        },
+        {
+          "id": "tierrettung",
+          "label": "Tierrettung",
+          "ziel": "fw.th.tierrettung.k0",
+          "protokoll": "fw.th.tierrettung",
+          "nr": "56"
+        },
+        {
+          "id": "einsturz-gebaeudeschaden",
+          "label": "Einsturz, Gebäudeschaden",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.k0",
+          "protokoll": "fw.th.einsturz-gebaeudeschaden",
+          "nr": "57"
+        },
+        {
+          "id": "unterstuetzung-rettungsdienst",
+          "label": "Unterstützung Rettungsdienst",
+          "ziel": "fw.th.unterstuetzung-rettungsdienst.k0",
+          "protokoll": "fw.th.unterstuetzung-rettungsdienst",
+          "nr": "58"
+        }
+      ]
+    }
+  }
+}

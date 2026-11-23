@@ -1,0 +1,303 @@
+{
+  "knoten": {
+    "fw.th.gefahrstoffe.k0": {
+      "frage": "Welcher Stoff tritt aus?",
+      "antworten": [
+        {
+          "id": "betriebsmittel-oel-kraftstoff",
+          "label": "Betriebsmittel, Öl, Kraftstoff",
+          "ziel": "fw.th.gefahrstoffe.k1",
+          "aussage": "Betriebsmittel sind ausgetreten."
+        },
+        {
+          "id": "gas",
+          "label": "Gas",
+          "ziel": "fw.th.gefahrstoffe.k2",
+          "aussage": "Gas tritt aus."
+        },
+        {
+          "id": "unbekannter-stoff",
+          "label": "Unbekannter Stoff",
+          "ziel": "fw.th.gefahrstoffe.k3",
+          "aussage": "Ein unbekannter Stoff ist ausgetreten."
+        }
+      ]
+    },
+    "fw.th.gefahrstoffe.k1": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "oelspur-auf-der-fahrbahn",
+          "label": "Ölspur auf der Fahrbahn",
+          "ziel": "fw.th.gefahrstoffe.55a01",
+          "aussage": "Auf der Fahrbahn befindet sich eine Ölspur."
+        },
+        {
+          "id": "austritt-aus-einem-fahrzeug",
+          "label": "Austritt aus einem Fahrzeug",
+          "ziel": "fw.th.gefahrstoffe.55b01",
+          "aussage": "Betriebsmittel treten aus einem Fahrzeug aus."
+        },
+        {
+          "id": "austritt-in-ein-gewaesser",
+          "label": "Austritt in ein Gewässer",
+          "ziel": "fw.th.gefahrstoffe.55d01",
+          "aussage": "Betriebsmittel treten in ein Gewässer aus."
+        }
+      ]
+    },
+    "fw.th.gefahrstoffe.k2": {
+      "frage": "Wo tritt das Gas aus?",
+      "antworten": [
+        {
+          "id": "im-freien",
+          "label": "Im Freien",
+          "ziel": "fw.th.gefahrstoffe.k4",
+          "aussage": "Im Freien ist Gasgeruch wahrnehmbar."
+        },
+        {
+          "id": "im-gebaeude",
+          "label": "Im Gebäude",
+          "ziel": "fw.th.gefahrstoffe.k5",
+          "aussage": "Im Gebäude ist Gasgeruch wahrnehmbar."
+        },
+        {
+          "id": "beschaedigte-versorgungsleitung",
+          "label": "Beschädigte Versorgungsleitung",
+          "ziel": "fw.th.gefahrstoffe.k6",
+          "aussage": "Eine Versorgungsleitung wurde beschädigt."
+        }
+      ]
+    },
+    "fw.th.gefahrstoffe.k3": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.gefahrstoffe.55a06",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.gefahrstoffe.55c06",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.gefahrstoffe.55e06",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.gefahrstoffe.55c06u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.gefahrstoffe.55a01": {
+      "code": "55A01",
+      "kategorie": "TH K.",
+      "anlass": "Ölspur",
+      "stichwort": "TH K."
+    },
+    "fw.th.gefahrstoffe.55b01": {
+      "code": "55B01",
+      "kategorie": "TH K.",
+      "anlass": "Betriebsmittelaustritt",
+      "stichwort": "TH K."
+    },
+    "fw.th.gefahrstoffe.55d01": {
+      "code": "55D01",
+      "kategorie": "TH 2",
+      "anlass": "Gewässerverunreinigung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.gefahrstoffe.k4": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.gefahrstoffe.55a02",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.gefahrstoffe.55c02",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.gefahrstoffe.55e02",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.gefahrstoffe.55c02u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.gefahrstoffe.k5": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.gefahrstoffe.55a03",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.gefahrstoffe.55c03",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.gefahrstoffe.55e03",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.gefahrstoffe.55c03u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.gefahrstoffe.k6": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.gefahrstoffe.55a04",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.gefahrstoffe.55c04",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.gefahrstoffe.55e04",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.gefahrstoffe.55c04u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.gefahrstoffe.55a06": {
+      "code": "55A06",
+      "kategorie": "TH M.",
+      "anlass": "Unbekannter Stoff",
+      "stichwort": "TH M."
+    },
+    "fw.th.gefahrstoffe.55c06": {
+      "code": "55C06",
+      "kategorie": "TH 2",
+      "anlass": "Unbekannter Stoff - Personen betroffen",
+      "stichwort": "TH 2"
+    },
+    "fw.th.gefahrstoffe.55e06": {
+      "code": "55E06",
+      "kategorie": "TH 3",
+      "anlass": "Unbekannter Stoff - Personenrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.gefahrstoffe.55c06u": {
+      "code": "55C06U",
+      "kategorie": "TH 2",
+      "anlass": "Unbekannter Stoff - Betroffenheit unbekannt",
+      "stichwort": "TH 2"
+    },
+    "fw.th.gefahrstoffe.55a02": {
+      "code": "55A02",
+      "kategorie": "TH M.",
+      "anlass": "Gasgeruch im Freien",
+      "stichwort": "TH M."
+    },
+    "fw.th.gefahrstoffe.55c02": {
+      "code": "55C02",
+      "kategorie": "TH 1",
+      "anlass": "Gasgeruch im Freien - Personen betroffen",
+      "stichwort": "TH 1"
+    },
+    "fw.th.gefahrstoffe.55e02": {
+      "code": "55E02",
+      "kategorie": "TH 2",
+      "anlass": "Gasgeruch im Freien - Personenrettung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.gefahrstoffe.55c02u": {
+      "code": "55C02U",
+      "kategorie": "TH 1",
+      "anlass": "Gasgeruch im Freien - Betroffenheit unbekannt",
+      "stichwort": "TH 1"
+    },
+    "fw.th.gefahrstoffe.55a03": {
+      "code": "55A03",
+      "kategorie": "TH 2",
+      "anlass": "Gasaustritt im Gebäude",
+      "stichwort": "TH 2"
+    },
+    "fw.th.gefahrstoffe.55c03": {
+      "code": "55C03",
+      "kategorie": "TH 2",
+      "anlass": "Gasaustritt im Gebäude - Personen betroffen",
+      "stichwort": "TH 2"
+    },
+    "fw.th.gefahrstoffe.55e03": {
+      "code": "55E03",
+      "kategorie": "TH 3",
+      "anlass": "Gasaustritt im Gebäude - Personenrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.gefahrstoffe.55c03u": {
+      "code": "55C03U",
+      "kategorie": "TH 2",
+      "anlass": "Gasaustritt im Gebäude - Betroffenheit unbekannt",
+      "stichwort": "TH 2"
+    },
+    "fw.th.gefahrstoffe.55a04": {
+      "code": "55A04",
+      "kategorie": "TH 2",
+      "anlass": "Beschädigte Gasleitung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.gefahrstoffe.55c04": {
+      "code": "55C04",
+      "kategorie": "TH 3",
+      "anlass": "Beschädigte Gasleitung - Personen betroffen",
+      "stichwort": "TH 3"
+    },
+    "fw.th.gefahrstoffe.55e04": {
+      "code": "55E04",
+      "kategorie": "TH 3",
+      "anlass": "Beschädigte Gasleitung - Personenrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.gefahrstoffe.55c04u": {
+      "code": "55C04U",
+      "kategorie": "TH 3",
+      "anlass": "Beschädigte Gasleitung - Betroffenheit unbekannt",
+      "stichwort": "TH 3"
+    }
+  }
+}

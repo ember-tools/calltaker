@@ -1,0 +1,250 @@
+{
+  "knoten": {
+    "rd.01.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "bauchschmerzen",
+          "label": "Bauchschmerzen",
+          "ziel": "rd.01.01a01",
+          "aussage": "Bauchschmerzen"
+        },
+        {
+          "id": "nicht-traumatische-hoden-oder",
+          "label": "Nicht traumatische Hoden- oder Leistenschmerzen (Mann)",
+          "ziel": "rd.01.k1",
+          "aussage": "Nicht traumatische Hoden- oder Leistenschmerzen (Mann)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.01.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "vermutetes-aortenaneurysma-dissektion",
+          "label": "VERMUTETES Aortenaneurysma/-dissektion (Zerreißungsschmerz) ≥ 50",
+          "ziel": "rd.01.01c01",
+          "aussage": "VERMUTETES Aortenaneurysma/-dissektion (Zerreißungsschmerz) ≥ 50",
+          "alter": {
+            "min": 50
+          }
+        },
+        {
+          "id": "bekanntes-aortenaneurysma-bekannte",
+          "label": "Bekanntes Aortenaneurysma / Bekannte Aortendissektion",
+          "ziel": "rd.01.01c02",
+          "aussage": "Bekanntes Aortenaneurysma / Bekannte Aortendissektion"
+        },
+        {
+          "id": "ohnmacht-oder-beinahe-ohnmacht-50",
+          "label": "Ohnmacht oder Beinahe-Ohnmacht ≥ 50",
+          "ziel": "rd.01.01c03",
+          "aussage": "Ohnmacht oder Beinahe-Ohnmacht ≥ 50",
+          "alter": {
+            "min": 50
+          }
+        },
+        {
+          "id": "frauen-mit-ohnmacht-oder-beinahe",
+          "label": "Frauen mit Ohnmacht oder Beinahe-Ohnmacht 12–50",
+          "ziel": "rd.01.01c04",
+          "aussage": "Frauen mit Ohnmacht oder Beinahe-Ohnmacht 12–50"
+        },
+        {
+          "id": "maenner-mit-schmerzen-oberhalb-des",
+          "label": "Männer mit Schmerzen oberhalb des Bauchnabels ≥ 35",
+          "ziel": "rd.01.01c05",
+          "aussage": "Männer mit Schmerzen oberhalb des Bauchnabels ≥ 35",
+          "alter": {
+            "min": 35
+          }
+        },
+        {
+          "id": "frauen-mit-schmerzen-oberhalb-des",
+          "label": "Frauen mit Schmerzen oberhalb des Bauchnabels ≥ 45",
+          "ziel": "rd.01.01c06",
+          "aussage": "Frauen mit Schmerzen oberhalb des Bauchnabels ≥ 45",
+          "alter": {
+            "min": 45
+          }
+        },
+        {
+          "id": "frauen-mit-schmerzen-in-der",
+          "label": "Frauen mit Schmerzen in der Schulterspitze 12-50",
+          "ziel": "rd.01.01c07",
+          "aussage": "Frauen mit Schmerzen in der Schulterspitze 12-50"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.01.01d01",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "aschfahle-oder-graue-hautfarbe-gemeldet",
+          "label": "Aschfahle oder graue Hautfarbe gemeldet ≥50",
+          "ziel": "rd.01.01d02",
+          "aussage": "Aschfahle oder graue Hautfarbe gemeldet ≥50",
+          "alter": {
+            "min": 50
+          }
+        }
+      ]
+    },
+    "rd.01.01a01": {
+      "code": "01A01",
+      "kategorie": "RD5.",
+      "anlass": "01A01",
+      "stichwort": "RD5."
+    },
+    "rd.01.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.01.01a02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.01.01a02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.01.01a02",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.01.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.01.01c00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.01.01c00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.01.01c00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.01.01d00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.01.01c01": {
+      "code": "01C01",
+      "kategorie": "RD2C.",
+      "anlass": "Bauchschmerzen mit Zerreißungsschmerz",
+      "stichwort": "RD2C."
+    },
+    "rd.01.01c02": {
+      "code": "01C02",
+      "kategorie": "RD2C.",
+      "anlass": "Bauchschmerzen bei bekanntem Aortenaneurysma / bekannter Aortendissektion",
+      "stichwort": "RD2C."
+    },
+    "rd.01.01c03": {
+      "code": "01C03",
+      "kategorie": "RD3C.",
+      "anlass": "Bauchschmerzen mit (Beinahe-)Ohnmacht",
+      "stichwort": "RD3C."
+    },
+    "rd.01.01c04": {
+      "code": "01C04",
+      "kategorie": "RD3C.",
+      "anlass": "Bauchschmerzen mit (Beinahe-)Ohnmacht",
+      "stichwort": "RD3C."
+    },
+    "rd.01.01c05": {
+      "code": "01C05",
+      "kategorie": "RD3C.",
+      "anlass": "Bauchschmerzen oberhalb des Bauchnabels",
+      "stichwort": "RD3C."
+    },
+    "rd.01.01c06": {
+      "code": "01C06",
+      "kategorie": "RD3C.",
+      "anlass": "Bauchschmerzen oberhalb des Bauchnabels",
+      "stichwort": "RD3C."
+    },
+    "rd.01.01c07": {
+      "code": "01C07",
+      "kategorie": "RD4C.",
+      "anlass": "Bauchschmerzen mit Schmerzen bis in die Schulterspitze",
+      "stichwort": "RD4C."
+    },
+    "rd.01.01d01": {
+      "code": "01D01",
+      "kategorie": "RD2C.",
+      "anlass": "Bauchschmerzen mit Bewusstseinstrübung",
+      "stichwort": "RD2C."
+    },
+    "rd.01.01d02": {
+      "code": "01D02",
+      "kategorie": "RD2C.",
+      "anlass": "Bauchschmerzen mit aschfahler oder grauer Hautfarbe",
+      "stichwort": "RD2C."
+    },
+    "rd.01.01a02": {
+      "code": "01A02",
+      "kategorie": "RD3B.",
+      "anlass": "Hoden- oder Leistenschmerzen",
+      "stichwort": "RD3B."
+    },
+    "rd.01.01a02-2": {
+      "code": "01A02",
+      "kategorie": "RD3C.",
+      "anlass": "Hoden- oder Leistenschmerzen, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.01.01c00": {
+      "code": "01C00",
+      "kategorie": "RD3B.",
+      "anlass": "Aufwertung Bauchschmerzen",
+      "stichwort": "RD3B."
+    },
+    "rd.01.01c00-2": {
+      "code": "01C00",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung Bauchschmerzen, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.01.01d00": {
+      "code": "01D00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung starke Bauchschmerzen",
+      "stichwort": "RD4C."
+    }
+  }
+}

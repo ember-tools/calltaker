@@ -1,0 +1,976 @@
+{
+  "knoten": {
+    "rd.21.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ungefaehrliche-blutung",
+          "label": "UNGEFÄHRLICHE Blutung",
+          "ziel": "rd.21.k1",
+          "aussage": "UNGEFÄHRLICHE Blutung"
+        },
+        {
+          "id": "schwache-blutung",
+          "label": "SCHWACHE Blutung",
+          "ziel": "rd.21.k2",
+          "aussage": "SCHWACHE Blutung"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.21.k3",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "moeglicherweise-gefaehrliche-blutung",
+          "label": "MÖGLICHERWEISE GEFÄHRLICHE Blutung",
+          "ziel": "rd.21.k4",
+          "aussage": "MÖGLICHERWEISE GEFÄHRLICHE Blutung"
+        },
+        {
+          "id": "starke-blutung",
+          "label": "STARKE Blutung",
+          "ziel": "rd.21.k5",
+          "aussage": "STARKE Blutung"
+        },
+        {
+          "id": "bluter",
+          "label": "Bluter",
+          "ziel": "rd.21.k6",
+          "aussage": "Bluter"
+        },
+        {
+          "id": "blutverduennende-medikamente",
+          "label": "Blutverdünnende Medikamente",
+          "ziel": "rd.21.k7",
+          "aussage": "Blutverdünnende Medikamente"
+        },
+        {
+          "id": "blutungen-aus-kuenstlichen",
+          "label": "Blutungen aus KÜNSTLICHEN KÖRPERÖFFNUNGEN",
+          "ziel": "rd.21.k8",
+          "aussage": "Blutungen aus KÜNSTLICHEN KÖRPERÖFFNUNGEN"
+        },
+        {
+          "id": "blutung-aus-dialyseshunt",
+          "label": "Blutung aus Dialyseshunt",
+          "ziel": "rd.21.k9",
+          "aussage": "Blutung aus Dialyseshunt"
+        },
+        {
+          "id": "blutungen-aus-krampfadern",
+          "label": "Blutungen aus Krampfadern",
+          "ziel": "rd.21.k10",
+          "aussage": "Blutungen aus Krampfadern"
+        },
+        {
+          "id": "sekundaere-postpartale-blutung-24-h-nach",
+          "label": "Sekundäre POSTPARTALE Blutung (≥ 24 h nach der Geburt)",
+          "ziel": "rd.21.k11",
+          "aussage": "Sekundäre POSTPARTALE Blutung (≥ 24 h nach der Geburt)"
+        },
+        {
+          "id": "primaere-postpartale-blutung-24-h-nach",
+          "label": "Primäre POSTPARTALE Blutung (< 24 h nach der Geburt)",
+          "ziel": "rd.21.k12",
+          "aussage": "Primäre POSTPARTALE Blutung (< 24 h nach der Geburt)"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.21.k13",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.21.k14",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.21.k15",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "gefaehrliche-blutung",
+          "label": "GEFÄHRLICHE Blutung",
+          "ziel": "rd.21.k16",
+          "aussage": "GEFÄHRLICHE Blutung"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.21.k17",
+          "aussage": "Abnorme Atmung"
+        }
+      ]
+    },
+    "rd.21.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21a01m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21a01t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21a02m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21a02t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21b00m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21b00m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-medizinisch",
+          "label": "bei Patientenalter unbekannt, Medizinisch",
+          "ziel": "rd.21.21b00m",
+          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Trauma",
+          "ziel": "rd.21.21b00t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Trauma",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-trauma",
+          "label": "bei Patientenalter bis 12 Jahre, Trauma",
+          "ziel": "rd.21.21b00t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Trauma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-trauma",
+          "label": "bei Patientenalter unbekannt, Trauma",
+          "ziel": "rd.21.21b00t",
+          "aussage": "bei Patientenalter unbekannt, Trauma"
+        },
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21c00m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21c00t",
+          "aussage": "Trauma"
+        },
+        {
+          "id": "medizinisch-2",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21d00m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma-2",
+          "label": "Trauma",
+          "ziel": "rd.21.21d00t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21b01m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Trauma",
+          "ziel": "rd.21.21b01t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Trauma",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-trauma",
+          "label": "bei Patientenalter bis 12 Jahre, Trauma",
+          "ziel": "rd.21.21b01t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Trauma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-trauma",
+          "label": "bei Patientenalter unbekannt, Trauma",
+          "ziel": "rd.21.21b01t",
+          "aussage": "bei Patientenalter unbekannt, Trauma"
+        }
+      ]
+    },
+    "rd.21.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21b02m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Trauma",
+          "ziel": "rd.21.21b02t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Trauma",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-trauma",
+          "label": "bei Patientenalter bis 12 Jahre, Trauma",
+          "ziel": "rd.21.21b02t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Trauma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-trauma",
+          "label": "bei Patientenalter unbekannt, Trauma",
+          "ziel": "rd.21.21b02t",
+          "aussage": "bei Patientenalter unbekannt, Trauma"
+        }
+      ]
+    },
+    "rd.21.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21b03m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21b03m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-medizinisch",
+          "label": "bei Patientenalter unbekannt, Medizinisch",
+          "ziel": "rd.21.21b03m",
+          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Trauma",
+          "ziel": "rd.21.21b03t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Trauma",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-trauma",
+          "label": "bei Patientenalter bis 12 Jahre, Trauma",
+          "ziel": "rd.21.21b03t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Trauma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-trauma",
+          "label": "bei Patientenalter unbekannt, Trauma",
+          "ziel": "rd.21.21b03t",
+          "aussage": "bei Patientenalter unbekannt, Trauma"
+        }
+      ]
+    },
+    "rd.21.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21b04m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21b04m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-medizinisch",
+          "label": "bei Patientenalter unbekannt, Medizinisch",
+          "ziel": "rd.21.21b04m",
+          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Trauma",
+          "ziel": "rd.21.21b04t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Trauma",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-trauma",
+          "label": "bei Patientenalter bis 12 Jahre, Trauma",
+          "ziel": "rd.21.21b04t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Trauma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-trauma",
+          "label": "bei Patientenalter unbekannt, Trauma",
+          "ziel": "rd.21.21b04t",
+          "aussage": "bei Patientenalter unbekannt, Trauma"
+        }
+      ]
+    },
+    "rd.21.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21c01m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21c01t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21c02m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21c02t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21c03m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-medizinisch",
+          "label": "bei Patientenalter unbekannt, Medizinisch",
+          "ziel": "rd.21.21c03m",
+          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21c03m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Trauma",
+          "ziel": "rd.21.21c03t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Trauma",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-trauma",
+          "label": "bei Patientenalter bis 12 Jahre, Trauma",
+          "ziel": "rd.21.21c03t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Trauma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-trauma",
+          "label": "bei Patientenalter unbekannt, Trauma",
+          "ziel": "rd.21.21c03t",
+          "aussage": "bei Patientenalter unbekannt, Trauma"
+        }
+      ]
+    },
+    "rd.21.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21c04m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21c04t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21c05m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21c05t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.21.21d01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.21.21d01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.21.21d01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-medizinisch",
+          "label": "bei Patientenalter unbekannt, Medizinisch",
+          "ziel": "rd.21.21d01m",
+          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21d01m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Medizinisch",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "ziel": "rd.21.21d01m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Medizinisch",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-trauma",
+          "label": "bei Patientenalter unbekannt, Trauma",
+          "ziel": "rd.21.21d01t",
+          "aussage": "bei Patientenalter unbekannt, Trauma"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-trauma",
+          "label": "bei Patientenalter bis 12 Jahre, Trauma",
+          "ziel": "rd.21.21d01t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Trauma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Trauma",
+          "ziel": "rd.21.21d01t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Trauma",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.21.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21d02m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21d02t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k15": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21d03m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21d03t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k16": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21d04m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21d04t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.k17": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "medizinisch",
+          "label": "Medizinisch",
+          "ziel": "rd.21.21d05m",
+          "aussage": "Medizinisch"
+        },
+        {
+          "id": "trauma",
+          "label": "Trauma",
+          "ziel": "rd.21.21d05t",
+          "aussage": "Trauma"
+        }
+      ]
+    },
+    "rd.21.21a01m": {
+      "code": "21A01M",
+      "kategorie": "RD5.",
+      "anlass": "21A01M",
+      "stichwort": "RD5."
+    },
+    "rd.21.21a01t": {
+      "code": "21A01T",
+      "kategorie": "RD5.",
+      "anlass": "21A01T",
+      "stichwort": "RD5."
+    },
+    "rd.21.21a02m": {
+      "code": "21A02M",
+      "kategorie": "RD5.",
+      "anlass": "21A02M",
+      "stichwort": "RD5."
+    },
+    "rd.21.21a02t": {
+      "code": "21A02T",
+      "kategorie": "RD5.",
+      "anlass": "21A02T",
+      "stichwort": "RD5."
+    },
+    "rd.21.21b00m": {
+      "code": "21B00M",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Blutung mit internistischer Ursache",
+      "stichwort": "RD4B."
+    },
+    "rd.21.21b00m-2": {
+      "code": "21B00M",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Blutung mit internistischer Ursache, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.21.21b00t": {
+      "code": "21B00T",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Blutung nach Trauma",
+      "stichwort": "RD4B."
+    },
+    "rd.21.21b00t-2": {
+      "code": "21B00T",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Blutung nach Trauma, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.21.21c00m": {
+      "code": "21C00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Blutung mit internistischer Ursache",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.21.21c00t": {
+      "code": "21C00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Blutung nach Trauma",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.21.21d00m": {
+      "code": "21D00M",
+      "kategorie": "RD2C.",
+      "anlass": "Aufwertung NotSan-Behandlung bei Blutung mit internistischer Ursache",
+      "stichwort": "RD2C."
+    },
+    "rd.21.21d00t": {
+      "code": "21D00T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Trauma",
+      "stichwort": "RD2C FR."
+    },
+    "rd.21.21b01m": {
+      "code": "21B01M",
+      "kategorie": "RD3C.",
+      "anlass": "Blutung mit internistischer Ursache",
+      "stichwort": "RD3C."
+    },
+    "rd.21.21b01t": {
+      "code": "21B01T",
+      "kategorie": "RD3B.",
+      "anlass": "Blutung nach Trauma",
+      "stichwort": "RD3B."
+    },
+    "rd.21.21b01t-2": {
+      "code": "21B01T",
+      "kategorie": "RD3C.",
+      "anlass": "Blutung nach Trauma, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.21.21b02m": {
+      "code": "21B02M",
+      "kategorie": "RD2C.",
+      "anlass": "Starke Blutung mit internistischer Ursache",
+      "stichwort": "RD2C."
+    },
+    "rd.21.21b02t": {
+      "code": "21B02T",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Trauma",
+      "stichwort": "RD2B FR."
+    },
+    "rd.21.21b02t-2": {
+      "code": "21B02T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Trauma, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.21.21b03m": {
+      "code": "21B03M",
+      "kategorie": "RD4B.",
+      "anlass": "Blutung mit internistischer Ursache, Patient ist Bluter",
+      "stichwort": "RD4B."
+    },
+    "rd.21.21b03m-2": {
+      "code": "21B03M",
+      "kategorie": "RD4C.",
+      "anlass": "Blutung mit internistischer Ursache, Kind ist Bluter",
+      "stichwort": "RD4C."
+    },
+    "rd.21.21b03t": {
+      "code": "21B03T",
+      "kategorie": "RD4B.",
+      "anlass": "Blutung nach Trauma, Patient ist Bluter",
+      "stichwort": "RD4B."
+    },
+    "rd.21.21b03t-2": {
+      "code": "21B03T",
+      "kategorie": "RD4C.",
+      "anlass": "Blutung nach Trauma, Kind ist Bluter",
+      "stichwort": "RD4C."
+    },
+    "rd.21.21b04m": {
+      "code": "21B04M",
+      "kategorie": "RD4B.",
+      "anlass": "Blutung mit internistischer Ursache, Patient nimmt blutverdünnende Medikamente",
+      "stichwort": "RD4B."
+    },
+    "rd.21.21b04m-2": {
+      "code": "21B04M",
+      "kategorie": "RD4C.",
+      "anlass": "Blutung mit internistischer Ursache, Kind nimmt blutverdünnende Medikamente",
+      "stichwort": "RD4C."
+    },
+    "rd.21.21b04t": {
+      "code": "21B04T",
+      "kategorie": "RD4B.",
+      "anlass": "Blutung nach Trauma, Patient nimmt blutverdünnende Medikamente",
+      "stichwort": "RD4B."
+    },
+    "rd.21.21b04t-2": {
+      "code": "21B04T",
+      "kategorie": "RD4C.",
+      "anlass": "Blutung nach Trauma, Kind nimmt blutverdünnende Medikamente",
+      "stichwort": "RD4C."
+    },
+    "rd.21.21c01m": {
+      "code": "21C01M",
+      "kategorie": "RD2C.",
+      "anlass": "Blutung aus künstlicher Körperöffnung mit internistischer Ursache",
+      "stichwort": "RD2C."
+    },
+    "rd.21.21c01t": {
+      "code": "21C01T",
+      "kategorie": "RD2C.",
+      "anlass": "Blutung aus künstlicher Körperöffnung nach Trauma",
+      "stichwort": "RD2C."
+    },
+    "rd.21.21c02m": {
+      "code": "21C02M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Blutung aus Dialyseshunt mit internistischer Ursache",
+      "stichwort": "RD2C FR."
+    },
+    "rd.21.21c02t": {
+      "code": "21C02T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Blutung aus Dialyseshunt nach Trauma",
+      "stichwort": "RD2C FR."
+    },
+    "rd.21.21c03m": {
+      "code": "21C03M",
+      "kategorie": "RD3B.",
+      "anlass": "Massive Blutung aus Krampfadern mit internistischer Ursache",
+      "stichwort": "RD3B."
+    },
+    "rd.21.21c03m-2": {
+      "code": "21C03M",
+      "kategorie": "RD3C.",
+      "anlass": "Blutung aus Krampfadern mit internistischer Ursache, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.21.21c03t": {
+      "code": "21C03T",
+      "kategorie": "RD3B.",
+      "anlass": "Massive Blutung nach Trauma",
+      "stichwort": "RD3B."
+    },
+    "rd.21.21c03t-2": {
+      "code": "21C03T",
+      "kategorie": "RD3C.",
+      "anlass": "Blutung aus Krampfadern nach Trauma, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.21.21c04m": {
+      "code": "21C04M",
+      "kategorie": "RD2C.",
+      "anlass": "Sekundäre postpartale Blutung",
+      "stichwort": "RD2C."
+    },
+    "rd.21.21c04t": {
+      "code": "21C04T",
+      "kategorie": "RD2C.",
+      "anlass": "Sekundäre postpartale Blutung",
+      "stichwort": "RD2C."
+    },
+    "rd.21.21c05m": {
+      "code": "21C05M",
+      "kategorie": "RD2NC.",
+      "anlass": "Primäre postpartale Blutung",
+      "stichwort": "RD2NC."
+    },
+    "rd.21.21c05t": {
+      "code": "21C05T",
+      "kategorie": "RD2NC.",
+      "anlass": "Primäre postpartale Blutung",
+      "stichwort": "RD2NC."
+    },
+    "rd.21.21d01": {
+      "code": "21D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand bei Blutung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.21.21d01-2": {
+      "code": "21D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand bei Blutung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.21.21d01m": {
+      "code": "21D01M",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand bei Blutung mit internistischer Ursache",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.21.21d01m-2": {
+      "code": "21D01M",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand bei Blutung mit internistischer Ursache, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.21.21d01t": {
+      "code": "21D01T",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand bei Blutung nach Trauma",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.21.21d01t-2": {
+      "code": "21D01T",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand bei Blutung nach Trauma, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.21.21d02m": {
+      "code": "21D02M",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit bei Blutung mit internistischer Ursache",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.21.21d02t": {
+      "code": "21D02T",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit bei Blutung nach Trauma",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.21.21d03m": {
+      "code": "21D03M",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung bei Blutung mit internistischer Ursache",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.21.21d03t": {
+      "code": "21D03T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinstrübung bei Blutung nach Trauma",
+      "stichwort": "RD2C FR."
+    },
+    "rd.21.21d04m": {
+      "code": "21D04M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Gefährliche Blutung mit internistischer Ursache",
+      "stichwort": "RD2C FR."
+    },
+    "rd.21.21d04t": {
+      "code": "21D04T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Gefährliche Blutung nach Trauma",
+      "stichwort": "RD2C FR."
+    },
+    "rd.21.21d05m": {
+      "code": "21D05M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Blutung mit internistischer Ursache und Atembeschwerden",
+      "stichwort": "RD2C FR."
+    },
+    "rd.21.21d05t": {
+      "code": "21D05T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Blutung nach Trauma und Atembeschwerden",
+      "stichwort": "RD2C FR."
+    }
+  }
+}

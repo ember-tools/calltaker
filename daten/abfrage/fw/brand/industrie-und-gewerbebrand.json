@@ -1,0 +1,256 @@
+{
+  "knoten": {
+    "fw.brand.industrie-und-gewerbebrand.k0": {
+      "frage": "Welcher Bereich brennt?",
+      "antworten": [
+        {
+          "id": "produktions-oder-lagerhalle",
+          "label": "Produktions- oder Lagerhalle",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.k1",
+          "aussage": "Eine Produktions- oder Lagerhalle brennt."
+        },
+        {
+          "id": "anlage-mit-gefahrstoffen",
+          "label": "Anlage mit Gefahrstoffen",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.k2",
+          "aussage": "Eine Anlage mit Gefahrstoffen ist betroffen."
+        },
+        {
+          "id": "lager-mit-batterien-oder-akkus",
+          "label": "Lager mit Batterien oder Akkus",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.k3",
+          "aussage": "Ein Lager mit Batterien oder Akkus brennt."
+        }
+      ]
+    },
+    "fw.brand.industrie-und-gewerbebrand.k1": {
+      "frage": "Wie weit ist der Brand fortgeschritten?",
+      "antworten": [
+        {
+          "id": "entstehungsbrand",
+          "label": "Entstehungsbrand",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.k4",
+          "aussage": "Es handelt sich um einen Entstehungsbrand."
+        },
+        {
+          "id": "halle-in-voller-ausdehnung",
+          "label": "Halle in voller Ausdehnung",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.k5",
+          "aussage": "Die Halle brennt in voller Ausdehnung."
+        }
+      ]
+    },
+    "fw.brand.industrie-und-gewerbebrand.k2": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73c03",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73d03",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73e03",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73d03u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.industrie-und-gewerbebrand.k3": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73c04",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73d04",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73e04",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73d04u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.industrie-und-gewerbebrand.k4": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73c01",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73d01",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73e01",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73d01u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.industrie-und-gewerbebrand.k5": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.73d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.industrie-und-gewerbebrand.73c03": {
+      "code": "73C03",
+      "kategorie": "BRAND 8",
+      "anlass": "Industriebrand mit Gefahrstoffen",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73d03": {
+      "code": "73D03",
+      "kategorie": "BRAND 8",
+      "anlass": "Industriebrand mit Gefahrstoffen - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73e03": {
+      "code": "73E03",
+      "kategorie": "BRAND 10",
+      "anlass": "Industriebrand mit Gefahrstoffen - Menschenrettung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73d03u": {
+      "code": "73D03U",
+      "kategorie": "BRAND 8",
+      "anlass": "Industriebrand mit Gefahrstoffen - Betroffenheit unbekannt",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73c04": {
+      "code": "73C04",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand eines Batterielagers",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73d04": {
+      "code": "73D04",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand eines Batterielagers - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73e04": {
+      "code": "73E04",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand eines Batterielagers - Menschenrettung",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73d04u": {
+      "code": "73D04U",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand eines Batterielagers - Betroffenheit unbekannt",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73c01": {
+      "code": "73C01",
+      "kategorie": "BRAND 2",
+      "anlass": "Gewerbebrand - Entstehungsbrand",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73d01": {
+      "code": "73D01",
+      "kategorie": "BRAND 3",
+      "anlass": "Gewerbebrand - Entstehungsbrand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73e01": {
+      "code": "73E01",
+      "kategorie": "BRAND 4",
+      "anlass": "Gewerbebrand - Entstehungsbrand - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73d01u": {
+      "code": "73D01U",
+      "kategorie": "BRAND 3",
+      "anlass": "Gewerbebrand - Entstehungsbrand - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73c02": {
+      "code": "73C02",
+      "kategorie": "BRAND 10",
+      "anlass": "Hallenbrand in voller Ausdehnung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73d02": {
+      "code": "73D02",
+      "kategorie": "BRAND 10",
+      "anlass": "Hallenbrand in voller Ausdehnung - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73e02": {
+      "code": "73E02",
+      "kategorie": "BRAND 10",
+      "anlass": "Hallenbrand in voller Ausdehnung - Menschenrettung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.industrie-und-gewerbebrand.73d02u": {
+      "code": "73D02U",
+      "kategorie": "BRAND 10",
+      "anlass": "Hallenbrand in voller Ausdehnung - Betroffenheit unbekannt",
+      "stichwort": "BRAND 10"
+    }
+  }
+}

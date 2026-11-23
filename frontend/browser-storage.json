@@ -1,0 +1,9 @@
+{
+  "entries": [
+    {
+      "key": "calltaker.klingelton",
+      "purpose": "Ob der Klingelton für wartende Anrufe an oder aus ist.",
+      "kind": "LOCAL_STORAGE"
+    }
+  ]
+}

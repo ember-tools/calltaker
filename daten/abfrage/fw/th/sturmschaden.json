@@ -1,0 +1,208 @@
+{
+  "knoten": {
+    "fw.th.sturmschaden.k0": {
+      "frage": "Was ist betroffen?",
+      "antworten": [
+        {
+          "id": "baum-droht-zu-stuerzen-oder-liegt",
+          "label": "Baum droht zu stürzen oder liegt",
+          "ziel": "fw.th.sturmschaden.k1",
+          "aussage": "Ein Baum liegt oder droht zu stürzen."
+        },
+        {
+          "id": "bauteil-droht-herabzustuerzen",
+          "label": "Bauteil droht herabzustürzen",
+          "ziel": "fw.th.sturmschaden.k2",
+          "aussage": "Ein Bauteil droht herabzustürzen."
+        },
+        {
+          "id": "dach-abgedeckt",
+          "label": "Dach abgedeckt",
+          "ziel": "fw.th.sturmschaden.k3",
+          "aussage": "Ein Dach ist abgedeckt."
+        }
+      ]
+    },
+    "fw.th.sturmschaden.k1": {
+      "frage": "Was ist versperrt?",
+      "antworten": [
+        {
+          "id": "nichts-versperrt",
+          "label": "Nichts versperrt",
+          "ziel": "fw.th.sturmschaden.k4",
+          "aussage": "Es ist nichts versperrt."
+        },
+        {
+          "id": "strasse-oder-gleis-blockiert",
+          "label": "Straße oder Gleis blockiert",
+          "ziel": "fw.th.sturmschaden.k5",
+          "aussage": "Eine Straße oder ein Gleis ist blockiert."
+        }
+      ]
+    },
+    "fw.th.sturmschaden.k2": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ueber-oeffentlichem-verkehrsraum",
+          "label": "Über öffentlichem Verkehrsraum",
+          "ziel": "fw.th.sturmschaden.53c03",
+          "aussage": "Der Bereich liegt über öffentlichem Verkehrsraum."
+        },
+        {
+          "id": "ueber-nicht-begangenem-bereich",
+          "label": "Über nicht begangenem Bereich",
+          "ziel": "fw.th.sturmschaden.53a03",
+          "aussage": "Der Bereich wird nicht begangen."
+        }
+      ]
+    },
+    "fw.th.sturmschaden.k3": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "gebaeude-bewohnt",
+          "label": "Gebäude bewohnt",
+          "ziel": "fw.th.sturmschaden.53c04",
+          "aussage": "Das Gebäude ist bewohnt."
+        },
+        {
+          "id": "gebaeude-unbewohnt",
+          "label": "Gebäude unbewohnt",
+          "ziel": "fw.th.sturmschaden.53a04",
+          "aussage": "Das Gebäude ist unbewohnt."
+        }
+      ]
+    },
+    "fw.th.sturmschaden.k4": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.sturmschaden.53a01",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.sturmschaden.53c01",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.sturmschaden.53e01",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.sturmschaden.53c01u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.sturmschaden.k5": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.sturmschaden.53a02",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.sturmschaden.53c02",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.sturmschaden.53e02",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.sturmschaden.53c02u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.sturmschaden.53c03": {
+      "code": "53C03",
+      "kategorie": "TH M.",
+      "anlass": "Absturzgefahr Bauteil",
+      "stichwort": "TH M."
+    },
+    "fw.th.sturmschaden.53a03": {
+      "code": "53A03",
+      "kategorie": "TH K.",
+      "anlass": "Absturzgefahr - kein Verkehrsraum",
+      "stichwort": "TH K."
+    },
+    "fw.th.sturmschaden.53c04": {
+      "code": "53C04",
+      "kategorie": "TH 1",
+      "anlass": "Sturmschaden - Dach abgedeckt",
+      "stichwort": "TH 1"
+    },
+    "fw.th.sturmschaden.53a04": {
+      "code": "53A04",
+      "kategorie": "TH K.",
+      "anlass": "Sturmschaden - Dach",
+      "stichwort": "TH K."
+    },
+    "fw.th.sturmschaden.53a01": {
+      "code": "53A01",
+      "kategorie": "TH K.",
+      "anlass": "Sturmschaden - Baum",
+      "stichwort": "TH K."
+    },
+    "fw.th.sturmschaden.53c01": {
+      "code": "53C01",
+      "kategorie": "TH 1",
+      "anlass": "Sturmschaden - Baum - Personen betroffen",
+      "stichwort": "TH 1"
+    },
+    "fw.th.sturmschaden.53e01": {
+      "code": "53E01",
+      "kategorie": "TH 2",
+      "anlass": "Sturmschaden - Baum - Personenrettung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.sturmschaden.53c01u": {
+      "code": "53C01U",
+      "kategorie": "TH 1",
+      "anlass": "Sturmschaden - Baum - Betroffenheit unbekannt",
+      "stichwort": "TH 1"
+    },
+    "fw.th.sturmschaden.53a02": {
+      "code": "53A02",
+      "kategorie": "TH K.",
+      "anlass": "Sturmschaden - Verkehrsweg blockiert",
+      "stichwort": "TH K."
+    },
+    "fw.th.sturmschaden.53c02": {
+      "code": "53C02",
+      "kategorie": "TH 1",
+      "anlass": "Sturmschaden - Verkehrsweg blockiert - Personen betroffen",
+      "stichwort": "TH 1"
+    },
+    "fw.th.sturmschaden.53e02": {
+      "code": "53E02",
+      "kategorie": "TH 2",
+      "anlass": "Sturmschaden - Verkehrsweg blockiert - Personenrettung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.sturmschaden.53c02u": {
+      "code": "53C02U",
+      "kategorie": "TH 1",
+      "anlass": "Sturmschaden - Verkehrsweg blockiert - Betroffenheit unbekannt",
+      "stichwort": "TH 1"
+    }
+  }
+}

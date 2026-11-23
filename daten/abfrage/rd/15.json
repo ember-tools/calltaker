@@ -1,0 +1,467 @@
+{
+  "knoten": {
+    "rd.15.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ansprechbar-und-normale-atmung",
+          "label": "Ansprechbar und normale Atmung",
+          "ziel": "rd.15.k1",
+          "aussage": "Ansprechbar und normale Atmung"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.15.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.15.k3",
+          "aussage": "Mehrere Verletzte"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.15.k4",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "patient-noch-nicht-von-der-stromquelle",
+          "label": "Patient noch nicht von der Stromquelle getrennt",
+          "ziel": "rd.15.15d03e",
+          "aussage": "Patient noch nicht von der Stromquelle getrennt"
+        },
+        {
+          "id": "stromzufuhr-nicht-unterbrochen-oder",
+          "label": "Stromzufuhr nicht unterbrochen oder Gefahr besteht",
+          "ziel": "rd.15.15d04e",
+          "aussage": "Stromzufuhr nicht unterbrochen oder Gefahr besteht"
+        },
+        {
+          "id": "sturz-aus-extremer-hoehe-10-m",
+          "label": "STURZ AUS EXTREMER HÖHE (≥ 10 m)",
+          "ziel": "rd.15.k5",
+          "aussage": "STURZ AUS EXTREMER HÖHE (≥ 10 m)"
+        },
+        {
+          "id": "sturz-aus-grosser-hoehe",
+          "label": "STURZ AUS GROSSER HÖHE",
+          "ziel": "rd.15.k6",
+          "aussage": "STURZ AUS GROSSER HÖHE"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.15.k7",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.15.k8",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.15.k9",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "atemstillstand-ineffektive-atmung",
+          "label": "ATEMSTILLSTAND/INEFFEKTIVE ATMUNG",
+          "ziel": "rd.15.k10",
+          "aussage": "ATEMSTILLSTAND/INEFFEKTIVE ATMUNG"
+        }
+      ]
+    },
+    "rd.15.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15c01e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15c01l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15d00e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15d00l",
+          "aussage": "Blitzschlag"
+        },
+        {
+          "id": "stromunfall-2",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15e00e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag-2",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15e00l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenanzahl-2-stromunfall",
+          "label": "bei Patientenanzahl 2, Stromunfall",
+          "ziel": "rd.15.15d01e",
+          "aussage": "bei Patientenanzahl 2, Stromunfall"
+        },
+        {
+          "id": "bei-patientenanzahl-3-stromunfall",
+          "label": "bei Patientenanzahl 3, Stromunfall",
+          "ziel": "rd.15.15d01e-2",
+          "aussage": "bei Patientenanzahl 3, Stromunfall"
+        },
+        {
+          "id": "bei-patientenanzahl-4-stromunfall",
+          "label": "bei Patientenanzahl ≥ 4, Stromunfall",
+          "ziel": "rd.15.15d01e-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Stromunfall"
+        },
+        {
+          "id": "bei-patientenanzahl-2-blitzschlag",
+          "label": "bei Patientenanzahl 2, Blitzschlag",
+          "ziel": "rd.15.15d01l",
+          "aussage": "bei Patientenanzahl 2, Blitzschlag"
+        },
+        {
+          "id": "bei-patientenanzahl-3-blitzschlag",
+          "label": "bei Patientenanzahl 3, Blitzschlag",
+          "ziel": "rd.15.15d01l-2",
+          "aussage": "bei Patientenanzahl 3, Blitzschlag"
+        },
+        {
+          "id": "bei-patientenanzahl-4-blitzschlag",
+          "label": "bei Patientenanzahl ≥ 4, Blitzschlag",
+          "ziel": "rd.15.15d01l-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15d02e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15d02l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.15d03e": {
+      "code": "15D03E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Patient noch nicht von der Stromquelle getrennt, ACHTUNG!",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.15.15d04e": {
+      "code": "15D04E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Stromunfall, ACHTUNG! Stromzufuhr ist noch nicht unterbrochen",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.15.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15d05e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15d05l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15d06e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15d06l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15d07e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15d07l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15d08e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15d08l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15d09e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15d09l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.15.15e01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "stromunfall",
+          "label": "Stromunfall",
+          "ziel": "rd.15.15e01e",
+          "aussage": "Stromunfall"
+        },
+        {
+          "id": "blitzschlag",
+          "label": "Blitzschlag",
+          "ziel": "rd.15.15e01l",
+          "aussage": "Blitzschlag"
+        }
+      ]
+    },
+    "rd.15.15c01e": {
+      "code": "15C01E",
+      "kategorie": "RD3C.",
+      "anlass": "Normale Atmung und ansprechbar nach Stromunfall",
+      "stichwort": "RD3C."
+    },
+    "rd.15.15c01l": {
+      "code": "15C01L",
+      "kategorie": "RD2NC.",
+      "anlass": "Normale Atmung und ansprechbar nach Blitzschlag",
+      "stichwort": "RD2NC."
+    },
+    "rd.15.15d00e": {
+      "code": "15D00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Stromunfall",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.15.15d00l": {
+      "code": "15D00L",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Blitzschlag",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.15.15e00e": {
+      "code": "15E00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemstillstand nach Stromunfall",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.15.15e00l": {
+      "code": "15E00L",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemstillstand nach Blitzschlag",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.15.15d01e": {
+      "code": "15D01E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Stromunfall, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.15.15d01e-2": {
+      "code": "15D01E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Stromunfall, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.15.15d01e-3": {
+      "code": "15D01E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Stromunfall, mehr als 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.15.15d01l": {
+      "code": "15D01L",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Blitzschlag, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.15.15d01l-2": {
+      "code": "15D01L",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Blitzschlag, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.15.15d01l-3": {
+      "code": "15D01L",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Blitzschlag, mehr als 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.15.15d02e": {
+      "code": "15D02E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Stromunfall",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.15.15d02l": {
+      "code": "15D02L",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Blitzschlag",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.15.15d05e": {
+      "code": "15D05E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sturz aus extremer Höhe (mehr als 10 m) nach Stromunfall",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.15.15d05l": {
+      "code": "15D05L",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sturz aus extremer Höhe (mehr als 10 m) nach Blitzschlag",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.15.15d06e": {
+      "code": "15D06E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sturz aus großer Höhe nach Stromunfall",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.15.15d06l": {
+      "code": "15D06L",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sturz aus großer Höhe nach Blitzschlag",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.15.15d07e": {
+      "code": "15D07E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Stromunfall",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.15.15d07l": {
+      "code": "15D07L",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Blitzschlag",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.15.15d08e": {
+      "code": "15D08E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atembeschwerden nach Stromunfall",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.15.15d08l": {
+      "code": "15D08L",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atembeschwerden nach Blitzschlag",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.15.15d09e": {
+      "code": "15D09E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unbekannter Zustand nach Stromunfall",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.15.15d09l": {
+      "code": "15D09L",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Unbekannter Zustand nach Blitzschlag",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.15.15e01": {
+      "code": "15E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.15.15e01e": {
+      "code": "15E01E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand nach Stromunfall",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.15.15e01l": {
+      "code": "15E01L",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Atemstillstand nach Blitzschlag",
+      "stichwort": "RD1NC REA."
+    }
+  }
+}

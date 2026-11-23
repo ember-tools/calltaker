@@ -1,0 +1,330 @@
+{
+  "knoten": {
+    "rd.34.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.34.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "ungefaehrliche-verletzungen-anrufer-1",
+          "label": "UNGEFÄHRLICHE Verletzungen (Anrufer 1. Hand und einzelner Insasse)",
+          "ziel": "rd.34.34a01",
+          "aussage": "UNGEFÄHRLICHE Verletzungen (Anrufer 1. Hand und einzelner Insasse)"
+        },
+        {
+          "id": "bestehende-verletzungen",
+          "label": "Bestehende Verletzungen",
+          "ziel": "rd.34.34b01",
+          "aussage": "Bestehende Verletzungen"
+        },
+        {
+          "id": "mehrere-verletzte-1-rtw",
+          "label": "Mehrere Verletzte (1 RTW)",
+          "ziel": "rd.34.34b02",
+          "aussage": "Mehrere Verletzte (1 RTW)"
+        },
+        {
+          "id": "mehrere-verletzte-zusaetzliche-rtw",
+          "label": "Mehrere Verletzte (Zusätzliche RTW)",
+          "ziel": "rd.34.k2",
+          "aussage": "Mehrere Verletzte (Zusätzliche RTW)"
+        },
+        {
+          "id": "airbag-anderer-automatischer-sensor-ohne",
+          "label": "Airbag/Anderer automatischer Sensor (ohne Sprachkontakt)",
+          "ziel": "rd.34.34b04",
+          "aussage": "Airbag/Anderer automatischer Sensor (ohne Sprachkontakt)"
+        },
+        {
+          "id": "unklare-situation-andere-codes-nicht",
+          "label": "Unklare Situation/Andere Codes nicht zutreffend",
+          "ziel": "rd.34.34b05",
+          "aussage": "Unklare Situation/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "gefaehrlicher-unfallmechanismus-h-bis-n",
+          "label": "GEFÄHRLICHER UNFALLMECHANISMUS (h bis n)",
+          "ziel": "rd.34.k3",
+          "aussage": "GEFÄHRLICHER UNFALLMECHANISMUS (h bis n)"
+        },
+        {
+          "id": "bewusstlos-oder-bewusstseinstruebung",
+          "label": "Bewusstlos oder Bewusstseinstrübung",
+          "ziel": "rd.34.34d02",
+          "aussage": "Bewusstlos oder Bewusstseinstrübung"
+        },
+        {
+          "id": "atemstillstand-ineffektive-atmung",
+          "label": "ATEMSTILLSTAND/INEFFEKTIVE ATMUNG",
+          "ziel": "rd.34.34d03",
+          "aussage": "ATEMSTILLSTAND/INEFFEKTIVE ATMUNG"
+        },
+        {
+          "id": "fragliche-lebensbedrohung",
+          "label": "FRAGLICHE LEBENSBEDROHUNG",
+          "ziel": "rd.34.34d04",
+          "aussage": "FRAGLICHE LEBENSBEDROHUNG"
+        },
+        {
+          "id": "keine-verletzungen-an-polizei",
+          "label": "Keine Verletzungen (an Polizei weiterleiten)",
+          "ziel": "rd.34.34o01",
+          "aussage": "Keine Verletzungen (an Polizei weiterleiten)"
+        }
+      ]
+    },
+    "rd.34.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.34.34a00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.34.34b00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.34.34d00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.34.34a01": {
+      "code": "34A01",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Automatische Unfallmeldung mit verletzter Person",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.34.34b01": {
+      "code": "34B01",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Automatische Unfallmeldung mit verletzter Person",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.34.34b02": {
+      "code": "34B02",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Automatische Unfallmeldung mit mehreren Verletzten (1 RTW ausreichend)",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.34.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenanzahl-1",
+          "label": "bei Patientenanzahl 1",
+          "ziel": "rd.34.34b03",
+          "aussage": "bei Patientenanzahl 1"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.34.34b03-2",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.34.34b03-3",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.34.34b03-4",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.34.34b03-5",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        }
+      ]
+    },
+    "rd.34.34b04": {
+      "code": "34B04",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Automatische Unfallmeldung, kein Sprechkontakt zum Fahrzeug möglich",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.34.34b05": {
+      "code": "34B05",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Automatische Unfallmeldung, unbekannter Zustand",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.34.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "fahrzeug-gegen-fahrrad",
+          "label": "Fahrzeug gegen Fahrrad",
+          "ziel": "rd.34.34d01h",
+          "aussage": "Fahrzeug gegen Fahrrad"
+        },
+        {
+          "id": "fahrzeug-gegen-motorrad",
+          "label": "Fahrzeug gegen Motorrad",
+          "ziel": "rd.34.34d01i",
+          "aussage": "Fahrzeug gegen Motorrad"
+        },
+        {
+          "id": "fahrzeug-gegen-fussgaenger",
+          "label": "Fahrzeug gegen Fußgänger",
+          "ziel": "rd.34.34d01j",
+          "aussage": "Fahrzeug gegen Fußgänger"
+        },
+        {
+          "id": "herausgeschleuderte-person-auch-motorrad",
+          "label": "Herausgeschleuderte Person (auch Motorrad)",
+          "ziel": "rd.34.34d01k",
+          "aussage": "Herausgeschleuderte Person (auch Motorrad)"
+        },
+        {
+          "id": "eingeklemmt",
+          "label": "Eingeklemmt",
+          "ziel": "rd.34.34d01l",
+          "aussage": "Eingeklemmt"
+        },
+        {
+          "id": "ueberschlag",
+          "label": "Überschlag",
+          "ziel": "rd.34.34d01m",
+          "aussage": "Überschlag"
+        },
+        {
+          "id": "fahrzeugabsturz-von-bruecke-anhoehe",
+          "label": "Fahrzeugabsturz von Brücke/Anhöhe",
+          "ziel": "rd.34.34d01n",
+          "aussage": "Fahrzeugabsturz von Brücke/Anhöhe"
+        }
+      ]
+    },
+    "rd.34.34d02": {
+      "code": "34D02",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Automatische Unfallmeldung, Person ist bewusstlos",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.34.34d03": {
+      "code": "34D03",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Automatische Unfallmeldung, Person mit Atemstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.34.34d04": {
+      "code": "34D04",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Automatische Unfallmeldung, Lebensbedrohung nicht auszuschließen",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.34.34o01": {
+      "code": "34O01",
+      "kategorie": "RD5.",
+      "anlass": "Automatische Unfallmeldung, keine Verletzten",
+      "stichwort": "RD5."
+    },
+    "rd.34.34a00": {
+      "code": "34A00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Automatische Unfallmeldung mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.34.34b00": {
+      "code": "34B00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Automatische Unfallmeldung mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.34.34d00": {
+      "code": "34D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Automatische Unfallmeldung mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.34.34b03": {
+      "code": "34B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Automatische Unfallmeldung mit mehreren Verletzten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.34.34b03-2": {
+      "code": "34B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Automatische Unfallmeldung, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.34.34b03-3": {
+      "code": "34B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Automatische Unfallmeldung, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.34.34b03-4": {
+      "code": "34B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Automatische Unfallmeldung, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.34.34b03-5": {
+      "code": "34B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Automatische Unfallmeldung, mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.34.34d01h": {
+      "code": "34D01h",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Automatische Unfallmeldung, Fahrzeug gegen Fahrrad",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.34.34d01i": {
+      "code": "34D01i",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Automatische Unfallmeldung, Motorradunfall",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.34.34d01j": {
+      "code": "34D01j",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Automatische Unfallmeldung, Fahrzeug gegen Fußgänger",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.34.34d01k": {
+      "code": "34D01k",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Automatische Unfallmeldung, Person aus Fahrzeug geschleudert",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.34.34d01l": {
+      "code": "34D01l",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Automatische Unfallmeldung, Person eingeklemmt",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.34.34d01m": {
+      "code": "34D01m",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Automatische Unfallmeldung, Fahrzeug überschlagen",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.34.34d01n": {
+      "code": "34D01n",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Automatische Unfallmeldung, Fahrzeug abgestürzt",
+      "stichwort": "RD_BT_NA"
+    }
+  }
+}

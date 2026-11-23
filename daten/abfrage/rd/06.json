@@ -1,0 +1,792 @@
+{
+  "knoten": {
+    "rd.06.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.06.k1",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "tracheostoma-keine-offensichtliche",
+          "label": "Tracheostoma (keine offensichtliche Luftnot)",
+          "ziel": "rd.06.k2",
+          "aussage": "Tracheostoma (keine offensichtliche Luftnot)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.06.k3",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.06.k4",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "sprachschwierigkeiten-zwischen",
+          "label": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN",
+          "ziel": "rd.06.k5",
+          "aussage": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN"
+        },
+        {
+          "id": "veraenderte-hautfarbe",
+          "label": "Veränderte Hautfarbe",
+          "ziel": "rd.06.k6",
+          "aussage": "Veränderte Hautfarbe"
+        },
+        {
+          "id": "kaltschweissig",
+          "label": "Kaltschweissig",
+          "ziel": "rd.06.k7",
+          "aussage": "Kaltschweissig"
+        },
+        {
+          "id": "tracheostoma-offensichtliche-luftnot",
+          "label": "Tracheostoma (offensichtliche Luftnot)",
+          "ziel": "rd.06.k8",
+          "aussage": "Tracheostoma (offensichtliche Luftnot)"
+        },
+        {
+          "id": "ineffektive-atmung",
+          "label": "INEFFEKTIVE ATMUNG",
+          "ziel": "rd.06.k9",
+          "aussage": "INEFFEKTIVE ATMUNG"
+        }
+      ]
+    },
+    "rd.06.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.06.06c01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.06.06c01",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-zwischen-13-und-55",
+          "label": "bei Patientenalter zwischen 13 und 55 Jahren",
+          "ziel": "rd.06.06c01-2",
+          "aussage": "bei Patientenalter zwischen 13 und 55 Jahren",
+          "alter": {
+            "min": 13,
+            "max": 55
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-56-jahre",
+          "label": "bei Patientenalter älter 56 Jahre",
+          "ziel": "rd.06.06c01",
+          "aussage": "bei Patientenalter älter 56 Jahre",
+          "alter": {
+            "min": 57
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-asthma",
+          "label": "bei Patientenalter unbekannt, Asthma",
+          "ziel": "rd.06.06c01a",
+          "aussage": "bei Patientenalter unbekannt, Asthma"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-asthma",
+          "label": "bei Patientenalter bis 12 Jahre, Asthma",
+          "ziel": "rd.06.06c01a",
+          "aussage": "bei Patientenalter bis 12 Jahre, Asthma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-zwischen-13-und-55-2",
+          "label": "bei Patientenalter zwischen 13 und 55 Jahren, Asthma",
+          "ziel": "rd.06.06c01a-2",
+          "aussage": "bei Patientenalter zwischen 13 und 55 Jahren, Asthma",
+          "alter": {
+            "min": 13,
+            "max": 55
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-56-jahre-2",
+          "label": "bei Patientenalter älter 56 Jahre, Asthma",
+          "ziel": "rd.06.06c01a",
+          "aussage": "bei Patientenalter älter 56 Jahre, Asthma",
+          "alter": {
+            "min": 57
+          }
+        },
+        {
+          "id": "lungenemphysem-copd",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06c01e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06c01o",
+          "aussage": "Andere Lungenprobleme"
+        }
+      ]
+    },
+    "rd.06.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.06.06c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "asthma",
+          "label": "Asthma",
+          "ziel": "rd.06.06c02a",
+          "aussage": "Asthma"
+        },
+        {
+          "id": "lungenemphysem-copd",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06c02e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06c02o",
+          "aussage": "Andere Lungenprobleme"
+        }
+      ]
+    },
+    "rd.06.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.06.06d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "asthma",
+          "label": "Asthma",
+          "ziel": "rd.06.06d00a",
+          "aussage": "Asthma"
+        },
+        {
+          "id": "lungenemphysem-copd",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d00e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06d00o",
+          "aussage": "Andere Lungenprobleme"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.06.06e00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "asthma-2",
+          "label": "Asthma",
+          "ziel": "rd.06.06e00a",
+          "aussage": "Asthma"
+        },
+        {
+          "id": "lungenemphysem-copd-2",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06e00e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme-2",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06e00o",
+          "aussage": "Andere Lungenprobleme"
+        }
+      ]
+    },
+    "rd.06.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.06.06d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "asthma",
+          "label": "Asthma",
+          "ziel": "rd.06.06d01a",
+          "aussage": "Asthma"
+        },
+        {
+          "id": "lungenemphysem-copd",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d01e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06d01o",
+          "aussage": "Andere Lungenprobleme"
+        }
+      ]
+    },
+    "rd.06.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.06.06d02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.06.06d02",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-zwischen-13-und-55",
+          "label": "bei Patientenalter zwischen 13 und 55 Jahren",
+          "ziel": "rd.06.06d02-2",
+          "aussage": "bei Patientenalter zwischen 13 und 55 Jahren",
+          "alter": {
+            "min": 13,
+            "max": 55
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-56-jahre",
+          "label": "bei Patientenalter älter 56 Jahre",
+          "ziel": "rd.06.06d02",
+          "aussage": "bei Patientenalter älter 56 Jahre",
+          "alter": {
+            "min": 57
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-asthma",
+          "label": "bei Patientenalter unbekannt, Asthma",
+          "ziel": "rd.06.06d02a",
+          "aussage": "bei Patientenalter unbekannt, Asthma"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-asthma",
+          "label": "bei Patientenalter bis 12 Jahre, Asthma",
+          "ziel": "rd.06.06d02a",
+          "aussage": "bei Patientenalter bis 12 Jahre, Asthma",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-zwischen-13-und-55-2",
+          "label": "bei Patientenalter zwischen 13 und 55 Jahren, Asthma",
+          "ziel": "rd.06.06d02a-2",
+          "aussage": "bei Patientenalter zwischen 13 und 55 Jahren, Asthma",
+          "alter": {
+            "min": 13,
+            "max": 55
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-56-jahre-2",
+          "label": "bei Patientenalter älter 56 Jahre, Asthma",
+          "ziel": "rd.06.06d02a",
+          "aussage": "bei Patientenalter älter 56 Jahre, Asthma",
+          "alter": {
+            "min": 57
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d02e",
+          "aussage": "bei Patientenalter unbekannt, Lungenemphysem (COPD)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d02e",
+          "aussage": "bei Patientenalter bis 12 Jahre, Lungenemphysem (COPD)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-zwischen-13-und-55-3",
+          "label": "bei Patientenalter zwischen 13 und 55 Jahren, Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d02e-2",
+          "aussage": "bei Patientenalter zwischen 13 und 55 Jahren, Lungenemphysem (COPD)",
+          "alter": {
+            "min": 13,
+            "max": 55
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-56-jahre-3",
+          "label": "bei Patientenalter älter 56 Jahre, Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d02e",
+          "aussage": "bei Patientenalter älter 56 Jahre, Lungenemphysem (COPD)",
+          "alter": {
+            "min": 57
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-andere",
+          "label": "bei Patientenalter unbekannt, Andere Lungenprobleme",
+          "ziel": "rd.06.06d02o",
+          "aussage": "bei Patientenalter unbekannt, Andere Lungenprobleme"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-andere",
+          "label": "bei Patientenalter bis 12 Jahre, Andere Lungenprobleme",
+          "ziel": "rd.06.06d02o",
+          "aussage": "bei Patientenalter bis 12 Jahre, Andere Lungenprobleme",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-zwischen-13-und-55-4",
+          "label": "bei Patientenalter zwischen 13 und 55 Jahren, Andere Lungenprobleme",
+          "ziel": "rd.06.06d02o-2",
+          "aussage": "bei Patientenalter zwischen 13 und 55 Jahren, Andere Lungenprobleme",
+          "alter": {
+            "min": 13,
+            "max": 55
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-56-jahre-4",
+          "label": "bei Patientenalter älter 56 Jahre, Andere Lungenprobleme",
+          "ziel": "rd.06.06d02o",
+          "aussage": "bei Patientenalter älter 56 Jahre, Andere Lungenprobleme",
+          "alter": {
+            "min": 57
+          }
+        }
+      ]
+    },
+    "rd.06.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.06.06d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "asthma",
+          "label": "Asthma",
+          "ziel": "rd.06.06d03a",
+          "aussage": "Asthma"
+        },
+        {
+          "id": "lungenemphysem-copd",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d03e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06d03o",
+          "aussage": "Andere Lungenprobleme"
+        }
+      ]
+    },
+    "rd.06.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.06.06d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "asthma",
+          "label": "Asthma",
+          "ziel": "rd.06.06d04a",
+          "aussage": "Asthma"
+        },
+        {
+          "id": "lungenemphysem-copd",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d04e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06d04o",
+          "aussage": "Andere Lungenprobleme"
+        }
+      ]
+    },
+    "rd.06.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.06.06d05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "asthma",
+          "label": "Asthma",
+          "ziel": "rd.06.06d05a",
+          "aussage": "Asthma"
+        },
+        {
+          "id": "lungenemphysem-copd",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06d05e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06d05o",
+          "aussage": "Andere Lungenprobleme"
+        }
+      ]
+    },
+    "rd.06.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.06.06e01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "asthma",
+          "label": "Asthma",
+          "ziel": "rd.06.06e01a",
+          "aussage": "Asthma"
+        },
+        {
+          "id": "lungenemphysem-copd",
+          "label": "Lungenemphysem (COPD)",
+          "ziel": "rd.06.06e01e",
+          "aussage": "Lungenemphysem (COPD)"
+        },
+        {
+          "id": "andere-lungenprobleme",
+          "label": "Andere Lungenprobleme",
+          "ziel": "rd.06.06e01o",
+          "aussage": "Andere Lungenprobleme"
+        }
+      ]
+    },
+    "rd.06.06c01": {
+      "code": "06C01",
+      "kategorie": "RD2C.",
+      "anlass": "Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.06.06c01-2": {
+      "code": "06C01",
+      "kategorie": "RD3C.",
+      "anlass": "Atembeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.06.06c01a": {
+      "code": "06C01A",
+      "kategorie": "RD2C.",
+      "anlass": "Atembeschwerden - Asthma bekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.06.06c01a-2": {
+      "code": "06C01A",
+      "kategorie": "RD3C.",
+      "anlass": "Atembeschwerden - Asthma bekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.06.06c01e": {
+      "code": "06C01E",
+      "kategorie": "RD2C.",
+      "anlass": "Atembeschwerden - COPD bekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.06.06c01o": {
+      "code": "06C01O",
+      "kategorie": "RD2C.",
+      "anlass": "Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.06.06c02": {
+      "code": "06C02",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atembeschwerden bei Tracheostoma",
+      "stichwort": "RD2C FR."
+    },
+    "rd.06.06c02a": {
+      "code": "06C02A",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atembeschwerden bei Tracheostoma - Asthma bekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.06.06c02e": {
+      "code": "06C02E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atembeschwerden bei Tracheostoma - COPD bekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.06.06c02o": {
+      "code": "06C02O",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atembeschwerden bei Tracheostoma",
+      "stichwort": "RD2C FR."
+    },
+    "rd.06.06d00": {
+      "code": "06D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemnot",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.06.06d00a": {
+      "code": "06D00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemnot - Asthma bekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.06.06d00e": {
+      "code": "06D00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemnot - COPD bekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.06.06d00o": {
+      "code": "06D00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Atemnot",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.06.06e00": {
+      "code": "06E00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ineffektive Atmung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.06.06e00a": {
+      "code": "06E00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ineffektive Atmung - Asthma bekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.06.06e00e": {
+      "code": "06E00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ineffektive Atmung - COPD bekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.06.06e00o": {
+      "code": "06E00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ineffektive Atmung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.06.06d01": {
+      "code": "06D01",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Atemnot mit Bewusstseinstrübung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.06.06d01a": {
+      "code": "06D01A",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Atemnot mit Bewusstseinstrübung - Asthma bekannt",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.06.06d01e": {
+      "code": "06D01E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Atemnot mit Bewusstseinstrübung - COPD bekannt",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.06.06d01o": {
+      "code": "06D01O",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Atemnot mit Bewusstseinstrübung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.06.06d02": {
+      "code": "06D02",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit Sprechdyspnoe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d02-2": {
+      "code": "06D02",
+      "kategorie": "RD2C.",
+      "anlass": "Atembeschwerden - Sprachschwierigkeiten zwischen den Atemzügen",
+      "stichwort": "RD2C."
+    },
+    "rd.06.06d02a": {
+      "code": "06D02A",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit Sprechdyspnoe - Asthma bekannt",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d02a-2": {
+      "code": "06D02A",
+      "kategorie": "RD2C.",
+      "anlass": "Atembeschwerden - Sprachschwierigkeiten zwischen den Atemzügen - Asthma bekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.06.06d02e": {
+      "code": "06D02E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit Sprechdyspnoe - COPD bekannt",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d02e-2": {
+      "code": "06D02E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atembeschwerden - Sprachschwierigkeiten zwischen den Atemzügen - COPD bekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.06.06d02o": {
+      "code": "06D02O",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit Sprechdyspnoe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d02o-2": {
+      "code": "06D02O",
+      "kategorie": "RD2C FR.",
+      "anlass": "Atembeschwerden - Sprachschwierigkeiten zwischen den Atemzügen - Lungenerkrankung bekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.06.06d03": {
+      "code": "06D03",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit veränderter Hautfarbe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d03a": {
+      "code": "06D03A",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit veränderter Hautfarbe - Asthma bekannt",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d03e": {
+      "code": "06D03E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit veränderter Hautfarbe - COPD bekannt",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d03o": {
+      "code": "06D03O",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit veränderter Hautfarbe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d04": {
+      "code": "06D04",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit Kaltschweißigkeit",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d04a": {
+      "code": "06D04A",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit Kaltschweißigkeit - Asthma bekannt",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d04e": {
+      "code": "06D04E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit Kaltschweißigkeit - COPD bekannt",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d04o": {
+      "code": "06D04O",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot mit Kaltschweißigkeit",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d05": {
+      "code": "06D05",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot bei Tracheostoma",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d05a": {
+      "code": "06D05A",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot bei Tracheostoma - Asthma bekannt",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d05e": {
+      "code": "06D05E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot bei Tracheostoma - COPD bekannt",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06d05o": {
+      "code": "06D05O",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot bei Tracheostoma",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.06.06e01": {
+      "code": "06E01",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ineffektive Atmung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.06.06e01a": {
+      "code": "06E01A",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ineffektive Atmung - Asthma bekannt",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.06.06e01e": {
+      "code": "06E01E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ineffektive Atmung - COPD bekannt",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.06.06e01o": {
+      "code": "06E01O",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ineffektive Atmung",
+      "stichwort": "RD1NC FR."
+    }
+  }
+}

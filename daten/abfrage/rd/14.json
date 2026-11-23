@@ -1,0 +1,1042 @@
+{
+  "knoten": {
+    "rd.14.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ansprechbar-und-normale-atmung-keine",
+          "label": "Ansprechbar und normale Atmung (keine Verletzungen und nicht im Wasser)",
+          "ziel": "rd.14.k1",
+          "aussage": "Ansprechbar und normale Atmung (keine Verletzungen und nicht im Wasser)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.14.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "ansprechbar-und-normale-atmung",
+          "label": "Ansprechbar und normale Atmung (Verletzungen oder im Wasser)",
+          "ziel": "rd.14.k3",
+          "aussage": "Ansprechbar und normale Atmung (Verletzungen oder im Wasser)"
+        },
+        {
+          "id": "offensichtlich-tote-person",
+          "label": "OFFENSICHTLICH TOTE PERSON (Unterwasserzeit ≥ 6 h)",
+          "ziel": "rd.14.14b02",
+          "aussage": "OFFENSICHTLICH TOTE PERSON (Unterwasserzeit ≥ 6 h)"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.14.14b03",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "ansprechbar-mit-abnormer-atmung",
+          "label": "Ansprechbar mit abnormer Atmung",
+          "ziel": "rd.14.k4",
+          "aussage": "Ansprechbar mit abnormer Atmung"
+        },
+        {
+          "id": "dekompressionskrankheit-taucherkrankheit",
+          "label": "Dekompressionskrankheit (Taucherkrankheit)",
+          "ziel": "rd.14.k5",
+          "aussage": "Dekompressionskrankheit (Taucherkrankheit)"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.14.k6",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "unter-wasser-spezialkraefte-erforderlich",
+          "label": "Unter Wasser (SPEZIALKRÄFTE erforderlich)",
+          "ziel": "rd.14.14d02",
+          "aussage": "Unter Wasser (SPEZIALKRÄFTE erforderlich)"
+        },
+        {
+          "id": "gestrandet-spezialkraefte-erforderlich",
+          "label": "Gestrandet (SPEZIALKRÄFTE erforderlich)",
+          "ziel": "rd.14.k7",
+          "aussage": "Gestrandet (SPEZIALKRÄFTE erforderlich)"
+        },
+        {
+          "id": "soeben-wiederbelebt-und-oder",
+          "label": "Soeben wiederbelebt und/oder defibrilliert (äußerlich)",
+          "ziel": "rd.14.k8",
+          "aussage": "Soeben wiederbelebt und/oder defibrilliert (äußerlich)"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.14.k9",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "verdacht-auf-hws-verletzung",
+          "label": "Verdacht auf HWS-Verletzung",
+          "ziel": "rd.14.k10",
+          "aussage": "Verdacht auf HWS-Verletzung"
+        },
+        {
+          "id": "kreislaufstillstand-nicht-mehr-im-wasser",
+          "label": "Kreislaufstillstand (nicht mehr im Wasser)",
+          "ziel": "rd.14.k11",
+          "aussage": "Kreislaufstillstand (nicht mehr im Wasser)"
+        },
+        {
+          "id": "unter-wasser-keine-spezialkraefte",
+          "label": "Unter Wasser (keine SPEZIALKRÄFTE erforderlich)",
+          "ziel": "rd.14.14e02",
+          "aussage": "Unter Wasser (keine SPEZIALKRÄFTE erforderlich)"
+        }
+      ]
+    },
+    "rd.14.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14a01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14a01s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        }
+      ]
+    },
+    "rd.14.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14b00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14b00s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14c00d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14c00f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14c00i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser-2",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14c00s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14c00w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser-2",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14d00d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung-2",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14d00f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung-2",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14d00i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser-3",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14d00s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser-2",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14d00w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        },
+        {
+          "id": "ohne-weitere-angabe-4",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14e00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser-3",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14e00d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung-3",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14e00f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung-3",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14e00i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser-4",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14e00s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser-3",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14e00w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14b01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14b01d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14b01f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14b01i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14b01s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14b01w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.14b02": {
+      "code": "14B02",
+      "kategorie": "RD5.",
+      "anlass": "Ertrinkungsunfall, unzweifelhaft tote Person, länger als 6 Std unter Wasser",
+      "stichwort": "RD5."
+    },
+    "rd.14.14b03": {
+      "code": "14B03",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Unbekannter Zustand nach Ertrinkungsunfall, nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14c01d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14c01f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14c01i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14c01s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14c01w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14c02d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14c02s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        }
+      ]
+    },
+    "rd.14.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14d01d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14d01f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14d01i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14d01s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14d01w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.14d02": {
+      "code": "14D02",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Person unter Wasser",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14d03d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14d03f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14d03i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14d03s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14d03w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14d04d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14d04f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14d04i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14d04s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14d04w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14d05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14d05d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14d05f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14d05i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14d05s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14d05w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14d06",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14d06d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14d06f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14d06i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14d06s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14d06w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.14.14e01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "kopfsprung-verletzung-nicht-unter-wasser",
+          "label": "KOPFSPRUNG-Verletzung (nicht unter Wasser)",
+          "ziel": "rd.14.14e01d",
+          "aussage": "KOPFSPRUNG-Verletzung (nicht unter Wasser)"
+        },
+        {
+          "id": "hochwasserrettung",
+          "label": "Hochwasserrettung",
+          "ziel": "rd.14.14e01f",
+          "aussage": "Hochwasserrettung"
+        },
+        {
+          "id": "eisrettung",
+          "label": "Eisrettung",
+          "ziel": "rd.14.14e01i",
+          "aussage": "Eisrettung"
+        },
+        {
+          "id": "geraetetauchunfall-nicht-unter-wasser",
+          "label": "GERÄTETAUCHUNFALL (nicht unter Wasser)",
+          "ziel": "rd.14.14e01s",
+          "aussage": "GERÄTETAUCHUNFALL (nicht unter Wasser)"
+        },
+        {
+          "id": "rettung-aus-fliessgewaesser",
+          "label": "Rettung aus FLIESSGEWÄSSER",
+          "ziel": "rd.14.14e01w",
+          "aussage": "Rettung aus FLIESSGEWÄSSER"
+        }
+      ]
+    },
+    "rd.14.14e02": {
+      "code": "14E02",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall, Patient noch unter Wasser (Badewanne, Swimmingpool)",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14a01": {
+      "code": "14A01",
+      "kategorie": "RD3C.",
+      "anlass": "Ertrinkungsunfall, Patient nicht mehr im Wasser, keine Verletzung ermittelt",
+      "stichwort": "RD3C."
+    },
+    "rd.14.14a01s": {
+      "code": "14A01S",
+      "kategorie": "RD3C.",
+      "anlass": "Gerätetauchunfall, Patient nicht mehr im Wasser, keine Verletzung ermittelt",
+      "stichwort": "RD3C."
+    },
+    "rd.14.14b00": {
+      "code": "14B00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall, Patient ansprechbar und bei normaler Atmung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14b00s": {
+      "code": "14B00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Gerätetauchunfall, Patient ansprechbar und bei normaler Atmung, nicht mehr unter Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14c00": {
+      "code": "14C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14c00d": {
+      "code": "14C00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verletzung nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14c00f": {
+      "code": "14C00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14c00i": {
+      "code": "14C00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall im Eis, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14c00s": {
+      "code": "14C00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14c00w": {
+      "code": "14C00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall im Fliessgewässer, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14d00": {
+      "code": "14D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14d00d": {
+      "code": "14D00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verletzung nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14d00f": {
+      "code": "14D00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14d00i": {
+      "code": "14D00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall im Eis, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14d00s": {
+      "code": "14D00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14d00w": {
+      "code": "14D00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Ertrinkungsunfall im Fliessgewässer, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14e00": {
+      "code": "14E00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14e00d": {
+      "code": "14E00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14e00f": {
+      "code": "14E00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14e00i": {
+      "code": "14E00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall im Eis, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14e00s": {
+      "code": "14E00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14e00w": {
+      "code": "14E00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall im Fliessgewässer, Patient nicht mehr im Wasser",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.14.14b01": {
+      "code": "14B01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Ertrinkungsunfall, Patient ansprechbar und bei normaler Atmung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.14.14b01d": {
+      "code": "14B01D",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung nach Kopfsprung ins Wasser, Patient ansprechbar und bei normaler Atmung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.14.14b01f": {
+      "code": "14B01F",
+      "kategorie": "RD2C FR.",
+      "anlass": "Ertrinkungsunfall im Hochwasser, Patient ansprechbar und bei normaler Atmung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.14.14b01i": {
+      "code": "14B01I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Ertrinkungsunfall im Eis, Patient ansprechbar und bei normaler Atmung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14b01s": {
+      "code": "14B01S",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Gerätetauchunfall, Patient ansprechbar und bei normaler Atmung, nicht mehr unter Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14b01w": {
+      "code": "14B01W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Ertrinkungsunfall im Fliessgewässer, Patient ansprechbar und bei normaler Atmung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14c01": {
+      "code": "14C01",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Ertrinkungsunfall, Patient nicht mehr im Wasser, jetzt Atembeschwerden",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14c01d": {
+      "code": "14C01D",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verletzung nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser, jetzt Atembeschwerden",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14c01f": {
+      "code": "14C01F",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser, jetzt Atembeschwerden",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14c01i": {
+      "code": "14C01I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Ertrinkungsunfall im Eis, Patient mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14c01s": {
+      "code": "14C01S",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Gerätetauchunfall, Patient nicht mehr im Wasser, jetzt Atembeschwerden",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14c01w": {
+      "code": "14C01W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Ertrinkungsunfall im Fliessgewässer, jetzt Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14c02d": {
+      "code": "14C02D",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Dekompensationskrankheit",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14c02s": {
+      "code": "14C02S",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Dekompensationskrankheit",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d01": {
+      "code": "14D01",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.14.14d01d": {
+      "code": "14D01D",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.14.14d01f": {
+      "code": "14D01F",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.14.14d01i": {
+      "code": "14D01I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstlosigkeit nach Ertrinkungsunfall im Eis",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14d01s": {
+      "code": "14D01S",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.14.14d01w": {
+      "code": "14D01W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstlosigkeit nach Ertrinkungsunfall in Fliessgewässer",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14d03": {
+      "code": "14D03",
+      "kategorie": "RD2NC.",
+      "anlass": "Gestrandete Person nach Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC."
+    },
+    "rd.14.14d03d": {
+      "code": "14D03D",
+      "kategorie": "RD2NC.",
+      "anlass": "Gestrandete Person nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC."
+    },
+    "rd.14.14d03f": {
+      "code": "14D03F",
+      "kategorie": "RD2NC.",
+      "anlass": "Gestrandete Person nach Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC."
+    },
+    "rd.14.14d03i": {
+      "code": "14D03I",
+      "kategorie": "RD2NC.",
+      "anlass": "Gestrandete Person nach Ertrinkungsunfall im Eis, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC."
+    },
+    "rd.14.14d03s": {
+      "code": "14D03S",
+      "kategorie": "RD2NC.",
+      "anlass": "Gestrandete Person nach Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC."
+    },
+    "rd.14.14d03w": {
+      "code": "14D03W",
+      "kategorie": "RD2NC.",
+      "anlass": "Gestrandete Person nach Ertrinkungsunfall im Fliessgewässer, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC."
+    },
+    "rd.14.14d04": {
+      "code": "14D04",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Soeben wiederbelebt nach Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14d04d": {
+      "code": "14D04D",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Soeben wiederbelebt nach Verletzung nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14d04f": {
+      "code": "14D04F",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Soeben wiederbelebt nach Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14d04i": {
+      "code": "14D04I",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Soeben wiederbelebt nach Ertrinkungsunfall im Eis, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14d04s": {
+      "code": "14D04S",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Soeben wiederbelebt nach Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14d04w": {
+      "code": "14D04W",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Soeben wiederbelebt nach Ertrinkungsunfall im Fliessgewässer, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14d05": {
+      "code": "14D05",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d05d": {
+      "code": "14D05D",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d05f": {
+      "code": "14D05F",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d05i": {
+      "code": "14D05I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstseinstrübung nach Ertrinkungsunfall im Eis",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14d05s": {
+      "code": "14D05S",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d05w": {
+      "code": "14D05W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstseinstrübung nach Ertrinkungsunfall im Fliessgewässer",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14d06": {
+      "code": "14D06",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verdacht HWS-Verletzung nach Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d06d": {
+      "code": "14D06D",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verdacht HWS-Verletzung nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d06f": {
+      "code": "14D06F",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verdacht HWS-Verletzung nach Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d06i": {
+      "code": "14D06I",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Verdacht HWS-Verletzung nach Ertrinkungsunfall im Eis",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14d06s": {
+      "code": "14D06S",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verdacht HWS-Verletzung nach Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.14.14d06w": {
+      "code": "14D06W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Verdacht HWS-Verletzung nach Ertrinkungsunfall im Fliessgewässer",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.14.14e01": {
+      "code": "14E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14e01d": {
+      "code": "14E01D",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Kopfsprung ins Wasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14e01f": {
+      "code": "14E01F",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall im Hochwasser, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14e01i": {
+      "code": "14E01I",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall im Eis, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14e01s": {
+      "code": "14E01S",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Gerätetauchunfall, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.14.14e01w": {
+      "code": "14E01W",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Ertrinkungsunfall im Fliessgewässer, Patient nicht mehr im Wasser",
+      "stichwort": "RD1NC REA."
+    }
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "knoten": {
+    "fw.brand.brandmeldeanlage.k0": {
+      "frage": "Was meldet die Anlage?",
+      "antworten": [
+        {
+          "id": "automatischer-melder-ausgeloest",
+          "label": "Automatischer Melder ausgelöst",
+          "ziel": "fw.brand.brandmeldeanlage.k1",
+          "aussage": "Ein automatischer Melder hat ausgelöst."
+        },
+        {
+          "id": "handfeuermelder-ausgeloest",
+          "label": "Handfeuermelder ausgelöst",
+          "ziel": "fw.brand.brandmeldeanlage.k2",
+          "aussage": "Ein Handfeuermelder wurde betätigt."
+        },
+        {
+          "id": "sprinkleranlage-ausgeloest",
+          "label": "Sprinkleranlage ausgelöst",
+          "ziel": "fw.brand.brandmeldeanlage.k3",
+          "aussage": "Eine Sprinkleranlage hat ausgelöst."
+        },
+        {
+          "id": "anlage-in-einem-sonderbau",
+          "label": "Anlage in einem Sonderbau",
+          "ziel": "fw.brand.brandmeldeanlage.k4",
+          "aussage": "Die Anlage steht in einem Sonderbau."
+        }
+      ]
+    },
+    "fw.brand.brandmeldeanlage.k1": {
+      "frage": "Was ist vor Ort erkennbar?",
+      "antworten": [
+        {
+          "id": "kein-brandereignis-erkennbar",
+          "label": "Kein Brandereignis erkennbar",
+          "ziel": "fw.brand.brandmeldeanlage.70a01",
+          "aussage": "Ein Brandereignis ist vor Ort nicht erkennbar."
+        },
+        {
+          "id": "niemand-vor-ort-der-nachsehen-kann",
+          "label": "Niemand vor Ort, der nachsehen kann",
+          "ziel": "fw.brand.brandmeldeanlage.70b01",
+          "aussage": "Vor Ort ist niemand, der nachsehen kann."
+        },
+        {
+          "id": "rauch-oder-feuer-erkennbar",
+          "label": "Rauch oder Feuer erkennbar",
+          "ziel": "fw.brand.brandmeldeanlage.k5",
+          "aussage": "Rauch oder Feuer ist erkennbar."
+        }
+      ]
+    },
+    "fw.brand.brandmeldeanlage.k2": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brandmeldeanlage.70c04",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brandmeldeanlage.70d04",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brandmeldeanlage.70e04",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brandmeldeanlage.70d04u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brandmeldeanlage.k3": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brandmeldeanlage.70c05",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brandmeldeanlage.70d05",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brandmeldeanlage.70e05",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brandmeldeanlage.70d05u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brandmeldeanlage.k4": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brandmeldeanlage.70c06",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brandmeldeanlage.70d06",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brandmeldeanlage.70e06",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brandmeldeanlage.70d06u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brandmeldeanlage.70a01": {
+      "code": "70A01",
+      "kategorie": "BRAND K.",
+      "anlass": "Brandmeldeanlage - Auslösung",
+      "stichwort": "BRAND K."
+    },
+    "fw.brand.brandmeldeanlage.70b01": {
+      "code": "70B01",
+      "kategorie": "BRAND 1",
+      "anlass": "Brandmeldeanlage - unbestätigt",
+      "stichwort": "BRAND 1"
+    },
+    "fw.brand.brandmeldeanlage.k5": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brandmeldeanlage.70c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brandmeldeanlage.70d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brandmeldeanlage.70e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brandmeldeanlage.70d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brandmeldeanlage.70c04": {
+      "code": "70C04",
+      "kategorie": "BRAND 1",
+      "anlass": "Brandmeldeanlage - Handmelder",
+      "stichwort": "BRAND 1"
+    },
+    "fw.brand.brandmeldeanlage.70d04": {
+      "code": "70D04",
+      "kategorie": "BRAND 2",
+      "anlass": "Brandmeldeanlage - Handmelder - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brandmeldeanlage.70e04": {
+      "code": "70E04",
+      "kategorie": "BRAND 3",
+      "anlass": "Brandmeldeanlage - Handmelder - Menschenrettung",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brandmeldeanlage.70d04u": {
+      "code": "70D04U",
+      "kategorie": "BRAND 2",
+      "anlass": "Brandmeldeanlage - Handmelder - Betroffenheit unbekannt",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brandmeldeanlage.70c05": {
+      "code": "70C05",
+      "kategorie": "BRAND 2",
+      "anlass": "Sprinkleranlage ausgelöst",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brandmeldeanlage.70d05": {
+      "code": "70D05",
+      "kategorie": "BRAND 3",
+      "anlass": "Sprinkleranlage ausgelöst - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brandmeldeanlage.70e05": {
+      "code": "70E05",
+      "kategorie": "BRAND 4",
+      "anlass": "Sprinkleranlage ausgelöst - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brandmeldeanlage.70d05u": {
+      "code": "70D05U",
+      "kategorie": "BRAND 3",
+      "anlass": "Sprinkleranlage ausgelöst - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brandmeldeanlage.70c06": {
+      "code": "70C06",
+      "kategorie": "BRAND 2",
+      "anlass": "Brandmeldeanlage - Sonderbau",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brandmeldeanlage.70d06": {
+      "code": "70D06",
+      "kategorie": "BRAND 4",
+      "anlass": "Brandmeldeanlage - Sonderbau - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brandmeldeanlage.70e06": {
+      "code": "70E06",
+      "kategorie": "BRAND 6",
+      "anlass": "Brandmeldeanlage - Sonderbau - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brandmeldeanlage.70d06u": {
+      "code": "70D06U",
+      "kategorie": "BRAND 4",
+      "anlass": "Brandmeldeanlage - Sonderbau - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brandmeldeanlage.70c02": {
+      "code": "70C02",
+      "kategorie": "BRAND 2",
+      "anlass": "Brandmeldeanlage mit Brandereignis",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.brandmeldeanlage.70d02": {
+      "code": "70D02",
+      "kategorie": "BRAND 3",
+      "anlass": "Brandmeldeanlage mit Brandereignis - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brandmeldeanlage.70e02": {
+      "code": "70E02",
+      "kategorie": "BRAND 4",
+      "anlass": "Brandmeldeanlage mit Brandereignis - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brandmeldeanlage.70d02u": {
+      "code": "70D02U",
+      "kategorie": "BRAND 3",
+      "anlass": "Brandmeldeanlage mit Brandereignis - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    }
+  }
+}

@@ -1,0 +1,1184 @@
+{
+  "knoten": {
+    "rd.30.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "markierte-ungefaehrliche-koerperregion",
+          "label": "Markierte (*) UNGEFÄHRLICHE Körperregion mit Fehlstellung",
+          "ziel": "rd.30.k1",
+          "aussage": "Markierte (*) UNGEFÄHRLICHE Körperregion mit Fehlstellung"
+        },
+        {
+          "id": "ungefaehrliche-koerperregion",
+          "label": "UNGEFÄHRLICHE Körperregion",
+          "ziel": "rd.30.k2",
+          "aussage": "UNGEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "aeltere-6-h-verletzungen-ohne",
+          "label": "ÄLTERE (≥ 6 h) Verletzungen (ohne Notfallleitsymptome)",
+          "ziel": "rd.30.k3",
+          "aussage": "ÄLTERE (≥ 6 h) Verletzungen (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.30.k4",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "moeglicherweise-gefaehrliche",
+          "label": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion",
+          "ziel": "rd.30.k5",
+          "aussage": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "starke-blutung",
+          "label": "STARKE Blutung",
+          "ziel": "rd.30.k6",
+          "aussage": "STARKE Blutung"
+        },
+        {
+          "id": "unbekannte-koerperregion-anrufer-nicht",
+          "label": "Unbekannte Körperregion (Anrufer nicht bei Patient)",
+          "ziel": "rd.30.k7",
+          "aussage": "Unbekannte Körperregion (Anrufer nicht bei Patient)"
+        },
+        {
+          "id": "neurologische-symptome-erwaehnt-ohne",
+          "label": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)",
+          "ziel": "rd.30.k8",
+          "aussage": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.30.k9",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.30.k10",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.30.k11",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "verletzungen-im-brust-oder-halsbereich",
+          "label": "Verletzungen im Brust- oder Halsbereich (mit Atembeschwerden)",
+          "ziel": "rd.30.k12",
+          "aussage": "Verletzungen im Brust- oder Halsbereich (mit Atembeschwerden)"
+        },
+        {
+          "id": "aufprall-mit-hoher-geschwindigkeit",
+          "label": "Aufprall mit HOHER GESCHWINDIGKEIT/MASSIVE KRAFTEINWIRKUNG",
+          "ziel": "rd.30.k13",
+          "aussage": "Aufprall mit HOHER GESCHWINDIGKEIT/MASSIVE KRAFTEINWIRKUNG"
+        }
+      ]
+    },
+    "rd.30.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30a01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30a01-2",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30a01-3",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30a01-4",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.30.30a01-5",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        }
+      ]
+    },
+    "rd.30.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.30.30a02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.30.30a02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.30.30a02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30a02-3",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30a02-4",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30a02-5",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.30.30a02-6",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "ziel": "rd.30.30a02a",
+          "aussage": "Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-2-amputation",
+          "label": "bei Patientenanzahl 2, Amputation",
+          "ziel": "rd.30.30a02a-2",
+          "aussage": "bei Patientenanzahl 2, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-3-amputation",
+          "label": "bei Patientenanzahl 3, Amputation",
+          "ziel": "rd.30.30a02a-3",
+          "aussage": "bei Patientenanzahl 3, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-4-amputation",
+          "label": "bei Patientenanzahl 4, Amputation",
+          "ziel": "rd.30.30a02a-4",
+          "aussage": "bei Patientenanzahl 4, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-5-amputation",
+          "label": "bei Patientenanzahl ≥ 5, Amputation",
+          "ziel": "rd.30.30a02a-5",
+          "aussage": "bei Patientenanzahl ≥ 5, Amputation"
+        }
+      ]
+    },
+    "rd.30.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30a03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "ziel": "rd.30.30a03a",
+          "aussage": "Amputation"
+        }
+      ]
+    },
+    "rd.30.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.30.30b00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.30.30b00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.30.30b00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "ziel": "rd.30.30d00a",
+          "aussage": "Amputation"
+        }
+      ]
+    },
+    "rd.30.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.30.30b01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.30.30b01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.30.30b01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30b01-3",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30b01-4",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30b01-5",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.30.30b01-6",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "ziel": "rd.30.30b01a",
+          "aussage": "Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-2-amputation",
+          "label": "bei Patientenanzahl 2, Amputation",
+          "ziel": "rd.30.30b01a-2",
+          "aussage": "bei Patientenanzahl 2, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-3-amputation",
+          "label": "bei Patientenanzahl 3, Amputation",
+          "ziel": "rd.30.30b01a-3",
+          "aussage": "bei Patientenanzahl 3, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-4-amputation",
+          "label": "bei Patientenanzahl 4, Amputation",
+          "ziel": "rd.30.30b01a-4",
+          "aussage": "bei Patientenanzahl 4, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-5-amputation",
+          "label": "bei Patientenanzahl ≥ 5, Amputation",
+          "ziel": "rd.30.30b01a-5",
+          "aussage": "bei Patientenanzahl ≥ 5, Amputation"
+        }
+      ]
+    },
+    "rd.30.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.30.30b02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.30.30b02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.30.30b02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30b02-3",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30b02-4",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30b02-5",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.30.30b02-6",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "ziel": "rd.30.30b02a",
+          "aussage": "Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-2-amputation",
+          "label": "bei Patientenanzahl 2, Amputation",
+          "ziel": "rd.30.30b02a-2",
+          "aussage": "bei Patientenanzahl 2, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-3-amputation",
+          "label": "bei Patientenanzahl 3, Amputation",
+          "ziel": "rd.30.30b02a-3",
+          "aussage": "bei Patientenanzahl 3, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-4-amputation",
+          "label": "bei Patientenanzahl 4, Amputation",
+          "ziel": "rd.30.30b02a-4",
+          "aussage": "bei Patientenanzahl 4, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-5-amputation",
+          "label": "bei Patientenanzahl ≥ 5, Amputation",
+          "ziel": "rd.30.30b02a-5",
+          "aussage": "bei Patientenanzahl ≥ 5, Amputation"
+        }
+      ]
+    },
+    "rd.30.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.30.30b03",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.30.30b03-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.30.30b03",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30b03-3",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30b03-4",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30b03-5",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.30.30b03-6",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        }
+      ]
+    },
+    "rd.30.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.30.30b04",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.30.30b04-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.30.30b04",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30b04-3",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30b04-4",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30b04-5",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.30.30b04-6",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        }
+      ]
+    },
+    "rd.30.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "ziel": "rd.30.30d01a",
+          "aussage": "Amputation"
+        }
+      ]
+    },
+    "rd.30.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30d02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "ziel": "rd.30.30d02a",
+          "aussage": "Amputation"
+        }
+      ]
+    },
+    "rd.30.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30d03-2",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30d03-3",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30d03-4",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.30.30d03-5",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        },
+        {
+          "id": "amputation",
+          "label": "Amputation",
+          "ziel": "rd.30.30d03a",
+          "aussage": "Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-2-amputation",
+          "label": "bei Patientenanzahl 2, Amputation",
+          "ziel": "rd.30.30d03a-2",
+          "aussage": "bei Patientenanzahl 2, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-3-amputation",
+          "label": "bei Patientenanzahl 3, Amputation",
+          "ziel": "rd.30.30d03a-3",
+          "aussage": "bei Patientenanzahl 3, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-4-amputation",
+          "label": "bei Patientenanzahl 4, Amputation",
+          "ziel": "rd.30.30d03a-4",
+          "aussage": "bei Patientenanzahl 4, Amputation"
+        },
+        {
+          "id": "bei-patientenanzahl-5-amputation",
+          "label": "bei Patientenanzahl ≥ 5, Amputation",
+          "ziel": "rd.30.30d03a-5",
+          "aussage": "bei Patientenanzahl ≥ 5, Amputation"
+        }
+      ]
+    },
+    "rd.30.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30d04-2",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30d04-3",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30d04-4",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.30.30d04-5",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        }
+      ]
+    },
+    "rd.30.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30d05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.30.30d05-2",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.30.30d05-3",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.30.30d05-4",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.30.30d05-5",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.30.30a01": {
+      "code": "30A01",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung mit Fehlstellung",
+      "stichwort": "RD3C."
+    },
+    "rd.30.30a01-2": {
+      "code": "30A01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a01-3": {
+      "code": "30A01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a01-4": {
+      "code": "30A01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a01-5": {
+      "code": "30A01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a02": {
+      "code": "30A02",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzung",
+      "stichwort": "RD3B."
+    },
+    "rd.30.30a02-2": {
+      "code": "30A02",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.30.30a02-3": {
+      "code": "30A02",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a02-4": {
+      "code": "30A02",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a02-5": {
+      "code": "30A02",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a02-6": {
+      "code": "30A02",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a02a": {
+      "code": "30A02A",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung - Ampuation (nur Finger oder Zehe)",
+      "stichwort": "RD3C."
+    },
+    "rd.30.30a02a-2": {
+      "code": "30A02A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a02a-3": {
+      "code": "30A02A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a02a-4": {
+      "code": "30A02A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a02a-5": {
+      "code": "30A02A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30a03": {
+      "code": "30A03",
+      "kategorie": "RD5.",
+      "anlass": "30A03",
+      "stichwort": "RD5."
+    },
+    "rd.30.30a03a": {
+      "code": "30A03A",
+      "kategorie": "RD4C.",
+      "anlass": "Ältere Verletzung - Ampuation (nur Finger oder Zehe)",
+      "stichwort": "RD4C."
+    },
+    "rd.30.30b00": {
+      "code": "30B00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Verletzung",
+      "stichwort": "RD4B."
+    },
+    "rd.30.30b00-2": {
+      "code": "30B00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Verletzung, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.30.30d00": {
+      "code": "30D00",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Trauma",
+      "stichwort": "RD2C FR."
+    },
+    "rd.30.30d00a": {
+      "code": "30D00A",
+      "kategorie": "RD2C.",
+      "anlass": "Aufwertung starke Schmerzen nach Trauma - Amputation",
+      "stichwort": "RD2C."
+    },
+    "rd.30.30b01": {
+      "code": "30B01",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzung",
+      "stichwort": "RD3B."
+    },
+    "rd.30.30b01-2": {
+      "code": "30B01",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.30.30b01-3": {
+      "code": "30B01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b01-4": {
+      "code": "30B01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b01-5": {
+      "code": "30B01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b01-6": {
+      "code": "30B01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b01a": {
+      "code": "30B01A",
+      "kategorie": "RD2NC.",
+      "anlass": "Verletzung - Ampuation",
+      "stichwort": "RD2NC."
+    },
+    "rd.30.30b01a-2": {
+      "code": "30B01A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b01a-3": {
+      "code": "30B01A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b01a-4": {
+      "code": "30B01A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b01a-5": {
+      "code": "30B01A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b02": {
+      "code": "30B02",
+      "kategorie": "RD2B FR.",
+      "anlass": "Verletzung mit starker Blutung",
+      "stichwort": "RD2B FR."
+    },
+    "rd.30.30b02-2": {
+      "code": "30B02",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit starker Blutung, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.30.30b02-3": {
+      "code": "30B02",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b02-4": {
+      "code": "30B02",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b02-5": {
+      "code": "30B02",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b02-6": {
+      "code": "30B02",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b02a": {
+      "code": "30B02A",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verletzung mit starker Blutung - Amputation",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.30.30b02a-2": {
+      "code": "30B02A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b02a-3": {
+      "code": "30B02A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b02a-4": {
+      "code": "30B02A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b02a-5": {
+      "code": "30B02A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b03": {
+      "code": "30B03",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzung in unbekannter Körperregion",
+      "stichwort": "RD3B."
+    },
+    "rd.30.30b03-2": {
+      "code": "30B03",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung in unbekannter Körperregion, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.30.30b03-3": {
+      "code": "30B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b03-4": {
+      "code": "30B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b03-5": {
+      "code": "30B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b03-6": {
+      "code": "30B03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b04": {
+      "code": "30B04",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzung mit neurologischen Symptomen",
+      "stichwort": "RD3B."
+    },
+    "rd.30.30b04-2": {
+      "code": "30B04",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung mit neurologischen Symptomen, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.30.30b04-3": {
+      "code": "30B04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b04-4": {
+      "code": "30B04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b04-5": {
+      "code": "30B04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30b04-6": {
+      "code": "30B04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d01": {
+      "code": "30D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Verletzung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.30.30d01a": {
+      "code": "30D01A",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Verletzung - Amputation",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.30.30d02": {
+      "code": "30D02",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Verletzung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.30.30d02a": {
+      "code": "30D02A",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Verletzung - Amputation",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.30.30d03": {
+      "code": "30D03",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinstrübung nach Verletzung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.30.30d03-2": {
+      "code": "30D03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d03-3": {
+      "code": "30D03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d03-4": {
+      "code": "30D03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d03-5": {
+      "code": "30D03",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d03a": {
+      "code": "30D03A",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Verletzung - Amputation",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.30.30d03a-2": {
+      "code": "30D03A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d03a-3": {
+      "code": "30D03A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d03a-4": {
+      "code": "30D03A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d03a-5": {
+      "code": "30D03A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d04": {
+      "code": "30D04",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden",
+      "stichwort": "RD2C FR."
+    },
+    "rd.30.30d04-2": {
+      "code": "30D04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d04-3": {
+      "code": "30D04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d04-4": {
+      "code": "30D04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d04-5": {
+      "code": "30D04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d05": {
+      "code": "30D05",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verletzung durch massive Krafteinwirkung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.30.30d05-2": {
+      "code": "30D05",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d05-3": {
+      "code": "30D05",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d05-4": {
+      "code": "30D05",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.30.30d05-5": {
+      "code": "30D05",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall - Mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    }
+  }
+}
