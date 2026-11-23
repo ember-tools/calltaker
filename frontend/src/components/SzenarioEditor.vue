@@ -41,7 +41,7 @@ const allgemein = computed(() => props.befunde.filter(b => !b.knoten))
             <li v-for="befund in allgemein" :key="befund.meldung">{{ befund.meldung }}</li>
         </ul>
         <label :class="BESCHRIFTUNG">{{ t('editor.szenarioTitel') }}<input v-model="entwurf.titel" :placeholder="t('editor.titelBeispiel')" :class="FELD"/></label>
-        <fieldset class="m-0 flex flex-col gap-2 rounded border border-rand p-3">
+        <fieldset class="m-0 min-w-0 flex flex-col gap-2 rounded border border-rand p-3">
             <legend class="px-1 text-sm font-bold">{{ t('editor.ort') }}</legend>
             <ZufallsAdresse @adresse="zufaellig"/>
             <OrtWahl v-model="ort" v-model:text="suche"/>
@@ -51,7 +51,7 @@ const allgemein = computed(() => props.befunde.filter(b => !b.knoten))
             </div>
         </fieldset>
         <EditorAnrufer v-model="entwurf"/>
-        <fieldset class="m-0 flex flex-col gap-2 rounded border border-rand p-3">
+        <fieldset class="m-0 min-w-0 flex flex-col gap-2 rounded border border-rand p-3">
             <legend class="px-1 text-sm font-bold">{{ t('editor.pfad') }}</legend>
             <PfadWahl v-model:antworten="entwurf.antworten" v-model:ziel="entwurf.ziel" :graph="graph" :schwerste="schwerste" :befunde="befunde"/>
         </fieldset>
