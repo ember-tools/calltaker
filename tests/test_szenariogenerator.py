@@ -3,7 +3,8 @@ from collections import Counter
 
 import pytest
 
-from szenario import pruefen
+from gefahrstoffe import GEFAHRGUT_ANTWORTEN, Stoff
+from szenario import Gefahrgut, Wahl, pruefen
 from szenariogenerator import (
     ATEMNOT,
     BEWUSSTLOS,
@@ -17,6 +18,8 @@ from szenariogenerator import (
     anzahl_gewichte,
     disziplin_von,
     generieren,
+    mit_gefahrgut,
+    person_ziehen,
     pfadtext,
     stufe,
     titel_von,
@@ -82,15 +85,18 @@ def test_meldehand_und_vor_ort_passen_zusammen(graph):
         assert vor_ort in VOR_ORT[hand]
 
 
-def test_tote_personen_im_protokoll_09_atmen_nicht(graph):
-    tote = Erzeugung(kategorie="RD5.")
-    endpunkte = {e.knoten: e for e in graph.endpunkte}
-    gesehen = 0
-    for szenario in viele(graph, 400, tote):
-        if endpunkte[szenario.ziel.knoten].protokoll == "rd.09":
-            gesehen += 1
-            assert szenario.antworten["rd.atmung"].antwort == "atmet-nicht"
-    assert gesehen > 0
+def test_stillstaende_kommen_nur_ueber_atmet_nicht_zu_09e01(graph):
+    szenarien = viele(graph, 300, Erzeugung(kategorie="RD1NC"))
+    stillstand = [s for s in szenarien if s.antworten["rd.atmung"].antwort == "atmet-nicht"]
+    assert stillstand
+    assert {s.ziel.code[:5] for s in stillstand} <= {"09E01", "09B01"}
+    assert "09E01" in {s.ziel.code for s in stillstand}
+    assert all("rd.hauptbeschwerde" not in s.antworten for s in stillstand)
+    assert all(
+        s.ziel.code.startswith("09B01")
+        for s in viele(graph, 200, Erzeugung(kategorie="RD5."))
+        if s.antworten["rd.atmung"].antwort == "atmet-nicht"
+    )
 
 
 def test_titel_ohne_eigenen_anlass_nennen_das_protokoll(graph):
@@ -199,3 +205,126 @@ def test_ein_ort_ausserhalb_des_bezirks_wird_nicht_genommen(graph):
     )
     szenario = viele(graph, 1, Erzeugung(anteil_orte=100, bezirk="Neukölln"), quellen=quellen)[0]
     assert szenario.ort.objekt == ""
+
+
+def test_neugeborene_sind_unter_den_stillstaenden_selten(graph):
+    endpunkte = {e.knoten: e for e in graph.endpunkte}
+    stillstand = [
+        s for s in viele(graph, 600, Erzeugung(kategorie="RD1NC")) if s.ziel.code == "09E01"
+    ]
+    neugeboren = sum("NNAD" in endpunkte[s.ziel.knoten].kategorie for s in stillstand)
+    assert stillstand
+    assert neugeboren / len(stillstand) < 0.15
+
+
+def test_sichere_todeszeichen_werden_ueber_atmet_nicht_gezogen(graph):
+    tot = viele(graph, 300, Erzeugung(kategorie="RD5."))
+    am_ende = [s for s in tot if s.ziel.code.startswith("09B01")]
+    assert am_ende
+    assert all(s.antworten["rd.atmung"].antwort == "atmet-nicht" for s in am_ende)
+    assert all("rd.09.todeszeichen" in s.antworten for s in am_ende)
+
+
+def test_varianten_eines_codes_teilen_sich_seine_chance(graph):
+    from szenariogenerator import gewichte_der_codes
+
+    neunzehn = [
+        e for e in graph.endpunkte if e.protokoll == "rd.09" and e.pfad[0].knoten == "rd.atmung"
+    ]
+    gewichte = dict(zip([e.knoten for e in neunzehn], gewichte_der_codes(neunzehn), strict=True))
+    tod = sum(g for k, g in gewichte.items() if "09b01" in k)
+    stillstand = sum(g for k, g in gewichte.items() if "09e01" in k)
+    assert tod == pytest.approx(1.0)
+    assert stillstand == pytest.approx(1.0)
+    assert gewichte["rd.09.09e01-2"] < gewichte["rd.09.09e01"] / 5
+
+
+def test_das_geschlecht_folgt_geschlechtsbezogenen_antworten(graph):
+    maenner = [
+        e
+        for e in graph.endpunkte
+        if any(
+            (a := graph.antwort(s.knoten, s.antwort or "")) and a.geschlecht == "m" for s in e.pfad
+        )
+    ]
+    assert maenner
+    zufall = random.Random(3)
+    for endpunkt in maenner[:5]:
+        person = person_ziehen(graph, endpunkt, zufall)
+        assert person.weiblich is False
+
+
+def test_ein_pfad_mit_unbekanntem_alter_laesst_das_alter_leer(graph):
+    unbekannt = [
+        s
+        for s in viele(graph, 400)
+        if any(
+            (a := graph.antwort(k, w.antwort or "")) and a.alter and a.alter.unbekannt
+            for k, w in s.antworten.items()
+        )
+    ]
+    assert unbekannt
+    assert all(s.antworten["rd.alter"].wert is None for s in unbekannt if "rd.alter" in s.antworten)
+
+
+def test_frauenantworten_geben_eine_frau(graph):
+    frauen = [
+        e
+        for e in graph.endpunkte
+        if any(
+            (a := graph.antwort(s.knoten, s.antwort or "")) and a.geschlecht == "w" for s in e.pfad
+        )
+    ]
+    assert frauen
+    for endpunkt in frauen:
+        person = person_ziehen(graph, endpunkt, random.Random(1))
+        assert person.weiblich is True
+        assert 12 <= person.alter <= 50 or endpunkt.protokoll != "rd.31"
+
+
+def test_gleichwertige_antworten_werden_gestreut(graph):
+    brand = viele(graph, 300, Erzeugung(gewicht_rd=0, gewicht_th=0, gewicht_brand=1))
+    flucht = "fw.brand.gebaeudebrand.fluchtweg"
+    mit = [s for s in brand if flucht in s.antworten]
+    wege = {s.antworten[flucht].antwort for s in mit}
+    assert {"weg-frei", "weg-verraucht"} <= wege
+    for szenario in mit:
+        if szenario.antworten["eroeffnung.vor-ort"].antwort != "ja-der-anrufer-ist-vor-ort":
+            assert szenario.antworten[flucht].antwort == "nicht-im-gebaeude"
+
+
+def test_antworten_die_den_weg_bestimmen_bleiben_wie_im_pfad(graph):
+    endpunkte = {e.knoten: e for e in graph.endpunkte}
+    for szenario in viele(graph, 300):
+        endpunkt = endpunkte[szenario.ziel.knoten]
+        for schritt in endpunkt.pfad:
+            ziele = {a.ziel for a in graph.knoten[schritt.knoten].antworten or []}
+            if len(ziele) > 1:
+                assert szenario.antworten[schritt.knoten].antwort == schritt.antwort
+
+
+def test_gefahrgut_szenarien_tragen_eine_warntafel(graph):
+    stoff = Stoff(un="1203", gefahrenzahl="33", klasse="3", bezeichnung="Benzin")
+    quellen = Quellen(
+        adresse=lambda *_: dict(ADRESSE), ort=lambda *_: dict(PLATZ), gefahrstoffe=[stoff]
+    )
+    nur_fw = Erzeugung(gewicht_rd=0, gewicht_brand=50, gewicht_th=50)
+    endpunkte = {endpunkt.knoten: endpunkt for endpunkt in graph.endpunkte}
+    mit_tafel = 0
+    for seed in range(300):
+        szenario = generieren(graph, quellen, nur_fw, random.Random(seed))
+        erwartet = endpunkte[szenario.ziel.knoten].protokoll == "fw.th.gefahrstoffe" or any(
+            (knoten, wahl.antwort) in GEFAHRGUT_ANTWORTEN
+            for knoten, wahl in szenario.antworten.items()
+        )
+        assert (szenario.ort.gefahrgut is not None) == erwartet
+        if erwartet:
+            assert szenario.ort.gefahrgut == Gefahrgut(un="1203", gefahrenzahl="33")
+            mit_tafel += 1
+    assert mit_tafel > 0
+
+
+def test_gefahrgut_im_rettungsdienst_bekommt_keine_tafel(graph):
+    endpunkt = next(e for e in graph.endpunkte if e.protokoll == "rd.29")
+    antworten = {"rd.29.k0": Wahl(antwort="gefahrgut")}
+    assert not mit_gefahrgut(endpunkt, antworten)

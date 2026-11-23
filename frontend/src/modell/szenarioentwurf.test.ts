@@ -70,3 +70,14 @@ describe('szenarioentwurf beim Speichern', () => {
         expect(szenario.ort.adresse.strasse).toBe('')
     })
 })
+
+describe('szenarioentwurf mit einer Abkürzung in ein Protokoll', () => {
+    it('nimmt eine frühere Antwort nicht, wenn sie an der Wahl des Protokolls vorbeiführt', () => {
+        const abkuerzung = testgraph()
+        abkuerzung.knoten['hand'] = {...abkuerzung.knoten['hand']!, antworten: [...abkuerzung.knoten['hand']!.antworten!, {id: 'kurz', label: 'Abkürzung', ziel: 'p.k0', protokoll: 'rd.17'}]}
+        const endpunkt = {...abkuerzung.endpunkte[1]!, pfad: [{knoten: 'rd.wahl', antwort: 'sturz'}, {knoten: 'p.k0', antwort: 'schwer'}]}
+        const pfad = pfadZumEndpunkt(abkuerzung, [{knoten: 'fachrichtung', antwort: 'rd'}, {knoten: 'hand', antwort: 'kurz'}], endpunkt)
+        expect(pfad.find(s => s.knoten === 'hand')).toEqual({knoten: 'hand', antwort: 'eins'})
+        expect(pfad.at(-1)).toEqual({knoten: 'p.k0', antwort: 'schwer'})
+    })
+})

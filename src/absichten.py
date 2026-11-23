@@ -47,6 +47,8 @@ class Absicht(BaseModel):
     parameter: dict[str, Any] | None = None
     anzahl: int | None = None
     erzeugung: dict[str, Any] | None = None
+    anleitung: str | None = Field(None, max_length=200)
+    gegeben: bool | None = None
 
 
 Ausfuehrung = Callable[[Uebung, Absicht, Abfragegraph], dict[str, Any]]
@@ -178,7 +180,11 @@ def beenden(uebung: Uebung, _: Absicht, __: Abfragegraph) -> dict:
 
 
 def eintragen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
-    """Take the trainee's entries for the running conversation."""
+    """Take the trainee's entries for the running conversation.
+
+    Answers with what only the server sets, its times and the handover snapshot, so the view can
+    show them without waiting for the next poll.
+    """
     anruf = uebung.engine.im_gespraech()
     if anruf is None:
         raise AbsichtAbgelehnt("Es läuft kein Gespräch.", status=409)
@@ -194,7 +200,8 @@ def eintragen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
     if uebernommen != anruf.eintraege:
         anruf.eintraege = uebernommen
         uebung.geaendert()
-    return {"zeiten": uebernommen.zeiten.model_dump(by_alias=True)}
+    aussen = uebernommen.nach_aussen()
+    return {"zeiten": aussen["zeiten"], "uebergeben": aussen.get("uebergeben")}
 
 
 def pausieren(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
@@ -222,6 +229,23 @@ def auflegen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
         uebung.engine.auflegen(absicht.anruf_id or "")
     except KeyError as fehler:
         raise AbsichtAbgelehnt("Dieser Anruf wartet nicht.", status=404) from fehler
+    return {}
+
+
+KORREKTUREN_HOECHSTENS = 100
+
+
+def anleitung_korrigieren(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Let the trainer count an instruction as given or not, whatever the trainee ticked."""
+    anruf = next((a for a in uebung.anrufe if a.id == absicht.anruf_id), None)
+    if anruf is None:
+        raise AbsichtAbgelehnt("Diesen Anruf gibt es nicht.", status=404)
+    if not absicht.anleitung or absicht.gegeben is None:
+        raise AbsichtAbgelehnt("Welche Anleitung und ob sie gegeben wurde, fehlt.", status=422)
+    if absicht.anleitung not in anruf.korrektur and len(anruf.korrektur) >= KORREKTUREN_HOECHSTENS:
+        raise AbsichtAbgelehnt("Zu viele Korrekturen für diesen Anruf.", status=422)
+    anruf.korrektur[absicht.anleitung] = absicht.gegeben
+    uebung.geaendert()
     return {}
 
 
@@ -291,4 +315,5 @@ ABSICHTEN: dict[str, tuple[set[Rolle], Ausfuehrung]] = {
     "engine.sofort": ({Rolle.AUSBILDER}, sofort_klingeln),
     "engine.parameter": ({Rolle.AUSBILDER}, parameter_setzen),
     "anruf.auflegen": ({Rolle.AUSBILDER}, auflegen),
+    "anleitung.korrigieren": ({Rolle.AUSBILDER}, anleitung_korrigieren),
 }

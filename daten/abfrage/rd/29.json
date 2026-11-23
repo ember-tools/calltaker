@@ -842,7 +842,10 @@
           "id": "bei-patientenalter-unbekannt-fahrzeug",
           "label": "bei Patientenalter unbekannt, Fahrzeug gegen Fahrrad",
           "ziel": "rd.29.29d02i-5",
-          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Fahrrad"
+          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Fahrrad",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenanzahl-4-fahrzeug-gegen",
@@ -926,7 +929,10 @@
           "id": "bei-patientenalter-unbekannt-fahrzeug-2",
           "label": "bei Patientenalter unbekannt, Fahrzeug gegen Motorrad",
           "ziel": "rd.29.29d02l-5",
-          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Motorrad"
+          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Motorrad",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenanzahl-4-fahrzeug-gegen-2",
@@ -986,7 +992,10 @@
           "id": "bei-patientenalter-unbekannt-fahrzeug-3",
           "label": "bei Patientenalter unbekannt, Fahrzeug gegen Fußgänger",
           "ziel": "rd.29.29d02m-5",
-          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Fußgänger"
+          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Fußgänger",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenanzahl-1",

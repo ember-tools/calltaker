@@ -143,7 +143,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.30.30a02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenanzahl-2",
@@ -243,7 +246,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.30.30b00",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "ohne-weitere-angabe",
@@ -284,7 +290,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.30.30b01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenanzahl-2",
@@ -367,7 +376,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.30.30b02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenanzahl-2",
@@ -450,7 +462,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.30.30b03",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenanzahl-2",
@@ -503,7 +518,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.30.30b04",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenanzahl-2",

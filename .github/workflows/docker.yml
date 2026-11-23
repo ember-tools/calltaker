@@ -26,7 +26,10 @@ jobs:
         with:
           lfs: true
       - name: Build image
-        run: ./toolchain.sh docker-build -t "$IMAGE:${{ github.sha }}"
+        run: >-
+          ./toolchain.sh docker-build -t "$IMAGE:${{ github.sha }}"
+          --build-arg COMMIT="$(git rev-parse --short HEAD)"
+          --build-arg GEBAUT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
       - name: Log in to the registry
         if: github.event_name == 'push'
         env:

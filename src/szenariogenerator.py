@@ -21,18 +21,20 @@ gets a child.
 import random
 import re
 from collections.abc import Callable
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
-from abfrage import Abfragegraph, Endpunkt, Knoten
+from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
+from gefahrstoffe import GEFAHRGUT_ANTWORTEN, GEFAHRGUT_PROTOKOLL, Stoff
 from generator import festnetznummer, mobilnummer, zufallsname
 from szenario import (
     Adresse,
     Anrufer,
     Betroffener,
+    Gefahrgut,
     Herkunft,
     Ort,
     Rolle,
@@ -46,6 +48,10 @@ UNTERDRUECKT_ANTEIL = 0.05
 ANDERE_RUECKRUF_ANTEIL = 0.05
 ERWACHSEN = (18, 90)
 PLATZ_VERSUCHE = 5
+STILLSTAND_PROTOKOLL = "rd.09"
+NICHT_VOR_ORT_ANTWORT = {"fw.brand.gebaeudebrand.fluchtweg": "nicht-im-gebaeude"}
+GEWICHT_NEUGEBORENE = 0.1
+UMWEGE_SCHLUESSEL = "_nur_ueber_stillstand"
 EINSATZORTE = frozenset(
     {
         "Bahnhof",
@@ -133,6 +139,7 @@ class Quellen:
     adresse: Callable[[random.Random, str, str], dict | None]
     ort: Callable[..., dict | None]
     naechste: Callable[[float, float], dict | None] = lambda *_: None
+    gefahrstoffe: list[Stoff] = field(default_factory=list)
 
 
 def disziplin_von(endpunkt: Endpunkt) -> Disziplin:
@@ -147,11 +154,19 @@ def disziplin_von(endpunkt: Endpunkt) -> Disziplin:
 def ziehbare(
     graph: Abfragegraph, erzeugung: Erzeugung
 ) -> dict[Disziplin, dict[str, list[Endpunkt]]]:
-    """Return the endpoints that may be drawn, by discipline and protocol."""
+    """Return the endpoints that may be drawn, by discipline and protocol.
+
+    A person who does not breathe is a cardiac arrest whatever else happened, and the questioning
+    goes straight there from "atmet nicht". So an arrest is only drawn as such: the endpoints
+    reached through that shortcut. Codes of other protocols that would need a person who does not
+    breathe are left out; their cause can go into the role notes.
+    """
     filter_ = erzeugung.kategorie.strip().lower()
     nach: dict[Disziplin, dict[str, list[Endpunkt]]] = {}
     for endpunkt in graph.endpunkte:
         if endpunkt.kategorie in NICHT_ZIEHBAR or not endpunkt.pfad:
+            continue
+        if (endpunkt.protokoll, endpunkt.knoten) in nur_ueber_stillstand(graph):
             continue
         if filter_ and not endpunkt.kategorie.lower().startswith(filter_):
             continue
@@ -162,14 +177,32 @@ def ziehbare(
 
 
 def endpunkt_ziehen(graph: Abfragegraph, erzeugung: Erzeugung, zufall: random.Random) -> Endpunkt:
-    """Draw a discipline by weight, then a protocol and a code of it with equal chance."""
+    """Draw a discipline by weight, then a protocol, then a code by `gewichte_der_codes`."""
     nach = ziehbare(graph, erzeugung)
     gewichte = {d: g for d, g in erzeugung.gewichte().items() if g > 0 and d in nach}
     if not gewichte:
         raise NichtsZuZiehen("Kein Code passt zu diesen Einstellungen.")
     disziplin = zufall.choices(list(gewichte), weights=list(gewichte.values()))[0]
     protokoll = zufall.choice(sorted(nach[disziplin]))
-    return zufall.choice(nach[disziplin][protokoll])
+    kandidaten = nach[disziplin][protokoll]
+    return zufall.choices(kandidaten, weights=gewichte_der_codes(kandidaten))[0]
+
+
+def gewichte_der_codes(kandidaten: list[Endpunkt]) -> list[float]:
+    """Return each endpoint's chance within its protocol: every code once, its variants sharing it.
+
+    A code with variants (09B01a to f for the signs of death; adult, child and newborn of 09E01)
+    is drawn as often as a code without, so variants do not crowd out the rest. Newborns get a
+    tenth of a variant's share, since they are rare among the calls.
+    """
+    roh = [GEWICHT_NEUGEBORENE if "NNAD" in e.kategorie else 1.0 for e in kandidaten]
+    summe: dict[str, float] = {}
+    for endpunkt, gewicht in zip(kandidaten, roh, strict=True):
+        summe[endpunkt.code[:5]] = summe.get(endpunkt.code[:5], 0.0) + gewicht
+    return [
+        gewicht / summe[endpunkt.code[:5]]
+        for endpunkt, gewicht in zip(kandidaten, roh, strict=True)
+    ]
 
 
 def altersspanne(graph: Abfragegraph, endpunkt: Endpunkt) -> tuple[int, int]:
@@ -177,7 +210,7 @@ def altersspanne(graph: Abfragegraph, endpunkt: Endpunkt) -> tuple[int, int]:
     unten, oben, begrenzt = 0, 100, False
     for schritt in endpunkt.pfad:
         antwort = graph.antwort(schritt.knoten, schritt.antwort or "")
-        if antwort and antwort.alter:
+        if antwort and antwort.alter and not antwort.alter.unbekannt:
             begrenzt = True
             unten = max(unten, antwort.alter.min if antwort.alter.min is not None else 0)
             oben = min(oben, antwort.alter.max if antwort.alter.max is not None else 100)
@@ -232,6 +265,8 @@ class Person:
     stillstand: bool = False
     bewusstlos: bool = False
     atemnot: bool = False
+    alter_bekannt: bool = True
+    vor_ort: bool = True
 
 
 STILLSTAND = re.compile(
@@ -246,6 +281,43 @@ VOR_ORT = {
     FUER_ANDERE: {"ja-der-anrufer-ist-vor-ort": 60, "nein-war-nicht-vor-ort": 40},
     GEHOERT: {"nein-war-nicht-vor-ort": 70, "unbekannt": 30},
 }
+
+
+def stillstand_wahl(graph: Abfragegraph) -> str:
+    """Return the node where cardiac arrest is first chosen: its protocol's shallowest choice."""
+    wahlen = [
+        id_
+        for id_, knoten in graph.knoten.items()
+        if any(antwort.protokoll == STILLSTAND_PROTOKOLL for antwort in knoten.antworten or [])
+    ]
+    return min(wahlen, key=lambda id_: graph.tiefen.get(id_, len(graph.knoten)), default="")
+
+
+def nur_ueber_stillstand(graph: Abfragegraph) -> frozenset[tuple[str, str]]:
+    """Return the endpoints that need an arrest but are not reached through its shortcut.
+
+    Worked out once per graph, since it reads the path of every endpoint, and kept on the graph
+    the way its own cached properties are.
+    """
+    gemerkt = graph.__dict__.get(UMWEGE_SCHLUESSEL)
+    if gemerkt is None:
+        wahl = stillstand_wahl(graph)
+        gemerkt = frozenset(
+            (e.protokoll, e.knoten)
+            for e in graph.endpunkte
+            if e.pfad and e.pfad[0].knoten != wahl and stillstand_von(graph, e)
+        )
+        graph.__dict__[UMWEGE_SCHLUESSEL] = gemerkt
+    return gemerkt
+
+
+def stillstand_von(graph: Abfragegraph, endpunkt: Endpunkt) -> bool:
+    """Tell whether a code needs a person who does not breathe."""
+    return (
+        endpunkt.protokoll == STILLSTAND_PROTOKOLL
+        or endpunkt.kategorie.startswith(("RD1NC REA", "RD1NC NNAD"))
+        or bool(STILLSTAND.search(pfadtext(graph, endpunkt)))
+    )
 
 
 def pfadtext(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
@@ -359,7 +431,7 @@ def eroeffnung(
             vorher = antworten[knoten.weiche.knoten].antwort or ""
             id_ = knoten.weiche.ziele[vorher]
         elif knoten.eingabe is not None:
-            antworten[id_] = Wahl(wert=str(person.alter))
+            antworten[id_] = Wahl(wert=str(person.alter)) if person.alter_bekannt else Wahl()
             id_ = knoten.ziel or ""
         else:
             if id_ == graph.meta.wurzel:
@@ -450,12 +522,17 @@ def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random
     unten, oben = altersspanne(graph, endpunkt)
     alter = zufall.randint(unten, oben)
     text = pfadtext(graph, endpunkt)
-    weiblich = bool(re.search(r"schwanger|geburt|frauen", text)) or zufall.random() < 0.5
-    stillstand = (
-        endpunkt.protokoll == "rd.09"
-        or endpunkt.kategorie.startswith("RD1NC REA")
-        or bool(STILLSTAND.search(text))
-    )
+    vorgegeben = {
+        antwort.geschlecht
+        for schritt in endpunkt.pfad
+        if (antwort := graph.antwort(schritt.knoten, schritt.antwort or "")) and antwort.geschlecht
+    }
+    if vorgegeben == {"m"}:
+        weiblich = False
+    else:
+        weiblich = "w" in vorgegeben or bool(re.search(r"schwanger|geburt", text))
+        weiblich = weiblich or zufall.random() < 0.5
+    stillstand = stillstand_von(graph, endpunkt)
     bewusstlos = stillstand or bool(BEWUSSTLOS.search(text))
     anrufer_selbst = (
         alter >= 14
@@ -464,7 +541,13 @@ def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random
         and zufall.random() < 0.3
     )
     atemnot = bool(ATEMNOT.search(text))
-    return Person(alter, weiblich, anrufer_selbst, stillstand, bewusstlos, atemnot)
+    alter_bekannt = not any(
+        (antwort := graph.antwort(s.knoten, s.antwort or ""))
+        and antwort.alter
+        and antwort.alter.unbekannt
+        for s in endpunkt.pfad
+    )
+    return Person(alter, weiblich, anrufer_selbst, stillstand, bewusstlos, atemnot, alter_bekannt)
 
 
 def titel_von(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
@@ -476,6 +559,31 @@ def titel_von(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
     return f"{protokoll.label} ({endpunkt.code})" if protokoll else endpunkt.code
 
 
+def gleichwertige(
+    graph: Abfragegraph, knoten_id: str, antwort_id: str, person: Person, zufall: random.Random
+) -> Antwort | None:
+    """Return the answer at a node, or by chance another one when the node does not decide the way.
+
+    Some questions do not change the code but what the caller is told, such as whether the way
+    out of a burning building is clear: all their answers lead on to the same question. Drawing
+    among them varies the scenarios. A caller who is not on site is not in the building either.
+    """
+    gewaehlt = graph.antwort(knoten_id, antwort_id)
+    antworten = graph.knoten[knoten_id].antworten or []
+    if gewaehlt is None or len({antwort.ziel for antwort in antworten}) != 1:
+        return gewaehlt
+    if knoten_id in NICHT_VOR_ORT_ANTWORT and not person.vor_ort:
+        return graph.antwort(knoten_id, NICHT_VOR_ORT_ANTWORT[knoten_id])
+    return zufall.choice(antworten)
+
+
+def mit_gefahrgut(endpunkt: Endpunkt, antworten: dict[str, Wahl]) -> bool:
+    """Tell whether a scenario carries hazardous goods, by its protocol or an answer saying so."""
+    if endpunkt.protokoll == GEFAHRGUT_PROTOKOLL:
+        return True
+    return any((knoten, wahl.antwort) in GEFAHRGUT_ANTWORTEN for knoten, wahl in antworten.items())
+
+
 def generieren(
     graph: Abfragegraph, quellen: Quellen, erzeugung: Erzeugung, zufall: random.Random
 ) -> Szenario:
@@ -485,10 +593,13 @@ def generieren(
     rd = endpunkt.fachrichtung == "rd"
     person = person_ziehen(graph, endpunkt, zufall) if rd else Person(0, False, False)
     antworten = eroeffnung(graph, endpunkt, person, zufall)
+    vor_ort = antworten.get("eroeffnung.vor-ort")
+    person.vor_ort = vor_ort is None or vor_ort.antwort == "ja-der-anrufer-ist-vor-ort"
     for schritt in endpunkt.pfad:
-        antwort = graph.antwort(schritt.knoten, schritt.antwort or "")
+        antwort = gleichwertige(graph, schritt.knoten, schritt.antwort or "", person, zufall)
         antworten[schritt.knoten] = Wahl(
-            antwort=schritt.antwort, label=antwort.label if antwort else None
+            antwort=antwort.id if antwort else schritt.antwort,
+            label=antwort.label if antwort else None,
         )
     betroffen = zufallsname(zufall, person.weiblich) if rd else ""
     anrufer_name = betroffen if person.anrufer_selbst else zufallsname(zufall)
@@ -496,6 +607,9 @@ def generieren(
         an_tuer = bool(ort.adresse.hausnummer) and not ort.objekt
         ort.geschoss = zufall.choice(GESCHOSSE) if an_tuer else ""
         ort.klingel = betroffen.split()[-1] if an_tuer else ""
+    if quellen.gefahrstoffe and mit_gefahrgut(endpunkt, antworten):
+        stoff = zufall.choice(quellen.gefahrstoffe)
+        ort.gefahrgut = Gefahrgut(un=stoff.un, gefahrenzahl=stoff.gefahrenzahl)
     stimmungen = STIMMUNGEN[stufe(endpunkt.kategorie)]
     stimmung = zufall.choices(list(stimmungen), weights=list(stimmungen.values()))[0]
     return Szenario(

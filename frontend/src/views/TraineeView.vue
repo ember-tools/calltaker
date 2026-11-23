@@ -56,15 +56,18 @@ function snaZeigen(): void {
 }
 
 /**
- * Switches between the entry mask (F2) and the questioning window (F3) from anywhere in the call.
+ * Switches between the entry mask (F2), the questioning window (F3) and the instructions to the
+ * caller (F4), and hands the call over to dispatch (F9), from anywhere in the call.
  *
  * @param ereignis the key pressed
  */
 function fTaste(ereignis: KeyboardEvent): void {
-    if (!anruf.value || (ereignis.key !== 'F2' && ereignis.key !== 'F3')) return
+    if (!anruf.value || !['F2', 'F3', 'F4', 'F9'].includes(ereignis.key)) return
     ereignis.preventDefault()
     if (ereignis.key === 'F2') flaeche.value?.maskeZeigen()
-    else snaZeigen()
+    else if (ereignis.key === 'F3') snaZeigen()
+    else if (ereignis.key === 'F4') flaeche.value?.hinweiseZeigen()
+    else flaeche.value?.uebergeben()
 }
 
 onMounted(() => window.addEventListener('keydown', fTaste))

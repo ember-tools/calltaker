@@ -10,7 +10,7 @@ const props = defineProps<{
 }>()
 
 const {t} = useI18n()
-const ZAHLEN = ['erstesKlingelnMin', 'erstesKlingelnMax', 'basisAbstand', 'abstandFaktor', 'maxSchlange', 'geduldMin', 'geduldMax'] as const
+const ZAHLEN = ['erstesKlingelnMin', 'erstesKlingelnMax', 'basisAbstand', 'abstandFaktor', 'maxSchlange', 'geduldMin', 'geduldMax', 'zielReanimation', 'zielUebergabe'] as const
 const werte = ref<EngineParameter>({...props.parameter})
 const fehler = ref('')
 

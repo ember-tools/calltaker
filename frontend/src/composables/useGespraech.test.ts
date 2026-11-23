@@ -64,4 +64,26 @@ describe('useGespraech', () => {
         expect(absicht).toHaveBeenCalledTimes(2)
         expect(absicht.mock.calls[1]![1]).toMatchObject({eintraege: {hinweise: 'neu'}})
     })
+
+    it('übernimmt Zeiten und Übergabestand aus der Antwort, ohne erneut zu senden', async () => {
+        const absicht = vi.fn().mockImplementation((_: string, daten: {eintraege: {hinweise: string}}) => Promise.resolve({
+            zeiten: {uebergabe: 42},
+            uebergeben: {ort: leereEintraege().ort, anrufer: leereEintraege().anrufer, betroffener: '', abfrage: {pfad: []}, hinweise: daten.eintraege.hinweise},
+        }))
+        const {eintraege, jetztSenden} = useGespraech(ref(anruf('a')), absicht)
+        eintraege.value.hinweise = 'vorher'
+        eintraege.value.uebergabe = true
+        await nextTick()
+        await jetztSenden()
+        await nextTick()
+        expect(eintraege.value.zeiten.uebergabe).toBe(42)
+        expect(eintraege.value.uebergeben?.hinweise).toBe('vorher')
+        vi.advanceTimersByTime(SENDEN_NACH_MS * 3)
+        await nextTick()
+        expect(absicht).toHaveBeenCalledTimes(1)
+        eintraege.value.hinweise = 'nachher'
+        await nextTick()
+        vi.advanceTimersByTime(SENDEN_NACH_MS)
+        expect(absicht).toHaveBeenCalledTimes(2)
+    })
 })

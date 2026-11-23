@@ -37,8 +37,9 @@ describe('abfrageweg', () => {
     })
 
     it('bietet zur Aufwertung nur dringendere Codes des Protokolls', () => {
-        expect(hoehereEndpunkte(graph, 'rd.17', 'RD4C.').map(e => e.code)).toEqual(['17E01', '17D01'])
-        expect(hoehereEndpunkte(graph, 'rd.17', 'RD1NC REA.')).toEqual([])
+        expect(hoehereEndpunkte(graph, 'rd.17', 'RD4C.', '17A01').map(e => e.code)).toEqual(['17E01', '17D01'])
+        expect(hoehereEndpunkte(graph, 'rd.17', 'RD1NC REA.', '17E01')).toEqual([])
+        expect(hoehereEndpunkte(graph, 'rd.17', 'RD2NC.', '17D01').map(e => e.code)).toEqual(['17E01'])
     })
 
     it('unterscheidet Antworten mit gleichem Label', () => {
@@ -46,5 +47,18 @@ describe('abfrageweg', () => {
         expect(zusatz.get('schwer')).toBe('17D01 · RD2NC.')
         expect(zusatz.get('schwer-2')).toBe('17E01 · RD1NC REA.')
         expect(zusatz.has('leicht')).toBe(false)
+    })
+})
+
+describe('hoehereEndpunkte beim Kreislaufstillstand', () => {
+    it('bietet bei einem Stillstand gleich dringende Codes an, sonst nicht', () => {
+        const stillstand = testgraph()
+        stillstand.endpunkte = [
+            ...stillstand.endpunkte,
+            {knoten: 'x', code: '17E02', kategorie: 'RD1NC REA.', anlass: 'Ursache', stichwort: '', fachrichtung: 'rd', protokoll: 'rd.17', pfad: []},
+            {knoten: 'y', code: '17D02', kategorie: 'RD2NC.', anlass: 'gleich', stichwort: '', fachrichtung: 'rd', protokoll: 'rd.17', pfad: []},
+        ]
+        expect(hoehereEndpunkte(stillstand, 'rd.17', 'RD1NC REA.', '17E01').map(e => e.code)).toEqual(['17E02'])
+        expect(hoehereEndpunkte(stillstand, 'rd.17', 'RD2NC.', '17D01').map(e => e.code)).toEqual(['17E01', '17E02'])
     })
 })

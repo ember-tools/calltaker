@@ -132,7 +132,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
           "ziel": "rd.23.23b00a",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "absichtlich",
@@ -162,7 +165,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
           "ziel": "rd.23.23b00m",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-3",
@@ -186,7 +192,10 @@
           "id": "bei-patientenalter-unbekannt-3",
           "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
           "ziel": "rd.23.23b00o",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "versehentlich-freizeitdrogenkonsum",
@@ -491,7 +500,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23b01i",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
@@ -539,7 +551,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
           "ziel": "rd.23.23b01v",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-3",
@@ -563,7 +578,10 @@
           "id": "bei-patientenalter-unbekannt-waffen",
           "label": "bei Patientenalter unbekannt, Waffen",
           "ziel": "rd.23.23b01w",
-          "aussage": "bei Patientenalter unbekannt, Waffen"
+          "aussage": "bei Patientenalter unbekannt, Waffen",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -592,7 +610,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23c01-3",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -616,7 +637,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
           "ziel": "rd.23.23c01a-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "carfentanil",
@@ -676,7 +700,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23c01i-3",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-4",
@@ -700,7 +727,10 @@
           "id": "bei-patientenalter-unbekannt-3",
           "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
           "ziel": "rd.23.23c01m-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-5",
@@ -724,7 +754,10 @@
           "id": "bei-patientenalter-unbekannt-4",
           "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
           "ziel": "rd.23.23c01o-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
@@ -772,7 +805,10 @@
           "id": "bei-patientenalter-unbekannt-5",
           "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
           "ziel": "rd.23.23c01v-3",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-7",
@@ -796,7 +832,10 @@
           "id": "bei-patientenalter-unbekannt-waffen",
           "label": "bei Patientenalter unbekannt, Waffen",
           "ziel": "rd.23.23c01w-3",
-          "aussage": "bei Patientenalter unbekannt, Waffen"
+          "aussage": "bei Patientenalter unbekannt, Waffen",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -825,7 +864,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23c02-3",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -849,7 +891,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
           "ziel": "rd.23.23c02a-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "carfentanil",
@@ -909,7 +954,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23c02i-3",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-4",
@@ -933,7 +981,10 @@
           "id": "bei-patientenalter-unbekannt-3",
           "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
           "ziel": "rd.23.23c02m-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-5",
@@ -957,7 +1008,10 @@
           "id": "bei-patientenalter-unbekannt-4",
           "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
           "ziel": "rd.23.23c02o-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
@@ -1005,7 +1059,10 @@
           "id": "bei-patientenalter-unbekannt-5",
           "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
           "ziel": "rd.23.23c02v-3",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-7",
@@ -1029,7 +1086,10 @@
           "id": "bei-patientenalter-unbekannt-waffen",
           "label": "bei Patientenalter unbekannt, Waffen",
           "ziel": "rd.23.23c02w-3",
-          "aussage": "bei Patientenalter unbekannt, Waffen"
+          "aussage": "bei Patientenalter unbekannt, Waffen",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -1105,7 +1165,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23c04-3",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -1129,7 +1192,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
           "ziel": "rd.23.23c04a-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-3",
@@ -1153,7 +1219,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23c04i-3",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-4",
@@ -1177,7 +1246,10 @@
           "id": "bei-patientenalter-unbekannt-3",
           "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
           "ziel": "rd.23.23c04m-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-5",
@@ -1201,7 +1273,10 @@
           "id": "bei-patientenalter-unbekannt-4",
           "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
           "ziel": "rd.23.23c04o-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-6",
@@ -1225,7 +1300,10 @@
           "id": "bei-patientenalter-unbekannt-5",
           "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
           "ziel": "rd.23.23c04v-3",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-7",
@@ -1249,7 +1327,10 @@
           "id": "bei-patientenalter-unbekannt-waffen",
           "label": "bei Patientenalter unbekannt, Waffen",
           "ziel": "rd.23.23c04w-3",
-          "aussage": "bei Patientenalter unbekannt, Waffen"
+          "aussage": "bei Patientenalter unbekannt, Waffen",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -1278,7 +1359,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23c05-3",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -1302,7 +1386,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
           "ziel": "rd.23.23c05a-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "carfentanil",
@@ -1362,7 +1449,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23c05i-3",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-4",
@@ -1386,7 +1476,10 @@
           "id": "bei-patientenalter-unbekannt-3",
           "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
           "ziel": "rd.23.23c05m-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-5",
@@ -1410,7 +1503,10 @@
           "id": "bei-patientenalter-unbekannt-4",
           "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
           "ziel": "rd.23.23c05o-3",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
@@ -1458,7 +1554,10 @@
           "id": "bei-patientenalter-unbekannt-5",
           "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
           "ziel": "rd.23.23c05v-3",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-7",
@@ -1482,7 +1581,10 @@
           "id": "bei-patientenalter-unbekannt-waffen",
           "label": "bei Patientenalter unbekannt, Waffen",
           "ziel": "rd.23.23c05w-3",
-          "aussage": "bei Patientenalter unbekannt, Waffen"
+          "aussage": "bei Patientenalter unbekannt, Waffen",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -1575,7 +1677,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23c08",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -1599,7 +1704,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23c08-3",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-3",
@@ -1623,7 +1731,10 @@
           "id": "bei-patientenalter-unbekannt-3",
           "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
           "ziel": "rd.23.23c08a",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "carfentanil",
@@ -1683,7 +1794,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23c08i",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-5",
@@ -1707,7 +1821,10 @@
           "id": "bei-patientenalter-unbekannt-4",
           "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
           "ziel": "rd.23.23c08m",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-6",
@@ -1731,7 +1848,10 @@
           "id": "bei-patientenalter-unbekannt-5",
           "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
           "ziel": "rd.23.23c08o",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
@@ -1779,7 +1899,10 @@
           "id": "bei-patientenalter-unbekannt-6",
           "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
           "ziel": "rd.23.23c08v",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-8",
@@ -1803,7 +1926,10 @@
           "id": "bei-patientenalter-unbekannt-waffen",
           "label": "bei Patientenalter unbekannt, Waffen",
           "ziel": "rd.23.23c08w",
-          "aussage": "bei Patientenalter unbekannt, Waffen"
+          "aussage": "bei Patientenalter unbekannt, Waffen",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -1832,7 +1958,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23c09",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "carfentanil",
@@ -1880,7 +2009,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
           "ziel": "rd.23.23c09v",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -1891,7 +2023,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23d01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -1915,7 +2050,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
           "ziel": "rd.23.23d01a",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -1939,7 +2077,10 @@
           "id": "bei-patientenalter-unbekannt-carfentanil",
           "label": "bei Patientenalter unbekannt, Carfentanil",
           "ziel": "rd.23.23d01c",
-          "aussage": "bei Patientenalter unbekannt, Carfentanil"
+          "aussage": "bei Patientenalter unbekannt, Carfentanil",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -1963,7 +2104,10 @@
           "id": "bei-patientenalter-unbekannt-3",
           "label": "bei Patientenalter unbekannt, Versehentlich und Fentanyl",
           "ziel": "rd.23.23d01d",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich und Fentanyl"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich und Fentanyl",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-4",
@@ -1987,7 +2131,10 @@
           "id": "bei-patientenalter-unbekannt-4",
           "label": "bei Patientenalter unbekannt, Versehentlich und Carfentanil",
           "ziel": "rd.23.23d01e",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich und Carfentanil"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich und Carfentanil",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-5",
@@ -2011,7 +2158,10 @@
           "id": "bei-patientenalter-unbekannt-fentanyl",
           "label": "bei Patientenalter unbekannt, Fentanyl",
           "ziel": "rd.23.23d01f",
-          "aussage": "bei Patientenalter unbekannt, Fentanyl"
+          "aussage": "bei Patientenalter unbekannt, Fentanyl",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-fentanyl",
@@ -2035,7 +2185,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich und Fentanyl",
           "ziel": "rd.23.23d01g",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich und Fentanyl"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich und Fentanyl",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-6",
@@ -2059,7 +2212,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich-2",
           "label": "bei Patientenalter unbekannt, Absichtlich und Carfentanil",
           "ziel": "rd.23.23d01h",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich und Carfentanil"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich und Carfentanil",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-7",
@@ -2083,7 +2239,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich-3",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23d01i",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-8",
@@ -2107,7 +2266,10 @@
           "id": "bei-patientenalter-unbekannt-5",
           "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
           "ziel": "rd.23.23d01m",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-9",
@@ -2131,7 +2293,10 @@
           "id": "bei-patientenalter-unbekannt-6",
           "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
           "ziel": "rd.23.23d01o",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-10",
@@ -2751,7 +2916,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.23.23e01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -2775,7 +2943,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
           "ziel": "rd.23.23e01a",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -2799,7 +2970,10 @@
           "id": "bei-patientenalter-unbekannt-carfentanil",
           "label": "bei Patientenalter unbekannt, Carfentanil",
           "ziel": "rd.23.23e01c",
-          "aussage": "bei Patientenalter unbekannt, Carfentanil"
+          "aussage": "bei Patientenalter unbekannt, Carfentanil",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -2823,7 +2997,10 @@
           "id": "bei-patientenalter-unbekannt-3",
           "label": "bei Patientenalter unbekannt, Versehentlich und Fentanyl",
           "ziel": "rd.23.23e01d",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich und Fentanyl"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich und Fentanyl",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-4",
@@ -2847,7 +3024,10 @@
           "id": "bei-patientenalter-unbekannt-4",
           "label": "bei Patientenalter unbekannt, Versehentlich und Carfentanil",
           "ziel": "rd.23.23e01e",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich und Carfentanil"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich und Carfentanil",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-5",
@@ -2871,7 +3051,10 @@
           "id": "bei-patientenalter-unbekannt-fentanyl",
           "label": "bei Patientenalter unbekannt, Fentanyl",
           "ziel": "rd.23.23e01f",
-          "aussage": "bei Patientenalter unbekannt, Fentanyl"
+          "aussage": "bei Patientenalter unbekannt, Fentanyl",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-fentanyl",
@@ -2895,7 +3078,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich und Fentanyl",
           "ziel": "rd.23.23e01g",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich und Fentanyl"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich und Fentanyl",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-6",
@@ -2919,7 +3105,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich-2",
           "label": "bei Patientenalter unbekannt, Absichtlich und Carfentanil",
           "ziel": "rd.23.23e01h",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich und Carfentanil"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich und Carfentanil",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-7",
@@ -2943,7 +3132,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich-3",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23e01i",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-8",
@@ -2967,7 +3159,10 @@
           "id": "bei-patientenalter-unbekannt-5",
           "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
           "ziel": "rd.23.23e01m",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-9",
@@ -2991,7 +3186,10 @@
           "id": "bei-patientenalter-unbekannt-6",
           "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
           "ziel": "rd.23.23e01o",
-          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-10",
@@ -3044,7 +3242,10 @@
           "id": "bei-patientenalter-unbekannt-absichtlich",
           "label": "bei Patientenalter unbekannt, Absichtlich",
           "ziel": "rd.23.23o01i",
-          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+          "aussage": "bei Patientenalter unbekannt, Absichtlich",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "versehentlich-medikationsfehler",

@@ -66,7 +66,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.06.06c01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -100,7 +103,10 @@
           "id": "bei-patientenalter-unbekannt-asthma",
           "label": "bei Patientenalter unbekannt, Asthma",
           "ziel": "rd.06.06c01a",
-          "aussage": "bei Patientenalter unbekannt, Asthma"
+          "aussage": "bei Patientenalter unbekannt, Asthma",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-asthma",
@@ -262,7 +268,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.06.06d02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -296,7 +305,10 @@
           "id": "bei-patientenalter-unbekannt-asthma",
           "label": "bei Patientenalter unbekannt, Asthma",
           "ziel": "rd.06.06d02a",
-          "aussage": "bei Patientenalter unbekannt, Asthma"
+          "aussage": "bei Patientenalter unbekannt, Asthma",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-asthma",
@@ -330,7 +342,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Lungenemphysem (COPD)",
           "ziel": "rd.06.06d02e",
-          "aussage": "bei Patientenalter unbekannt, Lungenemphysem (COPD)"
+          "aussage": "bei Patientenalter unbekannt, Lungenemphysem (COPD)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -364,7 +379,10 @@
           "id": "bei-patientenalter-unbekannt-andere",
           "label": "bei Patientenalter unbekannt, Andere Lungenprobleme",
           "ziel": "rd.06.06d02o",
-          "aussage": "bei Patientenalter unbekannt, Andere Lungenprobleme"
+          "aussage": "bei Patientenalter unbekannt, Andere Lungenprobleme",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-andere",

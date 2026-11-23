@@ -55,7 +55,12 @@
           "id": "frauen-1250-mit-bauchschmerzen",
           "label": "Frauen 12–50 mit Bauchschmerzen",
           "ziel": "rd.31.31c03",
-          "aussage": "Frauen 12–50 mit Bauchschmerzen"
+          "aussage": "Frauen 12–50 mit Bauchschmerzen",
+          "geschlecht": "w",
+          "alter": {
+            "min": 12,
+            "max": 50
+          }
         },
         {
           "id": "bewusstlosigkeit-agonale-ineffektive",
@@ -179,7 +184,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.31.31d01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -241,7 +249,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.31.31e01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",

@@ -1,0 +1,243 @@
+{
+  "anleitungen": [
+    {
+      "id": "rd.zugang",
+      "titel": "Zugang ermöglichen",
+      "saetze": [
+        "Öffnen Sie die Haustür und die Wohnungstür.",
+        "Schalten Sie das Licht im Treppenhaus an.",
+        "Sperren Sie Haustiere weg."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "fachrichtung": "rd",
+          "nicht": [
+            {
+              "knoten": "rd.atmung",
+              "antwort": "atmet-nicht"
+            }
+          ]
+        }
+      ],
+      "quelle": "ERC-Leitlinien 2021, Erste Hilfe und Basismaßnahmen für Laien"
+    },
+    {
+      "id": "rd.vorbereiten",
+      "titel": "Bei der Person bleiben, Telefon frei",
+      "saetze": [
+        "Lassen Sie die Person nicht allein.",
+        "Legen Sie die Medikamente und Arztbriefe bereit.",
+        "Halten Sie das Telefon frei, falls wir zurückrufen."
+      ],
+      "pflicht": false,
+      "wenn": [
+        {
+          "fachrichtung": "rd",
+          "nicht": [
+            {
+              "knoten": "rd.atmung",
+              "antwort": "atmet-nicht"
+            }
+          ]
+        }
+      ],
+      "quelle": "ERC-Leitlinien 2021, Erste Hilfe und Basismaßnahmen für Laien"
+    },
+    {
+      "id": "rd.seitenlage",
+      "titel": "Stabile Seitenlage, Atmung beobachten",
+      "saetze": [
+        "Bringen Sie die Person in die stabile Seitenlage.",
+        "Beobachten Sie die Atmung weiter.",
+        "Hört die Person auf, normal zu atmen, rufen Sie sofort wieder an."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "rd.reaktion",
+              "antwort": "reagiert-nicht"
+            },
+            {
+              "knoten": "rd.atmung",
+              "antwort": "ja-normale-atmung"
+            }
+          ]
+        }
+      ],
+      "quelle": "ERC-Leitlinien 2021, Erste Hilfe und Basismaßnahmen für Laien"
+    },
+    {
+      "id": "rd.blutung",
+      "titel": "Fest auf die Wunde drücken",
+      "saetze": [
+        "Drücken Sie mit einem sauberen Tuch fest auf die Wunde.",
+        "Steckt ein Gegenstand in der Wunde, ziehen Sie ihn nicht heraus und drücken Sie um ihn herum.",
+        "Lassen Sie nicht los, bis der Rettungsdienst übernimmt."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "rd.21.k0",
+              "antwort": "moeglicherweise-gefaehrliche-blutung"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.21.k0",
+              "antwort": "starke-blutung"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.21.k0",
+              "antwort": "gefaehrliche-blutung"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.21.k0",
+              "antwort": "blutung-aus-dialyseshunt"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.21.k0",
+              "antwort": "blutungen-aus-krampfadern"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.21.k0",
+              "antwort": "bluter"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.21.k0",
+              "antwort": "blutverduennende-medikamente"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.27.k0",
+              "antwort": "starke-blutung"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.27.k0",
+              "antwort": "zentrale-wunden"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.27.k0",
+              "antwort": "mehrere-wunden"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.27.k0",
+              "antwort": "einzelne-bekannte-periphere-wunde"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.27.k0",
+              "antwort": "einzelne-aeltere-6-h-zentrale-wunde"
+            }
+          ]
+        }
+      ],
+      "quelle": "ERC-Leitlinien 2021, Erste Hilfe und Basismaßnahmen für Laien"
+    },
+    {
+      "id": "rd.krampf",
+      "titel": "Vor Verletzungen schützen",
+      "saetze": [
+        "Räumen Sie Gegenstände weg, an denen sich die Person verletzen kann.",
+        "Halten Sie die Person nicht fest und stecken Sie ihr nichts in den Mund.",
+        "Nach dem Anfall bringen Sie sie in die stabile Seitenlage."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "rd.12"
+          ]
+        }
+      ],
+      "quelle": "ERC-Leitlinien 2021, Erste Hilfe und Basismaßnahmen für Laien"
+    },
+    {
+      "id": "rd.husten",
+      "titel": "Kräftig husten lassen",
+      "saetze": [
+        "Fordern Sie die Person auf, kräftig zu husten.",
+        "Klopfen Sie nicht auf den Rücken, solange sie wirksam hustet."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "rd.11.k0",
+              "antwort": "abnorme-atmung-teilweise"
+            }
+          ]
+        }
+      ],
+      "quelle": "ERC-Leitlinien 2021, Erste Hilfe und Basismaßnahmen für Laien"
+    },
+    {
+      "id": "rd.fremdkoerper",
+      "titel": "Rückenschläge und Oberbauchkompressionen",
+      "saetze": [
+        "Beugen Sie die Person nach vorn und schlagen Sie ihr bis zu fünfmal kräftig zwischen die Schulterblätter.",
+        "Hilft das nicht, stellen Sie sich hinter sie, legen eine Faust zwischen Nabel und Brustbeinspitze und ziehen bis zu fünfmal kräftig nach innen oben.",
+        "Wechseln Sie zwischen fünf Schlägen und fünf Kompressionen, bis der Fremdkörper heraus ist.",
+        "Bei einem Säugling: bäuchlings auf Ihren Unterarm, Kopf tiefer, fünf Schläge zwischen die Schulterblätter, dann fünf Stöße mit zwei Fingern auf die Brustmitte, keine Kompressionen am Bauch.",
+        "Wird die Person bewusstlos, legen Sie sie hin und beginnen mit der Reanimation, ich leite Sie an."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "rd.11.k0",
+              "antwort": "komplette-atemwegsverlegung-ineffektive"
+            }
+          ]
+        }
+      ],
+      "quelle": "ERC-Leitlinien 2021, Erste Hilfe und Basismaßnahmen für Laien"
+    }
+  ]
+}

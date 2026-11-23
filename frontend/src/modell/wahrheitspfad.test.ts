@@ -26,3 +26,11 @@ describe('vergleichePfad', () => {
         expect(vergleich.abseits).toEqual({knoten: 'fw.grund', frage: 'Warum?', soll: 'Brand'})
     })
 })
+
+describe('vergleichePfad mit automatischen Schritten', () => {
+    it('merkt, welche Schritte die Abfrage selbst genommen hat', () => {
+        const vergleich = vergleichePfad(graph, wahrheit, [...BIS_SITUATION.slice(0, 3), {...BIS_SITUATION[3]!, automatisch: true}])
+        expect(vergleich.schritte[3]).toMatchObject({stand: 'gleich', automatisch: true})
+        expect(vergleich.schritte[2]!.automatisch).toBeUndefined()
+    })
+})

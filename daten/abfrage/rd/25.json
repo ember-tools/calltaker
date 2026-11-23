@@ -162,7 +162,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25a00",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "beides-gewalttaetig-und-bewaffnet",
@@ -294,7 +297,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25a01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-17-jahre",
@@ -318,7 +324,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
           "ziel": "rd.25.25a01b-2",
-          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)"
+          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -333,7 +342,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25a01v-2",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -348,7 +360,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25a01w-2",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -378,7 +393,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25a02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-17-jahre",
@@ -402,7 +420,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
           "ziel": "rd.25.25a02b-2",
-          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)"
+          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -417,7 +438,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25a02v-2",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -432,7 +456,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25a02w-2",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -462,7 +489,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25a03",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-17-jahre",
@@ -486,7 +516,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
           "ziel": "rd.25.25a03b-2",
-          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)"
+          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -501,7 +534,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25a03v-2",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -516,7 +552,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25a03w-2",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -545,7 +584,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25b01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -569,7 +611,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
           "ziel": "rd.25.25b01b",
-          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)"
+          "aussage": "bei Patientenalter unbekannt, Beides (gewalttätig und bewaffnet)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-3",
@@ -593,7 +638,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25b01v",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-4",
@@ -617,7 +665,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25b01w",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -637,7 +688,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25b02-2",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-beides",
@@ -652,7 +706,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
           "ziel": "rd.25.25b02b-2",
-          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -667,7 +724,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25b02v-2",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -682,7 +742,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25b02w-2",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -702,7 +765,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25b03",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -726,7 +792,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
           "ziel": "rd.25.25b03b",
-          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-beides",
@@ -756,7 +825,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25b03v",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -780,7 +852,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25b03w",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -877,7 +952,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25b06",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-17-jahre",
@@ -901,7 +979,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
           "ziel": "rd.25.25b06b-2",
-          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -916,7 +997,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25b06v-2",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -931,7 +1015,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25b06w-2",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -1229,7 +1316,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25o01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-17-jahre",
@@ -1253,7 +1343,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
           "ziel": "rd.25.25o01b-2",
-          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -1268,7 +1361,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25o01v-2",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -1283,7 +1379,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25o01w-2",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -1313,7 +1412,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.25.25o02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-17-jahre",
@@ -1337,7 +1439,10 @@
           "id": "bei-patientenalter-unbekannt-beides",
           "label": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
           "ziel": "rd.25.25o02b-2",
-          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)"
+          "aussage": "bei Patientenalter unbekannt, Beides (bewaffnet und gewalttätig)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -1352,7 +1457,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Gewalttätig",
           "ziel": "rd.25.25o02v-2",
-          "aussage": "bei Patientenalter unbekannt, Gewalttätig"
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-3",
@@ -1367,7 +1475,10 @@
           "id": "bei-patientenalter-unbekannt-bewaffnet",
           "label": "bei Patientenalter unbekannt, Bewaffnet",
           "ziel": "rd.25.25o02w-2",
-          "aussage": "bei Patientenalter unbekannt, Bewaffnet"
+          "aussage": "bei Patientenalter unbekannt, Bewaffnet",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },

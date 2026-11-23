@@ -1,5 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
+from pydantic import ValidationError
 
 from eintraege import (
     Abfrageeintrag,
@@ -90,3 +91,82 @@ def test_eintraege_brauchen_ein_laufendes_gespraech(gespraech):
     vorbei = eintragen(client, t, anruf_id, {})
     assert vorbei.status_code == 409
     assert vorbei.json()["detail"] == "Es läuft kein Gespräch."
+
+
+def test_gegebene_anleitungen_werden_einmal_gestempelt():
+    erste = uebernehmen(
+        Eintraege(), Eintraege.model_validate({"anleitung": {"gegeben": ["a"]}}), 10.0
+    )
+    zweite = uebernehmen(
+        erste, Eintraege.model_validate({"anleitung": {"gegeben": ["a", "b"]}}), 20.0
+    )
+    dritte = uebernehmen(zweite, Eintraege(), 30.0)
+    assert zweite.zeiten.anleitungen == {"a": 10.0, "b": 20.0}
+    assert dritte.zeiten.anleitungen == {"a": 10.0, "b": 20.0}
+    assert Eintraege.model_validate({"zeiten": {"anleitungen": {"x": 1}}}).zeiten.anleitungen == {
+        "x": 1
+    }
+
+
+def test_anleitungen_sind_begrenzt():
+    with pytest.raises(ValidationError):
+        Eintraege.model_validate({"anleitung": {"gegeben": ["x" * 201]}})
+    with pytest.raises(ValidationError):
+        Eintraege.model_validate({"anleitung": {"gegeben": [str(i) for i in range(101)]}})
+    bisher = Eintraege()
+    for runde in range(3):
+        neu = Eintraege.model_validate(
+            {"anleitung": {"gegeben": [f"{runde}-{i}" for i in range(100)]}}
+        )
+        bisher = uebernehmen(bisher, neu, float(runde))
+    assert len(bisher.zeiten.anleitungen) == 100
+
+
+def test_der_erste_start_der_reanimation_wird_gestempelt():
+    laeuft = Eintraege.model_validate({"reanimation": {"laeuft": True, "takt": 110}})
+    erste = uebernehmen(Eintraege(), laeuft, 10.0)
+    angehalten = uebernehmen(erste, Eintraege(), 20.0)
+    wieder = uebernehmen(angehalten, laeuft, 30.0)
+    assert (erste.zeiten.reanimation, wieder.zeiten.reanimation) == (10.0, 10.0)
+    for takt in (99, 121):
+        with pytest.raises(ValidationError):
+            Eintraege.model_validate({"reanimation": {"takt": takt}})
+
+
+def test_die_uebergabe_wird_einmal_gestempelt_und_ihr_stand_bleibt():
+    vorher = Eintraege.model_validate({"hinweise": "erst", "betroffener": "A"})
+    uebergabe = Eintraege.model_validate(
+        {"hinweise": "erst", "betroffener": "A", "uebergabe": True}
+    )
+    erste = uebernehmen(uebernehmen(Eintraege(), vorher, 5.0), uebergabe, 10.0)
+    gefaelscht = Eintraege.model_validate(
+        {
+            "hinweise": "nachgetragen",
+            "uebergabe": False,
+            "uebergeben": {
+                "ort": {},
+                "anrufer": {},
+                "betroffener": "X",
+                "abfrage": {},
+                "hinweise": "x",
+            },
+        }
+    )
+    spaeter = uebernehmen(erste, gefaelscht, 20.0)
+    assert erste.zeiten.uebergabe == 10.0
+    assert spaeter.zeiten.uebergabe == 10.0
+    assert spaeter.uebergabe is True
+    assert spaeter.uebergeben.hinweise == "erst"
+    assert spaeter.uebergeben.betroffener == "A"
+    assert spaeter.hinweise == "nachgetragen"
+    assert uebernehmen(Eintraege(), vorher, 5.0).uebergeben is None
+
+
+def test_die_antwort_bringt_zeiten_und_uebergabestand(gespraech):
+    client, _, t, anruf_id = gespraech
+    vorher = eintragen(client, t, anruf_id, {"hinweise": "Tür offen"}).json()["ergebnis"]
+    assert vorher["uebergeben"] is None
+    assert "uebergabe" not in vorher["zeiten"]
+    danach = eintragen(client, t, anruf_id, {"hinweise": "Tür offen", "uebergabe": True}).json()
+    assert danach["ergebnis"]["zeiten"]["uebergabe"] > 0
+    assert danach["ergebnis"]["uebergeben"]["hinweise"] == "Tür offen"

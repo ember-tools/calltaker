@@ -49,7 +49,12 @@
           "id": "frauen-mit-ohnmacht-oder-beinahe",
           "label": "Frauen mit Ohnmacht oder Beinahe-Ohnmacht 12–50",
           "ziel": "rd.01.01c04",
-          "aussage": "Frauen mit Ohnmacht oder Beinahe-Ohnmacht 12–50"
+          "aussage": "Frauen mit Ohnmacht oder Beinahe-Ohnmacht 12–50",
+          "geschlecht": "w",
+          "alter": {
+            "min": 12,
+            "max": 50
+          }
         },
         {
           "id": "maenner-mit-schmerzen-oberhalb-des",
@@ -58,7 +63,8 @@
           "aussage": "Männer mit Schmerzen oberhalb des Bauchnabels ≥ 35",
           "alter": {
             "min": 35
-          }
+          },
+          "geschlecht": "m"
         },
         {
           "id": "frauen-mit-schmerzen-oberhalb-des",
@@ -67,13 +73,19 @@
           "aussage": "Frauen mit Schmerzen oberhalb des Bauchnabels ≥ 45",
           "alter": {
             "min": 45
-          }
+          },
+          "geschlecht": "w"
         },
         {
           "id": "frauen-mit-schmerzen-in-der",
           "label": "Frauen mit Schmerzen in der Schulterspitze 12-50",
           "ziel": "rd.01.01c07",
-          "aussage": "Frauen mit Schmerzen in der Schulterspitze 12-50"
+          "aussage": "Frauen mit Schmerzen in der Schulterspitze 12-50",
+          "geschlecht": "w",
+          "alter": {
+            "min": 12,
+            "max": 50
+          }
         },
         {
           "id": "bewusstseinstruebung",
@@ -123,7 +135,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.01.01a02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -152,7 +167,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.01.01c00",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "ohne-weitere-angabe",

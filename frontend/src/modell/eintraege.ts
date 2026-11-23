@@ -1,10 +1,13 @@
 import type {Adresse} from './szenario'
+import type {Warntafel} from './gefahrstoffe'
 
 /** One step of the trainee's path: the node, and the answer chosen or the value typed. */
 export interface Schritteintrag {
     knoten: string
     antwort?: string
     wert?: string
+    /** A step the questioning took itself, because earlier answers decided it. */
+    automatisch?: boolean
 }
 
 /** An endpoint chosen outside the path: by upgrading, or as the interim result on cancelling. */
@@ -32,12 +35,22 @@ export interface Eintraege {
         klingel: string
         anfahrt: string
         gefahren: string
+        /** The orange plate as read out by the caller. */
+        gefahrgut?: Warntafel
     }
     anrufer: {name: string, rufnummerBestaetigt: boolean, rueckrufnummer: string}
     betroffener: string
     abfrage: Abfrageeintrag
     hinweise: string
-    zeiten: {adresse?: number, code?: number}
+    /** The instructions to the caller ticked as given, by id. */
+    anleitung: {gegeben: string[]}
+    /** The CPR guidance: whether its beat runs, and at how many beats a minute. */
+    reanimation: {laeuft: boolean, takt: number}
+    /** Whether the call was handed over to dispatch; once set, the server keeps it. */
+    uebergabe?: boolean
+    /** The entries as they were handed over, kept by the server. */
+    uebergeben?: Pick<Eintraege, 'ort' | 'anrufer' | 'betroffener' | 'abfrage' | 'hinweise'>
+    zeiten: {adresse?: number, code?: number, anleitungen?: Record<string, number>, reanimation?: number, uebergabe?: number}
 }
 
 /**
@@ -52,6 +65,31 @@ export function leereEintraege(): Eintraege {
         betroffener: '',
         abfrage: {pfad: []},
         hinweise: '',
+        anleitung: {gegeben: []},
+        reanimation: {laeuft: false, takt: 100},
         zeiten: {},
     }
+}
+
+/**
+ * Entries as they are judged, never sent: `abgewaehlt` names the instructions the trainer counted
+ * as not given although the trainee ticked them.
+ */
+export type BewerteteEintraege = Eintraege & {anleitung: {abgewaehlt?: string[]}}
+
+/**
+ * Entries with the trainer's corrections of which instructions were given applied.
+ *
+ * @param eintraege the trainee's entries
+ * @param korrektur the trainer's corrections, by instruction id
+ * @returns the entries as they count
+ */
+export function mitKorrektur(eintraege: Eintraege, korrektur: Record<string, boolean> = {}): BewerteteEintraege {
+    const gegeben = new Set(eintraege.anleitung.gegeben)
+    const abgewaehlt: string[] = []
+    for (const [id, an] of Object.entries(korrektur)) {
+        if (an) gegeben.add(id)
+        else if (gegeben.delete(id)) abgewaehlt.push(id)
+    }
+    return {...eintraege, anleitung: {gegeben: [...gegeben], abgewaehlt}}
 }

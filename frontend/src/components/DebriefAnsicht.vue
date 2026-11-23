@@ -6,15 +6,16 @@ import type {Abfragegraph} from '../modell/abfragegraph'
 import type {Szenario} from '../modell/szenario'
 import type {AnrufSicht} from '../modell/uebung'
 import {debrief} from '../phasen/debrief'
+import type {Zielzeiten} from '../phasen/zeitbewertung'
 import type {Bewertung, Urteil} from '../phasen/typen'
 import PfadVergleichListe from './PfadVergleichListe.vue'
 
-const props = defineProps<{graph: Abfragegraph, anruf: AnrufSicht, szenario: Szenario}>()
+const props = defineProps<{graph: Abfragegraph, anruf: AnrufSicht, szenario: Szenario, ziele?: Zielzeiten}>()
 
 const {t} = useI18n()
-const ergebnis = computed(() => debrief(props.graph, props.anruf, props.szenario))
+const ergebnis = computed(() => debrief(props.graph, props.anruf, props.szenario, props.ziele))
 const ziel = computed(() => props.graph.knoten[props.szenario.ziel.knoten])
-const ZEITEN = ['annahme', 'adresse', 'code', 'gespraech'] as const
+const ZEITEN = ['annahme', 'adresse', 'code', 'reanimation', 'uebergabe', 'gespraech'] as const
 const URTEIL: Record<Urteil, string> = {richtig: 'bg-green-50 text-ok', teilweise: 'bg-amber-50 text-warnung', falsch: 'bg-red-50 text-fehler', offen: 'bg-red-50 text-fehler', hinweis: ''}
 
 /**
@@ -47,15 +48,15 @@ function urteil(bewertung: Bewertung): string {
             <h1 class="m-0 text-xl font-bold">{{ szenario.titel }}</h1>
             <p class="m-0"><b class="font-mono">{{ szenario.ziel.code }}</b> · {{ ziel?.kategorie }} · {{ ziel?.anlass }}</p>
         </header>
-        <section v-for="phase in ergebnis.phasen" :key="phase.phase.id" :aria-label="t(phase.phase.titel)" class="flex flex-col gap-1">
+        <section v-for="phase in ergebnis.phasen.filter(p => p.bewertungen.length)" :key="phase.phase.id" :aria-label="t(phase.phase.titel)" class="flex flex-col gap-1">
             <h2 class="m-0 text-base font-bold">{{ t(phase.phase.titel) }}</h2>
             <table class="w-full border-collapse text-sm">
                 <thead>
                     <tr class="text-left text-xs text-gedaempft"><th class="py-1 pr-2">{{ t('debrief.feld') }}</th><th class="py-1 pr-2">{{ t('debrief.erfasst') }}</th><th class="py-1 pr-2">{{ t('debrief.wahrheit') }}</th><th class="py-1">{{ t('debrief.ergebnis') }}</th></tr>
                 </thead>
                 <tbody>
-                    <tr v-for="bewertung in phase.bewertungen" :key="bewertung.feld" :class="URTEIL[bewertung.urteil]">
-                        <th scope="row" class="py-1 pr-2 text-left font-semibold">{{ t(bewertung.feld) }}</th>
+                    <tr v-for="(bewertung, stelle) in phase.bewertungen" :key="stelle" :class="URTEIL[bewertung.urteil]">
+                        <th scope="row" class="py-1 pr-2 text-left font-semibold">{{ bewertung.beschriftung ?? t(bewertung.feld) }}</th>
                         <td class="py-1 pr-2">{{ erfasst(bewertung) }}</td>
                         <td class="py-1 pr-2">{{ bewertung.abstand !== undefined ? t('debrief.punktSoll') : bewertung.soll }}</td>
                         <td class="py-1 font-semibold">{{ urteil(bewertung) }}</td>

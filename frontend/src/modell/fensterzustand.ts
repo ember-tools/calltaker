@@ -10,6 +10,8 @@ export interface Fensterzustand {
     grund: string
     /** The text typed into the search over many answers. */
     kachelsuche: string
+    /** Whether the answers that do not fit the situation are shown too. */
+    weitere: boolean
 }
 
 /**
@@ -18,5 +20,5 @@ export interface Fensterzustand {
  * @returns the empty state
  */
 export function leererFensterzustand(): Fensterzustand {
-    return {wert: '', trotzdem: false, offen: null, grund: '', kachelsuche: ''}
+    return {wert: '', trotzdem: false, offen: null, grund: '', kachelsuche: '', weitere: false}
 }

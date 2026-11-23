@@ -111,7 +111,7 @@ export default [
     },
     {
         name: 'calltaker/globals',
-        languageOptions: {globals: {...globals.browser}},
+        languageOptions: {globals: {...globals.browser, __COMMIT__: 'readonly', __GEBAUT__: 'readonly'}},
     },
     {
         name: 'calltaker/node',

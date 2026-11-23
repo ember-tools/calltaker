@@ -1,16 +1,20 @@
 <script setup lang="ts">
+import {faCheck, faShareFromSquare} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, nextTick, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import {dauer, useUhr} from '../composables/useUhr'
 import {aktuellerKnoten, endergebnis, gewaehltesProtokoll, hoehereEndpunkte, unterscheidungen, zwischenergebnis, type Ergebnis} from '../modell/abfrageweg'
 import type {Abfrageeintrag} from '../modell/eintraege'
+import {einenZurueck, mitAutomatik, ordnen} from '../modell/eingrenzung'
 import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
+import type {Uebergabebereitschaft} from '../modell/uebergabe'
 import SnaKacheln from './SnaKacheln.vue'
 
-const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, gesperrt: boolean, seit?: number}>()
+const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, gesperrt: boolean, seit?: number, uebergabe?: Uebergabebereitschaft, uebergebenUm?: number}>()
 const abfrage = defineModel<Abfrageeintrag>({required: true})
-const emit = defineEmits<{sofort: []}>()
+const emit = defineEmits<{sofort: [], uebergeben: []}>()
 
 const {t} = useI18n()
 const jetzt = useUhr()
@@ -33,22 +37,26 @@ const grund = feld('grund')
 const wert = feld('wert')
 const trotzdem = feld('trotzdem')
 const kachelsuche = feld('kachelsuche')
+const weitereOffen = feld('weitere')
 
 const stand = computed(() => aktuellerKnoten(props.graph, abfrage.value.pfad))
 const knoten = computed(() => props.graph.knoten[stand.value.knoten])
+const ordnung = computed(() => ordnen(props.graph, stand.value.knoten, abfrage.value.pfad))
 const ende = computed(() => endergebnis(props.graph, abfrage.value))
 const zwischen = computed(() => zwischenergebnis(props.graph, abfrage.value, props.schwerste))
 const protokoll = computed(() => gewaehltesProtokoll(props.graph, abfrage.value.pfad))
 const fachrichtung = computed(() => abfrage.value.pfad.find(s => s.knoten === props.graph.meta.wurzel)?.antwort)
 const zusaetze = computed(() => (knoten.value ? unterscheidungen(knoten.value, props.schwerste, props.graph) : new Map<string, string>()))
-const hoeher = computed(() => (protokoll.value?.protokoll ? hoehereEndpunkte(props.graph, protokoll.value.protokoll, zwischen.value?.kategorie ?? '') : []))
+const hoeher = computed(() => (protokoll.value?.protokoll ? hoehereEndpunkte(props.graph, protokoll.value.protokoll, zwischen.value?.kategorie ?? '', zwischen.value?.code) : []))
 const pfadText = computed(() => abfrage.value.pfad.map(schritt => {
     const antwort = props.graph.knoten[schritt.knoten]?.antworten?.find(a => a.id === schritt.antwort)
-    return `${props.graph.knoten[schritt.knoten]?.frage ?? schritt.knoten}: ${antwort?.label ?? schritt.wert ?? ''}`
+    const text = `${props.graph.knoten[schritt.knoten]?.frage ?? schritt.knoten}: ${antwort?.label ?? schritt.wert ?? ''}`
+    return schritt.automatisch ? `${text} ${t('sna.automatisch')}` : text
 }))
 
 function schritt(eintrag: {antwort?: string, wert?: string}): void {
-    abfrage.value = {...abfrage.value, pfad: [...abfrage.value.pfad.slice(0, stand.value.passend), {knoten: stand.value.knoten, ...eintrag}]}
+    const pfad = [...abfrage.value.pfad.slice(0, stand.value.passend), {knoten: stand.value.knoten, ...eintrag}]
+    abfrage.value = {...abfrage.value, pfad: mitAutomatik(props.graph, pfad)}
     wert.value = ''
     offen.value = null
     emit('sofort')
@@ -56,7 +64,7 @@ function schritt(eintrag: {antwort?: string, wert?: string}): void {
 
 function zurueck(): void {
     const {aufwertung, abbruch, pfad} = abfrage.value
-    abfrage.value = aufwertung || abbruch ? {pfad} : {pfad: pfad.slice(0, -1)}
+    abfrage.value = aufwertung || abbruch ? {pfad} : {pfad: einenZurueck(pfad)}
     emit('sofort')
 }
 
@@ -102,6 +110,11 @@ defineExpose({fokussieren})
             <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" :disabled="abfrage.pfad.length === 0 && !abfrage.aufwertung && !abfrage.abbruch" @click="zurueck">{{ t('sna.zurueck') }}</button>
             <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" @click="umschalten('hilfe')">{{ t('sna.ersteHilfe') }}</button>
             <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" :disabled="!protokoll || Boolean(ende && !abfrage.abbruch && !abfrage.aufwertung && hoeher.length === 0)" @click="umschalten('aufwertung')">{{ t('sna.aufwertung') }}</button>
+            <button v-if="uebergabe" type="button" :disabled="uebergabe === 'gesperrt' || uebergabe === 'erfolgt'" :class="['h-10 rounded border px-3 text-sm font-semibold', uebergabe === 'faellig' ? 'border-amber-500 bg-amber-300 text-amber-950' : uebergabe === 'erfolgt' ? 'border-green-600 bg-green-50 text-ok' : 'border-slate-400 bg-white']" @click="emit('uebergeben')">
+                <FontAwesomeIcon :icon="uebergabe === 'erfolgt' ? faCheck : faShareFromSquare" class="mr-1.5" aria-hidden="true"/>
+                {{ uebergabe === 'erfolgt' ? t('uebergabe.erfolgt', {dauer: dauer((uebergebenUm ?? jetzt) - (seit ?? uebergebenUm ?? jetzt))}) : t('uebergabe.knopf') }}
+            </button>
+            <span v-if="uebergabe === 'faellig'" role="status" class="text-sm font-semibold text-amber-900">{{ t('uebergabe.jetzt') }}</span>
             <button type="button" class="ml-auto h-10 rounded border border-red-300 bg-white px-3 text-sm font-semibold text-red-800" :disabled="Boolean(ende) || !zwischen" @click="umschalten('abbruch')">{{ t('sna.abbruch') }}</button>
         </div>
         <div class="flex flex-wrap items-center gap-3 border-b border-amber-200 bg-amber-50 px-4 py-2 text-sm">
@@ -139,7 +152,7 @@ defineExpose({fokussieren})
             </template>
             <template v-else-if="knoten">
                 <h3 class="m-0 text-2xl font-semibold text-sky-950">{{ knoten.frage }} <i v-if="knoten.hinweis" class="font-medium text-akzent">[{{ knoten.hinweis }}]</i></h3>
-                <SnaKacheln v-if="knoten.antworten" v-model:suche="kachelsuche" data-antworten :antworten="knoten.antworten" :zusaetze="zusaetze" :farbe="fachrichtung" @waehlen="antwort => schritt({antwort})"/>
+                <SnaKacheln v-if="knoten.antworten" v-model:suche="kachelsuche" v-model:weitere-offen="weitereOffen" data-antworten :antworten="ordnung.vorn" :weitere="ordnung.weitere" :zusaetze="zusaetze" :farbe="fachrichtung" @waehlen="antwort => schritt({antwort})"/>
                 <form v-else-if="knoten.eingabe" class="flex flex-wrap items-end gap-2" @submit.prevent="schritt({wert: wert.trim()})">
                     <label class="flex flex-1 flex-col gap-1 text-xs font-semibold text-gedaempft">
                         {{ knoten.eingabe.platzhalter }}

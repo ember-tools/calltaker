@@ -8,7 +8,7 @@ describe('EngineParameterForm', () => {
     it('schickt geänderte Parameter und zeigt Ablehnungen', async () => {
         const absicht = vi.fn().mockRejectedValue(new Error('Die Geduld braucht min ≤ max.'))
         const ansicht = mount(EngineParameterForm, {props: {parameter: zustandMit([]).engine.parameter, absicht}, global: {plugins: [i18n]}})
-        const feld = ansicht.findAll('input[type=number]').at(-1)!
+        const feld = ansicht.findAll('input[type=number]').at(6)!
         await feld.setValue(30)
         await feld.trigger('change')
         expect(absicht.mock.calls[0]![1]).toMatchObject({parameter: {geduldMax: 30}})

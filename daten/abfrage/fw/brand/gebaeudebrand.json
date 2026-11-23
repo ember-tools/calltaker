@@ -498,6 +498,36 @@
       "kategorie": "BRAND 6",
       "anlass": "Dachstuhlbrand in voller Ausdehnung - Betroffenheit unbekannt",
       "stichwort": "BRAND 6"
+    },
+    "fw.brand.gebaeudebrand.fluchtweg": {
+      "frage": "Ist der Anrufer im Gebäude, und ist der Weg nach draußen rauchfrei?",
+      "hinweis": "Danach richtet sich, ob der Anrufer das Gebäude verlässt oder in der Wohnung bleibt.",
+      "antworten": [
+        {
+          "id": "nicht-im-gebaeude",
+          "label": "Anrufer ist nicht im Gebäude",
+          "aussage": "Der Anrufer ist nicht im Gebäude.",
+          "ziel": "fw.brand.gebaeudebrand.k0"
+        },
+        {
+          "id": "weg-frei",
+          "label": "Im Gebäude, Weg nach draußen rauchfrei",
+          "aussage": "Der Weg nach draußen ist rauchfrei.",
+          "ziel": "fw.brand.gebaeudebrand.k0"
+        },
+        {
+          "id": "weg-verraucht",
+          "label": "Im Gebäude, Treppenhaus verraucht oder Weg abgeschnitten",
+          "aussage": "Der Weg nach draußen ist verraucht oder abgeschnitten.",
+          "ziel": "fw.brand.gebaeudebrand.k0"
+        },
+        {
+          "id": "unklar",
+          "label": "Unklar",
+          "aussage": "Ob der Weg frei ist, ist unklar.",
+          "ziel": "fw.brand.gebaeudebrand.k0"
+        }
+      ]
     }
   }
 }

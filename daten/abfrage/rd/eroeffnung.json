@@ -116,9 +116,11 @@
         },
         {
           "id": "atmet-nicht",
-          "label": "Atmet nicht",
-          "ziel": "rd.hauptbeschwerde",
-          "aussage": "Die Person atmet nicht."
+          "label": "Atmet nicht / Schnappatmung",
+          "ziel": "rd.09.todeszeichen",
+          "aussage": "Die Person atmet nicht oder nur mit Schnappatmung.",
+          "protokoll": "rd.09",
+          "nr": "09"
         },
         {
           "id": "unbekannt",
@@ -126,7 +128,8 @@
           "ziel": "rd.hauptbeschwerde",
           "aussage": "Ob die Person normal atmet, ist nicht bekannt."
         }
-      ]
+      ],
+      "hinweis": "Schnappatmung zählt als „atmet nicht“. Atmet die Person nicht, folgt nur noch die Frage nach sicheren Todeszeichen, dann die Reanimation."
     },
     "rd.hauptbeschwerde": {
       "frage": "Welche Hauptbeschwerde liegt vor?",

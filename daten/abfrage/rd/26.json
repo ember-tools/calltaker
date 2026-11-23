@@ -312,7 +312,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.26.26a00",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -336,7 +339,10 @@
           "id": "bei-patientenalter-unbekannt-verdacht",
           "label": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung",
           "ziel": "rd.26.26a00c",
-          "aussage": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung"
+          "aussage": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-3",
@@ -360,7 +366,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.26.26b00",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-4",
@@ -384,7 +393,10 @@
           "id": "bei-patientenalter-unbekannt-verdacht-2",
           "label": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung",
           "ziel": "rd.26.26b00c",
-          "aussage": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung"
+          "aussage": "bei Patientenalter unbekannt, Verdacht auf Coronavirus-Erkrankung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "ohne-weitere-angabe",
@@ -497,7 +509,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.26.26b01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },

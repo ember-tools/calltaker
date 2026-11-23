@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faArrowDown, faArrowUp} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {useI18n} from 'vue-i18n'
 import type {Befund, Szenario} from '../modell/szenario'
 
@@ -30,8 +32,8 @@ function markierung(liste: Befund[] | undefined): string {
                 <span v-if="szenario.herkunft === 'generiert'" class="ml-2 text-xs text-gedaempft">{{ t('pool.generiert') }}</span>
                 <span v-if="markierung(befunde[szenario.id])" :class="['ml-2 text-xs font-semibold', befunde[szenario.id]!.some(b => b.art === 'fehler') ? 'text-fehler' : 'text-warnung']">{{ markierung(befunde[szenario.id]) }}</span>
             </span>
-            <button type="button" class="px-1" :disabled="stelle === 0" :aria-label="t('pool.hoch', {titel: szenario.titel})" @click="emit('verschieben', szenario.id, stelle - 1)">↑</button>
-            <button type="button" class="px-1" :disabled="stelle === pool.length - 1" :aria-label="t('pool.runter', {titel: szenario.titel})" @click="emit('verschieben', szenario.id, stelle + 1)">↓</button>
+            <button type="button" class="px-1" :disabled="stelle === 0" :aria-label="t('pool.hoch', {titel: szenario.titel})" @click="emit('verschieben', szenario.id, stelle - 1)"><FontAwesomeIcon :icon="faArrowUp" aria-hidden="true"/></button>
+            <button type="button" class="px-1" :disabled="stelle === pool.length - 1" :aria-label="t('pool.runter', {titel: szenario.titel})" @click="emit('verschieben', szenario.id, stelle + 1)"><FontAwesomeIcon :icon="faArrowDown" aria-hidden="true"/></button>
             <button type="button" class="text-xs underline disabled:opacity-40" :disabled="gesperrt" @click="emit('bearbeiten', szenario.id)">{{ t('pool.bearbeiten') }}</button>
             <button type="button" class="text-xs text-fehler underline" @click="emit('entfernen', szenario.id)">{{ t('pool.entfernen') }}</button>
         </li>

@@ -154,7 +154,7 @@ def test_ein_gueltiger_kleiner_graph(tmp_path):
                 },
                 "ende": ENDE,
             },
-            "Protokoll start.p doppelt",
+            "führt hier aber nicht in seine eigenen Knoten",
         ),
         (
             {
@@ -283,3 +283,94 @@ def test_die_uebernahme_ersetzt_einen_vorhandenen_graphen(tmp_path):
     uebernahme_schreiben(tmp_path, {"meta.json": META, "alt.json": {"start": ENDE}})
     uebernahme_schreiben(tmp_path, {"meta.json": META, "neu.json": {"start": ENDE}})
     assert sorted(p.name for p in tmp_path.iterdir()) == ["meta.json", "neu.json"]
+
+
+def test_ein_protokoll_darf_an_zwei_stellen_in_seine_knoten_fuehren(tmp_path):
+    knoten = {
+        "start": {
+            "frage": "?",
+            "antworten": [
+                {"id": "a", "label": "1", "ziel": "a.p.k0", "protokoll": "a.p"},
+                {"id": "b", "label": "2", "ziel": "a.p.k1", "protokoll": "a.p"},
+            ],
+        },
+        "a.p.k0": auswahl("a.p.k1"),
+        "a.p.k1": auswahl("a.p.ende"),
+        "a.p.ende": ENDE,
+    }
+    graph = laden(schreiben(tmp_path, a=knoten))
+    [endpunkt] = graph.endpunkte
+    assert [s.antwort for s in endpunkt.pfad][0] == "b"
+
+
+def test_wer_nicht_atmet_kommt_gleich_zum_kreislaufstillstand(graph):
+    atmung = graph.antwort("rd.atmung", "atmet-nicht")
+    assert (atmung.protokoll, atmung.ziel) == ("rd.09", "rd.09.todeszeichen")
+    todeszeichen = graph.knoten["rd.09.todeszeichen"]
+    assert todeszeichen.antworten[0].ziel == "rd.09.k6"
+    stillstand = [e for e in graph.endpunkte if e.code == "09E01"]
+    assert {e.pfad[0].knoten for e in stillstand} == {"rd.atmung"}
+    assert {e.kategorie for e in stillstand} == {"RD1NC REA.", "RD1NC NNAD."}
+    tot = [e for e in graph.endpunkte if e.code.startswith("09B01")]
+    assert {e.pfad[0].knoten for e in tot} == {"rd.atmung"}
+    assert graph.tiefen["rd.atmung"] < graph.tiefen["rd.hauptbeschwerde"]
+
+
+def test_eingrenzung_und_person_stehen_im_graphen(graph):
+    assert graph.meta.person.alter_knoten == "rd.alter"
+    assert graph.meta.eingrenzung[0].zuerst[0] == "rd.31"
+    assert sum(1 for k in graph.knoten.values() for a in k.antworten or [] if a.geschlecht) == 5
+
+
+@pytest.mark.parametrize(
+    ("eingrenzung", "meldung"),
+    [
+        ({"knoten": "start", "wenn": [], "zuerst": ["fehlt"]}, "fehlt gibt es dort nicht"),
+        ({"knoten": "ende", "wenn": [], "zuerst": []}, "ende ist keine Auswahl"),
+        (
+            {"knoten": "start", "wenn": [{"knoten": "start", "antworten": ["x"]}], "zuerst": []},
+            "Bedingung x",
+        ),
+    ],
+)
+def test_falsche_eingrenzungen_werden_genannt(tmp_path, eingrenzung, meldung):
+    with pytest.raises(ValueError, match=meldung):
+        laden(
+            schreiben(
+                tmp_path,
+                {**META, "eingrenzung": [eingrenzung]},
+                a={"start": auswahl("ende"), "ende": ENDE},
+            )
+        )
+
+
+@pytest.mark.parametrize(
+    ("person", "meldung"),
+    [
+        ({"alter_knoten": "fehlt", "geschlecht_knoten": "start", "geschlecht": {}}, "Knoten fehlt"),
+        (
+            {"alter_knoten": "start", "geschlecht_knoten": "start", "geschlecht": {"x": "w"}},
+            "Antwort x",
+        ),
+    ],
+)
+def test_falsche_personenknoten_werden_genannt(tmp_path, person, meldung):
+    with pytest.raises(ValueError, match=meldung):
+        laden(
+            schreiben(
+                tmp_path, {**META, "person": person}, a={"start": auswahl("ende"), "ende": ENDE}
+            )
+        )
+
+
+def test_abwesende_antworten_werden_geprueft(tmp_path):
+    meta = {**META, "abwesend": [{"knoten": "start", "antwort": "x"}]}
+    with pytest.raises(ValueError, match="Abwesend: Antwort x an start"):
+        laden(schreiben(tmp_path, meta, a={"start": auswahl("ende"), "ende": ENDE}))
+
+
+def test_der_graph_kennt_die_antworten_ohne_anrufer_vor_ort(graph):
+    assert {g.antwort for g in graph.meta.abwesend} == {
+        "nein-nicht-mehr-vor-ort",
+        "nein-war-nicht-vor-ort",
+    }

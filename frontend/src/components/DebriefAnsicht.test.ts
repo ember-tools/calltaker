@@ -26,3 +26,12 @@ describe('DebriefAnsicht', () => {
         expect(ansicht.text()).not.toContain('Beim Beenden fehlte')
     })
 })
+
+describe('DebriefAnsicht ohne fällige Hinweise', () => {
+    it('zeigt keine leere Phase Anleitung', () => {
+        const anruf = anrufMit('a', 'beendet')
+        const ansicht = mount(DebriefAnsicht, {props: {graph: GRAPH, anruf: sichtVon(anruf), szenario: anruf.szenario}, global: {plugins: [i18n]}})
+        expect(ansicht.find('section[aria-label="Anleitung"]').exists()).toBe(false)
+        expect(ansicht.find('section[aria-label="Standort"]').exists()).toBe(true)
+    })
+})

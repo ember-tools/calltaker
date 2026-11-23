@@ -20,7 +20,7 @@
         {
           "id": "gebaeudebrand",
           "label": "Gebäudebrand",
-          "ziel": "fw.brand.gebaeudebrand.k0",
+          "ziel": "fw.brand.gebaeudebrand.fluchtweg",
           "protokoll": "fw.brand.gebaeudebrand",
           "nr": "69"
         },

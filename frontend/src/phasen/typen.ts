@@ -1,5 +1,5 @@
 import type {Abfragegraph} from '../modell/abfragegraph'
-import type {Eintraege} from '../modell/eintraege'
+import type {BewerteteEintraege, Eintraege} from '../modell/eintraege'
 import type {Szenario} from '../modell/szenario'
 import type {AnrufSicht} from '../modell/uebung'
 
@@ -22,7 +22,7 @@ export interface Phase {
     /** The catalogue keys of what is still missing; empty once the phase is complete. */
     fehlend(eintraege: Eintraege, kontext: Kontext): string[]
     /** How the entries compare with the truth; for the trainer and the debrief, never the trainee's live view. */
-    bewerten(eintraege: Eintraege, szenario: Szenario, graph: Abfragegraph): Bewertung[]
+    bewerten(eintraege: BewerteteEintraege, szenario: Szenario, graph: Abfragegraph): Bewertung[]
 }
 
 /**
@@ -42,6 +42,12 @@ export interface Bewertung {
     abstand?: number
     /** For a code: how close it comes to the true one. */
     stufe?: Codestufe
+    /** A label of its own, where the catalogue key of `feld` names a whole kind, such as an instruction. */
+    beschriftung?: string
+    /** For an instruction to the caller: its id, so the trainer can correct whether it was given. */
+    anleitung?: string
+    /** For an instruction to the caller: whether it counts as given. */
+    gegeben?: boolean
 }
 
 /**

@@ -124,3 +124,14 @@ describe('bewerten nach Aufwertung und Abbruch', () => {
         expect(bewerten(eintraege, szenario, graph).flatMap(p => p.bewertungen).map(b => b.feld)).not.toContain('bewertung.codeVorAufwertung')
     })
 })
+
+describe('codestufe bei Kreislaufstillstand', () => {
+    it('zählt 09E01 als exakt, wenn die Wahrheit ein Stillstand eines anderen Protokolls ist', () => {
+        const rea = testgraph()
+        rea.knoten['p.e3'] = {...rea.knoten['p.e3']!, kategorie: 'RD1NC REA.'}
+        const stillstand = {knoten: 'x', code: '09E01', kategorie: 'RD1NC REA.', stichwort: ''}
+        expect(codestufe(rea, {knoten: 'p.e3', code: '17E01'}, stillstand)).toBe('exakt')
+        expect(codestufe(rea, {knoten: 'p.e2', code: '17D01'}, stillstand)).not.toBe('exakt')
+        expect(codestufe(rea, {knoten: 'p.e3', code: '09E04'}, {...stillstand, code: '09E03'})).not.toBe('exakt')
+    })
+})

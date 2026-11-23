@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faCopy} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {useI18n} from 'vue-i18n'
 
 const props = defineProps<{titel: string, code: string}>()
@@ -15,10 +17,7 @@ async function kopieren(): Promise<void> {
         <span class="text-xs text-slate-300">{{ titel }}</span>
         <span class="font-mono">{{ code }}</span>
         <button type="button" class="rounded bg-slate-700 px-2 py-0.5 text-xs" :aria-label="t('codes.kopieren', {code})" @click="kopieren">
-            <svg class="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <rect x="9" y="9" width="12" height="12" rx="2"/>
-                <path d="M5 15V5a2 2 0 0 1 2-2h10"/>
-            </svg>
+            <FontAwesomeIcon :icon="faCopy" aria-hidden="true"/>
         </button>
     </span>
 </template>

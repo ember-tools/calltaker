@@ -350,7 +350,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.12.12d01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -374,7 +377,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Krampfleiden",
           "ziel": "rd.12.12d01e",
-          "aussage": "bei Patientenalter unbekannt, Krampfleiden"
+          "aussage": "bei Patientenalter unbekannt, Krampfleiden",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -420,7 +426,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.12.12d03",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -444,7 +453,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Krampfleiden",
           "ziel": "rd.12.12d03e",
-          "aussage": "bei Patientenalter unbekannt, Krampfleiden"
+          "aussage": "bei Patientenalter unbekannt, Krampfleiden",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",

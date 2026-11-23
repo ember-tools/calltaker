@@ -1,0 +1,723 @@
+{
+  "anleitungen": [
+    {
+      "id": "th.verkehrsunfall",
+      "titel": "Unfallstelle absichern",
+      "saetze": [
+        "Schalten Sie die Warnblinkanlage ein und ziehen Sie eine Warnweste an.",
+        "Stellen Sie das Warndreieck auf, wenn das gefahrlos geht.",
+        "Schalten Sie bei den Unfallfahrzeugen den Motor aus.",
+        "Bewegen Sie Verletzte nicht, außer sie sind in unmittelbarer Gefahr."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.th.verkehrsunfall",
+            "rd.29"
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.eingeklemmt",
+      "titel": "Nicht selbst befreien, beruhigen",
+      "saetze": [
+        "Versuchen Sie nicht, die Person selbst zu befreien.",
+        "Sprechen Sie mit der Person und beruhigen Sie sie.",
+        "Bleiben Sie bei ihr, wenn das für Sie gefahrlos ist."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.th.verkehrsunfall.k0",
+              "antwort": "person-eingeklemmt"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.th.person-in-notlage.k0",
+              "antwort": "verschuettet-oder-eingeschlossen"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "eingeklemmt-eingeschlossen-hand"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "eingeklemmt-eingeschlossen-nicht"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "eingeklemmt-eingeschlossen-hand-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "eingeklemmt-eingeschlossen-finger-zehe-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "graben-einsturz-eingeklemmt"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "einsturz-gebaeude-bauwerk-eingeklemmt"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "raumenge-gebaeude-bauwerk-eingeklemmt"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "unzugaengliches-gelaende-eingeklemmt"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "lawine-erdrutsch-schlammlawine"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "erdfall-eingeklemmt-eingeschlossen"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "eingeklemmt-eingeschlossen-verschuettet"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "eingeklemmt-eingeschlossen-verschuettet-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "grabeneinsturz-eingeklemmt"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "einsturz-gebaeude-bauwerk-eingeklemmt-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "raumenge-gebaeude-bauwerk-eingeklemmt-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "unzugaengliches-gelaende-eingeklemmt-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "lawine-erdrutsch-schlammlawine-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "erdfall-eingeklemmt-eingeschlossen-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.22.k0",
+              "antwort": "unter-fahrzeug-wohnwagen-kein-vu"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.wasser.person",
+      "titel": "Nicht ins Wasser, etwas Schwimmendes zuwerfen",
+      "saetze": [
+        "Gehen Sie nicht selbst ins Wasser.",
+        "Werfen Sie der Person etwas zu, das schwimmt, einen Rettungsring, einen Ball, eine leere Flasche.",
+        "Behalten Sie die Person im Blick und merken Sie sich die Stelle, an der Sie sie zuletzt gesehen haben."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.th.person-in-notlage.k0",
+              "antwort": "im-wasser"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.14.k0",
+              "antwort": "unter-wasser-spezialkraefte-erforderlich"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.14.k0",
+              "antwort": "unter-wasser-keine-spezialkraefte"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.14.k0",
+              "antwort": "gestrandet-spezialkraefte-erforderlich"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.14.k0",
+              "antwort": "ansprechbar-und-normale-atmung"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.14.k0",
+              "antwort": "unbekannter-zustand-andere-codes-nicht"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.hoehe",
+      "titel": "Nicht selbst hinauf oder hinab",
+      "saetze": [
+        "Steigen Sie nicht selbst hinauf oder hinab.",
+        "Halten Sie Abstand von Kanten und Öffnungen.",
+        "Sprechen Sie mit der Person und behalten Sie sie im Blick."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.th.person-in-notlage.k0",
+              "antwort": "in-der-hoehe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.th.person-in-notlage.k0",
+              "antwort": "in-der-tiefe"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.tier",
+      "titel": "Tier nicht anfassen, Abstand halten",
+      "saetze": [
+        "Fassen Sie das Tier nicht an, auch wenn es verletzt ist.",
+        "Halten Sie Abstand, verletzte und verängstigte Tiere beißen und kratzen.",
+        "Behalten Sie das Tier im Blick, damit Sie der Feuerwehr sagen können, wo es ist."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.th.tierrettung"
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.aufzug",
+      "titel": "Ruhe bewahren im Aufzug",
+      "saetze": [
+        "Bewahren Sie Ruhe, im Aufzug sind Sie sicher.",
+        "Drücken Sie den Notrufknopf im Aufzug.",
+        "Versuchen Sie nicht, die Tür aufzuhebeln oder hinauszuklettern."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.th.aufzugnotbefreiung"
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.wasser",
+      "titel": "Strom aus, Keller meiden",
+      "saetze": [
+        "Schalten Sie den Strom im betroffenen Bereich ab, wenn Sie dabei nicht ins Wasser müssen.",
+        "Betreten Sie keine überfluteten Keller."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.th.wasserschaden"
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.sturm",
+      "titel": "Abstand von Bäumen und Gebäuden",
+      "saetze": [
+        "Halten Sie Abstand von Bäumen, Gerüsten und Gebäuden, von denen etwas herabfallen kann.",
+        "Fassen Sie herabhängende Leitungen nicht an.",
+        "Halten Sie andere fern."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.th.sturmschaden",
+            "fw.th.einsturz-gebaeudeschaden"
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.gefahrstoffe",
+      "titel": "Abstand mit dem Wind im Rücken",
+      "saetze": [
+        "Gehen Sie vom Stoff weg, mit dem Wind im Rücken.",
+        "Fassen Sie nichts an und atmen Sie nichts ein.",
+        "Rauchen Sie nicht und machen Sie kein Feuer.",
+        "Halten Sie andere fern.",
+        "Bei einer Warntafel: Lesen Sie mir die Zahlen vor, oben und unten, aber gehen Sie dafür nicht näher heran."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.th.gefahrstoffe"
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.th.verkehrsunfall.k3",
+              "antwort": "gefahrgut"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.fahrzeugbrand.k2",
+              "antwort": "gefahrgut"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "fw.brand.industrie-und-gewerbebrand.k0",
+              "antwort": "anlage-mit-gefahrstoffen"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "biologisch-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "chemikalie-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "biologisch-3"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "chemikalie-3"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k2",
+              "antwort": "biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k2",
+              "antwort": "chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k3",
+              "antwort": "biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k3",
+              "antwort": "chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k4",
+              "antwort": "biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k4",
+              "antwort": "chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k5",
+              "antwort": "biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k5",
+              "antwort": "chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k6",
+              "antwort": "biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k6",
+              "antwort": "chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k7",
+              "antwort": "biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k7",
+              "antwort": "chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k8",
+              "antwort": "bei-patientenanzahl-2-biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k8",
+              "antwort": "bei-patientenanzahl-3-biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k8",
+              "antwort": "bei-patientenanzahl-2-chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k8",
+              "antwort": "bei-patientenanzahl-3-chemikalie"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k9",
+              "antwort": "biologisch"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k9",
+              "antwort": "chemikalie"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)"
+    },
+    {
+      "id": "th.gas",
+      "titel": "Keine Schalter, Fenster auf, raus",
+      "saetze": [
+        "Betätigen Sie keine Lichtschalter, Klingeln oder Elektrogeräte.",
+        "Öffnen Sie Fenster, wenn das im Vorbeigehen geht.",
+        "Verlassen Sie das Gebäude und warnen Sie die Nachbarn durch Klopfen, nicht durch Klingeln."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "antworten": [
+            {
+              "knoten": "fw.th.gefahrstoffe.k0",
+              "antwort": "gas"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "gasgeruch-daempfe-2"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k1",
+              "antwort": "gasgeruch-daempfe-3"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k2",
+              "antwort": "gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k3",
+              "antwort": "gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k4",
+              "antwort": "gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k5",
+              "antwort": "gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k6",
+              "antwort": "gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k7",
+              "antwort": "gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k8",
+              "antwort": "bei-patientenanzahl-2-gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k8",
+              "antwort": "bei-patientenanzahl-3-gasgeruch-daempfe"
+            }
+          ]
+        },
+        {
+          "antworten": [
+            {
+              "knoten": "rd.08.k9",
+              "antwort": "gasgeruch-daempfe"
+            }
+          ]
+        }
+      ],
+      "quelle": "Allgemeine Verhaltensregeln der Feuerwehren für Laien (Brandschutzaufklärung)",
+      "schliesstAus": [
+        "th.gefahrstoffe"
+      ]
+    }
+  ]
+}

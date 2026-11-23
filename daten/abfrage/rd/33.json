@@ -107,7 +107,10 @@
           "id": "bei-patientenalter-unbekannt-palliative",
           "label": "bei Patientenalter unbekannt, Palliative Medizin",
           "ziel": "rd.33.33a02p",
-          "aussage": "bei Patientenalter unbekannt, Palliative Medizin"
+          "aussage": "bei Patientenalter unbekannt, Palliative Medizin",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -131,7 +134,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt, Versorgungseinrichtung",
           "ziel": "rd.33.33a02t",
-          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung"
+          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -160,7 +166,10 @@
           "id": "bei-patientenalter-unbekannt-palliative",
           "label": "bei Patientenalter unbekannt, Palliative Medizin",
           "ziel": "rd.33.33a03p",
-          "aussage": "bei Patientenalter unbekannt, Palliative Medizin"
+          "aussage": "bei Patientenalter unbekannt, Palliative Medizin",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -184,7 +193,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt, Versorgungseinrichtung",
           "ziel": "rd.33.33a03t",
-          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung"
+          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -361,7 +373,10 @@
           "id": "bei-patientenalter-unbekannt-palliative",
           "label": "bei Patientenalter unbekannt, Palliative Medizin",
           "ziel": "rd.33.33d01p",
-          "aussage": "bei Patientenalter unbekannt, Palliative Medizin"
+          "aussage": "bei Patientenalter unbekannt, Palliative Medizin",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -385,7 +400,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt, Versorgungseinrichtung",
           "ziel": "rd.33.33d01t",
-          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung"
+          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",

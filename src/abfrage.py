@@ -14,7 +14,7 @@ import re
 from collections import deque
 from functools import cached_property
 from pathlib import Path
-from typing import Self
+from typing import Literal, Self
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
@@ -28,10 +28,11 @@ class Modell(BaseModel):
 
 
 class Altersgrenze(Modell):
-    """The ages an answer applies to, both bounds inclusive."""
+    """The ages an answer applies to, both bounds inclusive, or that it is for an unknown age."""
 
     min: int | None = None
     max: int | None = None
+    unbekannt: bool = False
 
 
 class Antwort(Modell):
@@ -45,6 +46,7 @@ class Antwort(Modell):
     farbe: str | None = None
     protokoll: str | None = None
     alter: Altersgrenze | None = None
+    geschlecht: Literal["w", "m"] | None = None
 
 
 class Leer(Modell):
@@ -115,14 +117,58 @@ class Knoten(Modell):
         return [self.ziel] if self.ziel else []
 
 
+class Bedingung(Modell):
+    """An answer given earlier: one of these answers at that node."""
+
+    knoten: str
+    antworten: list[str]
+
+
+class Eingrenzung(Modell):
+    """Which answers of a node come first when earlier answers point that way.
+
+    `zuerst` names answers of the node by their id or by the protocol they choose, in the order
+    they are shown; the rest of the node's answers follow under "weitere".
+    """
+
+    knoten: str
+    wenn: list[Bedingung]
+    zuerst: list[str]
+
+
+class Person(Modell):
+    """Where the opening asks for the person, so later answers that depend on it can follow.
+
+    `geschlecht` maps the answers of `geschlecht_knoten` to "w" and "m".
+    """
+
+    alter_knoten: str
+    geschlecht_knoten: str
+    geschlecht: dict[str, Literal["w", "m"]]
+
+
+class Gegebene(Modell):
+    """An answer given at a node."""
+
+    knoten: str
+    antwort: str
+
+
 class Meta(Modell):
-    """The graph's version, its root and the notes on its data."""
+    """The graph's version, its root, the notes on its data, and how the questioning narrows.
+
+    `abwesend` names the answers that mean the caller is not on site, so instructions that need
+    someone there are not due.
+    """
 
     version: int
     wurzel: str
     quelle: str
     hinweise: dict[str, str] = Field(default_factory=dict)
     notfallkategorien: dict[str, str] = Field(default_factory=dict)
+    person: Person | None = None
+    eingrenzung: list[Eingrenzung] = Field(default_factory=list)
+    abwesend: list[Gegebene] = Field(default_factory=list)
 
 
 class Schritt(Modell):
@@ -160,6 +206,11 @@ class Abfragegraph(BaseModel):
         if fehler:
             raise ValueError("\n".join(fehler))
         return self
+
+    @cached_property
+    def tiefen(self) -> dict[str, int]:
+        """Return how many steps each node lies from the root at the fewest."""
+        return tiefen(self)
 
     @cached_property
     def endpunkte(self) -> list[Endpunkt]:
@@ -237,7 +288,45 @@ def strukturfehler(graph: Abfragegraph) -> list[str]:
     fehler = [*zyklusfehler(graph), *erreichbarkeitsfehler(graph)]
     if fehler:
         return fehler
-    return weichenfolgefehler(graph)
+    return [*weichenfolgefehler(graph), *eingrenzungsfehler(graph)]
+
+
+def eingrenzungsfehler(graph: Abfragegraph) -> list[str]:
+    """Return the narrowing rules and person nodes that name nodes or answers the graph lacks."""
+    fehler = []
+    person = graph.meta.person
+    if person is not None:
+        for id_ in (person.alter_knoten, person.geschlecht_knoten):
+            if id_ not in graph.knoten:
+                fehler.append(f"Person: Knoten {id_} gibt es nicht")
+        fehler.extend(
+            f"Person: Antwort {antwort} gibt es nicht"
+            for antwort in person.geschlecht
+            if graph.antwort(person.geschlecht_knoten, antwort) is None
+        )
+    fehler.extend(
+        f"Abwesend: Antwort {gegeben.antwort} an {gegeben.knoten} gibt es nicht"
+        for gegeben in graph.meta.abwesend
+        if graph.antwort(gegeben.knoten, gegeben.antwort) is None
+    )
+    for regel in graph.meta.eingrenzung:
+        knoten = graph.knoten.get(regel.knoten)
+        if knoten is None or not knoten.antworten:
+            fehler.append(f"Eingrenzung: {regel.knoten} ist keine Auswahl")
+            continue
+        namen = {a.id for a in knoten.antworten} | {a.protokoll for a in knoten.antworten}
+        fehler.extend(
+            f"Eingrenzung {regel.knoten}: {name} gibt es dort nicht"
+            for name in regel.zuerst
+            if name not in namen
+        )
+        fehler.extend(
+            f"Eingrenzung {regel.knoten}: Bedingung {antwort} an {bedingung.knoten} gibt es nicht"
+            for bedingung in regel.wenn
+            for antwort in bedingung.antworten
+            if graph.antwort(bedingung.knoten, antwort) is None
+        )
+    return fehler
 
 
 def idfehler(graph: Abfragegraph) -> list[str]:
@@ -247,7 +336,7 @@ def idfehler(graph: Abfragegraph) -> list[str]:
         for id_ in graph.knoten
         if not ID_MUSTER.match(id_)
     ]
-    protokolle: set[str] = set()
+    wahlen: dict[str, list[tuple[str, str]]] = {}
     for id_, knoten in graph.knoten.items():
         gesehen: set[str] = set()
         for antwort in knoten.antworten or []:
@@ -256,11 +345,17 @@ def idfehler(graph: Abfragegraph) -> list[str]:
             if antwort.id in gesehen:
                 fehler.append(f"{id_}: Antwort-ID {antwort.id} doppelt")
             gesehen.add(antwort.id)
-            if antwort.protokoll in protokolle:
-                fehler.append(f"{id_}: Protokoll {antwort.protokoll} doppelt")
             if antwort.protokoll:
-                protokolle.add(antwort.protokoll)
+                wahlen.setdefault(antwort.protokoll, []).append((id_, antwort.ziel))
                 fehler.extend(protokollfehler(graph, id_, antwort.protokoll))
+    for protokoll, orte in wahlen.items():
+        if len(orte) > 1:
+            fehler.extend(
+                f"{id_}: Protokoll {protokoll} wird mehrfach gewählt, "
+                "führt hier aber nicht in seine eigenen Knoten"
+                for id_, ziel in orte
+                if not ziel.startswith(f"{protokoll}.")
+            )
     return fehler
 
 
@@ -363,17 +458,43 @@ def erreichbar_ohne(graph: Abfragegraph, ausgelassen: str) -> set[str]:
 
 
 def endpunkte(graph: Abfragegraph) -> list[Endpunkt]:
-    """Index every endpoint once per protocol, with the first path found from the protocol's choice.
+    """Index every endpoint once per protocol, with the shortest way to it from the root.
 
     Several endpoints of one protocol may share a code and differ in category or reason, the
     child's variant of a determinant for instance, so endpoints are indexed by node, not by code.
+    A protocol can be chosen in more than one place: cardiac arrest from the main complaints and,
+    straight away, from "atmet nicht" in the opening. Each endpoint keeps the path whose whole way
+    from the root is shortest, which is the one a call takes.
     """
-    gefunden: list[Endpunkt] = []
+    tiefe = graph.tiefen
+    kuerzeste: dict[tuple[str, str], Endpunkt] = {}
     for id_, knoten in graph.knoten.items():
         for antwort in knoten.antworten or []:
             if antwort.protokoll:
-                gefunden.extend(protokollendpunkte(graph, id_, antwort))
-    return gefunden
+                for gefunden in protokollendpunkte(graph, id_, antwort):
+                    schluessel = (gefunden.protokoll, gefunden.knoten)
+                    bisher = kuerzeste.get(schluessel)
+                    if bisher is None or weg(tiefe, gefunden) < weg(tiefe, bisher):
+                        kuerzeste[schluessel] = gefunden
+    return list(kuerzeste.values())
+
+
+def weg(tiefe: dict[str, int], endpunkt: Endpunkt) -> int:
+    """Return the steps from the root to an endpoint along its indexed path."""
+    return tiefe.get(endpunkt.pfad[0].knoten, len(tiefe)) + len(endpunkt.pfad)
+
+
+def tiefen(graph: Abfragegraph) -> dict[str, int]:
+    """Return each node's fewest steps from the root, walking every answer, input and switch."""
+    tiefe = {graph.meta.wurzel: 0}
+    offen = deque([graph.meta.wurzel])
+    while offen:
+        id_ = offen.popleft()
+        for ziel in graph.knoten[id_].nachfolger():
+            if ziel not in tiefe:
+                tiefe[ziel] = tiefe[id_] + 1
+                offen.append(ziel)
+    return tiefe
 
 
 def fachrichtung_von(protokoll: str) -> str:
