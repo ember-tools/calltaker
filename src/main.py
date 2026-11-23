@@ -109,7 +109,7 @@ async def ungueltige_anfrage(_: Request, fehler: RequestValidationError) -> JSON
 
 def erzeuger(adressen: Adressen, orte: Orte) -> Callable[[Erzeugung], Szenario]:
     """Return what makes up scenarios: the graph, addresses or places, and a fresh random source."""
-    quellen = Quellen(adresse=adressen.zufall, ort=orte.zufall)
+    quellen = Quellen(adresse=adressen.zufall, ort=orte.zufall, naechste=adressen.naechste)
 
     def erzeugen(erzeugung: Erzeugung) -> Szenario:
         return generieren(abfragegraph(), quellen, erzeugung, random.Random())

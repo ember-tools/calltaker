@@ -171,6 +171,7 @@ export default {
         rd: 'Notfallrettung (%)',
         brand: 'Brand (%)',
         th: 'Techn. Hilfe (%)',
+        anteilOrte: 'An Orten wie Bahnhof, Supermarkt (%)',
         kategorie: 'Nur Kategorie',
         kategorieHinweis: 'z. B. RD1 oder BRAND',
         automatisch: 'Generieren, wenn der Pool leer ist',
@@ -320,6 +321,7 @@ export default {
     ort: {
         suche: 'Straße und Hausnummer, oder ein Ort',
         ort: 'Ort',
+        aehnlich: 'ähnlich',
         orteQuelle: 'Orte: © OpenStreetMap-Mitwirkende, ODbL',
         karte: 'Karte des Einsatzorts',
         karteGross: 'Karte vergrößern',

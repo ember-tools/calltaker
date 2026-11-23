@@ -46,3 +46,38 @@ describe('AdressSuche', () => {
         expect(ansicht.emitted('ort')?.[0]).toEqual([ort])
     })
 })
+
+describe('AdressSuche mit ungefähren Treffern', () => {
+    it('zeigt ähnlich geschriebene Straßen nach den Orten und markiert sie', async () => {
+        vi.useFakeTimers()
+        vi.mocked(sucheAdressen).mockResolvedValue([
+            {beschriftung: 'Siegmarstraße 25, 12683 Biesdorf', strasse: 'Siegmarstraße', hausnummer: '25', plz: '12683', ortsteil: 'Biesdorf', bezirk: 'Marzahn-Hellersdorf', breite: 52.5, laenge: 13.5, ungefaehr: true},
+        ])
+        vi.mocked(sucheOrte).mockResolvedValue([{beschriftung: 'Siegmar-Kita (Kita), Biesdorf', name: 'Siegmar-Kita', art: 'Kita', ortsteil: 'Biesdorf', breite: 52.5, laenge: 13.5}])
+        const ansicht = mount(AdressSuche, {props: {beschriftung: 'Ort'}, global: {plugins: [i18n]}})
+        await ansicht.get('input').setValue('Siegmartstrase 25')
+        await vi.advanceTimersByTimeAsync(PAUSE_MS)
+        vi.useRealTimers()
+        const optionen = ansicht.findAll('[role=option]').map(o => o.text())
+        expect(optionen[0]).toContain('Siegmar-Kita')
+        expect(optionen[1]).toMatch(/^ähnlich\s*Siegmarstraße 25, 12683 Biesdorf$/)
+    })
+})
+
+describe('AdressSuche in der Reihenfolge der Vorschläge', () => {
+    it('bietet Türen, dann Orte, dann Straßen, dann Ähnliches an', async () => {
+        vi.useFakeTimers()
+        const adresse = (strasse: string, hausnummer: string, ungefaehr = false) => ({beschriftung: `${strasse} ${hausnummer}`.trim(), strasse, hausnummer, plz: '', ortsteil: '', bezirk: '', ungefaehr})
+        vi.mocked(sucheAdressen).mockResolvedValue([adresse('Hermannstraße', ''), adresse('Hermannplatz', '1'), adresse('Herrmannweg', '', true)])
+        vi.mocked(sucheOrte).mockResolvedValue([{beschriftung: 'Hermannplatz (Bahnhof), Neukölln', name: 'Hermannplatz', art: 'Bahnhof', ortsteil: 'Neukölln', breite: 52.48, laenge: 13.42}])
+        const ansicht = mount(AdressSuche, {props: {beschriftung: 'Ort'}, global: {plugins: [i18n]}})
+        await ansicht.get('input').setValue('Herman')
+        await vi.advanceTimersByTimeAsync(PAUSE_MS)
+        vi.useRealTimers()
+        const optionen = ansicht.findAll('[role=option]').map(o => o.text())
+        expect(optionen[0]).toBe('Hermannplatz 1')
+        expect(optionen[1]).toContain('Hermannplatz (Bahnhof)')
+        expect(optionen[2]).toBe('Hermannstraße')
+        expect(optionen[3]).toMatch(/^ähnlich/)
+    })
+})

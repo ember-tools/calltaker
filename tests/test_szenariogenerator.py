@@ -170,3 +170,32 @@ def test_die_anzahl_folgt_dem_anlass(graph, anlass, erwartet):
     kategorie = "RD_Mehrere Patienten" if anlass.startswith("Eingeklemmte") else "RD2NC."
     endpunkt = graph.endpunkte[0].model_copy(update={"anlass": anlass, "kategorie": kategorie})
     assert set(anzahl_gewichte(endpunkt)) == erwartet
+
+
+def test_ein_anteil_der_szenarien_spielt_an_orten_mit_naechster_tuer(graph):
+    gefragt = []
+
+    def ort(_, ortsteil="", arten=()):
+        gefragt.append(arten)
+        return {**PLATZ, "name": "U Hermannplatz", "art": "Bahnhof"}
+
+    quellen = Quellen(adresse=lambda *_: dict(ADRESSE), ort=ort, naechste=lambda *_: dict(ADRESSE))
+    am_platz = viele(graph, 20, Erzeugung(anteil_orte=100), quellen=quellen)
+    assert {s.ort.objekt for s in am_platz} == {"U Hermannplatz (Bahnhof)"}
+    assert {s.ort.adresse.strasse for s in am_platz} == {"Karl-Marx-Straße"}
+    assert {s.ort.koordinaten for s in am_platz} == {(52.47, 13.4)}
+    assert all(s.ort.geschoss == "" for s in am_platz)
+    assert "Supermarkt" in gefragt[0] and "Fluss" not in gefragt[0]
+    assert all(
+        s.ort.objekt == "" for s in viele(graph, 20, Erzeugung(anteil_orte=0), quellen=quellen)
+    )
+
+
+def test_ein_ort_ausserhalb_des_bezirks_wird_nicht_genommen(graph):
+    quellen = Quellen(
+        adresse=lambda *_: dict(ADRESSE),
+        ort=lambda *_: dict(PLATZ, art="Park"),
+        naechste=lambda *_: dict(ADRESSE, bezirk="Spandau"),
+    )
+    szenario = viele(graph, 1, Erzeugung(anteil_orte=100, bezirk="Neukölln"), quellen=quellen)[0]
+    assert szenario.ort.objekt == ""
