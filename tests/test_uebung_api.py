@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 import uebung
 from einstellungen import einstellungen
 from main import anwendung_bauen
+from rolle import Rolle
 
 
 @pytest.fixture
@@ -195,6 +196,88 @@ def test_der_server_merkt_ohne_abfrage_dass_jemand_fehlt(monkeypatch):
         codes = client.post("/api/uebung").json()
         client.get(f"/api/uebung/{codes['traineeCode']}/zustand")
         uebung_ = client.app.state.uebungen.finden(codes["traineeCode"])[0]
-        assert uebung_.verbunden[uebung.Rolle.TRAINEE]
+        assert uebung_.verbunden[Rolle.TRAINEE]
         time.sleep(1.5)
-        assert not uebung_.verbunden[uebung.Rolle.TRAINEE]
+        assert not uebung_.verbunden[Rolle.TRAINEE]
+
+
+def zustand_von(client, code):
+    return client.get(f"/api/uebung/{code}/zustand").json()["zustand"]
+
+
+def test_der_ablauf_eines_anrufs_ueber_die_absichten(client, codes, szenario_daten):
+    a, t = codes["ausbilderCode"], codes["traineeCode"]
+    absicht(client, a, art="pool.hinzufuegen", szenario=szenario_daten)
+    szenario_id = zustand_von(client, a)["pool"][0]["id"]
+    assert absicht(client, t, art="bereit").status_code == 200
+    assert zustand_von(client, t)["engine"]["gestartet"] is True
+    anruf_id = absicht(client, a, art="engine.sofort", szenarioId=szenario_id).json()["ergebnis"][
+        "anrufId"
+    ]
+    trainee = zustand_von(client, t)
+    assert trainee["anrufe"][0]["zustand"] == "wartet"
+    assert "szenario" not in trainee["anrufe"][0]
+    assert absicht(client, t, art="annehmen", anrufId=anruf_id).status_code == 200
+    doppelt = absicht(client, t, art="annehmen", anrufId=anruf_id)
+    assert doppelt.status_code == 409
+    assert doppelt.json()["detail"] == "Es läuft schon ein Gespräch."
+    assert absicht(client, t, art="beenden").status_code == 200
+    assert zustand_von(client, t)["anrufe"][0]["szenario"]["titel"] == szenario_daten["titel"]
+
+
+def test_der_ausbilder_steuert_die_engine(client, codes, szenario_daten):
+    a, t = codes["ausbilderCode"], codes["traineeCode"]
+    absicht(client, a, art="pool.hinzufuegen", szenario=szenario_daten)
+    absicht(client, t, art="bereit")
+    assert absicht(client, a, art="engine.pausieren", an=True).status_code == 200
+    assert zustand_von(client, a)["engine"]["manuellPausiert"] is True
+    assert absicht(client, a, art="engine.pausieren").status_code == 400
+    szenario_id = zustand_von(client, a)["pool"][0]["id"]
+    anruf_id = absicht(client, a, art="engine.sofort", szenarioId=szenario_id).json()["ergebnis"][
+        "anrufId"
+    ]
+    assert absicht(client, a, art="anruf.auflegen", anrufId=anruf_id).status_code == 200
+    assert absicht(client, a, art="anruf.auflegen", anrufId=anruf_id).status_code == 404
+    neu = absicht(client, a, art="engine.parameter", parameter={"maxSchlange": 3, "geduldMin": 120})
+    assert neu.status_code == 200
+    absicht(client, a, art="engine.parameter", parameter={"basisAbstand": 30})
+    parameter = zustand_von(client, a)["engine"]["parameter"]
+    assert (parameter["maxSchlange"], parameter["geduldMin"], parameter["basisAbstand"]) == (
+        3,
+        120,
+        30,
+    )
+    falsch = absicht(
+        client, a, art="engine.parameter", parameter={"geduldMin": 500, "geduldMax": 100}
+    )
+    assert falsch.status_code == 422
+    assert falsch.json()["detail"] == "Die Geduld braucht min ≤ max."
+
+
+def test_rollen_steuern_nur_ihren_teil(client, codes):
+    a, t = codes["ausbilderCode"], codes["traineeCode"]
+    assert absicht(client, t, art="engine.pausieren", an=True).status_code == 403
+    assert absicht(client, a, art="bereit").status_code == 403
+    assert absicht(client, a, art="annehmen", anrufId="x").status_code == 403
+    engine = zustand_von(client, t)["engine"]
+    assert not {"parameter", "naechstesKlingeln", "manuellPausiert"} & set(engine)
+
+
+def test_eine_fehlerhafte_uebung_haelt_die_anderen_nicht_auf(monkeypatch, caplog):
+    monkeypatch.setattr(uebung, "ONLINE_FRIST", 0.2)
+    with TestClient(anwendung_bauen()) as client:
+        kaputt = client.post("/api/uebung").json()
+        heil = client.post("/api/uebung").json()
+        client.get(f"/api/uebung/{kaputt['traineeCode']}/zustand")
+        client.get(f"/api/uebung/{heil['traineeCode']}/zustand")
+        alle = client.app.state.uebungen
+        kaputte = alle.finden(kaputt["traineeCode"])[0]
+
+        def fehler():
+            raise RuntimeError("kaputt")
+
+        monkeypatch.setattr(kaputte.engine, "takt", fehler)
+        time.sleep(1.5)
+        assert not alle.finden(heil["traineeCode"])[0].verbunden[Rolle.TRAINEE]
+    assert kaputte.kennung in caplog.text
+    assert kaputt["ausbilderCode"] not in caplog.text

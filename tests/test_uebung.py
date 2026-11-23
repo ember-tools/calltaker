@@ -3,8 +3,9 @@ import re
 import pytest
 
 from anruf import Anruf, Anrufzustand
+from rolle import Rolle
 from szenario import Szenario
-from uebung import ONLINE_FRIST, UNBESUCHT_FRIST, Rolle, Uebungen, UebungenVoll
+from uebung import ONLINE_FRIST, UNBESUCHT_FRIST, Uebungen, UebungenVoll
 
 
 class Uhr:
@@ -130,7 +131,9 @@ def test_der_zustand_ist_nach_rolle_gefiltert(anruf, uhr):
     uebung.spiegel = {"strasse": "Karl"}
     trainee = uebung.zustand(Rolle.TRAINEE)
     ausbilder = uebung.zustand(Rolle.AUSBILDER)
-    assert set(trainee) == {"verbunden", "anrufe"}
+    assert set(trainee) == {"verbunden", "engine", "anrufe"}
+    assert "parameter" not in trainee["engine"]
+    assert ausbilder["engine"]["parameter"]["maxSchlange"] == 5
     assert "szenario" not in trainee["anrufe"][0]
     assert ausbilder["codes"]["trainee"] == uebung.trainee_code
     assert ausbilder["anrufe"][0]["szenario"]["titel"]

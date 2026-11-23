@@ -7,7 +7,8 @@ from fastapi.responses import JSONResponse
 
 from absichten import Absicht, AbsichtAbgelehnt, ausfuehren
 from api import abfragegraph
-from uebung import Rolle, Uebung, Uebungen, UebungenVoll
+from rolle import Rolle
+from uebung import Uebung, Uebungen, UebungenVoll
 
 router = APIRouter(prefix="/api/uebung")
 

@@ -2,6 +2,7 @@
 
 import asyncio
 import contextlib
+import logging
 from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
@@ -20,6 +21,7 @@ from grenzen import KoerperGrenze
 from uebung import Uebungen
 
 AUFRAEUMEN_ALLE = 60
+logger = logging.getLogger("calltaker")
 ANFRAGE_HOECHSTENS = 2 * 1024 * 1024
 
 
@@ -28,7 +30,8 @@ async def lebenszyklus(app: FastAPI) -> AsyncIterator[None]:
     """Load the question graph on start and keep the exercises tidy while the server runs.
 
     A broken graph stops the server instead of a call. Once a second every exercise updates who
-    counts as connected; once a minute exercises nobody has polled for too long are dropped.
+    counts as connected and moves its queue on; once a minute exercises nobody has polled for too
+    long are dropped.
     """
     abfragebuendel()
     aufgabe = asyncio.create_task(pflegen(app.state.uebungen))
@@ -39,12 +42,16 @@ async def lebenszyklus(app: FastAPI) -> AsyncIterator[None]:
 
 
 async def pflegen(uebungen: Uebungen) -> None:
-    """Update connections every second and drop stale exercises every minute."""
+    """Update connections and queues every second, and drop stale exercises every minute."""
     takt = 0
     while True:
         await asyncio.sleep(1)
         for uebung in uebungen.alle():
-            uebung.verbindungen_pruefen()
+            try:
+                uebung.verbindungen_pruefen()
+                uebung.engine.takt()
+            except Exception:
+                logger.exception("Pflege der Übung %s fehlgeschlagen", uebung.kennung)
         takt += 1
         if takt % AUFRAEUMEN_ALLE == 0:
             uebungen.aufraeumen()

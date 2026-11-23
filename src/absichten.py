@@ -7,10 +7,12 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from pydantic.alias_generators import to_camel
 
 from abfrage import Abfragegraph
+from engine import Parameter
 from fehlermeldung import deutsch
 from pool import PoolVoll, UngueltigeDatei, befunde_nach_aussen
+from rolle import Rolle
 from szenario import Szenario, pruefen
-from uebung import Rolle, Uebung
+from uebung import Uebung
 
 SPIEGEL_HOECHSTENS = 4096
 UNBEKANNTES_SZENARIO = "Dieses Szenario gibt es nicht."
@@ -37,6 +39,9 @@ class Absicht(BaseModel):
     datei: Any = None
     modus: Literal["ersetzen", "anhaengen"] = "anhaengen"
     felder: dict[str, Any] = Field(default_factory=dict)
+    anruf_id: str | None = None
+    an: bool | None = None
+    parameter: dict[str, Any] | None = None
 
 
 Ausfuehrung = Callable[[Uebung, Absicht, Abfragegraph], dict[str, Any]]
@@ -135,6 +140,69 @@ def spiegeln(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
     return {}
 
 
+def bereit(uebung: Uebung, _: Absicht, __: Abfragegraph) -> dict:
+    """Start the queue: the trainee is ready for calls."""
+    uebung.engine.starten()
+    return {}
+
+
+def annehmen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Take the longest waiting call."""
+    try:
+        anruf = uebung.engine.annehmen(absicht.anruf_id or "")
+    except ValueError as fehler:
+        raise AbsichtAbgelehnt(str(fehler), status=409) from fehler
+    return {"anrufId": anruf.id}
+
+
+def beenden(uebung: Uebung, _: Absicht, __: Abfragegraph) -> dict:
+    """End the running conversation."""
+    try:
+        anruf = uebung.engine.beenden()
+    except ValueError as fehler:
+        raise AbsichtAbgelehnt(str(fehler), status=409) from fehler
+    return {"anrufId": anruf.id}
+
+
+def pausieren(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Pause or resume the queue by hand."""
+    if absicht.an is None:
+        raise AbsichtAbgelehnt("Ob pausiert werden soll, fehlt.")
+    uebung.engine.pausieren(absicht.an)
+    return {}
+
+
+def sofort_klingeln(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Ring a scenario of the pool at once."""
+    try:
+        anruf = uebung.engine.sofort_klingeln(absicht.szenario_id or "")
+    except KeyError as fehler:
+        raise AbsichtAbgelehnt(UNBEKANNTES_SZENARIO, status=404) from fehler
+    except ValueError as fehler:
+        raise AbsichtAbgelehnt(str(fehler), status=409) from fehler
+    return {"anrufId": anruf.id}
+
+
+def auflegen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Let a waiting caller hang up."""
+    try:
+        uebung.engine.auflegen(absicht.anruf_id or "")
+    except KeyError as fehler:
+        raise AbsichtAbgelehnt("Dieser Anruf wartet nicht.", status=404) from fehler
+    return {}
+
+
+def parameter_setzen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Change some of the queue's settings; those not given keep their values."""
+    bisher = uebung.engine.parameter.model_dump(by_alias=True)
+    try:
+        parameter = Parameter.model_validate({**bisher, **(absicht.parameter or {})})
+    except ValidationError as fehler:
+        raise AbsichtAbgelehnt(deutsch(fehler.errors()), status=422) from fehler
+    uebung.engine.parameter_setzen(parameter)
+    return {}
+
+
 ABSICHTEN: dict[str, tuple[set[Rolle], Ausfuehrung]] = {
     "pool.hinzufuegen": ({Rolle.AUSBILDER}, pool_hinzufuegen),
     "pool.ersetzen": ({Rolle.AUSBILDER}, pool_ersetzen),
@@ -142,4 +210,11 @@ ABSICHTEN: dict[str, tuple[set[Rolle], Ausfuehrung]] = {
     "pool.verschieben": ({Rolle.AUSBILDER}, pool_verschieben),
     "pool.importieren": ({Rolle.AUSBILDER}, pool_importieren),
     "spiegeln": ({Rolle.TRAINEE}, spiegeln),
+    "bereit": ({Rolle.TRAINEE}, bereit),
+    "annehmen": ({Rolle.TRAINEE}, annehmen),
+    "beenden": ({Rolle.TRAINEE}, beenden),
+    "engine.pausieren": ({Rolle.AUSBILDER}, pausieren),
+    "engine.sofort": ({Rolle.AUSBILDER}, sofort_klingeln),
+    "engine.parameter": ({Rolle.AUSBILDER}, parameter_setzen),
+    "anruf.auflegen": ({Rolle.AUSBILDER}, auflegen),
 }

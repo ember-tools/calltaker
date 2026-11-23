@@ -39,6 +39,7 @@ export interface Anruf {
 /** The state of an exercise as the trainee sees it. */
 export interface TraineeZustand {
     verbunden: Verbunden
+    engine: EngineSicht
     anrufe: AnrufSicht[]
 }
 
@@ -46,6 +47,7 @@ export interface TraineeZustand {
 export interface AusbilderZustand {
     codes: {ausbilder: string, trainee: string}
     verbunden: Verbunden
+    engine: EngineZustand
     pool: Szenario[]
     anrufe: Anruf[]
     spiegel: Record<string, unknown>
@@ -53,3 +55,30 @@ export interface AusbilderZustand {
 
 /** The state of an exercise for a role. */
 export type ZustandFuer<R extends Rolle> = R extends 'ausbilder' ? AusbilderZustand : TraineeZustand
+
+/** The queue engine's settings, which the trainer may change. */
+export interface EngineParameter {
+    erstesKlingelnMin: number
+    erstesKlingelnMax: number
+    basisAbstand: number
+    abstandFaktor: number
+    maxSchlange: number
+    geduldMin: number
+    geduldMax: number
+    zurueckInPool: boolean
+}
+
+/** The queue engine's state as the trainee sees it. */
+export interface EngineSicht {
+    gestartet: boolean
+    pausiert: boolean
+    automatischPausiert: boolean
+    pausiertSeit?: number
+}
+
+/** The queue engine's state as the trainer sees it. */
+export interface EngineZustand extends EngineSicht {
+    manuellPausiert: boolean
+    naechstesKlingeln: number | null
+    parameter: EngineParameter
+}

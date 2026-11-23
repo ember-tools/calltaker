@@ -1,25 +1,22 @@
 """Exercises: one trainer, one trainee, a pool and the calls, held in memory and reached by code."""
 
+import hashlib
+import random
 import secrets
 import time
 from collections.abc import Callable
-from enum import StrEnum
 from typing import Any
 
 from anruf import Anruf
+from engine import Engine
 from pool import Pool
+from rolle import Rolle
+from szenario import Szenario
 
 CODE_ZEICHEN = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
 CODE_LAENGE = 8
 UNBESUCHT_FRIST = 600.0
 ONLINE_FRIST = 5.0
-
-
-class Rolle(StrEnum):
-    """Who looks at an exercise."""
-
-    AUSBILDER = "ausbilder"
-    TRAINEE = "trainee"
 
 
 def neuer_code(praefix: str) -> str:
@@ -47,6 +44,17 @@ class Uebung:
         self.letzte_abfrage: dict[Rolle, float] = {}
         self.verbunden: dict[Rolle, bool] = {Rolle.AUSBILDER: False, Rolle.TRAINEE: False}
         self.angelegt_um = uhr()
+        self.engine = Engine(self, uhr, random.Random())
+
+    @property
+    def kennung(self) -> str:
+        """Return a name for logs that grants no access: a short hash of the trainer code."""
+        return hashlib.sha256(self.ausbilder_code.encode()).hexdigest()[:10]
+
+    def pool_entnehmen(self) -> Szenario | None:
+        """Take the first scenario of the pool for the next call, if there is one."""
+        szenarien = self.pool.szenarien
+        return self.pool.entfernen(szenarien[0].id) if szenarien else None
 
     def geaendert(self) -> None:
         """Mark that something changed, so the next poll of every view fetches the state."""
@@ -83,11 +91,13 @@ class Uebung:
         if rolle == Rolle.TRAINEE:
             return {
                 "verbunden": verbunden,
+                "engine": self.engine.zustand(rolle),
                 "anrufe": [anruf.fuer_trainee() for anruf in self.anrufe],
             }
         return {
             "codes": {"ausbilder": self.ausbilder_code, "trainee": self.trainee_code},
             "verbunden": verbunden,
+            "engine": self.engine.zustand(rolle),
             "pool": [szenario.nach_aussen() for szenario in self.pool.szenarien],
             "anrufe": [anruf.fuer_ausbilder() for anruf in self.anrufe],
             "spiegel": self.spiegel,
