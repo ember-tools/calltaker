@@ -1,16 +1,16 @@
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
 import {ref} from 'vue'
 import {sucheAdressen} from '../api/adressen'
-import {sucheOrte} from '../api/photon'
+import {sucheOrte} from '../api/orte'
 import {PAUSE_MS, useAdresssuche} from './useAdresssuche'
 
 vi.mock('../api/adressen', () => ({sucheAdressen: vi.fn()}))
-vi.mock('../api/photon', () => ({sucheOrte: vi.fn()}))
+vi.mock('../api/orte', () => ({sucheOrte: vi.fn()}))
 
 const adressen = vi.mocked(sucheAdressen)
 const orte = vi.mocked(sucheOrte)
 const adresse = (strasse: string) => ({beschriftung: strasse, strasse, hausnummer: '', plz: '', ortsteil: '', bezirk: ''})
-const ort = {beschriftung: 'U Hermannplatz', name: 'U Hermannplatz', ortsteil: 'Neukölln', breite: 52.48, laenge: 13.42}
+const ort = {beschriftung: 'U Hermannplatz', name: 'U Hermannplatz', art: 'Bahnhof', ortsteil: 'Neukölln', breite: 52.48, laenge: 13.42}
 
 describe('useAdresssuche', () => {
     beforeEach(() => vi.useFakeTimers())
@@ -19,8 +19,9 @@ describe('useAdresssuche', () => {
         vi.resetAllMocks()
     })
 
-    it('wartet eine Pause ab und fragt dann das Adressverzeichnis', async () => {
+    it('wartet eine Pause ab und fragt dann Adressverzeichnis und Orte', async () => {
         adressen.mockResolvedValue([adresse('A'), adresse('B'), adresse('C')])
+        orte.mockResolvedValue([ort])
         const text = ref('')
         const suche = useAdresssuche(text)
         text.value = 'Kar'
@@ -29,11 +30,22 @@ describe('useAdresssuche', () => {
         await vi.advanceTimersByTimeAsync(PAUSE_MS)
         expect(adressen).toHaveBeenCalledTimes(1)
         expect(adressen.mock.calls[0]![0]).toBe('Karl')
+        expect(orte.mock.calls[0]![0]).toBe('Karl')
         expect(suche.adressen.value).toHaveLength(3)
+        expect(suche.orte.value).toEqual([ort])
+    })
+
+    it('fragt bei zwei Zeichen nur das Adressverzeichnis', async () => {
+        adressen.mockResolvedValue([])
+        const text = ref('')
+        useAdresssuche(text)
+        text.value = 'Ka'
+        await vi.advanceTimersByTimeAsync(PAUSE_MS)
+        expect(adressen).toHaveBeenCalledTimes(1)
         expect(orte).not.toHaveBeenCalled()
     })
 
-    it('fragt Photon nach Orten, wenn das Verzeichnis wenig findet', async () => {
+    it('findet Orte auch ohne Adressen', async () => {
         adressen.mockResolvedValue([])
         orte.mockResolvedValue([ort])
         const text = ref('')
@@ -43,7 +55,7 @@ describe('useAdresssuche', () => {
         expect(suche.orte.value).toEqual([ort])
     })
 
-    it('behält die Adressen, wenn Photon ausfällt', async () => {
+    it('behält die Adressen, wenn die Ortssuche ausfällt', async () => {
         adressen.mockResolvedValue([adresse('Hermannstraße')])
         orte.mockRejectedValue(new TypeError('Failed to fetch'))
         const text = ref('')
@@ -60,6 +72,7 @@ describe('useAdresssuche', () => {
             signale.push(signal)
             return new Promise(() => {})
         })
+        orte.mockReturnValue(new Promise(() => {}))
         const text = ref('')
         useAdresssuche(text)
         text.value = 'Karl'

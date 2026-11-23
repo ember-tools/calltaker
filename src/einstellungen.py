@@ -21,6 +21,7 @@ class Einstellungen(BaseSettings):
     uebung_lebensdauer_stunden: float = 12
     uebungen_hoechstens: int = 500
     abfrage_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "abfrage"
+    orte_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "orte"
 
     def adressen_datei(self) -> Path:
         """Return where the address list is kept: in the data folder."""

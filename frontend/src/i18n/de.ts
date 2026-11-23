@@ -182,7 +182,7 @@ export default {
     ort: {
         suche: 'Straße und Hausnummer, oder ein Ort',
         ort: 'Ort',
-        photon: 'Orte: Photon by komoot · © OpenStreetMap-Mitwirkende',
+        orteQuelle: 'Orte: © OpenStreetMap-Mitwirkende, ODbL',
         karte: 'Karte des Einsatzorts',
         karteHinweis: 'Ein Klick in die Karte setzt den Punkt, etwa für einen Ort ohne Adresse.',
         strasse: 'Straße',

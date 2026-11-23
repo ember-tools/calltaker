@@ -4,7 +4,7 @@ import {useI18n} from 'vue-i18n'
 import {useAdresssuche} from '../composables/useAdresssuche'
 import type {Adressvorschlag, Ortsvorschlag} from '../modell/ort'
 
-/** One entry of the suggestion list: an address from the list, or a place from Photon. */
+/** One entry of the suggestion list: an address from the list, or a named place. */
 type Eintrag = {art: 'adresse', vorschlag: Adressvorschlag} | {art: 'ort', vorschlag: Ortsvorschlag}
 
 const props = defineProps<{beschriftung: string}>()
@@ -89,7 +89,7 @@ const zeigen = computed(() => offen.value && eintraege.value.length > 0)
             >
                 <span v-if="eintrag.art === 'ort'" class="mr-1 text-xs font-semibold text-gedaempft">{{ t('ort.ort') }}</span>{{ eintrag.vorschlag.beschriftung }}
             </li>
-            <li v-if="orte.length" role="presentation" class="px-2 py-1 text-xs text-gedaempft">{{ t('ort.photon') }}</li>
+            <li v-if="orte.length" role="presentation" class="px-2 py-1 text-xs text-gedaempft">{{ t('ort.orteQuelle') }}</li>
         </ul>
     </div>
 </template>

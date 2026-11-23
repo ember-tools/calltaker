@@ -15,7 +15,7 @@ describe('ort', () => {
     })
 
     it('macht aus einem Ort das Objekt, ohne Straße', () => {
-        const neu = ausOrt({beschriftung: '', name: 'Tempelhofer Feld', ortsteil: 'Tempelhof', breite: 52.47, laenge: 13.4}, leer)
+        const neu = ausOrt({beschriftung: '', name: 'Tempelhofer Feld', art: 'Park', ortsteil: 'Tempelhof', breite: 52.47, laenge: 13.4}, leer)
         expect(neu.objekt).toBe('Tempelhofer Feld')
         expect(neu.adresse.strasse).toBe('')
         expect(neu.koordinaten).toEqual([52.47, 13.4])
@@ -32,7 +32,7 @@ describe('ort beim Wechsel', () => {
     })
 
     it('ersetzt den Namen eines Ortes durch die gewählte Adresse', () => {
-        const feld = ausOrt({beschriftung: '', name: 'Tempelhofer Feld', ortsteil: 'Tempelhof', breite: 52.47, laenge: 13.4}, neukoelln)
+        const feld = ausOrt({beschriftung: '', name: 'Tempelhofer Feld', art: 'Park', ortsteil: 'Tempelhof', breite: 52.47, laenge: 13.4}, neukoelln)
         const danach = ausAdresse({beschriftung: '', strasse: 'Werderstraße', hausnummer: '20', plz: '13587', ortsteil: 'Hakenfelde', bezirk: 'Spandau', breite: 52.56, laenge: 13.21}, feld)
         expect(danach.objekt).toBe('')
     })

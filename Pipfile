@@ -12,6 +12,7 @@ httpx = "*"
 
 [dev-packages]
 pytest = "*"
+pyshp = "*"
 
 [requires]
 python_version = "3.14"

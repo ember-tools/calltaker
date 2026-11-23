@@ -12,10 +12,11 @@ export interface Adressvorschlag {
     laenge?: number
 }
 
-/** A place without a house number that Photon suggests: a park, a station, a bridge. */
+/** A named place without a house number, from OpenStreetMap: a park, a station, a hospital. */
 export interface Ortsvorschlag {
     beschriftung: string
     name: string
+    art: string
     ortsteil: string
     breite: number
     laenge: number
@@ -48,7 +49,7 @@ export function ausAdresse(vorschlag: Adressvorschlag, bisher: Ortsangabe): Orts
 }
 
 /**
- * A location from a place Photon suggested: no street, the place's name as the object.
+ * A location from a named place: no street, the place's name as the object.
  *
  * @param vorschlag the suggestion
  * @param bisher the location so far

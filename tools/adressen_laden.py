@@ -2,7 +2,7 @@
 
 Run with `src` on the Python path, as `./toolchain.sh data-adressen` and `data-adressen-stand` do.
 
-Usage: python tools/adressen.py laden|stand
+Usage: python tools/adressen_laden.py laden|stand
 """
 
 import sys

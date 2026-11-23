@@ -14,6 +14,7 @@ from fastapi.responses import JSONResponse
 
 import adressen_api
 import kacheln
+import orte_api
 import uebung_api
 from adressen import Adressen
 from api import abfragebuendel, router
@@ -21,6 +22,7 @@ from einstellungen import einstellungen
 from fehlermeldung import deutsch
 from frontend import frontend_einbinden
 from grenzen import KoerperGrenze
+from orte import orte_laden
 from uebung import Uebungen
 
 AUFRAEUMEN_ALLE = 60
@@ -106,6 +108,7 @@ def anwendung_bauen() -> FastAPI:
     """Build the application with its routes, CORS policy and the built frontend."""
     app = FastAPI(title="Calltaker", lifespan=lebenszyklus)
     app.state.adressen = Adressen(einstellungen().adressen_datei(), einstellungen().adressen_tage)
+    app.state.orte = orte_laden(einstellungen().orte_verzeichnis)
     app.state.uebungen = Uebungen(
         hoechstens=einstellungen().uebungen_hoechstens,
         frist=einstellungen().uebung_lebensdauer_stunden * 3600,
@@ -123,6 +126,7 @@ def anwendung_bauen() -> FastAPI:
     app.include_router(uebung_api.router)
     app.include_router(kacheln.router)
     app.include_router(adressen_api.router)
+    app.include_router(orte_api.router)
     frontend_einbinden(app, einstellungen().frontend_verzeichnis)
     return app
 
