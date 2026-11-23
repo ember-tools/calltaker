@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@fontsource/barlow/400.css";
+@import "@fontsource/barlow/500.css";
+@import "@fontsource/barlow/600.css";
+@import "@fontsource/barlow/700.css";
+@import "@fontsource/barlow-condensed/600.css";
+@import "@fontsource/barlow-condensed/700.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/600.css";
+
+@theme {
+    --font-sans: "Barlow", system-ui, sans-serif;
+    --font-condensed: "Barlow Condensed", "Barlow", sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+    --color-grund: #e9ecf0;
+    --color-flaeche: #ffffff;
+    --color-leiste: #1b2430;
+    --color-rand: #d3d9e0;
+    --color-tinte: #1b1f24;
+    --color-gedaempft: #4a5360;
+    --color-akzent: #1f5fae;
+    --color-ok: #1e6a43;
+    --color-warnung: #9a5b00;
+    --color-fehler: #b42318;
+}
+
+body {
+    margin: 0;
+    background: var(--color-grund);
+    color: var(--color-tinte);
+    font-family: var(--font-sans);
+}
