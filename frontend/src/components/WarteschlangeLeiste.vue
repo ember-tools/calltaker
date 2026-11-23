@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
-import {dauer, useUhr} from '../composables/useUhr'
+import {gespraechsdauer, useUhr, wartezeit} from '../composables/useUhr'
 import {useKlingelton} from '../composables/useKlingelton'
 import {anzeigen} from '../modell/rufnummer'
 import type {AnrufSicht, TraineeZustand} from '../modell/uebung'
@@ -16,11 +16,6 @@ const gespraech = computed(() => props.zustand.anrufe.find(anruf => anruf.zustan
 const klingelt = computed(() => wartend.value.length > 0 && !gespraech.value && !props.zustand.engine.pausiert)
 const klingelton = useKlingelton(klingelt)
 
-function wartezeit(anruf: AnrufSicht): string {
-    const bis = props.zustand.engine.pausiertSeit ?? jetzt.value
-    return dauer(bis - anruf.klingeltSeit)
-}
-
 function nummer(anruf: AnrufSicht): string {
     return anruf.rufnummer ? anzeigen(anruf.rufnummer) : t('warteschlange.unterdrueckt')
 }
@@ -34,7 +29,7 @@ function nummer(anruf: AnrufSicht): string {
         <span v-if="wartend.length === 0" class="text-sm text-slate-400">{{ t('warteschlange.leer') }}</span>
         <div v-for="(anruf, stelle) in wartend" :key="anruf.id" :class="['flex items-center gap-2.5 rounded-md border px-3 py-1', stelle === 0 ? 'border-amber-400 bg-amber-950' : 'border-slate-600 bg-slate-800']">
             <span class="font-mono text-sm">{{ nummer(anruf) }}</span>
-            <span class="font-mono text-sm text-amber-300">{{ wartezeit(anruf) }}</span>
+            <span class="font-mono text-sm text-amber-300">{{ wartezeit(anruf.klingeltSeit, jetzt, zustand.engine.pausiertSeit) }}</span>
             <button v-if="stelle === 0 && !gespraech" type="button" class="h-7 rounded bg-amber-500 px-2.5 text-sm font-semibold text-slate-900" @click="emit('annehmen', anruf.id)">{{ t('warteschlange.annehmen') }}</button>
         </div>
         <span v-if="zustand.engine.pausiert" class="rounded bg-slate-600 px-2 py-0.5 text-xs font-semibold">{{ t(zustand.engine.automatischPausiert ? 'warteschlange.automatisch' : 'warteschlange.pausiert') }}</span>
@@ -45,7 +40,7 @@ function nummer(anruf: AnrufSicht): string {
         <div v-if="gespraech" class="flex items-center gap-2.5 rounded-md border border-green-400 bg-green-950 px-3 py-1">
             <span class="text-xs font-bold text-green-300">{{ t('warteschlange.imGespraech') }}</span>
             <span class="font-mono">{{ nummer(gespraech) }}</span>
-            <span class="font-mono text-green-300">{{ dauer(jetzt - (gespraech.angenommenUm ?? jetzt)) }}</span>
+            <span class="font-mono text-green-300">{{ gespraechsdauer(gespraech.angenommenUm, jetzt) }}</span>
         </div>
     </div>
 </template>

@@ -7,13 +7,13 @@ import type {Adressvorschlag, Ortsvorschlag} from '../modell/ort'
 /** One entry of the suggestion list: an address from the list, or a named place. */
 type Eintrag = {art: 'adresse', vorschlag: Adressvorschlag} | {art: 'ort', vorschlag: Ortsvorschlag}
 
-const props = defineProps<{beschriftung: string}>()
+const props = defineProps<{beschriftung: string, ruhig?: boolean}>()
 const text = defineModel<string>({default: ''})
 const emit = defineEmits<{adresse: [vorschlag: Adressvorschlag], ort: [vorschlag: Ortsvorschlag]}>()
 
 const {t} = useI18n()
 const kennung = useId()
-const {adressen, orte, uebernommen} = useAdresssuche(toRef(text))
+const {adressen, orte, uebernommen} = useAdresssuche(toRef(text), () => props.ruhig)
 const markiert = ref(-1)
 const offen = ref(false)
 

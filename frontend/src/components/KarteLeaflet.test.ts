@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 import {i18n} from '../i18n'
 import KarteLeaflet from './KarteLeaflet.vue'
 
@@ -38,5 +38,20 @@ describe('KarteLeaflet', () => {
         await offen.get('[role=region]').trigger('click', {clientX: 10, clientY: 10})
         expect(offen.emitted('gesetzt')?.[0]).toHaveLength(2)
         offen.unmount()
+    })
+})
+
+describe('KarteLeaflet mit mehreren Punkten', () => {
+    it('zeigt mehrere Punkte zugleich und einen allein von nah', async () => {
+        const {default: L} = await import('leaflet')
+        const passen = vi.spyOn(L.Map.prototype, 'fitBounds')
+        const zentrieren = vi.spyOn(L.Map.prototype, 'setView')
+        const ansicht = karte({punkte: [{breite: 52.479, laenge: 13.438, art: 'wahrheit'}, {breite: 52.49, laenge: 13.45, art: 'erfasst'}]})
+        expect(passen).toHaveBeenCalledTimes(1)
+        zentrieren.mockClear()
+        await ansicht.setProps({punkte: [{breite: 52.5, laenge: 13.4, art: 'erfasst'}]})
+        expect(zentrieren.mock.calls[0]![1]).toBeGreaterThanOrEqual(16)
+        ansicht.unmount()
+        vi.restoreAllMocks()
     })
 })

@@ -1,12 +1,10 @@
 <script setup lang="ts">
 import {computed, nextTick, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
-import EinsatzMaske from '../components/EinsatzMaske.vue'
 import GespraechAbschluss from '../components/GespraechAbschluss.vue'
+import GespraechsFlaeche from '../components/GespraechsFlaeche.vue'
 import GetrenntHinweis from '../components/GetrenntHinweis.vue'
 import KopfLeiste from '../components/KopfLeiste.vue'
-import SchrittLeiste from '../components/SchrittLeiste.vue'
-import SnaFenster from '../components/SnaFenster.vue'
 import UnbekannteUebung from '../components/UnbekannteUebung.vue'
 import VerbindungsZeichen from '../components/VerbindungsZeichen.vue'
 import WarteschlangeLeiste from '../components/WarteschlangeLeiste.vue'
@@ -15,7 +13,8 @@ import {useGespraech} from '../composables/useGespraech'
 import {useSpiegel} from '../composables/useSpiegel'
 import {useUebung} from '../composables/useUebung'
 import {endergebnis} from '../modell/abfrageweg'
-import {nochOffen, phasenstand} from '../phasen/register'
+import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
+import {nochOffen} from '../phasen/register'
 
 const props = defineProps<{code: string}>()
 
@@ -25,19 +24,18 @@ const {graph, schwerste, fehler} = useAbfragegraph()
 const anruf = computed(() => zustand.value?.anrufe.find(a => a.zustand === 'gespraech'))
 const {eintraege, jetztSenden} = useGespraech(anruf, absicht)
 const suche = ref('')
-useSpiegel(computed(() => ({suche: suche.value})), absicht)
+const fenster = ref<Fensterzustand>(leererFensterzustand())
+useSpiegel(computed(() => ({suche: suche.value, ...fenster.value})), absicht)
 
 const kontext = computed(() => (graph.value && anruf.value ? {graph: graph.value, anruf: anruf.value} : undefined))
-const staende = computed(() => (kontext.value ? phasenstand(eintraege.value, kontext.value) : []))
-const aktivePhase = computed(() => staende.value.find(stand => stand.fehlend.length > 0)?.phase.id ?? '')
 const offen = computed(() => (kontext.value ? nochOffen(eintraege.value, kontext.value) : []))
 const ergebnis = computed(() => (graph.value ? endergebnis(graph.value, eintraege.value.abfrage) : undefined))
-const alter = computed(() => eintraege.value.abfrage.pfad.find(schritt => schritt.knoten === 'rd.alter')?.wert)
 const zuletzt = computed(() => zustand.value?.anrufe.filter(a => a.zustand === 'beendet').at(-1))
-const sna = ref<InstanceType<typeof SnaFenster> | null>(null)
+const flaeche = ref<InstanceType<typeof GespraechsFlaeche> | null>(null)
 
 watch(() => anruf.value?.id, () => {
     suche.value = ''
+    fenster.value = leererFensterzustand()
 })
 
 watch(ergebnis, wert => {
@@ -54,7 +52,7 @@ async function beenden(): Promise<void> {
 }
 
 function snaZeigen(): void {
-    sna.value?.fokussieren()
+    flaeche.value?.snaZeigen()
 }
 </script>
 
@@ -68,13 +66,7 @@ function snaZeigen(): void {
         <UnbekannteUebung v-if="unbekannt"/>
         <p v-else-if="fehler" role="alert" class="m-0 p-5 text-fehler">{{ t('trainee.graphFehlt', {fehler}) }}</p>
         <main v-else-if="anruf && graph" class="flex flex-1 flex-col gap-3 p-4">
-            <SchrittLeiste :staende="staende" :aktiv="aktivePhase"/>
-            <div class="flex flex-wrap gap-4">
-                <EinsatzMaske v-model="eintraege" v-model:suche="suche" class="max-w-lg min-w-0 flex-[1_1_26rem]" :anruf="anruf" :stichwort="ergebnis ? `${ergebnis.code} · ${ergebnis.kategorie}` : ''" :alter="alter" @sna="snaZeigen" @sofort="jetztSenden"/>
-                <div class="min-w-0 flex-[999_1_36rem]">
-                    <SnaFenster ref="sna" v-model="eintraege.abfrage" :graph="graph" :schwerste="schwerste" :gesperrt="!eintraege.ort.koordinaten" :seit="anruf.angenommenUm" @sofort="jetztSenden"/>
-                </div>
-            </div>
+            <GespraechsFlaeche ref="flaeche" v-model="eintraege" v-model:suche="suche" v-model:ui="fenster" :graph="graph" :schwerste="schwerste" :anruf="anruf" @sofort="jetztSenden"/>
             <GespraechAbschluss :offen="offen" @beenden="beenden"/>
         </main>
         <main v-else class="p-5">

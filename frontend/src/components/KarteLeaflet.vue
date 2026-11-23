@@ -33,11 +33,16 @@ function zeichnen(): void {
 
 let letzteMitte = ''
 
+/** Brings the points into view: one point close up, several all at once. */
 function mitteSetzen(): void {
     const erster = props.punkte[0]
-    const mitte = erster ? `${erster.breite},${erster.laenge}` : ''
+    const mitte = props.punkte.map(p => `${p.breite},${p.laenge}`).join(';')
     if (!karte.value || !erster || mitte === letzteMitte) return
     letzteMitte = mitte
+    if (props.punkte.length > 1) {
+        karte.value.fitBounds(L.latLngBounds(props.punkte.map(p => [p.breite, p.laenge])), {padding: [30, 30], maxZoom: 17})
+        return
+    }
     karte.value.setView([erster.breite, erster.laenge], Math.max(karte.value.getZoom(), 16))
 }
 

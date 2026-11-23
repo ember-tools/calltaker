@@ -10,6 +10,7 @@ import KarteLeaflet from './KarteLeaflet.vue'
 
 const ort = defineModel<Ortsangabe>({required: true})
 const text = defineModel<string>('text', {default: ''})
+defineProps<{ruhig?: boolean}>()
 
 const {t} = useI18n()
 const listeDa = ref(true)
@@ -48,7 +49,7 @@ function feldGeaendert(feld: keyof Adresse, wert: string): void {
 
 <template>
     <div class="flex flex-col gap-2">
-        <AdressSuche v-model="text" :beschriftung="t('ort.suche')" @adresse="adresse" @ort="platz"/>
+        <AdressSuche v-model="text" :beschriftung="t('ort.suche')" :ruhig="ruhig" @adresse="adresse" @ort="platz"/>
         <p v-if="!listeDa" class="m-0 text-xs text-warnung">{{ t('ort.listeFehlt') }}</p>
         <div class="grid grid-cols-6 gap-2">
             <label v-for="eintrag in FELDER" :key="eintrag.feld" :class="['flex flex-col gap-1 text-xs font-semibold text-gedaempft', eintrag.breit ? 'col-span-2' : 'col-span-1']">

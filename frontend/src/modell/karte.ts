@@ -32,3 +32,14 @@ export function abstandMeter(a: [number, number], b: [number, number]): number {
     const h = Math.sin(dBreite / 2) ** 2 + Math.cos(rad(a[0])) * Math.cos(rad(b[0])) * Math.sin(dLaenge / 2) ** 2
     return 2 * 6_371_000 * Math.asin(Math.sqrt(h))
 }
+
+/**
+ * The distance between two points in whole metres.
+ *
+ * @param a one point as (latitude, longitude)
+ * @param b the other
+ * @returns the rounded distance
+ */
+export function abstandGerundet(a: [number, number], b: [number, number]): number {
+    return Math.round(abstandMeter(a, b))
+}

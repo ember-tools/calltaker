@@ -5,6 +5,7 @@ import type {Abfragegraph} from '../modell/abfragegraph'
 import {dauer, useUhr} from '../composables/useUhr'
 import {aktuellerKnoten, endergebnis, gewaehltesProtokoll, hoehereEndpunkte, unterscheidungen, zwischenergebnis, type Ergebnis} from '../modell/abfrageweg'
 import type {Abfrageeintrag} from '../modell/eintraege'
+import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
 import SnaKacheln from './SnaKacheln.vue'
 
 const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, gesperrt: boolean, seit?: number}>()
@@ -13,10 +14,25 @@ const emit = defineEmits<{sofort: []}>()
 
 const {t} = useI18n()
 const jetzt = useUhr()
-const offen = ref<'hilfe' | 'aufwertung' | 'abbruch' | null>(null)
-const grund = ref('')
-const wert = ref('')
-const trotzdem = ref(false)
+const ui = defineModel<Fensterzustand>('ui', {default: leererFensterzustand})
+
+/**
+ * A field of the window's state that templates can bind to.
+ *
+ * @param feld the field
+ * @returns its value, written back as a new state
+ */
+function feld<K extends keyof Fensterzustand>(feld: K) {
+    return computed<Fensterzustand[K]>({get: () => ui.value[feld], set: wert => {
+        ui.value = {...ui.value, [feld]: wert}
+    }})
+}
+
+const offen = feld('offen')
+const grund = feld('grund')
+const wert = feld('wert')
+const trotzdem = feld('trotzdem')
+const kachelsuche = feld('kachelsuche')
 
 const stand = computed(() => aktuellerKnoten(props.graph, abfrage.value.pfad))
 const knoten = computed(() => props.graph.knoten[stand.value.knoten])
@@ -123,7 +139,7 @@ defineExpose({fokussieren})
             </template>
             <template v-else-if="knoten">
                 <h3 class="m-0 text-2xl font-semibold text-sky-950">{{ knoten.frage }} <i v-if="knoten.hinweis" class="font-medium text-akzent">[{{ knoten.hinweis }}]</i></h3>
-                <SnaKacheln v-if="knoten.antworten" data-antworten :antworten="knoten.antworten" :zusaetze="zusaetze" :farbe="fachrichtung" @waehlen="antwort => schritt({antwort})"/>
+                <SnaKacheln v-if="knoten.antworten" v-model:suche="kachelsuche" data-antworten :antworten="knoten.antworten" :zusaetze="zusaetze" :farbe="fachrichtung" @waehlen="antwort => schritt({antwort})"/>
                 <form v-else-if="knoten.eingabe" class="flex flex-wrap items-end gap-2" @submit.prevent="schritt({wert: wert.trim()})">
                     <label class="flex flex-1 flex-col gap-1 text-xs font-semibold text-gedaempft">
                         {{ knoten.eingabe.platzhalter }}

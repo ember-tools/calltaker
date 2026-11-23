@@ -100,3 +100,23 @@ export interface EngineZustand extends EngineSicht {
     naechstesKlingeln: number | null
     parameter: EngineParameter
 }
+
+/**
+ * A call as the trainee's screen shows it, made from the trainer's copy, for the live mirror.
+ *
+ * @param anruf the call with its truth
+ * @returns the call as the trainee sees it during the conversation
+ */
+export function sichtVon(anruf: Anruf): AnrufSicht {
+    const anrufer = anruf.szenario.anrufer
+    return {
+        id: anruf.id,
+        zustand: anruf.zustand,
+        klingeltSeit: anruf.klingeltSeit,
+        rufnummer: anrufer.rufnummerUnterdrueckt ? undefined : anrufer.rufnummer,
+        rufnummerUnterdrueckt: anrufer.rufnummerUnterdrueckt,
+        angenommenUm: anruf.angenommenUm,
+        beendetUm: anruf.beendetUm,
+        eintraege: anruf.eintraege,
+    }
+}

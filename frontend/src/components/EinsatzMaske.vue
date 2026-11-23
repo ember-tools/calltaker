@@ -7,13 +7,19 @@ import {anzeigen} from '../modell/rufnummer'
 import type {AnrufSicht} from '../modell/uebung'
 import OrtWahl from './OrtWahl.vue'
 
-const props = defineProps<{anruf: AnrufSicht, stichwort?: string, alter?: string}>()
+const props = defineProps<{anruf: AnrufSicht, stichwort?: string, alter?: string, ruhig?: boolean}>()
 const eintraege = defineModel<Eintraege>({required: true})
 const suche = defineModel<string>('suche', {default: ''})
 const emit = defineEmits<{sna: [], sofort: []}>()
 
 const {t} = useI18n()
-const andereNummer = ref(props.anruf.rufnummerUnterdrueckt)
+const andereGeklickt = ref(false)
+const andereNummer = computed({
+    get: () => andereGeklickt.value || props.anruf.rufnummerUnterdrueckt || (!eintraege.value.anrufer.rufnummerBestaetigt && eintraege.value.anrufer.rueckrufnummer !== ''),
+    set: an => {
+        andereGeklickt.value = an
+    },
+})
 
 const ort = computed<Ortsangabe>({
     get: () => ({adresse: eintraege.value.ort.adresse, koordinaten: eintraege.value.ort.koordinaten, objekt: eintraege.value.ort.objekt}),
@@ -69,7 +75,7 @@ onMounted(() => wurzel.value?.querySelector<HTMLElement>('[role=combobox]')?.foc
         </fieldset>
         <fieldset class="m-0 flex flex-col gap-1.5 border-0 p-0">
             <legend class="mb-1 font-bold">{{ t('maske.einsatzort') }}</legend>
-            <OrtWahl v-model="ort" v-model:text="suche"/>
+            <OrtWahl v-model="ort" v-model:text="suche" :ruhig="ruhig"/>
             <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
                 {{ t('maske.objekt') }}
                 <input v-model="eintraege.ort.objekt" class="h-8 rounded border border-slate-400 px-2 text-sm text-tinte"/>

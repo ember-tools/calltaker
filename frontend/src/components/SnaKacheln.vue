@@ -10,7 +10,7 @@ const emit = defineEmits<{waehlen: [antwortId: string]}>()
 const ZIFFER_WARTEN_MS = 600
 
 const {t} = useI18n()
-const suche = ref('')
+const suche = defineModel<string>('suche', {default: ''})
 const ziffern = ref('')
 let zeitgeber: ReturnType<typeof setTimeout> | undefined
 

@@ -18,9 +18,10 @@ export const ORTE_AB = 3
  * by picking a suggestion is not searched again.
  *
  * @param text the text being typed
+ * @param ruhig whether to leave the text unsearched, as the trainer's read-only mirror does
  * @returns the address and place suggestions, and whether a search is running
  */
-export function useAdresssuche(text: Ref<string>) {
+export function useAdresssuche(text: Ref<string>, ruhig: () => boolean = () => false) {
     const adressen = shallowRef<Adressvorschlag[]>([])
     const orte = shallowRef<Ortsvorschlag[]>([])
     const sucht = ref(false)
@@ -51,6 +52,7 @@ export function useAdresssuche(text: Ref<string>) {
 
     watch(text, eingabe => {
         clearTimeout(zeitgeber)
+        if (ruhig()) return
         if (eingabe === gewaehlt) return
         gewaehlt = null
         if (eingabe.trim().length < 2) {
