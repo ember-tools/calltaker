@@ -180,7 +180,11 @@ def beenden(uebung: Uebung, _: Absicht, __: Abfragegraph) -> dict:
 
 
 def eintragen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
-    """Take the trainee's entries for the running conversation."""
+    """Take the trainee's entries for the running conversation.
+
+    Answers with what only the server sets, its times and the handover snapshot, so the view can
+    show them without waiting for the next poll.
+    """
     anruf = uebung.engine.im_gespraech()
     if anruf is None:
         raise AbsichtAbgelehnt("Es läuft kein Gespräch.", status=409)
@@ -196,7 +200,8 @@ def eintragen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
     if uebernommen != anruf.eintraege:
         anruf.eintraege = uebernommen
         uebung.geaendert()
-    return {"zeiten": uebernommen.zeiten.model_dump(by_alias=True)}
+    aussen = uebernommen.nach_aussen()
+    return {"zeiten": aussen["zeiten"], "uebergeben": aussen.get("uebergeben")}
 
 
 def pausieren(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:

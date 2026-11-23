@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import {faCheck, faShareFromSquare} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, nextTick, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
@@ -7,11 +9,12 @@ import {aktuellerKnoten, endergebnis, gewaehltesProtokoll, hoehereEndpunkte, unt
 import type {Abfrageeintrag} from '../modell/eintraege'
 import {einenZurueck, mitAutomatik, ordnen} from '../modell/eingrenzung'
 import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
+import type {Uebergabebereitschaft} from '../modell/uebergabe'
 import SnaKacheln from './SnaKacheln.vue'
 
-const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, gesperrt: boolean, seit?: number}>()
+const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, gesperrt: boolean, seit?: number, uebergabe?: Uebergabebereitschaft, uebergebenUm?: number}>()
 const abfrage = defineModel<Abfrageeintrag>({required: true})
-const emit = defineEmits<{sofort: []}>()
+const emit = defineEmits<{sofort: [], uebergeben: []}>()
 
 const {t} = useI18n()
 const jetzt = useUhr()
@@ -107,6 +110,11 @@ defineExpose({fokussieren})
             <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" :disabled="abfrage.pfad.length === 0 && !abfrage.aufwertung && !abfrage.abbruch" @click="zurueck">{{ t('sna.zurueck') }}</button>
             <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" @click="umschalten('hilfe')">{{ t('sna.ersteHilfe') }}</button>
             <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" :disabled="!protokoll || Boolean(ende && !abfrage.abbruch && !abfrage.aufwertung && hoeher.length === 0)" @click="umschalten('aufwertung')">{{ t('sna.aufwertung') }}</button>
+            <button v-if="uebergabe" type="button" :disabled="uebergabe === 'gesperrt' || uebergabe === 'erfolgt'" :class="['h-10 rounded border px-3 text-sm font-semibold', uebergabe === 'faellig' ? 'border-amber-500 bg-amber-300 text-amber-950' : uebergabe === 'erfolgt' ? 'border-green-600 bg-green-50 text-ok' : 'border-slate-400 bg-white']" @click="emit('uebergeben')">
+                <FontAwesomeIcon :icon="uebergabe === 'erfolgt' ? faCheck : faShareFromSquare" class="mr-1.5" aria-hidden="true"/>
+                {{ uebergabe === 'erfolgt' ? t('uebergabe.erfolgt', {dauer: dauer((uebergebenUm ?? jetzt) - (seit ?? uebergebenUm ?? jetzt))}) : t('uebergabe.knopf') }}
+            </button>
+            <span v-if="uebergabe === 'faellig'" role="status" class="text-sm font-semibold text-amber-900">{{ t('uebergabe.jetzt') }}</span>
             <button type="button" class="ml-auto h-10 rounded border border-red-300 bg-white px-3 text-sm font-semibold text-red-800" :disabled="Boolean(ende) || !zwischen" @click="umschalten('abbruch')">{{ t('sna.abbruch') }}</button>
         </div>
         <div class="flex flex-wrap items-center gap-3 border-b border-amber-200 bg-amber-50 px-4 py-2 text-sm">

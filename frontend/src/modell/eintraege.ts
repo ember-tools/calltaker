@@ -46,7 +46,11 @@ export interface Eintraege {
     anleitung: {gegeben: string[]}
     /** The CPR guidance: whether its beat runs, and at how many beats a minute. */
     reanimation: {laeuft: boolean, takt: number}
-    zeiten: {adresse?: number, code?: number, anleitungen?: Record<string, number>, reanimation?: number}
+    /** Whether the call was handed over to dispatch; once set, the server keeps it. */
+    uebergabe?: boolean
+    /** The entries as they were handed over, kept by the server. */
+    uebergeben?: Pick<Eintraege, 'ort' | 'anrufer' | 'betroffener' | 'abfrage' | 'hinweise'>
+    zeiten: {adresse?: number, code?: number, anleitungen?: Record<string, number>, reanimation?: number, uebergabe?: number}
 }
 
 /**

@@ -185,6 +185,21 @@ export default {
         lizenz: 'Licensed under AGPL-3.0',
         fassung: 'Calltaker {commit} · built {gebaut}',
     },
+    uebergabe: {
+        knopf: 'An Disposition übergeben',
+        erfolgt: 'Übergeben nach {dauer}',
+        jetzt: 'Übergabe jetzt fällig',
+        nachtrag: 'Nachtrag',
+        nicht: 'Nicht an die Disposition übergeben',
+        nachgetragen: 'Nachgetragen: {teile}',
+        teil: {
+            ort: 'Einsatzort',
+            anrufer: 'Mitteiler',
+            betroffener: 'Betroffener',
+            hinweise: 'Hinweise',
+            code: 'Code',
+        },
+    },
     reanimation: {
         titel: 'Telefonreanimation',
         start: 'Takt starten',
@@ -279,7 +294,7 @@ export default {
         beendet: 'Gespräch beendet.',
         graphFehlt: 'Der Abfragegraph lädt nicht: {fehler}',
         debrief: 'Debrief des Gesprächs ansehen',
-        tasten: 'F2: Einsatzmaske · F3: Abfrage · F4: Hinweise an den Anrufer',
+        tasten: 'F2: Einsatzmaske · F3: Abfrage · F4: Hinweise an den Anrufer · F9: An Disposition übergeben',
     },
     phase: {
         leiste: 'Phasen des Gesprächs',

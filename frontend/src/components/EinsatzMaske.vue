@@ -5,13 +5,15 @@ import {computed, onMounted, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Eintraege} from '../modell/eintraege'
 import type {Warntafel} from '../modell/gefahrstoffe'
+import type {Nachtrag} from '../modell/uebergabe'
 import type {Ortsangabe} from '../modell/ort'
 import {anzeigen} from '../modell/rufnummer'
 import type {AnrufSicht} from '../modell/uebung'
+import NachtragMarke from './NachtragMarke.vue'
 import OrtWahl from './OrtWahl.vue'
 import WarntafelFeld from './WarntafelFeld.vue'
 
-const props = defineProps<{anruf: AnrufSicht, stichwort?: string, alter?: string, ruhig?: boolean, warntafel?: boolean}>()
+const props = defineProps<{anruf: AnrufSicht, stichwort?: string, alter?: string, ruhig?: boolean, warntafel?: boolean, nachgetragen?: Set<Nachtrag>}>()
 const eintraege = defineModel<Eintraege>({required: true})
 const suche = defineModel<string>('suche', {default: ''})
 const emit = defineEmits<{sna: [], sofort: []}>()
@@ -69,7 +71,7 @@ defineExpose({fokussieren})
     <section ref="wurzel" :aria-label="t('maske.titel')" class="flex flex-col gap-3 rounded-lg border border-rand bg-flaeche p-3.5">
         <h2 class="m-0 font-condensed text-base font-bold tracking-wider text-gedaempft">{{ t('maske.titel') }}</h2>
         <fieldset class="m-0 min-w-0 flex flex-col gap-1.5 border-0 p-0">
-            <legend class="mb-1 font-bold">{{ t('maske.mitteiler') }}</legend>
+            <legend class="mb-1 font-bold">{{ t('maske.mitteiler') }}<NachtragMarke v-if="nachgetragen?.has('anrufer')"/></legend>
             <div class="grid grid-cols-2 gap-2">
                 <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
                     {{ t('maske.name') }}
@@ -93,7 +95,7 @@ defineExpose({fokussieren})
             </label>
         </fieldset>
         <fieldset class="m-0 min-w-0 flex flex-col gap-1.5 border-0 p-0">
-            <legend class="mb-1 font-bold">{{ t('maske.einsatzort') }}</legend>
+            <legend class="mb-1 font-bold">{{ t('maske.einsatzort') }}<NachtragMarke v-if="nachgetragen?.has('ort')"/></legend>
             <OrtWahl v-model="ort" v-model:text="suche" :ruhig="ruhig"/>
             <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
                 {{ t('maske.objekt') }}
@@ -111,7 +113,7 @@ defineExpose({fokussieren})
             <legend class="mb-1 font-bold">{{ t('maske.ereignis') }}</legend>
             <div class="grid grid-cols-[minmax(0,2fr)_minmax(0,1fr)_auto] items-end gap-2">
                 <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
-                    {{ t('maske.stichwort') }}
+                    <span>{{ t('maske.stichwort') }}<NachtragMarke v-if="nachgetragen?.has('code')"/></span>
                     <input :value="stichwort ?? ''" readonly class="h-8 w-full min-w-0 rounded border border-slate-300 bg-slate-100 px-2 font-mono text-sm text-tinte"/>
                 </label>
                 <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
@@ -121,11 +123,11 @@ defineExpose({fokussieren})
                 <button type="button" class="h-8 rounded border border-green-700 bg-green-200 px-3 text-sm font-bold text-green-900" @click="emit('sna')">{{ t('maske.sna') }}</button>
             </div>
             <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
-                {{ t('maske.betroffener') }}
+                <span>{{ t('maske.betroffener') }}<NachtragMarke v-if="nachgetragen?.has('betroffener')"/></span>
                 <input v-model="eintraege.betroffener" class="h-8 rounded border border-slate-400 px-2 text-sm text-tinte"/>
             </label>
             <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
-                {{ t('maske.hinweise') }}
+                <span>{{ t('maske.hinweise') }}<NachtragMarke v-if="nachgetragen?.has('hinweise')"/></span>
                 <textarea v-model="eintraege.hinweise" rows="2" class="rounded border border-slate-400 px-2 py-1 text-sm text-tinte"/>
             </label>
         </fieldset>

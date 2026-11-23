@@ -5,7 +5,9 @@ import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import {mitKorrektur} from '../modell/eintraege'
+import {dauer} from '../composables/useUhr'
 import {anzeigen} from '../modell/rufnummer'
+import {nachtraege} from '../modell/uebergabe'
 import type {Anruf} from '../modell/uebung'
 import {vergleichePfad} from '../modell/wahrheitspfad'
 import {bewerten} from '../phasen/register'
@@ -30,6 +32,7 @@ const rolle = computed(() => {
 const ortsangaben = computed(() => (['objekt', 'geschoss', 'klingel', 'anfahrt', 'gefahren'] as const)
     .filter(feld => szenario.value.ort[feld])
     .map(feld => ({feld, wert: szenario.value.ort[feld]})))
+const nachgetragen = computed(() => [...nachtraege(props.graph, props.anruf.eintraege)].map(teil => t(`uebergabe.teil.${teil}`)))
 const erreichbar = computed(() => {
     const anrufer = szenario.value.anrufer
     return anrufer.rueckrufnummer && anrufer.rueckrufnummer !== anrufer.rufnummer ? anzeigen(anrufer.rueckrufnummer) : ''
@@ -45,6 +48,8 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
             <p class="m-0"><b class="font-mono">{{ szenario.ziel.code }}</b> · {{ ziel?.kategorie }} · {{ ziel?.anlass }}</p>
             <p v-if="rolle" class="m-0">{{ rolle }}</p>
             <p v-if="szenario.rolle.notizen" class="m-0 whitespace-pre-line rounded bg-amber-50 p-2">{{ szenario.rolle.notizen }}</p>
+            <p v-if="anruf.eintraege.zeiten.uebergabe" class="m-0 font-semibold text-ok">{{ t('uebergabe.erfolgt', {dauer: dauer(anruf.eintraege.zeiten.uebergabe - (anruf.angenommenUm ?? anruf.eintraege.zeiten.uebergabe))}) }}<span v-if="nachgetragen.length" class="font-normal text-akzent"> · {{ t('uebergabe.nachgetragen', {teile: nachgetragen.join(', ')}) }}</span></p>
+            <p v-else-if="anruf.zustand === 'gespraech' || anruf.zustand === 'beendet'" class="m-0 text-gedaempft">{{ t('uebergabe.nicht') }}</p>
         </header>
         <dl class="m-0 grid grid-cols-[max-content_1fr] gap-x-3 gap-y-1">
             <dt class="text-gedaempft">{{ t('wahrheit.anrufer') }}</dt>

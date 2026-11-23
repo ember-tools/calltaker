@@ -34,11 +34,31 @@ export function useGespraech(anruf: Ref<AnrufSicht | undefined>, absicht: (art: 
         uebernommen = JSON.stringify(eintraege.value)
     }, {immediate: true})
 
+    /**
+     * Takes what only the server sets, its times and the handover snapshot, from its answer into
+     * the entries. When nothing was typed since the send, this is no change to send; otherwise the
+     * typing is sent anyway.
+     *
+     * @param antwort the answer to a send
+     * @param gesendet the entries as sent, as JSON
+     */
+    function serverFelderUebernehmen(antwort: unknown, gesendet: string): void {
+        const felder = antwort as {zeiten?: Eintraege['zeiten'], uebergeben?: Eintraege['uebergeben'] | null} | undefined
+        if (!felder?.zeiten) return
+        const unveraendert = JSON.stringify(eintraege.value) === gesendet
+        const neu = {...eintraege.value, zeiten: felder.zeiten, uebergeben: felder.uebergeben ?? undefined}
+        if (unveraendert) uebernommen = JSON.stringify(neu)
+        eintraege.value = neu
+    }
+
     async function senden(): Promise<void> {
         do {
             nochmal = false
             if (!anrufId) return
-            await absicht('eintragen', {anrufId, eintraege: eintraege.value}).catch(() => undefined)
+            const fuer = anrufId
+            const gesendet = JSON.stringify(eintraege.value)
+            const antwort = await absicht('eintragen', {anrufId, eintraege: eintraege.value}).catch(() => undefined)
+            if (fuer === anrufId) serverFelderUebernehmen(antwort, gesendet)
         } while (nochmal)
     }
 

@@ -29,4 +29,22 @@ describe('TraineeView mit der Tastatur', () => {
         expect(ansicht.text()).toContain('F2: Einsatzmaske · F3: Abfrage')
         ansicht.unmount()
     })
+
+    it('übergibt mit F9 erst, wenn Ort und Protokoll stehen', async () => {
+        const ansicht = mount(TraineeView, {props: {code: 'T-1'}, global: {plugins: [i18n], stubs: {RouterLink: true}}, attachTo: document.body})
+        await flushPromises()
+        const knopf = () => ansicht.findAll('button').find(b => b.text().includes('An Disposition übergeben') || b.text().includes('Übergeben nach'))!
+        window.dispatchEvent(new KeyboardEvent('keydown', {key: 'F9'}))
+        await flushPromises()
+        expect(knopf().text()).toContain('An Disposition übergeben')
+        expect(knopf().attributes('disabled')).toBeDefined()
+        await ansicht.findAll('[data-antworten] button').find(b => b.text().includes('Feuer'))!.trigger('click')
+        await ansicht.findAll('[data-antworten] button').find(b => b.text().includes('1. Hand'))!.trigger('click')
+        await ansicht.findAll('[data-antworten] button').find(b => b.text().includes('Brand'))!.trigger('click')
+        await flushPromises()
+        window.dispatchEvent(new KeyboardEvent('keydown', {key: 'F9'}))
+        await flushPromises()
+        expect(knopf().text()).toContain('Übergeben nach')
+        ansicht.unmount()
+    })
 })

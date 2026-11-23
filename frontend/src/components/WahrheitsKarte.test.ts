@@ -66,3 +66,15 @@ describe('WahrheitsKarte bei einem unpassenden Hinweis', () => {
         expect(ansicht.emitted('korrigieren')?.[1]).toEqual(['gehen', true])
     })
 })
+
+describe('WahrheitsKarte zur Übergabe', () => {
+    it('zeigt, wann übergeben wurde und was nachgetragen ist', () => {
+        const anruf = anrufMit('a')
+        const {ort, anrufer, betroffener, abfrage, hinweise} = structuredClone(anruf.eintraege)
+        anruf.angenommenUm = 100
+        anruf.eintraege = {...anruf.eintraege, uebergabe: true, uebergeben: {ort, anrufer, betroffener, abfrage, hinweise}, hinweise: 'neu', zeiten: {uebergabe: 165}}
+        const ansicht = mount(WahrheitsKarte, {props: {graph: GRAPH, anruf}, global: {plugins: [i18n]}})
+        expect(ansicht.text()).toContain('Übergeben nach 1:05')
+        expect(ansicht.text()).toContain('Nachgetragen: Hinweise')
+    })
+})

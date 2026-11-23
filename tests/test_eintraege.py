@@ -131,3 +131,42 @@ def test_der_erste_start_der_reanimation_wird_gestempelt():
     for takt in (99, 121):
         with pytest.raises(ValidationError):
             Eintraege.model_validate({"reanimation": {"takt": takt}})
+
+
+def test_die_uebergabe_wird_einmal_gestempelt_und_ihr_stand_bleibt():
+    vorher = Eintraege.model_validate({"hinweise": "erst", "betroffener": "A"})
+    uebergabe = Eintraege.model_validate(
+        {"hinweise": "erst", "betroffener": "A", "uebergabe": True}
+    )
+    erste = uebernehmen(uebernehmen(Eintraege(), vorher, 5.0), uebergabe, 10.0)
+    gefaelscht = Eintraege.model_validate(
+        {
+            "hinweise": "nachgetragen",
+            "uebergabe": False,
+            "uebergeben": {
+                "ort": {},
+                "anrufer": {},
+                "betroffener": "X",
+                "abfrage": {},
+                "hinweise": "x",
+            },
+        }
+    )
+    spaeter = uebernehmen(erste, gefaelscht, 20.0)
+    assert erste.zeiten.uebergabe == 10.0
+    assert spaeter.zeiten.uebergabe == 10.0
+    assert spaeter.uebergabe is True
+    assert spaeter.uebergeben.hinweise == "erst"
+    assert spaeter.uebergeben.betroffener == "A"
+    assert spaeter.hinweise == "nachgetragen"
+    assert uebernehmen(Eintraege(), vorher, 5.0).uebergeben is None
+
+
+def test_die_antwort_bringt_zeiten_und_uebergabestand(gespraech):
+    client, _, t, anruf_id = gespraech
+    vorher = eintragen(client, t, anruf_id, {"hinweise": "Tür offen"}).json()["ergebnis"]
+    assert vorher["uebergeben"] is None
+    assert "uebergabe" not in vorher["zeiten"]
+    danach = eintragen(client, t, anruf_id, {"hinweise": "Tür offen", "uebergabe": True}).json()
+    assert danach["ergebnis"]["zeiten"]["uebergabe"] > 0
+    assert danach["ergebnis"]["uebergeben"]["hinweise"] == "Tür offen"
