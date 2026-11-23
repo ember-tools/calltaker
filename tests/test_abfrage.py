@@ -30,7 +30,7 @@ def auswahl(*ziele: str, **felder) -> dict:
 def test_der_graph_beginnt_mit_der_fachrichtung(graph):
     wurzel = graph.knoten[graph.meta.wurzel]
     assert wurzel.frage == "Was ist jetzt der Grund Ihres Anrufes?"
-    assert [a.id for a in wurzel.antworten] == ["rd", "fw"]
+    assert [a.id for a in wurzel.antworten] == ["rd", "brand", "th"]
     assert {a.ziel for a in wurzel.antworten} == {"eroeffnung.hand"}
 
 
@@ -39,7 +39,7 @@ def test_die_eroeffnung_ist_gemeinsam_und_verzweigt_ueber_die_weiche(graph):
     assert {a.ziel for a in graph.knoten["eroeffnung.vor-ort"].antworten} == {"eroeffnung.weiche"}
     weiche = graph.knoten["eroeffnung.weiche"].weiche
     assert weiche.knoten == "fachrichtung"
-    assert weiche.ziele == {"rd": "rd.anzahl", "fw": "fw.grund"}
+    assert weiche.ziele == {"rd": "rd.anzahl", "brand": "fw.grund", "th": "fw.th.grund"}
     assert graph.knoten["rd.alter"].eingabe is not None
 
 
@@ -70,7 +70,16 @@ def test_der_index_fuehrt_jeden_endpunkt_einmal_je_protokoll(graph):
     assert len(paare) == len(set(paare))
     endpunkte = {id_ for id_, knoten in graph.knoten.items() if knoten.code is not None}
     assert {e.knoten for e in graph.endpunkte} == endpunkte
-    assert {e.fachrichtung for e in graph.endpunkte} == {"rd", "fw"}
+    assert {e.fachrichtung for e in graph.endpunkte} == {"rd", "brand", "th"}
+    assert {e.protokoll.split(".")[1] for e in graph.endpunkte if e.fachrichtung != "rd"} == {
+        "brand",
+        "th",
+    }
+    assert all(
+        e.protokoll.startswith(f"fw.{e.fachrichtung}.")
+        for e in graph.endpunkte
+        if e.fachrichtung != "rd"
+    )
 
 
 def test_gleiche_codes_mit_verschiedener_kategorie_bleiben_im_index(graph):
@@ -260,7 +269,7 @@ def test_die_route_liefert_den_graphen_gepackt():
     buendel = antwort.json()
     assert buendel["meta"]["wurzel"] == "fachrichtung"
     assert len(buendel["endpunkte"]) > 3000
-    assert buendel["knoten"]["fachrichtung"]["antworten"][0]["label"] == "Med. Notruf"
+    assert buendel["knoten"]["fachrichtung"]["antworten"][0]["label"] == "Notfallrettung"
 
 
 def test_die_uebernahme_schreibt_nicht_in_fremde_ordner(tmp_path):

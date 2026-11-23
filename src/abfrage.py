@@ -270,7 +270,7 @@ def protokollfehler(graph: Abfragegraph, id_: str, protokoll: str) -> list[str]:
         return [f"{id_}: Protokoll-ID {protokoll} passt nicht zum Muster"]
     wurzel = graph.knoten.get(graph.meta.wurzel)
     fachrichtungen = {antwort.id for antwort in (wurzel.antworten or [])} if wurzel else set()
-    fachrichtung = protokoll.split(".", 1)[0]
+    fachrichtung = fachrichtung_von(protokoll)
     if fachrichtung not in fachrichtungen:
         return [f"{id_}: Protokoll {protokoll} gehört zu keiner Fachrichtung der Wurzel"]
     return []
@@ -376,9 +376,19 @@ def endpunkte(graph: Abfragegraph) -> list[Endpunkt]:
     return gefunden
 
 
+def fachrichtung_von(protokoll: str) -> str:
+    """Return the root answer a protocol belongs to: rd, or brand and th for the fire brigade's.
+
+    Fire and technical rescue protocols share the prefix fw, as the fire brigade answers both,
+    but each has its own start at the root.
+    """
+    teile = protokoll.split(".")
+    return teile[1] if teile[0] == "fw" and len(teile) > 2 else teile[0]
+
+
 def protokollendpunkte(graph: Abfragegraph, wahl: str, antwort: Antwort) -> list[Endpunkt]:
     """Return the codes of one protocol, walking breadth first from the answer that chose it."""
-    fachrichtung = antwort.protokoll.split(".", 1)[0]
+    fachrichtung = fachrichtung_von(antwort.protokoll)
     gesehen: set[str] = set()
     gefunden = []
     offen = deque([(antwort.ziel, [Schritt(knoten=wahl, antwort=antwort.id)])])

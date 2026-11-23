@@ -76,3 +76,17 @@ describe('SnaKacheln bei falschen Nummern', () => {
         expect(ansicht.emitted('waehlen')).toEqual([['a4']])
     })
 })
+
+describe('SnaKacheln in den Farben der Fachrichtungen', () => {
+    it('färbt Notfallrettung blau, Brand rot und Technische Hilfe gelb', () => {
+        const ansicht = mount(SnaKacheln, {props: {antworten: [
+            {id: 'rd', label: 'Notfallrettung', ziel: 'x', farbe: 'rd'},
+            {id: 'brand', label: 'Brand', ziel: 'x', farbe: 'brand'},
+            {id: 'th', label: 'Technische Hilfeleistung', ziel: 'x', farbe: 'th'},
+        ], zusaetze: new Map(), farbe: 'th'}, global: {plugins: [i18n]}})
+        const kacheln = ansicht.findAll('button')
+        expect(kacheln[0]!.classes()).toContain('bg-sky-100')
+        expect(kacheln[1]!.classes()).toContain('bg-red-100')
+        expect(kacheln[2]!.classes()).toContain('bg-amber-100')
+    })
+})
