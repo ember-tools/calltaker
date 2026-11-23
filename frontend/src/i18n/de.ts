@@ -243,6 +243,8 @@ export default {
         anteilOrte: 'An Orten wie Bahnhof, Supermarkt (%)',
         kategorie: 'Nur Kategorie',
         kategorieHinweis: 'z. B. RD1 oder BRAND',
+        treffer: '{anzahl} Codes',
+        keinTreffer: 'Passt zu keinem Code',
         automatisch: 'Generieren, wenn der Pool leer ist',
         anzahl: 'Anzahl',
         los: 'Generieren',

@@ -2,6 +2,7 @@ import {flushPromises, mount} from '@vue/test-utils'
 import {describe, expect, it, vi} from 'vitest'
 import {i18n} from '../i18n'
 import type {Erzeugung} from '../modell/uebung'
+import {testgraph} from '../modell/testgraph.test-hilfe'
 import GeneratorPanel from './GeneratorPanel.vue'
 
 vi.mock('../api/gebiete', () => ({ladeGebiete: vi.fn().mockResolvedValue({Neukölln: ['Britz', 'Neukölln']})}))
@@ -54,5 +55,19 @@ describe('GeneratorPanel', () => {
         expect(absicht).toHaveBeenCalledWith('engine.parameter', {parameter: {autoGenerieren: false}})
         await flushPromises()
         expect(ansicht.get('[role=alert]').text()).toBe('Kein Code passt zu diesen Einstellungen.')
+    })
+})
+
+describe('GeneratorPanel mit Kategorien', () => {
+    it('schlägt Kategorien vor und sagt, wie viele Codes ein Filter übrig lässt', async () => {
+        const ansicht = mount(GeneratorPanel, {props: {erzeugung: ERZEUGUNG, autoGenerieren: true, absicht: vi.fn().mockResolvedValue({}), graph: testgraph()}, global: {plugins: [i18n]}})
+        const optionen = ansicht.findAll('datalist option').map(o => o.attributes('value'))
+        expect(optionen).toContain('RD1')
+        expect(optionen).toContain('BRAND 2')
+        const feld = ansicht.get('input[list=generator-kategorien]')
+        await feld.setValue('rd')
+        expect(ansicht.text()).toContain('3 Codes')
+        await feld.setValue('xyz')
+        expect(ansicht.text()).toContain('Passt zu keinem Code')
     })
 })
