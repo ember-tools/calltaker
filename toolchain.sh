@@ -48,7 +48,12 @@ Frontend
   fe-test               vitest, once
   fe-test-watch         vitest, watching
   fe-bundle             Production build
-  fe-build              Full verification: type check, tests, build
+  fe-lint [name] [args] Every linter of the registry in scripts/linters.mjs, failing when one does.
+                        With a name only that one: eslint, duplication, browser-storage,
+                        em-dash, comments
+  fe-audit              All linters, non-gating; prints everything they find
+  fe-eslint [args]      ESLint directly
+  fe-build              Full verification: linters, type check, tests, build
 
 Backend
   be-install            pipenv sync --dev
@@ -70,7 +75,7 @@ Docker
 
 Whole repository
   verify                Everything CI runs
-  format                Apply the formatters
+  format                Apply ruff format and the ESLint fixes
   help                  This text
 EOF
 }
@@ -115,7 +120,11 @@ case "$cmd" in
     fe-test)          fe; run npx vitest run "$@" ;;
     fe-test-watch)    fe; run npx vitest "$@" ;;
     fe-bundle)        fe; run npx vite build "$@" ;;
+    fe-lint)          fe; run node scripts/lint.mjs "$@" ;;
+    fe-audit)         fe; run node scripts/lint.mjs --audit ;;
+    fe-eslint)        fe; run npx eslint "$@" ;;
     fe-build)
+        "$ROOT/toolchain.sh" fe-lint
         "$ROOT/toolchain.sh" fe-typecheck
         "$ROOT/toolchain.sh" fe-test
         "$ROOT/toolchain.sh" fe-bundle
@@ -150,6 +159,7 @@ case "$cmd" in
         ;;
     format)
         "$ROOT/toolchain.sh" be-format
+        "$ROOT/toolchain.sh" fe-eslint --fix .
         ;;
 
     help|-h|--help) usage ;;
