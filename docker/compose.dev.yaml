@@ -11,6 +11,7 @@ services:
       CORS_ORIGINS: http://localhost:5173
     volumes:
       - ../src:/app/src
+      - ../daten:/app/daten
       - daten:/data
 
   frontend:

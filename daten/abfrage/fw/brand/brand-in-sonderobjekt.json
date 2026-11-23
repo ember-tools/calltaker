@@ -1,0 +1,304 @@
+{
+  "knoten": {
+    "fw.brand.brand-in-sonderobjekt.k0": {
+      "frage": "Um welches Objekt handelt es sich?",
+      "antworten": [
+        {
+          "id": "krankenhaus-pflegeheim",
+          "label": "Krankenhaus, Pflegeheim",
+          "ziel": "fw.brand.brand-in-sonderobjekt.k1",
+          "aussage": "Betroffen ist ein Krankenhaus oder Pflegeheim."
+        },
+        {
+          "id": "schule-kindertagesstaette",
+          "label": "Schule, Kindertagesstätte",
+          "ziel": "fw.brand.brand-in-sonderobjekt.k2",
+          "aussage": "Betroffen ist eine Schule oder Kindertagesstätte."
+        },
+        {
+          "id": "versammlungsstaette-diskothek",
+          "label": "Versammlungsstätte, Diskothek",
+          "ziel": "fw.brand.brand-in-sonderobjekt.k3",
+          "aussage": "Betroffen ist eine Versammlungsstätte."
+        },
+        {
+          "id": "hochhaus",
+          "label": "Hochhaus",
+          "ziel": "fw.brand.brand-in-sonderobjekt.k4",
+          "aussage": "Betroffen ist ein Hochhaus."
+        },
+        {
+          "id": "unterkunft-wohnheim",
+          "label": "Unterkunft, Wohnheim",
+          "ziel": "fw.brand.brand-in-sonderobjekt.k5",
+          "aussage": "Betroffen ist eine Unterkunft oder ein Wohnheim."
+        }
+      ]
+    },
+    "fw.brand.brand-in-sonderobjekt.k1": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74c01",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d01",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74e01",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d01u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-sonderobjekt.k2": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-sonderobjekt.k3": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74c03",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d03",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74e03",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d03u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-sonderobjekt.k4": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74c04",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d04",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74e04",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d04u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-sonderobjekt.k5": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74c05",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d05",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74e05",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-sonderobjekt.74d05u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-sonderobjekt.74c01": {
+      "code": "74C01",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand in Pflegeeinrichtung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d01": {
+      "code": "74D01",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand in Pflegeeinrichtung - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-sonderobjekt.74e01": {
+      "code": "74E01",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand in Pflegeeinrichtung - Menschenrettung",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d01u": {
+      "code": "74D01U",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand in Pflegeeinrichtung - Betroffenheit unbekannt",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-sonderobjekt.74c02": {
+      "code": "74C02",
+      "kategorie": "BRAND 3",
+      "anlass": "Brand in Schule oder Kita",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d02": {
+      "code": "74D02",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand in Schule oder Kita - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brand-in-sonderobjekt.74e02": {
+      "code": "74E02",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand in Schule oder Kita - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d02u": {
+      "code": "74D02U",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand in Schule oder Kita - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brand-in-sonderobjekt.74c03": {
+      "code": "74C03",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand in Versammlungsstätte",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d03": {
+      "code": "74D03",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand in Versammlungsstätte - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-sonderobjekt.74e03": {
+      "code": "74E03",
+      "kategorie": "BRAND 10",
+      "anlass": "Brand in Versammlungsstätte - Menschenrettung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d03u": {
+      "code": "74D03U",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand in Versammlungsstätte - Betroffenheit unbekannt",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-sonderobjekt.74c04": {
+      "code": "74C04",
+      "kategorie": "BRAND 4",
+      "anlass": "Hochhausbrand",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d04": {
+      "code": "74D04",
+      "kategorie": "BRAND 6",
+      "anlass": "Hochhausbrand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-sonderobjekt.74e04": {
+      "code": "74E04",
+      "kategorie": "BRAND 8",
+      "anlass": "Hochhausbrand - Menschenrettung",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d04u": {
+      "code": "74D04U",
+      "kategorie": "BRAND 6",
+      "anlass": "Hochhausbrand - Betroffenheit unbekannt",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-sonderobjekt.74c05": {
+      "code": "74C05",
+      "kategorie": "BRAND 3",
+      "anlass": "Brand in Unterkunft",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d05": {
+      "code": "74D05",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand in Unterkunft - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brand-in-sonderobjekt.74e05": {
+      "code": "74E05",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand in Unterkunft - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-sonderobjekt.74d05u": {
+      "code": "74D05U",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand in Unterkunft - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    }
+  }
+}

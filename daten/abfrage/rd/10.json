@@ -1,0 +1,158 @@
+{
+  "knoten": {
+    "rd.10.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "normale-atmung-35",
+          "label": "Normale Atmung < 35",
+          "ziel": "rd.10.10a01",
+          "aussage": "Normale Atmung < 35",
+          "alter": {
+            "max": 34
+          }
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.10.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.10.10c01",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "kokainmissbrauch",
+          "label": "Kokainmissbrauch",
+          "ziel": "rd.10.10c02",
+          "aussage": "Kokainmissbrauch"
+        },
+        {
+          "id": "normale-atmung-35-2",
+          "label": "Normale Atmung ≥ 35",
+          "ziel": "rd.10.10c03",
+          "aussage": "Normale Atmung ≥ 35",
+          "alter": {
+            "min": 35
+          }
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.10.10d01",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "sprachschwierigkeiten-zwischen",
+          "label": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN",
+          "ziel": "rd.10.10d02",
+          "aussage": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN"
+        },
+        {
+          "id": "veraenderte-hautfarbe",
+          "label": "VERÄNDERTE HAUTFARBE",
+          "ziel": "rd.10.10d03",
+          "aussage": "VERÄNDERTE HAUTFARBE"
+        },
+        {
+          "id": "kaltschweissig",
+          "label": "Kaltschweißig",
+          "ziel": "rd.10.10d04",
+          "aussage": "Kaltschweißig"
+        },
+        {
+          "id": "herzinfarkt-angina-pectoris",
+          "label": "Herzinfarkt-/Angina Pectoris-Vorgeschichte",
+          "ziel": "rd.10.10d05",
+          "aussage": "Herzinfarkt-/Angina Pectoris-Vorgeschichte"
+        }
+      ]
+    },
+    "rd.10.10a01": {
+      "code": "10A01",
+      "kategorie": "RD4C.",
+      "anlass": "Brustschmerzen bei normaler Atmung - jünger 35 Jahre",
+      "stichwort": "RD4C."
+    },
+    "rd.10.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.10.10c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.10.10d00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.10.10c01": {
+      "code": "10C01",
+      "kategorie": "RD2C.",
+      "anlass": "Brustschmerzen mit Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.10.10c02": {
+      "code": "10C02",
+      "kategorie": "RD3C.",
+      "anlass": "Brustschmerzen nach Kokainmissbrauch",
+      "stichwort": "RD3C."
+    },
+    "rd.10.10c03": {
+      "code": "10C03",
+      "kategorie": "RD2C.",
+      "anlass": "Brustschmerzen bei normaler Atmung",
+      "stichwort": "RD2C."
+    },
+    "rd.10.10d01": {
+      "code": "10D01",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Brustschmerzen mit Bewusstseinstrübung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.10.10d02": {
+      "code": "10D02",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Brustschmerzen mit Sprechdyspnoe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.10.10d03": {
+      "code": "10D03",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Brustschmerzen mit veränderter Hautfarbe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.10.10d04": {
+      "code": "10D04",
+      "kategorie": "RD2NC.",
+      "anlass": "Brustschmerzen mit Kaltschweißigkeit",
+      "stichwort": "RD2NC."
+    },
+    "rd.10.10d05": {
+      "code": "10D05",
+      "kategorie": "RD2NC.",
+      "anlass": "Brustschmerzen mit koronarer Vorgeschichte",
+      "stichwort": "RD2NC."
+    },
+    "rd.10.10c00": {
+      "code": "10C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Brustschmerzen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.10.10d00": {
+      "code": "10D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Brustschmerzen",
+      "stichwort": "Aufwertung entfällt."
+    }
+  }
+}

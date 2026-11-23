@@ -1,0 +1,326 @@
+{
+  "knoten": {
+    "fw.th.wasserschaden.k0": {
+      "frage": "Woher kommt das Wasser?",
+      "antworten": [
+        {
+          "id": "rohrbruch-im-gebaeude",
+          "label": "Rohrbruch im Gebäude",
+          "ziel": "fw.th.wasserschaden.k1",
+          "aussage": "Im Gebäude ist eine Leitung gebrochen."
+        },
+        {
+          "id": "starkregen-ueberflutung",
+          "label": "Starkregen, Überflutung",
+          "ziel": "fw.th.wasserschaden.k2",
+          "aussage": "Es liegt eine Überflutung nach Starkregen vor."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.k1": {
+      "frage": "Wie weit reicht der Schaden?",
+      "antworten": [
+        {
+          "id": "einzelne-wohnung",
+          "label": "Einzelne Wohnung",
+          "ziel": "fw.th.wasserschaden.k3",
+          "aussage": "Betroffen ist eine einzelne Wohnung."
+        },
+        {
+          "id": "mehrere-geschosse",
+          "label": "Mehrere Geschosse",
+          "ziel": "fw.th.wasserschaden.k4",
+          "aussage": "Mehrere Geschosse sind betroffen."
+        },
+        {
+          "id": "elektroanlage-betroffen",
+          "label": "Elektroanlage betroffen",
+          "ziel": "fw.th.wasserschaden.k5",
+          "aussage": "Die Elektroanlage ist betroffen."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.k2": {
+      "frage": "Was steht unter Wasser?",
+      "antworten": [
+        {
+          "id": "keller",
+          "label": "Keller",
+          "ziel": "fw.th.wasserschaden.k6",
+          "aussage": "Ein Keller steht unter Wasser."
+        },
+        {
+          "id": "tiefgarage-oder-unterfuehrung",
+          "label": "Tiefgarage oder Unterführung",
+          "ziel": "fw.th.wasserschaden.k7",
+          "aussage": "Eine Tiefgarage oder Unterführung steht unter Wasser."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.k3": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.wasserschaden.52a01",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.wasserschaden.52c01",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.wasserschaden.52e01",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.wasserschaden.52c01u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.k4": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.wasserschaden.52a02",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.wasserschaden.52c02",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.wasserschaden.52e02",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.wasserschaden.52c02u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.k5": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.wasserschaden.52a03",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.wasserschaden.52c03",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.wasserschaden.52e03",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.wasserschaden.52c03u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.k6": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.wasserschaden.52a05",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.wasserschaden.52c05",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.wasserschaden.52e05",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.wasserschaden.52c05u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.k7": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.wasserschaden.52a06",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.wasserschaden.52c06",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.wasserschaden.52e06",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.wasserschaden.52c06u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.52a01": {
+      "code": "52A01",
+      "kategorie": "TH K.",
+      "anlass": "Wasserschaden - Wohnung",
+      "stichwort": "TH K."
+    },
+    "fw.th.wasserschaden.52c01": {
+      "code": "52C01",
+      "kategorie": "TH K.",
+      "anlass": "Wasserschaden - Wohnung - Personen betroffen",
+      "stichwort": "TH K."
+    },
+    "fw.th.wasserschaden.52e01": {
+      "code": "52E01",
+      "kategorie": "TH 1",
+      "anlass": "Wasserschaden - Wohnung - Personenrettung",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52c01u": {
+      "code": "52C01U",
+      "kategorie": "TH K.",
+      "anlass": "Wasserschaden - Wohnung - Betroffenheit unbekannt",
+      "stichwort": "TH K."
+    },
+    "fw.th.wasserschaden.52a02": {
+      "code": "52A02",
+      "kategorie": "TH 1",
+      "anlass": "Wasserschaden - mehrere Geschosse",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52c02": {
+      "code": "52C02",
+      "kategorie": "TH 1",
+      "anlass": "Wasserschaden - mehrere Geschosse - Personen betroffen",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52e02": {
+      "code": "52E02",
+      "kategorie": "TH 2",
+      "anlass": "Wasserschaden - mehrere Geschosse - Personenrettung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.wasserschaden.52c02u": {
+      "code": "52C02U",
+      "kategorie": "TH 1",
+      "anlass": "Wasserschaden - mehrere Geschosse - Betroffenheit unbekannt",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52a03": {
+      "code": "52A03",
+      "kategorie": "TH M.",
+      "anlass": "Wasserschaden an Elektroanlage",
+      "stichwort": "TH M."
+    },
+    "fw.th.wasserschaden.52c03": {
+      "code": "52C03",
+      "kategorie": "TH 1",
+      "anlass": "Wasserschaden an Elektroanlage - Personen betroffen",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52e03": {
+      "code": "52E03",
+      "kategorie": "TH 2",
+      "anlass": "Wasserschaden an Elektroanlage - Personenrettung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.wasserschaden.52c03u": {
+      "code": "52C03U",
+      "kategorie": "TH 1",
+      "anlass": "Wasserschaden an Elektroanlage - Betroffenheit unbekannt",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52a05": {
+      "code": "52A05",
+      "kategorie": "TH K.",
+      "anlass": "Überflutung - Keller",
+      "stichwort": "TH K."
+    },
+    "fw.th.wasserschaden.52c05": {
+      "code": "52C05",
+      "kategorie": "TH 1",
+      "anlass": "Überflutung - Keller - Personen betroffen",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52e05": {
+      "code": "52E05",
+      "kategorie": "TH 2",
+      "anlass": "Überflutung - Keller - Personenrettung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.wasserschaden.52c05u": {
+      "code": "52C05U",
+      "kategorie": "TH 1",
+      "anlass": "Überflutung - Keller - Betroffenheit unbekannt",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52a06": {
+      "code": "52A06",
+      "kategorie": "TH 1",
+      "anlass": "Überflutung - Tiefgarage",
+      "stichwort": "TH 1"
+    },
+    "fw.th.wasserschaden.52c06": {
+      "code": "52C06",
+      "kategorie": "TH 2",
+      "anlass": "Überflutung - Tiefgarage - Personen betroffen",
+      "stichwort": "TH 2"
+    },
+    "fw.th.wasserschaden.52e06": {
+      "code": "52E06",
+      "kategorie": "TH 3",
+      "anlass": "Überflutung - Tiefgarage - Personenrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.wasserschaden.52c06u": {
+      "code": "52C06U",
+      "kategorie": "TH 2",
+      "anlass": "Überflutung - Tiefgarage - Betroffenheit unbekannt",
+      "stichwort": "TH 2"
+    }
+  }
+}

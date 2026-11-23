@@ -32,3 +32,10 @@ The same in Docker, without a local Python or node:
 ## Licence
 
 GNU Affero General Public License, version 3 or later (`AGPL-3.0-or-later`), see `LICENSE`.
+
+The question graph in `daten/abfrage/` is derived from
+[alarmzettel](https://github.com/rainbowdashlabs/alarmzettel). Its medical codes and reasons come
+from the Berlin fire brigade's open data
+([BF-Open-Data](https://github.com/Berliner-Feuerwehr/BF-Open-Data)) and remain under the fire
+brigade's own terms. The fire and technical rescue protocols are invented placeholders: the real
+Alarm- und Ausrückeordnung is not public.

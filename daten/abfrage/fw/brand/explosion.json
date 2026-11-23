@@ -1,0 +1,186 @@
+{
+  "knoten": {
+    "fw.brand.explosion.k0": {
+      "frage": "Was ist explodiert?",
+      "antworten": [
+        {
+          "id": "explosion-in-einem-gebaeude",
+          "label": "Explosion in einem Gebäude",
+          "ziel": "fw.brand.explosion.k1",
+          "aussage": "In einem Gebäude hat es eine Explosion gegeben."
+        },
+        {
+          "id": "explosion-im-freien",
+          "label": "Explosion im Freien",
+          "ziel": "fw.brand.explosion.k2",
+          "aussage": "Im Freien hat es eine Explosion gegeben."
+        },
+        {
+          "id": "verpuffung-ohne-gebaeudeschaden",
+          "label": "Verpuffung ohne Gebäudeschaden",
+          "ziel": "fw.brand.explosion.k3",
+          "aussage": "Es hat eine Verpuffung ohne Gebäudeschaden gegeben."
+        }
+      ]
+    },
+    "fw.brand.explosion.k1": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.explosion.75c01",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.explosion.75d01",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.explosion.75e01",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.explosion.75d01u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.explosion.k2": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.explosion.75c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.explosion.75d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.explosion.75e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.explosion.75d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.explosion.k3": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.explosion.75c03",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.explosion.75d03",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.explosion.75e03",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.explosion.75d03u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.explosion.75c01": {
+      "code": "75C01",
+      "kategorie": "BRAND 6",
+      "anlass": "Explosion in Gebäude",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.explosion.75d01": {
+      "code": "75D01",
+      "kategorie": "BRAND 8",
+      "anlass": "Explosion in Gebäude - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.explosion.75e01": {
+      "code": "75E01",
+      "kategorie": "BRAND 10",
+      "anlass": "Explosion in Gebäude - Menschenrettung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.explosion.75d01u": {
+      "code": "75D01U",
+      "kategorie": "BRAND 8",
+      "anlass": "Explosion in Gebäude - Betroffenheit unbekannt",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.explosion.75c02": {
+      "code": "75C02",
+      "kategorie": "BRAND 3",
+      "anlass": "Explosion im Freien",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.explosion.75d02": {
+      "code": "75D02",
+      "kategorie": "BRAND 4",
+      "anlass": "Explosion im Freien - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.explosion.75e02": {
+      "code": "75E02",
+      "kategorie": "BRAND 6",
+      "anlass": "Explosion im Freien - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.explosion.75d02u": {
+      "code": "75D02U",
+      "kategorie": "BRAND 4",
+      "anlass": "Explosion im Freien - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.explosion.75c03": {
+      "code": "75C03",
+      "kategorie": "BRAND M.",
+      "anlass": "Verpuffung",
+      "stichwort": "BRAND M."
+    },
+    "fw.brand.explosion.75d03": {
+      "code": "75D03",
+      "kategorie": "BRAND 2",
+      "anlass": "Verpuffung - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.explosion.75e03": {
+      "code": "75E03",
+      "kategorie": "BRAND 3",
+      "anlass": "Verpuffung - Menschenrettung",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.explosion.75d03u": {
+      "code": "75D03U",
+      "kategorie": "BRAND 2",
+      "anlass": "Verpuffung - Betroffenheit unbekannt",
+      "stichwort": "BRAND 2"
+    }
+  }
+}

@@ -1,0 +1,2804 @@
+{
+  "knoten": {
+    "rd.17.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "markierte-ungefaehrliche-koerperregion",
+          "label": "Markierte (*) UNGEFÄHRLICHE Körperregion mit Fehlstellung",
+          "ziel": "rd.17.k1",
+          "aussage": "Markierte (*) UNGEFÄHRLICHE Körperregion mit Fehlstellung"
+        },
+        {
+          "id": "ungefaehrliche-koerperregion",
+          "label": "UNGEFÄHRLICHE Körperregion",
+          "ziel": "rd.17.k2",
+          "aussage": "UNGEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "aeltere-6-h-verletzungen-ohne",
+          "label": "ÄLTERE (≥ 6 h) Verletzungen (ohne Notfallleitsymptome)",
+          "ziel": "rd.17.k3",
+          "aussage": "ÄLTERE (≥ 6 h) Verletzungen (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "allgemeine-hilfe-keine-verletzungen-und",
+          "label": "ALLGEMEINE HILFE (keine Verletzungen und keine Notfallleitsymptome)",
+          "ziel": "rd.17.k4",
+          "aussage": "ALLGEMEINE HILFE (keine Verletzungen und keine Notfallleitsymptome)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.17.k5",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "moeglicherweise-gefaehrliche",
+          "label": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion",
+          "ziel": "rd.17.k6",
+          "aussage": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "starke-blutung",
+          "label": "STARKE Blutung",
+          "ziel": "rd.17.k7",
+          "aussage": "STARKE Blutung"
+        },
+        {
+          "id": "treppe-hinunterstuerzen-nicht-sturz-auf",
+          "label": "Treppe hinunterstürzen (nicht Sturz auf Treppe)",
+          "ziel": "rd.17.k8",
+          "aussage": "Treppe hinunterstürzen (nicht Sturz auf Treppe)"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.17.k9",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "aeltere-6-h-verletzungen-mit-ohnmacht",
+          "label": "ÄLTERE (≥ 6 h) Verletzungen mit Ohnmacht/Beinahe-Ohnmacht/Schwindel",
+          "ziel": "rd.17.k10",
+          "aussage": "ÄLTERE (≥ 6 h) Verletzungen mit Ohnmacht/Beinahe-Ohnmacht/Schwindel"
+        },
+        {
+          "id": "neurologische-symptome-erwaehnt-ohne",
+          "label": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)",
+          "ziel": "rd.17.k11",
+          "aussage": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "moeglicherweise-gefaehrliche-2",
+          "label": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion mit Ohnmacht/Beinahe-Ohnmacht/Schwindel",
+          "ziel": "rd.17.k12",
+          "aussage": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion mit Ohnmacht/Beinahe-Ohnmacht/Schwindel"
+        },
+        {
+          "id": "ungefaehrliche-koerperregion-mit",
+          "label": "UNGEFÄHRLICHE Körperregion mit Ohnmacht/Beinahe-Ohnmacht/Schwindel",
+          "ziel": "rd.17.k13",
+          "aussage": "UNGEFÄHRLICHE Körperregion mit Ohnmacht/Beinahe-Ohnmacht/Schwindel"
+        },
+        {
+          "id": "sturz-aus-extremer-hoehe-10-m",
+          "label": "STURZ AUS EXTREMER HÖHE (≥ 10 m)",
+          "ziel": "rd.17.k14",
+          "aussage": "STURZ AUS EXTREMER HÖHE (≥ 10 m)"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.17.k15",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.17.k16",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.17.k17",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "verletzungen-im-brust-oder-halsbereich",
+          "label": "Verletzungen im Brust- oder Halsbereich (mit Atembeschwerden)",
+          "ziel": "rd.17.k18",
+          "aussage": "Verletzungen im Brust- oder Halsbereich (mit Atembeschwerden)"
+        },
+        {
+          "id": "sturz-aus-grosser-hoehe",
+          "label": "STURZ AUS GROSSER HÖHE",
+          "ziel": "rd.17.k19",
+          "aussage": "STURZ AUS GROSSER HÖHE"
+        }
+      ]
+    },
+    "rd.17.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17a01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17a01a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a01e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17a01g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17a01k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17a01m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a01p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.17.17a02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.17.17a02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.17.17a02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17a02a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17a02a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17a02a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a02e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a02e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a02e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17a02g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17a02k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17a02m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a02p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a02p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a02p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17a03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17a03a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17a03a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17a03a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a03e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a03e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a03e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17a03g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17a03k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17a03m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a03p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a03p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a03p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17a04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17a04a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17a04a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17a04a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a04e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a04e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17a04e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-auf-dem",
+          "label": "bei Patientenalter unbekannt, Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17a04g",
+          "aussage": "bei Patientenalter unbekannt, Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "bei-patientenalter-bis-17-jahre-auf-dem",
+          "label": "bei Patientenalter bis 17 Jahre, Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17a04g",
+          "aussage": "bei Patientenalter bis 17 Jahre, Auf dem Boden seit < 1 Stunde",
+          "alter": {
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre-auf",
+          "label": "bei Patientenalter älter 17 Jahre, Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17a04g",
+          "aussage": "bei Patientenalter älter 17 Jahre, Auf dem Boden seit < 1 Stunde",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-auf-dem-2",
+          "label": "bei Patientenalter unbekannt, Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17a04k",
+          "aussage": "bei Patientenalter unbekannt, Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-bis-17-jahre-auf-dem-2",
+          "label": "bei Patientenalter bis 17 Jahre, Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17a04k",
+          "aussage": "bei Patientenalter bis 17 Jahre, Auf dem Boden seit 1–2 Stunden",
+          "alter": {
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre-auf-2",
+          "label": "bei Patientenalter älter 17 Jahre, Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17a04k",
+          "aussage": "bei Patientenalter älter 17 Jahre, Auf dem Boden seit 1–2 Stunden",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-auf-dem-3",
+          "label": "bei Patientenalter unbekannt, Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17a04m",
+          "aussage": "bei Patientenalter unbekannt, Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-bis-17-jahre-auf-dem-3",
+          "label": "bei Patientenalter bis 17 Jahre, Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17a04m",
+          "aussage": "bei Patientenalter bis 17 Jahre, Auf dem Boden > 2 Stunden",
+          "alter": {
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre-auf-3",
+          "label": "bei Patientenalter älter 17 Jahre, Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17a04m",
+          "aussage": "bei Patientenalter älter 17 Jahre, Auf dem Boden > 2 Stunden",
+          "alter": {
+            "min": 18
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a04p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a04p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17a04p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.17.17b00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.17.17b00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.17.17b00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17b00a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b00e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b00g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b00k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b00m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b00p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.17.17c00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.17.17c00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.17.17c00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "erschwert-zugaenglich-2",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17c00a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte-2",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17c00e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde-2",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17c00g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden-2",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17c00k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden-2",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17c00m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt-2",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17c00p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich-3",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17d00a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte-3",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17d00e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde-3",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17d00g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden-3",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17d00k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden-3",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17d00m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt-3",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17d00p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.17.17b01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.17.17b01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.17.17b01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b01a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b01a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17b01a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b01e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b01e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b01e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b01g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b01k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b01m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b01p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b01p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b01p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.17.17b02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.17.17b02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.17.17b02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b02a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b02a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17b02a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b02e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b02e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b02e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-auf-dem",
+          "label": "bei Patientenalter unbekannt, Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b02g",
+          "aussage": "bei Patientenalter unbekannt, Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-auf-dem",
+          "label": "bei Patientenalter bis 12 Jahre, Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b02g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Auf dem Boden seit < 1 Stunde",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-auf",
+          "label": "bei Patientenalter älter 12 Jahre, Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b02g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Auf dem Boden seit < 1 Stunde",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-auf-dem-2",
+          "label": "bei Patientenalter unbekannt, Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b02k",
+          "aussage": "bei Patientenalter unbekannt, Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-auf-dem-2",
+          "label": "bei Patientenalter bis 12 Jahre, Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b02k-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Auf dem Boden seit 1–2 Stunden",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-auf-2",
+          "label": "bei Patientenalter älter 12 Jahre, Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b02k",
+          "aussage": "bei Patientenalter älter 12 Jahre, Auf dem Boden seit 1–2 Stunden",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-auf-dem-3",
+          "label": "bei Patientenalter unbekannt, Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b02m",
+          "aussage": "bei Patientenalter unbekannt, Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-auf-dem-3",
+          "label": "bei Patientenalter bis 12 Jahre, Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b02m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Auf dem Boden > 2 Stunden",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-auf-3",
+          "label": "bei Patientenalter älter 12 Jahre, Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b02m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Auf dem Boden > 2 Stunden",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b02p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b02p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b02p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.17.17b03",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.17.17b03-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.17.17b03",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b03a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b03a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17b03a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b03e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b03e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b03e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b03g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b03k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b03m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b03p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b03p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b03p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.17.17b04",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.17.17b04-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.17.17b04",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b04a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b04a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17b04a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b04e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b04e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b04e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b04g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b04k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b04m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b04p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b04p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b04p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17b05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b05a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b05a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17b05a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b05e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b05e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b05e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b05g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b05k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b05m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b05p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b05p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b05p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.17.17b06",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.17.17b06-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.17.17b06",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b06a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "ziel": "rd.17.17b06a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Erschwert zugänglich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-erschwert",
+          "label": "bei Patientenalter unbekannt, Erschwert zugänglich",
+          "ziel": "rd.17.17b06a",
+          "aussage": "bei Patientenalter unbekannt, Erschwert zugänglich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b06e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-wetter",
+          "label": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b06e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Wetter (Regen, Hitze, Kälte)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-wetter",
+          "label": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17b06e",
+          "aussage": "bei Patientenalter unbekannt, Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17b06g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17b06k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17b06m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b06p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b06p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17b06p",
+          "aussage": "bei Patientenalter unbekannt, Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17c01a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17c01e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17c01g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17c01k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17c01m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17c01p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17c02a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17c02e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17c02g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17c02k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17c02m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17c02p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17d01a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17d01e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17d01p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k15": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17d02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17d02a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17d02e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17d02p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k16": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17d03a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17d03e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17d03p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k17": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17d04a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17d04e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17d04g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17d04k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17d04m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17d04p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k18": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17d05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17d05a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17d05e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "auf-dem-boden-seit-1-stunde",
+          "label": "Auf dem Boden seit < 1 Stunde",
+          "ziel": "rd.17.17d05g",
+          "aussage": "Auf dem Boden seit < 1 Stunde"
+        },
+        {
+          "id": "auf-dem-boden-seit-12-stunden",
+          "label": "Auf dem Boden seit 1–2 Stunden",
+          "ziel": "rd.17.17d05k",
+          "aussage": "Auf dem Boden seit 1–2 Stunden"
+        },
+        {
+          "id": "auf-dem-boden-2-stunden",
+          "label": "Auf dem Boden > 2 Stunden",
+          "ziel": "rd.17.17d05m",
+          "aussage": "Auf dem Boden > 2 Stunden"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17d05p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.k19": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.17.17d06",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "erschwert-zugaenglich",
+          "label": "Erschwert zugänglich",
+          "ziel": "rd.17.17d06a",
+          "aussage": "Erschwert zugänglich"
+        },
+        {
+          "id": "wetter-regen-hitze-kaelte",
+          "label": "Wetter (Regen, Hitze, Kälte)",
+          "ziel": "rd.17.17d06e",
+          "aussage": "Wetter (Regen, Hitze, Kälte)"
+        },
+        {
+          "id": "oeffentlichkeit-strasse-parkhaus-markt",
+          "label": "Öffentlichkeit (Straße, Parkhaus, Markt)",
+          "ziel": "rd.17.17d06p",
+          "aussage": "Öffentlichkeit (Straße, Parkhaus, Markt)"
+        }
+      ]
+    },
+    "rd.17.17a01": {
+      "code": "17A01",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung mit Fehlstellung nach Sturz",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a01a": {
+      "code": "17A01A",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung mit Fehlstellung Sturz und erschwert Zugänglich",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a01e": {
+      "code": "17A01E",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung mit Fehlstellung Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a01g": {
+      "code": "17A01G",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit Fehlstellung und noch am Boden",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a01k": {
+      "code": "17A01K",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit Fehlstellung und noch am Boden",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a01m": {
+      "code": "17A01M",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit Fehlstellung und noch am Boden",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a01p": {
+      "code": "17A01P",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzung mit Fehlstellung Sturz im öffentlichen Raum",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a02": {
+      "code": "17A02",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a02-2": {
+      "code": "17A02",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a02a": {
+      "code": "17A02A",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung und erschwert Zugänglich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a02a-2": {
+      "code": "17A02A",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung und erschwert Zugänglich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a02e": {
+      "code": "17A02E",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a02e-2": {
+      "code": "17A02E",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung in ungeschützter Umgebung, Kind (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a02g": {
+      "code": "17A02G",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a02k": {
+      "code": "17A02K",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a02m": {
+      "code": "17A02M",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a02p": {
+      "code": "17A02P",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung im öffentlichen Raum",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a02p-2": {
+      "code": "17A02P",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung im öffentlichen Raum, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a03": {
+      "code": "17A03",
+      "kategorie": "RD5.",
+      "anlass": "17A03",
+      "stichwort": "RD5."
+    },
+    "rd.17.17a03a": {
+      "code": "17A03A",
+      "kategorie": "RD3B.",
+      "anlass": "Ältere Sturzverletzung und erschwert Zugänglich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a03a-2": {
+      "code": "17A03A",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung und erschwert Zugänglich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a03e": {
+      "code": "17A03E",
+      "kategorie": "RD3B.",
+      "anlass": "Ältere Sturzverletzung in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a03e-2": {
+      "code": "17A03E",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung in ungeschützter Umgebung, Kind (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a03g": {
+      "code": "17A03G",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a03k": {
+      "code": "17A03K",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a03m": {
+      "code": "17A03M",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a03p": {
+      "code": "17A03P",
+      "kategorie": "RD3B.",
+      "anlass": "Ältere Sturzverletzung im öffentlichen Raum",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a03p-2": {
+      "code": "17A03P",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung im öffentlichen Raum, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a04": {
+      "code": "17A04",
+      "kategorie": "RD5.",
+      "anlass": "17A04",
+      "stichwort": "RD5."
+    },
+    "rd.17.17a04a": {
+      "code": "17A04A",
+      "kategorie": "RD3B.",
+      "anlass": "Person gestürzt und erschwert zugänglich, Hilfe erforderlich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a04a-2": {
+      "code": "17A04A",
+      "kategorie": "RD3C.",
+      "anlass": "Person gestürzt und erschwert zugänglich, Hilfe erforderlich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a04e": {
+      "code": "17A04E",
+      "kategorie": "RD3B.",
+      "anlass": "Person gestürzt, Hilfe erforderlich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a04e-2": {
+      "code": "17A04E",
+      "kategorie": "RD3C.",
+      "anlass": "Person gestürzt, Hilfe erforderlich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a04g": {
+      "code": "17A04G",
+      "kategorie": "RD3C.",
+      "anlass": "Person am Boden, Hilfe erforderlich",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a04k": {
+      "code": "17A04K",
+      "kategorie": "RD3C.",
+      "anlass": "Person am Boden, Hilfe erforderlich",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a04m": {
+      "code": "17A04M",
+      "kategorie": "RD3C.",
+      "anlass": "Person am Boden, Hilfe erforderlich",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17a04p": {
+      "code": "17A04P",
+      "kategorie": "RD3B.",
+      "anlass": "Person gestürzt, Hilfe erforderlich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17a04p-2": {
+      "code": "17A04P",
+      "kategorie": "RD3C.",
+      "anlass": "Person gestürzt, Hilfe erforderlich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b00": {
+      "code": "17B00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Sturz",
+      "stichwort": "RD4B."
+    },
+    "rd.17.17b00-2": {
+      "code": "17B00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Sturz, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.17.17b00a": {
+      "code": "17B00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Sturz und erschwert Zugänglich",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.17.17b00e": {
+      "code": "17B00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.17.17b00g": {
+      "code": "17B00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Sturz und noch am Boden liegend",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.17.17b00k": {
+      "code": "17B00K",
+      "kategorie": "RD3C.",
+      "anlass": "Erschwert zugänglich nach Sturz und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b00m": {
+      "code": "17B00M",
+      "kategorie": "RD3C.",
+      "anlass": "Erschwert zugänglich nach Sturz und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b00p": {
+      "code": "17B00P",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Sturz im öffentlichen Raum",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.17.17c00": {
+      "code": "17C00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Sturz",
+      "stichwort": "RD4B."
+    },
+    "rd.17.17c00-2": {
+      "code": "17C00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Sturz, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.17.17c00a": {
+      "code": "17C00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Sturz und erschwert Zugänglich",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.17.17c00e": {
+      "code": "17C00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.17.17c00g": {
+      "code": "17C00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Sturz und noch am Boden liegend",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.17.17c00k": {
+      "code": "17C00K",
+      "kategorie": "RD3C.",
+      "anlass": "Erschwert zugänglich nach Sturz und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c00m": {
+      "code": "17C00M",
+      "kategorie": "RD3C.",
+      "anlass": "Erschwert zugänglich nach Sturz und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c00p": {
+      "code": "17C00P",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Sturz im öffentlichen Raum",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.17.17d00": {
+      "code": "17D00",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Sturz",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d00a": {
+      "code": "17D00A",
+      "kategorie": "RD2C.",
+      "anlass": "Aufwertung starke Schmerzen nach Sturz und erschwert Zugänglich",
+      "stichwort": "RD2C."
+    },
+    "rd.17.17d00e": {
+      "code": "17D00E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Sturz und in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d00g": {
+      "code": "17D00G",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d00k": {
+      "code": "17D00K",
+      "kategorie": "RD2C.",
+      "anlass": "Erschwert zugänglich nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C."
+    },
+    "rd.17.17d00m": {
+      "code": "17D00M",
+      "kategorie": "RD2C.",
+      "anlass": "Erschwert zugänglich nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C."
+    },
+    "rd.17.17d00p": {
+      "code": "17D00P",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Sturz im öffentlichen Raum",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17b01": {
+      "code": "17B01",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b01-2": {
+      "code": "17B01",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b01a": {
+      "code": "17B01A",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung und erschwert Zugänglich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b01a-2": {
+      "code": "17B01A",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung und erschwert Zugänglich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b01e": {
+      "code": "17B01E",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b01e-2": {
+      "code": "17B01E",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung in ungeschützter Umgebung, Kind (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b01g": {
+      "code": "17B01G",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b01k": {
+      "code": "17B01K",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b01m": {
+      "code": "17B01M",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b01p": {
+      "code": "17B01P",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung im öffentlichen Raum",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b01p-2": {
+      "code": "17B01P",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung im öffentlichen Raum, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b02": {
+      "code": "17B02",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Sturz",
+      "stichwort": "RD2B FR."
+    },
+    "rd.17.17b02-2": {
+      "code": "17B02",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Sturz, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17b02a": {
+      "code": "17B02A",
+      "kategorie": "RD3B.",
+      "anlass": "Starke Blutung nach Sturz und erschwert Zugänglich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b02a-2": {
+      "code": "17B02A",
+      "kategorie": "RD3C.",
+      "anlass": "Starke Blutung nach Sturz und erschwert Zugänglich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b02e": {
+      "code": "17B02E",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD2B FR."
+    },
+    "rd.17.17b02e-2": {
+      "code": "17B02E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Sturz in ungeschützter Umgebung, Kind (Witterung ausgesetzt)",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17b02g": {
+      "code": "17B02G",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2B FR."
+    },
+    "rd.17.17b02g-2": {
+      "code": "17B02G",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Sturz und noch am Boden liegend, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17b02k": {
+      "code": "17B02K",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2B FR."
+    },
+    "rd.17.17b02k-2": {
+      "code": "17B02K",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Sturz und noch am Boden liegend, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17b02m": {
+      "code": "17B02M",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2B FR."
+    },
+    "rd.17.17b02m-2": {
+      "code": "17B02M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Sturz und noch am Boden liegend, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17b02p": {
+      "code": "17B02P",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Sturz im öffentlichen Raum",
+      "stichwort": "RD2B FR."
+    },
+    "rd.17.17b02p-2": {
+      "code": "17B02P",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Sturz im öffentlichen Raum, Kind",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17b03": {
+      "code": "17B03",
+      "kategorie": "RD3B.",
+      "anlass": "Treppensturz",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b03-2": {
+      "code": "17B03",
+      "kategorie": "RD3C.",
+      "anlass": "Treppensturz, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b03a": {
+      "code": "17B03A",
+      "kategorie": "RD3B.",
+      "anlass": "Treppensturz und erschwert Zugänglich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b03a-2": {
+      "code": "17B03A",
+      "kategorie": "RD3C.",
+      "anlass": "Treppensturz und erschwert Zugänglich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b03e": {
+      "code": "17B03E",
+      "kategorie": "RD3B.",
+      "anlass": "Treppensturz in ungestützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b03e-2": {
+      "code": "17B03E",
+      "kategorie": "RD3C.",
+      "anlass": "Treppensturz in ungestützter Umgebung, Kind (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b03g": {
+      "code": "17B03G",
+      "kategorie": "RD3C.",
+      "anlass": "Treppensturz und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b03k": {
+      "code": "17B03K",
+      "kategorie": "RD3C.",
+      "anlass": "Treppensturz und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b03m": {
+      "code": "17B03M",
+      "kategorie": "RD3C.",
+      "anlass": "Treppensturz und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b03p": {
+      "code": "17B03P",
+      "kategorie": "RD3B.",
+      "anlass": "Treppensturz im öffentlichen Raum",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b03p-2": {
+      "code": "17B03P",
+      "kategorie": "RD3C.",
+      "anlass": "Treppensturz im öffentlichen Raum, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b04": {
+      "code": "17B04",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand nach Sturz",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b04-2": {
+      "code": "17B04",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand nach Sturz, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b04a": {
+      "code": "17B04A",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand nach Sturz und erschwert Zugänglich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b04a-2": {
+      "code": "17B04A",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand nach Sturz und erschwert Zugänglich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b04e": {
+      "code": "17B04E",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand nach Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b04e-2": {
+      "code": "17B04E",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand nach Sturz in ungeschützter Umgebung, Kind (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b04g": {
+      "code": "17B04G",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C."
+    },
+    "rd.17.17b04k": {
+      "code": "17B04K",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C."
+    },
+    "rd.17.17b04m": {
+      "code": "17B04M",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C."
+    },
+    "rd.17.17b04p": {
+      "code": "17B04P",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand nach Sturz im öffentlichen Raum",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b04p-2": {
+      "code": "17B04P",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand nach Sturz im öffentlichen Raum, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b05": {
+      "code": "17B05",
+      "kategorie": "RD5.",
+      "anlass": "17B05",
+      "stichwort": "RD5."
+    },
+    "rd.17.17b05a": {
+      "code": "17B05A",
+      "kategorie": "RD3B.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel und erschwert Zugänglich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b05a-2": {
+      "code": "17B05A",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel und erschwert Zugänglich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b05e": {
+      "code": "17B05E",
+      "kategorie": "RD3B.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b05e-2": {
+      "code": "17B05E",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel in ungeschützter Umgebung, Kind (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b05g": {
+      "code": "17B05G",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b05k": {
+      "code": "17B05K",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b05m": {
+      "code": "17B05M",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b05p": {
+      "code": "17B05P",
+      "kategorie": "RD3B.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel im öffentlichen Raum",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b05p-2": {
+      "code": "17B05P",
+      "kategorie": "RD3C.",
+      "anlass": "Ältere Sturzverletzung durch Ohnmacht/ Schwindel im öffentlichen Raum, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b06": {
+      "code": "17B06",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b06-2": {
+      "code": "17B06",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b06a": {
+      "code": "17B06A",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen und erschwert Zugänglich",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b06a-2": {
+      "code": "17B06A",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen und erschwert Zugänglich, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b06e": {
+      "code": "17B06E",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b06e-2": {
+      "code": "17B06E",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen in ungeschützter Umgebung, Kind (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b06g": {
+      "code": "17B06G",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b06k": {
+      "code": "17B06K",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b06m": {
+      "code": "17B06M",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17b06p": {
+      "code": "17B06P",
+      "kategorie": "RD3B.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen im öffentlichen Raum",
+      "stichwort": "RD3B."
+    },
+    "rd.17.17b06p-2": {
+      "code": "17B06P",
+      "kategorie": "RD3C.",
+      "anlass": "Sturzverletzung mit neurologischen Symptomen im öffentlichen Raum, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c01": {
+      "code": "17C01",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c01a": {
+      "code": "17C01A",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht und erschwert Zugänglich",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c01e": {
+      "code": "17C01E",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c01g": {
+      "code": "17C01G",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c01k": {
+      "code": "17C01K",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c01m": {
+      "code": "17C01M",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c01p": {
+      "code": "17C01P",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht im öffentlichen Raum",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c02": {
+      "code": "17C02",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c02a": {
+      "code": "17C02A",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht und erschwert Zugänglich",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c02e": {
+      "code": "17C02E",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c02g": {
+      "code": "17C02G",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c02k": {
+      "code": "17C02K",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c02m": {
+      "code": "17C02M",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht und noch am Boden liegend",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17c02p": {
+      "code": "17C02P",
+      "kategorie": "RD3C.",
+      "anlass": "Sturz nach Schwindel/ Ohnmacht im öffentlichen Raum",
+      "stichwort": "RD3C."
+    },
+    "rd.17.17d01": {
+      "code": "17D01",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Sturz aus extremer Höhe (mehr als 10 m)",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.17.17d01a": {
+      "code": "17D01A",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Sturz aus extremer Höhe (mehr als 10 m) und erschwert Zugänglich",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.17.17d01e": {
+      "code": "17D01E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Sturz aus extremer Höhe (mehr als 10 m) in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.17.17d01p": {
+      "code": "17D01P",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Sturz aus extremer Höhe (mehr als 10 m) im öffentlichen Raum",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.17.17d02": {
+      "code": "17D02",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Sturz",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.17.17d02a": {
+      "code": "17D02A",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Sturz und erschwert Zugänglich",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.17.17d02e": {
+      "code": "17D02E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.17.17d02p": {
+      "code": "17D02P",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Sturz im öffentlichen Raum",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.17.17d03": {
+      "code": "17D03",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Sturz",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.17.17d03a": {
+      "code": "17D03A",
+      "kategorie": "RD2NC.",
+      "anlass": "Bewusstlosigkeit nach Sturz und erschwert Zugänglich",
+      "stichwort": "RD2NC."
+    },
+    "rd.17.17d03e": {
+      "code": "17D03E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.17.17d03p": {
+      "code": "17D03P",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Sturz im öffentlichen Raum",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.17.17d04": {
+      "code": "17D04",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseintrübung nach Sturz",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d04a": {
+      "code": "17D04A",
+      "kategorie": "RD2C.",
+      "anlass": "Bewusstseintrübung nach Sturz und erschwert Zugänglich",
+      "stichwort": "RD2C."
+    },
+    "rd.17.17d04e": {
+      "code": "17D04E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseintrübung nach Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d04g": {
+      "code": "17D04G",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseintrübung nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d04k": {
+      "code": "17D04K",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseintrübung nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d04m": {
+      "code": "17D04M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseintrübung nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d04p": {
+      "code": "17D04P",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseintrübung nach Sturz im öffentlichen Raum",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d05": {
+      "code": "17D05",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Sturz",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d05a": {
+      "code": "17D05A",
+      "kategorie": "RD2C.",
+      "anlass": "Verletzung mit Atembeschwerden nach Sturz und erschwert Zugänglich",
+      "stichwort": "RD2C."
+    },
+    "rd.17.17d05e": {
+      "code": "17D05E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Sturz in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d05g": {
+      "code": "17D05G",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d05k": {
+      "code": "17D05K",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d05m": {
+      "code": "17D05M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Sturz und noch am Boden liegend",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d05p": {
+      "code": "17D05P",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Sturz im öffentlichen Raum",
+      "stichwort": "RD2C FR."
+    },
+    "rd.17.17d06": {
+      "code": "17D06",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sturz aus großer Höhe",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.17.17d06a": {
+      "code": "17D06A",
+      "kategorie": "RD2NC.",
+      "anlass": "Sturz aus großer Höhe und erschwert Zugänglich",
+      "stichwort": "RD2NC."
+    },
+    "rd.17.17d06e": {
+      "code": "17D06E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sturz aus großer Höhe in ungeschützter Umgebung (Witterung ausgesetzt)",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.17.17d06p": {
+      "code": "17D06P",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Sturz aus großer Höhe im öffentlichen Raum",
+      "stichwort": "RD1NC FR."
+    }
+  }
+}

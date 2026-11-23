@@ -1,0 +1,5296 @@
+{
+  "knoten": {
+    "rd.23.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.23.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "ueberdosis-ohne-notfallleitsymptome",
+          "label": "ÜBERDOSIS (ohne Notfallleitsymptome)",
+          "ziel": "rd.23.k2",
+          "aussage": "ÜBERDOSIS (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.23.k3",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.23.k4",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "antidepressiva-trizyklische",
+          "label": "Antidepressiva (trizyklische)",
+          "ziel": "rd.23.k5",
+          "aussage": "Antidepressiva (trizyklische)"
+        },
+        {
+          "id": "kokain-methamphetamin-oder-abkoemmlinge",
+          "label": "Kokain, Methamphetamin (oder Abkömmlinge)",
+          "ziel": "rd.23.k6",
+          "aussage": "Kokain, Methamphetamin (oder Abkömmlinge)"
+        },
+        {
+          "id": "narkotika-opiate-heroin-morphin-methadon",
+          "label": "Narkotika/Opiate (Heroin, Morphin, Methadon, OxyContin usw.)",
+          "ziel": "rd.23.k7",
+          "aussage": "Narkotika/Opiate (Heroin, Morphin, Methadon, OxyContin usw.)"
+        },
+        {
+          "id": "saeuren-oder-laugen",
+          "label": "Säuren oder Laugen",
+          "ziel": "rd.23.k8",
+          "aussage": "Säuren oder Laugen"
+        },
+        {
+          "id": "verschlucken-von-knopfbatterie",
+          "label": "Verschlucken von Knopfbatterie",
+          "ziel": "rd.23.k9",
+          "aussage": "Verschlucken von Knopfbatterie"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.23.k10",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "empfehlung-der-viz",
+          "label": "Empfehlung der VIZ",
+          "ziel": "rd.23.k11",
+          "aussage": "Empfehlung der VIZ"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.23.k12",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.23.k13",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "veraenderte-hautfarbe",
+          "label": "VERÄNDERTE HAUTFARBE",
+          "ziel": "rd.23.k14",
+          "aussage": "VERÄNDERTE HAUTFARBE"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.23.k15",
+          "aussage": "Mehrere Verletzte"
+        },
+        {
+          "id": "kreislaufstillstand-aufgrund-von",
+          "label": "Kreislaufstillstand aufgrund von Narkotika/Opioiden (offensichtlich)",
+          "ziel": "rd.23.k16",
+          "aussage": "Kreislaufstillstand aufgrund von Narkotika/Opioiden (offensichtlich)"
+        },
+        {
+          "id": "vergiftung-ohne-notfallleitsymptome",
+          "label": "VERGIFTUNG (ohne Notfallleitsymptome)",
+          "ziel": "rd.23.k17",
+          "aussage": "VERGIFTUNG (ohne Notfallleitsymptome)"
+        }
+      ]
+    },
+    "rd.23.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23b00a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23b00a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23b00a",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "absichtlich",
+          "label": "Absichtlich",
+          "ziel": "rd.23.23b00i",
+          "aussage": "Absichtlich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23b00m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23b00m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23b00m",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23b00o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23b00o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "ziel": "rd.23.23b00o",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+        },
+        {
+          "id": "versehentlich-freizeitdrogenkonsum",
+          "label": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c00a",
+          "aussage": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "absichtlich-und-fentanyl",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23c00g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23c00h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "absichtlich-2",
+          "label": "Absichtlich",
+          "ziel": "rd.23.23c00i",
+          "aussage": "Absichtlich"
+        },
+        {
+          "id": "versehentlich-medikationsfehler",
+          "label": "Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c00m",
+          "aussage": "Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "versehentlich-andere",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23c00o",
+          "aussage": "Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23c00q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23c00r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23c00s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23c00t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv",
+          "label": "Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c00v",
+          "aussage": "Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "waffen",
+          "label": "Waffen",
+          "ziel": "rd.23.23c00w",
+          "aussage": "Waffen"
+        },
+        {
+          "id": "versehentlich-freizeitdrogenkonsum-2",
+          "label": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23d00a",
+          "aussage": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "carfentanil",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23d00c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "versehentlich-und-fentanyl",
+          "label": "Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d00d",
+          "aussage": "Versehentlich und Fentanyl"
+        },
+        {
+          "id": "versehentlich-und-carfentanil",
+          "label": "Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d00e",
+          "aussage": "Versehentlich und Carfentanil"
+        },
+        {
+          "id": "fentanyl",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23d00f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-fentanyl-2",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d00g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil-2",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d00h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "absichtlich-3",
+          "label": "Absichtlich",
+          "ziel": "rd.23.23d00i",
+          "aussage": "Absichtlich"
+        },
+        {
+          "id": "versehentlich-medikationsfehler-2",
+          "label": "Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d00m",
+          "aussage": "Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "versehentlich-andere-2",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23d00o",
+          "aussage": "Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl-2",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23d00q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-2",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23d00r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl-2",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23d00s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil-2",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23d00t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-2",
+          "label": "Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23d00v",
+          "aussage": "Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "waffen-2",
+          "label": "Waffen",
+          "ziel": "rd.23.23d00w",
+          "aussage": "Waffen"
+        },
+        {
+          "id": "versehentlich-freizeitdrogenkonsum-3",
+          "label": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23e00a",
+          "aussage": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "carfentanil-2",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23e00c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "versehentlich-und-fentanyl-2",
+          "label": "Versehentlich und Fentanyl",
+          "ziel": "rd.23.23e00d",
+          "aussage": "Versehentlich und Fentanyl"
+        },
+        {
+          "id": "versehentlich-und-carfentanil-2",
+          "label": "Versehentlich und Carfentanil",
+          "ziel": "rd.23.23e00e",
+          "aussage": "Versehentlich und Carfentanil"
+        },
+        {
+          "id": "fentanyl-2",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23e00f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-fentanyl-3",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23e00g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil-3",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23e00h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "absichtlich-4",
+          "label": "Absichtlich",
+          "ziel": "rd.23.23e00i",
+          "aussage": "Absichtlich"
+        },
+        {
+          "id": "versehentlich-medikationsfehler-3",
+          "label": "Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23e00m",
+          "aussage": "Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "versehentlich-andere-3",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23e00o",
+          "aussage": "Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl-3",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23e00q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-3",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23e00r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl-3",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23e00s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil-3",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23e00t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-3",
+          "label": "Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23e00v",
+          "aussage": "Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "waffen-3",
+          "label": "Waffen",
+          "ziel": "rd.23.23e00w",
+          "aussage": "Waffen"
+        }
+      ]
+    },
+    "rd.23.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "absichtlich-und-fentanyl",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23b01g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23b01h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23b01i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23b01i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23b01i",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23b01q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23b01r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23b01s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23b01t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23b01v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23b01v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23b01v",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Waffen",
+          "ziel": "rd.23.23b01w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Waffen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-waffen",
+          "label": "bei Patientenalter bis 12 Jahre, Waffen",
+          "ziel": "rd.23.23b01w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Waffen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-waffen",
+          "label": "bei Patientenalter unbekannt, Waffen",
+          "ziel": "rd.23.23b01w",
+          "aussage": "bei Patientenalter unbekannt, Waffen"
+        }
+      ]
+    },
+    "rd.23.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23c01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23c01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23c01-3",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c01a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c01a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c01a-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "carfentanil",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23c01c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "versehentlich-und-fentanyl",
+          "label": "Versehentlich und Fentanyl",
+          "ziel": "rd.23.23c01d",
+          "aussage": "Versehentlich und Fentanyl"
+        },
+        {
+          "id": "versehentlich-und-carfentanil",
+          "label": "Versehentlich und Carfentanil",
+          "ziel": "rd.23.23c01e",
+          "aussage": "Versehentlich und Carfentanil"
+        },
+        {
+          "id": "fentanyl",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23c01f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-fentanyl",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23c01g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23c01h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c01i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c01i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23c01i-3",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c01m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-4",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c01m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c01m-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c01o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-5",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c01o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-4",
+          "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "ziel": "rd.23.23c01o-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23c01q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23c01r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23c01s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23c01t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-6",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c01v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-6",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c01v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-5",
+          "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c01v-3",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-7",
+          "label": "bei Patientenalter älter 12 Jahre, Waffen",
+          "ziel": "rd.23.23c01w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Waffen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-waffen",
+          "label": "bei Patientenalter bis 12 Jahre, Waffen",
+          "ziel": "rd.23.23c01w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Waffen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-waffen",
+          "label": "bei Patientenalter unbekannt, Waffen",
+          "ziel": "rd.23.23c01w-3",
+          "aussage": "bei Patientenalter unbekannt, Waffen"
+        }
+      ]
+    },
+    "rd.23.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23c02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23c02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23c02-3",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c02a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c02a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c02a-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "carfentanil",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23c02c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "versehentlich-und-fentanyl",
+          "label": "Versehentlich und Fentanyl",
+          "ziel": "rd.23.23c02d",
+          "aussage": "Versehentlich und Fentanyl"
+        },
+        {
+          "id": "versehentlich-und-carfentanil",
+          "label": "Versehentlich und Carfentanil",
+          "ziel": "rd.23.23c02e",
+          "aussage": "Versehentlich und Carfentanil"
+        },
+        {
+          "id": "fentanyl",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23c02f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-fentanyl",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23c02g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23c02h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c02i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c02i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23c02i-3",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c02m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-4",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c02m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c02m-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c02o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-5",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c02o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-4",
+          "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "ziel": "rd.23.23c02o-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23c02q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23c02r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23c02s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23c02t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-6",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c02v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-6",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c02v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-5",
+          "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c02v-3",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-7",
+          "label": "bei Patientenalter älter 12 Jahre, Waffen",
+          "ziel": "rd.23.23c02w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Waffen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-8",
+          "label": "bei Patientenalter älter 12 Jahre, Waffen",
+          "ziel": "rd.23.23c02w-2",
+          "aussage": "bei Patientenalter älter 12 Jahre, Waffen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-waffen",
+          "label": "bei Patientenalter unbekannt, Waffen",
+          "ziel": "rd.23.23c02w-3",
+          "aussage": "bei Patientenalter unbekannt, Waffen"
+        }
+      ]
+    },
+    "rd.23.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.23.23c03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "versehentlich-freizeitdrogenkonsum",
+          "label": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c03a",
+          "aussage": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "absichtlich",
+          "label": "Absichtlich",
+          "ziel": "rd.23.23c03i",
+          "aussage": "Absichtlich"
+        },
+        {
+          "id": "versehentlich-medikationsfehler",
+          "label": "Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c03m",
+          "aussage": "Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "versehentlich-andere",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23c03o",
+          "aussage": "Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv",
+          "label": "Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c03v",
+          "aussage": "Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "waffen",
+          "label": "Waffen",
+          "ziel": "rd.23.23c03w",
+          "aussage": "Waffen"
+        }
+      ]
+    },
+    "rd.23.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23c04",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23c04-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23c04-3",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c04a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c04a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c04a-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c04i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c04i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23c04i-3",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c04m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-4",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c04m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c04m-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c04o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-5",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c04o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-4",
+          "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "ziel": "rd.23.23c04o-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-6",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c04v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-6",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c04v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-5",
+          "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c04v-3",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-7",
+          "label": "bei Patientenalter älter 12 Jahre, Waffen",
+          "ziel": "rd.23.23c04w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Waffen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-waffen",
+          "label": "bei Patientenalter bis 12 Jahre, Waffen",
+          "ziel": "rd.23.23c04w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Waffen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-waffen",
+          "label": "bei Patientenalter unbekannt, Waffen",
+          "ziel": "rd.23.23c04w-3",
+          "aussage": "bei Patientenalter unbekannt, Waffen"
+        }
+      ]
+    },
+    "rd.23.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23c05",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23c05-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23c05-3",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c05a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c05a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c05a-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "carfentanil",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23c05c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "versehentlich-und-fentanyl",
+          "label": "Versehentlich und Fentanyl",
+          "ziel": "rd.23.23c05d",
+          "aussage": "Versehentlich und Fentanyl"
+        },
+        {
+          "id": "versehentlich-und-carfentanil",
+          "label": "Versehentlich und Carfentanil",
+          "ziel": "rd.23.23c05e",
+          "aussage": "Versehentlich und Carfentanil"
+        },
+        {
+          "id": "fentanyl",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23c05f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-fentanyl",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23c05g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23c05h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c05i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c05i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23c05i-3",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c05m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-4",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c05m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c05m-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c05o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-5",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c05o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-4",
+          "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "ziel": "rd.23.23c05o-3",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23c05q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23c05r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23c05s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23c05t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-6",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c05v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-6",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c05v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-5",
+          "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c05v-3",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-7",
+          "label": "bei Patientenalter älter 12 Jahre, Waffen",
+          "ziel": "rd.23.23c05w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Waffen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-waffen",
+          "label": "bei Patientenalter bis 12 Jahre, Waffen",
+          "ziel": "rd.23.23c05w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Waffen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-waffen",
+          "label": "bei Patientenalter unbekannt, Waffen",
+          "ziel": "rd.23.23c05w-3",
+          "aussage": "bei Patientenalter unbekannt, Waffen"
+        }
+      ]
+    },
+    "rd.23.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.23.23c06",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "versehentlich-freizeitdrogenkonsum",
+          "label": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c06a",
+          "aussage": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "absichtlich",
+          "label": "Absichtlich",
+          "ziel": "rd.23.23c06i",
+          "aussage": "Absichtlich"
+        },
+        {
+          "id": "versehentlich-medikationsfehler",
+          "label": "Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c06m",
+          "aussage": "Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "versehentlich-andere",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23c06o",
+          "aussage": "Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv",
+          "label": "Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c06v",
+          "aussage": "Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "waffen",
+          "label": "Waffen",
+          "ziel": "rd.23.23c06w",
+          "aussage": "Waffen"
+        }
+      ]
+    },
+    "rd.23.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.23.23c07",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "versehentlich-andere",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23c07o",
+          "aussage": "Versehentlich (andere)"
+        }
+      ]
+    },
+    "rd.23.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23c08",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23c08-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23c08",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23c08-3",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23c08-4",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23c08-3",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c08a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c08a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23c08a",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "carfentanil",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23c08c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "versehentlich-und-fentanyl",
+          "label": "Versehentlich und Fentanyl",
+          "ziel": "rd.23.23c08d",
+          "aussage": "Versehentlich und Fentanyl"
+        },
+        {
+          "id": "versehentlich-und-carfentanil",
+          "label": "Versehentlich und Carfentanil",
+          "ziel": "rd.23.23c08e",
+          "aussage": "Versehentlich und Carfentanil"
+        },
+        {
+          "id": "fentanyl",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23c08f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-fentanyl",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23c08g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23c08h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c08i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-4",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23c08i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23c08i",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c08m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-5",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c08m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-4",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23c08m",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-6",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c08o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-6",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23c08o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-5",
+          "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "ziel": "rd.23.23c08o",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23c08q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23c08r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23c08s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23c08t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-7",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c08v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-7",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c08v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-6",
+          "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c08v",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-8",
+          "label": "bei Patientenalter älter 12 Jahre, Waffen",
+          "ziel": "rd.23.23c08w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Waffen",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-waffen",
+          "label": "bei Patientenalter bis 12 Jahre, Waffen",
+          "ziel": "rd.23.23c08w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Waffen",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-waffen",
+          "label": "bei Patientenalter unbekannt, Waffen",
+          "ziel": "rd.23.23c08w",
+          "aussage": "bei Patientenalter unbekannt, Waffen"
+        }
+      ]
+    },
+    "rd.23.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23c09",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23c09-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23c09",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "carfentanil",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23c09c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "fentanyl",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23c09f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23c09q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23c09r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c09v",
+          "aussage": "bei Patientenalter älter 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c09v-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Gewalttätig oder aggressiv",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23c09v",
+          "aussage": "bei Patientenalter unbekannt, Gewalttätig oder aggressiv"
+        }
+      ]
+    },
+    "rd.23.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23d01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23d01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23d01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23d01a",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23d01a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23d01a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-carfentanil",
+          "label": "bei Patientenalter unbekannt, Carfentanil",
+          "ziel": "rd.23.23d01c",
+          "aussage": "bei Patientenalter unbekannt, Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Carfentanil",
+          "ziel": "rd.23.23d01c-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Carfentanil",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Carfentanil",
+          "ziel": "rd.23.23d01c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Carfentanil",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d01d",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-4",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d01d-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich und Fentanyl",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d01d",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich und Fentanyl",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-4",
+          "label": "bei Patientenalter unbekannt, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d01e",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-5",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d01e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich und Carfentanil",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d01e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich und Carfentanil",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-fentanyl",
+          "label": "bei Patientenalter unbekannt, Fentanyl",
+          "ziel": "rd.23.23d01f",
+          "aussage": "bei Patientenalter unbekannt, Fentanyl"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-fentanyl",
+          "label": "bei Patientenalter bis 12 Jahre, Fentanyl",
+          "ziel": "rd.23.23d01f-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Fentanyl",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-6",
+          "label": "bei Patientenalter älter 12 Jahre, Fentanyl",
+          "ziel": "rd.23.23d01f",
+          "aussage": "bei Patientenalter älter 12 Jahre, Fentanyl",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d01g",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-6",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d01g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich und Fentanyl",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-7",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d01g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich und Fentanyl",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich-2",
+          "label": "bei Patientenalter unbekannt, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d01h",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-7",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d01h-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich und Carfentanil",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-8",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d01h",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich und Carfentanil",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich-3",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23d01i",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-8",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23d01i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-9",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23d01i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-5",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d01m",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-9",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d01m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-10",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d01m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-6",
+          "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "ziel": "rd.23.23d01o",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-10",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23d01o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-11",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23d01o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.23.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.23.23d02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "versehentlich-freizeitdrogenkonsum",
+          "label": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23d02a",
+          "aussage": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "carfentanil",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23d02c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "versehentlich-und-fentanyl",
+          "label": "Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d02d",
+          "aussage": "Versehentlich und Fentanyl"
+        },
+        {
+          "id": "versehentlich-und-carfentanil",
+          "label": "Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d02e",
+          "aussage": "Versehentlich und Carfentanil"
+        },
+        {
+          "id": "fentanyl",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23d02f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-fentanyl",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d02g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d02h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "absichtlich",
+          "label": "Absichtlich",
+          "ziel": "rd.23.23d02i",
+          "aussage": "Absichtlich"
+        },
+        {
+          "id": "versehentlich-medikationsfehler",
+          "label": "Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d02m",
+          "aussage": "Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "versehentlich-andere",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23d02o",
+          "aussage": "Versehentlich (andere)"
+        }
+      ]
+    },
+    "rd.23.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.23.23d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "versehentlich-freizeitdrogenkonsum",
+          "label": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23d03a",
+          "aussage": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "carfentanil",
+          "label": "Carfentanil",
+          "ziel": "rd.23.23d03c",
+          "aussage": "Carfentanil"
+        },
+        {
+          "id": "versehentlich-und-fentanyl",
+          "label": "Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d03d",
+          "aussage": "Versehentlich und Fentanyl"
+        },
+        {
+          "id": "versehentlich-und-carfentanil",
+          "label": "Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d03e",
+          "aussage": "Versehentlich und Carfentanil"
+        },
+        {
+          "id": "fentanyl",
+          "label": "Fentanyl",
+          "ziel": "rd.23.23d03f",
+          "aussage": "Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-fentanyl",
+          "label": "Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d03g",
+          "aussage": "Absichtlich und Fentanyl"
+        },
+        {
+          "id": "absichtlich-und-carfentanil",
+          "label": "Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d03h",
+          "aussage": "Absichtlich und Carfentanil"
+        },
+        {
+          "id": "absichtlich",
+          "label": "Absichtlich",
+          "ziel": "rd.23.23d03i",
+          "aussage": "Absichtlich"
+        },
+        {
+          "id": "versehentlich-medikationsfehler",
+          "label": "Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d03m",
+          "aussage": "Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "versehentlich-andere",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23d03o",
+          "aussage": "Versehentlich (andere)"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und-fentanyl",
+          "label": "Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23d03q",
+          "aussage": "Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv-und",
+          "label": "Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23d03r",
+          "aussage": "Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "waffen-und-fentanyl",
+          "label": "Waffen und Fentanyl",
+          "ziel": "rd.23.23d03s",
+          "aussage": "Waffen und Fentanyl"
+        },
+        {
+          "id": "waffen-und-carfentanil",
+          "label": "Waffen und Carfentanil",
+          "ziel": "rd.23.23d03t",
+          "aussage": "Waffen und Carfentanil"
+        },
+        {
+          "id": "gewalttaetig-oder-aggressiv",
+          "label": "Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23d03v",
+          "aussage": "Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "waffen",
+          "label": "Waffen",
+          "ziel": "rd.23.23d03w",
+          "aussage": "Waffen"
+        }
+      ]
+    },
+    "rd.23.k15": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.23.23d04",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.23.23d04-2",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl 4",
+          "ziel": "rd.23.23d04-3",
+          "aussage": "bei Patientenanzahl 4"
+        },
+        {
+          "id": "bei-patientenanzahl-5",
+          "label": "bei Patientenanzahl ≥ 5",
+          "ziel": "rd.23.23d04-4",
+          "aussage": "bei Patientenanzahl ≥ 5"
+        },
+        {
+          "id": "bei-patientenanzahl-2-versehentlich",
+          "label": "bei Patientenanzahl 2, Versehentlich (absichtlicher Freizeitdrogenkonsum)",
+          "ziel": "rd.23.23d04a",
+          "aussage": "bei Patientenanzahl 2, Versehentlich (absichtlicher Freizeitdrogenkonsum)"
+        },
+        {
+          "id": "bei-patientenanzahl-3-versehentlich",
+          "label": "bei Patientenanzahl 3, Versehentlich (absichtlicher Freizeitdrogenkonsum)",
+          "ziel": "rd.23.23d04a-2",
+          "aussage": "bei Patientenanzahl 3, Versehentlich (absichtlicher Freizeitdrogenkonsum)"
+        },
+        {
+          "id": "bei-patientenanzahl-4-versehentlich",
+          "label": "bei Patientenanzahl 4, Versehentlich (absichtlicher Freizeitdrogenkonsum)",
+          "ziel": "rd.23.23d04a-3",
+          "aussage": "bei Patientenanzahl 4, Versehentlich (absichtlicher Freizeitdrogenkonsum)"
+        },
+        {
+          "id": "bei-patientenanzahl-5-versehentlich",
+          "label": "bei Patientenanzahl ≥ 5, Versehentlich (absichtlicher Freizeitdrogenkonsum)",
+          "ziel": "rd.23.23d04a-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Versehentlich (absichtlicher Freizeitdrogenkonsum)"
+        },
+        {
+          "id": "bei-patientenanzahl-2-carfentanil",
+          "label": "bei Patientenanzahl 2, Carfentanil",
+          "ziel": "rd.23.23d04c",
+          "aussage": "bei Patientenanzahl 2, Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-3-carfentanil",
+          "label": "bei Patientenanzahl 3, Carfentanil",
+          "ziel": "rd.23.23d04c-2",
+          "aussage": "bei Patientenanzahl 3, Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-4-carfentanil",
+          "label": "bei Patientenanzahl 4, Carfentanil",
+          "ziel": "rd.23.23d04c-3",
+          "aussage": "bei Patientenanzahl 4, Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-5-carfentanil",
+          "label": "bei Patientenanzahl ≥ 5, Carfentanil",
+          "ziel": "rd.23.23d04c-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-2-versehentlich-und",
+          "label": "bei Patientenanzahl 2, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d04d",
+          "aussage": "bei Patientenanzahl 2, Versehentlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-3-versehentlich-und",
+          "label": "bei Patientenanzahl 3, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d04d-2",
+          "aussage": "bei Patientenanzahl 3, Versehentlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-4-versehentlich-und",
+          "label": "bei Patientenanzahl 4, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d04d-3",
+          "aussage": "bei Patientenanzahl 4, Versehentlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-5-versehentlich-und",
+          "label": "bei Patientenanzahl ≥ 5, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23d04d-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Versehentlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-2-versehentlich-und-2",
+          "label": "bei Patientenanzahl 2, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d04e",
+          "aussage": "bei Patientenanzahl 2, Versehentlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-3-versehentlich-und-2",
+          "label": "bei Patientenanzahl 3, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d04e-2",
+          "aussage": "bei Patientenanzahl 3, Versehentlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-4-versehentlich-und-2",
+          "label": "bei Patientenanzahl 4, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d04e-3",
+          "aussage": "bei Patientenanzahl 4, Versehentlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-5-versehentlich-und-2",
+          "label": "bei Patientenanzahl ≥ 5, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23d04e-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Versehentlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-2-fentanyl",
+          "label": "bei Patientenanzahl 2, Fentanyl",
+          "ziel": "rd.23.23d04f",
+          "aussage": "bei Patientenanzahl 2, Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-3-fentanyl",
+          "label": "bei Patientenanzahl 3, Fentanyl",
+          "ziel": "rd.23.23d04f-2",
+          "aussage": "bei Patientenanzahl 3, Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-4-fentanyl",
+          "label": "bei Patientenanzahl 4, Fentanyl",
+          "ziel": "rd.23.23d04f-3",
+          "aussage": "bei Patientenanzahl 4, Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-5-fentanyl",
+          "label": "bei Patientenanzahl ≥ 5, Fentanyl",
+          "ziel": "rd.23.23d04f-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-2-absichtlich-und",
+          "label": "bei Patientenanzahl 2, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d04g",
+          "aussage": "bei Patientenanzahl 2, Absichtlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-3-absichtlich-und",
+          "label": "bei Patientenanzahl 3, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d04g-2",
+          "aussage": "bei Patientenanzahl 3, Absichtlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-4-absichtlich-und",
+          "label": "bei Patientenanzahl 4, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d04g-3",
+          "aussage": "bei Patientenanzahl 4, Absichtlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-5-absichtlich-und",
+          "label": "bei Patientenanzahl ≥ 5, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23d04g-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Absichtlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-2-absichtlich-und-2",
+          "label": "bei Patientenanzahl 2, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d04h",
+          "aussage": "bei Patientenanzahl 2, Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-3-absichtlich-und-2",
+          "label": "bei Patientenanzahl 3, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d04h-2",
+          "aussage": "bei Patientenanzahl 3, Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-4-absichtlich-und-2",
+          "label": "bei Patientenanzahl 4, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d04h-3",
+          "aussage": "bei Patientenanzahl 4, Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-5-absichtlich-und-2",
+          "label": "bei Patientenanzahl ≥ 5, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23d04h-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-2-absicht-zur",
+          "label": "bei Patientenanzahl 2, Absicht zur Selbstschädigung (absichtlich)",
+          "ziel": "rd.23.23d04i",
+          "aussage": "bei Patientenanzahl 2, Absicht zur Selbstschädigung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenanzahl-3-absicht-zur",
+          "label": "bei Patientenanzahl 3, Absicht zur Selbstschädigung (absichtlich)",
+          "ziel": "rd.23.23d04i-2",
+          "aussage": "bei Patientenanzahl 3, Absicht zur Selbstschädigung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenanzahl-4-absicht-zur",
+          "label": "bei Patientenanzahl 4, Absicht zur Selbstschädigung (absichtlich)",
+          "ziel": "rd.23.23d04i-3",
+          "aussage": "bei Patientenanzahl 4, Absicht zur Selbstschädigung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenanzahl-5-absicht-zur",
+          "label": "bei Patientenanzahl ≥ 5, Absicht zur Selbstschädigung (absichtlich)",
+          "ziel": "rd.23.23d04i-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Absicht zur Selbstschädigung (absichtlich)"
+        },
+        {
+          "id": "bei-patientenanzahl-2-versehentlich-2",
+          "label": "bei Patientenanzahl 2, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d04m",
+          "aussage": "bei Patientenanzahl 2, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenanzahl-3-versehentlich-2",
+          "label": "bei Patientenanzahl 3, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d04m-2",
+          "aussage": "bei Patientenanzahl 3, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenanzahl-4-versehentlich-2",
+          "label": "bei Patientenanzahl 4, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d04m-3",
+          "aussage": "bei Patientenanzahl 4, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenanzahl-5-versehentlich-2",
+          "label": "bei Patientenanzahl ≥ 5, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23d04m-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenanzahl-2-versehentliche",
+          "label": "bei Patientenanzahl 2, Versehentliche Vergiftung (andere)",
+          "ziel": "rd.23.23d04o",
+          "aussage": "bei Patientenanzahl 2, Versehentliche Vergiftung (andere)"
+        },
+        {
+          "id": "bei-patientenanzahl-3-versehentliche",
+          "label": "bei Patientenanzahl 3, Versehentliche Vergiftung (andere)",
+          "ziel": "rd.23.23d04o-2",
+          "aussage": "bei Patientenanzahl 3, Versehentliche Vergiftung (andere)"
+        },
+        {
+          "id": "bei-patientenanzahl-4-versehentliche",
+          "label": "bei Patientenanzahl 4, Versehentliche Vergiftung (andere)",
+          "ziel": "rd.23.23d04o-3",
+          "aussage": "bei Patientenanzahl 4, Versehentliche Vergiftung (andere)"
+        },
+        {
+          "id": "bei-patientenanzahl-5-versehentliche",
+          "label": "bei Patientenanzahl ≥ 5, Versehentliche Vergiftung (andere)",
+          "ziel": "rd.23.23d04o-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Versehentliche Vergiftung (andere)"
+        },
+        {
+          "id": "bei-patientenanzahl-2-gewalttaetig-oder",
+          "label": "bei Patientenanzahl 2, Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23d04q",
+          "aussage": "bei Patientenanzahl 2, Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-3-gewalttaetig-oder",
+          "label": "bei Patientenanzahl 3, Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23d04q-2",
+          "aussage": "bei Patientenanzahl 3, Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-4-gewalttaetig-oder",
+          "label": "bei Patientenanzahl 4, Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23d04q-3",
+          "aussage": "bei Patientenanzahl 4, Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-5-gewalttaetig-oder",
+          "label": "bei Patientenanzahl ≥ 5, Gewalttätig oder aggressiv und Fentanyl",
+          "ziel": "rd.23.23d04q-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Gewalttätig oder aggressiv und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-2-gewalttaetig-oder-2",
+          "label": "bei Patientenanzahl 2, Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23d04r",
+          "aussage": "bei Patientenanzahl 2, Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-3-gewalttaetig-oder-2",
+          "label": "bei Patientenanzahl 3, Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23d04r-2",
+          "aussage": "bei Patientenanzahl 3, Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-4-gewalttaetig-oder-2",
+          "label": "bei Patientenanzahl 4, Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23d04r-3",
+          "aussage": "bei Patientenanzahl 4, Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-5-gewalttaetig-oder-2",
+          "label": "bei Patientenanzahl ≥ 5, Gewalttätig oder aggressiv und Carfentanil",
+          "ziel": "rd.23.23d04r-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Gewalttätig oder aggressiv und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-2-waffen-und",
+          "label": "bei Patientenanzahl 2, Waffen und Fentanyl",
+          "ziel": "rd.23.23d04s",
+          "aussage": "bei Patientenanzahl 2, Waffen und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-3-waffen-und",
+          "label": "bei Patientenanzahl 3, Waffen und Fentanyl",
+          "ziel": "rd.23.23d04s-2",
+          "aussage": "bei Patientenanzahl 3, Waffen und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-4-waffen-und",
+          "label": "bei Patientenanzahl 4, Waffen und Fentanyl",
+          "ziel": "rd.23.23d04s-3",
+          "aussage": "bei Patientenanzahl 4, Waffen und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-5-waffen-und",
+          "label": "bei Patientenanzahl ≥ 5, Waffen und Fentanyl",
+          "ziel": "rd.23.23d04s-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Waffen und Fentanyl"
+        },
+        {
+          "id": "bei-patientenanzahl-2-waffen-und-2",
+          "label": "bei Patientenanzahl 2, Waffen und Carfentanil",
+          "ziel": "rd.23.23d04t",
+          "aussage": "bei Patientenanzahl 2, Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-3-waffen-und-2",
+          "label": "bei Patientenanzahl 3, Waffen und Carfentanil",
+          "ziel": "rd.23.23d04t-2",
+          "aussage": "bei Patientenanzahl 3, Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-4-waffen-und-2",
+          "label": "bei Patientenanzahl 4, Waffen und Carfentanil",
+          "ziel": "rd.23.23d04t-3",
+          "aussage": "bei Patientenanzahl 4, Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-5-waffen-und-2",
+          "label": "bei Patientenanzahl ≥ 5, Waffen und Carfentanil",
+          "ziel": "rd.23.23d04t-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Waffen und Carfentanil"
+        },
+        {
+          "id": "bei-patientenanzahl-2-gewalttaetig-oder-3",
+          "label": "bei Patientenanzahl 2, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23d04v",
+          "aussage": "bei Patientenanzahl 2, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenanzahl-3-gewalttaetig-oder-3",
+          "label": "bei Patientenanzahl 3, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23d04v-2",
+          "aussage": "bei Patientenanzahl 3, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenanzahl-4-gewalttaetig-oder-3",
+          "label": "bei Patientenanzahl 4, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23d04v-3",
+          "aussage": "bei Patientenanzahl 4, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenanzahl-5-gewalttaetig-oder-3",
+          "label": "bei Patientenanzahl ≥ 5, Gewalttätig oder aggressiv",
+          "ziel": "rd.23.23d04v-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Gewalttätig oder aggressiv"
+        },
+        {
+          "id": "bei-patientenanzahl-2-waffen",
+          "label": "bei Patientenanzahl 2, Waffen",
+          "ziel": "rd.23.23d04w",
+          "aussage": "bei Patientenanzahl 2, Waffen"
+        },
+        {
+          "id": "bei-patientenanzahl-3-waffen",
+          "label": "bei Patientenanzahl 3, Waffen",
+          "ziel": "rd.23.23d04w-2",
+          "aussage": "bei Patientenanzahl 3, Waffen"
+        },
+        {
+          "id": "bei-patientenanzahl-4-waffen",
+          "label": "bei Patientenanzahl 4, Waffen",
+          "ziel": "rd.23.23d04w-3",
+          "aussage": "bei Patientenanzahl 4, Waffen"
+        },
+        {
+          "id": "bei-patientenanzahl-5-waffen",
+          "label": "bei Patientenanzahl ≥ 5, Waffen",
+          "ziel": "rd.23.23d04w-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Waffen"
+        }
+      ]
+    },
+    "rd.23.k16": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.23.23e01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.23.23e01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.23.23e01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23e01a",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23e01a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23e01a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-carfentanil",
+          "label": "bei Patientenalter unbekannt, Carfentanil",
+          "ziel": "rd.23.23e01c",
+          "aussage": "bei Patientenalter unbekannt, Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Carfentanil",
+          "ziel": "rd.23.23e01c-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Carfentanil",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Carfentanil",
+          "ziel": "rd.23.23e01c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Carfentanil",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23e01d",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-4",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23e01d-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich und Fentanyl",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-4",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich und Fentanyl",
+          "ziel": "rd.23.23e01d",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich und Fentanyl",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-4",
+          "label": "bei Patientenalter unbekannt, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23e01e",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-5",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23e01e-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich und Carfentanil",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-5",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich und Carfentanil",
+          "ziel": "rd.23.23e01e",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich und Carfentanil",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-fentanyl",
+          "label": "bei Patientenalter unbekannt, Fentanyl",
+          "ziel": "rd.23.23e01f",
+          "aussage": "bei Patientenalter unbekannt, Fentanyl"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-fentanyl",
+          "label": "bei Patientenalter bis 12 Jahre, Fentanyl",
+          "ziel": "rd.23.23e01f-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Fentanyl",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-6",
+          "label": "bei Patientenalter älter 12 Jahre, Fentanyl",
+          "ziel": "rd.23.23e01f",
+          "aussage": "bei Patientenalter älter 12 Jahre, Fentanyl",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23e01g",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich und Fentanyl"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-6",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23e01g-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich und Fentanyl",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-7",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich und Fentanyl",
+          "ziel": "rd.23.23e01g",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich und Fentanyl",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich-2",
+          "label": "bei Patientenalter unbekannt, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23e01h",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich und Carfentanil"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-7",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23e01h-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich und Carfentanil",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-8",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich und Carfentanil",
+          "ziel": "rd.23.23e01h",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich und Carfentanil",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich-3",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23e01i",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-8",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23e01i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-9",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23e01i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-5",
+          "label": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23e01m",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-9",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23e01m-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-10",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23e01m",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (Medikationsfehler)",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-6",
+          "label": "bei Patientenalter unbekannt, Versehentlich (andere)",
+          "ziel": "rd.23.23e01o",
+          "aussage": "bei Patientenalter unbekannt, Versehentlich (andere)"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-10",
+          "label": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23e01o-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-11",
+          "label": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "ziel": "rd.23.23e01o",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versehentlich (andere)",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.23.k17": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "versehentlich-freizeitdrogenkonsum",
+          "label": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)",
+          "ziel": "rd.23.23o01a",
+          "aussage": "Versehentlich (Freizeitdrogenkonsum / Rauschabsicht)"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23o01i",
+          "aussage": "bei Patientenalter älter 12 Jahre, Absichtlich",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "ziel": "rd.23.23o01i-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Absichtlich",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-absichtlich",
+          "label": "bei Patientenalter unbekannt, Absichtlich",
+          "ziel": "rd.23.23o01i",
+          "aussage": "bei Patientenalter unbekannt, Absichtlich"
+        },
+        {
+          "id": "versehentlich-medikationsfehler",
+          "label": "Versehentlich (Medikationsfehler)",
+          "ziel": "rd.23.23o01m",
+          "aussage": "Versehentlich (Medikationsfehler)"
+        },
+        {
+          "id": "versehentlich-andere",
+          "label": "Versehentlich (andere)",
+          "ziel": "rd.23.23o01o",
+          "aussage": "Versehentlich (andere)"
+        }
+      ]
+    },
+    "rd.23.23b00a": {
+      "code": "23B00A",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Vergiftung ohne Notfallleitsymptome",
+      "stichwort": "RD4B."
+    },
+    "rd.23.23b00a-2": {
+      "code": "23B00A",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Vergiftung ohne Notfallleitsymptome, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.23.23b00i": {
+      "code": "23B00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Vergiftung ohne Notfallleitsymptome",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23b00m": {
+      "code": "23B00M",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Vergiftung ohne Notfallleitsymptome",
+      "stichwort": "RD4B."
+    },
+    "rd.23.23b00m-2": {
+      "code": "23B00M",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Vergiftung ohne Notfallleitsymptome, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.23.23b00o": {
+      "code": "23B00O",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Vergiftung ohne Notfallleitsymptome",
+      "stichwort": "RD4B."
+    },
+    "rd.23.23b00o-2": {
+      "code": "23B00O",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Vergiftung ohne Notfallleitsymptome, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.23.23c00a": {
+      "code": "23C00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00g": {
+      "code": "23C00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Fentanyl",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00h": {
+      "code": "23C00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Carfentanil",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00i": {
+      "code": "23C00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00m": {
+      "code": "23C00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00o": {
+      "code": "23C00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00q": {
+      "code": "23C00Q",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Fentanyl, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00r": {
+      "code": "23C00R",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Carfentanil, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00s": {
+      "code": "23C00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Fentanyl, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00t": {
+      "code": "23C00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Carfentanil, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00v": {
+      "code": "23C00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23c00w": {
+      "code": "23C00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis ohne Notfallleitsymptome, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00a": {
+      "code": "23D00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00c": {
+      "code": "23D00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00d": {
+      "code": "23D00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Vergiftung durch Fentanyl",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00e": {
+      "code": "23D00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Vergiftung durch Carfentanil",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00f": {
+      "code": "23D00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00g": {
+      "code": "23D00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis durch Fentanyl",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00h": {
+      "code": "23D00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis durch Carfentanil",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00i": {
+      "code": "23D00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00m": {
+      "code": "23D00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00o": {
+      "code": "23D00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00q": {
+      "code": "23D00Q",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00r": {
+      "code": "23D00R",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00s": {
+      "code": "23D00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00t": {
+      "code": "23D00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00v": {
+      "code": "23D00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23d00w": {
+      "code": "23D00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Überdosis/ Vergiftung, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00a": {
+      "code": "23E00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00c": {
+      "code": "23E00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00d": {
+      "code": "23E00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00e": {
+      "code": "23E00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00f": {
+      "code": "23E00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00g": {
+      "code": "23E00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00h": {
+      "code": "23E00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00i": {
+      "code": "23E00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00m": {
+      "code": "23E00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00o": {
+      "code": "23E00O",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00q": {
+      "code": "23E00Q",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl, ACHTUNG! Patient war aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00r": {
+      "code": "23E00R",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil, ACHTUNG! Patient war aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00s": {
+      "code": "23E00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl, ACHTUNG! Patient war bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00t": {
+      "code": "23E00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil, ACHTUNG! Patient war bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00v": {
+      "code": "23E00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, ACHTUNG! Patient war aggressiv",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23e00w": {
+      "code": "23E00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, ACHTUNG! Patient war bewaffnet",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.23.23b01g": {
+      "code": "23B01G",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Fentanyl",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23b01h": {
+      "code": "23B01H",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Carfentanil",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23b01i": {
+      "code": "23B01I",
+      "kategorie": "RD3B.",
+      "anlass": "Überdosis ohne Notfallleitsymptome",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23b01i-2": {
+      "code": "23B01I",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23b01q": {
+      "code": "23B01Q",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Fentanyl, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23b01r": {
+      "code": "23B01R",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Carfentanil, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23b01s": {
+      "code": "23B01S",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Fentanyl, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23b01t": {
+      "code": "23B01T",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome durch Carfentanil, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23b01v": {
+      "code": "23B01V",
+      "kategorie": "RD3B.",
+      "anlass": "Überdosis ohne Notfallleitsymptome, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23b01v-2": {
+      "code": "23B01V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome, ACHTUNG! Kind ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23b01w": {
+      "code": "23B01W",
+      "kategorie": "RD3B.",
+      "anlass": "Überdosis ohne Notfallleitsymptome, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23b01w-2": {
+      "code": "23B01W",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis ohne Notfallleitsymptome, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c01": {
+      "code": "23C01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01-2": {
+      "code": "23C01",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01-3": {
+      "code": "23C01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung, Alter unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01a": {
+      "code": "23C01A",
+      "kategorie": "RD2C FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01a-2": {
+      "code": "23C01A",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01a-3": {
+      "code": "23C01A",
+      "kategorie": "RD2C FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung, Alter unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01c": {
+      "code": "23C01C",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01d": {
+      "code": "23C01D",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01e": {
+      "code": "23C01E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01f": {
+      "code": "23C01F",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01g": {
+      "code": "23C01G",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis mit Bewusstseinstrübung durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01h": {
+      "code": "23C01H",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis mit Bewusstseinstrübung durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01i": {
+      "code": "23C01I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Überdosis mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01i-2": {
+      "code": "23C01I",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis mit Bewusstseinstrübung, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01i-3": {
+      "code": "23C01I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Überdosis mit Bewusstseinstrübung, Alter unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01m": {
+      "code": "23C01M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01m-2": {
+      "code": "23C01M",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01m-3": {
+      "code": "23C01M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung, Alter unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01o": {
+      "code": "23C01O",
+      "kategorie": "RD2C FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01o-2": {
+      "code": "23C01O",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01o-3": {
+      "code": "23C01O",
+      "kategorie": "RD2C FR.",
+      "anlass": "Vergiftung mit Bewusstseinstrübung, Alter unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01q": {
+      "code": "23C01Q",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung durch Fentanyl, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01r": {
+      "code": "23C01R",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung durch Carfentanil, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01s": {
+      "code": "23C01S",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung durch Fentanyl, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01t": {
+      "code": "23C01T",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung durch Carfentanil, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01v": {
+      "code": "23C01V",
+      "kategorie": "RD2C FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01v-2": {
+      "code": "23C01V",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung,, Patient jünger 12 Jahre, ACHTUNG! Patient ist aggressiv/",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01v-3": {
+      "code": "23C01V",
+      "kategorie": "RD2C FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung, Alter unbekannt, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01w": {
+      "code": "23C01W",
+      "kategorie": "RD2C FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c01w-2": {
+      "code": "23C01W",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung,, Patient jünger 12 Jahre, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c01w-3": {
+      "code": "23C01W",
+      "kategorie": "RD2C FR.",
+      "anlass": "Überdosis/ Vergiftung mit Bewusstseinstrübung, Alter unbekannt ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C FR."
+    },
+    "rd.23.23c02": {
+      "code": "23C02",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung mit Atembeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02-2": {
+      "code": "23C02",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung mit Atembeschwerden, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c02-3": {
+      "code": "23C02",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung mit Atembeschwerden, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02a": {
+      "code": "23C02A",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung mit Atembeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02a-2": {
+      "code": "23C02A",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung mit Atembeschwerden, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c02a-3": {
+      "code": "23C02A",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung mit Atembeschwerden, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02c": {
+      "code": "23C02C",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02d": {
+      "code": "23C02D",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Vergiftung mit Atembeschwerden durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02e": {
+      "code": "23C02E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Vergiftung mit Atembeschwerden durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02f": {
+      "code": "23C02F",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02g": {
+      "code": "23C02G",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis mit Atembeschwerden durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02h": {
+      "code": "23C02H",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis mit Atembeschwerden durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02i": {
+      "code": "23C02I",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis mit Atembeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02i-2": {
+      "code": "23C02I",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis mit Atembeschwerden, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c02i-3": {
+      "code": "23C02I",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis mit Atembeschwerden, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02m": {
+      "code": "23C02M",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung mit Atembeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02m-2": {
+      "code": "23C02M",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung mit Atembeschwerden, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c02m-3": {
+      "code": "23C02M",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung mit Atembeschwerden, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02o": {
+      "code": "23C02O",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung mit Atembeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02o-2": {
+      "code": "23C02O",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung mit Atembeschwerden, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c02o-3": {
+      "code": "23C02O",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung mit Atembeschwerden, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02q": {
+      "code": "23C02Q",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden durch Fentanyl, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02r": {
+      "code": "23C02R",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden durch Carfentanil, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02s": {
+      "code": "23C02S",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden durch Fentanyl, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02t": {
+      "code": "23C02T",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden durch Carfentanil, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23c02v": {
+      "code": "23C02V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02v-2": {
+      "code": "23C02V",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden, Patient jünger 12 Jahre, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c02v-3": {
+      "code": "23C02V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden, Alter unbekannt, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02w": {
+      "code": "23C02W",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c02w-2": {
+      "code": "23C02W",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden, Patient jünger 12 Jahre, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c02w-3": {
+      "code": "23C02W",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung mit Atembeschwerden, Alter unbekannt, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c03": {
+      "code": "23C03",
+      "kategorie": "RD2C.",
+      "anlass": "Vergiftung durch trizyklische Antidepressiva",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c03a": {
+      "code": "23C03A",
+      "kategorie": "RD2C.",
+      "anlass": "Vergiftung durch trizyklische Antidepressiva",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c03i": {
+      "code": "23C03I",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis durch trizyklische Antidepressiva",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c03m": {
+      "code": "23C03M",
+      "kategorie": "RD2C.",
+      "anlass": "Vergiftung durch trizyklische Antidepressiva",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c03o": {
+      "code": "23C03O",
+      "kategorie": "RD2C.",
+      "anlass": "Vergiftung durch trizyklische Antidepressiva",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c03v": {
+      "code": "23C03V",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis/ Vergiftung durch trizyklische Antidepressiva, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c03w": {
+      "code": "23C03W",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis/ Vergiftung durch trizyklische Antidepressiva, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c04": {
+      "code": "23C04",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04-2": {
+      "code": "23C04",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c04-3": {
+      "code": "23C04",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04a": {
+      "code": "23C04A",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04a-2": {
+      "code": "23C04A",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c04a-3": {
+      "code": "23C04A",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04i": {
+      "code": "23C04I",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Kokain oder Methamphetamin",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04i-2": {
+      "code": "23C04I",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis durch Kokain oder Methamphetamin, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c04i-3": {
+      "code": "23C04I",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Kokain oder Methamphetamin, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04m": {
+      "code": "23C04M",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04m-2": {
+      "code": "23C04M",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c04m-3": {
+      "code": "23C04M",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04o": {
+      "code": "23C04O",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04o-2": {
+      "code": "23C04O",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c04o-3": {
+      "code": "23C04O",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Kokain oder Methamphetamin, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04v": {
+      "code": "23C04V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Kokain oder Methamphetamin, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04v-2": {
+      "code": "23C04V",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis/ Vergiftung durch Kokain oder Methamphetamin, Patient jünger 12 Jahre, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c04v-3": {
+      "code": "23C04V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Kokain oder Methamphetamin, Alter unbekannt, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04w": {
+      "code": "23C04W",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Kokain oder Methamphetamin, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c04w-2": {
+      "code": "23C04W",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis/ Vergiftung durch Kokain oder Methamphetamin, Patient jünger 12 Jahre, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c04w-3": {
+      "code": "23C04W",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Kokain oder Methamphetamin, Alter unbekannt, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05": {
+      "code": "23C05",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05-2": {
+      "code": "23C05",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c05-3": {
+      "code": "23C05",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05a": {
+      "code": "23C05A",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05a-2": {
+      "code": "23C05A",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c05a-3": {
+      "code": "23C05A",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05c": {
+      "code": "23C05C",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05d": {
+      "code": "23C05D",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Fentanyl",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05e": {
+      "code": "23C05E",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Carfentanil",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05f": {
+      "code": "23C05F",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05g": {
+      "code": "23C05G",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Fentanyl",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05h": {
+      "code": "23C05H",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Carfentanil",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05i": {
+      "code": "23C05I",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Narkotika oder Opiate",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05i-2": {
+      "code": "23C05I",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis durch Narkotika oder Opiate, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c05i-3": {
+      "code": "23C05I",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Narkotika oder Opiate, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05m": {
+      "code": "23C05M",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05m-2": {
+      "code": "23C05M",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c05m-3": {
+      "code": "23C05M",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05o": {
+      "code": "23C05O",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05o-2": {
+      "code": "23C05O",
+      "kategorie": "RD2NC.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate, Patient jünger 12 Jahre",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c05o-3": {
+      "code": "23C05O",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Narkotika oder Opiate, Alter unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05q": {
+      "code": "23C05Q",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05r": {
+      "code": "23C05R",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05s": {
+      "code": "23C05S",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05t": {
+      "code": "23C05T",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05v": {
+      "code": "23C05V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Narkotika oder Opiate, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05v-2": {
+      "code": "23C05V",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis/ Vergiftung durch Narkotika oder Opiate, Patient jünger 12 Jahre, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c05v-3": {
+      "code": "23C05V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Narkotika oder Opiate, Alter unbekannt, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05w": {
+      "code": "23C05W",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Narkotika oder Opiate, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c05w-2": {
+      "code": "23C05W",
+      "kategorie": "RD2NC.",
+      "anlass": "Überdosis/ Vergiftung durch Narkotika oder Opiate, Patient jünger 12 Jahre, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c05w-3": {
+      "code": "23C05W",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Narkotika oder Opiate, Alter unbekannt, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c06": {
+      "code": "23C06",
+      "kategorie": "RD2C.",
+      "anlass": "Vergiftung durch Säure oder Laugen",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c06a": {
+      "code": "23C06A",
+      "kategorie": "RD2C.",
+      "anlass": "Vergiftung durch Säure oder Laugen",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c06i": {
+      "code": "23C06I",
+      "kategorie": "RD2NC.",
+      "anlass": "Absichtliche Einnahme von Säure oder Laugen",
+      "stichwort": "RD2NC."
+    },
+    "rd.23.23c06m": {
+      "code": "23C06M",
+      "kategorie": "RD2C.",
+      "anlass": "Vergiftung durch Säure oder Laugen",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c06o": {
+      "code": "23C06O",
+      "kategorie": "RD2C.",
+      "anlass": "Vergiftung durch Säure oder Laugen",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c06v": {
+      "code": "23C06V",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis/ Vergiftung durch Säure oder Laugen, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c06w": {
+      "code": "23C06W",
+      "kategorie": "RD2C.",
+      "anlass": "Überdosis/ Vergiftung durch Säure oder Laugen, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD2C."
+    },
+    "rd.23.23c07": {
+      "code": "23C07",
+      "kategorie": "RD3C.",
+      "anlass": "Batterie verschluckt - Zwingender KH-Transport!",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c07o": {
+      "code": "23C07O",
+      "kategorie": "RD3C.",
+      "anlass": "Batterie verschluckt - Zwingender KH-Transport!",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08": {
+      "code": "23C08",
+      "kategorie": "RD3B.",
+      "anlass": "Vergiftung/ Überdosis, unklare Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c08-2": {
+      "code": "23C08",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung/ Überdosis, unklare Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08-3": {
+      "code": "23C08",
+      "kategorie": "RD3B.",
+      "anlass": "Vergiftung, unklare Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c08-4": {
+      "code": "23C08",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung, unklare Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08a": {
+      "code": "23C08A",
+      "kategorie": "RD3B.",
+      "anlass": "Vergiftung, unklare Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c08a-2": {
+      "code": "23C08A",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung, unklare Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08c": {
+      "code": "23C08C",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil, unklare Situation",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08d": {
+      "code": "23C08D",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Fentanyl, unklare Situation",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08e": {
+      "code": "23C08E",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Carfentanil, unklare Situation",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08f": {
+      "code": "23C08F",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl, unklare Situation",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08g": {
+      "code": "23C08G",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Fentanyl, unklare Situation",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08h": {
+      "code": "23C08H",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Carfentanil, unklare Situation",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08i": {
+      "code": "23C08I",
+      "kategorie": "RD3B.",
+      "anlass": "Überdosis, unklare Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c08i-2": {
+      "code": "23C08I",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis, unklare Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08m": {
+      "code": "23C08M",
+      "kategorie": "RD3B.",
+      "anlass": "Vergiftung, unklare Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c08m-2": {
+      "code": "23C08M",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung, unklare Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08o": {
+      "code": "23C08O",
+      "kategorie": "RD3B.",
+      "anlass": "Vergiftung, unklare Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c08o-2": {
+      "code": "23C08O",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung, unklare Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08q": {
+      "code": "23C08Q",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl, unklare Situation, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08r": {
+      "code": "23C08R",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil, unklare Situation, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08s": {
+      "code": "23C08S",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl, unklare Situation, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08t": {
+      "code": "23C08T",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil, unklare Situation, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08v": {
+      "code": "23C08V",
+      "kategorie": "RD3B.",
+      "anlass": "Überdosis/ Vergiftung, unklare Situation, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c08v-2": {
+      "code": "23C08V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung, unklare Situation, ACHTUNG! Kind ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c08w": {
+      "code": "23C08W",
+      "kategorie": "RD3B.",
+      "anlass": "Überdosis/ Vergiftung, unklare Situation, ACHTUNG! Patient ist bewaffnet",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c08w-2": {
+      "code": "23C08W",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung, unklare Situation, ACHTUNG! Kind ist bewaffnet",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c09": {
+      "code": "23C09",
+      "kategorie": "RD3B.",
+      "anlass": "Überdosis/ Vergiftung, Empfehlung für Notfallrettung durch Giftnotruf",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c09-2": {
+      "code": "23C09",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung, Empfehlung für Notfallrettung durch Giftnotruf, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c09c": {
+      "code": "23C09C",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis durch Carfentanil, Empfehlung für Notfallrettung durch Giftnotruf",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c09f": {
+      "code": "23C09F",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung durch Fentanyl, Empfehlung für Notfallrettung durch Giftnotruf",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c09q": {
+      "code": "23C09Q",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Fentanyl, Empfehlung für Notfallrettung durch Giftnotruf, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c09r": {
+      "code": "23C09R",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung durch Carfentanil, Empfehlung für Notfallrettung durch Giftnotruf, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23c09v": {
+      "code": "23C09V",
+      "kategorie": "RD3B.",
+      "anlass": "Überdosis/ Vergiftung, Empfehlung für Notfallrettung durch Giftnotruf, ACHTUNG! Patient ist aggressiv",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23c09v-2": {
+      "code": "23C09V",
+      "kategorie": "RD3C.",
+      "anlass": "Überdosis/ Vergiftung, Empfehlung für Notfallrettung durch Giftnotruf, ACHTUNG! Patient ist aggressiv, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23d01": {
+      "code": "23D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01-2": {
+      "code": "23D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01a": {
+      "code": "23D01A",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01a-2": {
+      "code": "23D01A",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01c": {
+      "code": "23D01C",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01c-2": {
+      "code": "23D01C",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01d": {
+      "code": "23D01D",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01d-2": {
+      "code": "23D01D",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01e": {
+      "code": "23D01E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01e-2": {
+      "code": "23D01E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01f": {
+      "code": "23D01F",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01f-2": {
+      "code": "23D01F",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01g": {
+      "code": "23D01G",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01g-2": {
+      "code": "23D01G",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01h": {
+      "code": "23D01H",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01h-2": {
+      "code": "23D01H",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01i": {
+      "code": "23D01I",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01i-2": {
+      "code": "23D01I",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01m": {
+      "code": "23D01M",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01m-2": {
+      "code": "23D01M",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01o": {
+      "code": "23D01O",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d01o-2": {
+      "code": "23D01O",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23d02": {
+      "code": "23D02",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Vergiftung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02a": {
+      "code": "23D02A",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Vergiftung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02c": {
+      "code": "23D02C",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02d": {
+      "code": "23D02D",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02e": {
+      "code": "23D02E",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02f": {
+      "code": "23D02F",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02g": {
+      "code": "23D02G",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02h": {
+      "code": "23D02H",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02i": {
+      "code": "23D02I",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Überdosis",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02m": {
+      "code": "23D02M",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Vergiftung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d02o": {
+      "code": "23D02O",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Vergiftung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.23.23d03": {
+      "code": "23D03",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Vergiftung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03a": {
+      "code": "23D03A",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Vergiftung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03c": {
+      "code": "23D03C",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03d": {
+      "code": "23D03D",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03e": {
+      "code": "23D03E",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03f": {
+      "code": "23D03F",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03g": {
+      "code": "23D03G",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03h": {
+      "code": "23D03H",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03i": {
+      "code": "23D03I",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03m": {
+      "code": "23D03M",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Vergiftung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03o": {
+      "code": "23D03O",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Vergiftung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03q": {
+      "code": "23D03Q",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Fentanyl, ACHTUNG! Patient war aggressiv",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03r": {
+      "code": "23D03R",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Carfentanil, ACHTUNG! Patient war aggressiv",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03s": {
+      "code": "23D03S",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Fentanyl, ACHTUNG! Patient war bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03t": {
+      "code": "23D03T",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung durch Carfentanil, ACHTUNG! Patient war bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03v": {
+      "code": "23D03V",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung, ACHTUNG! Patient war aggressiv",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d03w": {
+      "code": "23D03W",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Veränderte Hautfarbe nach Überdosis/ Vergiftung, ACHTUNG! Patient war bewaffnet",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.23.23d04": {
+      "code": "23D04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04-2": {
+      "code": "23D04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04-3": {
+      "code": "23D04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04-4": {
+      "code": "23D04",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04a": {
+      "code": "23D04A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04a-2": {
+      "code": "23D04A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04a-3": {
+      "code": "23D04A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04a-4": {
+      "code": "23D04A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04c": {
+      "code": "23D04C",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04c-2": {
+      "code": "23D04C",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04c-3": {
+      "code": "23D04C",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04c-4": {
+      "code": "23D04C",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04d": {
+      "code": "23D04D",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04d-2": {
+      "code": "23D04D",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04d-3": {
+      "code": "23D04D",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04d-4": {
+      "code": "23D04D",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04e": {
+      "code": "23D04E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04e-2": {
+      "code": "23D04E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04e-3": {
+      "code": "23D04E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04e-4": {
+      "code": "23D04E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04f": {
+      "code": "23D04F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04f-2": {
+      "code": "23D04F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04f-3": {
+      "code": "23D04F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04f-4": {
+      "code": "23D04F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04g": {
+      "code": "23D04G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04g-2": {
+      "code": "23D04G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04g-3": {
+      "code": "23D04G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04g-4": {
+      "code": "23D04G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04h": {
+      "code": "23D04H",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04h-2": {
+      "code": "23D04H",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04h-3": {
+      "code": "23D04H",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04h-4": {
+      "code": "23D04H",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04i": {
+      "code": "23D04I",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04i-2": {
+      "code": "23D04I",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04i-3": {
+      "code": "23D04I",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04i-4": {
+      "code": "23D04I",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04m": {
+      "code": "23D04M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04m-2": {
+      "code": "23D04M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04m-3": {
+      "code": "23D04M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04m-4": {
+      "code": "23D04M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04o": {
+      "code": "23D04O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04o-2": {
+      "code": "23D04O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04o-3": {
+      "code": "23D04O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04o-4": {
+      "code": "23D04O",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04q": {
+      "code": "23D04Q",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04q-2": {
+      "code": "23D04Q",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04q-3": {
+      "code": "23D04Q",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04q-4": {
+      "code": "23D04Q",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04r": {
+      "code": "23D04R",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04r-2": {
+      "code": "23D04R",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04r-3": {
+      "code": "23D04R",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04r-4": {
+      "code": "23D04R",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04s": {
+      "code": "23D04S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04s-2": {
+      "code": "23D04S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04s-3": {
+      "code": "23D04S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04s-4": {
+      "code": "23D04S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04t": {
+      "code": "23D04T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04t-2": {
+      "code": "23D04T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04t-3": {
+      "code": "23D04T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04t-4": {
+      "code": "23D04T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04v": {
+      "code": "23D04V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04v-2": {
+      "code": "23D04V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04v-3": {
+      "code": "23D04V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04v-4": {
+      "code": "23D04V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04w": {
+      "code": "23D04W",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04w-2": {
+      "code": "23D04W",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04w-3": {
+      "code": "23D04W",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23d04w-4": {
+      "code": "23D04W",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Vergiftung/ Überdosis, mehr als 4 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.23.23e01": {
+      "code": "23E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01-2": {
+      "code": "23E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01a": {
+      "code": "23E01A",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01a-2": {
+      "code": "23E01A",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01c": {
+      "code": "23E01C",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01c-2": {
+      "code": "23E01C",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01d": {
+      "code": "23E01D",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01d-2": {
+      "code": "23E01D",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01e": {
+      "code": "23E01E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01e-2": {
+      "code": "23E01E",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01f": {
+      "code": "23E01F",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01f-2": {
+      "code": "23E01F",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01g": {
+      "code": "23E01G",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Fentanyl",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01g-2": {
+      "code": "23E01G",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01h": {
+      "code": "23E01H",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung durch Carfentanil",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01h-2": {
+      "code": "23E01H",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01i": {
+      "code": "23E01I",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01i-2": {
+      "code": "23E01I",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01m": {
+      "code": "23E01M",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01m-2": {
+      "code": "23E01M",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01o": {
+      "code": "23E01O",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Vergiftung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23e01o-2": {
+      "code": "23E01O",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Überdosis/ Vergiftung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.23.23o01a": {
+      "code": "23O01A",
+      "kategorie": "RD5.",
+      "anlass": "23O01A",
+      "stichwort": "RD5."
+    },
+    "rd.23.23o01i": {
+      "code": "23O01I",
+      "kategorie": "RD3B.",
+      "anlass": "Vergiftung ohne Notfallleitsymptome",
+      "stichwort": "RD3B."
+    },
+    "rd.23.23o01i-2": {
+      "code": "23O01I",
+      "kategorie": "RD3C.",
+      "anlass": "Vergiftung ohne Notfallleitsymptome, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.23.23o01m": {
+      "code": "23O01M",
+      "kategorie": "RD5.",
+      "anlass": "23O01M",
+      "stichwort": "RD5."
+    },
+    "rd.23.23o01o": {
+      "code": "23O01O",
+      "kategorie": "RD5.",
+      "anlass": "23O01O",
+      "stichwort": "RD5."
+    }
+  }
+}

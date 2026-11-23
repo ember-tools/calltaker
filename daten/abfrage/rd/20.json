@@ -1,0 +1,404 @@
+{
+  "knoten": {
+    "rd.20.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ansprechbar",
+          "label": "Ansprechbar",
+          "ziel": "rd.20.k1",
+          "aussage": "Ansprechbar"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.20.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "aenderung-der-hautfarbe",
+          "label": "Änderung der Hautfarbe",
+          "ziel": "rd.20.k3",
+          "aussage": "Änderung der Hautfarbe"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.20.k4",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "herzinfarkt-angina-pectoris",
+          "label": "Herzinfarkt-/Angina Pectoris-Vorgeschichte",
+          "ziel": "rd.20.k5",
+          "aussage": "Herzinfarkt-/Angina Pectoris-Vorgeschichte"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.20.k6",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "mehrere-verletzte-mit",
+          "label": "Mehrere Verletzte (mit Notfallleitsymptomen)",
+          "ziel": "rd.20.k7",
+          "aussage": "Mehrere Verletzte (mit Notfallleitsymptomen)"
+        }
+      ]
+    },
+    "rd.20.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "kaelteprobleme",
+          "label": "Kälteprobleme",
+          "ziel": "rd.20.20a01c",
+          "aussage": "Kälteprobleme"
+        },
+        {
+          "id": "hitzeprobleme",
+          "label": "Hitzeprobleme",
+          "ziel": "rd.20.20a01h",
+          "aussage": "Hitzeprobleme"
+        }
+      ]
+    },
+    "rd.20.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Kälteprobleme",
+          "ziel": "rd.20.20b00c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Kälteprobleme",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Kälteprobleme",
+          "ziel": "rd.20.20b00c-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Kälteprobleme",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Kälteprobleme",
+          "ziel": "rd.20.20b00c",
+          "aussage": "bei Patientenalter unbekannt, Kälteprobleme"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Hitzeprobleme",
+          "ziel": "rd.20.20b00h",
+          "aussage": "bei Patientenalter älter 12 Jahre, Hitzeprobleme",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Hitzeprobleme",
+          "ziel": "rd.20.20b00h-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Hitzeprobleme",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Hitzeprobleme",
+          "ziel": "rd.20.20b00h",
+          "aussage": "bei Patientenalter unbekannt, Hitzeprobleme"
+        },
+        {
+          "id": "kaelteprobleme",
+          "label": "Kälteprobleme",
+          "ziel": "rd.20.20c00c",
+          "aussage": "Kälteprobleme"
+        },
+        {
+          "id": "hitzeprobleme",
+          "label": "Hitzeprobleme",
+          "ziel": "rd.20.20c00h",
+          "aussage": "Hitzeprobleme"
+        },
+        {
+          "id": "kaelteprobleme-2",
+          "label": "Kälteprobleme",
+          "ziel": "rd.20.20d00c",
+          "aussage": "Kälteprobleme"
+        },
+        {
+          "id": "hitzeprobleme-2",
+          "label": "Hitzeprobleme",
+          "ziel": "rd.20.20d00h",
+          "aussage": "Hitzeprobleme"
+        }
+      ]
+    },
+    "rd.20.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "kaelteprobleme",
+          "label": "Kälteprobleme",
+          "ziel": "rd.20.20b01c",
+          "aussage": "Kälteprobleme"
+        },
+        {
+          "id": "hitzeprobleme",
+          "label": "Hitzeprobleme",
+          "ziel": "rd.20.20b01h",
+          "aussage": "Hitzeprobleme"
+        }
+      ]
+    },
+    "rd.20.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Kälteprobleme",
+          "ziel": "rd.20.20b02c",
+          "aussage": "bei Patientenalter älter 12 Jahre, Kälteprobleme",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Kälteprobleme",
+          "ziel": "rd.20.20b02c",
+          "aussage": "bei Patientenalter unbekannt, Kälteprobleme"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Kälteprobleme",
+          "ziel": "rd.20.20b02c-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Kälteprobleme",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Hitzeprobleme",
+          "ziel": "rd.20.20b02h",
+          "aussage": "bei Patientenalter älter 12 Jahre, Hitzeprobleme",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Hitzeprobleme",
+          "ziel": "rd.20.20b02h",
+          "aussage": "bei Patientenalter unbekannt, Hitzeprobleme"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Hitzeprobleme",
+          "ziel": "rd.20.20b02h-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Hitzeprobleme",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.20.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "kaelteprobleme",
+          "label": "Kälteprobleme",
+          "ziel": "rd.20.20c01c",
+          "aussage": "Kälteprobleme"
+        },
+        {
+          "id": "hitzeprobleme",
+          "label": "Hitzeprobleme",
+          "ziel": "rd.20.20c01h",
+          "aussage": "Hitzeprobleme"
+        }
+      ]
+    },
+    "rd.20.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "kaelteprobleme",
+          "label": "Kälteprobleme",
+          "ziel": "rd.20.20d01c",
+          "aussage": "Kälteprobleme"
+        },
+        {
+          "id": "hitzeprobleme",
+          "label": "Hitzeprobleme",
+          "ziel": "rd.20.20d01h",
+          "aussage": "Hitzeprobleme"
+        }
+      ]
+    },
+    "rd.20.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "kaelteprobleme",
+          "label": "Kälteprobleme",
+          "ziel": "rd.20.20d02c",
+          "aussage": "Kälteprobleme"
+        },
+        {
+          "id": "hitzeprobleme",
+          "label": "Hitzeprobleme",
+          "ziel": "rd.20.20d02h",
+          "aussage": "Hitzeprobleme"
+        },
+        {
+          "id": "bei-patientenanzahl-5-hitzeprobleme",
+          "label": "bei Patientenanzahl ≥ 5, Hitzeprobleme",
+          "ziel": "rd.20.20d02h",
+          "aussage": "bei Patientenanzahl ≥ 5, Hitzeprobleme"
+        }
+      ]
+    },
+    "rd.20.20a01c": {
+      "code": "20A01C",
+      "kategorie": "RD5.",
+      "anlass": "20A01C",
+      "stichwort": "RD5."
+    },
+    "rd.20.20a01h": {
+      "code": "20A01H",
+      "kategorie": "RD5.",
+      "anlass": "20A01H",
+      "stichwort": "RD5."
+    },
+    "rd.20.20b00c": {
+      "code": "20B00C",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Kälteproblem",
+      "stichwort": "RD4B."
+    },
+    "rd.20.20b00c-2": {
+      "code": "20B00C",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Kälteproblem, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.20.20b00h": {
+      "code": "20B00H",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Hitzeproblem",
+      "stichwort": "RD4B."
+    },
+    "rd.20.20b00h-2": {
+      "code": "20B00H",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Hitzeproblem, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.20.20c00c": {
+      "code": "20C00C",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung starke Schmerzen bei Kälteproblem",
+      "stichwort": "RD3C."
+    },
+    "rd.20.20c00h": {
+      "code": "20C00H",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung starke Schmerzen bei Hitzeproblemen",
+      "stichwort": "RD3C."
+    },
+    "rd.20.20d00c": {
+      "code": "20D00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kälteproblem",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.20.20d00h": {
+      "code": "20D00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Hitzeproblem",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.20.20b01c": {
+      "code": "20B01C",
+      "kategorie": "RD3C.",
+      "anlass": "Veränderte Hautfarbe durch Kälteproblem",
+      "stichwort": "RD3C."
+    },
+    "rd.20.20b01h": {
+      "code": "20B01H",
+      "kategorie": "RD3C.",
+      "anlass": "Veränderte Hautfarbe durch Hitzeproblem",
+      "stichwort": "RD3C."
+    },
+    "rd.20.20b02c": {
+      "code": "20B02C",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand bei Kälteproblem",
+      "stichwort": "RD3B."
+    },
+    "rd.20.20b02c-2": {
+      "code": "20B02C",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand bei Kälteproblem, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.20.20b02h": {
+      "code": "20B02H",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand bei Hitzeproblem",
+      "stichwort": "RD3B."
+    },
+    "rd.20.20b02h-2": {
+      "code": "20B02H",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand bei Hitzeproblem, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.20.20c01c": {
+      "code": "20C01C",
+      "kategorie": "RD3C.",
+      "anlass": "Kälteproblem mit Herzinfarkt/ Angina-Pectoris-Vorgeschichte",
+      "stichwort": "RD3C."
+    },
+    "rd.20.20c01h": {
+      "code": "20C01H",
+      "kategorie": "RD3C.",
+      "anlass": "Hitzeproblem mit Herzinfarkt/ Angina-Pectoris-Vorgeschichte",
+      "stichwort": "RD3C."
+    },
+    "rd.20.20d01c": {
+      "code": "20D01C",
+      "kategorie": "RD2C FR.",
+      "anlass": "Kälteproblem mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.20.20d01h": {
+      "code": "20D01H",
+      "kategorie": "RD2C FR.",
+      "anlass": "Hitzeproblem mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.20.20d02c": {
+      "code": "20D02C",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Patienten mit Kälteproblem",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.20.20d02h": {
+      "code": "20D02H",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Patienten mit Hitzeproblem",
+      "stichwort": "RD_Mehrere Patienten"
+    }
+  }
+}

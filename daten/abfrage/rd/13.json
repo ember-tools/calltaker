@@ -1,0 +1,232 @@
+{
+  "knoten": {
+    "rd.13.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ansprechbar-und-verhaelt-sich-normal",
+          "label": "Ansprechbar und verhält sich normal",
+          "ziel": "rd.13.13a01",
+          "aussage": "Ansprechbar und verhält sich normal"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.13.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.13.k2",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "abnormes-verhalten",
+          "label": "Abnormes Verhalten",
+          "ziel": "rd.13.k3",
+          "aussage": "Abnormes Verhalten"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.13.k4",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.13.k5",
+          "aussage": "Bewusstlos"
+        }
+      ]
+    },
+    "rd.13.13a01": {
+      "code": "13A01",
+      "kategorie": "RD5.",
+      "anlass": "13A01",
+      "stichwort": "RD5."
+    },
+    "rd.13.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.13.13c00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.13.13c00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.13.13c00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.13.13d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "aggressiv-oder-streitsuechtig",
+          "label": "Aggressiv oder streitsüchtig",
+          "ziel": "rd.13.13d00c",
+          "aussage": "Aggressiv oder streitsüchtig"
+        }
+      ]
+    },
+    "rd.13.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.13.13c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "aggressiv-oder-streitsuechtig",
+          "label": "Aggressiv oder streitsüchtig",
+          "ziel": "rd.13.13c01c",
+          "aussage": "Aggressiv oder streitsüchtig"
+        }
+      ]
+    },
+    "rd.13.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.13.13c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "aggressiv-oder-streitsuechtig",
+          "label": "Aggressiv oder streitsüchtig",
+          "ziel": "rd.13.13c02c",
+          "aussage": "Aggressiv oder streitsüchtig"
+        }
+      ]
+    },
+    "rd.13.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.13.13c03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "aggressiv-oder-streitsuechtig",
+          "label": "Aggressiv oder streitsüchtig",
+          "ziel": "rd.13.13c03c",
+          "aussage": "Aggressiv oder streitsüchtig"
+        }
+      ]
+    },
+    "rd.13.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.13.13d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "aggressiv-oder-streitsuechtig",
+          "label": "Aggressiv oder streitsüchtig",
+          "ziel": "rd.13.13d01c",
+          "aussage": "Aggressiv oder streitsüchtig"
+        }
+      ]
+    },
+    "rd.13.13c00": {
+      "code": "13C00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung BZ-Entgleisung",
+      "stichwort": "RD4B."
+    },
+    "rd.13.13c00-2": {
+      "code": "13C00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung BZ-Entgleisung, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.13.13d00": {
+      "code": "13D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "BZ-Entgleisung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.13.13d00c": {
+      "code": "13D00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "BZ-Entgleisung, streitsüchtig",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.13.13c01": {
+      "code": "13C01",
+      "kategorie": "RD2C FR.",
+      "anlass": "BZ-Entgleisung mit Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.13.13c01c": {
+      "code": "13C01C",
+      "kategorie": "RD2NC FR.",
+      "anlass": "BZ-Entgleisung mit Bewusstseinstrübung, streitsüchtig",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.13.13c02": {
+      "code": "13C02",
+      "kategorie": "RD3C.",
+      "anlass": "BZ-Entgleisung mit abnormen Verhalten",
+      "stichwort": "RD3C."
+    },
+    "rd.13.13c02c": {
+      "code": "13C02C",
+      "kategorie": "RD3C.",
+      "anlass": "BZ-Entgleisung mit abnormen Verhalten, streitsüchtig",
+      "stichwort": "RD3C."
+    },
+    "rd.13.13c03": {
+      "code": "13C03",
+      "kategorie": "RD3C.",
+      "anlass": "BZ-Entgleisung mit Atembeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.13.13c03c": {
+      "code": "13C03C",
+      "kategorie": "RD3C.",
+      "anlass": "BZ-Entgleisung mit Atembeschwerden, streitsüchtig",
+      "stichwort": "RD3C."
+    },
+    "rd.13.13d01": {
+      "code": "13D01",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach BZ-Entgleisung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.13.13d01c": {
+      "code": "13D01C",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach BZ-Entgleisung",
+      "stichwort": "RD1NC FR."
+    }
+  }
+}

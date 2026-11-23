@@ -1,0 +1,1467 @@
+{
+  "knoten": {
+    "rd.07.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "verbrennungen-18-koerperoberflaeche",
+          "label": "Verbrennungen < 18% Körperoberfläche",
+          "ziel": "rd.07.k1",
+          "aussage": "Verbrennungen < 18% Körperoberfläche"
+        },
+        {
+          "id": "brandalarm-unklare-situation",
+          "label": "Brandalarm (unklare Situation)",
+          "ziel": "rd.07.k2",
+          "aussage": "Brandalarm (unklare Situation)"
+        },
+        {
+          "id": "geringfuegige-verbrennungen",
+          "label": "GERINGFÜGIGE Verbrennungen",
+          "ziel": "rd.07.k3",
+          "aussage": "GERINGFÜGIGE Verbrennungen"
+        },
+        {
+          "id": "sonnenbrand",
+          "label": "Sonnenbrand",
+          "ziel": "rd.07.07a04",
+          "aussage": "Sonnenbrand"
+        },
+        {
+          "id": "aeltere-6-h-verbrennungen-verletzungen",
+          "label": "ÄLTERE (≥ 6 h) Verbrennungen/Verletzungen (ohne Notfallleitsymptome)",
+          "ziel": "rd.07.k4",
+          "aussage": "ÄLTERE (≥ 6 h) Verbrennungen/Verletzungen (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.07.k5",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "verletzungen-durch-explosion-ohne",
+          "label": "Verletzungen durch Explosion (ohne Notfallleitsymptome)",
+          "ziel": "rd.07.k6",
+          "aussage": "Verletzungen durch Explosion (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.07.k7",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "brand-mit-eingeschlossenen-personen",
+          "label": "Brand mit eingeschlossenen Personen",
+          "ziel": "rd.07.k8",
+          "aussage": "Brand mit eingeschlossenen Personen"
+        },
+        {
+          "id": "atembeschwerden",
+          "label": "Atembeschwerden",
+          "ziel": "rd.07.k9",
+          "aussage": "Atembeschwerden"
+        },
+        {
+          "id": "verbrennungen-18-koerperoberflaeche-2",
+          "label": "Verbrennungen ≥ 18% Körperoberfläche",
+          "ziel": "rd.07.k10",
+          "aussage": "Verbrennungen ≥ 18% Körperoberfläche"
+        },
+        {
+          "id": "schwere-verbrennungen-im-gesicht",
+          "label": "SCHWERE Verbrennungen im GESICHT",
+          "ziel": "rd.07.k11",
+          "aussage": "SCHWERE Verbrennungen im GESICHT"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.07.k12",
+          "aussage": "Mehrere Verletzte"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.07.k13",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.07.k14",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.07.k15",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "sprachschwierigkeiten-zwischen",
+          "label": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN",
+          "ziel": "rd.07.k16",
+          "aussage": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN"
+        },
+        {
+          "id": "brennende-person-im-freien",
+          "label": "Brennende Person (im Freien)",
+          "ziel": "rd.07.k17",
+          "aussage": "Brennende Person (im Freien)"
+        },
+        {
+          "id": "brennende-person-im-gebaeude",
+          "label": "Brennende Person (im Gebäude)",
+          "ziel": "rd.07.k18",
+          "aussage": "Brennende Person (im Gebäude)"
+        }
+      ]
+    },
+    "rd.07.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.07.07a01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.07.07a01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.07.07a01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07a01e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07a01f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Feuerwerkskörper",
+          "ziel": "rd.07.07a01w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Feuerwerkskörper",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Feuerwerkskörper",
+          "ziel": "rd.07.07a01w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Feuerwerkskörper",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Feuerwerkskörper",
+          "ziel": "rd.07.07a01w",
+          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07a02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07a02e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07a02f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07a02w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07a03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07a03e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07a03f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07a03w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.07a04": {
+      "code": "07A04",
+      "kategorie": "RD5.",
+      "anlass": "07A04",
+      "stichwort": "RD5."
+    },
+    "rd.07.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07a05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07a05e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07a05f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07a05w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.07.07b00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.07.07b00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.07.07b00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07b00e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07b00f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Feuerwerkskörper",
+          "ziel": "rd.07.07b00w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Feuerwerkskörper",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Feuerwerkskörper",
+          "ziel": "rd.07.07b00w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Feuerwerkskörper",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Feuerwerkskörper",
+          "ziel": "rd.07.07b00w",
+          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion-2",
+          "label": "Explosion",
+          "ziel": "rd.07.07c00e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden-2",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07c00f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07c00w",
+          "aussage": "Feuerwerkskörper"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion-3",
+          "label": "Explosion",
+          "ziel": "rd.07.07d00e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden-3",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07d00f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper-2",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07d00w",
+          "aussage": "Feuerwerkskörper"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07e00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion-4",
+          "label": "Explosion",
+          "ziel": "rd.07.07e00e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden-4",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07e00f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper-3",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07e00w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07b01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07b01e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07b01f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07b01w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.07.07b02",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.07.07b02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.07.07b02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07b02e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07b02f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Feuerwerkskörper",
+          "ziel": "rd.07.07b02w",
+          "aussage": "bei Patientenalter älter 12 Jahre, Feuerwerkskörper",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Feuerwerkskörper",
+          "ziel": "rd.07.07b02w",
+          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Feuerwerkskörper",
+          "ziel": "rd.07.07b02w-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Feuerwerkskörper",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.07.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07c01e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07c01f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07c01w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07c02e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07c02f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07c02w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07c03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07c03e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07c03f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07c03w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07c04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07c04e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07c04f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07c04w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.07.07d01",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3",
+          "ziel": "rd.07.07d01-2",
+          "aussage": "bei Patientenanzahl 3"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl ≥ 4",
+          "ziel": "rd.07.07d01-3",
+          "aussage": "bei Patientenanzahl ≥ 4"
+        },
+        {
+          "id": "bei-patientenanzahl-2-explosion",
+          "label": "bei Patientenanzahl 2, Explosion",
+          "ziel": "rd.07.07d01e",
+          "aussage": "bei Patientenanzahl 2, Explosion"
+        },
+        {
+          "id": "bei-patientenanzahl-3-explosion",
+          "label": "bei Patientenanzahl 3, Explosion",
+          "ziel": "rd.07.07d01e-2",
+          "aussage": "bei Patientenanzahl 3, Explosion"
+        },
+        {
+          "id": "bei-patientenanzahl-4-explosion",
+          "label": "bei Patientenanzahl ≥ 4, Explosion",
+          "ziel": "rd.07.07d01e-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Explosion"
+        },
+        {
+          "id": "bei-patientenanzahl-2-feuer-vorhanden",
+          "label": "bei Patientenanzahl 2, Feuer vorhanden",
+          "ziel": "rd.07.07d01f",
+          "aussage": "bei Patientenanzahl 2, Feuer vorhanden"
+        },
+        {
+          "id": "bei-patientenanzahl-3-feuer-vorhanden",
+          "label": "bei Patientenanzahl 3, Feuer vorhanden",
+          "ziel": "rd.07.07d01f-2",
+          "aussage": "bei Patientenanzahl 3, Feuer vorhanden"
+        },
+        {
+          "id": "bei-patientenanzahl-4-feuer-vorhanden",
+          "label": "bei Patientenanzahl ≥ 4, Feuer vorhanden",
+          "ziel": "rd.07.07d01f-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Feuer vorhanden"
+        },
+        {
+          "id": "bei-patientenanzahl-2-feuerwerkskoerper",
+          "label": "bei Patientenanzahl 2, Feuerwerkskörper",
+          "ziel": "rd.07.07d01w",
+          "aussage": "bei Patientenanzahl 2, Feuerwerkskörper"
+        },
+        {
+          "id": "bei-patientenanzahl-3-feuerwerkskoerper",
+          "label": "bei Patientenanzahl 3, Feuerwerkskörper",
+          "ziel": "rd.07.07d01w-2",
+          "aussage": "bei Patientenanzahl 3, Feuerwerkskörper"
+        },
+        {
+          "id": "bei-patientenanzahl-4-feuerwerkskoerper",
+          "label": "bei Patientenanzahl ≥ 4, Feuerwerkskörper",
+          "ziel": "rd.07.07d01w-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07d02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07d02e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07d02f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07d02w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07d03e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07d03f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07d03w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k15": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07d04e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07d04f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07d04w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k16": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07d05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07d05e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07d05f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07d05w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k17": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07e01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07e01e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07e01f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07e01w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.k18": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.07.07e02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "explosion",
+          "label": "Explosion",
+          "ziel": "rd.07.07e02e",
+          "aussage": "Explosion"
+        },
+        {
+          "id": "feuer-vorhanden",
+          "label": "Feuer vorhanden",
+          "ziel": "rd.07.07e02f",
+          "aussage": "Feuer vorhanden"
+        },
+        {
+          "id": "feuerwerkskoerper",
+          "label": "Feuerwerkskörper",
+          "ziel": "rd.07.07e02w",
+          "aussage": "Feuerwerkskörper"
+        }
+      ]
+    },
+    "rd.07.07a01": {
+      "code": "07A01",
+      "kategorie": "RD3B.",
+      "anlass": "Verbrennung/ Verbrühung kleiner 18 % KOF",
+      "stichwort": "RD3B."
+    },
+    "rd.07.07a01-2": {
+      "code": "07A01",
+      "kategorie": "RD3C.",
+      "anlass": "Verbrennung/ Verbrühung kleiner 18 % KOF, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.07.07a01e": {
+      "code": "07A01E",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Verbrennung/ Verbrühung kleiner 18 % KOF, Explosion",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a01f": {
+      "code": "07A01F",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Verbrennung/ Verbrühung kleiner 18 % KOF, Feuer vorhanden",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a01w": {
+      "code": "07A01W",
+      "kategorie": "RD3B.",
+      "anlass": "Verbrennung/ Verbrühung kleiner 18 % KOF durch Feuerwerkskörper",
+      "stichwort": "RD3B."
+    },
+    "rd.07.07a01w-2": {
+      "code": "07A01W",
+      "kategorie": "RD3C.",
+      "anlass": "Verbrennung/ Verbrühung kleiner 18 % KOF durch Feuerwerkskörper, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.07.07a02": {
+      "code": "07A02",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Brandmeldung, keine weiteren Angaben",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a02e": {
+      "code": "07A02E",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Brandmeldung nach Expolision, keine weiteren Angaben, Explosion",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a02f": {
+      "code": "07A02F",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Brandmeldung, keine weiteren Angaben, Feuer vorhanden",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a02w": {
+      "code": "07A02W",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Brandmeldung durch Feuerwerkskörper, keine weiteren Angaben",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a03": {
+      "code": "07A03",
+      "kategorie": "RD5.",
+      "anlass": "07A03",
+      "stichwort": "RD5."
+    },
+    "rd.07.07a03e": {
+      "code": "07A03E",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Geringfügige Verbrennung/ Verbrühung, Explosion",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a03f": {
+      "code": "07A03F",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Geringfügige Verbrennung/ Verbrühung, Feuer vorhanden",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a03w": {
+      "code": "07A03W",
+      "kategorie": "RD5.",
+      "anlass": "07A03W",
+      "stichwort": "RD5."
+    },
+    "rd.07.07a05": {
+      "code": "07A05",
+      "kategorie": "RD5.",
+      "anlass": "07A05",
+      "stichwort": "RD5."
+    },
+    "rd.07.07a05e": {
+      "code": "07A05E",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Ältere Verbrennung/ Verbrühung ohne Notfallleitsymptome, Explosion",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a05f": {
+      "code": "07A05F",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Ältere Verbrennung/ Verbrühung ohne Notfallleitsymptome, Feuer vorhanden",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07a05w": {
+      "code": "07A05W",
+      "kategorie": "RD5.",
+      "anlass": "07A05W",
+      "stichwort": "RD5."
+    },
+    "rd.07.07b00": {
+      "code": "07B00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Verbrennung/ Verbrühung",
+      "stichwort": "RD4B."
+    },
+    "rd.07.07b00-2": {
+      "code": "07B00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Verbrennung/ Verbrühung, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.07.07b00e": {
+      "code": "07B00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung, Explosion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07b00f": {
+      "code": "07B00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung, Feuer vorhanden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07b00w": {
+      "code": "07B00W",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Verbrennung, Feuerwerkskörper",
+      "stichwort": "RD4B."
+    },
+    "rd.07.07b00w-2": {
+      "code": "07B00W",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Verbrennung, Feuerwerkskörper, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.07.07c00": {
+      "code": "07C00",
+      "kategorie": "RD2C.",
+      "anlass": "Aufwertung starke Schmerzen nach Verbrennung/Verbrühung",
+      "stichwort": "RD2C."
+    },
+    "rd.07.07c00e": {
+      "code": "07C00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung/ Verbrühung, Explosion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07c00f": {
+      "code": "07C00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung/ Verbrühung, Feuer vorhanden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07c00w": {
+      "code": "07C00W",
+      "kategorie": "RD2C.",
+      "anlass": "Aufwertung starke Schmerzen nach Verbrennung/Verbrühung",
+      "stichwort": "RD2C."
+    },
+    "rd.07.07d00": {
+      "code": "07D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung/ Verbrühung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07d00e": {
+      "code": "07D00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung/ Verbrühung, Explosion",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07d00f": {
+      "code": "07D00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung/ Verbrühung, Feuer vorhanden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07d00w": {
+      "code": "07D00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung/ Verbrühung durch Feuerwerkskörper",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07e00": {
+      "code": "07E00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung, primär mit RTH",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07e00e": {
+      "code": "07E00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung nach Explosion, primär mit RTH",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07e00f": {
+      "code": "07E00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung, Feuer vorhanden, primär mit RTH",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07e00w": {
+      "code": "07E00W",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verbrennung durch Feuerwerkskörper, primär mit RTH",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.07.07b01": {
+      "code": "07B01",
+      "kategorie": "RD2C.",
+      "anlass": "Verbrennung durch Explosion ohne Notfallleitsymptome",
+      "stichwort": "RD2C."
+    },
+    "rd.07.07b01e": {
+      "code": "07B01E",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Verbrennung durch Explosion ohne Notfallleitsymptome",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07b01f": {
+      "code": "07B01F",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Verbrennung durch Explosion ohne Notfallleitsymptome, Feuer vorhanden",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07b01w": {
+      "code": "07B01W",
+      "kategorie": "RD2C.",
+      "anlass": "Verbrennung durch Explosion ohne Notfallleitsymptome, Feuerwerkskörper",
+      "stichwort": "RD2C."
+    },
+    "rd.07.07b02": {
+      "code": "07B02",
+      "kategorie": "RD3B.",
+      "anlass": "Verbrennung/ Verbrühung, unbekannte Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.07.07b02-2": {
+      "code": "07B02",
+      "kategorie": "RD3C.",
+      "anlass": "Verbrennung/ Verbrühung, unbekannte Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.07.07b02e": {
+      "code": "07B02E",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Verbrennung, unbekannte Situation, Explosion",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07b02f": {
+      "code": "07B02F",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Verbrennung, unbekannte Situation, Feuer vorhanden",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.07.07b02w": {
+      "code": "07B02W",
+      "kategorie": "RD3B.",
+      "anlass": "Verbrennung durch Feuerwerkskörper, unbekannte Situation",
+      "stichwort": "RD3B."
+    },
+    "rd.07.07b02w-2": {
+      "code": "07B02W",
+      "kategorie": "RD3C.",
+      "anlass": "Verbrennung durch Feuerwerkskörper, unbekannte Situation, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.07.07c01": {
+      "code": "07C01",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brand mit eingeschlossener Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c01e": {
+      "code": "07C01E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brand mit eingeschlossener Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c01f": {
+      "code": "07C01F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brand mit eingeschlossener Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c01w": {
+      "code": "07C01W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brand mit eingeschlossener Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c02": {
+      "code": "07C02",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verbrennung/ Verbrühung mit Atembeschwerden",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07c02e": {
+      "code": "07C02E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Verbrennung/ Verbrühung mit Atembeschwerden, Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c02f": {
+      "code": "07C02F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Verbrennung/ Verbrühung mit Atembeschwerden, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c02w": {
+      "code": "07C02W",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verbrennung/ Verbrühung durch Feuerwerkskörper mit Atembeschwerden",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07c03": {
+      "code": "07C03",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verbrennung/ Verbrühung größer 18 % KOF",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07c03e": {
+      "code": "07C03E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Verbrennung/ Verbrühung größer 18 % KOF, Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c03f": {
+      "code": "07C03F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Verbrennung/ Verbrühung größer 18 % KOF, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c03w": {
+      "code": "07C03W",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Verbrennung/ Verbrühung durch Feuerwerkskörper größer 18 % KOF",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07c04": {
+      "code": "07C04",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Schwere Verbrennung/ Verbrühung im Gesicht",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07c04e": {
+      "code": "07C04E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Schwere Verbrennung/ Verbrühung im Gesicht, Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c04f": {
+      "code": "07C04F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Schwere Verbrennung/ Verbrühung im Gesicht, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07c04w": {
+      "code": "07C04W",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Schwere Verbrennung/ Verbrühung im Gesicht durch Feuerwerkskörper",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07d01": {
+      "code": "07D01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01-2": {
+      "code": "07D01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01-3": {
+      "code": "07D01",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, mehr als 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01e": {
+      "code": "07D01E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, Explosion, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01e-2": {
+      "code": "07D01E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, Explosion, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01e-3": {
+      "code": "07D01E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, Explosion, mehr als 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01f": {
+      "code": "07D01F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, Feuer vorhanden, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01f-2": {
+      "code": "07D01F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, Feuer vorhanden, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01f-3": {
+      "code": "07D01F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung, Feuer vorhanden, mehr als 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01w": {
+      "code": "07D01W",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung durch Feuerwerkskörper, 2 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01w-2": {
+      "code": "07D01W",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung durch Feuerwerkskörper, 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d01w-3": {
+      "code": "07D01W",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verbrennung/ Verbrühung durch Feuerwerkskörper, mehr als 3 Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.07.07d02": {
+      "code": "07D02",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Verbrennung/ Verbrühung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.07.07d02e": {
+      "code": "07D02E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Kreislaufstillstand nach Verbrennung/ Verbrühung, Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07d02f": {
+      "code": "07D02F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Kreislaufstillstand nach Verbrennung/ Verbrühung, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07d02w": {
+      "code": "07D02W",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Verbrennung/ Verbrühung durch Feuerwerkskörper",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.07.07d03": {
+      "code": "07D03",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Verbrennung/ Verbrühung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.07.07d03e": {
+      "code": "07D03E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstlosigkeit nach Verbrennung/ Verbrühung, Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07d03f": {
+      "code": "07D03F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstlosigkeit nach Verbrennung/ Verbrühung, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07d03w": {
+      "code": "07D03W",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Verbrennung/ Verbrühung durch Feuerwerkskörper",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.07.07d04": {
+      "code": "07D04",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Verbrennung/ Verbrühung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07d04e": {
+      "code": "07D04E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstseinstrübung nach Verbrennung/ Verbrühung, Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07d04f": {
+      "code": "07D04F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstseinstrübung nach Verbrennung/ Verbrühung, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07d04w": {
+      "code": "07D04W",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Bewusstseinstrübung nach Verbrennung/ Verbrühung durch Feuerwerkskörper",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07d05": {
+      "code": "07D05",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot nach Verbrennung/ Verbrühung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07d05e": {
+      "code": "07D05E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Atemnot nach Verbrennung/ Verbrühung, Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07d05f": {
+      "code": "07D05F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Atemnot nach Verbrennung/ Verbrühung, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07d05w": {
+      "code": "07D05W",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Atemnot nach Verbrennung/ Verbrühung durch Feuerwerkskörper",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.07.07e01": {
+      "code": "07E01",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brennende Person im Freien",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07e01e": {
+      "code": "07E01E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brennende Person im Freien durch Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07e01f": {
+      "code": "07E01F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brennende Person im Freien, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07e01w": {
+      "code": "07E01W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brennende Person im Freien durch Feuerwerkskörper",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07e02": {
+      "code": "07E02",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brennende Person im Gebäude",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07e02e": {
+      "code": "07E02E",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brennende Person im Gebäude durch Explosion",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07e02f": {
+      "code": "07E02F",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brennende Person im Gebäude, Feuer vorhanden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.07.07e02w": {
+      "code": "07E02W",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Brennende Person im Gebäude durch Feuerwerkskörper",
+      "stichwort": "RD_BT_NA"
+    }
+  }
+}

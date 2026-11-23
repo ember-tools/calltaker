@@ -1,0 +1,632 @@
+{
+  "knoten": {
+    "rd.33.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "dringlichkeitsstufe-i",
+          "label": "Dringlichkeitsstufe I",
+          "ziel": "rd.33.k1",
+          "aussage": "Dringlichkeitsstufe I"
+        },
+        {
+          "id": "dringlichkeitsstufe-ii",
+          "label": "Dringlichkeitsstufe II",
+          "ziel": "rd.33.k2",
+          "aussage": "Dringlichkeitsstufe II"
+        },
+        {
+          "id": "dringlichkeitsstufe-iii",
+          "label": "Dringlichkeitsstufe III",
+          "ziel": "rd.33.k3",
+          "aussage": "Dringlichkeitsstufe III"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.33.k4",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "bewusstseinstruebung-akut-eingetreten",
+          "label": "Bewusstseinstrübung (akut eingetreten)",
+          "ziel": "rd.33.k5",
+          "aussage": "Bewusstseinstrübung (akut eingetreten)"
+        },
+        {
+          "id": "abnorme-atmung-akut-eingetreten",
+          "label": "Abnorme Atmung (akut eingetreten)",
+          "ziel": "rd.33.k6",
+          "aussage": "Abnorme Atmung (akut eingetreten)"
+        },
+        {
+          "id": "massive-blutung",
+          "label": "Massive Blutung",
+          "ziel": "rd.33.k7",
+          "aussage": "Massive Blutung"
+        },
+        {
+          "id": "schock",
+          "label": "Schock",
+          "ziel": "rd.33.k8",
+          "aussage": "Schock"
+        },
+        {
+          "id": "moegliche-akute-herzbeschwerden-v-a",
+          "label": "Mögliche akute Herzbeschwerden (V.a. Herzinfarkt)",
+          "ziel": "rd.33.k9",
+          "aussage": "Mögliche akute Herzbeschwerden (V.a. Herzinfarkt)"
+        },
+        {
+          "id": "starke-schmerzen",
+          "label": "Starke Schmerzen",
+          "ziel": "rd.33.k10",
+          "aussage": "Starke Schmerzen"
+        },
+        {
+          "id": "notarztbegleitung-erforderlich",
+          "label": "Notarztbegleitung erforderlich",
+          "ziel": "rd.33.k11",
+          "aussage": "Notarztbegleitung erforderlich"
+        },
+        {
+          "id": "atem-oder-kreislaufstillstand-vermutet",
+          "label": "Atem- oder Kreislaufstillstand vermutet",
+          "ziel": "rd.33.k12",
+          "aussage": "Atem- oder Kreislaufstillstand vermutet"
+        },
+        {
+          "id": "soeben-wiederbelebt-und-oder",
+          "label": "Soeben wiederbelebt und/oder defibrilliert",
+          "ziel": "rd.33.k13",
+          "aussage": "Soeben wiederbelebt und/oder defibrilliert"
+        }
+      ]
+    },
+    "rd.33.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33a01p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33a01t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt-palliative",
+          "label": "bei Patientenalter unbekannt, Palliative Medizin",
+          "ziel": "rd.33.33a02p",
+          "aussage": "bei Patientenalter unbekannt, Palliative Medizin"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Palliative Medizin",
+          "ziel": "rd.33.33a02p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Palliative Medizin",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Palliative Medizin",
+          "ziel": "rd.33.33a02p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Palliative Medizin",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Versorgungseinrichtung",
+          "ziel": "rd.33.33a02t",
+          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versorgungseinrichtung",
+          "ziel": "rd.33.33a02t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versorgungseinrichtung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versorgungseinrichtung",
+          "ziel": "rd.33.33a02t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versorgungseinrichtung",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.33.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt-palliative",
+          "label": "bei Patientenalter unbekannt, Palliative Medizin",
+          "ziel": "rd.33.33a03p",
+          "aussage": "bei Patientenalter unbekannt, Palliative Medizin"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Palliative Medizin",
+          "ziel": "rd.33.33a03p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Palliative Medizin",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Palliative Medizin",
+          "ziel": "rd.33.33a03p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Palliative Medizin",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Versorgungseinrichtung",
+          "ziel": "rd.33.33a03t",
+          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versorgungseinrichtung",
+          "ziel": "rd.33.33a03t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versorgungseinrichtung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versorgungseinrichtung",
+          "ziel": "rd.33.33a03t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versorgungseinrichtung",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.33.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33c00p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33c00t",
+          "aussage": "Versorgungseinrichtung"
+        },
+        {
+          "id": "palliative-medizin-2",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33d00p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung-2",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33d00t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33c01p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33c01t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33c02p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33c02t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33c03p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33c03t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33c04p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33c04t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33c05p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33c05t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33c06p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33c06t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33c07p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33c07t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-unbekannt-palliative",
+          "label": "bei Patientenalter unbekannt, Palliative Medizin",
+          "ziel": "rd.33.33d01p",
+          "aussage": "bei Patientenalter unbekannt, Palliative Medizin"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Palliative Medizin",
+          "ziel": "rd.33.33d01p-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Palliative Medizin",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Palliative Medizin",
+          "ziel": "rd.33.33d01p",
+          "aussage": "bei Patientenalter älter 12 Jahre, Palliative Medizin",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Versorgungseinrichtung",
+          "ziel": "rd.33.33d01t",
+          "aussage": "bei Patientenalter unbekannt, Versorgungseinrichtung"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Versorgungseinrichtung",
+          "ziel": "rd.33.33d01t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Versorgungseinrichtung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Versorgungseinrichtung",
+          "ziel": "rd.33.33d01t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Versorgungseinrichtung",
+          "alter": {
+            "min": 13
+          }
+        }
+      ]
+    },
+    "rd.33.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "palliative-medizin",
+          "label": "Palliative Medizin",
+          "ziel": "rd.33.33d02p",
+          "aussage": "Palliative Medizin"
+        },
+        {
+          "id": "versorgungseinrichtung",
+          "label": "Versorgungseinrichtung",
+          "ziel": "rd.33.33d02t",
+          "aussage": "Versorgungseinrichtung"
+        }
+      ]
+    },
+    "rd.33.33a01p": {
+      "code": "33A01P",
+      "kategorie": "RD3C.",
+      "anlass": "Ärztliche Palliativanforderung - dringlicher Transport mit RTW-C",
+      "stichwort": "RD3C."
+    },
+    "rd.33.33a01t": {
+      "code": "33A01T",
+      "kategorie": "RD3C.",
+      "anlass": "Ärztliche Anforderung - dringlicher Transport mit RTW-C",
+      "stichwort": "RD3C."
+    },
+    "rd.33.33a02p": {
+      "code": "33A02P",
+      "kategorie": "RD3B.",
+      "anlass": "Ärztliche Palliativanforderung - dringlicher Transport",
+      "stichwort": "RD3B."
+    },
+    "rd.33.33a02p-2": {
+      "code": "33A02P",
+      "kategorie": "RD3C.",
+      "anlass": "Ärztliche Palliativanforderung - dringlicher Transport, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.33.33a02t": {
+      "code": "33A02T",
+      "kategorie": "RD3B.",
+      "anlass": "Ärztliche Anforderung - dringlicher Transport",
+      "stichwort": "RD3B."
+    },
+    "rd.33.33a02t-2": {
+      "code": "33A02T",
+      "kategorie": "RD3C.",
+      "anlass": "Ärztliche Anforderung - dringlicher Transport, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.33.33a03p": {
+      "code": "33A03P",
+      "kategorie": "RD4B.",
+      "anlass": "Ärztliche Palliativanforderung - Transportanforderung",
+      "stichwort": "RD4B."
+    },
+    "rd.33.33a03p-2": {
+      "code": "33A03P",
+      "kategorie": "RD4C.",
+      "anlass": "Ärztliche Palliativanforderung - Transportanforderung, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.33.33a03t": {
+      "code": "33A03T",
+      "kategorie": "RD4B.",
+      "anlass": "Ärztliche Anforderung - Transportanforderung",
+      "stichwort": "RD4B."
+    },
+    "rd.33.33a03t-2": {
+      "code": "33A03T",
+      "kategorie": "RD4C.",
+      "anlass": "Ärztliche Anforderung - Transportanforderung, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.33.33c00p": {
+      "code": "33C00P",
+      "kategorie": "RD4B.",
+      "anlass": "Ärztliche Palliativanforderung - Transportanforderung",
+      "stichwort": "RD4B."
+    },
+    "rd.33.33c00t": {
+      "code": "33C00T",
+      "kategorie": "RD4B.",
+      "anlass": "Ärztliche Anforderung - Transportanforderung",
+      "stichwort": "RD4B."
+    },
+    "rd.33.33d00p": {
+      "code": "33D00P",
+      "kategorie": "RD2NC.",
+      "anlass": "Ärztliche Palliativanforderung - Notarztindikation",
+      "stichwort": "RD2NC."
+    },
+    "rd.33.33d00t": {
+      "code": "33D00T",
+      "kategorie": "RD2NC.",
+      "anlass": "Ärztliche Anforderung - Notarztindikation",
+      "stichwort": "RD2NC."
+    },
+    "rd.33.33c01p": {
+      "code": "33C01P",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Palliativanforderung - Bewusstseinstrübung",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c01t": {
+      "code": "33C01T",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Anforderung - Bewusstseinstrübung",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c02p": {
+      "code": "33C02P",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Palliativanforderung - Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c02t": {
+      "code": "33C02T",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Anforderung - Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c03p": {
+      "code": "33C03P",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Palliativanforderung - Massive Blutung",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c03t": {
+      "code": "33C03T",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Anforderung - Massive Blutung",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c04p": {
+      "code": "33C04P",
+      "kategorie": "RD2NC.",
+      "anlass": "Ärztliche Palliativanforderung - Schock",
+      "stichwort": "RD2NC."
+    },
+    "rd.33.33c04t": {
+      "code": "33C04T",
+      "kategorie": "RD2NC.",
+      "anlass": "Ärztliche Anforderung - Schock",
+      "stichwort": "RD2NC."
+    },
+    "rd.33.33c05p": {
+      "code": "33C05P",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Palliativanforderung - Kardiale Beschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c05t": {
+      "code": "33C05T",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Anforderung - Kardiale Beschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c06p": {
+      "code": "33C06P",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Palliativanforderung - Starke Schmerzen",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c06t": {
+      "code": "33C06T",
+      "kategorie": "RD2C.",
+      "anlass": "Ärztliche Anforderung - Starke Schmerzen",
+      "stichwort": "RD2C."
+    },
+    "rd.33.33c07p": {
+      "code": "33C07P",
+      "kategorie": "RD2NC.",
+      "anlass": "Ärztliche Palliativanforderung - Notarztbegleitung erforderlich",
+      "stichwort": "RD2NC."
+    },
+    "rd.33.33c07t": {
+      "code": "33C07T",
+      "kategorie": "RD2NC.",
+      "anlass": "Ärztliche Anforderung - Notarztbegleitung erforderlich",
+      "stichwort": "RD2NC."
+    },
+    "rd.33.33d01p": {
+      "code": "33D01P",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Ärztliche Palliativanforderung - Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.33.33d01p-2": {
+      "code": "33D01P",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Ärztliche Palliativanforderung - Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.33.33d01t": {
+      "code": "33D01T",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Ärztliche Anforderung - Kreislaufstillstand",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.33.33d01t-2": {
+      "code": "33D01T",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Ärztliche Anforderung - Kreislaufstillstand, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.33.33d02p": {
+      "code": "33D02P",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ärztliche Palliativanforderung - Soeben wiederbelebt",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.33.33d02t": {
+      "code": "33D02T",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Ärztliche Anforderung - Soeben wiederbelebt",
+      "stichwort": "RD1NC FR."
+    }
+  }
+}

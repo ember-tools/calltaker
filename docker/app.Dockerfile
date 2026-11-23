@@ -21,6 +21,7 @@ COPY Pipfile Pipfile.lock ./
 RUN pip install --no-cache-dir pipenv && pipenv sync && pip uninstall -y pipenv
 
 COPY src/ src/
+COPY daten/ daten/
 COPY --from=frontend /build/src/frontend_dist src/frontend_dist
 
 USER calltaker

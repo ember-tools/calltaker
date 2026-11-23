@@ -1,0 +1,198 @@
+{
+  "knoten": {
+    "rd.16.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "maessige-augenverletzung",
+          "label": "Mäßige Augenverletzung",
+          "ziel": "rd.16.k1",
+          "aussage": "Mäßige Augenverletzung"
+        },
+        {
+          "id": "geringfuegige-augenverletzung",
+          "label": "Geringfügige Augenverletzung",
+          "ziel": "rd.16.16a02",
+          "aussage": "Geringfügige Augenverletzung"
+        },
+        {
+          "id": "medizinische-ursache",
+          "label": "Medizinische Ursache",
+          "ziel": "rd.16.16a03",
+          "aussage": "Medizinische Ursache"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.16.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "schwere-augenverletzung",
+          "label": "Schwere Augenverletzung",
+          "ziel": "rd.16.k3",
+          "aussage": "Schwere Augenverletzung"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.16.16d01",
+          "aussage": "Bewusstseinstrübung"
+        }
+      ]
+    },
+    "rd.16.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.16.16a01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.16.16a01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.16.16a01",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.16.16a02": {
+      "code": "16A02",
+      "kategorie": "RD5.",
+      "anlass": "16A02",
+      "stichwort": "RD5."
+    },
+    "rd.16.16a03": {
+      "code": "16A03",
+      "kategorie": "RD5.",
+      "anlass": "16A03",
+      "stichwort": "RD5."
+    },
+    "rd.16.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.16.16b00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.16.16b00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.16.16b00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.16.16d00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.16.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.16.16b01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.16.16b01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.16.16b01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.16.16d01": {
+      "code": "16D01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseintrübung nach Augenverletzung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.16.16a01": {
+      "code": "16A01",
+      "kategorie": "RD3B.",
+      "anlass": "Mässige Augenverletzung",
+      "stichwort": "RD3B."
+    },
+    "rd.16.16a01-2": {
+      "code": "16A01",
+      "kategorie": "RD3C.",
+      "anlass": "Mässige Augenverletzung, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.16.16b00": {
+      "code": "16B00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Augenprobleme/ -verletzung",
+      "stichwort": "RD4B."
+    },
+    "rd.16.16b00-2": {
+      "code": "16B00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Augenprobleme/ -verletzung, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.16.16d00": {
+      "code": "16D00",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Augenverletzung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.16.16b01": {
+      "code": "16B01",
+      "kategorie": "RD2B FR.",
+      "anlass": "Schwere Augenverletzung",
+      "stichwort": "RD2B FR."
+    },
+    "rd.16.16b01-2": {
+      "code": "16B01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Schwere Augenverletzung, Kind",
+      "stichwort": "RD2C FR."
+    }
+  }
+}

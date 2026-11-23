@@ -1,0 +1,102 @@
+{
+  "knoten": {
+    "fw.th.tueroeffnung.k0": {
+      "frage": "Warum wird geöffnet?",
+      "antworten": [
+        {
+          "id": "hilflose-person-vermutet",
+          "label": "Hilflose Person vermutet",
+          "ziel": "fw.th.tueroeffnung.k1",
+          "aussage": "Hinter der Tür wird eine hilflose Person vermutet."
+        },
+        {
+          "id": "kein-hinweis-auf-gefahr",
+          "label": "Kein Hinweis auf Gefahr",
+          "ziel": "fw.th.tueroeffnung.k2",
+          "aussage": "Ein Hinweis auf eine Gefahr liegt nicht vor."
+        },
+        {
+          "id": "herd-oder-wasser-laeuft",
+          "label": "Herd oder Wasser läuft",
+          "ziel": "fw.th.tueroeffnung.k3",
+          "aussage": "Ein Herd oder Wasserhahn ist unbeaufsichtigt in Betrieb."
+        }
+      ]
+    },
+    "fw.th.tueroeffnung.k1": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "person-reagiert-nicht",
+          "label": "Person reagiert nicht",
+          "ziel": "fw.th.tueroeffnung.50c01",
+          "aussage": "Die Person reagiert nicht auf Ansprache."
+        },
+        {
+          "id": "rettungsdienst-vor-ort",
+          "label": "Rettungsdienst vor Ort",
+          "ziel": "fw.th.tueroeffnung.50c02",
+          "aussage": "Der Rettungsdienst ist bereits vor Ort."
+        }
+      ]
+    },
+    "fw.th.tueroeffnung.k2": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "nachbarschaftshilfe",
+          "label": "Nachbarschaftshilfe",
+          "ziel": "fw.th.tueroeffnung.50a01",
+          "aussage": "Es besteht kein Zeitdruck."
+        }
+      ]
+    },
+    "fw.th.tueroeffnung.k3": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "rauch-wahrnehmbar",
+          "label": "Rauch wahrnehmbar",
+          "ziel": "fw.th.tueroeffnung.50d01",
+          "aussage": "Rauch ist wahrnehmbar."
+        },
+        {
+          "id": "kein-rauch-wahrnehmbar",
+          "label": "Kein Rauch wahrnehmbar",
+          "ziel": "fw.th.tueroeffnung.50b01",
+          "aussage": "Rauch ist nicht wahrnehmbar."
+        }
+      ]
+    },
+    "fw.th.tueroeffnung.50c01": {
+      "code": "50C01",
+      "kategorie": "TH K.",
+      "anlass": "Türöffnung - hilflose Person",
+      "stichwort": "TH K."
+    },
+    "fw.th.tueroeffnung.50c02": {
+      "code": "50C02",
+      "kategorie": "TH K.",
+      "anlass": "Türöffnung für Rettungsdienst",
+      "stichwort": "TH K."
+    },
+    "fw.th.tueroeffnung.50a01": {
+      "code": "50A01",
+      "kategorie": "TH K.",
+      "anlass": "Türöffnung ohne Gefahr im Verzug",
+      "stichwort": "TH K."
+    },
+    "fw.th.tueroeffnung.50d01": {
+      "code": "50D01",
+      "kategorie": "TH M.",
+      "anlass": "Türöffnung mit Rauchentwicklung",
+      "stichwort": "TH M."
+    },
+    "fw.th.tueroeffnung.50b01": {
+      "code": "50B01",
+      "kategorie": "TH K.",
+      "anlass": "Türöffnung - Herd in Betrieb",
+      "stichwort": "TH K."
+    }
+  }
+}

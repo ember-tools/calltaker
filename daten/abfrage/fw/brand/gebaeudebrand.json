@@ -1,0 +1,503 @@
+{
+  "knoten": {
+    "fw.brand.gebaeudebrand.k0": {
+      "frage": "Welcher Gebäudeteil ist betroffen?",
+      "antworten": [
+        {
+          "id": "wohnung",
+          "label": "Wohnung",
+          "ziel": "fw.brand.gebaeudebrand.k1",
+          "aussage": "Es brennt in einer Wohnung."
+        },
+        {
+          "id": "keller",
+          "label": "Keller",
+          "ziel": "fw.brand.gebaeudebrand.k2",
+          "aussage": "Es brennt im Keller."
+        },
+        {
+          "id": "dachstuhl",
+          "label": "Dachstuhl",
+          "ziel": "fw.brand.gebaeudebrand.k3",
+          "aussage": "Es brennt im Dachstuhl."
+        },
+        {
+          "id": "treppenraum-flur",
+          "label": "Treppenraum, Flur",
+          "ziel": "fw.brand.gebaeudebrand.k4",
+          "aussage": "Es brennt im Treppenraum."
+        },
+        {
+          "id": "gewerbeeinheit-im-wohnhaus",
+          "label": "Gewerbeeinheit im Wohnhaus",
+          "ziel": "fw.brand.gebaeudebrand.k5",
+          "aussage": "Es brennt in einer Gewerbeeinheit im Wohnhaus."
+        },
+        {
+          "id": "unklar-wo-es-brennt",
+          "label": "Unklar, wo es brennt",
+          "ziel": "fw.brand.gebaeudebrand.k6",
+          "aussage": "Wo es brennt, ist dem Anrufer nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k1": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.gebaeudebrand.69c01",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.gebaeudebrand.69d01",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.gebaeudebrand.69e01",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.gebaeudebrand.69d01u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k2": {
+      "frage": "Ist der Treppenraum verraucht?",
+      "antworten": [
+        {
+          "id": "treppenraum-frei",
+          "label": "Treppenraum frei",
+          "ziel": "fw.brand.gebaeudebrand.k7",
+          "aussage": "Der Treppenraum ist frei."
+        },
+        {
+          "id": "treppenraum-verraucht",
+          "label": "Treppenraum verraucht",
+          "ziel": "fw.brand.gebaeudebrand.k8",
+          "aussage": "Der Treppenraum ist verraucht."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k3": {
+      "frage": "Wie weit ist der Brand fortgeschritten?",
+      "antworten": [
+        {
+          "id": "kleiner-bereich",
+          "label": "Kleiner Bereich",
+          "ziel": "fw.brand.gebaeudebrand.k9",
+          "aussage": "Ein kleiner Bereich des Dachstuhls brennt."
+        },
+        {
+          "id": "in-voller-ausdehnung",
+          "label": "In voller Ausdehnung",
+          "ziel": "fw.brand.gebaeudebrand.k10",
+          "aussage": "Der Dachstuhl brennt in voller Ausdehnung."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k4": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.gebaeudebrand.69c06",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.gebaeudebrand.69d06",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.gebaeudebrand.69e06",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.gebaeudebrand.69d06u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k5": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.gebaeudebrand.69c07",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.gebaeudebrand.69d07",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.gebaeudebrand.69e07",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.gebaeudebrand.69d07u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k6": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.gebaeudebrand.69c09",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.gebaeudebrand.69d09",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.gebaeudebrand.69e09",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.gebaeudebrand.69d09u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.69c01": {
+      "code": "69C01",
+      "kategorie": "BRAND 2",
+      "anlass": "Wohnungsbrand",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.gebaeudebrand.69d01": {
+      "code": "69D01",
+      "kategorie": "BRAND 3",
+      "anlass": "Wohnungsbrand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69e01": {
+      "code": "69E01",
+      "kategorie": "BRAND 4",
+      "anlass": "Wohnungsbrand - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69d01u": {
+      "code": "69D01U",
+      "kategorie": "BRAND 3",
+      "anlass": "Wohnungsbrand - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.k7": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.gebaeudebrand.69c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.gebaeudebrand.69d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.gebaeudebrand.69e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.gebaeudebrand.69d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k8": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.gebaeudebrand.69c03",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.gebaeudebrand.69d03",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.gebaeudebrand.69e03",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.gebaeudebrand.69d03u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k9": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.gebaeudebrand.69c04",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.gebaeudebrand.69d04",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.gebaeudebrand.69e04",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.gebaeudebrand.69d04u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.k10": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.gebaeudebrand.69c05",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.gebaeudebrand.69d05",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.gebaeudebrand.69e05",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.gebaeudebrand.69d05u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.gebaeudebrand.69c06": {
+      "code": "69C06",
+      "kategorie": "BRAND 3",
+      "anlass": "Brand im Rettungsweg",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69d06": {
+      "code": "69D06",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand im Rettungsweg - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69e06": {
+      "code": "69E06",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand im Rettungsweg - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.gebaeudebrand.69d06u": {
+      "code": "69D06U",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand im Rettungsweg - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69c07": {
+      "code": "69C07",
+      "kategorie": "BRAND 2",
+      "anlass": "Brand in Gewerbeeinheit",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.gebaeudebrand.69d07": {
+      "code": "69D07",
+      "kategorie": "BRAND 3",
+      "anlass": "Brand in Gewerbeeinheit - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69e07": {
+      "code": "69E07",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand in Gewerbeeinheit - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69d07u": {
+      "code": "69D07U",
+      "kategorie": "BRAND 3",
+      "anlass": "Brand in Gewerbeeinheit - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69c09": {
+      "code": "69C09",
+      "kategorie": "BRAND 2",
+      "anlass": "Gebäudebrand - Lage unklar",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.gebaeudebrand.69d09": {
+      "code": "69D09",
+      "kategorie": "BRAND 3",
+      "anlass": "Gebäudebrand - Lage unklar - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69e09": {
+      "code": "69E09",
+      "kategorie": "BRAND 4",
+      "anlass": "Gebäudebrand - Lage unklar - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69d09u": {
+      "code": "69D09U",
+      "kategorie": "BRAND 3",
+      "anlass": "Gebäudebrand - Lage unklar - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69c02": {
+      "code": "69C02",
+      "kategorie": "BRAND 2",
+      "anlass": "Kellerbrand",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.gebaeudebrand.69d02": {
+      "code": "69D02",
+      "kategorie": "BRAND 3",
+      "anlass": "Kellerbrand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69e02": {
+      "code": "69E02",
+      "kategorie": "BRAND 4",
+      "anlass": "Kellerbrand - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69d02u": {
+      "code": "69D02U",
+      "kategorie": "BRAND 3",
+      "anlass": "Kellerbrand - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69c03": {
+      "code": "69C03",
+      "kategorie": "BRAND 3",
+      "anlass": "Kellerbrand mit Verrauchung",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69d03": {
+      "code": "69D03",
+      "kategorie": "BRAND 4",
+      "anlass": "Kellerbrand mit Verrauchung - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69e03": {
+      "code": "69E03",
+      "kategorie": "BRAND 6",
+      "anlass": "Kellerbrand mit Verrauchung - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.gebaeudebrand.69d03u": {
+      "code": "69D03U",
+      "kategorie": "BRAND 4",
+      "anlass": "Kellerbrand mit Verrauchung - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69c04": {
+      "code": "69C04",
+      "kategorie": "BRAND 2",
+      "anlass": "Dachstuhlbrand",
+      "stichwort": "BRAND 2"
+    },
+    "fw.brand.gebaeudebrand.69d04": {
+      "code": "69D04",
+      "kategorie": "BRAND 3",
+      "anlass": "Dachstuhlbrand - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69e04": {
+      "code": "69E04",
+      "kategorie": "BRAND 4",
+      "anlass": "Dachstuhlbrand - Menschenrettung",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.gebaeudebrand.69d04u": {
+      "code": "69D04U",
+      "kategorie": "BRAND 3",
+      "anlass": "Dachstuhlbrand - Betroffenheit unbekannt",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.gebaeudebrand.69c05": {
+      "code": "69C05",
+      "kategorie": "BRAND 6",
+      "anlass": "Dachstuhlbrand in voller Ausdehnung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.gebaeudebrand.69d05": {
+      "code": "69D05",
+      "kategorie": "BRAND 6",
+      "anlass": "Dachstuhlbrand in voller Ausdehnung - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.gebaeudebrand.69e05": {
+      "code": "69E05",
+      "kategorie": "BRAND 8",
+      "anlass": "Dachstuhlbrand in voller Ausdehnung - Menschenrettung",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.gebaeudebrand.69d05u": {
+      "code": "69D05U",
+      "kategorie": "BRAND 6",
+      "anlass": "Dachstuhlbrand in voller Ausdehnung - Betroffenheit unbekannt",
+      "stichwort": "BRAND 6"
+    }
+  }
+}

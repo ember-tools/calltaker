@@ -1,0 +1,312 @@
+{
+  "knoten": {
+    "rd.31.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ohnmachtsanfall-anfaelle-und-ansprechbar",
+          "label": "Ohnmachtsanfall/-anfälle und ansprechbar ≥ 35 (ohne bekanntes Herzleiden)",
+          "ziel": "rd.31.31a01",
+          "aussage": "Ohnmachtsanfall/-anfälle und ansprechbar ≥ 35 (ohne bekanntes Herzleiden)",
+          "alter": {
+            "min": 35
+          }
+        },
+        {
+          "id": "ohnmachtsanfall-anfaelle-und-ansprechbar-2",
+          "label": "Ohnmachtsanfall/-anfälle und ansprechbar < 35 (mit bekanntem Herzleiden)",
+          "ziel": "rd.31.31a02",
+          "aussage": "Ohnmachtsanfall/-anfälle und ansprechbar < 35 (mit bekanntem Herzleiden)",
+          "alter": {
+            "max": 34
+          }
+        },
+        {
+          "id": "ohnmachtsanfall-anfaelle-und-ansprechbar-3",
+          "label": "Ohnmachtsanfall/-anfälle und ansprechbar < 35 (ohne bekanntes Herzleiden)",
+          "ziel": "rd.31.31a03",
+          "aussage": "Ohnmachtsanfall/-anfälle und ansprechbar < 35 (ohne bekanntes Herzleiden)",
+          "alter": {
+            "max": 34
+          }
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.31.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "ansprechbar-mit-abnormer-atmung",
+          "label": "Ansprechbar mit abnormer Atmung",
+          "ziel": "rd.31.31c01",
+          "aussage": "Ansprechbar mit abnormer Atmung"
+        },
+        {
+          "id": "ohnmachtsanfall-anfaelle-und-ansprechbar-4",
+          "label": "Ohnmachtsanfall/-anfälle und ansprechbar ≥ 35 (mit bekanntem Herzleiden)",
+          "ziel": "rd.31.31c02",
+          "aussage": "Ohnmachtsanfall/-anfälle und ansprechbar ≥ 35 (mit bekanntem Herzleiden)",
+          "alter": {
+            "min": 35
+          }
+        },
+        {
+          "id": "frauen-1250-mit-bauchschmerzen",
+          "label": "Frauen 12–50 mit Bauchschmerzen",
+          "ziel": "rd.31.31c03",
+          "aussage": "Frauen 12–50 mit Bauchschmerzen"
+        },
+        {
+          "id": "bewusstlosigkeit-agonale-ineffektive",
+          "label": "Bewusstlosigkeit: AGONALE/INEFFEKTIVE ATMUNG",
+          "ziel": "rd.31.k2",
+          "aussage": "Bewusstlosigkeit: AGONALE/INEFFEKTIVE ATMUNG"
+        },
+        {
+          "id": "bewusstlosigkeit-abnorme-atmung",
+          "label": "Bewusstlosigkeit: Abnorme Atmung",
+          "ziel": "rd.31.31d02",
+          "aussage": "Bewusstlosigkeit: Abnorme Atmung"
+        },
+        {
+          "id": "bewusstlosigkeit-effektive-atmung",
+          "label": "Bewusstlosigkeit: Effektive Atmung",
+          "ziel": "rd.31.31d03",
+          "aussage": "Bewusstlosigkeit: Effektive Atmung"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.31.31d04",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "veraenderte-hautfarbe",
+          "label": "VERÄNDERTE HAUTFARBE",
+          "ziel": "rd.31.31d05",
+          "aussage": "VERÄNDERTE HAUTFARBE"
+        },
+        {
+          "id": "ineffektive-atmung",
+          "label": "INEFFEKTIVE ATMUNG",
+          "ziel": "rd.31.k3",
+          "aussage": "INEFFEKTIVE ATMUNG"
+        }
+      ]
+    },
+    "rd.31.31a01": {
+      "code": "31A01",
+      "kategorie": "RD3C.",
+      "anlass": "(Beinahe-)Ohnmacht",
+      "stichwort": "RD3C."
+    },
+    "rd.31.31a02": {
+      "code": "31A02",
+      "kategorie": "RD3C.",
+      "anlass": "(Beinahe-)Ohnmacht",
+      "stichwort": "RD3C."
+    },
+    "rd.31.31a03": {
+      "code": "31A03",
+      "kategorie": "RD4C.",
+      "anlass": "(Beinahe-)Ohnmacht - jünger 35 Jahre",
+      "stichwort": "RD4C."
+    },
+    "rd.31.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.31.31c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.31.31d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.31.31e00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.31.31c01": {
+      "code": "31C01",
+      "kategorie": "RD2C.",
+      "anlass": "(Beinahe-)Ohnmacht mit Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.31.31c02": {
+      "code": "31C02",
+      "kategorie": "RD2C.",
+      "anlass": "(Beinahe-)Ohnmacht",
+      "stichwort": "RD2C."
+    },
+    "rd.31.31c03": {
+      "code": "31C03",
+      "kategorie": "RD4C.",
+      "anlass": "(Beinahe-)Ohnmacht bei Frauen mit Bauchschmerzen",
+      "stichwort": "RD4C."
+    },
+    "rd.31.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.31.31d01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage",
+          "label": "bei Patientenalter bis 30 Tage",
+          "ziel": "rd.31.31d01-2",
+          "aussage": "bei Patientenalter bis 30 Tage",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.31.31d01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.31.31d01-3",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.31.31d02": {
+      "code": "31D02",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit - Ungewisse Atmung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.31.31d03": {
+      "code": "31D03",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit - Effektive Atmung",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.31.31d04": {
+      "code": "31D04",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinstrübung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.31.31d05": {
+      "code": "31D05",
+      "kategorie": "RD2NC FR.",
+      "anlass": "(Beinahe-)Ohnmacht mit veränderter Hautfarbe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.31.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.31.31e01",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-30-tage",
+          "label": "bei Patientenalter bis 30 Tage",
+          "ziel": "rd.31.31e01-2",
+          "aussage": "bei Patientenalter bis 30 Tage",
+          "alter": {
+            "max": 0
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.31.31e01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.31.31e01-3",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        }
+      ]
+    },
+    "rd.31.31c00": {
+      "code": "31C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "(Beinahe-)Ohnmacht",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.31.31d00": {
+      "code": "31D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "(Beinahe-)Ohnmacht",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.31.31e00": {
+      "code": "31E00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Kreislaufstillstand - Agonale Atmung",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.31.31d01": {
+      "code": "31D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Agonale Atmung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.31.31d01-2": {
+      "code": "31D01",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Kreislaufstillstand - Agonale Atmung bei Neugeborenem",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.31.31d01-3": {
+      "code": "31D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Agonale Atmung, Kind",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.31.31e01": {
+      "code": "31E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Agonale Atmung",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.31.31e01-2": {
+      "code": "31E01",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Kreislaufstillstand - Agonale Atmung bei Neugeborenem",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.31.31e01-3": {
+      "code": "31E01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand - Agonale Atmung, Kind",
+      "stichwort": "RD1NC REA."
+    }
+  }
+}

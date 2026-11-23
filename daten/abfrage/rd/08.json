@@ -1,0 +1,1512 @@
+{
+  "knoten": {
+    "rd.08.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.08.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "wach-ohne-atembeschwerden",
+          "label": "Wach ohne Atembeschwerden",
+          "ziel": "rd.08.k2",
+          "aussage": "Wach ohne Atembeschwerden"
+        },
+        {
+          "id": "wach-mit-atembeschwerden",
+          "label": "Wach mit Atembeschwerden",
+          "ziel": "rd.08.k3",
+          "aussage": "Wach mit Atembeschwerden"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.08.k4",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.08.k5",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.08.k6",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "sprachschwierigkeiten-zwischen",
+          "label": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN",
+          "ziel": "rd.08.k7",
+          "aussage": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.08.k8",
+          "aussage": "Mehrere Verletzte"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.08.k9",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "kohlenmonoxid-alarm-personen-ohne",
+          "label": "Kohlenmonoxid-Alarm (Personen ohne Notfallleitsymptome vor Ort)",
+          "ziel": "rd.08.08o01",
+          "aussage": "Kohlenmonoxid-Alarm (Personen ohne Notfallleitsymptome vor Ort)"
+        },
+        {
+          "id": "kohlenmonoxid-alarm-automatischer-alarm",
+          "label": "Kohlenmonoxid-Alarm (automatischer Alarm)",
+          "ziel": "rd.08.08o02",
+          "aussage": "Kohlenmonoxid-Alarm (automatischer Alarm)"
+        }
+      ]
+    },
+    "rd.08.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08b00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch",
+          "label": "Biologisch",
+          "ziel": "rd.08.08b00b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08b00c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08b00g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08b00m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear",
+          "label": "Nuklear",
+          "ziel": "rd.08.08b00n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08b00r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08b00s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08b00t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08b00u",
+          "aussage": "Unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch-2",
+          "label": "Biologisch",
+          "ziel": "rd.08.08c00b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie-2",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08c00c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe-2",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08c00g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid-2",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08c00m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear-2",
+          "label": "Nuklear",
+          "ziel": "rd.08.08c00n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch-2",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08c00r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid-2",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08c00s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen-2",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08c00t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt-2",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08c00u",
+          "aussage": "Unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch-3",
+          "label": "Biologisch",
+          "ziel": "rd.08.08d00b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie-3",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08d00c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe-3",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08d00g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid-3",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08d00m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear-3",
+          "label": "Nuklear",
+          "ziel": "rd.08.08d00n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch-3",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08d00r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid-3",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08d00s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen-3",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08d00t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt-3",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08d00u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.08.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08b01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch",
+          "label": "Biologisch",
+          "ziel": "rd.08.08b01b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08b01c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08b01g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08b01m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear",
+          "label": "Nuklear",
+          "ziel": "rd.08.08b01n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08b01r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08b01s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08b01t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08b01u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.08.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch",
+          "label": "Biologisch",
+          "ziel": "rd.08.08c01b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08c01c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08c01g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08c01m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear",
+          "label": "Nuklear",
+          "ziel": "rd.08.08c01n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08c01r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08c01s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08c01t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08c01u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.08.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch",
+          "label": "Biologisch",
+          "ziel": "rd.08.08d01b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08d01c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08d01g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08d01m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear",
+          "label": "Nuklear",
+          "ziel": "rd.08.08d01n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08d01r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08d01s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08d01t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08d01u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.08.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08d02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch",
+          "label": "Biologisch",
+          "ziel": "rd.08.08d02b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08d02c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08d02g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08d02m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear",
+          "label": "Nuklear",
+          "ziel": "rd.08.08d02n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08d02r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08d02s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08d02t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08d02u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.08.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch",
+          "label": "Biologisch",
+          "ziel": "rd.08.08d03b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08d03c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08d03g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08d03m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear",
+          "label": "Nuklear",
+          "ziel": "rd.08.08d03n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08d03r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08d03s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08d03t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08d03u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.08.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch",
+          "label": "Biologisch",
+          "ziel": "rd.08.08d04b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08d04c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08d04g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08d04m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear",
+          "label": "Nuklear",
+          "ziel": "rd.08.08d04n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08d04r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08d04s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08d04t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08d04u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.08.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2",
+          "ziel": "rd.08.08d05",
+          "aussage": "bei Patientenanzahl 2"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl ≥ 3",
+          "ziel": "rd.08.08d05",
+          "aussage": "bei Patientenanzahl ≥ 3"
+        },
+        {
+          "id": "bei-patientenanzahl-2-biologisch",
+          "label": "bei Patientenanzahl 2, Biologisch",
+          "ziel": "rd.08.08d05b",
+          "aussage": "bei Patientenanzahl 2, Biologisch"
+        },
+        {
+          "id": "bei-patientenanzahl-3-biologisch",
+          "label": "bei Patientenanzahl ≥ 3, Biologisch",
+          "ziel": "rd.08.08d05b",
+          "aussage": "bei Patientenanzahl ≥ 3, Biologisch"
+        },
+        {
+          "id": "bei-patientenanzahl-2-chemikalie",
+          "label": "bei Patientenanzahl 2, Chemikalie",
+          "ziel": "rd.08.08d05c",
+          "aussage": "bei Patientenanzahl 2, Chemikalie"
+        },
+        {
+          "id": "bei-patientenanzahl-3-chemikalie",
+          "label": "bei Patientenanzahl ≥ 3, Chemikalie",
+          "ziel": "rd.08.08d05c",
+          "aussage": "bei Patientenanzahl ≥ 3, Chemikalie"
+        },
+        {
+          "id": "bei-patientenanzahl-2-gasgeruch-daempfe",
+          "label": "bei Patientenanzahl 2, Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08d05g",
+          "aussage": "bei Patientenanzahl 2, Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "bei-patientenanzahl-3-gasgeruch-daempfe",
+          "label": "bei Patientenanzahl ≥ 3, Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08d05g",
+          "aussage": "bei Patientenanzahl ≥ 3, Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "bei-patientenanzahl-2-kohlenmonoxid",
+          "label": "bei Patientenanzahl 2, Kohlenmonoxid",
+          "ziel": "rd.08.08d05m",
+          "aussage": "bei Patientenanzahl 2, Kohlenmonoxid"
+        },
+        {
+          "id": "bei-patientenanzahl-3-kohlenmonoxid",
+          "label": "bei Patientenanzahl ≥ 3, Kohlenmonoxid",
+          "ziel": "rd.08.08d05m",
+          "aussage": "bei Patientenanzahl ≥ 3, Kohlenmonoxid"
+        },
+        {
+          "id": "bei-patientenanzahl-2-nuklear",
+          "label": "bei Patientenanzahl 2, Nuklear",
+          "ziel": "rd.08.08d05n",
+          "aussage": "bei Patientenanzahl 2, Nuklear"
+        },
+        {
+          "id": "bei-patientenanzahl-3-nuklear",
+          "label": "bei Patientenanzahl ≥ 3, Nuklear",
+          "ziel": "rd.08.08d05n",
+          "aussage": "bei Patientenanzahl ≥ 3, Nuklear"
+        },
+        {
+          "id": "bei-patientenanzahl-2-radiologisch",
+          "label": "bei Patientenanzahl 2, Radiologisch",
+          "ziel": "rd.08.08d05r",
+          "aussage": "bei Patientenanzahl 2, Radiologisch"
+        },
+        {
+          "id": "bei-patientenanzahl-3-radiologisch",
+          "label": "bei Patientenanzahl ≥ 3, Radiologisch",
+          "ziel": "rd.08.08d05r",
+          "aussage": "bei Patientenanzahl ≥ 3, Radiologisch"
+        },
+        {
+          "id": "bei-patientenanzahl-2-suizidversuch-nur",
+          "label": "bei Patientenanzahl 2, Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08d05s",
+          "aussage": "bei Patientenanzahl 2, Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "bei-patientenanzahl-3-suizidversuch-nur",
+          "label": "bei Patientenanzahl ≥ 3, Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08d05s",
+          "aussage": "bei Patientenanzahl ≥ 3, Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "bei-patientenanzahl-2-suizidversuch",
+          "label": "bei Patientenanzahl 2, Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08d05t",
+          "aussage": "bei Patientenanzahl 2, Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "bei-patientenanzahl-3-suizidversuch",
+          "label": "bei Patientenanzahl ≥ 3, Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08d05t",
+          "aussage": "bei Patientenanzahl ≥ 3, Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "bei-patientenanzahl-2-unbekannt",
+          "label": "bei Patientenanzahl 2, Unbekannt",
+          "ziel": "rd.08.08d05u",
+          "aussage": "bei Patientenanzahl 2, Unbekannt"
+        },
+        {
+          "id": "bei-patientenanzahl-3-unbekannt",
+          "label": "bei Patientenanzahl ≥ 3, Unbekannt",
+          "ziel": "rd.08.08d05u",
+          "aussage": "bei Patientenanzahl ≥ 3, Unbekannt"
+        }
+      ]
+    },
+    "rd.08.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.08.08d06",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "biologisch",
+          "label": "Biologisch",
+          "ziel": "rd.08.08d06b",
+          "aussage": "Biologisch"
+        },
+        {
+          "id": "chemikalie",
+          "label": "Chemikalie",
+          "ziel": "rd.08.08d06c",
+          "aussage": "Chemikalie"
+        },
+        {
+          "id": "gasgeruch-daempfe",
+          "label": "Gasgeruch/Dämpfe",
+          "ziel": "rd.08.08d06g",
+          "aussage": "Gasgeruch/Dämpfe"
+        },
+        {
+          "id": "kohlenmonoxid",
+          "label": "Kohlenmonoxid",
+          "ziel": "rd.08.08d06m",
+          "aussage": "Kohlenmonoxid"
+        },
+        {
+          "id": "nuklear",
+          "label": "Nuklear",
+          "ziel": "rd.08.08d06n",
+          "aussage": "Nuklear"
+        },
+        {
+          "id": "radiologisch",
+          "label": "Radiologisch",
+          "ziel": "rd.08.08d06r",
+          "aussage": "Radiologisch"
+        },
+        {
+          "id": "suizidversuch-nur-mit-kohlenmonoxid",
+          "label": "Suizidversuch nur mit Kohlenmonoxid",
+          "ziel": "rd.08.08d06s",
+          "aussage": "Suizidversuch nur mit Kohlenmonoxid"
+        },
+        {
+          "id": "suizidversuch-andere-giftige-substanzen",
+          "label": "Suizidversuch (andere giftige Substanzen)",
+          "ziel": "rd.08.08d06t",
+          "aussage": "Suizidversuch (andere giftige Substanzen)"
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "rd.08.08d06u",
+          "aussage": "Unbekannt"
+        }
+      ]
+    },
+    "rd.08.08o01": {
+      "code": "08O01",
+      "kategorie": "",
+      "anlass": "CO-Alarm, Person ohne Notfallleitsymptome vor Ort",
+      "stichwort": ""
+    },
+    "rd.08.08o02": {
+      "code": "08O02",
+      "kategorie": "",
+      "anlass": "Automatischer CO-Alarm",
+      "stichwort": ""
+    },
+    "rd.08.08b00": {
+      "code": "08B00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "CBRN-Unfall, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00b": {
+      "code": "08B00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00c": {
+      "code": "08B00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00g": {
+      "code": "08B00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Gasgeruch, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00m": {
+      "code": "08B00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "CO-Vergiftung, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00n": {
+      "code": "08B00N",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit nuklearen Stoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00r": {
+      "code": "08B00R",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00s": {
+      "code": "08B00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Suizidversuch mit CO, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00t": {
+      "code": "08B00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Suizidversuch mit unbekannter Substanz, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b00u": {
+      "code": "08B00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00": {
+      "code": "08C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "CBRN-Unfall, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00b": {
+      "code": "08C00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00c": {
+      "code": "08C00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00g": {
+      "code": "08C00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Gasgeruch, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00m": {
+      "code": "08C00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "CO-Vergiftung, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00n": {
+      "code": "08C00N",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit nuklearen Stoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00r": {
+      "code": "08C00R",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00s": {
+      "code": "08C00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Suizidversuch mit CO, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00t": {
+      "code": "08C00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Suizidversuch mit unbekannter Substanz, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08c00u": {
+      "code": "08C00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00": {
+      "code": "08D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "CBRN-Unfall, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00b": {
+      "code": "08D00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00c": {
+      "code": "08D00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00g": {
+      "code": "08D00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Gasgeruch, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00m": {
+      "code": "08D00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "CO-Vergiftung, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00n": {
+      "code": "08D00N",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit nuklearen Stoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00r": {
+      "code": "08D00R",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00s": {
+      "code": "08D00S",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Suizidversuch mit CO, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00t": {
+      "code": "08D00T",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Suizidversuch mit unbekannter Substanz, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08d00u": {
+      "code": "08D00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, mit Personenschaden",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.08.08b01": {
+      "code": "08B01",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CBRN-Unfall, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01b": {
+      "code": "08B01B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01c": {
+      "code": "08B01C",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01g": {
+      "code": "08B01G",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gasgeruch, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01m": {
+      "code": "08B01M",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CO-Vergiftung, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01n": {
+      "code": "08B01N",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit nuklearen Stoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01r": {
+      "code": "08B01R",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01s": {
+      "code": "08B01S",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit CO, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01t": {
+      "code": "08B01T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit unbekannter Substanz, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08b01u": {
+      "code": "08B01U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, Patient wach und ohne Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01": {
+      "code": "08C01",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CBRN-Unfall, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01b": {
+      "code": "08C01B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01c": {
+      "code": "08C01C",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01g": {
+      "code": "08C01G",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gasgeruch, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01m": {
+      "code": "08C01M",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CO-Vergiftung, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01n": {
+      "code": "08C01N",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit nuklearen Stoffen, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01r": {
+      "code": "08C01R",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01s": {
+      "code": "08C01S",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit CO, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01t": {
+      "code": "08C01T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit unbekannter Substanz, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08c01u": {
+      "code": "08C01U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, Patient wach und mit Atembeschwerden",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01": {
+      "code": "08D01",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CBRN-Unfall, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01b": {
+      "code": "08D01B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01c": {
+      "code": "08D01C",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01g": {
+      "code": "08D01G",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gasgeruch, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01m": {
+      "code": "08D01M",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CO-Vergiftung, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01n": {
+      "code": "08D01N",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit nuklearen Stoffen, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01r": {
+      "code": "08D01R",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01s": {
+      "code": "08D01S",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit CO, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01t": {
+      "code": "08D01T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit unbekannter Substanz, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d01u": {
+      "code": "08D01U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, Patient im Kreislaufstillstand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02": {
+      "code": "08D02",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CBRN-Unfall, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02b": {
+      "code": "08D02B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02c": {
+      "code": "08D02C",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02g": {
+      "code": "08D02G",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gasgeruch, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02m": {
+      "code": "08D02M",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CO-Vergiftung, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02n": {
+      "code": "08D02N",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit nuklearen Stoffen, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02r": {
+      "code": "08D02R",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02s": {
+      "code": "08D02S",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit CO, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02t": {
+      "code": "08D02T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit unbekannter Substanz, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d02u": {
+      "code": "08D02U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, bewusstloser Patient",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03": {
+      "code": "08D03",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CBRN-Unfall, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03b": {
+      "code": "08D03B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03c": {
+      "code": "08D03C",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03g": {
+      "code": "08D03G",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gasgeruch, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03m": {
+      "code": "08D03M",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CO-Vergiftung, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03n": {
+      "code": "08D03N",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit nuklearen Stoffen, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03r": {
+      "code": "08D03R",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03s": {
+      "code": "08D03S",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit CO, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03t": {
+      "code": "08D03T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit unbekannter Substanz, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d03u": {
+      "code": "08D03U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, Patient mit Bewusstseinstrübung",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04": {
+      "code": "08D04",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CBRN-Unfall, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04b": {
+      "code": "08D04B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04c": {
+      "code": "08D04C",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04g": {
+      "code": "08D04G",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gasgeruch, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04m": {
+      "code": "08D04M",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CO-Vergiftung, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04n": {
+      "code": "08D04N",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit nuklearen Stoffen, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04r": {
+      "code": "08D04R",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04s": {
+      "code": "08D04S",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit CO, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04t": {
+      "code": "08D04T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit unbekannter Substanz, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d04u": {
+      "code": "08D04U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, Patient mit Atemnot",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d05": {
+      "code": "08D05",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "CBRN-Unfall, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05b": {
+      "code": "08D05B",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05c": {
+      "code": "08D05C",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05g": {
+      "code": "08D05G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Gasgeruch, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05m": {
+      "code": "08D05M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "CO-Vergiftung, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05n": {
+      "code": "08D05N",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall mit nuklearen Stoffen, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05r": {
+      "code": "08D05R",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05s": {
+      "code": "08D05S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Suizidversuch mit CO, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05t": {
+      "code": "08D05T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Suizidversuch mit unbekannter Substanz, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d05u": {
+      "code": "08D05U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, Mehrere Patienten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.08.08d06": {
+      "code": "08D06",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CBRN-Unfall, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06b": {
+      "code": "08D06B",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit biologischen Arbeitsstoffen, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06c": {
+      "code": "08D06C",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit chemischen Arbeitsstoffen, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06g": {
+      "code": "08D06G",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Gasgeruch, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06m": {
+      "code": "08D06M",
+      "kategorie": "RD_BT_NA",
+      "anlass": "CO-Vergiftung, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06n": {
+      "code": "08D06N",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit nuklearen Stoffen, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06r": {
+      "code": "08D06R",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit radiologischen Arbeitsstoffen, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06s": {
+      "code": "08D06S",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit CO, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06t": {
+      "code": "08D06T",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Suizidversuch mit unbekannter Substanz, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.08.08d06u": {
+      "code": "08D06U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Unfall mit unbekannten gefährlichen Arbeitsstoffen, unbekannter Patientenzustand",
+      "stichwort": "RD_BT_NA"
+    }
+  }
+}

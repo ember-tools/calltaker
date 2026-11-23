@@ -1,0 +1,1112 @@
+{
+  "knoten": {
+    "rd.04.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "markierte-ungefaehrliche-koerperregion",
+          "label": "Markierte (*) UNGEFÄHRLICHE Körperregion mit Fehlstellung",
+          "ziel": "rd.04.k1",
+          "aussage": "Markierte (*) UNGEFÄHRLICHE Körperregion mit Fehlstellung"
+        },
+        {
+          "id": "ungefaehrliche-koerperregion",
+          "label": "UNGEFÄHRLICHE Körperregion",
+          "ziel": "rd.04.k2",
+          "aussage": "UNGEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "aeltere-6-h-verletzungen-ohne",
+          "label": "ÄLTERE (≥ 6 h) Verletzungen (ohne Notfallleitsymptome)",
+          "ziel": "rd.04.k3",
+          "aussage": "ÄLTERE (≥ 6 h) Verletzungen (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.04.k4",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "moeglicherweise-gefaehrliche",
+          "label": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion",
+          "ziel": "rd.04.k5",
+          "aussage": "MÖGLICHERWEISE GEFÄHRLICHE Körperregion"
+        },
+        {
+          "id": "starke-blutung",
+          "label": "STARKE Blutung",
+          "ziel": "rd.04.k6",
+          "aussage": "STARKE Blutung"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.04.k7",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "neurologische-symptome-erwaehnt-ohne",
+          "label": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)",
+          "ziel": "rd.04.k8",
+          "aussage": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.04.k9",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.04.k10",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.04.k11",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "verletzungen-im-brust-oder-halsbereich",
+          "label": "Verletzungen im Brust- oder Halsbereich (mit Atembeschwerden)",
+          "ziel": "rd.04.k12",
+          "aussage": "Verletzungen im Brust- oder Halsbereich (mit Atembeschwerden)"
+        },
+        {
+          "id": "mehrere-verletzte",
+          "label": "Mehrere Verletzte",
+          "ziel": "rd.04.k13",
+          "aussage": "Mehrere Verletzte"
+        }
+      ]
+    },
+    "rd.04.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "koerperverletzung",
+          "label": "Körperverletzung",
+          "ziel": "rd.04.04a01a",
+          "aussage": "Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04a01s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "elektroschocker",
+          "label": "Elektroschocker",
+          "ziel": "rd.04.04a01t",
+          "aussage": "Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04a02a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04a02a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Körperverletzung",
+          "ziel": "rd.04.04a02a",
+          "aussage": "bei Patientenalter unbekannt, Körperverletzung"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Sexualdelikt",
+          "ziel": "rd.04.04a02s",
+          "aussage": "bei Patientenalter älter 12 Jahre, Sexualdelikt",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Sexualdelikt",
+          "ziel": "rd.04.04a02s-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Sexualdelikt",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Sexualdelikt",
+          "ziel": "rd.04.04a02s",
+          "aussage": "bei Patientenalter unbekannt, Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04a02t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04a02t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Elektroschocker",
+          "ziel": "rd.04.04a02t",
+          "aussage": "bei Patientenalter unbekannt, Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "koerperverletzung",
+          "label": "Körperverletzung",
+          "ziel": "rd.04.04a03a",
+          "aussage": "Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04a03s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "elektroschocker",
+          "label": "Elektroschocker",
+          "ziel": "rd.04.04a03t",
+          "aussage": "Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b00a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b00a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Körperverletzung",
+          "ziel": "rd.04.04b00a",
+          "aussage": "bei Patientenalter unbekannt, Körperverletzung"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Sexualdelikt",
+          "ziel": "rd.04.04b00s",
+          "aussage": "bei Patientenalter älter 12 Jahre, Sexualdelikt",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Sexualdelikt",
+          "ziel": "rd.04.04b00s-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Sexualdelikt",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Sexualdelikt",
+          "ziel": "rd.04.04b00s",
+          "aussage": "bei Patientenalter unbekannt, Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b00t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-3",
+          "label": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b00t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-3",
+          "label": "bei Patientenalter unbekannt, Elektroschocker",
+          "ziel": "rd.04.04b00t",
+          "aussage": "bei Patientenalter unbekannt, Elektroschocker"
+        },
+        {
+          "id": "koerperverletzung",
+          "label": "Körperverletzung",
+          "ziel": "rd.04.04d00a",
+          "aussage": "Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04d00s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "elektroschocker",
+          "label": "Elektroschocker",
+          "ziel": "rd.04.04d00t",
+          "aussage": "Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b01a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b01a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Körperverletzung",
+          "ziel": "rd.04.04b01a",
+          "aussage": "bei Patientenalter unbekannt, Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04b01s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b01t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b01t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Elektroschocker",
+          "ziel": "rd.04.04b01t",
+          "aussage": "bei Patientenalter unbekannt, Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b02a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b02a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Körperverletzung",
+          "ziel": "rd.04.04b02a",
+          "aussage": "bei Patientenalter unbekannt, Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04b02s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b02t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b02t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Elektroschocker",
+          "ziel": "rd.04.04b02t",
+          "aussage": "bei Patientenalter unbekannt, Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b03a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b03a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Körperverletzung",
+          "ziel": "rd.04.04b03a",
+          "aussage": "bei Patientenalter unbekannt, Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04b03s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b03t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b03t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Elektroschocker",
+          "ziel": "rd.04.04b03t",
+          "aussage": "bei Patientenalter unbekannt, Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b04a",
+          "aussage": "bei Patientenalter älter 12 Jahre, Körperverletzung",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "ziel": "rd.04.04b04a-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Körperverletzung",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt, Körperverletzung",
+          "ziel": "rd.04.04b04a",
+          "aussage": "bei Patientenalter unbekannt, Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04b04s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b04t",
+          "aussage": "bei Patientenalter älter 12 Jahre, Elektroschocker",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-2",
+          "label": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "ziel": "rd.04.04b04t-2",
+          "aussage": "bei Patientenalter bis 12 Jahre, Elektroschocker",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-2",
+          "label": "bei Patientenalter unbekannt, Elektroschocker",
+          "ziel": "rd.04.04b04t",
+          "aussage": "bei Patientenalter unbekannt, Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.04.04d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "koerperverletzung",
+          "label": "Körperverletzung",
+          "ziel": "rd.04.04d01a",
+          "aussage": "Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04d01s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "elektroschocker",
+          "label": "Elektroschocker",
+          "ziel": "rd.04.04d01t",
+          "aussage": "Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "koerperverletzung",
+          "label": "Körperverletzung",
+          "ziel": "rd.04.04d02a",
+          "aussage": "Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04d02s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "elektroschocker",
+          "label": "Elektroschocker",
+          "ziel": "rd.04.04d02t",
+          "aussage": "Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "koerperverletzung",
+          "label": "Körperverletzung",
+          "ziel": "rd.04.04d03a",
+          "aussage": "Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04d03s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "elektroschocker",
+          "label": "Elektroschocker",
+          "ziel": "rd.04.04d03t",
+          "aussage": "Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "koerperverletzung",
+          "label": "Körperverletzung",
+          "ziel": "rd.04.04d04a",
+          "aussage": "Körperverletzung"
+        },
+        {
+          "id": "sexualdelikt",
+          "label": "Sexualdelikt",
+          "ziel": "rd.04.04d04s",
+          "aussage": "Sexualdelikt"
+        },
+        {
+          "id": "elektroschocker",
+          "label": "Elektroschocker",
+          "ziel": "rd.04.04d04t",
+          "aussage": "Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenanzahl-2-koerperverletzung",
+          "label": "bei Patientenanzahl 2, Körperverletzung",
+          "ziel": "rd.04.04d05a",
+          "aussage": "bei Patientenanzahl 2, Körperverletzung"
+        },
+        {
+          "id": "bei-patientenanzahl-3-koerperverletzung",
+          "label": "bei Patientenanzahl 3, Körperverletzung",
+          "ziel": "rd.04.04d05a-2",
+          "aussage": "bei Patientenanzahl 3, Körperverletzung"
+        },
+        {
+          "id": "bei-patientenanzahl-5-koerperverletzung",
+          "label": "bei Patientenanzahl ≥ 5, Körperverletzung",
+          "ziel": "rd.04.04d05a-3",
+          "aussage": "bei Patientenanzahl ≥ 5, Körperverletzung"
+        },
+        {
+          "id": "bei-patientenanzahl-4-koerperverletzung",
+          "label": "bei Patientenanzahl 4, Körperverletzung",
+          "ziel": "rd.04.04d05a-4",
+          "aussage": "bei Patientenanzahl 4, Körperverletzung"
+        },
+        {
+          "id": "bei-patientenanzahl-2-sexualdelikt",
+          "label": "bei Patientenanzahl 2, Sexualdelikt",
+          "ziel": "rd.04.04d05s",
+          "aussage": "bei Patientenanzahl 2, Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenanzahl-3-sexualdelikt",
+          "label": "bei Patientenanzahl 3, Sexualdelikt",
+          "ziel": "rd.04.04d05s-2",
+          "aussage": "bei Patientenanzahl 3, Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenanzahl-5-sexualdelikt",
+          "label": "bei Patientenanzahl ≥ 5, Sexualdelikt",
+          "ziel": "rd.04.04d05s-3",
+          "aussage": "bei Patientenanzahl ≥ 5, Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenanzahl-4-sexualdelikt",
+          "label": "bei Patientenanzahl 4, Sexualdelikt",
+          "ziel": "rd.04.04d05s-4",
+          "aussage": "bei Patientenanzahl 4, Sexualdelikt"
+        },
+        {
+          "id": "bei-patientenanzahl-2-elektroschocker",
+          "label": "bei Patientenanzahl 2, Elektroschocker",
+          "ziel": "rd.04.04d05t",
+          "aussage": "bei Patientenanzahl 2, Elektroschocker"
+        },
+        {
+          "id": "bei-patientenanzahl-3-elektroschocker",
+          "label": "bei Patientenanzahl 3, Elektroschocker",
+          "ziel": "rd.04.04d05t-2",
+          "aussage": "bei Patientenanzahl 3, Elektroschocker"
+        },
+        {
+          "id": "bei-patientenanzahl-5-elektroschocker",
+          "label": "bei Patientenanzahl ≥ 5, Elektroschocker",
+          "ziel": "rd.04.04d05t-3",
+          "aussage": "bei Patientenanzahl ≥ 5, Elektroschocker"
+        },
+        {
+          "id": "bei-patientenanzahl-4-elektroschocker",
+          "label": "bei Patientenanzahl 4, Elektroschocker",
+          "ziel": "rd.04.04d05t-4",
+          "aussage": "bei Patientenanzahl 4, Elektroschocker"
+        }
+      ]
+    },
+    "rd.04.04a01a": {
+      "code": "04A01A",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzte Person mit Fehlstellung nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04a01s": {
+      "code": "04A01S",
+      "kategorie": "RD2C.",
+      "anlass": "Verletzte Person mit Fehlstellung nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C."
+    },
+    "rd.04.04a01t": {
+      "code": "04A01T",
+      "kategorie": "RD3C.",
+      "anlass": "Verletzte Person mit Fehlstellung nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04a02a": {
+      "code": "04A02A",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzte Person nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04a02a-2": {
+      "code": "04A02A",
+      "kategorie": "RD3C.",
+      "anlass": "Verletztes Kind nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04a02s": {
+      "code": "04A02S",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzte Person nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04a02s-2": {
+      "code": "04A02S",
+      "kategorie": "RD2C.",
+      "anlass": "Verletztes Kind nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C."
+    },
+    "rd.04.04a02t": {
+      "code": "04A02T",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzte Person nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04a02t-2": {
+      "code": "04A02T",
+      "kategorie": "RD3C.",
+      "anlass": "Verletztes Kind nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04a03a": {
+      "code": "04A03A",
+      "kategorie": "RD5.",
+      "anlass": "04A03A",
+      "stichwort": "RD5."
+    },
+    "rd.04.04a03s": {
+      "code": "04A03S",
+      "kategorie": "RD5.",
+      "anlass": "04A03S",
+      "stichwort": "RD5."
+    },
+    "rd.04.04a03t": {
+      "code": "04A03T",
+      "kategorie": "RD5.",
+      "anlass": "04A03T",
+      "stichwort": "RD5."
+    },
+    "rd.04.04b00a": {
+      "code": "04B00A",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Zustand nach Körperverletzung",
+      "stichwort": "RD4B."
+    },
+    "rd.04.04b00a-2": {
+      "code": "04B00A",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Zustand nach Körperverletzung, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.04.04b00s": {
+      "code": "04B00S",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Zustand nach Sexualdelikt",
+      "stichwort": "RD4B."
+    },
+    "rd.04.04b00s-2": {
+      "code": "04B00S",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Zustand nach Sexualdelikt, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.04.04b00t": {
+      "code": "04B00T",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Zustand nach Elektroschockereinsatz",
+      "stichwort": "RD4B."
+    },
+    "rd.04.04b00t-2": {
+      "code": "04B00T",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Zustand nach Elektroschockereinsatz, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.04.04d00a": {
+      "code": "04D00A",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Körperverletzung",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04d00s": {
+      "code": "04D00S",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Sexualdelikt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04d00t": {
+      "code": "04D00T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Aufwertung starke Schmerzen nach Elektroschockereinsatz",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04b01a": {
+      "code": "04B01A",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzte Person nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04b01a-2": {
+      "code": "04B01A",
+      "kategorie": "RD3C.",
+      "anlass": "Verletztes Kind nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04b01s": {
+      "code": "04B01S",
+      "kategorie": "RD2C.",
+      "anlass": "Verletzte Person nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C."
+    },
+    "rd.04.04b01t": {
+      "code": "04B01T",
+      "kategorie": "RD3B.",
+      "anlass": "Verletzte Person nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04b01t-2": {
+      "code": "04B01T",
+      "kategorie": "RD3C.",
+      "anlass": "Verletztes Kind nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04b02a": {
+      "code": "04B02A",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2B FR."
+    },
+    "rd.04.04b02a-2": {
+      "code": "04B02A",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Körperverletzung, Kind, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04b02s": {
+      "code": "04B02S",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04b02t": {
+      "code": "04B02T",
+      "kategorie": "RD2B FR.",
+      "anlass": "Starke Blutung nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2B FR."
+    },
+    "rd.04.04b02t-2": {
+      "code": "04B02T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Starke Blutung nach Elektroschockereinsatz, Kind,ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04b03a": {
+      "code": "04B03A",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04b03a-2": {
+      "code": "04B03A",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand nach Körperverletzung, Kind, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04b03s": {
+      "code": "04B03S",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C."
+    },
+    "rd.04.04b03t": {
+      "code": "04B03T",
+      "kategorie": "RD3B.",
+      "anlass": "Unbekannter Zustand nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04b03t-2": {
+      "code": "04B03T",
+      "kategorie": "RD3C.",
+      "anlass": "Unbekannter Zustand nach Elektroschockereinsatz, Kind, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04b04a": {
+      "code": "04B04A",
+      "kategorie": "RD3B.",
+      "anlass": "Neurologische Symptome nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04b04a-2": {
+      "code": "04B04A",
+      "kategorie": "RD3C.",
+      "anlass": "Neurologische Symptome nach Körperverletzung, Kind, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04b04s": {
+      "code": "04B04S",
+      "kategorie": "RD2C.",
+      "anlass": "Neurologische Symptome nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C."
+    },
+    "rd.04.04b04t": {
+      "code": "04B04T",
+      "kategorie": "RD3B.",
+      "anlass": "Neurologische Symptome nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3B."
+    },
+    "rd.04.04b04t-2": {
+      "code": "04B04T",
+      "kategorie": "RD3C.",
+      "anlass": "Neurologische Symptome nach Elektroschockereinsatz, Kind, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD3C."
+    },
+    "rd.04.04d01": {
+      "code": "04D01",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.04.04d01a": {
+      "code": "04D01A",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.04.04d01s": {
+      "code": "04D01S",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.04.04d01t": {
+      "code": "04D01T",
+      "kategorie": "RD1NC REA.",
+      "anlass": "Kreislaufstillstand nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD1NC REA."
+    },
+    "rd.04.04d02a": {
+      "code": "04D02A",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.04.04d02s": {
+      "code": "04D02S",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.04.04d02t": {
+      "code": "04D02T",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Bewusstlosigkeit nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.04.04d03a": {
+      "code": "04D03A",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinseintrübung nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04d03s": {
+      "code": "04D03S",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinseintrübung nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04d03t": {
+      "code": "04D03T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bewusstseinseintrübung nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04d04a": {
+      "code": "04D04A",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Körperverletzung, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04d04s": {
+      "code": "04D04S",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Sexualdelikt, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04d04t": {
+      "code": "04D04T",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verletzung mit Atembeschwerden nach Elektroschockereinsatz, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD2C FR."
+    },
+    "rd.04.04d05a": {
+      "code": "04D05A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Körperverletzung, 2 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05a-2": {
+      "code": "04D05A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Körperverletzung, 3 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05a-3": {
+      "code": "04D05A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Körperverletzung, mehr als 4 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05a-4": {
+      "code": "04D05A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Körperverletzung, 4 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05s": {
+      "code": "04D05S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Sexualdelikt, 2 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05s-2": {
+      "code": "04D05S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Sexualdelikt, 3 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05s-3": {
+      "code": "04D05S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Sexualdelikt, mehr als 4 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05s-4": {
+      "code": "04D05S",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Sexualdelikt, 4 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05t": {
+      "code": "04D05T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Elektroschockereinsatz, 2 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05t-2": {
+      "code": "04D05T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Elektroschockereinsatz, 3 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05t-3": {
+      "code": "04D05T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Elektroschockereinsatz, mehr als 4 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.04.04d05t-4": {
+      "code": "04D05T",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Mehrere Verletzte nach Elektroschockereinsatz, 4 Patienten, ACHTUNG! Mögliche Gefahren beachten",
+      "stichwort": "RD_Mehrere Patienten"
+    }
+  }
+}

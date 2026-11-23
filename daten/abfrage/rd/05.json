@@ -1,0 +1,173 @@
+{
+  "knoten": {
+    "rd.05.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "nicht-traumatische-rueckenschmerzen",
+          "label": "NICHT TRAUMATISCHE Rückenschmerzen",
+          "ziel": "rd.05.05a01",
+          "aussage": "NICHT TRAUMATISCHE Rückenschmerzen"
+        },
+        {
+          "id": "aeltere-6-h-traumatische",
+          "label": "ÄLTERE (≥ 6 h) traumatische Rückenschmerzen (ohne Notfallleitsymptome)",
+          "ziel": "rd.05.05a02",
+          "aussage": "ÄLTERE (≥ 6 h) traumatische Rückenschmerzen (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.05.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "vermutetes-aortenaneurysma-dissektion",
+          "label": "VERMUTETES Aortenaneurysma/-dissektion (Zerreißungsschmerz) ≥ 50",
+          "ziel": "rd.05.05c01",
+          "aussage": "VERMUTETES Aortenaneurysma/-dissektion (Zerreißungsschmerz) ≥ 50",
+          "alter": {
+            "min": 50
+          }
+        },
+        {
+          "id": "bekanntes-aortenaneurysma-bekannte",
+          "label": "Bekanntes Aortenaneurysma / Bekannte Aortendissektion",
+          "ziel": "rd.05.05c02",
+          "aussage": "Bekanntes Aortenaneurysma / Bekannte Aortendissektion"
+        },
+        {
+          "id": "ohnmacht-oder-beinahe-ohnmacht-50",
+          "label": "Ohnmacht oder Beinahe-Ohnmacht ≥ 50",
+          "ziel": "rd.05.05c03",
+          "aussage": "Ohnmacht oder Beinahe-Ohnmacht ≥ 50",
+          "alter": {
+            "min": 50
+          }
+        },
+        {
+          "id": "atembeschwerden",
+          "label": "Atembeschwerden",
+          "ziel": "rd.05.05c04",
+          "aussage": "Atembeschwerden"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.05.05d01",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "aschfahle-oder-graue-hautfarbe-gemeldet",
+          "label": "Aschfahle oder graue Hautfarbe gemeldet ≥50",
+          "ziel": "rd.05.05d02",
+          "aussage": "Aschfahle oder graue Hautfarbe gemeldet ≥50",
+          "alter": {
+            "min": 50
+          }
+        }
+      ]
+    },
+    "rd.05.05a01": {
+      "code": "05A01",
+      "kategorie": "RD5.",
+      "anlass": "05A01",
+      "stichwort": "RD5."
+    },
+    "rd.05.05a02": {
+      "code": "05A02",
+      "kategorie": "RD5.",
+      "anlass": "05A02",
+      "stichwort": "RD5."
+    },
+    "rd.05.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.05.05c00",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.05.05c00-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.05.05c00",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.05.05d00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.05.05c01": {
+      "code": "05C01",
+      "kategorie": "RD2C.",
+      "anlass": "Rückenschmerzen mit Zerreißungsschmerz",
+      "stichwort": "RD2C."
+    },
+    "rd.05.05c02": {
+      "code": "05C02",
+      "kategorie": "RD2C.",
+      "anlass": "Rückenschmerzen bei bekanntem Aortenaneurysma / bekannter Aortendissektion",
+      "stichwort": "RD2C."
+    },
+    "rd.05.05c03": {
+      "code": "05C03",
+      "kategorie": "RD3C.",
+      "anlass": "Rückenschmerzen mit (Beinahe-)Ohnmacht",
+      "stichwort": "RD3C."
+    },
+    "rd.05.05c04": {
+      "code": "05C04",
+      "kategorie": "RD3C.",
+      "anlass": "Rückenschmerzen mit Atembeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.05.05d01": {
+      "code": "05D01",
+      "kategorie": "RD2C.",
+      "anlass": "Rückenschmerzen mit Bewusstseinstrübung",
+      "stichwort": "RD2C."
+    },
+    "rd.05.05d02": {
+      "code": "05D02",
+      "kategorie": "RD2C.",
+      "anlass": "Rückenschmerzen mit aschfahler oder grauer Hautfarbe",
+      "stichwort": "RD2C."
+    },
+    "rd.05.05c00": {
+      "code": "05C00",
+      "kategorie": "RD4B.",
+      "anlass": "Aufwertung Rückenschmerzen",
+      "stichwort": "RD4B."
+    },
+    "rd.05.05c00-2": {
+      "code": "05C00",
+      "kategorie": "RD4C.",
+      "anlass": "Aufwertung Rückenschmerzen, Kind",
+      "stichwort": "RD4C."
+    },
+    "rd.05.05d00": {
+      "code": "05D00",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung starke Rückenschmerzen",
+      "stichwort": "RD3C."
+    }
+  }
+}

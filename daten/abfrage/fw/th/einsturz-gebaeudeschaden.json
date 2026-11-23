@@ -1,0 +1,245 @@
+{
+  "knoten": {
+    "fw.th.einsturz-gebaeudeschaden.k0": {
+      "frage": "Was ist eingestürzt?",
+      "antworten": [
+        {
+          "id": "gebaeude-oder-gebaeudeteil",
+          "label": "Gebäude oder Gebäudeteil",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.k1",
+          "aussage": "Ein Gebäude oder Gebäudeteil ist eingestürzt."
+        },
+        {
+          "id": "decke-balkon-treppe",
+          "label": "Decke, Balkon, Treppe",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.k2",
+          "aussage": "Eine Decke, ein Balkon oder eine Treppe ist eingestürzt."
+        },
+        {
+          "id": "baugeruest-kran",
+          "label": "Baugerüst, Kran",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.k3",
+          "aussage": "Ein Baugerüst oder Kran ist eingestürzt."
+        },
+        {
+          "id": "einsturz-droht",
+          "label": "Einsturz droht",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.k4",
+          "aussage": "Ein Einsturz droht, ist aber nicht eingetreten."
+        }
+      ]
+    },
+    "fw.th.einsturz-gebaeudeschaden.k1": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57a01",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57c01",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57e01",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57c01u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.einsturz-gebaeudeschaden.k2": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57a02",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57c02",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57e02",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57c02u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.einsturz-gebaeudeschaden.k3": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57a03",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57c03",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57e03",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57c03u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.einsturz-gebaeudeschaden.k4": {
+      "frage": "Sind Personen betroffen?",
+      "antworten": [
+        {
+          "id": "niemand-betroffen",
+          "label": "Niemand betroffen",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57a04",
+          "aussage": "Personen sind nicht betroffen."
+        },
+        {
+          "id": "personen-betroffen-ansprechbar",
+          "label": "Personen betroffen, ansprechbar",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57c04",
+          "aussage": "Personen sind betroffen und ansprechbar."
+        },
+        {
+          "id": "personen-eingeschlossen-oder-nicht",
+          "label": "Personen eingeschlossen oder nicht ansprechbar",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57e04",
+          "aussage": "Personen sind eingeschlossen oder nicht ansprechbar."
+        },
+        {
+          "id": "unbekannt-ob-personen-betroffen-sind",
+          "label": "Unbekannt, ob Personen betroffen sind",
+          "ziel": "fw.th.einsturz-gebaeudeschaden.57c04u",
+          "aussage": "Ob Personen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.th.einsturz-gebaeudeschaden.57a01": {
+      "code": "57A01",
+      "kategorie": "TH 2",
+      "anlass": "Gebäudeeinsturz",
+      "stichwort": "TH 2"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57c01": {
+      "code": "57C01",
+      "kategorie": "TH 3",
+      "anlass": "Gebäudeeinsturz - Personen betroffen",
+      "stichwort": "TH 3"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57e01": {
+      "code": "57E01",
+      "kategorie": "TH 3",
+      "anlass": "Gebäudeeinsturz - Personenrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57c01u": {
+      "code": "57C01U",
+      "kategorie": "TH 3",
+      "anlass": "Gebäudeeinsturz - Betroffenheit unbekannt",
+      "stichwort": "TH 3"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57a02": {
+      "code": "57A02",
+      "kategorie": "TH 1",
+      "anlass": "Teileinsturz im Gebäude",
+      "stichwort": "TH 1"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57c02": {
+      "code": "57C02",
+      "kategorie": "TH 2",
+      "anlass": "Teileinsturz im Gebäude - Personen betroffen",
+      "stichwort": "TH 2"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57e02": {
+      "code": "57E02",
+      "kategorie": "TH 3",
+      "anlass": "Teileinsturz im Gebäude - Personenrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57c02u": {
+      "code": "57C02U",
+      "kategorie": "TH 2",
+      "anlass": "Teileinsturz im Gebäude - Betroffenheit unbekannt",
+      "stichwort": "TH 2"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57a03": {
+      "code": "57A03",
+      "kategorie": "TH 2",
+      "anlass": "Einsturz Baugerüst oder Kran",
+      "stichwort": "TH 2"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57c03": {
+      "code": "57C03",
+      "kategorie": "TH 2",
+      "anlass": "Einsturz Baugerüst oder Kran - Personen betroffen",
+      "stichwort": "TH 2"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57e03": {
+      "code": "57E03",
+      "kategorie": "TH 3",
+      "anlass": "Einsturz Baugerüst oder Kran - Personenrettung",
+      "stichwort": "TH 3"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57c03u": {
+      "code": "57C03U",
+      "kategorie": "TH 2",
+      "anlass": "Einsturz Baugerüst oder Kran - Betroffenheit unbekannt",
+      "stichwort": "TH 2"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57a04": {
+      "code": "57A04",
+      "kategorie": "TH M.",
+      "anlass": "Einsturzgefahr",
+      "stichwort": "TH M."
+    },
+    "fw.th.einsturz-gebaeudeschaden.57c04": {
+      "code": "57C04",
+      "kategorie": "TH 1",
+      "anlass": "Einsturzgefahr - Personen betroffen",
+      "stichwort": "TH 1"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57e04": {
+      "code": "57E04",
+      "kategorie": "TH 2",
+      "anlass": "Einsturzgefahr - Personenrettung",
+      "stichwort": "TH 2"
+    },
+    "fw.th.einsturz-gebaeudeschaden.57c04u": {
+      "code": "57C04U",
+      "kategorie": "TH 1",
+      "anlass": "Einsturzgefahr - Betroffenheit unbekannt",
+      "stichwort": "TH 1"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "knoten": {
+    "fachrichtung": {
+      "frage": "Was ist jetzt der Grund Ihres Anrufes?",
+      "hinweis": "Auswahl Fachrichtung!",
+      "antworten": [
+        {
+          "id": "rd",
+          "nr": "0",
+          "label": "Med. Notruf",
+          "farbe": "rd",
+          "ziel": "eroeffnung.hand"
+        },
+        {
+          "id": "fw",
+          "nr": "5",
+          "label": "Brandschutz / techn. Notruf",
+          "farbe": "fw",
+          "ziel": "eroeffnung.hand"
+        }
+      ]
+    },
+    "eroeffnung.hand": {
+      "frage": "Aus welcher Hand kommt die Meldung?",
+      "antworten": [
+        {
+          "id": "1-hand-der-anrufer-ist-selbst-betroffen",
+          "label": "1. Hand: der Anrufer ist selbst betroffen",
+          "ziel": "eroeffnung.vor-ort",
+          "aussage": "Meldung aus erster Hand: der Anrufer ist selbst betroffen."
+        },
+        {
+          "id": "2-hand-der-anrufer-ist-beim-betroffenen",
+          "label": "2. Hand: der Anrufer ist beim Betroffenen",
+          "ziel": "eroeffnung.vor-ort",
+          "aussage": "Meldung aus zweiter Hand: der Anrufer ist beim Betroffenen."
+        },
+        {
+          "id": "3-hand-der-anrufer-meldet-fuer-andere",
+          "label": "3. Hand: der Anrufer meldet für andere",
+          "ziel": "eroeffnung.vor-ort",
+          "aussage": "Meldung aus dritter Hand: der Anrufer meldet für andere."
+        },
+        {
+          "id": "4-hand-der-anrufer-hat-es-nur-gehoert",
+          "label": "4. Hand: der Anrufer hat es nur gehört oder gesehen",
+          "ziel": "eroeffnung.vor-ort",
+          "aussage": "Meldung aus vierter Hand: der Anrufer hat es nur gehört oder gesehen."
+        },
+        {
+          "id": "automatische-meldung",
+          "label": "Automatische Meldung",
+          "ziel": "eroeffnung.vor-ort",
+          "aussage": "Die Meldung stammt aus einer automatischen Anlage."
+        }
+      ]
+    },
+    "eroeffnung.vor-ort": {
+      "frage": "Ist der Anrufer vor Ort?",
+      "antworten": [
+        {
+          "id": "ja-der-anrufer-ist-vor-ort",
+          "label": "Ja, der Anrufer ist vor Ort",
+          "ziel": "eroeffnung.weiche",
+          "aussage": "Der Anrufer ist am Einsatzort."
+        },
+        {
+          "id": "nein-nicht-mehr-vor-ort",
+          "label": "Nein, nicht mehr vor Ort",
+          "ziel": "eroeffnung.weiche",
+          "aussage": "Der Anrufer war am Einsatzort, ist es jetzt nicht mehr."
+        },
+        {
+          "id": "nein-war-nicht-vor-ort",
+          "label": "Nein, war nicht vor Ort",
+          "ziel": "eroeffnung.weiche",
+          "aussage": "Der Anrufer ist nicht am Einsatzort."
+        },
+        {
+          "id": "unbekannt",
+          "label": "Unbekannt",
+          "ziel": "eroeffnung.weiche",
+          "aussage": "Ob der Anrufer vor Ort ist, ist nicht bekannt."
+        }
+      ]
+    },
+    "eroeffnung.weiche": {
+      "weiche": {
+        "knoten": "fachrichtung",
+        "ziele": {
+          "rd": "rd.anzahl",
+          "fw": "fw.grund"
+        }
+      }
+    }
+  }
+}

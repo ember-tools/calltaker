@@ -65,6 +65,11 @@ Backend
   be-test1 <expr>       pytest -k <expr>
   be-verify             Lint, format check and tests
 
+Data
+  data-abfrage          Check the question graph in daten/abfrage/ and print its size
+  data-abfrage-uebernehmen [sna-tree.json]
+                        Convert alarmzettel's interrogation graph into daten/abfrage/ (one-off)
+
 Docker
   docker-build          Build the production image from docker/app.Dockerfile
   docker-app            Start the development stack (compose.dev.yaml), always rebuilt
@@ -83,7 +88,7 @@ EOF
 fe() { cd "$FRONTEND"; }
 be() { cd "$ROOT"; }
 
-COMMAND_GROUPS=(fe be docker)
+COMMAND_GROUPS=(fe be data docker)
 
 is_group() {
     local candidate
@@ -146,6 +151,11 @@ case "$cmd" in
         "$ROOT/toolchain.sh" be-test
         ;;
 
+    data-abfrage)     be; run env PYTHONPATH=src pipenv run python tools/abfrage_pruefen.py "$@" ;;
+    data-abfrage-uebernehmen)
+        be; run pipenv run python tools/abfrage_uebernehmen.py "$@"
+        ;;
+
     docker-build)     be; run docker build . -f docker/app.Dockerfile "$@" ;;
     docker-app)       cd "$ROOT/docker"; run docker compose -f compose.dev.yaml up -d --build --renew-anon-volumes "$@" ;;
     docker-app-down)  cd "$ROOT/docker"; run docker compose -f compose.dev.yaml down "$@" ;;
@@ -155,6 +165,7 @@ case "$cmd" in
 
     verify)
         "$ROOT/toolchain.sh" be-verify
+        "$ROOT/toolchain.sh" data-abfrage
         "$ROOT/toolchain.sh" fe-build
         ;;
     format)

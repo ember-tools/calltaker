@@ -1,0 +1,78 @@
+{
+  "knoten": {
+    "fw.th.aufzugnotbefreiung.k0": {
+      "frage": "Wer ist eingeschlossen?",
+      "antworten": [
+        {
+          "id": "person-ohne-beschwerden",
+          "label": "Person ohne Beschwerden",
+          "ziel": "fw.th.aufzugnotbefreiung.k1",
+          "aussage": "Die eingeschlossene Person ist ansprechbar und ohne Beschwerden."
+        },
+        {
+          "id": "person-mit-beschwerden",
+          "label": "Person mit Beschwerden",
+          "ziel": "fw.th.aufzugnotbefreiung.k2",
+          "aussage": "Die eingeschlossene Person klagt über Beschwerden."
+        },
+        {
+          "id": "kind-allein-eingeschlossen",
+          "label": "Kind allein eingeschlossen",
+          "ziel": "fw.th.aufzugnotbefreiung.k3",
+          "aussage": "Ein Kind ist allein eingeschlossen."
+        }
+      ]
+    },
+    "fw.th.aufzugnotbefreiung.k1": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "aufzugsfirma-nicht-verfuegbar",
+          "label": "Aufzugsfirma nicht verfügbar",
+          "ziel": "fw.th.aufzugnotbefreiung.51a01",
+          "aussage": "Der Aufzugsnotdienst ist nicht kurzfristig verfügbar."
+        }
+      ]
+    },
+    "fw.th.aufzugnotbefreiung.k2": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "medizinischer-notfall",
+          "label": "Medizinischer Notfall",
+          "ziel": "fw.th.aufzugnotbefreiung.51c01",
+          "aussage": "Es liegt zusätzlich ein medizinischer Notfall vor."
+        }
+      ]
+    },
+    "fw.th.aufzugnotbefreiung.k3": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angaben",
+          "label": "Ohne weitere Angaben",
+          "ziel": "fw.th.aufzugnotbefreiung.51b01",
+          "aussage": "Weitere Angaben liegen nicht vor."
+        }
+      ]
+    },
+    "fw.th.aufzugnotbefreiung.51a01": {
+      "code": "51A01",
+      "kategorie": "TH K.",
+      "anlass": "Aufzugnotbefreiung",
+      "stichwort": "TH K."
+    },
+    "fw.th.aufzugnotbefreiung.51c01": {
+      "code": "51C01",
+      "kategorie": "TH M.",
+      "anlass": "Aufzugnotbefreiung mit Notfall",
+      "stichwort": "TH M."
+    },
+    "fw.th.aufzugnotbefreiung.51b01": {
+      "code": "51B01",
+      "kategorie": "TH K.",
+      "anlass": "Aufzugnotbefreiung - Kind",
+      "stichwort": "TH K."
+    }
+  }
+}

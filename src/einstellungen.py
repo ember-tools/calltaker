@@ -16,6 +16,7 @@ class Einstellungen(BaseSettings):
     cors_origins: str = "https://calltaker.chojo.dev,http://localhost:5173"
     frontend_verzeichnis: Path = QUELLVERZEICHNIS / "frontend_dist"
     daten_verzeichnis: Path = Path("/data")
+    abfrage_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "abfrage"
 
     def erlaubte_origins(self) -> list[str]:
         """Return the allowed CORS origins as a list."""

@@ -1,0 +1,2786 @@
+{
+  "knoten": {
+    "rd.29.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.29.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "anrufer-1-hand-mit-verletzung-in-einer",
+          "label": "Anrufer 1. Hand mit Verletzung in einer UNGEFÄHRLICHEN Körperregion",
+          "ziel": "rd.29.k2",
+          "aussage": "Anrufer 1. Hand mit Verletzung in einer UNGEFÄHRLICHEN Körperregion"
+        },
+        {
+          "id": "keine-verletzungen-gemeldet-unbestaetigt",
+          "label": "Keine Verletzungen gemeldet (unbestätigt oder ≥ 5 Personen beteiligt)",
+          "ziel": "rd.29.k3",
+          "aussage": "Keine Verletzungen gemeldet (unbestätigt oder ≥ 5 Personen beteiligt)"
+        },
+        {
+          "id": "verletzungen",
+          "label": "Verletzungen",
+          "ziel": "rd.29.k4",
+          "aussage": "Verletzungen"
+        },
+        {
+          "id": "starke-blutung",
+          "label": "STARKE Blutung",
+          "ziel": "rd.29.k5",
+          "aussage": "STARKE Blutung"
+        },
+        {
+          "id": "andere-gefahren",
+          "label": "Andere Gefahren",
+          "ziel": "rd.29.k6",
+          "aussage": "Andere Gefahren"
+        },
+        {
+          "id": "geringer-unfallmechanismus-anrufer-1",
+          "label": "GERINGER UNFALLMECHANISMUS (Anrufer 1. oder 2. Hand)",
+          "ziel": "rd.29.k7",
+          "aussage": "GERINGER UNFALLMECHANISMUS (Anrufer 1. oder 2. Hand)"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.29.k8",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "neurologische-symptome-erwaehnt-ohne",
+          "label": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)",
+          "ziel": "rd.29.k9",
+          "aussage": "Neurologische Symptome erwähnt (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "groesseres-ereignis-a-bis-h",
+          "label": "GRÖSSERES EREIGNIS (a bis h)",
+          "ziel": "rd.29.k10",
+          "aussage": "GRÖSSERES EREIGNIS (a bis h)"
+        },
+        {
+          "id": "gefaehrlicher-unfallmechanismus-k-bis-t",
+          "label": "GEFÄHRLICHER UNFALLMECHANISMUS (k bis t)",
+          "ziel": "rd.29.k11",
+          "aussage": "GEFÄHRLICHER UNFALLMECHANISMUS (k bis t)"
+        },
+        {
+          "id": "aufprall-mit-hoher-geschwindigkeit",
+          "label": "Aufprall mit HOHER GESCHWINDIGKEIT",
+          "ziel": "rd.29.k12",
+          "aussage": "Aufprall mit HOHER GESCHWINDIGKEIT"
+        },
+        {
+          "id": "gefahrgut",
+          "label": "GEFAHRGUT",
+          "ziel": "rd.29.k13",
+          "aussage": "GEFAHRGUT"
+        },
+        {
+          "id": "eingeklemmte-person",
+          "label": "Eingeklemmte Person",
+          "ziel": "rd.29.k14",
+          "aussage": "Eingeklemmte Person"
+        },
+        {
+          "id": "kreislaufstillstand",
+          "label": "Kreislaufstillstand",
+          "ziel": "rd.29.k15",
+          "aussage": "Kreislaufstillstand"
+        },
+        {
+          "id": "bewusstlos",
+          "label": "Bewusstlos",
+          "ziel": "rd.29.k16",
+          "aussage": "Bewusstlos"
+        },
+        {
+          "id": "bewusstseinstruebung-mit-auffaelliger",
+          "label": "Bewusstseinstrübung mit auffälliger Atmung (abnormal)",
+          "ziel": "rd.29.k17",
+          "aussage": "Bewusstseinstrübung mit auffälliger Atmung (abnormal)"
+        },
+        {
+          "id": "bewusstseinstruebung-mit-normaler-atmung",
+          "label": "Bewusstseinstrübung mit normaler Atmung",
+          "ziel": "rd.29.k18",
+          "aussage": "Bewusstseinstrübung mit normaler Atmung"
+        },
+        {
+          "id": "keine-verletzungen-bestaetigt-fuer-bis",
+          "label": "Keine Verletzungen (bestätigt für bis zu 4 Personen)",
+          "ziel": "rd.29.k19",
+          "aussage": "Keine Verletzungen (bestätigt für bis zu 4 Personen)"
+        }
+      ]
+    },
+    "rd.29.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29a00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29a00u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29a00v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29a00x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "mehrere-patienten-und-zusaetzliche",
+          "label": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29a00y",
+          "aussage": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29b00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-2",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29b00u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten-2",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29b00v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und-2",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b00x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "mehrere-patienten-und-zusaetzliche-2",
+          "label": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b00y",
+          "aussage": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-3",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29d00u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten-3",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29d00v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und-3",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d00x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d00y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d00y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d00y-3",
+          "aussage": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-5-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d00y-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29a01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29a01u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29a01v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29a01x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "mehrere-patienten-und-zusaetzliche",
+          "label": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29a01y",
+          "aussage": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29a02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29a02u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29a02v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29a02x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "mehrere-patienten-und-zusaetzliche",
+          "label": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29a02y",
+          "aussage": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "vu-mehrere-betroffene",
+          "label": "VU, mehrere Betroffene",
+          "ziel": "rd.29.29b01",
+          "aussage": "VU, mehrere Betroffene"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29b01u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29b01v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b01x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b01y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b01y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b01y-3",
+          "aussage": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-5-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b01y-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29b02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29b02u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29b02v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b02x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b02y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b02y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b02y-3",
+          "aussage": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-5-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b02y-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29b03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29b03u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29b03v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b03x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b03y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b03y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b03y-3",
+          "aussage": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-5-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b03y-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29b04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29b04u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29b04v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b04x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b04y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b04y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b04y-3",
+          "aussage": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-5-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b04y-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29b05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29b05u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29b05v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b05x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b05y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b05y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b05y-3",
+          "aussage": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-5-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b05y-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "vu-mehrere-betroffene",
+          "label": "VU, mehrere Betroffene",
+          "ziel": "rd.29.29b06",
+          "aussage": "VU, mehrere Betroffene"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29b06u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29b06v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b06x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b06y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b06y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b06y-3",
+          "aussage": "bei Patientenanzahl 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-5-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29b06y-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenanzahl-4-flugzeug",
+          "label": "bei Patientenanzahl ≤ 4, Flugzeug",
+          "ziel": "rd.29.29d01a",
+          "aussage": "bei Patientenanzahl ≤ 4, Flugzeug"
+        },
+        {
+          "id": "bei-patientenanzahl-5-flugzeug",
+          "label": "bei Patientenanzahl ≥ 5, Flugzeug",
+          "ziel": "rd.29.29d01a-2",
+          "aussage": "bei Patientenanzahl ≥ 5, Flugzeug"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-flugzeug",
+          "label": "bei Patientenanzahl unbekannt, Flugzeug",
+          "ziel": "rd.29.29d01a-3",
+          "aussage": "bei Patientenanzahl unbekannt, Flugzeug"
+        },
+        {
+          "id": "bei-patientenanzahl-1-bus",
+          "label": "bei Patientenanzahl 1, Bus",
+          "ziel": "rd.29.29d01b",
+          "aussage": "bei Patientenanzahl 1, Bus"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-bus",
+          "label": "bei Patientenanzahl unbekannt, Bus",
+          "ziel": "rd.29.29d01b-2",
+          "aussage": "bei Patientenanzahl unbekannt, Bus"
+        },
+        {
+          "id": "bei-patientenanzahl-2-bus",
+          "label": "bei Patientenanzahl 2, Bus",
+          "ziel": "rd.29.29d01b-3",
+          "aussage": "bei Patientenanzahl 2, Bus"
+        },
+        {
+          "id": "bei-patientenanzahl-3-bus",
+          "label": "bei Patientenanzahl 3, Bus",
+          "ziel": "rd.29.29d01b-4",
+          "aussage": "bei Patientenanzahl 3, Bus"
+        },
+        {
+          "id": "bei-patientenanzahl-4-bus",
+          "label": "bei Patientenanzahl ≥ 4, Bus",
+          "ziel": "rd.29.29d01b-5",
+          "aussage": "bei Patientenanzahl ≥ 4, Bus"
+        },
+        {
+          "id": "bei-patientenanzahl-3-u-bahn",
+          "label": "bei Patientenanzahl ≤ 3, U-Bahn",
+          "ziel": "rd.29.29d01c",
+          "aussage": "bei Patientenanzahl ≤ 3, U-Bahn"
+        },
+        {
+          "id": "bei-patientenanzahl-4-u-bahn",
+          "label": "bei Patientenanzahl ≥ 4, U-Bahn",
+          "ziel": "rd.29.29d01c-2",
+          "aussage": "bei Patientenanzahl ≥ 4, U-Bahn"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-u-bahn",
+          "label": "bei Patientenanzahl unbekannt, U-Bahn",
+          "ziel": "rd.29.29d01c-3",
+          "aussage": "bei Patientenanzahl unbekannt, U-Bahn"
+        },
+        {
+          "id": "bei-patientenanzahl-3-zug-bahn",
+          "label": "bei Patientenanzahl ≤ 3, Zug/Bahn",
+          "ziel": "rd.29.29d01d",
+          "aussage": "bei Patientenanzahl ≤ 3, Zug/Bahn"
+        },
+        {
+          "id": "bei-patientenanzahl-4-zug-bahn",
+          "label": "bei Patientenanzahl ≥ 4, Zug/Bahn",
+          "ziel": "rd.29.29d01d-2",
+          "aussage": "bei Patientenanzahl ≥ 4, Zug/Bahn"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-zug-bahn",
+          "label": "bei Patientenanzahl unbekannt, Zug/Bahn",
+          "ziel": "rd.29.29d01d-3",
+          "aussage": "bei Patientenanzahl unbekannt, Zug/Bahn"
+        },
+        {
+          "id": "bei-patientenanzahl-3-wasserfahrzeug",
+          "label": "bei Patientenanzahl ≤ 3, Wasserfahrzeug",
+          "ziel": "rd.29.29d01e",
+          "aussage": "bei Patientenanzahl ≤ 3, Wasserfahrzeug"
+        },
+        {
+          "id": "bei-patientenanzahl-4-wasserfahrzeug",
+          "label": "bei Patientenanzahl ≥ 4, Wasserfahrzeug",
+          "ziel": "rd.29.29d01e-2",
+          "aussage": "bei Patientenanzahl ≥ 4, Wasserfahrzeug"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt",
+          "label": "bei Patientenanzahl unbekannt, Wasserfahrzeug",
+          "ziel": "rd.29.29d01e-3",
+          "aussage": "bei Patientenanzahl unbekannt, Wasserfahrzeug"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-2",
+          "label": "bei Patientenanzahl unbekannt, Massenkarambolage (≥ 10 Fahrzeuge)",
+          "ziel": "rd.29.29d01f",
+          "aussage": "bei Patientenanzahl unbekannt, Massenkarambolage (≥ 10 Fahrzeuge)"
+        },
+        {
+          "id": "bei-patientenanzahl-1-strassenbahn",
+          "label": "bei Patientenanzahl 1, Straßenbahn",
+          "ziel": "rd.29.29d01g",
+          "aussage": "bei Patientenanzahl 1, Straßenbahn"
+        },
+        {
+          "id": "bei-patientenanzahl-2-strassenbahn",
+          "label": "bei Patientenanzahl 2, Straßenbahn",
+          "ziel": "rd.29.29d01g-2",
+          "aussage": "bei Patientenanzahl 2, Straßenbahn"
+        },
+        {
+          "id": "bei-patientenanzahl-3-strassenbahn",
+          "label": "bei Patientenanzahl 3, Straßenbahn",
+          "ziel": "rd.29.29d01g-3",
+          "aussage": "bei Patientenanzahl 3, Straßenbahn"
+        },
+        {
+          "id": "bei-patientenanzahl-4-strassenbahn",
+          "label": "bei Patientenanzahl ≥ 4, Straßenbahn",
+          "ziel": "rd.29.29d01g-4",
+          "aussage": "bei Patientenanzahl ≥ 4, Straßenbahn"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-3",
+          "label": "bei Patientenanzahl unbekannt, Straßenbahn",
+          "ziel": "rd.29.29d01g-5",
+          "aussage": "bei Patientenanzahl unbekannt, Straßenbahn"
+        },
+        {
+          "id": "bei-patientenanzahl-1-fahrzeug-gegen",
+          "label": "bei Patientenanzahl 1, Fahrzeug gegen Gebäude",
+          "ziel": "rd.29.29d01h",
+          "aussage": "bei Patientenanzahl 1, Fahrzeug gegen Gebäude"
+        },
+        {
+          "id": "bei-patientenanzahl-2-fahrzeug-gegen",
+          "label": "bei Patientenanzahl 2, Fahrzeug gegen Gebäude",
+          "ziel": "rd.29.29d01h-2",
+          "aussage": "bei Patientenanzahl 2, Fahrzeug gegen Gebäude"
+        },
+        {
+          "id": "bei-patientenanzahl-3-fahrzeug-gegen",
+          "label": "bei Patientenanzahl 3, Fahrzeug gegen Gebäude",
+          "ziel": "rd.29.29d01h-3",
+          "aussage": "bei Patientenanzahl 3, Fahrzeug gegen Gebäude"
+        },
+        {
+          "id": "bei-patientenanzahl-4-fahrzeug-gegen",
+          "label": "bei Patientenanzahl ≥ 4, Fahrzeug gegen Gebäude",
+          "ziel": "rd.29.29d01h-4",
+          "aussage": "bei Patientenanzahl ≥ 4, Fahrzeug gegen Gebäude"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-fahrzeug",
+          "label": "bei Patientenanzahl unbekannt, Fahrzeug gegen Gebäude",
+          "ziel": "rd.29.29d01h-5",
+          "aussage": "bei Patientenanzahl unbekannt, Fahrzeug gegen Gebäude"
+        }
+      ]
+    },
+    "rd.29.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenanzahl-2-fahrzeug-gegen",
+          "label": "bei Patientenanzahl 2, Fahrzeug gegen Fahrrad",
+          "ziel": "rd.29.29d02i",
+          "aussage": "bei Patientenanzahl 2, Fahrzeug gegen Fahrrad"
+        },
+        {
+          "id": "bei-patientenanzahl-3-fahrzeug-gegen",
+          "label": "bei Patientenanzahl 3, Fahrzeug gegen Fahrrad",
+          "ziel": "rd.29.29d02i-2",
+          "aussage": "bei Patientenanzahl 3, Fahrzeug gegen Fahrrad"
+        },
+        {
+          "id": "bei-patientenanzahl-5-fahrzeug-gegen",
+          "label": "bei Patientenanzahl ≥ 5, Fahrzeug gegen Fahrrad",
+          "ziel": "rd.29.29d02i-3",
+          "aussage": "bei Patientenanzahl ≥ 5, Fahrzeug gegen Fahrrad"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-fahrzeug",
+          "label": "bei Patientenanzahl unbekannt, Fahrzeug gegen Fahrrad",
+          "ziel": "rd.29.29d02i-4",
+          "aussage": "bei Patientenanzahl unbekannt, Fahrzeug gegen Fahrrad"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre, Fahrzeug gegen Fahrrad",
+          "ziel": "rd.29.29d02i-5",
+          "aussage": "bei Patientenalter älter 12 Jahre, Fahrzeug gegen Fahrrad",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-fahrzeug",
+          "label": "bei Patientenalter bis 12 Jahre, Fahrzeug gegen Fahrrad",
+          "ziel": "rd.29.29d02i-6",
+          "aussage": "bei Patientenalter bis 12 Jahre, Fahrzeug gegen Fahrrad",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-fahrzeug",
+          "label": "bei Patientenalter unbekannt, Fahrzeug gegen Fahrrad",
+          "ziel": "rd.29.29d02i-5",
+          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Fahrrad"
+        },
+        {
+          "id": "bei-patientenanzahl-4-fahrzeug-gegen",
+          "label": "bei Patientenanzahl 4, Fahrzeug gegen Fahrrad",
+          "ziel": "rd.29.29d02i-7",
+          "aussage": "bei Patientenanzahl 4, Fahrzeug gegen Fahrrad"
+        },
+        {
+          "id": "bei-patientenanzahl-1-offenes",
+          "label": "bei Patientenanzahl 1, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)",
+          "ziel": "rd.29.29d02k",
+          "aussage": "bei Patientenanzahl 1, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)"
+        },
+        {
+          "id": "bei-patientenanzahl-2-offenes",
+          "label": "bei Patientenanzahl 2, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)",
+          "ziel": "rd.29.29d02k-2",
+          "aussage": "bei Patientenanzahl 2, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)"
+        },
+        {
+          "id": "bei-patientenanzahl-3-offenes",
+          "label": "bei Patientenanzahl 3, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)",
+          "ziel": "rd.29.29d02k-3",
+          "aussage": "bei Patientenanzahl 3, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)"
+        },
+        {
+          "id": "bei-patientenanzahl-4-offenes",
+          "label": "bei Patientenanzahl ≥ 4, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)",
+          "ziel": "rd.29.29d02k-4",
+          "aussage": "bei Patientenanzahl ≥ 4, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-offenes",
+          "label": "bei Patientenanzahl unbekannt, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)",
+          "ziel": "rd.29.29d02k",
+          "aussage": "bei Patientenanzahl unbekannt, Offenes Geländefahrzeug (ATV, Quad, Buggy usw.)/Schneemobil (Skidoo)"
+        },
+        {
+          "id": "bei-patientenanzahl-2-fahrzeug-gegen-2",
+          "label": "bei Patientenanzahl 2, Fahrzeug gegen Motorrad",
+          "ziel": "rd.29.29d02l",
+          "aussage": "bei Patientenanzahl 2, Fahrzeug gegen Motorrad"
+        },
+        {
+          "id": "bei-patientenanzahl-3-fahrzeug-gegen-2",
+          "label": "bei Patientenanzahl 3, Fahrzeug gegen Motorrad",
+          "ziel": "rd.29.29d02l-2",
+          "aussage": "bei Patientenanzahl 3, Fahrzeug gegen Motorrad"
+        },
+        {
+          "id": "bei-patientenanzahl-5-fahrzeug-gegen-2",
+          "label": "bei Patientenanzahl ≥ 5, Fahrzeug gegen Motorrad",
+          "ziel": "rd.29.29d02l-3",
+          "aussage": "bei Patientenanzahl ≥ 5, Fahrzeug gegen Motorrad"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-fahrzeug-2",
+          "label": "bei Patientenanzahl unbekannt, Fahrzeug gegen Motorrad",
+          "ziel": "rd.29.29d02l-4",
+          "aussage": "bei Patientenanzahl unbekannt, Fahrzeug gegen Motorrad"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-2",
+          "label": "bei Patientenalter älter 12 Jahre, Fahrzeug gegen Motorrad",
+          "ziel": "rd.29.29d02l-5",
+          "aussage": "bei Patientenalter älter 12 Jahre, Fahrzeug gegen Motorrad",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-fahrzeug-2",
+          "label": "bei Patientenalter bis 12 Jahre, Fahrzeug gegen Motorrad",
+          "ziel": "rd.29.29d02l-5",
+          "aussage": "bei Patientenalter bis 12 Jahre, Fahrzeug gegen Motorrad",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-fahrzeug-2",
+          "label": "bei Patientenalter unbekannt, Fahrzeug gegen Motorrad",
+          "ziel": "rd.29.29d02l-5",
+          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Motorrad"
+        },
+        {
+          "id": "bei-patientenanzahl-4-fahrzeug-gegen-2",
+          "label": "bei Patientenanzahl 4, Fahrzeug gegen Motorrad",
+          "ziel": "rd.29.29d02l-6",
+          "aussage": "bei Patientenanzahl 4, Fahrzeug gegen Motorrad"
+        },
+        {
+          "id": "bei-patientenanzahl-2-fahrzeug-gegen-3",
+          "label": "bei Patientenanzahl 2, Fahrzeug gegen Fußgänger",
+          "ziel": "rd.29.29d02m",
+          "aussage": "bei Patientenanzahl 2, Fahrzeug gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-3-fahrzeug-gegen-3",
+          "label": "bei Patientenanzahl 3, Fahrzeug gegen Fußgänger",
+          "ziel": "rd.29.29d02m-2",
+          "aussage": "bei Patientenanzahl 3, Fahrzeug gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-4-fahrzeug-gegen-3",
+          "label": "bei Patientenanzahl 4, Fahrzeug gegen Fußgänger",
+          "ziel": "rd.29.29d02m-3",
+          "aussage": "bei Patientenanzahl 4, Fahrzeug gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-5-fahrzeug-gegen-3",
+          "label": "bei Patientenanzahl ≥ 5, Fahrzeug gegen Fußgänger",
+          "ziel": "rd.29.29d02m-4",
+          "aussage": "bei Patientenanzahl ≥ 5, Fahrzeug gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-fahrzeug-3",
+          "label": "bei Patientenanzahl unbekannt, Fahrzeug gegen Fußgänger",
+          "ziel": "rd.29.29d02m-5",
+          "aussage": "bei Patientenanzahl unbekannt, Fahrzeug gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenalter-aelter-12-jahre-3",
+          "label": "bei Patientenalter älter 12 Jahre, Fahrzeug gegen Fußgänger",
+          "ziel": "rd.29.29d02m-5",
+          "aussage": "bei Patientenalter älter 12 Jahre, Fahrzeug gegen Fußgänger",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre-fahrzeug-3",
+          "label": "bei Patientenalter bis 12 Jahre, Fahrzeug gegen Fußgänger",
+          "ziel": "rd.29.29d02m-6",
+          "aussage": "bei Patientenalter bis 12 Jahre, Fahrzeug gegen Fußgänger",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt-fahrzeug-3",
+          "label": "bei Patientenalter unbekannt, Fahrzeug gegen Fußgänger",
+          "ziel": "rd.29.29d02m-5",
+          "aussage": "bei Patientenalter unbekannt, Fahrzeug gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-1",
+          "label": "bei Patientenanzahl 1, Herausgeschleuderte Person (auch Motorrad)",
+          "ziel": "rd.29.29d02n",
+          "aussage": "bei Patientenanzahl 1, Herausgeschleuderte Person (auch Motorrad)"
+        },
+        {
+          "id": "bei-patientenanzahl-2",
+          "label": "bei Patientenanzahl 2, Herausgeschleuderte Person (auch Motorrad)",
+          "ziel": "rd.29.29d02n-2",
+          "aussage": "bei Patientenanzahl 2, Herausgeschleuderte Person (auch Motorrad)"
+        },
+        {
+          "id": "bei-patientenanzahl-3",
+          "label": "bei Patientenanzahl 3, Herausgeschleuderte Person (auch Motorrad)",
+          "ziel": "rd.29.29d02n-3",
+          "aussage": "bei Patientenanzahl 3, Herausgeschleuderte Person (auch Motorrad)"
+        },
+        {
+          "id": "bei-patientenanzahl-4",
+          "label": "bei Patientenanzahl ≥ 4, Herausgeschleuderte Person (auch Motorrad)",
+          "ziel": "rd.29.29d02n-4",
+          "aussage": "bei Patientenanzahl ≥ 4, Herausgeschleuderte Person (auch Motorrad)"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt",
+          "label": "bei Patientenanzahl unbekannt, Herausgeschleuderte Person (auch Motorrad)",
+          "ziel": "rd.29.29d02n",
+          "aussage": "bei Patientenanzahl unbekannt, Herausgeschleuderte Person (auch Motorrad)"
+        },
+        {
+          "id": "bei-patientenanzahl-1-jetski-motorboot",
+          "label": "bei Patientenanzahl 1, Jetski, Motorboot",
+          "ziel": "rd.29.29d02o",
+          "aussage": "bei Patientenanzahl 1, Jetski, Motorboot"
+        },
+        {
+          "id": "bei-patientenanzahl-2-jetski-motorboot",
+          "label": "bei Patientenanzahl 2, Jetski, Motorboot",
+          "ziel": "rd.29.29d02o-2",
+          "aussage": "bei Patientenanzahl 2, Jetski, Motorboot"
+        },
+        {
+          "id": "bei-patientenanzahl-3-jetski-motorboot",
+          "label": "bei Patientenanzahl 3, Jetski, Motorboot",
+          "ziel": "rd.29.29d02o-3",
+          "aussage": "bei Patientenanzahl 3, Jetski, Motorboot"
+        },
+        {
+          "id": "bei-patientenanzahl-4-jetski-motorboot",
+          "label": "bei Patientenanzahl ≥ 4, Jetski, Motorboot",
+          "ziel": "rd.29.29d02o-4",
+          "aussage": "bei Patientenanzahl ≥ 4, Jetski, Motorboot"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-jetski",
+          "label": "bei Patientenanzahl unbekannt, Jetski, Motorboot",
+          "ziel": "rd.29.29d02o-5",
+          "aussage": "bei Patientenanzahl unbekannt, Jetski, Motorboot"
+        },
+        {
+          "id": "bei-patientenanzahl-1-ueberschlag",
+          "label": "bei Patientenanzahl 1, Überschlag",
+          "ziel": "rd.29.29d02p",
+          "aussage": "bei Patientenanzahl 1, Überschlag"
+        },
+        {
+          "id": "bei-patientenanzahl-2-ueberschlag",
+          "label": "bei Patientenanzahl 2, Überschlag",
+          "ziel": "rd.29.29d02p-2",
+          "aussage": "bei Patientenanzahl 2, Überschlag"
+        },
+        {
+          "id": "bei-patientenanzahl-3-ueberschlag",
+          "label": "bei Patientenanzahl 3, Überschlag",
+          "ziel": "rd.29.29d02p-3",
+          "aussage": "bei Patientenanzahl 3, Überschlag"
+        },
+        {
+          "id": "bei-patientenanzahl-4-ueberschlag",
+          "label": "bei Patientenanzahl ≥ 4, Überschlag",
+          "ziel": "rd.29.29d02p-4",
+          "aussage": "bei Patientenanzahl ≥ 4, Überschlag"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-2",
+          "label": "bei Patientenanzahl unbekannt, Überschlag",
+          "ziel": "rd.29.29d02p",
+          "aussage": "bei Patientenanzahl unbekannt, Überschlag"
+        },
+        {
+          "id": "bei-patientenanzahl-1-fahrzeugabsturz",
+          "label": "bei Patientenanzahl 1, Fahrzeugabsturz von Brücke/Anhöhe",
+          "ziel": "rd.29.29d02q",
+          "aussage": "bei Patientenanzahl 1, Fahrzeugabsturz von Brücke/Anhöhe"
+        },
+        {
+          "id": "bei-patientenanzahl-2-fahrzeugabsturz",
+          "label": "bei Patientenanzahl 2, Fahrzeugabsturz von Brücke/Anhöhe",
+          "ziel": "rd.29.29d02q-2",
+          "aussage": "bei Patientenanzahl 2, Fahrzeugabsturz von Brücke/Anhöhe"
+        },
+        {
+          "id": "bei-patientenanzahl-3-fahrzeugabsturz",
+          "label": "bei Patientenanzahl ≥ 3, Fahrzeugabsturz von Brücke/Anhöhe",
+          "ziel": "rd.29.29d02q-2",
+          "aussage": "bei Patientenanzahl ≥ 3, Fahrzeugabsturz von Brücke/Anhöhe"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-3",
+          "label": "bei Patientenanzahl unbekannt, Fahrzeugabsturz von Brücke/Anhöhe",
+          "ziel": "rd.29.29d02q",
+          "aussage": "bei Patientenanzahl unbekannt, Fahrzeugabsturz von Brücke/Anhöhe"
+        },
+        {
+          "id": "bei-patientenanzahl-1-moeglicher-tod-am",
+          "label": "bei Patientenanzahl 1, Möglicher Tod am Unfallort",
+          "ziel": "rd.29.29d02r",
+          "aussage": "bei Patientenanzahl 1, Möglicher Tod am Unfallort"
+        },
+        {
+          "id": "bei-patientenanzahl-2-moeglicher-tod-am",
+          "label": "bei Patientenanzahl 2, Möglicher Tod am Unfallort",
+          "ziel": "rd.29.29d02r-2",
+          "aussage": "bei Patientenanzahl 2, Möglicher Tod am Unfallort"
+        },
+        {
+          "id": "bei-patientenanzahl-3-moeglicher-tod-am",
+          "label": "bei Patientenanzahl ≥ 3, Möglicher Tod am Unfallort",
+          "ziel": "rd.29.29d02r-3",
+          "aussage": "bei Patientenanzahl ≥ 3, Möglicher Tod am Unfallort"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-moeglicher",
+          "label": "bei Patientenanzahl unbekannt, Möglicher Tod am Unfallort",
+          "ziel": "rd.29.29d02r",
+          "aussage": "bei Patientenanzahl unbekannt, Möglicher Tod am Unfallort"
+        },
+        {
+          "id": "bei-patientenanzahl-1-sinkendes-fahrzeug",
+          "label": "bei Patientenanzahl 1, Sinkendes Fahrzeug/Fahrzeug in Hochwasser",
+          "ziel": "rd.29.29d02s",
+          "aussage": "bei Patientenanzahl 1, Sinkendes Fahrzeug/Fahrzeug in Hochwasser"
+        },
+        {
+          "id": "bei-patientenanzahl-2-sinkendes-fahrzeug",
+          "label": "bei Patientenanzahl 2, Sinkendes Fahrzeug/Fahrzeug in Hochwasser",
+          "ziel": "rd.29.29d02s-2",
+          "aussage": "bei Patientenanzahl 2, Sinkendes Fahrzeug/Fahrzeug in Hochwasser"
+        },
+        {
+          "id": "bei-patientenanzahl-3-sinkendes-fahrzeug",
+          "label": "bei Patientenanzahl ≥ 3, Sinkendes Fahrzeug/Fahrzeug in Hochwasser",
+          "ziel": "rd.29.29d02s-3",
+          "aussage": "bei Patientenanzahl ≥ 3, Sinkendes Fahrzeug/Fahrzeug in Hochwasser"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-sinkendes",
+          "label": "bei Patientenanzahl unbekannt, Sinkendes Fahrzeug/Fahrzeug in Hochwasser",
+          "ziel": "rd.29.29d02s",
+          "aussage": "bei Patientenanzahl unbekannt, Sinkendes Fahrzeug/Fahrzeug in Hochwasser"
+        },
+        {
+          "id": "bei-patientenanzahl-1-zug-strassenbahn",
+          "label": "bei Patientenanzahl 1, Zug/Straßenbahn gegen Fußgänger",
+          "ziel": "rd.29.29d02t",
+          "aussage": "bei Patientenanzahl 1, Zug/Straßenbahn gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-2-zug-strassenbahn",
+          "label": "bei Patientenanzahl 2, Zug/Straßenbahn gegen Fußgänger",
+          "ziel": "rd.29.29d02t-2",
+          "aussage": "bei Patientenanzahl 2, Zug/Straßenbahn gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-4-zug-strassenbahn",
+          "label": "bei Patientenanzahl ≥ 4, Zug/Straßenbahn gegen Fußgänger",
+          "ziel": "rd.29.29d02t-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Zug/Straßenbahn gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-unbekannt-zug",
+          "label": "bei Patientenanzahl unbekannt, Zug/Straßenbahn gegen Fußgänger",
+          "ziel": "rd.29.29d02t",
+          "aussage": "bei Patientenanzahl unbekannt, Zug/Straßenbahn gegen Fußgänger"
+        },
+        {
+          "id": "bei-patientenanzahl-3-zug-strassenbahn",
+          "label": "bei Patientenanzahl 3, Zug/Straßenbahn gegen Fußgänger",
+          "ziel": "rd.29.29d02t-4",
+          "aussage": "bei Patientenanzahl 3, Zug/Straßenbahn gegen Fußgänger"
+        }
+      ]
+    },
+    "rd.29.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29d03u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29d03v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d03x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d03y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d03y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d03y-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29d04u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29d04v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d04x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d04y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d04y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d04y-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29d05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29d05u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29d05v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d05x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d05y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d05y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d05y-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k15": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29d06",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29d06u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29d06v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d06x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d06y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d06y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d06y-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k16": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29d07",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29d07u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29d07v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d07x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d07y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d07y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d07y-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k17": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29d08",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29d08u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29d08v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d08x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d08y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d08y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d08y-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k18": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29d09",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29d09u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29d09v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d09x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-2-mehrere-patienten",
+          "label": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d09y",
+          "aussage": "bei Patientenanzahl 2, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-3-mehrere-patienten",
+          "label": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d09y-2",
+          "aussage": "bei Patientenanzahl 3, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "bei-patientenanzahl-4-mehrere-patienten",
+          "label": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29d09y-3",
+          "aussage": "bei Patientenanzahl ≥ 4, Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.k19": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.29.29o01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten",
+          "label": "Unbekannte Anzahl von Patienten",
+          "ziel": "rd.29.29o01u",
+          "aussage": "Unbekannte Anzahl von Patienten"
+        },
+        {
+          "id": "mehrere-patienten",
+          "label": "Mehrere Patienten",
+          "ziel": "rd.29.29o01v",
+          "aussage": "Mehrere Patienten"
+        },
+        {
+          "id": "unbekannte-anzahl-von-patienten-und",
+          "label": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29o01x",
+          "aussage": "Unbekannte Anzahl von Patienten und zusätzliche Rettungskräfte erforderlich"
+        },
+        {
+          "id": "mehrere-patienten-und-zusaetzliche",
+          "label": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich",
+          "ziel": "rd.29.29o01y",
+          "aussage": "Mehrere Patienten und zusätzliche Rettungskräfte erforderlich"
+        }
+      ]
+    },
+    "rd.29.29a00": {
+      "code": "29A00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29a00u": {
+      "code": "29A00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29a00v": {
+      "code": "29A00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29a00x": {
+      "code": "29A00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29a00y": {
+      "code": "29A00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29b00": {
+      "code": "29B00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29b00u": {
+      "code": "29B00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29b00v": {
+      "code": "29B00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29b00x": {
+      "code": "29B00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29b00y": {
+      "code": "29B00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29d00": {
+      "code": "29D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29d00u": {
+      "code": "29D00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29d00v": {
+      "code": "29D00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29d00x": {
+      "code": "29D00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29d00y": {
+      "code": "29D00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29d00y-2": {
+      "code": "29D00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29d00y-3": {
+      "code": "29D00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, 4 Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29d00y-4": {
+      "code": "29D00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "VU, mehr als 4 Verletzte",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.29.29a01": {
+      "code": "29A01",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Leichte Verletzung nach VU",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a01u": {
+      "code": "29A01U",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Leichte Verletzung nach VU",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a01v": {
+      "code": "29A01V",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Leichte Verletzung nach VU",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a01x": {
+      "code": "29A01X",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Leichte Verletzung nach VU",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a01y": {
+      "code": "29A01Y",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Leichte Verletzung nach VU",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a02": {
+      "code": "29A02",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a02u": {
+      "code": "29A02U",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a02v": {
+      "code": "29A02V",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a02x": {
+      "code": "29A02X",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29a02y": {
+      "code": "29A02Y",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, keine weiteren Angaben über Verletzte",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b01": {
+      "code": "29B01",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b01u": {
+      "code": "29B01U",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b01v": {
+      "code": "29B01V",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b01x": {
+      "code": "29B01X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b01y": {
+      "code": "29B01Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b01y-2": {
+      "code": "29B01Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b01y-3": {
+      "code": "29B01Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b01y-4": {
+      "code": "29B01Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b02": {
+      "code": "29B02",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b02u": {
+      "code": "29B02U",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b02v": {
+      "code": "29B02V",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b02x": {
+      "code": "29B02X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b02y": {
+      "code": "29B02Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b02y-2": {
+      "code": "29B02Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b02y-3": {
+      "code": "29B02Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b02y-4": {
+      "code": "29B02Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b03": {
+      "code": "29B03",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b03u": {
+      "code": "29B03U",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b03v": {
+      "code": "29B03V",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b03x": {
+      "code": "29B03X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b03y": {
+      "code": "29B03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b03y-2": {
+      "code": "29B03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b03y-3": {
+      "code": "29B03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b03y-4": {
+      "code": "29B03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b04": {
+      "code": "29B04",
+      "kategorie": "RD3C.",
+      "anlass": "VU mit geringem Unfallmechanismus",
+      "stichwort": "RD3C."
+    },
+    "rd.29.29b04u": {
+      "code": "29B04U",
+      "kategorie": "RD3C.",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD3C."
+    },
+    "rd.29.29b04v": {
+      "code": "29B04V",
+      "kategorie": "RD3C.",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD3C."
+    },
+    "rd.29.29b04x": {
+      "code": "29B04X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b04y": {
+      "code": "29B04Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b04y-2": {
+      "code": "29B04Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b04y-3": {
+      "code": "29B04Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b04y-4": {
+      "code": "29B04Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b05": {
+      "code": "29B05",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, unbekannter Zustand",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b05u": {
+      "code": "29B05U",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b05v": {
+      "code": "29B05V",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b05x": {
+      "code": "29B05X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b05y": {
+      "code": "29B05Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b05y-2": {
+      "code": "29B05Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b05y-3": {
+      "code": "29B05Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b05y-4": {
+      "code": "29B05Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b06": {
+      "code": "29B06",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU mit verletzter Person",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b06u": {
+      "code": "29B06U",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b06v": {
+      "code": "29B06V",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29b06x": {
+      "code": "29B06X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b06y": {
+      "code": "29B06Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b06y-2": {
+      "code": "29B06Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b06y-3": {
+      "code": "29B06Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29b06y-4": {
+      "code": "29B06Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01a": {
+      "code": "29D01a",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Flugzeugabsturz, Kleinflugzeug",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01a-2": {
+      "code": "29D01a",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Flugzeugabsturz, mehr als 5 Passagiere",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01a-3": {
+      "code": "29D01a",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Flugzeugabsturz",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01b": {
+      "code": "29D01b",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Busunfall, 1 Verletzte",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d01b-2": {
+      "code": "29D01b",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Busunfall",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d01b-3": {
+      "code": "29D01b",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Busunfall, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01b-4": {
+      "code": "29D01b",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Busunfall, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01b-5": {
+      "code": "29D01b",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Busunfall, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01c": {
+      "code": "29D01c",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "U-Bahn-Unfall, weniger 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01c-2": {
+      "code": "29D01c",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "U-Bahn-Unfall, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01c-3": {
+      "code": "29D01c",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "U-Bahn-Unfall",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01d": {
+      "code": "29D01d",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Passagierzug-Unfall, weniger 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01d-2": {
+      "code": "29D01d",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Passagierzug-Unfall, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01d-3": {
+      "code": "29D01d",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Passagierzug-Unfall",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01e": {
+      "code": "29D01e",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Wasserfahrzeug, weniger 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01e-2": {
+      "code": "29D01e",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Wasserfahrzeug, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01e-3": {
+      "code": "29D01e",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Wasserfahrzeug",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01f": {
+      "code": "29D01f",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Verkehrsunfall - MASSENKARAMBOLAGE",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01g": {
+      "code": "29D01g",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Straßenbahnunfall, 1 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01g-2": {
+      "code": "29D01g",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Straßenbahnunfall, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01g-3": {
+      "code": "29D01g",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Straßenbahnunfall, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01g-4": {
+      "code": "29D01g",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Straßenbahnunfall, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01g-5": {
+      "code": "29D01g",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Straßenbahnunfall",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01h": {
+      "code": "29D01h",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Fahrzeug gegen Gebäude gefahren, 1 Verletzter",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d01h-2": {
+      "code": "29D01h",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Gebäude gefahren, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01h-3": {
+      "code": "29D01h",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Gebäude gefahren, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01h-4": {
+      "code": "29D01h",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Gebäude gefahren, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d01h-5": {
+      "code": "29D01h",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Fahrzeug gegen Gebäude gefahren",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02i": {
+      "code": "29D02i",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Fahrrad, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02i-2": {
+      "code": "29D02i",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Fahrrad, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02i-3": {
+      "code": "29D02i",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Fahrrad, mehr als 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02i-4": {
+      "code": "29D02i",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Fahrzeug gegen Fahrrad",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.29.29d02i-5": {
+      "code": "29D02i",
+      "kategorie": "RD2C FR.",
+      "anlass": "Fahrzeug gegen Fahrrad",
+      "stichwort": "RD2C FR."
+    },
+    "rd.29.29d02i-6": {
+      "code": "29D02i",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Fahrzeug gegen Fahrrad, Kind",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.29.29d02i-7": {
+      "code": "29D02i",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Fahrrad, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02k": {
+      "code": "29D02k",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU mit offenem Geländefahrzeug",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02k-2": {
+      "code": "29D02k",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit offenem Geländefahrzeug, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02k-3": {
+      "code": "29D02k",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit offenem Geländefahrzeug, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02k-4": {
+      "code": "29D02k",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit offenem Geländefahrzeug, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02l": {
+      "code": "29D02l",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Motorrad, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02l-2": {
+      "code": "29D02l",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Motorrad, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02l-3": {
+      "code": "29D02l",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Motorrad, mehr als 5 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02l-4": {
+      "code": "29D02l",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Fahrzeug gegen Motorrad",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02l-5": {
+      "code": "29D02l",
+      "kategorie": "RD_BT_RTW",
+      "anlass": "Fahrzeug gegen Motorrad",
+      "stichwort": "RD_BT_RTW"
+    },
+    "rd.29.29d02l-6": {
+      "code": "29D02l",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Motorrad, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02m": {
+      "code": "29D02m",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Fußgänger, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02m-2": {
+      "code": "29D02m",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Fußgänger, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02m-3": {
+      "code": "29D02m",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Fußgänger, 4 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02m-4": {
+      "code": "29D02m",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Fahrzeug gegen Fußgänger, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02m-5": {
+      "code": "29D02m",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Fahrzeug gegen Fußgänger",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.29.29d02m-6": {
+      "code": "29D02m",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Fahrzeug gegen Kind",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.29.29d02n": {
+      "code": "29D02n",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, herausgeschleuderte Person",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02n-2": {
+      "code": "29D02n",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, herausgeschleuderte Person, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02n-3": {
+      "code": "29D02n",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, herausgeschleuderte Person, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02n-4": {
+      "code": "29D02n",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, herausgeschleuderte Person, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02o": {
+      "code": "29D02o",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU mit Motorboot/ Jetski",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02o-2": {
+      "code": "29D02o",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Motorboot/ Jetski, 2 Verletze",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02o-3": {
+      "code": "29D02o",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Motorboot/ Jetski, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02o-4": {
+      "code": "29D02o",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Motorboot/ Jetski, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02o-5": {
+      "code": "29D02o",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU mit Motorboot/Jetski",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02p": {
+      "code": "29D02p",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, Fahrzeug überschlagen",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02p-2": {
+      "code": "29D02p",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, Fahrzeug überschlagen, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02p-3": {
+      "code": "29D02p",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, Fahrzeug überschlagen, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02p-4": {
+      "code": "29D02p",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, Fahrzeug überschlagen, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02q": {
+      "code": "29D02q",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, Fahrzeug von Brücke gestürzt",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02q-2": {
+      "code": "29D02q",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, Fahrzeug von Brücke gestürzt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02r": {
+      "code": "29D02r",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, möglicher Tod am Unfallort",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02r-2": {
+      "code": "29D02r",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, möglicher Tod am Unfallort, 2 Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02r-3": {
+      "code": "29D02r",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, möglicher Tod am Unfallort, mehrere Personen",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02s": {
+      "code": "29D02s",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, Fahrzeug in Gewässer gestürzt",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02s-2": {
+      "code": "29D02s",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, Fahrzeug in Gewässer gestürzt, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02s-3": {
+      "code": "29D02s",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, Fahrzeug in Gewässer gestürzt, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02t": {
+      "code": "29D02t",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Person gegen Schienenfahrzeug",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d02t-2": {
+      "code": "29D02t",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Person gegen Schienenfahrzeug, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02t-3": {
+      "code": "29D02t",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Person gegen Schienenfahrzeug, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d02t-4": {
+      "code": "29D02t",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Person gegen Schienenfahrzeug, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d03": {
+      "code": "29D03",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU mit hoher Geschwindigkeit",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d03u": {
+      "code": "29D03U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU mit hoher Geschwindigkeit",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d03v": {
+      "code": "29D03V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit hoher Geschwindigkeit, mehrere Betroffene",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d03x": {
+      "code": "29D03X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit hoher Geschwindigkeit, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d03y": {
+      "code": "29D03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit hoher Geschwindigkeit, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d03y-2": {
+      "code": "29D03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit hoher Geschwindigkeit, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d03y-3": {
+      "code": "29D03Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit hoher Geschwindigkeit, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d04": {
+      "code": "29D04",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU mit Gefahrgut",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d04u": {
+      "code": "29D04U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU mit Gefahrgut, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d04v": {
+      "code": "29D04V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Gefahrgut, mehrere Betroffene",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d04x": {
+      "code": "29D04X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Gefahrgut, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d04y": {
+      "code": "29D04Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Gefahrgut, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d04y-2": {
+      "code": "29D04Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Gefahrgut, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d04y-3": {
+      "code": "29D04Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU mit Gefahrgut, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d05": {
+      "code": "29D05",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Eingeklemmte Person nach VU",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d05u": {
+      "code": "29D05U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Eingeklemmte Person nach VU",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d05v": {
+      "code": "29D05V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person nach VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d05x": {
+      "code": "29D05X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person nach VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d05y": {
+      "code": "29D05Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person nach VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d05y-2": {
+      "code": "29D05Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person nach VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d05y-3": {
+      "code": "29D05Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Eingeklemmte Person nach VU, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d06": {
+      "code": "29D06",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Kreislaufstillstand nach VU",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d06u": {
+      "code": "29D06U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d06v": {
+      "code": "29D06V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d06x": {
+      "code": "29D06X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d06y": {
+      "code": "29D06Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d06y-2": {
+      "code": "29D06Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d06y-3": {
+      "code": "29D06Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d07": {
+      "code": "29D07",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstlos nach VU",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d07u": {
+      "code": "29D07U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d07v": {
+      "code": "29D07V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d07x": {
+      "code": "29D07X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d07y": {
+      "code": "29D07Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d07y-2": {
+      "code": "29D07Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d07y-3": {
+      "code": "29D07Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d08": {
+      "code": "29D08",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstseinstrübung mit Atembeschwerden nach VU",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d08u": {
+      "code": "29D08U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d08v": {
+      "code": "29D08V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d08x": {
+      "code": "29D08X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d08y": {
+      "code": "29D08Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d08y-2": {
+      "code": "29D08Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d08y-3": {
+      "code": "29D08Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d09": {
+      "code": "29D09",
+      "kategorie": "RD_BT_NA",
+      "anlass": "Bewusstseinstrübung nach VU",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d09u": {
+      "code": "29D09U",
+      "kategorie": "RD_BT_NA",
+      "anlass": "VU, unbekannte Anzahl Betroffener",
+      "stichwort": "RD_BT_NA"
+    },
+    "rd.29.29d09v": {
+      "code": "29D09V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Betroffene",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d09x": {
+      "code": "29D09X",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehrere Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d09y": {
+      "code": "29D09Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 2 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d09y-2": {
+      "code": "29D09Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29d09y-3": {
+      "code": "29D09Y",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "VU, mehr als 3 Verletzte",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.29.29o01": {
+      "code": "29O01",
+      "kategorie": "RD5.",
+      "anlass": "VU ohne Verletzte",
+      "stichwort": "RD5."
+    },
+    "rd.29.29o01u": {
+      "code": "29O01U",
+      "kategorie": "RD5.",
+      "anlass": "VU ohne Verletzte",
+      "stichwort": "RD5."
+    },
+    "rd.29.29o01v": {
+      "code": "29O01V",
+      "kategorie": "RD5.",
+      "anlass": "VU ohne Verletzte",
+      "stichwort": "RD5."
+    },
+    "rd.29.29o01x": {
+      "code": "29O01X",
+      "kategorie": "RD5.",
+      "anlass": "VU ohne Verletzte",
+      "stichwort": "RD5."
+    },
+    "rd.29.29o01y": {
+      "code": "29O01Y",
+      "kategorie": "RD5.",
+      "anlass": "VU ohne Verletzte",
+      "stichwort": "RD5."
+    }
+  }
+}

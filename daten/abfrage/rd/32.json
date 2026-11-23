@@ -1,0 +1,300 @@
+{
+  "knoten": {
+    "rd.32.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "stehen-sitzen-sich-bewegen-oder-sprechen",
+          "label": "Stehen, sitzen, sich bewegen oder sprechen",
+          "ziel": "rd.32.k1",
+          "aussage": "Stehen, sitzen, sich bewegen oder sprechen"
+        },
+        {
+          "id": "medizinische-notfallmeldung-durch",
+          "label": "Medizinische Notfallmeldung durch Notrufsystem (keine Patienteninformation)",
+          "ziel": "rd.32.k2",
+          "aussage": "Medizinische Notfallmeldung durch Notrufsystem (keine Patienteninformation)"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.32.k3",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "fremdsprachiger-anrufer-wurde-nicht",
+          "label": "Fremdsprachiger Anrufer wurde nicht verstanden (kein Dolmetscher in der Leitstelle)",
+          "ziel": "rd.32.k4",
+          "aussage": "Fremdsprachiger Anrufer wurde nicht verstanden (kein Dolmetscher in der Leitstelle)"
+        },
+        {
+          "id": "medizinische-notfallmeldung-medizinische",
+          "label": "Medizinische Notfallmeldung/Medizinische Erkrankung mit wenigen Informationen",
+          "ziel": "rd.32.k5",
+          "aussage": "Medizinische Notfallmeldung/Medizinische Erkrankung mit wenigen Informationen"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.32.32d00",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "fragliche-lebensbedrohung",
+          "label": "FRAGLICHE LEBENSBEDROHUNG",
+          "ziel": "rd.32.32d01",
+          "aussage": "FRAGLICHE LEBENSBEDROHUNG"
+        }
+      ]
+    },
+    "rd.32.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-13-bis-17-jahre",
+          "label": "bei Patientenalter 13 bis 17 Jahre",
+          "ziel": "rd.32.32b01",
+          "aussage": "bei Patientenalter 13 bis 17 Jahre",
+          "alter": {
+            "min": 13,
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.32.32b01-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.32.32b01",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre",
+          "label": "bei Patientenalter älter 17 Jahre",
+          "ziel": "rd.32.32b01",
+          "aussage": "bei Patientenalter älter 17 Jahre",
+          "alter": {
+            "min": 18
+          }
+        }
+      ]
+    },
+    "rd.32.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-13-bis-17-jahre",
+          "label": "bei Patientenalter 13 bis 17 Jahre",
+          "ziel": "rd.32.32b02",
+          "aussage": "bei Patientenalter 13 bis 17 Jahre",
+          "alter": {
+            "min": 13,
+            "max": 17
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.32.32b02-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.32.32b02",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "bei-patientenalter-aelter-17-jahre",
+          "label": "bei Patientenalter älter 17 Jahre",
+          "ziel": "rd.32.32b02",
+          "aussage": "bei Patientenalter älter 17 Jahre",
+          "alter": {
+            "min": 18
+          }
+        }
+      ]
+    },
+    "rd.32.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.32.32b03",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.32.32b03-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.32.32b03",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.32.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.32.32b04",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.32.32b04-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.32.32b04",
+          "aussage": "bei Patientenalter unbekannt"
+        }
+      ]
+    },
+    "rd.32.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "bei-patientenalter-aelter-12-jahre",
+          "label": "bei Patientenalter älter 12 Jahre",
+          "ziel": "rd.32.32b05",
+          "aussage": "bei Patientenalter älter 12 Jahre",
+          "alter": {
+            "min": 13
+          }
+        },
+        {
+          "id": "bei-patientenalter-bis-12-jahre",
+          "label": "bei Patientenalter bis 12 Jahre",
+          "ziel": "rd.32.32b05-2",
+          "aussage": "bei Patientenalter bis 12 Jahre",
+          "alter": {
+            "max": 12
+          }
+        },
+        {
+          "id": "bei-patientenalter-unbekannt",
+          "label": "bei Patientenalter unbekannt",
+          "ziel": "rd.32.32b05",
+          "aussage": "bei Patientenalter unbekannt"
+        },
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.32.32d02",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.32.32d00": {
+      "code": "32D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Unklares Notfallgeschehen",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.32.32d01": {
+      "code": "32D01",
+      "kategorie": "RD2C FR.",
+      "anlass": "Unklares Notfallgeschehen, Lebensbedrohung nicht auszuschließen",
+      "stichwort": "RD2C FR."
+    },
+    "rd.32.32b01": {
+      "code": "32B01",
+      "kategorie": "RD3B.",
+      "anlass": "Unklares Notfallgeschehen",
+      "stichwort": "RD3B."
+    },
+    "rd.32.32b01-2": {
+      "code": "32B01",
+      "kategorie": "RD3C.",
+      "anlass": "Unklares Notfallgeschehen, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.32.32b02": {
+      "code": "32B02",
+      "kategorie": "RD3B.",
+      "anlass": "Notrufmeldung durch Notrufsystem, keine Patienteninformationen verfügbar",
+      "stichwort": "RD3B."
+    },
+    "rd.32.32b02-2": {
+      "code": "32B02",
+      "kategorie": "RD3C.",
+      "anlass": "Notrufmeldung durch Notrufsystem, Kind, keine Patienteninformationen verfügbar",
+      "stichwort": "RD3C."
+    },
+    "rd.32.32b03": {
+      "code": "32B03",
+      "kategorie": "RD3B.",
+      "anlass": "Unklares Notfallgeschehen",
+      "stichwort": "RD3B."
+    },
+    "rd.32.32b03-2": {
+      "code": "32B03",
+      "kategorie": "RD3C.",
+      "anlass": "Unklares Notfallgeschehen, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.32.32b04": {
+      "code": "32B04",
+      "kategorie": "RD3B.",
+      "anlass": "Unklares Notfallgeschehen, fremdsprachiger Anrufer konnte nicht verstanden werden",
+      "stichwort": "RD3B."
+    },
+    "rd.32.32b04-2": {
+      "code": "32B04",
+      "kategorie": "RD3C.",
+      "anlass": "Unklares Notfallgeschehen, Kind, fremdsprachiger Anrufer konnte nicht verstanden werden",
+      "stichwort": "RD3C."
+    },
+    "rd.32.32b05": {
+      "code": "32B05",
+      "kategorie": "RD3B.",
+      "anlass": "Medizinische Notfallmeldung/Medizinische Erkrankung mit wenigen Informationen",
+      "stichwort": "RD3B."
+    },
+    "rd.32.32b05-2": {
+      "code": "32B05",
+      "kategorie": "RD3C.",
+      "anlass": "Medizinische Notfallmeldung/Medizinische Erkrankung mit wenigen Informationen, Kind",
+      "stichwort": "RD3C."
+    },
+    "rd.32.32d02": {
+      "code": "32D02",
+      "kategorie": "RD2C.",
+      "anlass": "Medizinische Notfallmeldung/Medizinische Erkrankung mit wenigen Informationen",
+      "stichwort": "RD2C."
+    }
+  }
+}

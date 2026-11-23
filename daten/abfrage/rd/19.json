@@ -1,0 +1,218 @@
+{
+  "knoten": {
+    "rd.19.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "puls-50-und-puls-130-ohne",
+          "label": "Puls ≥ 50 und Puls < 130 (ohne Notfallleitsymptome)",
+          "ziel": "rd.19.19a01",
+          "aussage": "Puls ≥ 50 und Puls < 130 (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "brustschmerzen-beschwerden-in-der-brust",
+          "label": "Brustschmerzen/Beschwerden in der Brust < 35 (ohne Notfallleitsymptome)",
+          "ziel": "rd.19.19a02",
+          "aussage": "Brustschmerzen/Beschwerden in der Brust < 35 (ohne Notfallleitsymptome)",
+          "alter": {
+            "max": 34
+          }
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.19.k1",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "implantierter-defibrillator-loest-aus",
+          "label": "IMPLANTIERTER DEFIBRILLATOR löst aus",
+          "ziel": "rd.19.19c01",
+          "aussage": "IMPLANTIERTER DEFIBRILLATOR löst aus"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.19.19c02",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "brustschmerzen-beschwerden-in-der-brust-2",
+          "label": "Brustschmerzen/Beschwerden in der Brust ≥ 35",
+          "ziel": "rd.19.19c03",
+          "aussage": "Brustschmerzen/Beschwerden in der Brust ≥ 35",
+          "alter": {
+            "min": 35
+          }
+        },
+        {
+          "id": "bekanntes-herzleiden",
+          "label": "Bekanntes Herzleiden",
+          "ziel": "rd.19.19c04",
+          "aussage": "Bekanntes Herzleiden"
+        },
+        {
+          "id": "kokainmissbrauch",
+          "label": "Kokainmissbrauch",
+          "ziel": "rd.19.19c05",
+          "aussage": "Kokainmissbrauch"
+        },
+        {
+          "id": "puls-50-oder-puls-130-ohne",
+          "label": "Puls < 50 oder Puls ≥ 130 (ohne Notfallleitsymptome)",
+          "ziel": "rd.19.19c06",
+          "aussage": "Puls < 50 oder Puls ≥ 130 (ohne Notfallleitsymptome)"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.19.19c07",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.19.19d01",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "sprachschwierigkeiten-zwischen",
+          "label": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN",
+          "ziel": "rd.19.19d02",
+          "aussage": "SPRACHSCHWIERIGKEITEN ZWISCHEN ATEMZÜGEN"
+        },
+        {
+          "id": "veraenderte-hautfarbe",
+          "label": "VERÄNDERTE HAUTFARBE",
+          "ziel": "rd.19.19d03",
+          "aussage": "VERÄNDERTE HAUTFARBE"
+        },
+        {
+          "id": "kaltschweissig",
+          "label": "Kaltschweißig",
+          "ziel": "rd.19.19d04",
+          "aussage": "Kaltschweißig"
+        },
+        {
+          "id": "soeben-wiederbelebt-und-oder",
+          "label": "Soeben wiederbelebt und/oder defibrilliert (äußerlich)",
+          "ziel": "rd.19.19d05",
+          "aussage": "Soeben wiederbelebt und/oder defibrilliert (äußerlich)"
+        }
+      ]
+    },
+    "rd.19.19a01": {
+      "code": "19A01",
+      "kategorie": "RD5.",
+      "anlass": "19A01",
+      "stichwort": "RD5."
+    },
+    "rd.19.19a02": {
+      "code": "19A02",
+      "kategorie": "RD4C.",
+      "anlass": "Herz- und Brustbeschwerden ohne Notfallleitsymptome",
+      "stichwort": "RD4C."
+    },
+    "rd.19.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.19.19c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.19.19d00",
+          "aussage": "ohne weitere Angabe"
+        }
+      ]
+    },
+    "rd.19.19c01": {
+      "code": "19C01",
+      "kategorie": "RD2NC.",
+      "anlass": "Implantierter Defibrillator hat ausgelöst",
+      "stichwort": "RD2NC."
+    },
+    "rd.19.19c02": {
+      "code": "19C02",
+      "kategorie": "RD2C.",
+      "anlass": "Herz- und Atembeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.19.19c03": {
+      "code": "19C03",
+      "kategorie": "RD2C.",
+      "anlass": "Herzbeschwerden mit Brustschmerzen",
+      "stichwort": "RD2C."
+    },
+    "rd.19.19c04": {
+      "code": "19C04",
+      "kategorie": "RD3C.",
+      "anlass": "Herzbeschwerden bei bekanntem Herzleiden",
+      "stichwort": "RD3C."
+    },
+    "rd.19.19c05": {
+      "code": "19C05",
+      "kategorie": "RD3C.",
+      "anlass": "Herzbeschwerden nach Kokainmissbrauch",
+      "stichwort": "RD3C."
+    },
+    "rd.19.19c06": {
+      "code": "19C06",
+      "kategorie": "RD3C.",
+      "anlass": "Herzbeschwerden bei auffälliger Pulsmessung",
+      "stichwort": "RD3C."
+    },
+    "rd.19.19c07": {
+      "code": "19C07",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand mit Herzbeschwerden",
+      "stichwort": "RD2C."
+    },
+    "rd.19.19d01": {
+      "code": "19D01",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Herzbeschwerden mit Bewusstseinstrübung",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.19.19d02": {
+      "code": "19D02",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Herzbeschwerden mit Sprechdyspnoe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.19.19d03": {
+      "code": "19D03",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Herzbeschwerden mit veränderter Hautfarbe",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.19.19d04": {
+      "code": "19D04",
+      "kategorie": "RD2NC.",
+      "anlass": "Herzbeschwerden mit Kaltschweißigkeit",
+      "stichwort": "RD2NC."
+    },
+    "rd.19.19d05": {
+      "code": "19D05",
+      "kategorie": "RD1NC FR.",
+      "anlass": "Patient wurde soeben wiederbelebt/ defibrilliert",
+      "stichwort": "RD1NC FR."
+    },
+    "rd.19.19c00": {
+      "code": "19C00",
+      "kategorie": "RD3C.",
+      "anlass": "Aufwertung Herzbeschwerden",
+      "stichwort": "RD3C."
+    },
+    "rd.19.19d00": {
+      "code": "19D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Herzbeschwerden",
+      "stichwort": "Aufwertung entfällt."
+    }
+  }
+}

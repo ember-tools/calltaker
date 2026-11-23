@@ -1,0 +1,2843 @@
+{
+  "knoten": {
+    "rd.24.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.k1"
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.24.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "blutungen-fehlgeburt-drohende-fehlgeburt",
+          "label": "Blutungen/FEHLGEBURT/DROHENDE FEHLGEBURT im 1. TRIMESTER",
+          "ziel": "rd.24.k3",
+          "aussage": "Blutungen/FEHLGEBURT/DROHENDE FEHLGEBURT im 1. TRIMESTER"
+        },
+        {
+          "id": "situation-mit-einer-bestaetigten",
+          "label": "Situation mit einer bestätigten TOTGEBURT (≥ 22 Wochen/5 Monate und keine Komplikationen)",
+          "ziel": "rd.24.k4",
+          "aussage": "Situation mit einer bestätigten TOTGEBURT (≥ 22 Wochen/5 Monate und keine Komplikationen)"
+        },
+        {
+          "id": "wehen-keine-unmittelbar-bevorstehende",
+          "label": "Wehen (keine unmittelbar bevorstehende Geburt, ≥ 22 Wochen/5 Monate)",
+          "ziel": "rd.24.k5",
+          "aussage": "Wehen (keine unmittelbar bevorstehende Geburt, ≥ 22 Wochen/5 Monate)"
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.24.k6",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        },
+        {
+          "id": "blutungen-im-spaeten-2-trimester",
+          "label": "Blutungen im SPÄTEN 2. TRIMESTER",
+          "ziel": "rd.24.k7",
+          "aussage": "Blutungen im SPÄTEN 2. TRIMESTER"
+        },
+        {
+          "id": "blutungen-fehlgeburt-drohende-fehlgeburt-2",
+          "label": "Blutungen/FEHLGEBURT/DROHENDE FEHLGEBURT im frühen 2. TRIMESTER",
+          "ziel": "rd.24.k8",
+          "aussage": "Blutungen/FEHLGEBURT/DROHENDE FEHLGEBURT im frühen 2. TRIMESTER"
+        },
+        {
+          "id": "starke-blutung-im-1-trimester",
+          "label": "STARKE Blutung im 1. Trimester",
+          "ziel": "rd.24.k9",
+          "aussage": "STARKE Blutung im 1. Trimester"
+        },
+        {
+          "id": "bauchschmerzen-kraempfe-22-wochen-5",
+          "label": "Bauchschmerzen/-krämpfe (<22 Wochen/5 Monate und kein Fötus, Gewebe oder Blut)",
+          "ziel": "rd.24.k10",
+          "aussage": "Bauchschmerzen/-krämpfe (<22 Wochen/5 Monate und kein Fötus, Gewebe oder Blut)"
+        },
+        {
+          "id": "baby-ist-geboren-keine-komplikationen",
+          "label": "Baby ist geboren (keine Komplikationen)",
+          "ziel": "rd.24.k11",
+          "aussage": "Baby ist geboren (keine Komplikationen)"
+        },
+        {
+          "id": "fehllage-oder-nabelschnurvorfall",
+          "label": "FEHLLAGE oder NABELSCHNURVORFALL",
+          "ziel": "rd.24.k12",
+          "aussage": "FEHLLAGE oder NABELSCHNURVORFALL"
+        },
+        {
+          "id": "kopf-sichtbar-geboren",
+          "label": "Kopf sichtbar/geboren",
+          "ziel": "rd.24.k13",
+          "aussage": "Kopf sichtbar/geboren"
+        },
+        {
+          "id": "unmittelbar-bevorstehende-geburt-6",
+          "label": "UNMITTELBAR BEVORSTEHENDE Geburt (≥ 6 Monate/24 Wochen)",
+          "ziel": "rd.24.k14",
+          "aussage": "UNMITTELBAR BEVORSTEHENDE Geburt (≥ 6 Monate/24 Wochen)"
+        },
+        {
+          "id": "unmittelbar-bevorstehende-geburt-22",
+          "label": "UNMITTELBAR BEVORSTEHENDE Geburt (≥ 22 Wochen/ 5 Monate)",
+          "ziel": "rd.24.k15",
+          "aussage": "UNMITTELBAR BEVORSTEHENDE Geburt (≥ 22 Wochen/ 5 Monate)"
+        },
+        {
+          "id": "blutungen-im-3-trimester",
+          "label": "Blutungen im 3. TRIMESTER",
+          "ziel": "rd.24.k16",
+          "aussage": "Blutungen im 3. TRIMESTER"
+        },
+        {
+          "id": "erwartete-komplikationen",
+          "label": "ERWARTETE KOMPLIKATIONEN",
+          "ziel": "rd.24.k17",
+          "aussage": "ERWARTETE KOMPLIKATIONEN"
+        },
+        {
+          "id": "baby-ist-geboren-komplikationen-beim",
+          "label": "Baby ist geboren (Komplikationen beim Baby)",
+          "ziel": "rd.24.k18",
+          "aussage": "Baby ist geboren (Komplikationen beim Baby)"
+        },
+        {
+          "id": "baby-ist-geboren-komplikationen-bei-der",
+          "label": "Baby ist geboren (Komplikationen bei der Mutter)",
+          "ziel": "rd.24.k19",
+          "aussage": "Baby ist geboren (Komplikationen bei der Mutter)"
+        },
+        {
+          "id": "moegliche-fehlgeburt-mit-lebenszeichen",
+          "label": "Mögliche Fehlgeburt mit Lebenszeichen",
+          "ziel": "rd.24.k20",
+          "aussage": "Mögliche Fehlgeburt mit Lebenszeichen"
+        },
+        {
+          "id": "fruchtwasserabgang-keine-wehen-sichtbare",
+          "label": "Fruchtwasserabgang (keine Wehen/sichtbare Körperteile des Babys)",
+          "ziel": "rd.24.k21",
+          "aussage": "Fruchtwasserabgang (keine Wehen/sichtbare Körperteile des Babys)"
+        }
+      ]
+    },
+    "rd.24.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24b00a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24b00b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24b00c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b00d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24b00e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b00f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24b00g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b00h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24b00u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24b00v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24a00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24a00a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24a00b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24a00c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24a00d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24a00e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24a00f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24a00g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24a00h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24a00m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24a00u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24a00v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        },
+        {
+          "id": "ohne-weitere-angabe-2",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24b00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrlingsgeburt-2",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24b00m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "ohne-weitere-angabe-3",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24c00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen-2",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24c00a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt-2",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24c00b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt-2",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24c00c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt-2",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24c00d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt-2",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24c00e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt-2",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24c00f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt-2",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24c00g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt-2",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24c00h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt-3",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24c00m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-2",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24c00u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und-2",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24c00v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        },
+        {
+          "id": "ohne-weitere-angabe-4",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d00",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen-3",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d00a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt-3",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d00b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt-3",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d00c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt-3",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d00d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt-3",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d00e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt-3",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d00f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt-3",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d00g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt-3",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d00h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt-4",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d00m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-3",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d00u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und-3",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d00v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24a01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24a01m",
+          "aussage": "Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24a02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24a02a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24a02b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24a02c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24a02d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24a02e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24a02f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24a02g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24a02h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24a02m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24a02u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24a02v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24b01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24b01a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24b01b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24b01c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b01d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24b01e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b01f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24b01g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b01h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24b01m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24b01u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24b01v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24b02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24b02a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24b02b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24b02c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b02d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24b02e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b02f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24b02g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24b02h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24b02m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24b02u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24b02v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24c01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24c01g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24c01h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24c01m",
+          "aussage": "Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24c02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24c02m",
+          "aussage": "Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24c03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24c03m",
+          "aussage": "Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24c04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24c04m",
+          "aussage": "Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24c05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24c05a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24c05b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24c05c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24c05d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24c05e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24c05f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24c05g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24c05h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24c05m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24c05u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24c05v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d01a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d01b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d01c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d01d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d01e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d01f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d01g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d01h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d01m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d01u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d01v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d02",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d02a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d02b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d02c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d02d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d02e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d02f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d02g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d02h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d02m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d02u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d02v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d03",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d03m",
+          "aussage": "Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k15": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d03a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d03b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d03c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d03d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d03e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d03f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d03g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d03h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d03u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d03v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k16": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d04",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d04a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d04b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d04c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d04d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d04e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d04f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d04g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d04h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d04m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d04u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d04v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k17": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d05",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d05a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d05b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d05c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d05d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d05e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d05f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d05g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d05h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d05m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d05u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d05v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k18": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d06",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d06a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d06b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d06c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d06d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d06e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d06f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d06g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d06h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d06m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d06u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d06v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k19": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d07",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d07a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d07b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d07c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d07d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d07e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d07f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d07g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d07h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d07m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d07u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d07v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k20": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24d08",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24d08a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24d08b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24d08c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d08d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24d08e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d08f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24d08g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24d08h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24d08m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24d08u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24d08v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.k21": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "ohne-weitere-angabe",
+          "label": "ohne weitere Angabe",
+          "ziel": "rd.24.24o01",
+          "aussage": "ohne weitere Angabe"
+        },
+        {
+          "id": "voll-ausgetragen",
+          "label": "VOLL AUSGETRAGEN",
+          "ziel": "rd.24.24o01a",
+          "aussage": "VOLL AUSGETRAGEN"
+        },
+        {
+          "id": "voll-ausgetragen-und-mehrlingsgeburt",
+          "label": "VOLL AUSGETRAGEN und Mehrlingsgeburt",
+          "ziel": "rd.24.24o01b",
+          "aussage": "VOLL AUSGETRAGEN und Mehrlingsgeburt"
+        },
+        {
+          "id": "spaete-fruehgeburt",
+          "label": "SPÄTE FRÜHGEBURT",
+          "ziel": "rd.24.24o01c",
+          "aussage": "SPÄTE FRÜHGEBURT"
+        },
+        {
+          "id": "spaete-fruehgeburt-und-mehrlingsgeburt",
+          "label": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24o01d",
+          "aussage": "SPÄTE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "fruehe-fruehgeburt",
+          "label": "FRÜHE FRÜHGEBURT",
+          "ziel": "rd.24.24o01e",
+          "aussage": "FRÜHE FRÜHGEBURT"
+        },
+        {
+          "id": "fruehe-fruehgeburt-und-mehrlingsgeburt",
+          "label": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24o01f",
+          "aussage": "FRÜHE FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "extreme-fruehgeburt",
+          "label": "EXTREME FRÜHGEBURT",
+          "ziel": "rd.24.24o01g",
+          "aussage": "EXTREME FRÜHGEBURT"
+        },
+        {
+          "id": "extreme-fruehgeburt-und-mehrlingsgeburt",
+          "label": "EXTREME FRÜHGEBURT und Mehrlingsgeburt",
+          "ziel": "rd.24.24o01h",
+          "aussage": "EXTREME FRÜHGEBURT und Mehrlingsgeburt"
+        },
+        {
+          "id": "mehrlingsgeburt",
+          "label": "Mehrlingsgeburt",
+          "ziel": "rd.24.24o01m",
+          "aussage": "Mehrlingsgeburt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt",
+          "label": "Schwangerschaftswoche unbekannt",
+          "ziel": "rd.24.24o01u",
+          "aussage": "Schwangerschaftswoche unbekannt"
+        },
+        {
+          "id": "schwangerschaftswoche-unbekannt-und",
+          "label": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+          "ziel": "rd.24.24o01v",
+          "aussage": "Schwangerschaftswoche unbekannt und Mehrlingsgeburt"
+        }
+      ]
+    },
+    "rd.24.24": {
+      "code": "24",
+      "kategorie": "RD2C.",
+      "anlass": "Anforderung durch Hebamme - Dringlicher Transport",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b00a": {
+      "code": "24B00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00b": {
+      "code": "24B00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00c": {
+      "code": "24B00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00d": {
+      "code": "24B00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00e": {
+      "code": "24B00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00f": {
+      "code": "24B00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00g": {
+      "code": "24B00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00h": {
+      "code": "24B00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00u": {
+      "code": "24B00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00v": {
+      "code": "24B00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00": {
+      "code": "24A00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Fruchtwasserabgang",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00a": {
+      "code": "24A00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00b": {
+      "code": "24A00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00c": {
+      "code": "24A00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00d": {
+      "code": "24A00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00e": {
+      "code": "24A00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00f": {
+      "code": "24A00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00g": {
+      "code": "24A00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00h": {
+      "code": "24A00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00m": {
+      "code": "24A00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Fruchtwasserabgang",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00u": {
+      "code": "24A00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a00v": {
+      "code": "24A00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00": {
+      "code": "24B00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Schwangerschaft/ Geburt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24b00m": {
+      "code": "24B00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Schwangerschaft/ Geburt - Mehrlingsgeburt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00": {
+      "code": "24C00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Schwangerschaft/ Geburt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00a": {
+      "code": "24C00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00b": {
+      "code": "24C00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00c": {
+      "code": "24C00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00d": {
+      "code": "24C00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00e": {
+      "code": "24C00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00f": {
+      "code": "24C00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00g": {
+      "code": "24C00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00h": {
+      "code": "24C00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00m": {
+      "code": "24C00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Schwangerschaft/ Geburt - Mehrlingsgeburt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00u": {
+      "code": "24C00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24c00v": {
+      "code": "24C00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00": {
+      "code": "24D00",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Schwangerschaft/ Geburt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00a": {
+      "code": "24D00A",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00b": {
+      "code": "24D00B",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00c": {
+      "code": "24D00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00d": {
+      "code": "24D00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00e": {
+      "code": "24D00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00f": {
+      "code": "24D00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00g": {
+      "code": "24D00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00h": {
+      "code": "24D00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00m": {
+      "code": "24D00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Schwangerschaft/ Geburt - Mehrlingsgeburt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00u": {
+      "code": "24D00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24d00v": {
+      "code": "24D00V",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.24.24a01": {
+      "code": "24A01",
+      "kategorie": "RD4B.",
+      "anlass": "Blutungen/ Fehlgeburt im 1. Trimester",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24a01m": {
+      "code": "24A01M",
+      "kategorie": "RD4B.",
+      "anlass": "Blutungen/ Fehlgeburt im 1. Trimester - Mehrlingsgeburt",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24a02": {
+      "code": "24A02",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02a": {
+      "code": "24A02A",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - ab 37. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02b": {
+      "code": "24A02B",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02c": {
+      "code": "24A02C",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02d": {
+      "code": "24A02D",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02e": {
+      "code": "24A02E",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02f": {
+      "code": "24A02F",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02g": {
+      "code": "24A02G",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02h": {
+      "code": "24A02H",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02m": {
+      "code": "24A02M",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02u": {
+      "code": "24A02U",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24a02v": {
+      "code": "24A02V",
+      "kategorie": "RD2NC.",
+      "anlass": "Situation mit einer bestätigten Totgeburt - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24b01": {
+      "code": "24B01",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01a": {
+      "code": "24B01A",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - ab 37. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01b": {
+      "code": "24B01B",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01c": {
+      "code": "24B01C",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01d": {
+      "code": "24B01D",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01e": {
+      "code": "24B01E",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01f": {
+      "code": "24B01F",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01g": {
+      "code": "24B01G",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01h": {
+      "code": "24B01H",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01m": {
+      "code": "24B01M",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01u": {
+      "code": "24B01U",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b01v": {
+      "code": "24B01V",
+      "kategorie": "RD2C.",
+      "anlass": "Wehentätigkeit - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02": {
+      "code": "24B02",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02a": {
+      "code": "24B02A",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - ab 37. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02b": {
+      "code": "24B02B",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02c": {
+      "code": "24B02C",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02d": {
+      "code": "24B02D",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02e": {
+      "code": "24B02E",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02f": {
+      "code": "24B02F",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02g": {
+      "code": "24B02G",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02h": {
+      "code": "24B02H",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02m": {
+      "code": "24B02M",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand - Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02u": {
+      "code": "24B02U",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24b02v": {
+      "code": "24B02V",
+      "kategorie": "RD2C.",
+      "anlass": "Unbekannter Zustand bei Schwangerschaft - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24c01": {
+      "code": "24C01",
+      "kategorie": "RD2C.",
+      "anlass": "Blutungen im späten 2. Trimester",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24c01g": {
+      "code": "24C01G",
+      "kategorie": "RD2C.",
+      "anlass": "Blutungen im späten 2. Trimester - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24c01h": {
+      "code": "24C01H",
+      "kategorie": "RD2C.",
+      "anlass": "Blutungen im späten 2. Trimester - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24c01m": {
+      "code": "24C01M",
+      "kategorie": "RD2C.",
+      "anlass": "Blutungen im späten 2. Trimester - Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24c02": {
+      "code": "24C02",
+      "kategorie": "RD3C.",
+      "anlass": "Blutungen im frühen 2. Trimester",
+      "stichwort": "RD3C."
+    },
+    "rd.24.24c02m": {
+      "code": "24C02M",
+      "kategorie": "RD3C.",
+      "anlass": "Blutungen im frühen 2. Trimester - Mehrlingsgeburt",
+      "stichwort": "RD3C."
+    },
+    "rd.24.24c03": {
+      "code": "24C03",
+      "kategorie": "RD3B.",
+      "anlass": "Starke Blutungen im 1. Trimester",
+      "stichwort": "RD3B."
+    },
+    "rd.24.24c03m": {
+      "code": "24C03M",
+      "kategorie": "RD3B.",
+      "anlass": "Starke Blutungen im 1. Trimester - Mehrlingsgeburt",
+      "stichwort": "RD3B."
+    },
+    "rd.24.24c04": {
+      "code": "24C04",
+      "kategorie": "RD3C.",
+      "anlass": "Bauchschmerzen bei Schwangerschaft",
+      "stichwort": "RD3C."
+    },
+    "rd.24.24c04m": {
+      "code": "24C04M",
+      "kategorie": "RD3C.",
+      "anlass": "Bauchschmerzen bei Schwangerschaft - Mehrlingsgeburt",
+      "stichwort": "RD3C."
+    },
+    "rd.24.24c05": {
+      "code": "24C05",
+      "kategorie": "RD2NC.",
+      "anlass": "Baby ist geboren - keine Komplikationen",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24c05a": {
+      "code": "24C05A",
+      "kategorie": "RD2NC.",
+      "anlass": "Baby ist geboren - keine Komplikationen - ab 37. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24c05b": {
+      "code": "24C05B",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - keine Komplikationen - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24c05c": {
+      "code": "24C05C",
+      "kategorie": "RD2NC.",
+      "anlass": "Baby ist geboren - keine Komplikationen - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24c05d": {
+      "code": "24C05D",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - keine Komplikationen - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24c05e": {
+      "code": "24C05E",
+      "kategorie": "RD2NC.",
+      "anlass": "Baby ist geboren - keine Komplikationen - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24c05f": {
+      "code": "24C05F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - keine Komplikationen - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24c05g": {
+      "code": "24C05G",
+      "kategorie": "RD2NC.",
+      "anlass": "Baby ist geboren - keine Komplikationen - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24c05h": {
+      "code": "24C05H",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - keine Komplikationen - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24c05m": {
+      "code": "24C05M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - keine Komplikationen - Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24c05u": {
+      "code": "24C05U",
+      "kategorie": "RD2NC.",
+      "anlass": "Baby ist geboren - keine Komplikationen - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24c05v": {
+      "code": "24C05V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - keine Komplikationen - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d01": {
+      "code": "24D01",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Fehllage/ Nabelschnurvorfall bei Geburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01a": {
+      "code": "24D01A",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - ab 37. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01b": {
+      "code": "24D01B",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01c": {
+      "code": "24D01C",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01d": {
+      "code": "24D01D",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01e": {
+      "code": "24D01E",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01f": {
+      "code": "24D01F",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01g": {
+      "code": "24D01G",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01h": {
+      "code": "24D01H",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01m": {
+      "code": "24D01M",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Fehllage/ Nabelschnurvorfall bei Geburt - Mehrlinge",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01u": {
+      "code": "24D01U",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d01v": {
+      "code": "24D01V",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Geburt - Fehllage/ Nabelschnurvorfall - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d02": {
+      "code": "24D02",
+      "kategorie": "RD2NC FR.",
+      "anlass": "Geburt, Kopf ist sichtbar/ geboren",
+      "stichwort": "RD2NC FR."
+    },
+    "rd.24.24d02a": {
+      "code": "24D02A",
+      "kategorie": "RD2NC.",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - ab 37. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24d02b": {
+      "code": "24D02B",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d02c": {
+      "code": "24D02C",
+      "kategorie": "RD2NC.",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24d02d": {
+      "code": "24D02D",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d02e": {
+      "code": "24D02E",
+      "kategorie": "RD2NC.",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24d02f": {
+      "code": "24D02F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d02g": {
+      "code": "24D02G",
+      "kategorie": "RD2NC.",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24d02h": {
+      "code": "24D02H",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d02m": {
+      "code": "24D02M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Geburt, Kopf ist sichtbar/ geboren - Mehrlinge",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d02u": {
+      "code": "24D02U",
+      "kategorie": "RD2NC.",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD2NC."
+    },
+    "rd.24.24d02v": {
+      "code": "24D02V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Geburt - Kopf sichtbar/ geboren - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d03": {
+      "code": "24D03",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bevorstehende Geburt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.24.24d03m": {
+      "code": "24D03M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Bevorstehende Geburt - Mehrlinge",
+      "stichwort": "RD2C FR."
+    },
+    "rd.24.24d03a": {
+      "code": "24D03A",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - ab 37. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03b": {
+      "code": "24D03B",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03c": {
+      "code": "24D03C",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03d": {
+      "code": "24D03D",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03e": {
+      "code": "24D03E",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03f": {
+      "code": "24D03F",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03g": {
+      "code": "24D03G",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03h": {
+      "code": "24D03H",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03u": {
+      "code": "24D03U",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d03v": {
+      "code": "24D03V",
+      "kategorie": "RD2C.",
+      "anlass": "Bevorstehende Geburt - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04": {
+      "code": "24D04",
+      "kategorie": "RD2C.",
+      "anlass": "Blutung im 3. Trimester",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04a": {
+      "code": "24D04A",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - ab 37. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04b": {
+      "code": "24D04B",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04c": {
+      "code": "24D04C",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04d": {
+      "code": "24D04D",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04e": {
+      "code": "24D04E",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04f": {
+      "code": "24D04F",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04g": {
+      "code": "24D04G",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04h": {
+      "code": "24D04H",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04m": {
+      "code": "24D04M",
+      "kategorie": "RD2C.",
+      "anlass": "Blutung im 3. Trimester - Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04u": {
+      "code": "24D04U",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d04v": {
+      "code": "24D04V",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Blutungen im 3. Trimester - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05": {
+      "code": "24D05",
+      "kategorie": "RD2C.",
+      "anlass": "Schwangerschaftskomplikation",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05a": {
+      "code": "24D05A",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - ab 37. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05b": {
+      "code": "24D05B",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05c": {
+      "code": "24D05C",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05d": {
+      "code": "24D05D",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05e": {
+      "code": "24D05E",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05f": {
+      "code": "24D05F",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05g": {
+      "code": "24D05G",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05h": {
+      "code": "24D05H",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05m": {
+      "code": "24D05M",
+      "kategorie": "RD2C.",
+      "anlass": "Schwangerschaftskomplikation - Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05u": {
+      "code": "24D05U",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d05v": {
+      "code": "24D05V",
+      "kategorie": "RD2C.",
+      "anlass": "Geburt - Schwangerschaftskomplikation - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD2C."
+    },
+    "rd.24.24d06": {
+      "code": "24D06",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Komplikationen bei Neugeborenen",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06a": {
+      "code": "24D06A",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - ab 37. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06b": {
+      "code": "24D06B",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06c": {
+      "code": "24D06C",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06d": {
+      "code": "24D06D",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06e": {
+      "code": "24D06E",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06f": {
+      "code": "24D06F",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06g": {
+      "code": "24D06G",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06h": {
+      "code": "24D06H",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06m": {
+      "code": "24D06M",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Komplikationen bei Neugeborenen - Mehrlinge",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06u": {
+      "code": "24D06U",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d06v": {
+      "code": "24D06V",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Baby ist geboren - Komplikationen beim Baby - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d07": {
+      "code": "24D07",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby geboren, Komplikation bei Mutter",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07a": {
+      "code": "24D07A",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - ab 37. SSW",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07b": {
+      "code": "24D07B",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07c": {
+      "code": "24D07C",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07d": {
+      "code": "24D07D",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07e": {
+      "code": "24D07E",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07f": {
+      "code": "24D07F",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07g": {
+      "code": "24D07G",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07h": {
+      "code": "24D07H",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07m": {
+      "code": "24D07M",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby geboren, Komplikation bei Mutter - Mehrlinge",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07u": {
+      "code": "24D07U",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d07v": {
+      "code": "24D07V",
+      "kategorie": "RD_Mehrere Patienten",
+      "anlass": "Baby ist geboren - Komplikationen bei der Mutter - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD_Mehrere Patienten"
+    },
+    "rd.24.24d08": {
+      "code": "24D08",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08a": {
+      "code": "24D08A",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - ab 37. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08b": {
+      "code": "24D08B",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08c": {
+      "code": "24D08C",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08d": {
+      "code": "24D08D",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08e": {
+      "code": "24D08E",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08f": {
+      "code": "24D08F",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08g": {
+      "code": "24D08G",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08h": {
+      "code": "24D08H",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08m": {
+      "code": "24D08M",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen -Mehrlinge",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08u": {
+      "code": "24D08U",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24d08v": {
+      "code": "24D08V",
+      "kategorie": "RD1NC NNAD.",
+      "anlass": "Mögliche Fehlgeburt mit Lebenszeichen - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD1NC NNAD."
+    },
+    "rd.24.24o01": {
+      "code": "24O01",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01a": {
+      "code": "24O01A",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - ab 37. SSW",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01b": {
+      "code": "24O01B",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - ab 37. SSW und Mehrlingsgeburt",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01c": {
+      "code": "24O01C",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - späte Frühgeburt 33. - 36. SSW",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01d": {
+      "code": "24O01D",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - späte Frühgeburt 33. - 36. SSW und Mehrlingsgeburt",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01e": {
+      "code": "24O01E",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - frühe Frühgeburt 24. - 32. SSW",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01f": {
+      "code": "24O01F",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - frühe Frühgeburt 24. - 32. SSW und Mehrlingsgeburt",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01g": {
+      "code": "24O01G",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - extreme Frühgeburt 22. - 23. SSW",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01h": {
+      "code": "24O01H",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - extreme Frühgeburt 22. - 23. SSW und Mehrlingsgeburt",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01m": {
+      "code": "24O01M",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01u": {
+      "code": "24O01U",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - Schwangerschaftswoche unbekannt",
+      "stichwort": "RD4B."
+    },
+    "rd.24.24o01v": {
+      "code": "24O01V",
+      "kategorie": "RD4B.",
+      "anlass": "Fruchtwasserabgang - Schwangerschaftswoche unbekannt und Mehrlingsgeburt",
+      "stichwort": "RD4B."
+    }
+  }
+}

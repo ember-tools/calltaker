@@ -1,0 +1,245 @@
+{
+  "knoten": {
+    "fw.brand.brand-in-verkehrsanlagen.k0": {
+      "frage": "Wo brennt es?",
+      "antworten": [
+        {
+          "id": "u-bahn-tunnel-oder-bahnhof",
+          "label": "U-Bahn-Tunnel oder -Bahnhof",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.k1",
+          "aussage": "Der Brand liegt in einer U-Bahn-Anlage."
+        },
+        {
+          "id": "eisenbahntunnel-oder-bahnhof",
+          "label": "Eisenbahntunnel oder Bahnhof",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.k2",
+          "aussage": "Der Brand liegt in einer Eisenbahnanlage."
+        },
+        {
+          "id": "strassentunnel",
+          "label": "Straßentunnel",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.k3",
+          "aussage": "Der Brand liegt in einem Straßentunnel."
+        },
+        {
+          "id": "parkhaus-tiefgarage",
+          "label": "Parkhaus, Tiefgarage",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.k4",
+          "aussage": "Der Brand liegt in einem Parkhaus oder einer Tiefgarage."
+        }
+      ]
+    },
+    "fw.brand.brand-in-verkehrsanlagen.k1": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68c01",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68d01",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68e01",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68d01u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-verkehrsanlagen.k2": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68c02",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68d02",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68e02",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68d02u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-verkehrsanlagen.k3": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68c03",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68d03",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68e03",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68d03u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-verkehrsanlagen.k4": {
+      "frage": "Sind Menschen in Gefahr?",
+      "antworten": [
+        {
+          "id": "niemand-in-gefahr",
+          "label": "Niemand in Gefahr",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68c04",
+          "aussage": "Menschen sind nach derzeitiger Kenntnis nicht in Gefahr."
+        },
+        {
+          "id": "personen-im-gefahrenbereich",
+          "label": "Personen im Gefahrenbereich",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68d04",
+          "aussage": "Personen befinden sich im Gefahrenbereich."
+        },
+        {
+          "id": "menschenleben-in-gefahr-rettung",
+          "label": "Menschenleben in Gefahr, Rettung erforderlich",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68e04",
+          "aussage": "Menschenleben sind in Gefahr, eine Menschenrettung ist erforderlich."
+        },
+        {
+          "id": "unbekannt-ob-menschen-betroffen-sind",
+          "label": "Unbekannt, ob Menschen betroffen sind",
+          "ziel": "fw.brand.brand-in-verkehrsanlagen.68d04u",
+          "aussage": "Ob Menschen betroffen sind, ist nicht bekannt."
+        }
+      ]
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68c01": {
+      "code": "68C01",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand in U-Bahn-Anlage",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68d01": {
+      "code": "68D01",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand in U-Bahn-Anlage - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68e01": {
+      "code": "68E01",
+      "kategorie": "BRAND 10",
+      "anlass": "Brand in U-Bahn-Anlage - Menschenrettung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68d01u": {
+      "code": "68D01U",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand in U-Bahn-Anlage - Betroffenheit unbekannt",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68c02": {
+      "code": "68C02",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand in Bahnanlage",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68d02": {
+      "code": "68D02",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand in Bahnanlage - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68e02": {
+      "code": "68E02",
+      "kategorie": "BRAND 10",
+      "anlass": "Brand in Bahnanlage - Menschenrettung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68d02u": {
+      "code": "68D02U",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand in Bahnanlage - Betroffenheit unbekannt",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68c03": {
+      "code": "68C03",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand im Straßentunnel",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68d03": {
+      "code": "68D03",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand im Straßentunnel - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68e03": {
+      "code": "68E03",
+      "kategorie": "BRAND 10",
+      "anlass": "Brand im Straßentunnel - Menschenrettung",
+      "stichwort": "BRAND 10"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68d03u": {
+      "code": "68D03U",
+      "kategorie": "BRAND 8",
+      "anlass": "Brand im Straßentunnel - Betroffenheit unbekannt",
+      "stichwort": "BRAND 8"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68c04": {
+      "code": "68C04",
+      "kategorie": "BRAND 3",
+      "anlass": "Brand in Tiefgarage",
+      "stichwort": "BRAND 3"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68d04": {
+      "code": "68D04",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand in Tiefgarage - Personen im Gefahrenbereich",
+      "stichwort": "BRAND 4"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68e04": {
+      "code": "68E04",
+      "kategorie": "BRAND 6",
+      "anlass": "Brand in Tiefgarage - Menschenrettung",
+      "stichwort": "BRAND 6"
+    },
+    "fw.brand.brand-in-verkehrsanlagen.68d04u": {
+      "code": "68D04U",
+      "kategorie": "BRAND 4",
+      "anlass": "Brand in Tiefgarage - Betroffenheit unbekannt",
+      "stichwort": "BRAND 4"
+    }
+  }
+}

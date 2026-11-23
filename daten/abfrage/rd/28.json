@@ -1,0 +1,2689 @@
+{
+  "knoten": {
+    "rd.28.k0": {
+      "frage": "Welche Situation trifft zu?",
+      "antworten": [
+        {
+          "id": "normale-atmung-35",
+          "label": "Normale Atmung < 35",
+          "ziel": "rd.28.k1",
+          "aussage": "Normale Atmung < 35",
+          "alter": {
+            "max": 34
+          }
+        },
+        {
+          "id": "aufwertung",
+          "label": "Aufwertung",
+          "ziel": "rd.28.k2",
+          "aussage": "Aufwertung"
+        },
+        {
+          "id": "bewusstseinstruebung",
+          "label": "Bewusstseinstrübung",
+          "ziel": "rd.28.k3",
+          "aussage": "Bewusstseinstrübung"
+        },
+        {
+          "id": "abnorme-atmung",
+          "label": "Abnorme Atmung",
+          "ziel": "rd.28.k4",
+          "aussage": "Abnorme Atmung"
+        },
+        {
+          "id": "ploetzlich-aufgetretene-sprach-lese-oder",
+          "label": "Plötzlich aufgetretene Sprach-, Lese- oder Schreibstörungen",
+          "ziel": "rd.28.k5",
+          "aussage": "Plötzlich aufgetretene Sprach-, Lese- oder Schreibstörungen"
+        },
+        {
+          "id": "ploetzlich-aufgetretene-schwaeche-oder",
+          "label": "Plötzlich aufgetretene Schwäche oder Taubheitsgefühl (auf einer Seite)",
+          "ziel": "rd.28.k6",
+          "aussage": "Plötzlich aufgetretene Schwäche oder Taubheitsgefühl (auf einer Seite)"
+        },
+        {
+          "id": "ploetzlich-aufgetretene",
+          "label": "Plötzlich aufgetretene Lähmungserscheinungen oder „hängende Gesichtshälfte“ (auf einer Seite)",
+          "ziel": "rd.28.k7",
+          "aussage": "Plötzlich aufgetretene Lähmungserscheinungen oder „hängende Gesichtshälfte“ (auf einer Seite)"
+        },
+        {
+          "id": "ploetzlich-aufgetretener-verlust-des",
+          "label": "Plötzlich aufgetretener Verlust des Gleichgewichts oder der Koordination",
+          "ziel": "rd.28.k8",
+          "aussage": "Plötzlich aufgetretener Verlust des Gleichgewichts oder der Koordination"
+        },
+        {
+          "id": "ploetzliche-sehstoerungen",
+          "label": "Plötzliche Sehstörungen",
+          "ziel": "rd.28.k9",
+          "aussage": "Plötzliche Sehstörungen"
+        },
+        {
+          "id": "ploetzlicher-beginn-starker",
+          "label": "Plötzlicher Beginn starker Kopfschmerzen",
+          "ziel": "rd.28.k10",
+          "aussage": "Plötzlicher Beginn starker Kopfschmerzen"
+        },
+        {
+          "id": "schlaganfall-vorgeschichte",
+          "label": "SCHLAGANFALL-Vorgeschichte",
+          "ziel": "rd.28.k11",
+          "aussage": "SCHLAGANFALL-Vorgeschichte"
+        },
+        {
+          "id": "tia-vorgeschichte",
+          "label": "TIA-Vorgeschichte",
+          "ziel": "rd.28.k12",
+          "aussage": "TIA-Vorgeschichte"
+        },
+        {
+          "id": "normale-atmung-35-2",
+          "label": "Normale Atmung ≥ 35",
+          "ziel": "rd.28.k13",
+          "aussage": "Normale Atmung ≥ 35",
+          "alter": {
+            "min": 35
+          }
+        },
+        {
+          "id": "unbekannter-zustand-andere-codes-nicht",
+          "label": "Unbekannter Zustand/Andere Codes nicht zutreffend",
+          "ziel": "rd.28.k14",
+          "aussage": "Unbekannter Zustand/Andere Codes nicht zutreffend"
+        }
+      ]
+    },
+    "rd.28.k1": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28a01c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28a01d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28a01e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28a01f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28a01g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28a01h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28a01i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28a01j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28a01k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28a01l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28a01m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28a01u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28a01x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28a01y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28a01z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k2": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c00c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c00d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c00e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c00f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c00g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c00h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c00i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c00j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c00k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c00l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c00m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c00u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c00x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c00y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c00z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k3": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c01c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c01d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c01e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c01f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c01g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c01h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c01i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c01j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c01k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c01l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c01m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c01u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c01x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c01y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c01z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k4": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c02c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c02d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c02e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c02f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c02g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c02h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c02i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c02j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c02k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c02l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c02m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c02u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c02x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c02y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c02z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k5": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c03c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c03d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c03e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c03f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c03g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c03h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c03i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c03j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c03k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c03l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c03m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c03u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c03x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c03y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c03z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k6": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c04c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c04d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c04e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c04f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c04g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c04h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c04i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c04j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c04k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c04l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c04m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c04u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c04x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c04y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c04z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k7": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c05c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c05d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c05e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c05f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c05g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c05h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c05i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c05j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c05k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c05l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c05m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c05u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c05x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c05y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c05z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k8": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c06c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c06d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c06e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c06f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c06g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c06h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c06i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c06j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c06k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c06l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c06m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c06u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c06x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c06y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c06z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k9": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c07c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c07d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c07e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c07f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c07g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c07h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c07i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c07j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c07k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c07l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c07m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c07u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c07x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c07y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c07z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k10": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c08c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c08d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c08e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c08f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c08g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c08h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c08i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c08j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c08k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c08l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c08m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c08u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c08x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c08y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c08z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k11": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c09c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c09d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c09e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c09f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c09g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c09h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c09i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c09j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c09k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c09l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c09m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c09u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c09x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c09y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c09z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k12": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c10c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c10d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c10e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c10f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c10g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c10h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c10i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c10j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c10k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c10l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c10m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c10u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c10x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c10y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c10z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k13": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c11c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c11d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c11e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c11f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c11g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c11h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c11i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c11j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c11k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c11l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c11m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c11u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c11x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c11y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c11z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.k14": {
+      "frage": "Patientenalter, Patientenanzahl oder Zusatz?",
+      "antworten": [
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c12c",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-2",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c12d",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "unvollstaendige-anzeichen-fuer-einen-3",
+          "label": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c12e",
+          "aussage": "UNVOLLSTÄNDIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall",
+          "label": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c12f",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "mehr-als-t-stunden-seit-dem-einsetzen",
+          "label": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c12g",
+          "aussage": "Mehr als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-2",
+          "label": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c12h",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "starke-anzeichen-fuer-einen-schlaganfall-3",
+          "label": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c12i",
+          "aussage": "STARKE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c12j",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-2",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)",
+          "ziel": "rd.28.28c12k",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (≥ T Stunden)"
+        },
+        {
+          "id": "weniger-als-t-stunden-seit-dem-einsetzen",
+          "label": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome",
+          "ziel": "rd.28.28c12l",
+          "aussage": "Weniger als \"T\" Stunden seit dem Einsetzen der Symptome"
+        },
+        {
+          "id": "eindeutige-anzeichen-fuer-einen-3",
+          "label": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c12m",
+          "aussage": "EINDEUTIGE Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        },
+        {
+          "id": "unbekannt-wann-die-symptome-einsetzten",
+          "label": "Unbekannt wann die Symptome einsetzten",
+          "ziel": "rd.28.28c12u",
+          "aussage": "Unbekannt wann die Symptome einsetzten"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)",
+          "ziel": "rd.28.28c12x",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (< T Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-2",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)",
+          "ziel": "rd.28.28c12y",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (≥ X Stunden)"
+        },
+        {
+          "id": "keine-festgestellt-anzeichen-fuer-einen-3",
+          "label": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)",
+          "ziel": "rd.28.28c12z",
+          "aussage": "Keine festgestellt. Anzeichen für einen Schlaganfall (Unbekannter Zeitraum)"
+        }
+      ]
+    },
+    "rd.28.28a01c": {
+      "code": "28A01C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28a01d": {
+      "code": "28A01D",
+      "kategorie": "RD3C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD3C."
+    },
+    "rd.28.28a01e": {
+      "code": "28A01E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28a01f": {
+      "code": "28A01F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28a01g": {
+      "code": "28A01G",
+      "kategorie": "RD3C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Zeitfenster > 4h",
+      "stichwort": "RD3C."
+    },
+    "rd.28.28a01h": {
+      "code": "28A01H",
+      "kategorie": "RD3C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD3C."
+    },
+    "rd.28.28a01i": {
+      "code": "28A01I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28a01j": {
+      "code": "28A01J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28a01k": {
+      "code": "28A01K",
+      "kategorie": "RD3C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD3C."
+    },
+    "rd.28.28a01l": {
+      "code": "28A01L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28a01m": {
+      "code": "28A01M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28a01u": {
+      "code": "28A01U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28a01x": {
+      "code": "28A01X",
+      "kategorie": "RD3C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD3C."
+    },
+    "rd.28.28a01y": {
+      "code": "28A01Y",
+      "kategorie": "RD3C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD3C."
+    },
+    "rd.28.28a01z": {
+      "code": "28A01Z",
+      "kategorie": "RD3C.",
+      "anlass": "Verd. Schlaganfall | Pat. < 35 Jahre mit normaler Atmung | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD3C."
+    },
+    "rd.28.28c00c": {
+      "code": "28C00C",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00d": {
+      "code": "28C00D",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00e": {
+      "code": "28C00E",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00f": {
+      "code": "28C00F",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00g": {
+      "code": "28C00G",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Zeitfenster > 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00h": {
+      "code": "28C00H",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00i": {
+      "code": "28C00I",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00j": {
+      "code": "28C00J",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00k": {
+      "code": "28C00K",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00l": {
+      "code": "28C00L",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Zeitfenster < 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00m": {
+      "code": "28C00M",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00u": {
+      "code": "28C00U",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Zeitfenster unbekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00x": {
+      "code": "28C00X",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00y": {
+      "code": "28C00Y",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c00z": {
+      "code": "28C00Z",
+      "kategorie": "Aufwertung entfällt.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "Aufwertung entfällt."
+    },
+    "rd.28.28c01c": {
+      "code": "28C01C",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01d": {
+      "code": "28C01D",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01e": {
+      "code": "28C01E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01f": {
+      "code": "28C01F",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01g": {
+      "code": "28C01G",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01h": {
+      "code": "28C01H",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01i": {
+      "code": "28C01I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01j": {
+      "code": "28C01J",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01k": {
+      "code": "28C01K",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01l": {
+      "code": "28C01L",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01m": {
+      "code": "28C01M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01u": {
+      "code": "28C01U",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01x": {
+      "code": "28C01X",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01y": {
+      "code": "28C01Y",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c01z": {
+      "code": "28C01Z",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Bewusstseinstrübung | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02c": {
+      "code": "28C02C",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02d": {
+      "code": "28C02D",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02e": {
+      "code": "28C02E",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02f": {
+      "code": "28C02F",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02g": {
+      "code": "28C02G",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02h": {
+      "code": "28C02H",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02i": {
+      "code": "28C02I",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02j": {
+      "code": "28C02J",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02k": {
+      "code": "28C02K",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02l": {
+      "code": "28C02L",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02m": {
+      "code": "28C02M",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02u": {
+      "code": "28C02U",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02x": {
+      "code": "28C02X",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02y": {
+      "code": "28C02Y",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c02z": {
+      "code": "28C02Z",
+      "kategorie": "RD2C FR.",
+      "anlass": "Verd. Schlaganfall mit Atembeschwerden | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C FR."
+    },
+    "rd.28.28c03c": {
+      "code": "28C03C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03d": {
+      "code": "28C03D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03e": {
+      "code": "28C03E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03f": {
+      "code": "28C03F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03g": {
+      "code": "28C03G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03h": {
+      "code": "28C03H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03i": {
+      "code": "28C03I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03j": {
+      "code": "28C03J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03k": {
+      "code": "28C03K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03l": {
+      "code": "28C03L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03m": {
+      "code": "28C03M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03u": {
+      "code": "28C03U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03x": {
+      "code": "28C03X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03y": {
+      "code": "28C03Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c03z": {
+      "code": "28C03Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit Sprachstörungen | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04c": {
+      "code": "28C04C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04d": {
+      "code": "28C04D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04e": {
+      "code": "28C04E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04f": {
+      "code": "28C04F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04g": {
+      "code": "28C04G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04h": {
+      "code": "28C04H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04i": {
+      "code": "28C04I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04j": {
+      "code": "28C04J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04k": {
+      "code": "28C04K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04l": {
+      "code": "28C04L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04m": {
+      "code": "28C04M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04u": {
+      "code": "28C04U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04x": {
+      "code": "28C04X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04y": {
+      "code": "28C04Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c04z": {
+      "code": "28C04Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Schwäche | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05c": {
+      "code": "28C05C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05d": {
+      "code": "28C05D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05e": {
+      "code": "28C05E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05f": {
+      "code": "28C05F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05g": {
+      "code": "28C05G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05h": {
+      "code": "28C05H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05i": {
+      "code": "28C05I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05j": {
+      "code": "28C05J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05k": {
+      "code": "28C05K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05l": {
+      "code": "28C05L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05m": {
+      "code": "28C05M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05u": {
+      "code": "28C05U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05x": {
+      "code": "28C05X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05y": {
+      "code": "28C05Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c05z": {
+      "code": "28C05Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Lähmungserscheinung | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06c": {
+      "code": "28C06C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06d": {
+      "code": "28C06D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06e": {
+      "code": "28C06E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06f": {
+      "code": "28C06F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06g": {
+      "code": "28C06G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06h": {
+      "code": "28C06H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06i": {
+      "code": "28C06I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06j": {
+      "code": "28C06J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06k": {
+      "code": "28C06K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06l": {
+      "code": "28C06L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06m": {
+      "code": "28C06M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06u": {
+      "code": "28C06U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06x": {
+      "code": "28C06X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06y": {
+      "code": "28C06Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c06z": {
+      "code": "28C06Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Gleichgewichtstörung | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07c": {
+      "code": "28C07C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07d": {
+      "code": "28C07D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07e": {
+      "code": "28C07E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07f": {
+      "code": "28C07F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07g": {
+      "code": "28C07G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07h": {
+      "code": "28C07H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07i": {
+      "code": "28C07I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07j": {
+      "code": "28C07J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07k": {
+      "code": "28C07K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07l": {
+      "code": "28C07L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07m": {
+      "code": "28C07M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07u": {
+      "code": "28C07U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07x": {
+      "code": "28C07X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07y": {
+      "code": "28C07Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c07z": {
+      "code": "28C07Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit plötzlicher Sehstörung | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08c": {
+      "code": "28C08C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08d": {
+      "code": "28C08D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08e": {
+      "code": "28C08E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08f": {
+      "code": "28C08F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08g": {
+      "code": "28C08G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08h": {
+      "code": "28C08H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08i": {
+      "code": "28C08I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08j": {
+      "code": "28C08J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08k": {
+      "code": "28C08K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08l": {
+      "code": "28C08L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08m": {
+      "code": "28C08M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08u": {
+      "code": "28C08U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08x": {
+      "code": "28C08X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08y": {
+      "code": "28C08Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c08z": {
+      "code": "28C08Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall mit starken Kopfschmerzen | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09c": {
+      "code": "28C09C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09d": {
+      "code": "28C09D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09e": {
+      "code": "28C09E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09f": {
+      "code": "28C09F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09g": {
+      "code": "28C09G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09h": {
+      "code": "28C09H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09i": {
+      "code": "28C09I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09j": {
+      "code": "28C09J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09k": {
+      "code": "28C09K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09l": {
+      "code": "28C09L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09m": {
+      "code": "28C09M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09u": {
+      "code": "28C09U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09x": {
+      "code": "28C09X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09y": {
+      "code": "28C09Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c09z": {
+      "code": "28C09Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei Schlaganfall-Vorgeschichte | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10c": {
+      "code": "28C10C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10d": {
+      "code": "28C10D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10e": {
+      "code": "28C10E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10f": {
+      "code": "28C10F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10g": {
+      "code": "28C10G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10h": {
+      "code": "28C10H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10i": {
+      "code": "28C10I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10j": {
+      "code": "28C10J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10k": {
+      "code": "28C10K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10l": {
+      "code": "28C10L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10m": {
+      "code": "28C10M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10u": {
+      "code": "28C10U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10x": {
+      "code": "28C10X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10y": {
+      "code": "28C10Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c10z": {
+      "code": "28C10Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall bei TIA-Vorgeschichte | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11c": {
+      "code": "28C11C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11d": {
+      "code": "28C11D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11e": {
+      "code": "28C11E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11f": {
+      "code": "28C11F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11g": {
+      "code": "28C11G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11h": {
+      "code": "28C11H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11i": {
+      "code": "28C11I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11j": {
+      "code": "28C11J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11k": {
+      "code": "28C11K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11l": {
+      "code": "28C11L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11m": {
+      "code": "28C11M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11u": {
+      "code": "28C11U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11x": {
+      "code": "28C11X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11y": {
+      "code": "28C11Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c11z": {
+      "code": "28C11Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Pat. älter > 35 Jahre mit normaler Atmung | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12c": {
+      "code": "28C12C",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12d": {
+      "code": "28C12D",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12e": {
+      "code": "28C12E",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Unvollständige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12f": {
+      "code": "28C12F",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Starke Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12g": {
+      "code": "28C12G",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12h": {
+      "code": "28C12H",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Starke Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12i": {
+      "code": "28C12I",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Starke Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12j": {
+      "code": "28C12J",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12k": {
+      "code": "28C12K",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12l": {
+      "code": "28C12L",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12m": {
+      "code": "28C12M",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Eindeutige Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12u": {
+      "code": "28C12U",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12x": {
+      "code": "28C12X",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Keine Anzeichen | Zeitfenster < 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12y": {
+      "code": "28C12Y",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Keine Anzeichen | Zeitfenster > 4h",
+      "stichwort": "RD2C."
+    },
+    "rd.28.28c12z": {
+      "code": "28C12Z",
+      "kategorie": "RD2C.",
+      "anlass": "Verd. Schlaganfall | Telefonerkennung: Keine Anzeichen | Zeitfenster unbekannt",
+      "stichwort": "RD2C."
+    }
+  }
+}
