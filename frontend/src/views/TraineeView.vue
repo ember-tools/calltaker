@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {computed, nextTick, ref, watch} from 'vue'
+import {computed, nextTick, onBeforeUnmount, onMounted, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import GespraechAbschluss from '../components/GespraechAbschluss.vue'
 import GespraechsFlaeche from '../components/GespraechsFlaeche.vue'
@@ -54,6 +54,21 @@ async function beenden(): Promise<void> {
 function snaZeigen(): void {
     flaeche.value?.snaZeigen()
 }
+
+/**
+ * Switches between the entry mask (F2) and the questioning window (F3) from anywhere in the call.
+ *
+ * @param ereignis the key pressed
+ */
+function fTaste(ereignis: KeyboardEvent): void {
+    if (!anruf.value || (ereignis.key !== 'F2' && ereignis.key !== 'F3')) return
+    ereignis.preventDefault()
+    if (ereignis.key === 'F2') flaeche.value?.maskeZeigen()
+    else snaZeigen()
+}
+
+onMounted(() => window.addEventListener('keydown', fTaste))
+onBeforeUnmount(() => window.removeEventListener('keydown', fTaste))
 </script>
 
 <template>
@@ -68,9 +83,14 @@ function snaZeigen(): void {
         <main v-else-if="anruf && graph" class="flex flex-1 flex-col gap-3 p-4">
             <GespraechsFlaeche ref="flaeche" v-model="eintraege" v-model:suche="suche" v-model:ui="fenster" :graph="graph" :schwerste="schwerste" :anruf="anruf" @sofort="jetztSenden"/>
             <GespraechAbschluss :offen="offen" @beenden="beenden"/>
+            <p class="m-0 text-xs text-gedaempft">{{ t('trainee.tasten') }}</p>
         </main>
-        <main v-else class="p-5">
+        <main v-else class="flex flex-col gap-2 p-5">
             <p class="m-0 text-gedaempft">{{ !zustand ? t('allgemein.laden') : zuletzt ? t('trainee.beendet') : t('trainee.warten') }}</p>
+            <nav v-if="zuletzt" :aria-label="t('auswertung.navigation')" class="flex gap-4 text-sm">
+                <RouterLink :to="{name: 'trainee-debrief', params: {code, anrufId: zuletzt.id}}" class="font-semibold underline">{{ t('trainee.debrief') }}</RouterLink>
+                <RouterLink :to="{name: 'trainee-uebersicht', params: {code}}" class="underline">{{ t('auswertung.uebersicht') }}</RouterLink>
+            </nav>
         </main>
     </div>
 </template>

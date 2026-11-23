@@ -14,6 +14,7 @@ defineProps<{ruhig?: boolean}>()
 
 const {t} = useI18n()
 const listeDa = ref(true)
+const gross = ref(false)
 
 onMounted(async () => {
     listeDa.value = await adresslisteVerfuegbar()
@@ -61,10 +62,13 @@ function feldGeaendert(feld: keyof Adresse, wert: string): void {
                 />
             </label>
         </div>
-        <div class="h-40 overflow-hidden rounded border border-rand">
+        <div :class="['overflow-hidden rounded border border-rand', gross ? 'h-96' : 'h-40']">
             <KarteLeaflet :punkte="punkte" setzbar :beschriftung="t('ort.karte')" @gesetzt="gesetzt"/>
         </div>
-        <p class="m-0 text-xs text-gedaempft">{{ t('ort.karteHinweis') }}</p>
+        <div class="flex items-center gap-2">
+            <p class="m-0 flex-1 text-xs text-gedaempft">{{ t('ort.karteHinweis') }}</p>
+            <button type="button" class="text-xs underline" :aria-pressed="gross" @click="gross = !gross">{{ gross ? t('ort.karteKlein') : t('ort.karteGross') }}</button>
+        </div>
         <p class="m-0 text-[0.7rem] text-gedaempft">{{ t('ort.quelle') }}</p>
     </div>
 </template>

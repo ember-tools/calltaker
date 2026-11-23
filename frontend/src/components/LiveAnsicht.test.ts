@@ -18,7 +18,7 @@ vi.mock('../api/orte', () => ({sucheOrte: vi.fn().mockResolvedValue([])}))
  * @returns the mounted view
  */
 function live(zustand: ReturnType<typeof zustandMit>) {
-    return mount(LiveAnsicht, {props: {zustand, graph: GRAPH, schwerste: schwersteErreichbare(GRAPH), absicht: vi.fn().mockResolvedValue({})}, global: {plugins: [i18n]}})
+    return mount(LiveAnsicht, {props: {zustand, graph: GRAPH, schwerste: schwersteErreichbare(GRAPH), absicht: vi.fn().mockResolvedValue({})}, global: {plugins: [i18n], stubs: {RouterLink: true}}})
 }
 
 describe('LiveAnsicht', () => {

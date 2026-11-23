@@ -62,11 +62,20 @@ onMounted(() => {
     })
     karte.value = neu
     zeichnen()
+    if (typeof ResizeObserver !== 'undefined') {
+        groesse = new ResizeObserver(() => karte.value?.invalidateSize())
+        groesse.observe(behaelter.value!)
+    }
 })
+
+let groesse: ResizeObserver | undefined
 
 watch(() => props.punkte, zeichnen, {deep: true})
 
-onBeforeUnmount(() => karte.value?.remove())
+onBeforeUnmount(() => {
+    groesse?.disconnect()
+    karte.value?.remove()
+})
 </script>
 
 <template>

@@ -25,8 +25,11 @@ export interface Phase {
     bewerten(eintraege: Eintraege, szenario: Szenario, graph: Abfragegraph): Bewertung[]
 }
 
-/** How one entry compares with the truth: right, wrong, or not entered yet. */
-export type Urteil = 'richtig' | 'falsch' | 'offen'
+/**
+ * How one entry compares with the truth: right, partly right, wrong, or not entered yet; or a
+ * note that is shown but not judged, such as the reason for cancelling.
+ */
+export type Urteil = 'richtig' | 'teilweise' | 'falsch' | 'offen' | 'hinweis'
 
 /** One entry compared with the truth. */
 export interface Bewertung {
@@ -37,4 +40,12 @@ export interface Bewertung {
     urteil: Urteil
     /** For a point: how far the entered one lies from the true one, in metres. */
     abstand?: number
+    /** For a code: how close it comes to the true one. */
+    stufe?: Codestufe
 }
+
+/**
+ * How close an entered code comes to the true one: the same code, the same protocol (as the code
+ * index assigns it), or the same emergency category, which alerts the same resources.
+ */
+export type Codestufe = 'exakt' | 'protokoll' | 'kategorie' | 'falsch'

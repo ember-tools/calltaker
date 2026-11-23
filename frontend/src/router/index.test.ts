@@ -8,7 +8,7 @@ vi.mock('../api/uebung', async original => ({
     rolleVon: vi.fn(),
 }))
 
-const ziel = (name: string, code: string) => ({name, params: {code}}) as unknown as RouteLocationNormalized
+const ziel = (rolle: string, code: string, name = rolle) => ({name, params: {code}, meta: {rolle}}) as unknown as RouteLocationNormalized
 
 describe('passendeRolle', () => {
     afterEach(() => vi.resetAllMocks())
@@ -21,6 +21,13 @@ describe('passendeRolle', () => {
     it('schickt einen Trainee-Code in die Trainee-Ansicht', async () => {
         vi.mocked(rolleVon).mockResolvedValue('trainee')
         await expect(passendeRolle(ziel('ausbilder', 'T-ABCDEFGH'))).resolves.toEqual({name: 'trainee', params: {code: 'T-ABCDEFGH'}})
+    })
+
+    it('schickt einen Trainee-Code vom Debrief des Ausbilders in die Trainee-Ansicht', async () => {
+        vi.mocked(rolleVon).mockResolvedValue('trainee')
+        await expect(passendeRolle(ziel('ausbilder', 'T-ABCDEFGH', 'ausbilder-debrief'))).resolves.toEqual({name: 'trainee', params: {code: 'T-ABCDEFGH'}})
+        vi.mocked(rolleVon).mockResolvedValue('trainee')
+        await expect(passendeRolle(ziel('trainee', 'T-ABCDEFGH', 'trainee-uebersicht'))).resolves.toBe(true)
     })
 
     it('öffnet die Ansicht, wenn der Code unbekannt ist', async () => {

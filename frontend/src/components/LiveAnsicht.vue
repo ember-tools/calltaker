@@ -40,7 +40,7 @@ watch(() => gespraech.value?.id, id => {
                     <OrtVergleich :anruf="anruf"/>
                 </template>
                 <p v-else class="m-0 text-sm text-gedaempft">{{ t('live.keinAnruf') }}</p>
-                <ProtokollListe :anrufe="zustand.anrufe" :gewaehlt="anruf?.id" @waehlen="id => gewaehlt = id"/>
+                <ProtokollListe :anrufe="zustand.anrufe" :code="zustand.codes.ausbilder" :gewaehlt="anruf?.id" @waehlen="id => gewaehlt = id"/>
             </div>
         </div>
     </div>

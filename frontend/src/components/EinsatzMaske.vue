@@ -44,7 +44,14 @@ function andere(): void {
 
 const wurzel = ref<HTMLElement | null>(null)
 
-onMounted(() => wurzel.value?.querySelector<HTMLElement>('[role=combobox]')?.focus())
+/** Puts the focus into the address search, where every call starts. */
+function fokussieren(): void {
+    wurzel.value?.querySelector<HTMLElement>('[role=combobox]')?.focus()
+}
+
+onMounted(fokussieren)
+
+defineExpose({fokussieren})
 </script>
 
 <template>

@@ -36,3 +36,14 @@ describe('OrtWahl von Hand', () => {
         ansicht.unmount()
     })
 })
+
+describe('OrtWahl mit großer Karte', () => {
+    it('vergrößert und verkleinert die Karte', async () => {
+        const ansicht = mount(OrtWahl, {props: {modelValue: {adresse: {strasse: '', hausnummer: '', plz: '', ortsteil: ''}, objekt: ''}}, global: {plugins: [i18n]}})
+        const knopf = ansicht.findAll('button').find(b => b.text() === 'Karte vergrößern')!
+        await knopf.trigger('click')
+        expect(ansicht.find('.h-96').exists()).toBe(true)
+        expect(knopf.text()).toBe('Karte verkleinern')
+        ansicht.unmount()
+    })
+})

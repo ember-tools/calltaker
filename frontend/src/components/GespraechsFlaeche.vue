@@ -21,20 +21,26 @@ const aktivePhase = computed(() => staende.value.find(stand => stand.fehlend.len
 const ergebnis = computed(() => endergebnis(props.graph, eintraege.value.abfrage))
 const alter = computed(() => eintraege.value.abfrage.pfad.find(schritt => schritt.knoten === 'rd.alter')?.wert)
 const sna = ref<InstanceType<typeof SnaFenster> | null>(null)
+const maske = ref<InstanceType<typeof EinsatzMaske> | null>(null)
+
+/** Puts the focus into the entry mask. */
+function maskeZeigen(): void {
+    maske.value?.fokussieren()
+}
 
 /** Puts the focus into the questioning window. */
 function snaZeigen(): void {
     sna.value?.fokussieren()
 }
 
-defineExpose({snaZeigen})
+defineExpose({snaZeigen, maskeZeigen})
 </script>
 
 <template>
     <div class="flex flex-col gap-3">
         <SchrittLeiste :staende="staende" :aktiv="aktivePhase"/>
         <div class="flex flex-wrap gap-4">
-            <EinsatzMaske v-model="eintraege" v-model:suche="suche" class="max-w-lg min-w-0 flex-[1_1_26rem]" :anruf="anruf" :ruhig="ruhig" :stichwort="ergebnis ? `${ergebnis.code} · ${ergebnis.kategorie}` : ''" :alter="alter" @sna="snaZeigen" @sofort="emit('sofort')"/>
+            <EinsatzMaske ref="maske" v-model="eintraege" v-model:suche="suche" class="max-w-lg min-w-0 flex-[1_1_26rem]" :anruf="anruf" :ruhig="ruhig" :stichwort="ergebnis ? `${ergebnis.code} · ${ergebnis.kategorie}` : ''" :alter="alter" @sna="snaZeigen" @sofort="emit('sofort')"/>
             <div class="min-w-0 flex-[999_1_36rem]">
                 <SnaFenster ref="sna" v-model="eintraege.abfrage" v-model:ui="ui" :graph="graph" :schwerste="schwerste" :gesperrt="!eintraege.ort.koordinaten" :seit="anruf.angenommenUm" @sofort="emit('sofort')"/>
             </div>
