@@ -79,5 +79,5 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-    <div ref="behaelter" role="region" :aria-label="beschriftung" class="h-full min-h-40 w-full"/>
+    <div ref="behaelter" role="region" :aria-label="beschriftung" class="isolate h-full min-h-40 w-full"/>
 </template>
