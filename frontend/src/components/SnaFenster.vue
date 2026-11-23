@@ -5,6 +5,7 @@ import type {Abfragegraph} from '../modell/abfragegraph'
 import {dauer, useUhr} from '../composables/useUhr'
 import {aktuellerKnoten, endergebnis, gewaehltesProtokoll, hoehereEndpunkte, unterscheidungen, zwischenergebnis, type Ergebnis} from '../modell/abfrageweg'
 import type {Abfrageeintrag} from '../modell/eintraege'
+import {einenZurueck, mitAutomatik, ordnen} from '../modell/eingrenzung'
 import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
 import SnaKacheln from './SnaKacheln.vue'
 
@@ -33,9 +34,11 @@ const grund = feld('grund')
 const wert = feld('wert')
 const trotzdem = feld('trotzdem')
 const kachelsuche = feld('kachelsuche')
+const weitereOffen = feld('weitere')
 
 const stand = computed(() => aktuellerKnoten(props.graph, abfrage.value.pfad))
 const knoten = computed(() => props.graph.knoten[stand.value.knoten])
+const ordnung = computed(() => ordnen(props.graph, stand.value.knoten, abfrage.value.pfad))
 const ende = computed(() => endergebnis(props.graph, abfrage.value))
 const zwischen = computed(() => zwischenergebnis(props.graph, abfrage.value, props.schwerste))
 const protokoll = computed(() => gewaehltesProtokoll(props.graph, abfrage.value.pfad))
@@ -44,11 +47,13 @@ const zusaetze = computed(() => (knoten.value ? unterscheidungen(knoten.value, p
 const hoeher = computed(() => (protokoll.value?.protokoll ? hoehereEndpunkte(props.graph, protokoll.value.protokoll, zwischen.value?.kategorie ?? '', zwischen.value?.code) : []))
 const pfadText = computed(() => abfrage.value.pfad.map(schritt => {
     const antwort = props.graph.knoten[schritt.knoten]?.antworten?.find(a => a.id === schritt.antwort)
-    return `${props.graph.knoten[schritt.knoten]?.frage ?? schritt.knoten}: ${antwort?.label ?? schritt.wert ?? ''}`
+    const text = `${props.graph.knoten[schritt.knoten]?.frage ?? schritt.knoten}: ${antwort?.label ?? schritt.wert ?? ''}`
+    return schritt.automatisch ? `${text} ${t('sna.automatisch')}` : text
 }))
 
 function schritt(eintrag: {antwort?: string, wert?: string}): void {
-    abfrage.value = {...abfrage.value, pfad: [...abfrage.value.pfad.slice(0, stand.value.passend), {knoten: stand.value.knoten, ...eintrag}]}
+    const pfad = [...abfrage.value.pfad.slice(0, stand.value.passend), {knoten: stand.value.knoten, ...eintrag}]
+    abfrage.value = {...abfrage.value, pfad: mitAutomatik(props.graph, pfad)}
     wert.value = ''
     offen.value = null
     emit('sofort')
@@ -56,7 +61,7 @@ function schritt(eintrag: {antwort?: string, wert?: string}): void {
 
 function zurueck(): void {
     const {aufwertung, abbruch, pfad} = abfrage.value
-    abfrage.value = aufwertung || abbruch ? {pfad} : {pfad: pfad.slice(0, -1)}
+    abfrage.value = aufwertung || abbruch ? {pfad} : {pfad: einenZurueck(pfad)}
     emit('sofort')
 }
 
@@ -139,7 +144,7 @@ defineExpose({fokussieren})
             </template>
             <template v-else-if="knoten">
                 <h3 class="m-0 text-2xl font-semibold text-sky-950">{{ knoten.frage }} <i v-if="knoten.hinweis" class="font-medium text-akzent">[{{ knoten.hinweis }}]</i></h3>
-                <SnaKacheln v-if="knoten.antworten" v-model:suche="kachelsuche" data-antworten :antworten="knoten.antworten" :zusaetze="zusaetze" :farbe="fachrichtung" @waehlen="antwort => schritt({antwort})"/>
+                <SnaKacheln v-if="knoten.antworten" v-model:suche="kachelsuche" v-model:weitere-offen="weitereOffen" data-antworten :antworten="ordnung.vorn" :weitere="ordnung.weitere" :zusaetze="zusaetze" :farbe="fachrichtung" @waehlen="antwort => schritt({antwort})"/>
                 <form v-else-if="knoten.eingabe" class="flex flex-wrap items-end gap-2" @submit.prevent="schritt({wert: wert.trim()})">
                     <label class="flex flex-1 flex-col gap-1 text-xs font-semibold text-gedaempft">
                         {{ knoten.eingabe.platzhalter }}

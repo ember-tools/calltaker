@@ -90,3 +90,17 @@ describe('SnaKacheln in den Farben der Fachrichtungen', () => {
         expect(kacheln[2]!.classes()).toContain('bg-amber-100')
     })
 })
+
+describe('SnaKacheln mit weiteren Antworten', () => {
+    it('zeigt weitere Antworten erst auf Wunsch und zählt die Nummern durch', async () => {
+        const ansicht = mount(SnaKacheln, {
+            props: {antworten: antworten.slice(0, 2), weitere: antworten.slice(2, 4), zusaetze: new Map(), 'onUpdate:weitereOffen': (wert: boolean) => ansicht.setProps({weitereOffen: wert})},
+            global: {plugins: [i18n]},
+        })
+        expect(ansicht.findAll('button').filter(b => b.text().startsWith('0') || b.text().startsWith('1'))).toHaveLength(2)
+        await ansicht.findAll('button').at(-1)!.trigger('click')
+        expect(ansicht.text()).toContain('Antwort 3')
+        await ansicht.findAll('button')[0]!.trigger('keydown', {key: '3'})
+        expect(ansicht.emitted('waehlen')?.[0]).toEqual(['a3'])
+    })
+})

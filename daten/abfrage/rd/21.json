@@ -166,7 +166,10 @@
           "id": "bei-patientenalter-unbekannt-medizinisch",
           "label": "bei Patientenalter unbekannt, Medizinisch",
           "ziel": "rd.21.21b00m",
-          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+          "aussage": "bei Patientenalter unbekannt, Medizinisch",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -190,7 +193,10 @@
           "id": "bei-patientenalter-unbekannt-trauma",
           "label": "bei Patientenalter unbekannt, Trauma",
           "ziel": "rd.21.21b00t",
-          "aussage": "bei Patientenalter unbekannt, Trauma"
+          "aussage": "bei Patientenalter unbekannt, Trauma",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "medizinisch",
@@ -249,7 +255,10 @@
           "id": "bei-patientenalter-unbekannt-trauma",
           "label": "bei Patientenalter unbekannt, Trauma",
           "ziel": "rd.21.21b01t",
-          "aussage": "bei Patientenalter unbekannt, Trauma"
+          "aussage": "bei Patientenalter unbekannt, Trauma",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -284,7 +293,10 @@
           "id": "bei-patientenalter-unbekannt-trauma",
           "label": "bei Patientenalter unbekannt, Trauma",
           "ziel": "rd.21.21b02t",
-          "aussage": "bei Patientenalter unbekannt, Trauma"
+          "aussage": "bei Patientenalter unbekannt, Trauma",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -313,7 +325,10 @@
           "id": "bei-patientenalter-unbekannt-medizinisch",
           "label": "bei Patientenalter unbekannt, Medizinisch",
           "ziel": "rd.21.21b03m",
-          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+          "aussage": "bei Patientenalter unbekannt, Medizinisch",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -337,7 +352,10 @@
           "id": "bei-patientenalter-unbekannt-trauma",
           "label": "bei Patientenalter unbekannt, Trauma",
           "ziel": "rd.21.21b03t",
-          "aussage": "bei Patientenalter unbekannt, Trauma"
+          "aussage": "bei Patientenalter unbekannt, Trauma",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -366,7 +384,10 @@
           "id": "bei-patientenalter-unbekannt-medizinisch",
           "label": "bei Patientenalter unbekannt, Medizinisch",
           "ziel": "rd.21.21b04m",
-          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+          "aussage": "bei Patientenalter unbekannt, Medizinisch",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -390,7 +411,10 @@
           "id": "bei-patientenalter-unbekannt-trauma",
           "label": "bei Patientenalter unbekannt, Trauma",
           "ziel": "rd.21.21b04t",
-          "aussage": "bei Patientenalter unbekannt, Trauma"
+          "aussage": "bei Patientenalter unbekannt, Trauma",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -444,7 +468,10 @@
           "id": "bei-patientenalter-unbekannt-medizinisch",
           "label": "bei Patientenalter unbekannt, Medizinisch",
           "ziel": "rd.21.21c03m",
-          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+          "aussage": "bei Patientenalter unbekannt, Medizinisch",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -477,7 +504,10 @@
           "id": "bei-patientenalter-unbekannt-trauma",
           "label": "bei Patientenalter unbekannt, Trauma",
           "ziel": "rd.21.21c03t",
-          "aussage": "bei Patientenalter unbekannt, Trauma"
+          "aussage": "bei Patientenalter unbekannt, Trauma",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -522,7 +552,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.21.21d01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -546,7 +579,10 @@
           "id": "bei-patientenalter-unbekannt-medizinisch",
           "label": "bei Patientenalter unbekannt, Medizinisch",
           "ziel": "rd.21.21d01m",
-          "aussage": "bei Patientenalter unbekannt, Medizinisch"
+          "aussage": "bei Patientenalter unbekannt, Medizinisch",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -570,7 +606,10 @@
           "id": "bei-patientenalter-unbekannt-trauma",
           "label": "bei Patientenalter unbekannt, Trauma",
           "ziel": "rd.21.21d01t",
-          "aussage": "bei Patientenalter unbekannt, Trauma"
+          "aussage": "bei Patientenalter unbekannt, Trauma",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-trauma",

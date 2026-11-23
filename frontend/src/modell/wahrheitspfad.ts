@@ -14,6 +14,8 @@ export interface Wahrheitsschritt {
     soll: string
     ist?: string
     stand: Schrittstand
+    /** The questioning answered this step itself from the person. */
+    automatisch?: boolean
 }
 
 /** The truth path laid against the trainee's, and where the trainee left it. */
@@ -80,7 +82,7 @@ export function vergleichePfad(graph: Abfragegraph, antworten: Record<string, Wa
         const soll = lesbar(graph, schritt.knoten, schritt)
         const getan = imPfad.get(schritt.knoten)
         if (!getan) return {knoten: schritt.knoten, frage, soll, stand: schritt.knoten === aktuell ? 'hier' : 'offen'}
-        return {knoten: schritt.knoten, frage, soll, ist: lesbar(graph, schritt.knoten, getan), stand: stimmt(schritt, getan) ? 'gleich' : 'anders'}
+        return {knoten: schritt.knoten, frage, soll, ist: lesbar(graph, schritt.knoten, getan), stand: stimmt(schritt, getan) ? 'gleich' : 'anders', automatisch: getan.automatisch}
     })
     const imSoll = new Map(wahrheit.map(schritt => [schritt.knoten, schritt]))
     const weg = pfad.find(schritt => !imSoll.has(schritt.knoten) || !stimmt(imSoll.get(schritt.knoten)!, schritt))

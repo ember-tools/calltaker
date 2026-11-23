@@ -14,6 +14,7 @@ const SCHRITT: Record<Schrittstand, string> = {gleich: 'text-ok', anders: 'bg-re
             <li v-for="schritt in vergleich.schritte" :key="schritt.knoten" :class="['rounded px-1.5 py-0.5', SCHRITT[schritt.stand]]" :aria-current="live && schritt.stand === 'hier' ? 'step' : undefined">
                 <span class="text-gedaempft">{{ schritt.frage }}</span> · <b>{{ schritt.soll || t('editor.leer') }}</b>
                 <span v-if="schritt.stand === 'anders'"> · {{ t('wahrheit.trainee', {ist: schritt.ist}) }}</span>
+                <span v-if="schritt.automatisch" class="ml-1 text-xs">{{ t('sna.automatisch') }}</span>
                 <span v-if="vergleich.abzweigung?.knoten === schritt.knoten" class="ml-1 text-xs font-bold uppercase">{{ t('wahrheit.abzweigung') }}</span>
             </li>
         </ol>

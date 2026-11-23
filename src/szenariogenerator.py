@@ -206,7 +206,7 @@ def altersspanne(graph: Abfragegraph, endpunkt: Endpunkt) -> tuple[int, int]:
     unten, oben, begrenzt = 0, 100, False
     for schritt in endpunkt.pfad:
         antwort = graph.antwort(schritt.knoten, schritt.antwort or "")
-        if antwort and antwort.alter:
+        if antwort and antwort.alter and not antwort.alter.unbekannt:
             begrenzt = True
             unten = max(unten, antwort.alter.min if antwort.alter.min is not None else 0)
             oben = min(oben, antwort.alter.max if antwort.alter.max is not None else 100)
@@ -261,6 +261,7 @@ class Person:
     stillstand: bool = False
     bewusstlos: bool = False
     atemnot: bool = False
+    alter_bekannt: bool = True
 
 
 STILLSTAND = re.compile(
@@ -425,7 +426,7 @@ def eroeffnung(
             vorher = antworten[knoten.weiche.knoten].antwort or ""
             id_ = knoten.weiche.ziele[vorher]
         elif knoten.eingabe is not None:
-            antworten[id_] = Wahl(wert=str(person.alter))
+            antworten[id_] = Wahl(wert=str(person.alter)) if person.alter_bekannt else Wahl()
             id_ = knoten.ziel or ""
         else:
             if id_ == graph.meta.wurzel:
@@ -516,7 +517,16 @@ def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random
     unten, oben = altersspanne(graph, endpunkt)
     alter = zufall.randint(unten, oben)
     text = pfadtext(graph, endpunkt)
-    weiblich = bool(re.search(r"schwanger|geburt|frauen", text)) or zufall.random() < 0.5
+    vorgegeben = {
+        antwort.geschlecht
+        for schritt in endpunkt.pfad
+        if (antwort := graph.antwort(schritt.knoten, schritt.antwort or "")) and antwort.geschlecht
+    }
+    if vorgegeben == {"m"}:
+        weiblich = False
+    else:
+        weiblich = "w" in vorgegeben or bool(re.search(r"schwanger|geburt", text))
+        weiblich = weiblich or zufall.random() < 0.5
     stillstand = stillstand_von(graph, endpunkt)
     bewusstlos = stillstand or bool(BEWUSSTLOS.search(text))
     anrufer_selbst = (
@@ -526,7 +536,13 @@ def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random
         and zufall.random() < 0.3
     )
     atemnot = bool(ATEMNOT.search(text))
-    return Person(alter, weiblich, anrufer_selbst, stillstand, bewusstlos, atemnot)
+    alter_bekannt = not any(
+        (antwort := graph.antwort(s.knoten, s.antwort or ""))
+        and antwort.alter
+        and antwort.alter.unbekannt
+        for s in endpunkt.pfad
+    )
+    return Person(alter, weiblich, anrufer_selbst, stillstand, bewusstlos, atemnot, alter_bekannt)
 
 
 def titel_von(graph: Abfragegraph, endpunkt: Endpunkt) -> str:

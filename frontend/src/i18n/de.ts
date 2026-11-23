@@ -284,6 +284,9 @@ export default {
         sna: 'SNA',
     },
     sna: {
+        weitere: 'Weitere Antworten ({anzahl})',
+        weitereZu: 'Weitere Antworten ausblenden',
+        automatisch: '(automatisch)',
         titel: 'SNA-Fenster',
         werkzeuge: 'Werkzeuge der Abfrage',
         zurueck: 'Zurück',

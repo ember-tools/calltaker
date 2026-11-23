@@ -171,7 +171,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.02.02b00",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -195,7 +198,10 @@
           "id": "bei-patientenalter-unbekannt-injektion",
           "label": "bei Patientenalter unbekannt, Injektion verabreicht oder angewiesen",
           "ziel": "rd.02.02b00i",
-          "aussage": "bei Patientenalter unbekannt, Injektion verabreicht oder angewiesen"
+          "aussage": "bei Patientenalter unbekannt, Injektion verabreicht oder angewiesen",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-3",
@@ -219,7 +225,10 @@
           "id": "bei-patientenalter-unbekannt-medikamente",
           "label": "bei Patientenalter unbekannt, Medikamente verabreicht oder angewiesen",
           "ziel": "rd.02.02b00m",
-          "aussage": "bei Patientenalter unbekannt, Medikamente verabreicht oder angewiesen"
+          "aussage": "bei Patientenalter unbekannt, Medikamente verabreicht oder angewiesen",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "ohne-weitere-angabe",

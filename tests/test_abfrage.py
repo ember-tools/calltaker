@@ -314,3 +314,50 @@ def test_wer_nicht_atmet_kommt_gleich_zum_kreislaufstillstand(graph):
     tot = [e for e in graph.endpunkte if e.code.startswith("09B01")]
     assert {e.pfad[0].knoten for e in tot} == {"rd.atmung"}
     assert graph.tiefen["rd.atmung"] < graph.tiefen["rd.hauptbeschwerde"]
+
+
+def test_eingrenzung_und_person_stehen_im_graphen(graph):
+    assert graph.meta.person.alter_knoten == "rd.alter"
+    assert graph.meta.eingrenzung[0].zuerst[0] == "rd.31"
+    assert sum(1 for k in graph.knoten.values() for a in k.antworten or [] if a.geschlecht) == 5
+
+
+@pytest.mark.parametrize(
+    ("eingrenzung", "meldung"),
+    [
+        ({"knoten": "start", "wenn": [], "zuerst": ["fehlt"]}, "fehlt gibt es dort nicht"),
+        ({"knoten": "ende", "wenn": [], "zuerst": []}, "ende ist keine Auswahl"),
+        (
+            {"knoten": "start", "wenn": [{"knoten": "start", "antworten": ["x"]}], "zuerst": []},
+            "Bedingung x",
+        ),
+    ],
+)
+def test_falsche_eingrenzungen_werden_genannt(tmp_path, eingrenzung, meldung):
+    with pytest.raises(ValueError, match=meldung):
+        laden(
+            schreiben(
+                tmp_path,
+                {**META, "eingrenzung": [eingrenzung]},
+                a={"start": auswahl("ende"), "ende": ENDE},
+            )
+        )
+
+
+@pytest.mark.parametrize(
+    ("person", "meldung"),
+    [
+        ({"alter_knoten": "fehlt", "geschlecht_knoten": "start", "geschlecht": {}}, "Knoten fehlt"),
+        (
+            {"alter_knoten": "start", "geschlecht_knoten": "start", "geschlecht": {"x": "w"}},
+            "Antwort x",
+        ),
+    ],
+)
+def test_falsche_personenknoten_werden_genannt(tmp_path, person, meldung):
+    with pytest.raises(ValueError, match=meldung):
+        laden(
+            schreiben(
+                tmp_path, {**META, "person": person}, a={"start": auswahl("ende"), "ende": ENDE}
+            )
+        )

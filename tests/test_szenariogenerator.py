@@ -17,6 +17,7 @@ from szenariogenerator import (
     anzahl_gewichte,
     disziplin_von,
     generieren,
+    person_ziehen,
     pfadtext,
     stufe,
     titel_von,
@@ -234,3 +235,46 @@ def test_varianten_eines_codes_teilen_sich_seine_chance(graph):
     assert tod == pytest.approx(1.0)
     assert stillstand == pytest.approx(1.0)
     assert gewichte["rd.09.09e01-2"] < gewichte["rd.09.09e01"] / 5
+
+
+def test_das_geschlecht_folgt_geschlechtsbezogenen_antworten(graph):
+    maenner = [
+        e
+        for e in graph.endpunkte
+        if any(
+            (a := graph.antwort(s.knoten, s.antwort or "")) and a.geschlecht == "m" for s in e.pfad
+        )
+    ]
+    assert maenner
+    zufall = random.Random(3)
+    for endpunkt in maenner[:5]:
+        person = person_ziehen(graph, endpunkt, zufall)
+        assert person.weiblich is False
+
+
+def test_ein_pfad_mit_unbekanntem_alter_laesst_das_alter_leer(graph):
+    unbekannt = [
+        s
+        for s in viele(graph, 400)
+        if any(
+            (a := graph.antwort(k, w.antwort or "")) and a.alter and a.alter.unbekannt
+            for k, w in s.antworten.items()
+        )
+    ]
+    assert unbekannt
+    assert all(s.antworten["rd.alter"].wert is None for s in unbekannt if "rd.alter" in s.antworten)
+
+
+def test_frauenantworten_geben_eine_frau(graph):
+    frauen = [
+        e
+        for e in graph.endpunkte
+        if any(
+            (a := graph.antwort(s.knoten, s.antwort or "")) and a.geschlecht == "w" for s in e.pfad
+        )
+    ]
+    assert frauen
+    for endpunkt in frauen:
+        person = person_ziehen(graph, endpunkt, random.Random(1))
+        assert person.weiblich is True
+        assert 12 <= person.alter <= 50 or endpunkt.protokoll != "rd.31"

@@ -152,3 +152,29 @@ def test_die_route_meldet_fehler_auf_deutsch(szenario_daten):
         )
     assert ohne_nummer.json()["detail"] == "anrufer: ohne Unterdrückung ist eine Rufnummer Pflicht"
     assert ohne_titel.json()["detail"] == "titel: fehlt"
+
+
+def test_antworten_gegen_alter_und_geschlecht_werden_gemeldet(graph, szenario_daten):
+    knoten = next(
+        k
+        for k, n in graph.knoten.items()
+        if n.antworten and any(a.alter and a.alter.unbekannt for a in n.antworten)
+    )
+    unbekannt = next(a for a in graph.knoten[knoten].antworten if a.alter and a.alter.unbekannt)
+    daten = {
+        **szenario_daten,
+        "antworten": {"rd.alter": {"wert": "ca. 70"}, knoten: {"antwort": unbekannt.id}},
+    }
+    befunde = pruefen(Szenario.model_validate(daten), graph)
+    assert [b.meldung for b in befunde if b.knoten == knoten] == [
+        "gilt für ein unbekanntes Alter, das Szenario nennt 70"
+    ]
+    frauen = next(
+        (k, a) for k, n in graph.knoten.items() for a in n.antworten or [] if a.geschlecht == "w"
+    )
+    daten = {
+        **szenario_daten,
+        "antworten": {"rd.geschlecht": {"antwort": "mann"}, frauen[0]: {"antwort": frauen[1].id}},
+    }
+    befunde = pruefen(Szenario.model_validate(daten), graph)
+    assert "gilt für ein anderes Geschlecht als im Szenario" in [b.meldung for b in befunde]

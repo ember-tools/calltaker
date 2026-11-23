@@ -3,7 +3,7 @@ import {computed, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Antwort} from '../modell/abfragegraph'
 
-const props = defineProps<{antworten: Antwort[], zusaetze: Map<string, string>, farbe?: string}>()
+const props = withDefaults(defineProps<{antworten: Antwort[], weitere?: Antwort[], zusaetze: Map<string, string>, farbe?: string}>(), {weitere: () => [], farbe: 'rd'})
 const emit = defineEmits<{waehlen: [antwortId: string]}>()
 
 /** How long a typed digit waits for a second one, so "1" then "0" picks tile 10. */
@@ -11,6 +11,7 @@ const ZIFFER_WARTEN_MS = 600
 
 const {t} = useI18n()
 const suche = defineModel<string>('suche', {default: ''})
+const weitereOffen = defineModel<boolean>('weitereOffen', {default: false})
 const ziffern = ref('')
 let zeitgeber: ReturnType<typeof setTimeout> | undefined
 
@@ -32,22 +33,25 @@ function farbeVon(antwort: Antwort): {kachel: string, nummer: string} {
     return FARBEN[antwort.farbe ?? props.farbe ?? 'rd'] ?? FARBEN.rd!
 }
 
-const nummeriert = computed(() => props.antworten.map((antwort, nummer) => ({antwort, nummer})))
+const alle = computed(() => [...props.antworten, ...props.weitere])
+const nummeriert = computed(() => alle.value.map((antwort, nummer) => ({antwort, nummer})))
 const sichtbar = computed(() => {
     const text = suche.value.trim().toLowerCase()
-    return text ? nummeriert.value.filter(({antwort}) => antwort.label.toLowerCase().includes(text)) : nummeriert.value
+    if (text) return nummeriert.value.filter(({antwort}) => antwort.label.toLowerCase().includes(text))
+    return weitereOffen.value ? nummeriert.value : nummeriert.value.slice(0, props.antworten.length)
 })
 const markiert = computed(() => (ziffern.value ? Number(ziffern.value) : sichtbar.value.length === 1 ? sichtbar.value[0]!.nummer : -1))
 
-watch(() => props.antworten, () => {
+watch(() => alle.value.map(antwort => antwort.id).join('|'), () => {
     suche.value = ''
     ziffern.value = ''
+    weitereOffen.value = false
 })
 
 function waehlen(nummer: number): void {
     clearTimeout(zeitgeber)
     ziffern.value = ''
-    const antwort = props.antworten[nummer]
+    const antwort = alle.value[nummer]
     if (antwort) emit('waehlen', antwort.id)
 }
 
@@ -77,7 +81,7 @@ function taste(ereignis: KeyboardEvent): void {
         ziffern.value += ereignis.key
         clearTimeout(zeitgeber)
         const nummer = Number(ziffern.value)
-        if (ziffern.value === '0' || nummer * 10 >= props.antworten.length) waehlen(nummer)
+        if (ziffern.value === '0' || nummer * 10 >= alle.value.length) waehlen(nummer)
         else zeitgeber = setTimeout(() => waehlen(nummer), ZIFFER_WARTEN_MS)
     } else if (ereignis.key === 'Enter' && markiert.value >= 0) {
         ereignis.preventDefault()
@@ -88,7 +92,7 @@ function taste(ereignis: KeyboardEvent): void {
 
 <template>
     <div ref="raster" class="flex flex-col gap-3">
-        <label v-if="antworten.length > 9" class="flex items-center gap-2 text-xs font-semibold text-gedaempft">
+        <label v-if="antworten.length + weitere.length > 9" class="flex items-center gap-2 text-xs font-semibold text-gedaempft">
             {{ t('sna.suche') }}
             <input v-model="suche" :placeholder="t('sna.sucheHinweis')" class="h-8 max-w-sm flex-1 rounded border border-slate-400 px-2 text-sm text-tinte" @keydown="taste"/>
         </label>
@@ -109,5 +113,8 @@ function taste(ereignis: KeyboardEvent): void {
                 </span>
             </button>
         </div>
+        <button v-if="weitere.length && !suche.trim()" type="button" class="self-start text-sm underline" :aria-expanded="weitereOffen" @click="weitereOffen = !weitereOffen" @keydown="taste">
+            {{ weitereOffen ? t('sna.weitereZu') : t('sna.weitere', {anzahl: weitere.length}) }}
+        </button>
     </div>
 </template>

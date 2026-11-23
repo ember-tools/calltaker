@@ -25,7 +25,10 @@
           "id": "offensichtlicher-oder-erwarteter-tod",
           "label": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z), Alter unbekannt",
           "ziel": "rd.09.k4",
-          "aussage": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z)"
+          "aussage": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "offensichtlicher-oder-erwarteter-tod-2",
@@ -191,7 +194,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.09.09e00",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-30-tage",
@@ -283,7 +289,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.09.09d01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -312,73 +321,109 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.09.09d02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-kalt-und",
           "label": "bei Patientenalter unbekannt, Kalt und steif in warmer Umgebung",
           "ziel": "rd.09.09d02a",
-          "aussage": "bei Patientenalter unbekannt, Kalt und steif in warmer Umgebung"
+          "aussage": "bei Patientenalter unbekannt, Kalt und steif in warmer Umgebung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-enthauptung",
           "label": "bei Patientenalter unbekannt, Enthauptung",
           "ziel": "rd.09.09d02b",
-          "aussage": "bei Patientenalter unbekannt, Enthauptung"
+          "aussage": "bei Patientenalter unbekannt, Enthauptung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-verwesung",
           "label": "bei Patientenalter unbekannt, Verwesung",
           "ziel": "rd.09.09d02c",
-          "aussage": "bei Patientenalter unbekannt, Verwesung"
+          "aussage": "bei Patientenalter unbekannt, Verwesung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-verbrennung",
           "label": "bei Patientenalter unbekannt, Verbrennung/Verkohlung",
           "ziel": "rd.09.09d02d",
-          "aussage": "bei Patientenalter unbekannt, Verbrennung/Verkohlung"
+          "aussage": "bei Patientenalter unbekannt, Verbrennung/Verkohlung",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-schon-lange",
           "label": "bei Patientenalter unbekannt, Schon lange tot (ÄLTERES EREIGNIS)",
           "ziel": "rd.09.09d02e",
-          "aussage": "bei Patientenalter unbekannt, Schon lange tot (ÄLTERES EREIGNIS)"
+          "aussage": "bei Patientenalter unbekannt, Schon lange tot (ÄLTERES EREIGNIS)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-schwerste",
           "label": "bei Patientenalter unbekannt, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
           "ziel": "rd.09.09d02f",
-          "aussage": "bei Patientenalter unbekannt, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen"
+          "aussage": "bei Patientenalter unbekannt, Schwerste, mit dem Leben nicht zu vereinbarende Verletzungen",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-zustand-g",
           "label": "bei Patientenalter unbekannt, Zustand \"g\" (benutzerdefiniert)",
           "ziel": "rd.09.09d02g",
-          "aussage": "bei Patientenalter unbekannt, Zustand \"g\" (benutzerdefiniert)"
+          "aussage": "bei Patientenalter unbekannt, Zustand \"g\" (benutzerdefiniert)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-zustand-h",
           "label": "bei Patientenalter unbekannt, Zustand \"h\" (benutzerdefiniert)",
           "ziel": "rd.09.09d02h",
-          "aussage": "bei Patientenalter unbekannt, Zustand \"h\" (benutzerdefiniert)"
+          "aussage": "bei Patientenalter unbekannt, Zustand \"h\" (benutzerdefiniert)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-krankheit",
           "label": "bei Patientenalter unbekannt, Krankheit im Endstadium",
           "ziel": "rd.09.09d02x",
-          "aussage": "bei Patientenalter unbekannt, Krankheit im Endstadium"
+          "aussage": "bei Patientenalter unbekannt, Krankheit im Endstadium",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, PATIENTENVERFÜGUNG vorhanden",
           "ziel": "rd.09.09d02y",
-          "aussage": "bei Patientenalter unbekannt, PATIENTENVERFÜGUNG vorhanden"
+          "aussage": "bei Patientenalter unbekannt, PATIENTENVERFÜGUNG vorhanden",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-unbekannt-zustand-z",
           "label": "bei Patientenalter unbekannt, Zustand \"z\" (benutzerdefiniert)",
           "ziel": "rd.09.09d02z",
-          "aussage": "bei Patientenalter unbekannt, Zustand \"z\" (benutzerdefiniert)"
+          "aussage": "bei Patientenalter unbekannt, Zustand \"z\" (benutzerdefiniert)",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -610,7 +655,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.09.09e01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre",
@@ -648,7 +696,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.09.09e02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre",
@@ -686,7 +737,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.09.09e03",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -715,7 +769,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.09.09e04",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -744,7 +801,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.09.09e05",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre",

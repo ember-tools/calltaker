@@ -144,7 +144,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.07.07a01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "explosion",
@@ -180,7 +183,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Feuerwerkskörper",
           "ziel": "rd.07.07a01w",
-          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper"
+          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper",
+          "alter": {
+            "unbekannt": true
+          }
         }
       ]
     },
@@ -302,7 +308,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.07.07b00",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "explosion",
@@ -338,7 +347,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Feuerwerkskörper",
           "ziel": "rd.07.07b00w",
-          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper"
+          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "ohne-weitere-angabe",
@@ -459,7 +471,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.07.07b02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -495,7 +510,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Feuerwerkskörper",
           "ziel": "rd.07.07b02w",
-          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper"
+          "aussage": "bei Patientenalter unbekannt, Feuerwerkskörper",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",

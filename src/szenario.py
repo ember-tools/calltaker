@@ -5,6 +5,7 @@ trainee also visits stay valid when the trainee takes another turn. Field names 
 frontend's camel case on the wire.
 """
 
+import re
 import uuid
 from enum import StrEnum
 from typing import Any, Literal, Self
@@ -12,7 +13,7 @@ from typing import Any, Literal, Self
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from pydantic.alias_generators import to_camel
 
-from abfrage import Abfragegraph
+from abfrage import Abfragegraph, Antwort
 from rufnummer import normalisieren
 
 SZENARIO_VERSION = 1
@@ -172,7 +173,69 @@ def pruefen(szenario: Szenario, graph: Abfragegraph) -> list[Befund]:
     for knoten_id, wahl in szenario.antworten.items():
         befunde.extend(wahlbefunde(graph, knoten_id, wahl))
     befunde.extend(zielbefunde(graph, szenario.ziel))
+    befunde.extend(personbefunde(graph, szenario.antworten))
     return befunde
+
+
+def alter_aus(text: str) -> int | None:
+    """Return an age in years from typed text: its first number, months, weeks or days as 0."""
+    zahl = re.search(r"\d+", text)
+    if zahl is None:
+        return None
+    return 0 if re.search(r"\b(monat|woche|tag)", text, re.IGNORECASE) else int(zahl.group())
+
+
+def personbefunde(graph: Abfragegraph, antworten: dict[str, Wahl]) -> list[Befund]:
+    """Warn about answers that do not fit the age or sex the same scenario gives.
+
+    The questioning answers such nodes itself from age and sex, so a contradicting answer would
+    send the trainee another way than the truth, as older scenarios can.
+    """
+    person = graph.meta.person
+    if person is None:
+        return []
+    alter_wahl = antworten.get(person.alter_knoten)
+    unbekannt = alter_wahl is not None and not (alter_wahl.wert or "").strip()
+    alter = alter_aus(alter_wahl.wert) if alter_wahl and alter_wahl.wert else None
+    geschlecht_wahl = antworten.get(person.geschlecht_knoten)
+    geschlecht = person.geschlecht.get(geschlecht_wahl.antwort or "") if geschlecht_wahl else None
+    befunde = []
+    for knoten_id, wahl in antworten.items():
+        antwort = graph.antwort(knoten_id, wahl.antwort or "")
+        if antwort is None:
+            continue
+        grund = widerspruch(antwort, alter, unbekannt, geschlecht)
+        if grund:
+            befunde.append(Befund(art="warnung", knoten=knoten_id, meldung=grund))
+    return befunde
+
+
+def spanne(unten: int | None, oben: int | None) -> str:
+    """Return age bounds as read aloud: "ab 13 Jahren", "bis 12 Jahre", "für 12 bis 50 Jahre"."""
+    if oben is None:
+        return f"ab {unten} Jahren"
+    if unten is None:
+        return f"bis {oben} Jahre"
+    return f"für {unten} bis {oben} Jahre"
+
+
+def widerspruch(
+    antwort: Antwort, alter: int | None, unbekannt: bool, geschlecht: str | None
+) -> str:
+    """Return why an answer contradicts the person, or an empty text."""
+    grenze = antwort.alter
+    if grenze is not None and grenze.unbekannt and alter is not None:
+        return f"gilt für ein unbekanntes Alter, das Szenario nennt {alter}"
+    if grenze is not None and not grenze.unbekannt:
+        if unbekannt:
+            return "gilt für ein bestimmtes Alter, das Szenario lässt es offen"
+        unten = grenze.min if grenze.min is not None else 0
+        oben = grenze.max if grenze.max is not None else 200
+        if alter is not None and not unten <= alter <= oben:
+            return f"gilt {spanne(grenze.min, grenze.max)}, das Szenario nennt {alter}"
+    if antwort.geschlecht and geschlecht and antwort.geschlecht != geschlecht:
+        return "gilt für ein anderes Geschlecht als im Szenario"
+    return ""
 
 
 def zielbefunde(graph: Abfragegraph, ziel: Ziel) -> list[Befund]:

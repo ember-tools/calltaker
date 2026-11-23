@@ -37,11 +37,15 @@ class Anrufereintrag(Modell):
 
 
 class Schritteintrag(Modell):
-    """One step of the trainee's path: the node, and the answer chosen or the value typed."""
+    """One step of the trainee's path: the node, and the answer chosen or the value typed.
+
+    `automatisch` marks a step the questioning took itself because earlier answers decided it.
+    """
 
     knoten: str = Field(max_length=200)
     antwort: str | None = Field(None, max_length=200)
     wert: str | None = Field(None, max_length=TEXT)
+    automatisch: bool = False
 
 
 class Codewahl(Modell):

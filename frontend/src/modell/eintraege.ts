@@ -5,6 +5,8 @@ export interface Schritteintrag {
     knoten: string
     antwort?: string
     wert?: string
+    /** A step the questioning took itself, because earlier answers decided it. */
+    automatisch?: boolean
 }
 
 /** An endpoint chosen outside the path: by upgrading, or as the interim result on cancelling. */

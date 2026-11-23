@@ -4,6 +4,7 @@ import {nextTick} from 'vue'
 import {i18n} from '../i18n'
 import {schwersteErreichbare} from '../modell/abfrageweg'
 import type {Abfrageeintrag} from '../modell/eintraege'
+import {eingrenzungsgraph} from '../modell/eingrenzung.test-hilfe'
 import {BIS_SITUATION, testgraph} from '../modell/testgraph.test-hilfe'
 import SnaFenster from './SnaFenster.vue'
 
@@ -108,5 +109,23 @@ describe('SnaFenster mit der Tastatur', () => {
         expect(vorher.findAll('button').find(b => b.text() === 'Abbruch mit Begründung')!.attributes('disabled')).toBeDefined()
         const nachher = fenster({pfad: BIS_SITUATION})
         expect(nachher.findAll('button').find(b => b.text() === 'Abbruch mit Begründung')!.attributes('disabled')).toBeUndefined()
+    })
+})
+
+describe('SnaFenster mit Eingrenzung', () => {
+    it('ordnet die Beschwerden nach der Lage und beantwortet die Altersfrage selbst', async () => {
+        const eng = eingrenzungsgraph()
+        const ansicht = mount(SnaFenster, {
+            props: {graph: eng, schwerste: schwersteErreichbare(eng), gesperrt: false, modelValue: {pfad: [{knoten: 'reaktion', antwort: 'nicht'}, {knoten: 'alter', wert: '81'}, {knoten: 'geschlecht', antwort: 'mann'}]}, 'onUpdate:modelValue': (wert: Abfrageeintrag) => ansicht.setProps({modelValue: wert})},
+            global: {plugins: [i18n]},
+        })
+        const kacheln = ansicht.findAll('[data-antworten] button').map(b => b.text())
+        expect(kacheln[0]).toContain('Bewusstlos')
+        expect(ansicht.text()).toContain('Weitere Antworten (1)')
+        await ansicht.findAll('button').find(b => b.text().includes('Krampf'))!.trigger('click')
+        expect((ansicht.props('modelValue') as Abfrageeintrag).pfad.at(-1)).toEqual({knoten: 'altersfrage', antwort: 'erwachsen', automatisch: true})
+        expect(ansicht.text()).toContain('(automatisch)')
+        await ansicht.findAll('button').find(b => b.text() === 'Zurück')!.trigger('click')
+        expect((ansicht.props('modelValue') as Abfrageeintrag).pfad).toHaveLength(3)
     })
 })

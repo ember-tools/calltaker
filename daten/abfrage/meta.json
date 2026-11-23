@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 5,
   "wurzel": "fachrichtung",
   "quelle": "Abgeleitet aus alarmzettel (f7f0e751ce83), dort aus den offenen Daten der Berliner Feuerwehr, Stand 2026-05-21.",
   "hinweise": {
@@ -24,5 +24,97 @@
     "RD_BT_RTW": "RTW-C mit der schnellsten Eintreffzeitprognose + Einsatzkräfte der Brandbekämpfung und Hilfeleistung",
     "RD_BT_NA": "RTW-C mit der schnellsten Eintreffzeitprognose + notarztbesetztes Rettungsmittel + Einsatzkräfte der Brandbekämpfung und Hilfeleistung",
     "RD_Mehrere Patienten": "Entsendung von mehreren Rettungsmitteln + ggf. Führungs- und Sonderfahrzeuge"
-  }
+  },
+  "person": {
+    "alter_knoten": "rd.alter",
+    "geschlecht_knoten": "rd.geschlecht",
+    "geschlecht": {
+      "frau": "w",
+      "mann": "m"
+    }
+  },
+  "eingrenzung": [
+    {
+      "knoten": "rd.hauptbeschwerde",
+      "wenn": [
+        {
+          "knoten": "rd.reaktion",
+          "antworten": [
+            "reagiert-nicht"
+          ]
+        }
+      ],
+      "zuerst": [
+        "rd.31",
+        "rd.12",
+        "rd.23",
+        "rd.28",
+        "rd.32",
+        "rd.17",
+        "rd.29",
+        "rd.30",
+        "rd.14",
+        "rd.15",
+        "rd.20",
+        "rd.13",
+        "rd.08",
+        "rd.11",
+        "rd.19",
+        "rd.27",
+        "rd.22",
+        "rd.21",
+        "rd.25"
+      ]
+    },
+    {
+      "knoten": "rd.hauptbeschwerde",
+      "wenn": [
+        {
+          "knoten": "rd.reaktion",
+          "antworten": [
+            "reagiert-aber-nicht-normal"
+          ]
+        }
+      ],
+      "zuerst": [
+        "rd.31",
+        "rd.28",
+        "rd.13",
+        "rd.12",
+        "rd.23",
+        "rd.26",
+        "rd.25",
+        "rd.17",
+        "rd.30",
+        "rd.20",
+        "rd.08",
+        "rd.19",
+        "rd.06",
+        "rd.32"
+      ]
+    },
+    {
+      "knoten": "rd.hauptbeschwerde",
+      "wenn": [
+        {
+          "knoten": "rd.atmung",
+          "antworten": [
+            "atmung-auffaellig"
+          ]
+        }
+      ],
+      "zuerst": [
+        "rd.06",
+        "rd.11",
+        "rd.02",
+        "rd.10",
+        "rd.19",
+        "rd.08",
+        "rd.14",
+        "rd.23",
+        "rd.07",
+        "rd.27"
+      ]
+    }
+  ]
 }

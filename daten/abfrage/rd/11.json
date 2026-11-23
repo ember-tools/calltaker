@@ -177,7 +177,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.11.11d02",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -201,7 +204,10 @@
           "id": "bei-patientenalter-unbekannt-bonbons",
           "label": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi",
           "ziel": "rd.11.11d02c",
-          "aussage": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi"
+          "aussage": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-bonbons",
@@ -225,7 +231,10 @@
           "id": "bei-patientenalter-unbekannt-essen",
           "label": "bei Patientenalter unbekannt, Essen",
           "ziel": "rd.11.11d02f",
-          "aussage": "bei Patientenalter unbekannt, Essen"
+          "aussage": "bei Patientenalter unbekannt, Essen",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-essen",
@@ -249,7 +258,10 @@
           "id": "bei-patientenalter-unbekannt-milch",
           "label": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)",
           "ziel": "rd.11.11d02m",
-          "aussage": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)"
+          "aussage": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-milch",
@@ -273,7 +285,10 @@
           "id": "bei-patientenalter-unbekannt-objekt",
           "label": "bei Patientenalter unbekannt, Objekt/Spielzeug",
           "ziel": "rd.11.11d02o",
-          "aussage": "bei Patientenalter unbekannt, Objekt/Spielzeug"
+          "aussage": "bei Patientenalter unbekannt, Objekt/Spielzeug",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-objekt",
@@ -297,7 +312,10 @@
           "id": "bei-patientenalter-unbekannt-unbekannt",
           "label": "bei Patientenalter unbekannt, Unbekannt",
           "ziel": "rd.11.11d02u",
-          "aussage": "bei Patientenalter unbekannt, Unbekannt"
+          "aussage": "bei Patientenalter unbekannt, Unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",
@@ -326,7 +344,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt",
           "ziel": "rd.11.11e01",
-          "aussage": "bei Patientenalter unbekannt"
+          "aussage": "bei Patientenalter unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre",
@@ -359,7 +380,10 @@
           "id": "bei-patientenalter-unbekannt-bonbons",
           "label": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi",
           "ziel": "rd.11.11e01c",
-          "aussage": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi"
+          "aussage": "bei Patientenalter unbekannt, Bonbons/Süßigkeiten/Kaugummi",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -392,7 +416,10 @@
           "id": "bei-patientenalter-unbekannt-essen",
           "label": "bei Patientenalter unbekannt, Essen",
           "ziel": "rd.11.11e01f",
-          "aussage": "bei Patientenalter unbekannt, Essen"
+          "aussage": "bei Patientenalter unbekannt, Essen",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-essen",
@@ -425,7 +452,10 @@
           "id": "bei-patientenalter-unbekannt-milch",
           "label": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)",
           "ziel": "rd.11.11e01m",
-          "aussage": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)"
+          "aussage": "bei Patientenalter unbekannt, Milch/Flüssigkeit (ungiftig)",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-milch",
@@ -458,7 +488,10 @@
           "id": "bei-patientenalter-unbekannt-objekt",
           "label": "bei Patientenalter unbekannt, Objekt/Spielzeug",
           "ziel": "rd.11.11e01o",
-          "aussage": "bei Patientenalter unbekannt, Objekt/Spielzeug"
+          "aussage": "bei Patientenalter unbekannt, Objekt/Spielzeug",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-3",
@@ -491,7 +524,10 @@
           "id": "bei-patientenalter-unbekannt-unbekannt",
           "label": "bei Patientenalter unbekannt, Unbekannt",
           "ziel": "rd.11.11e01u",
-          "aussage": "bei Patientenalter unbekannt, Unbekannt"
+          "aussage": "bei Patientenalter unbekannt, Unbekannt",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-4",

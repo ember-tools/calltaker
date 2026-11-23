@@ -89,7 +89,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt, Kälteprobleme",
           "ziel": "rd.20.20b00c",
-          "aussage": "bei Patientenalter unbekannt, Kälteprobleme"
+          "aussage": "bei Patientenalter unbekannt, Kälteprobleme",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-aelter-12-jahre-2",
@@ -113,7 +116,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Hitzeprobleme",
           "ziel": "rd.20.20b00h",
-          "aussage": "bei Patientenalter unbekannt, Hitzeprobleme"
+          "aussage": "bei Patientenalter unbekannt, Hitzeprobleme",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "kaelteprobleme",
@@ -174,7 +180,10 @@
           "id": "bei-patientenalter-unbekannt",
           "label": "bei Patientenalter unbekannt, Kälteprobleme",
           "ziel": "rd.20.20b02c",
-          "aussage": "bei Patientenalter unbekannt, Kälteprobleme"
+          "aussage": "bei Patientenalter unbekannt, Kälteprobleme",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre",
@@ -198,7 +207,10 @@
           "id": "bei-patientenalter-unbekannt-2",
           "label": "bei Patientenalter unbekannt, Hitzeprobleme",
           "ziel": "rd.20.20b02h",
-          "aussage": "bei Patientenalter unbekannt, Hitzeprobleme"
+          "aussage": "bei Patientenalter unbekannt, Hitzeprobleme",
+          "alter": {
+            "unbekannt": true
+          }
         },
         {
           "id": "bei-patientenalter-bis-12-jahre-2",

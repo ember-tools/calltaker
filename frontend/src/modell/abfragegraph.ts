@@ -1,7 +1,8 @@
-/** The ages an answer applies to, both bounds inclusive. */
+/** The ages an answer applies to, both bounds inclusive, or that it is for an unknown age. */
 export interface Altersgrenze {
     min?: number
     max?: number
+    unbekannt?: boolean
 }
 
 /** One answer to choose from. */
@@ -14,6 +15,7 @@ export interface Antwort {
     farbe?: string
     protokoll?: string
     alter?: Altersgrenze
+    geschlecht?: 'w' | 'm'
 }
 
 /** What is recorded when a typed answer is left empty. */
@@ -54,13 +56,29 @@ export interface Knoten {
     stichwort?: string
 }
 
-/** The graph's version, its root and the notes on its data. */
+/** Where the opening asks for the person; `geschlecht` maps the answers to "w" and "m". */
+export interface Person {
+    alter_knoten: string
+    geschlecht_knoten: string
+    geschlecht: Record<string, 'w' | 'm'>
+}
+
+/** Which answers of a node come first when earlier answers point that way. */
+export interface Eingrenzung {
+    knoten: string
+    wenn: {knoten: string, antworten: string[]}[]
+    zuerst: string[]
+}
+
+/** The graph's version, its root, the notes on its data, and how the questioning narrows. */
 export interface Meta {
     version: number
     wurzel: string
     quelle: string
     hinweise: Record<string, string>
     notfallkategorien: Record<string, string>
+    person?: Person
+    eingrenzung?: Eingrenzung[]
 }
 
 /** One step of a path through the graph: the node and the answer taken there. */

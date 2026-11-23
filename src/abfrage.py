@@ -14,7 +14,7 @@ import re
 from collections import deque
 from functools import cached_property
 from pathlib import Path
-from typing import Self
+from typing import Literal, Self
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
@@ -28,10 +28,11 @@ class Modell(BaseModel):
 
 
 class Altersgrenze(Modell):
-    """The ages an answer applies to, both bounds inclusive."""
+    """The ages an answer applies to, both bounds inclusive, or that it is for an unknown age."""
 
     min: int | None = None
     max: int | None = None
+    unbekannt: bool = False
 
 
 class Antwort(Modell):
@@ -45,6 +46,7 @@ class Antwort(Modell):
     farbe: str | None = None
     protokoll: str | None = None
     alter: Altersgrenze | None = None
+    geschlecht: Literal["w", "m"] | None = None
 
 
 class Leer(Modell):
@@ -115,14 +117,46 @@ class Knoten(Modell):
         return [self.ziel] if self.ziel else []
 
 
+class Bedingung(Modell):
+    """An answer given earlier: one of these answers at that node."""
+
+    knoten: str
+    antworten: list[str]
+
+
+class Eingrenzung(Modell):
+    """Which answers of a node come first when earlier answers point that way.
+
+    `zuerst` names answers of the node by their id or by the protocol they choose, in the order
+    they are shown; the rest of the node's answers follow under "weitere".
+    """
+
+    knoten: str
+    wenn: list[Bedingung]
+    zuerst: list[str]
+
+
+class Person(Modell):
+    """Where the opening asks for the person, so later answers that depend on it can follow.
+
+    `geschlecht` maps the answers of `geschlecht_knoten` to "w" and "m".
+    """
+
+    alter_knoten: str
+    geschlecht_knoten: str
+    geschlecht: dict[str, Literal["w", "m"]]
+
+
 class Meta(Modell):
-    """The graph's version, its root and the notes on its data."""
+    """The graph's version, its root, the notes on its data, and how the questioning narrows."""
 
     version: int
     wurzel: str
     quelle: str
     hinweise: dict[str, str] = Field(default_factory=dict)
     notfallkategorien: dict[str, str] = Field(default_factory=dict)
+    person: Person | None = None
+    eingrenzung: list[Eingrenzung] = Field(default_factory=list)
 
 
 class Schritt(Modell):
@@ -242,7 +276,40 @@ def strukturfehler(graph: Abfragegraph) -> list[str]:
     fehler = [*zyklusfehler(graph), *erreichbarkeitsfehler(graph)]
     if fehler:
         return fehler
-    return weichenfolgefehler(graph)
+    return [*weichenfolgefehler(graph), *eingrenzungsfehler(graph)]
+
+
+def eingrenzungsfehler(graph: Abfragegraph) -> list[str]:
+    """Return the narrowing rules and person nodes that name nodes or answers the graph lacks."""
+    fehler = []
+    person = graph.meta.person
+    if person is not None:
+        for id_ in (person.alter_knoten, person.geschlecht_knoten):
+            if id_ not in graph.knoten:
+                fehler.append(f"Person: Knoten {id_} gibt es nicht")
+        fehler.extend(
+            f"Person: Antwort {antwort} gibt es nicht"
+            for antwort in person.geschlecht
+            if graph.antwort(person.geschlecht_knoten, antwort) is None
+        )
+    for regel in graph.meta.eingrenzung:
+        knoten = graph.knoten.get(regel.knoten)
+        if knoten is None or not knoten.antworten:
+            fehler.append(f"Eingrenzung: {regel.knoten} ist keine Auswahl")
+            continue
+        namen = {a.id for a in knoten.antworten} | {a.protokoll for a in knoten.antworten}
+        fehler.extend(
+            f"Eingrenzung {regel.knoten}: {name} gibt es dort nicht"
+            for name in regel.zuerst
+            if name not in namen
+        )
+        fehler.extend(
+            f"Eingrenzung {regel.knoten}: Bedingung {antwort} an {bedingung.knoten} gibt es nicht"
+            for bedingung in regel.wenn
+            for antwort in bedingung.antworten
+            if graph.antwort(bedingung.knoten, antwort) is None
+        )
+    return fehler
 
 
 def idfehler(graph: Abfragegraph) -> list[str]:
