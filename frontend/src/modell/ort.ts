@@ -10,6 +10,8 @@ export interface Adressvorschlag {
     bezirk: string
     breite?: number
     laenge?: number
+    /** A low-quality match: the street is spelled or sounds almost like what was typed. */
+    ungefaehr?: boolean
 }
 
 /** A named place without a house number, from OpenStreetMap: a park, a station, a hospital. */

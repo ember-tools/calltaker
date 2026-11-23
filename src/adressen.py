@@ -10,6 +10,7 @@ The service is asked for EPSG:4326 and answers GeoJSON, whose points are (longit
 they are stored as latitude and longitude. The loading follows alarmzettel's.
 """
 
+import math
 import os
 import random
 import re
@@ -23,6 +24,8 @@ from pathlib import Path
 from typing import Any
 
 import httpx
+
+import ungefaehr
 
 DIENST = "https://gdi.berlin.de/services/wfs/adressen_berlin"
 TYPNAME = "adressen_berlin:adressen_berlin"
@@ -50,7 +53,14 @@ CREATE INDEX adressen_ortsteil ON adressen (ortsteil);
 CREATE INDEX adressen_bezirk ON adressen (bezirk);
 """
 
-ANGEHAENGT = re.compile(r"^(?P<strasse>.*?)[\s,]+(?P<hnr>\d+\s*[a-zA-Z]?)$")
+ANGEHAENGT = re.compile(
+    r"^(?P<strasse>.*?)[\s,]+(?P<hnr>\d+(?:\s*[a-zA-Z](?![a-zA-ZäöüÄÖÜß]))?)"
+    r"(?:[\s,]+(?P<ort>\d{5}\b.*|[^\d\s,].*))?$"
+)
+WORT = re.compile(r"[^\wäöüß]+")
+ORT_VORRAT = 1000
+AEHNLICHE_UNTER = 3
+NAECHSTE_METER = 150
 STRASSE_KURZ = re.compile(r"(?<=.)(str\.?|strasse)$", re.IGNORECASE)
 MINDESTANTEIL = 0.5
 
@@ -119,17 +129,72 @@ class Adressen:
         runs through, since a long street crosses several. With one they are doors, carrying the
         coordinates, so picking one settles the whole address. "Karl-Marx-Str 92" finds
         "Karl-Marx-Straße 92": a trailing "str" or "str." is read as "straße".
+
+        A place may follow to narrow the choice, as callers say it: after the house number
+        ("Sieg 25 bies" finds Siegmarstraße 25 in Biesdorf), after a comma ("Siegmarstr,
+        Biesdorf"), or as the last word when the whole text finds no street ("Sieg bies"). Every
+        word of the place must begin a word of the postcode, Ortsteil or Bezirk.
         """
-        name, hnr = zerlegen(text)
-        anfaenge = suchformen(name)
-        if len(anfaenge[0]) < 2:
+        lesarten = lesarten_von(text)
+        for name, hnr, ort in lesarten:
+            treffer = self._suchen(praefix(suchformen(name)), name, hnr, ort, grenze)
+            if len(treffer) >= AEHNLICHE_UNTER:
+                return treffer
+            if treffer:
+                return treffer + self._aehnliche(name, hnr, ort, grenze - len(treffer), treffer)
+        for name, hnr, ort in lesarten:
+            treffer = self._aehnliche(name, hnr, ort, grenze, [])
+            if treffer:
+                return treffer
+        return []
+
+    def _suchen(
+        self, bedingung: tuple[str, list], name: str, hnr: str, ort: str, grenze: int
+    ) -> list[dict]:
+        """Return the streets or doors matching a condition, a house number and a place."""
+        if len(suchformen(name)[0]) < 2:
             return []
+        vorrat = ORT_VORRAT if ort else grenze
         with self._lesen() as verbindung:
             if verbindung is None:
                 return []
-            if not hnr:
-                return strassen(verbindung, anfaenge, grenze)
-            return tueren(verbindung, anfaenge, hnr, grenze)
+            gefunden = (
+                tueren(verbindung, bedingung, hnr, vorrat)
+                if hnr
+                else strassen(verbindung, bedingung, vorrat)
+            )
+        return [eintrag for eintrag in gefunden if passt_zum_ort(eintrag, ort)][:grenze]
+
+    def _aehnliche(
+        self, name: str, hnr: str, ort: str, grenze: int, schon: list[dict]
+    ) -> list[dict]:
+        """Return low-quality matches: streets spelled or sounding almost like the name typed.
+
+        They are marked `ungefaehr`, so the views can set them apart from the real matches.
+        """
+        if grenze <= 0 or not self.datei.is_file():
+            return []
+        vorhanden = {eintrag["strasse"] for eintrag in schon}
+        kandidaten = [
+            strasse
+            for strasse in ungefaehr.aehnliche(self._gemerkt("namen", self._namen), name)
+            if strasse not in vorhanden
+        ]
+        if not kandidaten:
+            return []
+        bedingung = (f"strasse IN ({', '.join('?' * len(kandidaten))})", kandidaten)
+        gefunden = self._suchen(bedingung, name, hnr, ort, grenze * 4)
+        rang = {strasse: stelle for stelle, strasse in enumerate(kandidaten)}
+        gefunden.sort(key=lambda eintrag: rang[eintrag["strasse"]])
+        return [{**eintrag, "ungefaehr": True} for eintrag in gefunden[:grenze]]
+
+    def _namen(self) -> list[ungefaehr.Name]:
+        """Return every street name of the list, prepared for similar-name searches."""
+        with self._lesen() as verbindung:
+            if verbindung is None:
+                return []
+            zeilen = verbindung.execute("SELECT DISTINCT strasse FROM adressen").fetchall()
+        return ungefaehr.namen(zeile[0] for zeile in zeilen)
 
     def zufall(self, zufall: random.Random, ortsteil: str = "", bezirk: str = "") -> dict | None:
         """Return a random address, optionally within an Ortsteil or a Bezirk.
@@ -166,6 +231,33 @@ class Adressen:
                 [wert, zufall.randrange(anzahl)],
             ).fetchone()
             return tuer(zeile) if zeile else None
+
+    def naechste(self, breite: float, laenge: float, radius: float = NAECHSTE_METER) -> dict | None:
+        """Return the address closest to a point within a radius in metres, or None."""
+        grad_breite = radius / 111_320
+        grad_laenge = radius / (111_320 * math.cos(math.radians(breite)))
+        with self._lesen() as verbindung:
+            if verbindung is None:
+                return None
+            zeilen = verbindung.execute(
+                "SELECT * FROM adressen WHERE breite BETWEEN ? AND ? AND laenge BETWEEN ? AND ?",
+                [
+                    breite - grad_breite,
+                    breite + grad_breite,
+                    laenge - grad_laenge,
+                    laenge + grad_laenge,
+                ],
+            ).fetchall()
+        if not zeilen:
+            return None
+        naechste = min(
+            zeilen,
+            key=lambda z: (
+                (z["breite"] - breite) ** 2
+                + ((z["laenge"] - laenge) * math.cos(math.radians(breite))) ** 2
+            ),
+        )
+        return tuer(naechste)
 
     def _gemerkt(self, schluessel: object, berechnen: Callable[[], Any]) -> Any:
         """Return a value worked out from the list, remembered until the list file changes."""
@@ -264,12 +356,46 @@ class LadenAbgebrochen(Exception):
     """A download stopped because the server is shutting down."""
 
 
-def zerlegen(text: str) -> tuple[str, str]:
-    """Split "Archenholdstr 21" into street and house number; a trailing word stays in the name."""
+def lesarten_von(text: str) -> list[tuple[str, str, str]]:
+    """Return the ways a text can be read as street, house number and place, likeliest first.
+
+    A place follows the house number, or a comma; without either, the last word may be the place
+    when the whole text names no street.
+    """
+    name, hnr, ort = zerlegen(text)
+    if not hnr and not ort and "," in name:
+        name, ort = (teil.strip() for teil in name.rsplit(",", 1))
+    lesarten = [(name, hnr, ort)]
+    if not hnr and not ort and " " in name.strip():
+        kopf, letztes = name.strip().rsplit(" ", 1)
+        lesarten.append((kopf, "", letztes))
+    return lesarten
+
+
+def zerlegen(text: str) -> tuple[str, str, str]:
+    """Split "Archenholdstr 21 Plänterwald" into street, house number and place.
+
+    Without a house number the whole text is the street, so "Straße des 17. Juni" stays whole.
+    """
     treffer = ANGEHAENGT.match(text.strip())
     if not treffer:
-        return text.strip(), ""
-    return treffer.group("strasse").strip(), treffer.group("hnr")
+        return text.strip(), "", ""
+    return (
+        treffer.group("strasse").strip(),
+        treffer.group("hnr"),
+        (treffer.group("ort") or "").strip(),
+    )
+
+
+def passt_zum_ort(eintrag: dict, ort: str) -> bool:
+    """Tell whether each word of a place begins a word of the postcode, Ortsteil or Bezirk."""
+    woerter = WORT.sub(
+        " ", f"{eintrag['plz']} {eintrag['ortsteil']} {eintrag['bezirk']}".lower()
+    ).split()
+    return all(
+        any(wort.startswith(teil) for wort in woerter)
+        for teil in WORT.sub(" ", ort.lower()).split()
+    )
 
 
 def suchformen(name: str) -> list[str]:
@@ -302,9 +428,9 @@ def hausnummer(roh: str) -> tuple[int | None, str]:
     return int(ziffern.group()), roh.strip()[ziffern.end() :].strip().upper()
 
 
-def strassen(verbindung: sqlite3.Connection, anfaenge: list[str], grenze: int) -> list[dict]:
-    """Return the streets starting with the text, once per postcode and Ortsteil."""
-    bedingung, werte = praefix(anfaenge)
+def strassen(verbindung: sqlite3.Connection, auswahl: tuple[str, list], grenze: int) -> list[dict]:
+    """Return the streets a condition selects, once per postcode and Ortsteil."""
+    bedingung, werte = auswahl
     zeilen = verbindung.execute(
         f"SELECT strasse, plz, ortsteil, bezirk FROM adressen WHERE {bedingung} "
         "GROUP BY strasse, plz, ortsteil ORDER BY strasse, plz LIMIT ?",
@@ -324,11 +450,11 @@ def strassen(verbindung: sqlite3.Connection, anfaenge: list[str], grenze: int) -
 
 
 def tueren(
-    verbindung: sqlite3.Connection, anfaenge: list[str], hnr: str, grenze: int
+    verbindung: sqlite3.Connection, auswahl: tuple[str, list], hnr: str, grenze: int
 ) -> list[dict]:
-    """Return the addresses on streets starting with the text that carry the house number."""
+    """Return the addresses on the streets a condition selects that carry the house number."""
     zahl, zusatz = hausnummer(hnr)
-    bedingung, werte = praefix(anfaenge)
+    bedingung, werte = auswahl[0], list(auswahl[1])
     bedingung += " AND hnr = ?"
     werte.append(zahl)
     if zusatz:

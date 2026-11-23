@@ -17,10 +17,21 @@ const {adressen, orte, uebernommen} = useAdresssuche(toRef(text), () => props.ru
 const markiert = ref(-1)
 const offen = ref(false)
 
-const eintraege = computed<Eintrag[]>(() => [
-    ...adressen.value.map(vorschlag => ({art: 'adresse' as const, vorschlag})),
-    ...orte.value.map(vorschlag => ({art: 'ort' as const, vorschlag})),
-])
+/**
+ * The suggestions in the order they are offered: doors that match exactly, then named places,
+ * since emergencies happen at stations and shops more often than at a street at large, then
+ * streets that match exactly, then streets only spelled or sounding almost like the text.
+ */
+const eintraege = computed<Eintrag[]>(() => {
+    const adresse = (vorschlag: Adressvorschlag): Eintrag => ({art: 'adresse', vorschlag})
+    const genau = adressen.value.filter(vorschlag => !vorschlag.ungefaehr)
+    return [
+        ...genau.filter(vorschlag => vorschlag.hausnummer).map(adresse),
+        ...orte.value.map(vorschlag => ({art: 'ort' as const, vorschlag})),
+        ...genau.filter(vorschlag => !vorschlag.hausnummer).map(adresse),
+        ...adressen.value.filter(vorschlag => vorschlag.ungefaehr).map(adresse),
+    ]
+})
 
 function waehlen(eintrag: Eintrag): void {
     offen.value = false
@@ -84,10 +95,11 @@ const zeigen = computed(() => offen.value && eintraege.value.length > 0)
                 role="option"
                 tabindex="-1"
                 :aria-selected="stelle === markiert"
-                :class="['cursor-pointer px-2 py-1.5', stelle === markiert ? 'bg-sky-100' : '', eintrag.art === 'ort' && (stelle === 0 || eintraege[stelle - 1]?.art !== 'ort') ? 'border-t border-rand' : '']"
+                :class="['cursor-pointer px-2 py-1.5', stelle === markiert ? 'bg-sky-100' : '', stelle > 0 && eintrag.art !== eintraege[stelle - 1]?.art ? 'border-t border-rand' : '']"
                 @mousedown.prevent="waehlen(eintrag)"
             >
-                <span v-if="eintrag.art === 'ort'" class="mr-1 text-xs font-semibold text-gedaempft">{{ t('ort.ort') }}</span>{{ eintrag.vorschlag.beschriftung }}
+                <span v-if="eintrag.art === 'ort'" class="mr-1 text-xs font-semibold text-gedaempft">{{ t('ort.ort') }}</span>
+                <span v-else-if="eintrag.vorschlag.ungefaehr" class="mr-1 text-xs font-semibold text-warnung">{{ t('ort.aehnlich') }}</span>{{ eintrag.vorschlag.beschriftung }}
             </li>
             <li v-if="orte.length" role="presentation" class="px-2 py-1 text-xs text-gedaempft">{{ t('ort.orteQuelle') }}</li>
         </ul>

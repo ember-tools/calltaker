@@ -144,9 +144,13 @@ def test_ein_abgebrochener_abruf_laesst_die_alte_liste_stehen(adressen):
 @pytest.mark.parametrize(
     ("text", "erwartet"),
     [
-        ("Archenholdstr 21", ("Archenholdstr", "21")),
-        ("Straße des 17. Juni", ("Straße des 17. Juni", "")),
-        ("Werderstraße, 20b", ("Werderstraße", "20b")),
+        ("Archenholdstr 21", ("Archenholdstr", "21", "")),
+        ("Straße des 17. Juni", ("Straße des 17. Juni", "", "")),
+        ("Werderstraße, 20b", ("Werderstraße", "20b", "")),
+        ("Werderstraße 20 b", ("Werderstraße", "20 b", "")),
+        ("Sieg 25 bies", ("Sieg", "25", "bies")),
+        ("Sieg 25b Biesdorf", ("Sieg", "25b", "Biesdorf")),
+        ("Karl-Marx-Str 92, 12043", ("Karl-Marx-Str", "92", "12043")),
     ],
 )
 def test_zerlegen(text, erwartet):
@@ -269,3 +273,34 @@ def test_zufall_ohne_gebiet_findet_jede_adresse(adressen):
     zufall = random.Random(1)
     gezogen = {adressen.zufall(zufall)["strasse"] for _ in range(300)}
     assert gezogen == {"Karl-Marx-Straße", "Karl-Marx-Allee", "Werderstraße", "Stralauer Allee"}
+
+
+def test_ein_ort_hinter_der_hausnummer_grenzt_ein(adressen):
+    assert [t["ortsteil"] for t in adressen.suchen("Karl-Marx 92 neu")] == ["Neukölln", "Neukölln"]
+    assert [t["strasse"] for t in adressen.suchen("Karl-Marx 92 fried")] == ["Karl-Marx-Allee"]
+    assert [t["strasse"] for t in adressen.suchen("Karl-Marx 92 friedrichshain-kreuz")] == [
+        "Karl-Marx-Allee"
+    ]
+    assert adressen.suchen("Karl-Marx 92 spandau") == []
+
+
+def test_ein_ort_ohne_hausnummer_hinter_komma_oder_als_letztes_wort(adressen):
+    assert [t["strasse"] for t in adressen.suchen("Karl-Marx, Friedrichshain")] == [
+        "Karl-Marx-Allee"
+    ]
+    assert [t["strasse"] for t in adressen.suchen("Karl-Marx fried")] == ["Karl-Marx-Allee"]
+    assert [t["plz"] for t in adressen.suchen("Karl-Marx-Str 92, 12043")] == ["12043", "12043"]
+    assert [t["strasse"] for t in adressen.suchen("Stralauer Allee")] == ["Stralauer Allee"]
+
+
+def test_tippfehler_finden_aehnliche_strassen_als_ungefaehr(adressen):
+    treffer = adressen.suchen("Werdrestr 20")
+    assert [(t["strasse"], t.get("ungefaehr")) for t in treffer] == [("Werderstraße", True)]
+    assert all("ungefaehr" not in t for t in adressen.suchen("Werderstr 20"))
+    assert [t["strasse"] for t in adressen.suchen("Kral-Marx-Allee")] == ["Karl-Marx-Allee"]
+
+
+def test_die_naechste_tuer_liegt_im_umkreis(adressen):
+    assert adressen.naechste(52.4793, 13.4386)["beschriftung"].startswith("Karl-Marx-Straße 92")
+    assert adressen.naechste(52.5663, 13.2125)["strasse"] == "Werderstraße"
+    assert adressen.naechste(52.40, 13.10) is None

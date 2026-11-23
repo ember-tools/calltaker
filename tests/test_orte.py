@@ -187,3 +187,12 @@ def test_die_ortsteile_der_orte_sind_die_des_adressverzeichnisses():
     from einstellungen import einstellungen
 
     assert {ort.ortsteil for ort in Orte(einstellungen().orte_verzeichnis).orte} == ORTSTEILE
+
+
+def test_zufaellige_orte_nach_art_und_ortsteil(verzeichnis):
+    import random
+
+    orte = Orte(verzeichnis)
+    zufall = random.Random(1)
+    assert {orte.zufall(zufall, arten={"Rathaus"})["art"] for _ in range(20)} == {"Rathaus"}
+    assert orte.zufall(zufall, "Buckow", {"Rathaus"}) is None

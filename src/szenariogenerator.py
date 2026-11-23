@@ -45,6 +45,46 @@ NICHT_ZIEHBAR = {"", "Aufwertung entfällt."}
 UNTERDRUECKT_ANTEIL = 0.05
 ANDERE_RUECKRUF_ANTEIL = 0.05
 ERWACHSEN = (18, 90)
+PLATZ_VERSUCHE = 5
+EINSATZORTE = frozenset(
+    {
+        "Bahnhof",
+        "Haltepunkt",
+        "Bushaltestelle",
+        "Tramhaltestelle",
+        "Busbahnhof",
+        "Supermarkt",
+        "Einkaufszentrum",
+        "Kaufhaus",
+        "Markt",
+        "Schule",
+        "Kita",
+        "Hochschule",
+        "Universität",
+        "Park",
+        "Spielplatz",
+        "Sportanlage",
+        "Sporthalle",
+        "Sportplatz",
+        "Schwimmbad",
+        "Hotel",
+        "Hostel",
+        "Gemeindezentrum",
+        "Kirche",
+        "Moschee",
+        "Museum",
+        "Theater",
+        "Kino",
+        "Bibliothek",
+        "Friedhof",
+        "Kleingartenanlage",
+        "Biergarten",
+        "Postfiliale",
+        "Pflegeheim",
+        "Rathaus",
+        "Kulturzentrum",
+    }
+)
 GESCHOSSE = (
     "EG",
     "1. OG",
@@ -75,6 +115,7 @@ class Erzeugung(BaseModel):
     kategorie: str = Field("", max_length=40)
     ortsteil: str = Field("", max_length=80)
     bezirk: str = Field("", max_length=80)
+    anteil_orte: int = Field(30, ge=0, le=100)
 
     def gewichte(self) -> dict[Disziplin, int]:
         """Return the weight of each discipline."""
@@ -87,10 +128,11 @@ class NichtsZuZiehen(ValueError):
 
 @dataclass(frozen=True)
 class Quellen:
-    """Where places come from: a random address, else a random named place."""
+    """Where places come from: a random address, a random named place, the door nearest a point."""
 
     adresse: Callable[[random.Random, str, str], dict | None]
-    ort: Callable[[random.Random, str], dict | None]
+    ort: Callable[..., dict | None]
+    naechste: Callable[[float, float], dict | None] = lambda *_: None
 
 
 def disziplin_von(endpunkt: Endpunkt) -> Disziplin:
@@ -334,22 +376,21 @@ def eroeffnung(
 
 
 def ort_ziehen(quellen: Quellen, erzeugung: Erzeugung, zufall: random.Random) -> tuple[Ort, str]:
-    """Return a place for the scenario and its Ortsteil: an address, else a named place.
+    """Return a place for the scenario and its Ortsteil.
 
-    Named places know their Ortsteil but not their Bezirk, so without the address list a Bezirk
-    setting is not kept to; an Ortsteil is.
+    Emergencies happen more often at places than at a door picked at random, so a share of the
+    scenarios, as the settings say, happens at a named place of a kind people gather at: a station,
+    a supermarket, a school, a park. Such a place gets the address of the nearest door, within a
+    Bezirk setting when one is made. The rest, or when no fitting place turns up, take a random
+    address, and without the address list a random named place.
     """
+    if zufall.random() * 100 < erzeugung.anteil_orte:
+        am_platz = platz_mit_adresse(quellen, erzeugung, zufall)
+        if am_platz is not None:
+            return am_platz
     adresse = quellen.adresse(zufall, erzeugung.ortsteil, erzeugung.bezirk)
     if adresse is not None:
-        return Ort(
-            adresse=Adresse(
-                strasse=adresse["strasse"],
-                hausnummer=adresse["hausnummer"],
-                plz=adresse["plz"],
-                ortsteil=adresse["ortsteil"],
-            ),
-            koordinaten=(adresse["breite"], adresse["laenge"]),
-        ), adresse["ortsteil"]
+        return ort_aus(adresse), adresse["ortsteil"]
     platz = quellen.ort(zufall, erzeugung.ortsteil)
     if platz is None and (erzeugung.ortsteil or erzeugung.bezirk):
         raise NichtsZuZiehen("Im gewählten Gebiet gibt es keine Adresse und keinen Ort.")
@@ -360,6 +401,37 @@ def ort_ziehen(quellen: Quellen, erzeugung: Erzeugung, zufall: random.Random) ->
         koordinaten=(platz["breite"], platz["laenge"]),
         objekt=platz["name"],
     ), platz["ortsteil"]
+
+
+def platz_mit_adresse(
+    quellen: Quellen, erzeugung: Erzeugung, zufall: random.Random
+) -> tuple[Ort, str] | None:
+    """Return a named place of a gathering kind with the nearest door's address, if one fits."""
+    for _ in range(PLATZ_VERSUCHE):
+        platz = quellen.ort(zufall, erzeugung.ortsteil, EINSATZORTE)
+        if platz is None:
+            return None
+        tuer = quellen.naechste(platz["breite"], platz["laenge"])
+        if tuer is None or (erzeugung.bezirk and tuer["bezirk"] != erzeugung.bezirk):
+            continue
+        ort = ort_aus(tuer)
+        ort.koordinaten = (platz["breite"], platz["laenge"])
+        ort.objekt = f"{platz['name']} ({platz['art']})"
+        return ort, tuer["ortsteil"]
+    return None
+
+
+def ort_aus(adresse: dict) -> Ort:
+    """Return a scenario location at a door of the address list."""
+    return Ort(
+        adresse=Adresse(
+            strasse=adresse["strasse"],
+            hausnummer=adresse["hausnummer"],
+            plz=adresse["plz"],
+            ortsteil=adresse["ortsteil"],
+        ),
+        koordinaten=(adresse["breite"], adresse["laenge"]),
+    )
 
 
 def anrufer_ziehen(zufall: random.Random, name: str) -> Anrufer:
@@ -421,8 +493,9 @@ def generieren(
     betroffen = zufallsname(zufall, person.weiblich) if rd else ""
     anrufer_name = betroffen if person.anrufer_selbst else zufallsname(zufall)
     if rd:
-        ort.geschoss = zufall.choice(GESCHOSSE) if ort.adresse.hausnummer else ""
-        ort.klingel = betroffen.split()[-1] if ort.adresse.hausnummer else ""
+        an_tuer = bool(ort.adresse.hausnummer) and not ort.objekt
+        ort.geschoss = zufall.choice(GESCHOSSE) if an_tuer else ""
+        ort.klingel = betroffen.split()[-1] if an_tuer else ""
     stimmungen = STIMMUNGEN[stufe(endpunkt.kategorie)]
     stimmung = zufall.choices(list(stimmungen), weights=list(stimmungen.values()))[0]
     return Szenario(

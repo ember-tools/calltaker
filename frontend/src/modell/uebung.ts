@@ -84,6 +84,8 @@ export interface Erzeugung {
     kategorie: string
     ortsteil: string
     bezirk: string
+    /** The share of scenarios, in percent, that happen at a named place rather than a door. */
+    anteilOrte: number
 }
 
 /** The queue engine's state as the trainee sees it. */

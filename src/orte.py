@@ -14,6 +14,7 @@ import json
 import logging
 import random
 import re
+from collections.abc import Collection
 from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
@@ -81,9 +82,15 @@ class Orte:
         )
         return [ort.nach_aussen() for ort in treffer[:grenze]]
 
-    def zufall(self, zufall: random.Random, ortsteil: str = "") -> dict | None:
-        """Return a random place, optionally within an Ortsteil, or None when there is none."""
-        auswahl = [ort for ort in self.orte if not ortsteil or ort.ortsteil == ortsteil]
+    def zufall(
+        self, zufall: random.Random, ortsteil: str = "", arten: Collection[str] = ()
+    ) -> dict | None:
+        """Return a random place, optionally within an Ortsteil and of some kinds, or None."""
+        auswahl = [
+            ort
+            for ort in self.orte
+            if (not ortsteil or ort.ortsteil == ortsteil) and (not arten or ort.art in arten)
+        ]
         return zufall.choice(auswahl).nach_aussen() if auswahl else None
 
 
