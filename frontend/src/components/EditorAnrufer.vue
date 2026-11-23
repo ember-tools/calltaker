@@ -14,7 +14,7 @@ function unterdruecken(an: boolean): void {
 </script>
 
 <template>
-    <fieldset class="m-0 grid grid-cols-2 gap-2 rounded border border-rand p-3">
+    <fieldset class="m-0 min-w-0 grid grid-cols-2 gap-2 rounded border border-rand p-3">
         <legend class="px-1 text-sm font-bold">{{ t('editor.anrufer') }}</legend>
         <label :class="BESCHRIFTUNG">{{ t('maske.name') }}<input v-model="entwurf.anrufer.name" :class="FELD"/></label>
         <label :class="BESCHRIFTUNG">{{ t('editor.betroffener') }}<input v-model="entwurf.betroffener!.name" :class="FELD"/></label>
@@ -22,7 +22,7 @@ function unterdruecken(an: boolean): void {
         <label v-if="!entwurf.anrufer.rufnummerUnterdrueckt" :class="BESCHRIFTUNG">{{ t('editor.rufnummer') }}<input v-model="entwurf.anrufer.rufnummer" type="tel" :class="FELD"/></label>
         <label :class="BESCHRIFTUNG">{{ t('editor.rueckrufnummer') }}<input v-model="entwurf.anrufer.rueckrufnummer" type="tel" :placeholder="entwurf.anrufer.rufnummerUnterdrueckt ? '' : t('editor.wieAngezeigt')" :class="FELD"/></label>
     </fieldset>
-    <fieldset class="m-0 grid grid-cols-2 gap-2 rounded border border-rand p-3">
+    <fieldset class="m-0 min-w-0 grid grid-cols-2 gap-2 rounded border border-rand p-3">
         <legend class="px-1 text-sm font-bold">{{ t('editor.rolle') }}</legend>
         <label :class="BESCHRIFTUNG">{{ t('editor.stimmung') }}
             <select v-model="entwurf.rolle.stimmung" :class="FELD">
