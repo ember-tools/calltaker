@@ -1,7 +1,7 @@
 {
   "knoten": {
     "fw.grund": {
-      "frage": "Warum benötigen Sie die Feuerwehr?",
+      "frage": "Was brennt, was ist passiert?",
       "antworten": [
         {
           "id": "brand-im-freien",
@@ -65,7 +65,12 @@
           "ziel": "fw.brand.explosion.k0",
           "protokoll": "fw.brand.explosion",
           "nr": "75"
-        },
+        }
+      ]
+    },
+    "fw.th.grund": {
+      "frage": "Welche Hilfe benötigen Sie?",
+      "antworten": [
         {
           "id": "verkehrsunfall",
           "label": "Verkehrsunfall",

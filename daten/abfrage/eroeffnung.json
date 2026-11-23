@@ -7,15 +7,22 @@
         {
           "id": "rd",
           "nr": "0",
-          "label": "Med. Notruf",
+          "label": "Notfallrettung",
           "farbe": "rd",
           "ziel": "eroeffnung.hand"
         },
         {
-          "id": "fw",
+          "id": "brand",
           "nr": "5",
-          "label": "Brandschutz / techn. Notruf",
-          "farbe": "fw",
+          "label": "Brand",
+          "farbe": "brand",
+          "ziel": "eroeffnung.hand"
+        },
+        {
+          "id": "th",
+          "nr": "6",
+          "label": "Technische Hilfeleistung",
+          "farbe": "th",
           "ziel": "eroeffnung.hand"
         }
       ]
@@ -89,7 +96,8 @@
         "knoten": "fachrichtung",
         "ziele": {
           "rd": "rd.anzahl",
-          "fw": "fw.grund"
+          "brand": "fw.grund",
+          "th": "fw.th.grund"
         }
       }
     }

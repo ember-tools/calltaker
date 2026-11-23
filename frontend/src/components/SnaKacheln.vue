@@ -14,6 +14,24 @@ const suche = defineModel<string>('suche', {default: ''})
 const ziffern = ref('')
 let zeitgeber: ReturnType<typeof setTimeout> | undefined
 
+/** The colours of the tiles per discipline: medical blue, fire red, technical rescue amber. */
+const FARBEN: Record<string, {kachel: string, nummer: string}> = {
+    rd: {kachel: 'border-sky-300 bg-sky-100 text-sky-950', nummer: 'bg-sky-300'},
+    brand: {kachel: 'border-red-300 bg-red-100 text-red-950', nummer: 'bg-red-300'},
+    fw: {kachel: 'border-red-300 bg-red-100 text-red-950', nummer: 'bg-red-300'},
+    th: {kachel: 'border-amber-300 bg-amber-100 text-amber-950', nummer: 'bg-amber-300'},
+}
+
+/**
+ * The colours of a tile: its answer's own discipline, else that of the questioning.
+ *
+ * @param antwort the answer
+ * @returns the tile's and the number's classes
+ */
+function farbeVon(antwort: Antwort): {kachel: string, nummer: string} {
+    return FARBEN[antwort.farbe ?? props.farbe ?? 'rd'] ?? FARBEN.rd!
+}
+
 const nummeriert = computed(() => props.antworten.map((antwort, nummer) => ({antwort, nummer})))
 const sichtbar = computed(() => {
     const text = suche.value.trim().toLowerCase()
@@ -80,11 +98,11 @@ function taste(ereignis: KeyboardEvent): void {
                 v-for="{antwort, nummer} in sichtbar"
                 :key="antwort.id"
                 type="button"
-                :class="['flex min-h-16 items-stretch overflow-hidden rounded-md border p-0 text-left font-semibold', (antwort.farbe ?? farbe) === 'fw' ? 'border-red-300 bg-red-100 text-red-950' : 'border-sky-300 bg-sky-100 text-sky-950', nummer === markiert ? 'outline-3 outline-offset-1 outline-slate-900' : '']"
+                :class="['flex min-h-16 items-stretch overflow-hidden rounded-md border p-0 text-left font-semibold', farbeVon(antwort).kachel, nummer === markiert ? 'outline-3 outline-offset-1 outline-slate-900' : '']"
                 @click="waehlen(nummer)"
                 @keydown="taste"
             >
-                <span :class="['flex w-11 flex-none items-center justify-center font-mono', (antwort.farbe ?? farbe) === 'fw' ? 'bg-red-300' : 'bg-sky-300']">{{ nummer }}</span>
+                <span :class="['flex w-11 flex-none items-center justify-center font-mono', farbeVon(antwort).nummer]">{{ nummer }}</span>
                 <span class="flex flex-1 flex-col justify-center px-3 py-2 leading-tight">
                     {{ antwort.label }}
                     <small v-if="zusaetze.get(antwort.id)" class="font-mono font-normal opacity-75">{{ zusaetze.get(antwort.id) }}</small>

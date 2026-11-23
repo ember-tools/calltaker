@@ -1,10 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "wurzel": "fachrichtung",
   "quelle": "Abgeleitet aus alarmzettel (f7f0e751ce83), dort aus den offenen Daten der Berliner Feuerwehr, Stand 2026-05-21.",
   "hinweise": {
     "rd": "Die Codes und Anlässe stammen aus den offenen Daten der Berliner Feuerwehr. Die Fragen der Eröffnung (Hand der Meldung, Anrufer vor Ort, Anzahl der Betroffenen, Alter, Geschlecht, Reaktion, Atmung) sind ergänzt.",
-    "fw": "Erfundene Beispieldaten. Die Alarm- und Ausrückeordnung der Berliner Feuerwehr ist als Verschlusssache \"Nur für den Dienstgebrauch\" eingestuft und die FPDS-Determinanten sind lizenzierte IAED-Inhalte, daher steht dieser Baum nicht öffentlich zur Verfügung. Vor dem Einsatz durch die echte AAO ersetzen."
+    "brand": "Erfundene Beispieldaten. Die Alarm- und Ausrückeordnung der Berliner Feuerwehr ist als Verschlusssache \"Nur für den Dienstgebrauch\" eingestuft und die FPDS-Determinanten sind lizenzierte IAED-Inhalte, daher steht dieser Baum nicht öffentlich zur Verfügung. Vor dem Einsatz durch die echte AAO ersetzen.",
+    "th": "Erfundene Beispieldaten. Die Alarm- und Ausrückeordnung der Berliner Feuerwehr ist als Verschlusssache \"Nur für den Dienstgebrauch\" eingestuft und die FPDS-Determinanten sind lizenzierte IAED-Inhalte, daher steht dieser Baum nicht öffentlich zur Verfügung. Vor dem Einsatz durch die echte AAO ersetzen."
   },
   "notfallkategorien": {
     "RD1NC REA.": "RTW-C mit der schnellsten Eintreffzeitprognose + schnellstes notarztbesetztes Rettungsmittel + First Responder-Prüfung + ggf. Aktivierung des Ersthelfenden Systems KATRETTER",
