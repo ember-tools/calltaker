@@ -6,6 +6,9 @@ COPY shell.nix .
 COPY frontend/package*.json frontend/
 RUN cd frontend && nix-shell ../shell.nix --run "npm ci"
 COPY frontend/ frontend/
+ARG COMMIT=dev
+ARG GEBAUT
+ENV CALLTAKER_COMMIT=$COMMIT CALLTAKER_GEBAUT=$GEBAUT
 RUN mkdir src && cd frontend && nix-shell ../shell.nix --run "npm run build"
 
 

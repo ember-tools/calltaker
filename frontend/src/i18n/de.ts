@@ -178,6 +178,13 @@ export default {
         unbekannt: 'Diese UN-Nummer steht nicht in der Liste.',
         name: 'Stoff nach Namen suchen',
     },
+    fuss: {
+        quelle: 'GitHub',
+        urheber: '© 2026 RainbowDashLabs and Contributor',
+        gemacht: 'Made with ❤️ and 🏳️‍🌈',
+        lizenz: 'Licensed under AGPL-3.0',
+        fassung: 'Calltaker {commit} · built {gebaut}',
+    },
     reanimation: {
         titel: 'Telefonreanimation',
         start: 'Takt starten',
