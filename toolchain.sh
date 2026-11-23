@@ -60,6 +60,14 @@ Backend
   be-test1 <expr>       pytest -k <expr>
   be-verify             Lint, format check and tests
 
+Docker
+  docker-build          Build the production image from docker/app.Dockerfile
+  docker-app            Start the development stack (compose.dev.yaml), always rebuilt
+  docker-app-down       Stop the development stack
+  docker-app-logs       Follow the development stack's logs
+  docker-prod           Start the production stack (compose.prod.yaml)
+  docker-prod-down      Stop the production stack
+
 Whole repository
   verify                Everything CI runs
   format                Apply the formatters
@@ -70,7 +78,7 @@ EOF
 fe() { cd "$FRONTEND"; }
 be() { cd "$ROOT"; }
 
-COMMAND_GROUPS=(fe be)
+COMMAND_GROUPS=(fe be docker)
 
 is_group() {
     local candidate
@@ -128,6 +136,13 @@ case "$cmd" in
         "$ROOT/toolchain.sh" be-format-check
         "$ROOT/toolchain.sh" be-test
         ;;
+
+    docker-build)     be; run docker build . -f docker/app.Dockerfile "$@" ;;
+    docker-app)       cd "$ROOT/docker"; run docker compose -f compose.dev.yaml up -d --build --renew-anon-volumes "$@" ;;
+    docker-app-down)  cd "$ROOT/docker"; run docker compose -f compose.dev.yaml down "$@" ;;
+    docker-app-logs)  cd "$ROOT/docker"; run docker compose -f compose.dev.yaml logs -f "$@" ;;
+    docker-prod)      cd "$ROOT/docker"; run docker compose -f compose.prod.yaml up -d --build "$@" ;;
+    docker-prod-down) cd "$ROOT/docker"; run docker compose -f compose.prod.yaml down "$@" ;;
 
     verify)
         "$ROOT/toolchain.sh" be-verify

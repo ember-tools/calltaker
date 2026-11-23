@@ -1,0 +1,18 @@
+name: calltaker
+
+services:
+  app:
+    build:
+      context: ..
+      dockerfile: docker/app.Dockerfile
+    image: ghcr.io/rainbowdashlabs/calltaker:latest
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      CORS_ORIGINS: https://calltaker.chojo.dev
+    volumes:
+      - daten:/data
+
+volumes:
+  daten:

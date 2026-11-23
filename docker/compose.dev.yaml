@@ -1,0 +1,31 @@
+name: calltaker-dev
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/app.dev.Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      CORS_ORIGINS: http://localhost:5173
+    volumes:
+      - ../src:/app/src
+      - daten:/data
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend.dev.Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      BACKEND_URL: http://backend:8000
+    volumes:
+      - ../frontend:/app/frontend
+      - /app/frontend/node_modules
+    depends_on:
+      - backend
+
+volumes:
+  daten:

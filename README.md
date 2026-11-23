@@ -13,10 +13,20 @@ Everything goes through `./toolchain.sh`, which runs inside the nix environment 
 (approve it once with `direnv allow`).
 
 ```bash
-./toolchain.sh be-install fe-install   # dependencies
-./toolchain.sh be-dev                  # backend on :8000
-./toolchain.sh fe-dev                  # frontend on :5173, proxied to the backend
-./toolchain.sh verify                  # what CI runs
+./toolchain.sh be-install       # backend dependencies
+./toolchain.sh fe-install       # frontend dependencies
+./toolchain.sh be-dev           # backend on :8000
+./toolchain.sh fe-dev           # frontend on :5173, proxied to the backend
+./toolchain.sh verify           # what CI runs
+./toolchain.sh help             # every command
+```
+
+The same in Docker, without a local Python or node:
+
+```bash
+./toolchain.sh docker-app       # development stack on :5173 and :8000, rebuilt each time
+./toolchain.sh docker-app-down  # stop it
+./toolchain.sh docker-build     # the production image
 ```
 
 ## Licence

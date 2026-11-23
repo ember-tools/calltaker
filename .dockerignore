@@ -1,0 +1,10 @@
+.git
+.concept
+.direnv
+.venv
+**/__pycache__
+.pytest_cache
+.ruff_cache
+frontend/node_modules
+src/frontend_dist
+tests
