@@ -49,7 +49,9 @@ defineExpose({fokussieren})
  */
 function taste(ereignis: KeyboardEvent): void {
     if (ereignis.target instanceof HTMLInputElement && !/^\d$/.test(ereignis.key)) {
-        if (ereignis.key === 'Enter' && markiert.value >= 0) waehlen(markiert.value)
+        if (ereignis.key !== 'Enter') return
+        ereignis.preventDefault()
+        if (markiert.value >= 0) waehlen(markiert.value)
         return
     }
     if (/^\d$/.test(ereignis.key)) {

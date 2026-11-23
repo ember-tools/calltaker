@@ -35,11 +35,23 @@ class UngueltigeDatei(ValueError):
 
 
 class Pool:
-    """The scenarios of one exercise, in the trainer's order."""
+    """The scenarios of one exercise, in the trainer's order, with what the graph check found.
+
+    The findings are kept per scenario when it is added, replaced or imported, so the trainer's
+    list can mark scenarios to correct without checking the whole pool on every poll. The graph
+    only changes with a restart, which also empties the pool, so they stay current. They outlive
+    a scenario the engine draws for a call, so it keeps its marks when it comes back; only the
+    trainer's removal or a replacing import forgets them.
+
+    `stand` counts the trainer's changes to the pool, not the engine's drawing and returning, so
+    the trainer can be reminded to download only what they changed.
+    """
 
     def __init__(self) -> None:
         """Start with an empty pool."""
         self._szenarien: list[Szenario] = []
+        self._befunde: dict[str, list[Befund]] = {}
+        self.stand = 0
 
     @property
     def szenarien(self) -> list[Szenario]:
@@ -60,8 +72,29 @@ class Pool:
         self._szenarien[self._stelle(szenario.id)] = szenario
 
     def entfernen(self, szenario_id: str) -> Szenario:
-        """Remove a scenario and return it."""
+        """Remove a scenario and return it, keeping its findings should it come back."""
         return self._szenarien.pop(self._stelle(szenario_id))
+
+    def vergessen(self, szenario_id: str) -> None:
+        """Forget the findings of a scenario the trainer removed."""
+        self._befunde.pop(szenario_id, None)
+
+    def vermerken(self, szenario: Szenario, graph: Abfragegraph) -> list[Befund]:
+        """Check a scenario of the pool against the graph, keep and return what was found."""
+        befunde = pruefen(szenario, graph)
+        if befunde:
+            self._befunde[szenario.id] = befunde
+        else:
+            self._befunde.pop(szenario.id, None)
+        return befunde
+
+    @property
+    def befunde(self) -> dict[str, list[Befund]]:
+        """Return the findings of the scenarios in the pool that have any, by scenario id."""
+        da = {szenario.id for szenario in self._szenarien}
+        return {
+            szenario_id: liste for szenario_id, liste in self._befunde.items() if szenario_id in da
+        }
 
     def verschieben(self, szenario_id: str, ziel: int) -> None:
         """Move a scenario to a position, clamped to the pool's bounds."""
@@ -96,10 +129,11 @@ class Pool:
             raise PoolVoll
         if modus == "ersetzen":
             self._szenarien = []
+            self._befunde = {}
         befunde = {}
         for szenario in datei.szenarien:
             aufgenommen = self.hinzufuegen(szenario)
-            befunde[aufgenommen.id] = pruefen(aufgenommen, graph)
+            befunde[aufgenommen.id] = self.vermerken(aufgenommen, graph)
         return befunde
 
     def _stelle(self, szenario_id: str) -> int:

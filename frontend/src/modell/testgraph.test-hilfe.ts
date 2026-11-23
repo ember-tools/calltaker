@@ -7,8 +7,10 @@ import type {Abfragegraph, Endpunkt} from './abfragegraph'
  * @returns the graph
  */
 export function testgraph(): Abfragegraph {
+    const sturz = (antwort: string) => [{knoten: 'rd.wahl', antwort: 'sturz'}, {knoten: 'p.k0', antwort}]
+    const pfade: Record<string, Endpunkt['pfad']> = {'p.e1': sturz('leicht'), 'p.e2': sturz('schwer'), 'p.e3': sturz('schwer-2'), 'fw.e': [{knoten: 'fw.grund', antwort: 'brand'}]}
     const endpunkt = (knoten: string, code: string, kategorie: string, protokoll: string, fachrichtung: string): Endpunkt =>
-        ({knoten, code, kategorie, anlass: code, stichwort: kategorie, fachrichtung, protokoll, pfad: []})
+        ({knoten, code, kategorie, anlass: code, stichwort: kategorie, fachrichtung, protokoll, pfad: pfade[knoten] ?? []})
     return {
         meta: {version: 1, wurzel: 'fachrichtung', quelle: '', hinweise: {}, notfallkategorien: {}},
         knoten: {

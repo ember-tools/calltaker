@@ -9,7 +9,7 @@ from typing import Any
 
 from anruf import Anruf
 from engine import Engine
-from pool import Pool
+from pool import Pool, befunde_nach_aussen
 from rolle import Rolle
 from szenario import Szenario
 
@@ -99,6 +99,8 @@ class Uebung:
             "verbunden": verbunden,
             "engine": self.engine.zustand(rolle),
             "pool": [szenario.nach_aussen() for szenario in self.pool.szenarien],
+            "poolBefunde": befunde_nach_aussen(self.pool.befunde),
+            "poolStand": self.pool.stand,
             "anrufe": [anruf.fuer_ausbilder() for anruf in self.anrufe],
             "spiegel": self.spiegel,
         }

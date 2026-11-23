@@ -281,3 +281,31 @@ def test_eine_fehlerhafte_uebung_haelt_die_anderen_nicht_auf(monkeypatch, caplog
         assert not alle.finden(heil["traineeCode"])[0].verbunden[Rolle.TRAINEE]
     assert kaputte.kennung in caplog.text
     assert kaputt["ausbilderCode"] not in caplog.text
+
+
+def test_der_ausbilder_sieht_die_befunde_seines_pools(client, codes, szenario_daten):
+    code = codes["ausbilderCode"]
+    kaputt = {
+        **szenario_daten,
+        "antworten": {**szenario_daten["antworten"], "gibt.es.nicht": {"antwort": "x"}},
+    }
+    hinzu = absicht(client, code, art="pool.hinzufuegen", szenario=kaputt)
+    szenario_id = hinzu.json()["ergebnis"]["szenarioId"]
+    zustand = client.get(f"/api/uebung/{code}/zustand").json()["zustand"]
+    assert [b["knoten"] for b in zustand["poolBefunde"][szenario_id]] == ["gibt.es.nicht"]
+    absicht(client, code, art="pool.ersetzen", szenario={**szenario_daten, "id": szenario_id})
+    assert client.get(f"/api/uebung/{code}/zustand").json()["zustand"]["poolBefunde"] == {}
+
+
+def test_nur_aenderungen_des_ausbilders_zaehlen_fuer_den_pool_stand(client, codes, szenario_daten):
+    code = codes["ausbilderCode"]
+
+    def stand():
+        return client.get(f"/api/uebung/{code}/zustand").json()["zustand"]["poolStand"]
+
+    vorher = stand()
+    absicht(client, code, art="pool.hinzufuegen", szenario=szenario_daten)
+    assert stand() == vorher + 1
+    uebung, _ = client.app.state.uebungen.finden(code)
+    uebung.pool_entnehmen()
+    assert stand() == vorher + 1

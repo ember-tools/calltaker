@@ -3,7 +3,7 @@ from fastapi.testclient import TestClient
 
 from main import anwendung_bauen
 from pool import Pool, PoolVoll, UngueltigeDatei
-from szenario import Szenario
+from szenario import Szenario, Wahl
 
 
 def szenario(daten, titel="A", **felder):
@@ -118,3 +118,42 @@ def test_ein_pool_ist_begrenzt(szenario_daten, graph, monkeypatch):
     with pytest.raises(PoolVoll):
         pool.importieren(datei, "anhaengen", graph)
     assert len(pool.importieren(datei, "ersetzen", graph)) == 2
+
+
+def test_der_pool_merkt_sich_die_befunde(graph, szenario_daten):
+    pool = Pool()
+    gut = pool.hinzufuegen(Szenario.model_validate(szenario_daten))
+    assert pool.vermerken(gut, graph) == []
+    kaputt = gut.model_copy(update={"antworten": {"gibt.es.nicht": Wahl(antwort="x")}})
+    pool.ersetzen(kaputt)
+    assert [b.knoten for b in pool.vermerken(kaputt, graph)] == ["gibt.es.nicht"]
+    assert list(pool.befunde) == [gut.id]
+    pool.ersetzen(gut)
+    pool.vermerken(gut, graph)
+    assert pool.befunde == {}
+    pool.vermerken(kaputt, graph)
+    gezogen = pool.entfernen(gut.id)
+    assert pool.befunde == {}
+    pool.hinzufuegen(gezogen)
+    assert list(pool.befunde) == [gut.id]
+    pool.entfernen(gut.id)
+    pool.vergessen(gut.id)
+    pool.hinzufuegen(gezogen)
+    assert pool.befunde == {}
+
+
+def test_ein_ersetzender_import_vergisst_die_befunde(graph, szenario_daten):
+    pool = Pool()
+    kaputt = pool.hinzufuegen(
+        Szenario.model_validate({**szenario_daten, "antworten": {"weg": {"antwort": "x"}}})
+    )
+    pool.vermerken(kaputt, graph)
+    datei = {
+        "format": "calltaker-pool",
+        "version": 1,
+        "abfrageVersion": graph.meta.version,
+        "szenarien": [{**szenario_daten, "id": "neu"}],
+    }
+    pool.importieren(datei, "ersetzen", graph)
+    pool.hinzufuegen(kaputt)
+    assert pool.befunde == {}

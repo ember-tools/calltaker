@@ -6,6 +6,7 @@ const props = defineProps<{
     code: string
     absicht: (art: string, daten: Record<string, unknown>) => Promise<Record<string, unknown>>
 }>()
+const emit = defineEmits<{exportiert: []}>()
 
 const {t} = useI18n()
 const modus = ref<'anhaengen' | 'ersetzen'>('anhaengen')
@@ -48,7 +49,7 @@ function zeige(text: string, istFehler: boolean): void {
 <template>
     <div class="flex flex-col gap-2">
         <div class="flex flex-wrap items-center gap-2">
-            <a :href="`/api/uebung/${encodeURIComponent(code)}/pool`" download="calltaker-pool.json" class="rounded border border-slate-400 px-3 py-1.5 text-sm font-semibold no-underline">{{ t('ausbilder.export') }}</a>
+            <a :href="`/api/uebung/${encodeURIComponent(code)}/pool`" download="calltaker-pool.json" class="rounded border border-slate-400 px-3 py-1.5 text-sm font-semibold no-underline" @click="emit('exportiert')">{{ t('ausbilder.export') }}</a>
             <label class="cursor-pointer rounded border border-slate-400 px-3 py-1.5 text-sm font-semibold">
                 {{ t('ausbilder.import') }}
                 <input type="file" accept="application/json,.json" class="sr-only" @change="hochladen"/>

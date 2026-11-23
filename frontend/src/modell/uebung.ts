@@ -1,5 +1,5 @@
 import type {Eintraege} from './eintraege'
-import type {Szenario} from './szenario'
+import type {Befund, Szenario} from './szenario'
 
 /** Which role a code stands for. */
 export type Rolle = 'ausbilder' | 'trainee'
@@ -50,6 +50,10 @@ export interface AusbilderZustand {
     verbunden: Verbunden
     engine: EngineZustand
     pool: Szenario[]
+    /** What the graph check found, for the scenarios of the pool that have findings. */
+    poolBefunde: Record<string, Befund[]>
+    /** Counts the trainer's changes to the pool; drawing and returning by the engine leave it. */
+    poolStand: number
     anrufe: Anruf[]
     spiegel: Record<string, unknown>
 }

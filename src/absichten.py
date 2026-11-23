@@ -12,7 +12,7 @@ from engine import Parameter
 from fehlermeldung import deutsch
 from pool import PoolVoll, UngueltigeDatei, befunde_nach_aussen
 from rolle import Rolle
-from szenario import Szenario, pruefen
+from szenario import Szenario
 from uebung import Uebung
 
 SPIEGEL_HOECHSTENS = 4096
@@ -74,9 +74,9 @@ def szenario_aus(absicht: Absicht) -> Szenario:
         raise AbsichtAbgelehnt(deutsch(fehler.errors()), status=422) from fehler
 
 
-def befunde_von(szenario: Szenario, graph: Abfragegraph) -> list[dict]:
-    """Return what the graph check finds for a scenario, as the views read it."""
-    return [befund.nach_aussen() for befund in pruefen(szenario, graph)]
+def befunde_von(uebung: Uebung, szenario: Szenario, graph: Abfragegraph) -> list[dict]:
+    """Check a scenario of the pool, keep the findings and return them as the views read them."""
+    return [befund.nach_aussen() for befund in uebung.pool.vermerken(szenario, graph)]
 
 
 def pool_hinzufuegen(uebung: Uebung, absicht: Absicht, graph: Abfragegraph) -> dict:
@@ -85,8 +85,10 @@ def pool_hinzufuegen(uebung: Uebung, absicht: Absicht, graph: Abfragegraph) -> d
         szenario = uebung.pool.hinzufuegen(szenario_aus(absicht))
     except PoolVoll as fehler:
         raise AbsichtAbgelehnt(str(fehler), status=409) from fehler
+    befunde = befunde_von(uebung, szenario, graph)
+    uebung.pool.stand += 1
     uebung.geaendert()
-    return {"szenarioId": szenario.id, "befunde": befunde_von(szenario, graph)}
+    return {"szenarioId": szenario.id, "befunde": befunde}
 
 
 def pool_ersetzen(uebung: Uebung, absicht: Absicht, graph: Abfragegraph) -> dict:
@@ -96,8 +98,10 @@ def pool_ersetzen(uebung: Uebung, absicht: Absicht, graph: Abfragegraph) -> dict
         uebung.pool.ersetzen(szenario)
     except KeyError as fehler:
         raise AbsichtAbgelehnt(UNBEKANNTES_SZENARIO, status=404) from fehler
+    befunde = befunde_von(uebung, szenario, graph)
+    uebung.pool.stand += 1
     uebung.geaendert()
-    return {"szenarioId": szenario.id, "befunde": befunde_von(szenario, graph)}
+    return {"szenarioId": szenario.id, "befunde": befunde}
 
 
 def pool_entfernen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
@@ -106,6 +110,8 @@ def pool_entfernen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
         uebung.pool.entfernen(absicht.szenario_id or "")
     except KeyError as fehler:
         raise AbsichtAbgelehnt(UNBEKANNTES_SZENARIO, status=404) from fehler
+    uebung.pool.vergessen(absicht.szenario_id or "")
+    uebung.pool.stand += 1
     uebung.geaendert()
     return {}
 
@@ -118,6 +124,7 @@ def pool_verschieben(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
         uebung.pool.verschieben(absicht.szenario_id or "", absicht.ziel)
     except KeyError as fehler:
         raise AbsichtAbgelehnt(UNBEKANNTES_SZENARIO, status=404) from fehler
+    uebung.pool.stand += 1
     uebung.geaendert()
     return {}
 
@@ -128,6 +135,7 @@ def pool_importieren(uebung: Uebung, absicht: Absicht, graph: Abfragegraph) -> d
         befunde = uebung.pool.importieren(absicht.datei, absicht.modus, graph)
     except (UngueltigeDatei, PoolVoll) as fehler:
         raise AbsichtAbgelehnt(str(fehler), status=422) from fehler
+    uebung.pool.stand += 1
     uebung.geaendert()
     return {"befunde": befunde_nach_aussen(befunde)}
 
