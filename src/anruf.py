@@ -4,6 +4,7 @@ from enum import StrEnum
 
 from pydantic import Field
 
+from eintraege import Eintraege
 from szenario import Modell, Szenario, neue_id
 
 
@@ -28,7 +29,7 @@ class Anruf(Modell):
     klingelt_seit: float
     angenommen_um: float | None = None
     beendet_um: float | None = None
-    eintraege: dict = Field(default_factory=dict)
+    eintraege: Eintraege = Field(default_factory=Eintraege)
 
     def fuer_ausbilder(self) -> dict:
         """Return the whole call, truth included."""
@@ -54,7 +55,7 @@ class Anruf(Modell):
         if self.beendet_um is not None:
             sicht["beendetUm"] = self.beendet_um
         if self.zustand in (Anrufzustand.GESPRAECH, Anrufzustand.BEENDET):
-            sicht["eintraege"] = self.eintraege
+            sicht["eintraege"] = self.eintraege.nach_aussen()
         if self.zustand == Anrufzustand.BEENDET:
             sicht["szenario"] = self.szenario.nach_aussen()
         return {schluessel: wert for schluessel, wert in sicht.items() if wert is not None}

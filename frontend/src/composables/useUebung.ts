@@ -1,4 +1,4 @@
-import {getCurrentInstance, onBeforeUnmount, readonly, ref, shallowRef} from 'vue'
+import {computed, getCurrentInstance, onBeforeUnmount, readonly, ref, shallowRef} from 'vue'
 import {Abgelehnt, holeZustand, sendeAbsicht} from '../api/uebung'
 import type {Rolle, ZustandFuer} from '../modell/uebung'
 
@@ -83,5 +83,5 @@ export function useUebung<R extends Rolle>(code: string) {
     void takt()
     if (getCurrentInstance()) onBeforeUnmount(beenden)
 
-    return {zustand: readonly(zustand), erreichbar: readonly(erreichbar), unbekannt: readonly(unbekannt), absicht, beenden}
+    return {zustand: computed<ZustandFuer<R> | null>(() => zustand.value), erreichbar: readonly(erreichbar), unbekannt: readonly(unbekannt), absicht, beenden}
 }

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "wurzel": "fachrichtung",
   "quelle": "Abgeleitet aus alarmzettel (f7f0e751ce83), dort aus den offenen Daten der Berliner Feuerwehr, Stand 2026-05-21.",
   "hinweise": {

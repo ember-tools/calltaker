@@ -1,3 +1,4 @@
+import type {Eintraege} from './eintraege'
 import type {Szenario} from './szenario'
 
 /** Which role a code stands for. */
@@ -21,7 +22,7 @@ export interface AnrufSicht {
     rufnummerUnterdrueckt: boolean
     angenommenUm?: number
     beendetUm?: number
-    eintraege?: Record<string, unknown>
+    eintraege?: Eintraege
     szenario?: Szenario
 }
 
@@ -33,7 +34,7 @@ export interface Anruf {
     klingeltSeit: number
     angenommenUm?: number
     beendetUm?: number
-    eintraege: Record<string, unknown>
+    eintraege: Eintraege
 }
 
 /** The state of an exercise as the trainee sees it. */

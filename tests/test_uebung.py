@@ -98,7 +98,7 @@ def test_der_trainee_sieht_die_wahrheit_erst_nach_dem_ende(anruf):
     anruf.zustand = Anrufzustand.GESPRAECH
     anruf.angenommen_um = 1001.0
     assert "szenario" not in anruf.fuer_trainee()
-    assert anruf.fuer_trainee()["eintraege"] == {}
+    assert anruf.fuer_trainee()["eintraege"]["abfrage"]["pfad"] == []
     anruf.zustand = Anrufzustand.BEENDET
     assert anruf.fuer_trainee()["szenario"]["titel"] == "Sturz im Treppenhaus, Neukölln"
 

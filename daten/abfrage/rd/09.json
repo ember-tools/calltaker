@@ -23,13 +23,13 @@
         },
         {
           "id": "offensichtlicher-oder-erwarteter-tod",
-          "label": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z)",
+          "label": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z), Alter unbekannt",
           "ziel": "rd.09.k4",
           "aussage": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z)"
         },
         {
           "id": "offensichtlicher-oder-erwarteter-tod-2",
-          "label": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z)",
+          "label": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z), Alter bekannt",
           "ziel": "rd.09.k5",
           "aussage": "OFFENSICHTLICHER oder ERWARTETER TOD zweifelhaft (a bis h; x bis z)"
         },

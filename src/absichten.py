@@ -7,6 +7,7 @@ from pydantic import BaseModel, ConfigDict, Field, ValidationError
 from pydantic.alias_generators import to_camel
 
 from abfrage import Abfragegraph
+from eintraege import Eintraege, uebernehmen
 from engine import Parameter
 from fehlermeldung import deutsch
 from pool import PoolVoll, UngueltigeDatei, befunde_nach_aussen
@@ -40,6 +41,7 @@ class Absicht(BaseModel):
     modus: Literal["ersetzen", "anhaengen"] = "anhaengen"
     felder: dict[str, Any] = Field(default_factory=dict)
     anruf_id: str | None = None
+    eintraege: dict[str, Any] | None = None
     an: bool | None = None
     parameter: dict[str, Any] | None = None
 
@@ -164,6 +166,26 @@ def beenden(uebung: Uebung, _: Absicht, __: Abfragegraph) -> dict:
     return {"anrufId": anruf.id}
 
 
+def eintragen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Take the trainee's entries for the running conversation."""
+    anruf = uebung.engine.im_gespraech()
+    if anruf is None:
+        raise AbsichtAbgelehnt("Es läuft kein Gespräch.", status=409)
+    if absicht.anruf_id is not None and absicht.anruf_id != anruf.id:
+        raise AbsichtAbgelehnt("Dieses Gespräch läuft nicht mehr.", status=409)
+    if absicht.eintraege is None:
+        raise AbsichtAbgelehnt("Die Einträge fehlen.", status=422)
+    try:
+        neu = Eintraege.model_validate(absicht.eintraege)
+    except ValidationError as fehler:
+        raise AbsichtAbgelehnt(deutsch(fehler.errors()), status=422) from fehler
+    uebernommen = uebernehmen(anruf.eintraege, neu, uebung.uhr())
+    if uebernommen != anruf.eintraege:
+        anruf.eintraege = uebernommen
+        uebung.geaendert()
+    return {"zeiten": uebernommen.zeiten.model_dump(by_alias=True)}
+
+
 def pausieren(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
     """Pause or resume the queue by hand."""
     if absicht.an is None:
@@ -213,6 +235,7 @@ ABSICHTEN: dict[str, tuple[set[Rolle], Ausfuehrung]] = {
     "bereit": ({Rolle.TRAINEE}, bereit),
     "annehmen": ({Rolle.TRAINEE}, annehmen),
     "beenden": ({Rolle.TRAINEE}, beenden),
+    "eintragen": ({Rolle.TRAINEE}, eintragen),
     "engine.pausieren": ({Rolle.AUSBILDER}, pausieren),
     "engine.sofort": ({Rolle.AUSBILDER}, sofort_klingeln),
     "engine.parameter": ({Rolle.AUSBILDER}, parameter_setzen),
