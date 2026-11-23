@@ -16,9 +16,15 @@ class Einstellungen(BaseSettings):
     cors_origins: str = "https://calltaker.chojo.dev,http://localhost:5173"
     frontend_verzeichnis: Path = QUELLVERZEICHNIS / "frontend_dist"
     daten_verzeichnis: Path = QUELLVERZEICHNIS.parent / ".daten"
+    adressen_tage: int = 30
+    adressen_laden: bool = True
     uebung_lebensdauer_stunden: float = 12
     uebungen_hoechstens: int = 500
     abfrage_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "abfrage"
+
+    def adressen_datei(self) -> Path:
+        """Return where the address list is kept: in the data folder."""
+        return self.daten_verzeichnis / "adressen.sqlite"
 
     def erlaubte_origins(self) -> list[str]:
         """Return the allowed CORS origins as a list."""

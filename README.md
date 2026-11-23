@@ -29,6 +29,15 @@ The same in Docker, without a local Python or node:
 ./toolchain.sh docker-build     # the production image
 ```
 
+## Map and addresses
+
+Map tiles come from OpenStreetMap through the server's own cache (`/kacheln/…`), as the tile
+usage policy asks. Address completion and the addresses of generated scenarios come from the
+city of Berlin's address list ([Adressen Berlin WFS](https://gdi.berlin.de/services/wfs/adressen_berlin),
+Datenlizenz Deutschland Zero 2.0), which the server downloads in the background into its data
+folder; `./toolchain.sh data-adressen` loads it on purpose. Places without a house number are
+looked up with [Photon](https://photon.komoot.io) straight from the browser.
+
 ## Licence
 
 GNU Affero General Public License, version 3 or later (`AGPL-3.0-or-later`), see `LICENSE`.

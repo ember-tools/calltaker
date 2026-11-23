@@ -1,3 +1,9 @@
+import os
+import tempfile
+
+os.environ.setdefault("ADRESSEN_LADEN", "false")
+os.environ.setdefault("DATEN_VERZEICHNIS", tempfile.mkdtemp(prefix="calltaker-test-"))
+
 import pytest
 
 from abfrage import laden

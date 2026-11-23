@@ -69,6 +69,8 @@ Data
   data-abfrage          Check the question graph in daten/abfrage/ and print its size
   data-abfrage-uebernehmen [sna-tree.json]
                         Convert alarmzettel's interrogation graph into daten/abfrage/ (one-off)
+  data-adressen         Load the Berlin address list into the data folder now
+  data-adressen-stand   Show whether the address list is there, its size and age
 
 Docker
   docker-build          Build the production image from docker/app.Dockerfile
@@ -152,6 +154,8 @@ case "$cmd" in
         ;;
 
     data-abfrage)     be; run env PYTHONPATH=src pipenv run python tools/abfrage_pruefen.py "$@" ;;
+    data-adressen)       be; run env PYTHONPATH=src pipenv run python tools/adressen.py laden ;;
+    data-adressen-stand) be; run env PYTHONPATH=src pipenv run python tools/adressen.py stand ;;
     data-abfrage-uebernehmen)
         be; run pipenv run python tools/abfrage_uebernehmen.py "$@"
         ;;
