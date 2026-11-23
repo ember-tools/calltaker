@@ -21,7 +21,7 @@ describe('uebersicht', () => {
         const datei = protokoll(GRAPH, [beendet, anrufMit('w', 'wartet')], new Date('2026-11-23T10:00:00Z'))
         expect(datei).toMatchObject({format: 'calltaker-protokoll', version: 1, erstellt: '2026-11-23T10:00:00.000Z', abfrageVersion: 1})
         expect(datei.anrufe[0]).toMatchObject({id: 'b', zeiten: {annahme: 30, gespraech: 70}, fehlend: ['fehlt.einsatzort', 'fehlt.code', 'fehlt.name', 'fehlt.rueckrufnummer']})
-        expect(datei.anrufe[0]!.bewertung!.map(p => p.phase)).toEqual(['standort', 'abfrage', 'personalien'])
+        expect(datei.anrufe[0]!.bewertung!.map(p => p.phase)).toEqual(['standort', 'abfrage', 'personalien', 'anleitung'])
         expect(datei.anrufe[1]!.bewertung).toBeUndefined()
         expect(datei.anrufe[1]!.szenario.titel).toBe('Sturz w')
     })

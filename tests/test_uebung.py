@@ -99,13 +99,17 @@ def test_der_trainee_sieht_die_wahrheit_erst_nach_dem_ende(anruf):
     anruf.angenommen_um = 1001.0
     assert "szenario" not in anruf.fuer_trainee()
     assert anruf.fuer_trainee()["eintraege"]["abfrage"]["pfad"] == []
+    anruf.korrektur = {"rd.zugang": True}
+    assert "korrektur" not in anruf.fuer_trainee()
     anruf.zustand = Anrufzustand.BEENDET
     assert anruf.fuer_trainee()["szenario"]["titel"] == "Sturz im Treppenhaus, Neukölln"
+    assert anruf.fuer_trainee()["korrektur"] == {"rd.zugang": True}
 
 
 def test_ein_aufgelegter_anruf_zeigt_nur_nummer_und_wartezeit(anruf):
     anruf.zustand = Anrufzustand.AUFGELEGT
     anruf.beendet_um = 1100.0
+    anruf.korrektur = {"rd.zugang": True}
     assert set(anruf.fuer_trainee()) == {
         "id",
         "zustand",

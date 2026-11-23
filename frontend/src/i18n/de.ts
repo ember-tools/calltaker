@@ -114,6 +114,8 @@ export default {
         abzweigungAbseits: 'Abzweigung: Bei „{frage}“ hat der Trainee „{ist}“ gewählt, das Szenario geht anders.',
         abseits: 'Der Trainee fragt: „{frage}“. Antwort:',
         improvisieren: 'steht nicht im Szenario, frei antworten',
+        gegeben: 'als gegeben werten',
+        nichtGegeben: 'als nicht gegeben werten',
         karte: 'Wahrer und erfasster Einsatzort',
         keinPunkt: 'Noch kein erfasster Punkt',
         legende: 'blau: wahr, rot: erfasst',
@@ -156,6 +158,7 @@ export default {
         sekunden: '{sekunden} s',
     },
     bewertung: {
+        anleitung: 'Hinweis',
         adresse: 'Adresse',
         objekt: 'Objekt',
         punkt: 'Punkt',
@@ -165,6 +168,11 @@ export default {
         rueckrufnummer: 'Rückrufnummer',
         codeVorAufwertung: 'Code vor der Aufwertung',
         abbruch: 'Abbruch mit Begründung',
+    },
+    hinweise: {
+        titel: 'Hinweise an den Anrufer',
+        pflicht: 'Pflicht',
+        nichtMehrFaellig: 'Gegeben, aber nicht mehr fällig ({anzahl})',
     },
     generator: {
         titel: 'Generator',
@@ -235,15 +243,17 @@ export default {
         beendet: 'Gespräch beendet.',
         graphFehlt: 'Der Abfragegraph lädt nicht: {fehler}',
         debrief: 'Debrief des Gesprächs ansehen',
-        tasten: 'F2: Einsatzmaske · F3: Abfrage',
+        tasten: 'F2: Einsatzmaske · F3: Abfrage · F4: Hinweise an den Anrufer',
     },
     phase: {
         leiste: 'Phasen des Gesprächs',
         standort: 'Standort',
         abfrage: 'Abfrage',
         personalien: 'Personalien',
+        anleitung: 'Anleitung',
     },
     fehlt: {
+        anleitung: 'Pflichthinweise an den Anrufer',
         einsatzort: 'Einsatzort als Punkt',
         code: 'Code der Abfrage',
         name: 'Name des Anrufers',

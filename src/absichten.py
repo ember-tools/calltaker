@@ -47,6 +47,8 @@ class Absicht(BaseModel):
     parameter: dict[str, Any] | None = None
     anzahl: int | None = None
     erzeugung: dict[str, Any] | None = None
+    anleitung: str | None = Field(None, max_length=200)
+    gegeben: bool | None = None
 
 
 Ausfuehrung = Callable[[Uebung, Absicht, Abfragegraph], dict[str, Any]]
@@ -225,6 +227,23 @@ def auflegen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
     return {}
 
 
+KORREKTUREN_HOECHSTENS = 100
+
+
+def anleitung_korrigieren(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Let the trainer count an instruction as given or not, whatever the trainee ticked."""
+    anruf = next((a for a in uebung.anrufe if a.id == absicht.anruf_id), None)
+    if anruf is None:
+        raise AbsichtAbgelehnt("Diesen Anruf gibt es nicht.", status=404)
+    if not absicht.anleitung or absicht.gegeben is None:
+        raise AbsichtAbgelehnt("Welche Anleitung und ob sie gegeben wurde, fehlt.", status=422)
+    if absicht.anleitung not in anruf.korrektur and len(anruf.korrektur) >= KORREKTUREN_HOECHSTENS:
+        raise AbsichtAbgelehnt("Zu viele Korrekturen für diesen Anruf.", status=422)
+    anruf.korrektur[absicht.anleitung] = absicht.gegeben
+    uebung.geaendert()
+    return {}
+
+
 def parameter_setzen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
     """Change some of the queue's settings; those not given keep their values."""
     bisher = uebung.engine.parameter.model_dump(by_alias=True)
@@ -291,4 +310,5 @@ ABSICHTEN: dict[str, tuple[set[Rolle], Ausfuehrung]] = {
     "engine.sofort": ({Rolle.AUSBILDER}, sofort_klingeln),
     "engine.parameter": ({Rolle.AUSBILDER}, parameter_setzen),
     "anruf.auflegen": ({Rolle.AUSBILDER}, auflegen),
+    "anleitung.korrigieren": ({Rolle.AUSBILDER}, anleitung_korrigieren),
 }

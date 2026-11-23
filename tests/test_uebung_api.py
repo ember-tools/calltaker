@@ -370,3 +370,60 @@ def test_null_szenarien_werden_abgelehnt(client, codes):
     assert (
         absicht(client, codes["ausbilderCode"], art="pool.generieren", anzahl=0).status_code == 400
     )
+
+
+def test_der_ausbilder_korrigiert_gegebene_anleitungen(client, codes):
+    a, t = codes["ausbilderCode"], codes["traineeCode"]
+    uebung, _ = client.app.state.uebungen.finden(a)
+    anruf = uebung.pool_entnehmen()
+    from anruf import Anruf
+
+    uebung.anrufe.append(Anruf(szenario=anruf, klingelt_seit=0))
+    anruf_id = uebung.anrufe[-1].id
+    antwort = absicht(
+        client,
+        a,
+        art="anleitung.korrigieren",
+        anrufId=anruf_id,
+        anleitung="rd.zugang",
+        gegeben=True,
+    )
+    assert antwort.status_code == 200
+    assert uebung.anrufe[-1].korrektur == {"rd.zugang": True}
+    zustand = client.get(f"/api/uebung/{a}/zustand").json()["zustand"]
+    assert zustand["anrufe"][-1]["korrektur"] == {"rd.zugang": True}
+    assert (
+        absicht(
+            client, t, art="anleitung.korrigieren", anrufId=anruf_id, anleitung="x", gegeben=True
+        ).status_code
+        == 403
+    )
+    assert (
+        absicht(
+            client, a, art="anleitung.korrigieren", anrufId="fehlt", anleitung="x", gegeben=True
+        ).status_code
+        == 404
+    )
+    assert absicht(client, a, art="anleitung.korrigieren", anrufId=anruf_id).status_code == 422
+    for i in range(99):
+        absicht(
+            client,
+            a,
+            art="anleitung.korrigieren",
+            anrufId=anruf_id,
+            anleitung=f"a{i}",
+            gegeben=True,
+        )
+    voll = absicht(
+        client, a, art="anleitung.korrigieren", anrufId=anruf_id, anleitung="neu", gegeben=True
+    )
+    assert voll.status_code == 422
+    wieder = absicht(
+        client,
+        a,
+        art="anleitung.korrigieren",
+        anrufId=anruf_id,
+        anleitung="rd.zugang",
+        gegeben=False,
+    )
+    assert wieder.status_code == 200

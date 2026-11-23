@@ -7,6 +7,7 @@ import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustan
 import type {AnrufSicht} from '../modell/uebung'
 import {phasenstand} from '../phasen/register'
 import EinsatzMaske from './EinsatzMaske.vue'
+import HinweisListe from './HinweisListe.vue'
 import SchrittLeiste from './SchrittLeiste.vue'
 import SnaFenster from './SnaFenster.vue'
 
@@ -22,6 +23,12 @@ const ergebnis = computed(() => endergebnis(props.graph, eintraege.value.abfrage
 const alter = computed(() => eintraege.value.abfrage.pfad.find(schritt => schritt.knoten === 'rd.alter')?.wert)
 const sna = ref<InstanceType<typeof SnaFenster> | null>(null)
 const maske = ref<InstanceType<typeof EinsatzMaske> | null>(null)
+const hinweise = ref<InstanceType<typeof HinweisListe> | null>(null)
+
+/** Puts the focus on the instructions to the caller. */
+function hinweiseZeigen(): void {
+    hinweise.value?.fokussieren()
+}
 
 /** Puts the focus into the entry mask. */
 function maskeZeigen(): void {
@@ -33,7 +40,7 @@ function snaZeigen(): void {
     sna.value?.fokussieren()
 }
 
-defineExpose({snaZeigen, maskeZeigen})
+defineExpose({snaZeigen, maskeZeigen, hinweiseZeigen})
 </script>
 
 <template>
@@ -41,8 +48,9 @@ defineExpose({snaZeigen, maskeZeigen})
         <SchrittLeiste :staende="staende" :aktiv="aktivePhase"/>
         <div class="flex flex-wrap gap-4">
             <EinsatzMaske ref="maske" v-model="eintraege" v-model:suche="suche" class="max-w-lg min-w-0 flex-[1_1_26rem]" :anruf="anruf" :ruhig="ruhig" :stichwort="ergebnis ? `${ergebnis.code} · ${ergebnis.kategorie}` : ''" :alter="alter" @sna="snaZeigen" @sofort="emit('sofort')"/>
-            <div class="min-w-0 flex-[999_1_36rem]">
+            <div class="flex min-w-0 flex-[999_1_36rem] flex-col gap-3">
                 <SnaFenster ref="sna" v-model="eintraege.abfrage" v-model:ui="ui" :graph="graph" :schwerste="schwerste" :gesperrt="!eintraege.ort.koordinaten" :seit="anruf.angenommenUm" @sofort="emit('sofort')"/>
+                <HinweisListe ref="hinweise" v-model="eintraege" :graph="graph" @sofort="emit('sofort')"/>
             </div>
         </div>
     </div>

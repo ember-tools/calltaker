@@ -47,15 +47,15 @@ function urteil(bewertung: Bewertung): string {
             <h1 class="m-0 text-xl font-bold">{{ szenario.titel }}</h1>
             <p class="m-0"><b class="font-mono">{{ szenario.ziel.code }}</b> · {{ ziel?.kategorie }} · {{ ziel?.anlass }}</p>
         </header>
-        <section v-for="phase in ergebnis.phasen" :key="phase.phase.id" :aria-label="t(phase.phase.titel)" class="flex flex-col gap-1">
+        <section v-for="phase in ergebnis.phasen.filter(p => p.bewertungen.length)" :key="phase.phase.id" :aria-label="t(phase.phase.titel)" class="flex flex-col gap-1">
             <h2 class="m-0 text-base font-bold">{{ t(phase.phase.titel) }}</h2>
             <table class="w-full border-collapse text-sm">
                 <thead>
                     <tr class="text-left text-xs text-gedaempft"><th class="py-1 pr-2">{{ t('debrief.feld') }}</th><th class="py-1 pr-2">{{ t('debrief.erfasst') }}</th><th class="py-1 pr-2">{{ t('debrief.wahrheit') }}</th><th class="py-1">{{ t('debrief.ergebnis') }}</th></tr>
                 </thead>
                 <tbody>
-                    <tr v-for="bewertung in phase.bewertungen" :key="bewertung.feld" :class="URTEIL[bewertung.urteil]">
-                        <th scope="row" class="py-1 pr-2 text-left font-semibold">{{ t(bewertung.feld) }}</th>
+                    <tr v-for="(bewertung, stelle) in phase.bewertungen" :key="stelle" :class="URTEIL[bewertung.urteil]">
+                        <th scope="row" class="py-1 pr-2 text-left font-semibold">{{ bewertung.beschriftung ?? t(bewertung.feld) }}</th>
                         <td class="py-1 pr-2">{{ erfasst(bewertung) }}</td>
                         <td class="py-1 pr-2">{{ bewertung.abstand !== undefined ? t('debrief.punktSoll') : bewertung.soll }}</td>
                         <td class="py-1 font-semibold">{{ urteil(bewertung) }}</td>

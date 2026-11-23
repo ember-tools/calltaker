@@ -39,7 +39,9 @@ export interface Eintraege {
     betroffener: string
     abfrage: Abfrageeintrag
     hinweise: string
-    zeiten: {adresse?: number, code?: number}
+    /** The instructions to the caller ticked as given, by id. */
+    anleitung: {gegeben: string[]}
+    zeiten: {adresse?: number, code?: number, anleitungen?: Record<string, number>}
 }
 
 /**
@@ -54,6 +56,30 @@ export function leereEintraege(): Eintraege {
         betroffener: '',
         abfrage: {pfad: []},
         hinweise: '',
+        anleitung: {gegeben: []},
         zeiten: {},
     }
+}
+
+/**
+ * Entries as they are judged, never sent: `abgewaehlt` names the instructions the trainer counted
+ * as not given although the trainee ticked them.
+ */
+export type BewerteteEintraege = Eintraege & {anleitung: {abgewaehlt?: string[]}}
+
+/**
+ * Entries with the trainer's corrections of which instructions were given applied.
+ *
+ * @param eintraege the trainee's entries
+ * @param korrektur the trainer's corrections, by instruction id
+ * @returns the entries as they count
+ */
+export function mitKorrektur(eintraege: Eintraege, korrektur: Record<string, boolean> = {}): BewerteteEintraege {
+    const gegeben = new Set(eintraege.anleitung.gegeben)
+    const abgewaehlt: string[] = []
+    for (const [id, an] of Object.entries(korrektur)) {
+        if (an) gegeben.add(id)
+        else if (gegeben.delete(id)) abgewaehlt.push(id)
+    }
+    return {...eintraege, anleitung: {gegeben: [...gegeben], abgewaehlt}}
 }

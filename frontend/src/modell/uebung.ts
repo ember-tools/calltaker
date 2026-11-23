@@ -24,6 +24,8 @@ export interface AnrufSicht {
     beendetUm?: number
     eintraege?: Eintraege
     szenario?: Szenario
+    /** The trainer's corrections of which instructions were given, once the call has ended. */
+    korrektur?: Record<string, boolean>
 }
 
 /** A call as the trainer sees it, truth included. */
@@ -35,6 +37,8 @@ export interface Anruf {
     angenommenUm?: number
     beendetUm?: number
     eintraege: Eintraege
+    /** The trainer's corrections of which instructions to the caller were given. */
+    korrektur?: Record<string, boolean>
 }
 
 /** The state of an exercise as the trainee sees it. */
@@ -120,5 +124,6 @@ export function sichtVon(anruf: Anruf): AnrufSicht {
         angenommenUm: anruf.angenommenUm,
         beendetUm: anruf.beendetUm,
         eintraege: anruf.eintraege,
+        korrektur: anruf.korrektur,
     }
 }

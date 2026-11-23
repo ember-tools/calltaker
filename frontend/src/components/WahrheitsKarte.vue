@@ -2,6 +2,7 @@
 import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
+import {mitKorrektur} from '../modell/eintraege'
 import {anzeigen} from '../modell/rufnummer'
 import type {Anruf} from '../modell/uebung'
 import {vergleichePfad} from '../modell/wahrheitspfad'
@@ -11,12 +12,13 @@ import type {Urteil} from '../phasen/typen'
 import PfadVergleichListe from './PfadVergleichListe.vue'
 
 const props = defineProps<{graph: Abfragegraph, anruf: Anruf}>()
+const emit = defineEmits<{korrigieren: [anleitung: string, gegeben: boolean]}>()
 
 const {t} = useI18n()
 const szenario = computed(() => props.anruf.szenario)
 const ziel = computed(() => props.graph.knoten[szenario.value.ziel.knoten])
 const vergleich = computed(() => vergleichePfad(props.graph, szenario.value.antworten, props.anruf.eintraege.abfrage.pfad))
-const bewertungen = computed(() => bewerten(props.anruf.eintraege, szenario.value, props.graph).flatMap(p => p.bewertungen))
+const bewertungen = computed(() => bewerten(mitKorrektur(props.anruf.eintraege, props.anruf.korrektur), szenario.value, props.graph).flatMap(p => p.bewertungen))
 const adresse = computed(() => zeile(szenario.value.ort.adresse))
 const rolle = computed(() => {
     const {stimmung, sprache} = szenario.value.rolle
@@ -56,11 +58,12 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
             </template>
         </dl>
         <ul class="m-0 flex list-none flex-col gap-0.5 p-0" :aria-label="t('wahrheit.abgleich')">
-            <li v-for="bewertung in bewertungen" :key="bewertung.feld" :class="['flex gap-2', URTEIL[bewertung.urteil]]">
-                <span class="w-32 shrink-0">{{ t(bewertung.feld) }}</span>
+            <li v-for="(bewertung, stelle) in bewertungen" :key="stelle" :class="['flex gap-2', URTEIL[bewertung.urteil]]">
+                <span class="w-32 shrink-0">{{ bewertung.beschriftung ?? t(bewertung.feld) }}</span>
                 <span v-if="bewertung.abstand !== undefined">{{ t('wahrheit.abstand', {meter: bewertung.abstand}) }}</span>
                 <span v-else-if="bewertung.urteil === 'offen'">{{ t('wahrheit.offen') }}</span>
                 <span v-else>{{ bewertung.ist }}<template v-if="bewertung.urteil === 'falsch' || bewertung.urteil === 'teilweise'"> · {{ t('wahrheit.soll', {soll: bewertung.soll}) }}</template><template v-if="bewertung.stufe && bewertung.stufe !== 'exakt'"> ({{ t(`stufe.${bewertung.stufe}`) }})</template></span>
+                <button v-if="bewertung.anleitung" type="button" class="ml-auto shrink-0 text-xs underline" @click="emit('korrigieren', bewertung.anleitung, !bewertung.gegeben)">{{ bewertung.gegeben ? t('wahrheit.nichtGegeben') : t('wahrheit.gegeben') }}</button>
             </li>
         </ul>
         <PfadVergleichListe :vergleich="vergleich" live/>

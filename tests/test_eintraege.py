@@ -1,5 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
+from pydantic import ValidationError
 
 from eintraege import (
     Abfrageeintrag,
@@ -90,3 +91,32 @@ def test_eintraege_brauchen_ein_laufendes_gespraech(gespraech):
     vorbei = eintragen(client, t, anruf_id, {})
     assert vorbei.status_code == 409
     assert vorbei.json()["detail"] == "Es läuft kein Gespräch."
+
+
+def test_gegebene_anleitungen_werden_einmal_gestempelt():
+    erste = uebernehmen(
+        Eintraege(), Eintraege.model_validate({"anleitung": {"gegeben": ["a"]}}), 10.0
+    )
+    zweite = uebernehmen(
+        erste, Eintraege.model_validate({"anleitung": {"gegeben": ["a", "b"]}}), 20.0
+    )
+    dritte = uebernehmen(zweite, Eintraege(), 30.0)
+    assert zweite.zeiten.anleitungen == {"a": 10.0, "b": 20.0}
+    assert dritte.zeiten.anleitungen == {"a": 10.0, "b": 20.0}
+    assert Eintraege.model_validate({"zeiten": {"anleitungen": {"x": 1}}}).zeiten.anleitungen == {
+        "x": 1
+    }
+
+
+def test_anleitungen_sind_begrenzt():
+    with pytest.raises(ValidationError):
+        Eintraege.model_validate({"anleitung": {"gegeben": ["x" * 201]}})
+    with pytest.raises(ValidationError):
+        Eintraege.model_validate({"anleitung": {"gegeben": [str(i) for i in range(101)]}})
+    bisher = Eintraege()
+    for runde in range(3):
+        neu = Eintraege.model_validate(
+            {"anleitung": {"gegeben": [f"{runde}-{i}" for i in range(100)]}}
+        )
+        bisher = uebernehmen(bisher, neu, float(runde))
+    assert len(bisher.zeiten.anleitungen) == 100

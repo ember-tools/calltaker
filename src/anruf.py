@@ -21,6 +21,8 @@ class Anruf(Modell):
     """One call: its scenario, its state, its times and what the trainee entered.
 
     Times are seconds of the server's clock (`time.time()`), which the views count from.
+    `korrektur` holds the trainer's corrections of which instructions to the caller were given,
+    kept apart from the trainee's entries so the trainee's next save does not undo them.
     """
 
     id: str = Field(default_factory=neue_id)
@@ -30,6 +32,7 @@ class Anruf(Modell):
     angenommen_um: float | None = None
     beendet_um: float | None = None
     eintraege: Eintraege = Field(default_factory=Eintraege)
+    korrektur: dict[str, bool] = Field(default_factory=dict)
 
     def fuer_ausbilder(self) -> dict:
         """Return the whole call, truth included."""
@@ -39,8 +42,8 @@ class Anruf(Modell):
         """Return what the trainee may see of the call in its current state.
 
         While a call waits or runs, the trainee sees the number shown and the times, plus its own
-        entries; the scenario's truth only once the call has ended, for the debrief. A caller who
-        hung up shows only the number and the wait.
+        entries; the scenario's truth and the trainer's corrections only once the call has ended,
+        for the debrief. A caller who hung up shows only the number and the wait.
         """
         anrufer = self.szenario.anrufer
         sicht = {
@@ -58,4 +61,5 @@ class Anruf(Modell):
             sicht["eintraege"] = self.eintraege.nach_aussen()
         if self.zustand == Anrufzustand.BEENDET:
             sicht["szenario"] = self.szenario.nach_aussen()
+            sicht["korrektur"] = self.korrektur
         return {schluessel: wert for schluessel, wert in sicht.items() if wert is not None}

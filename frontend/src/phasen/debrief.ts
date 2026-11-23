@@ -1,5 +1,5 @@
 import type {Abfragegraph} from '../modell/abfragegraph'
-import {leereEintraege} from '../modell/eintraege'
+import {leereEintraege, mitKorrektur} from '../modell/eintraege'
 import type {Szenario} from '../modell/szenario'
 import type {AnrufSicht} from '../modell/uebung'
 import {vergleichePfad, type Pfadvergleich} from '../modell/wahrheitspfad'
@@ -65,7 +65,7 @@ export function zeitenVon(anruf: AnrufSicht): Gespraechszeiten {
  * @returns the debrief
  */
 export function debrief(graph: Abfragegraph, anruf: AnrufSicht, szenario: Szenario): Debrief {
-    const eintraege = anruf.eintraege ?? leereEintraege()
+    const eintraege = mitKorrektur(anruf.eintraege ?? leereEintraege(), anruf.korrektur)
     return {
         phasen: bewerten(eintraege, szenario, graph),
         pfad: vergleichePfad(graph, szenario.antworten, eintraege.abfrage.pfad),

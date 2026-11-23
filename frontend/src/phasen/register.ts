@@ -1,13 +1,14 @@
 import type {Abfragegraph} from '../modell/abfragegraph'
-import type {Eintraege} from '../modell/eintraege'
+import type {BewerteteEintraege, Eintraege} from '../modell/eintraege'
 import type {Szenario} from '../modell/szenario'
 import {abfrage} from './abfrage'
+import {anleitung} from './anleitung'
 import {personalien} from './personalien'
 import {standort} from './standort'
 import type {Bewertung, Kontext, Phase} from './typen'
 
 /** Every phase in the order a call goes through them; the call always starts with the location. */
-export const PHASEN: readonly Phase[] = [standort, abfrage, personalien]
+export const PHASEN: readonly Phase[] = [standort, abfrage, personalien, anleitung]
 
 /** A phase of this call with what it still misses. */
 export interface Phasenstand {
@@ -51,6 +52,6 @@ export interface Phasenbewertung {
  * @param graph the graph
  * @returns each phase with its comparisons
  */
-export function bewerten(eintraege: Eintraege, szenario: Szenario, graph: Abfragegraph): Phasenbewertung[] {
+export function bewerten(eintraege: BewerteteEintraege, szenario: Szenario, graph: Abfragegraph): Phasenbewertung[] {
     return PHASEN.map(phase => ({phase, bewertungen: phase.bewerten(eintraege, szenario, graph)}))
 }
