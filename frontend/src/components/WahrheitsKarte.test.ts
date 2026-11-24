@@ -90,6 +90,20 @@ describe('WahrheitsKarte als Sprechhilfe', () => {
         const beendet = mount(WahrheitsKarte, {props: {graph: GRAPH, anruf: anrufMit('b', 'beendet')}, global: {plugins: [i18n]}})
         expect(beendet.text()).not.toContain('So sprichst du als Anrufer')
     })
+
+    it('zeigt Notizen und Beschwerden im Leitfaden, nach dem Anruf darunter', () => {
+        const laufend = anrufMit('n')
+        laufend.szenario.rolle = {...laufend.szenario.rolle, beschwerden: ['Der Mundwinkel hängt.', 'Sie redet verwaschen.']}
+        const ansicht = mount(WahrheitsKarte, {props: {graph: GRAPH, anruf: laufend}, global: {plugins: [i18n]}})
+        const leitfaden = ansicht.get('[aria-label="So sprichst du als Anrufer"]')
+        expect(leitfaden.text()).toContain('Was du weißt: Weint.')
+        expect(leitfaden.findAll('li').filter(li => li.text().startsWith('Wenn gefragt:'))).toHaveLength(2)
+        const vorbei = anrufMit('n', 'beendet')
+        vorbei.szenario.rolle = {...vorbei.szenario.rolle, beschwerden: ['Der Mundwinkel hängt.']}
+        const danach = mount(WahrheitsKarte, {props: {graph: GRAPH, anruf: vorbei}, global: {plugins: [i18n]}})
+        expect(danach.text()).toContain('Weint.')
+        expect(danach.get('[aria-label="Beschwerden, die der Anrufer beschreiben sollte"]').text()).toBe('Der Mundwinkel hängt.')
+    })
 })
 
 describe('WahrheitsKarte bei laufender Reanimation', () => {

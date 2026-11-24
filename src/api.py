@@ -7,6 +7,7 @@ from fastapi import APIRouter, Body, HTTPException
 from fastapi.responses import Response
 
 import anleitungen
+import beschwerden
 import gefahrstoffe
 from abfrage import Abfragegraph, laden
 from einstellungen import einstellungen
@@ -69,6 +70,12 @@ def abfragegraph() -> Abfragegraph:
 def anleitungskatalog() -> list[anleitungen.Anleitung]:
     """Load and check the instructions to the caller once per process."""
     return anleitungen.laden(einstellungen().anleitungen_verzeichnis, abfragegraph())
+
+
+@lru_cache
+def beschwerdekatalog() -> list[beschwerden.Lage]:
+    """Load and check the complaints callers describe once per process."""
+    return beschwerden.laden(einstellungen().beschwerden_verzeichnis, abfragegraph())
 
 
 @lru_cache

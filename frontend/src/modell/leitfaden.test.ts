@@ -45,6 +45,17 @@ describe('leitfaden', () => {
         expect(i18n.global.t('leitfaden.wer.dabeiRd', {beziehung: 'Tochter'})).toContain('Tochter')
     })
 
+    it('zeigt jede Beschwerde als eigenen Punkt nach dem, was der Anrufer weiß', () => {
+        const szenario = anrufMit('b').szenario
+        szenario.rolle = {...szenario.rolle, beschwerden: ['Der Mundwinkel hängt.', 'Sie redet verwaschen.']}
+        const punkte = leitfaden(GRAPH, szenario)
+        const ab = punkte.findIndex(p => p.schluessel === 'leitfaden.notizen')
+        expect(punkte.slice(ab + 1, ab + 3)).toEqual([
+            {schluessel: 'leitfaden.wennGefragt', werte: {beschwerde: 'Der Mundwinkel hängt.'}},
+            {schluessel: 'leitfaden.wennGefragt', werte: {beschwerde: 'Sie redet verwaschen.'}},
+        ])
+    })
+
     it('nennt Todeszeichen, geschätztes Alter, Kohlenmonoxid und Atemnot als eigene Punkte', () => {
         const labels = (...pfad: string[]) => {
             const texte = ['Protokoll', ...pfad]

@@ -87,6 +87,7 @@ export function leitfaden(graph: Abfragegraph, szenario: Szenario): Stichpunkt[]
     if (wer) punkte.push(wer)
     const notizen = szenario.rolle.notizen.trim()
     if (notizen) punkte.push({schluessel: 'leitfaden.notizen', werte: {notizen}})
+    for (const beschwerde of szenario.rolle.beschwerden ?? []) punkte.push({schluessel: 'leitfaden.wennGefragt', werte: {beschwerde}})
     const {geschoss, klingel, haustier} = szenario.ort
     if (geschoss || klingel) punkte.push({schluessel: 'leitfaden.wohnung', werte: {geschoss: geschoss || '-', klingel: klingel || '-'}})
     if (haustier) punkte.push({schluessel: 'leitfaden.haustier', werte: {haustier}})

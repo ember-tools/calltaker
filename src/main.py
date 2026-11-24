@@ -19,7 +19,7 @@ import kacheln
 import orte_api
 import uebung_api
 from adressen import Adressen
-from api import abfragebuendel, abfragegraph, gefahrstoffe_geladen, router
+from api import abfragebuendel, abfragegraph, beschwerdekatalog, gefahrstoffe_geladen, router
 from einstellungen import einstellungen
 from fehlermeldung import deutsch
 from frontend import frontend_einbinden
@@ -39,11 +39,12 @@ ANFRAGE_HOECHSTENS = 2 * 1024 * 1024
 async def lebenszyklus(app: FastAPI) -> AsyncIterator[None]:
     """Load the question graph on start and keep the exercises tidy while the server runs.
 
-    A broken graph stops the server instead of a call. Once a second every exercise updates who
-    counts as connected and moves its queue on; once a minute exercises nobody has polled for too
-    long are dropped.
+    A broken graph or catalogue stops the server instead of a call. Once a second every exercise
+    updates who counts as connected and moves its queue on; once a minute exercises nobody has
+    polled for too long are dropped.
     """
     abfragebuendel()
+    beschwerdekatalog()
     client = kacheln.kachel_client()
     app.state.kachelcache = kacheln.Kachelcache(
         einstellungen().daten_verzeichnis / "kacheln", client
@@ -116,6 +117,7 @@ def erzeuger(adressen: Adressen, orte: Orte) -> Callable[[Erzeugung], Szenario]:
         naechste=adressen.naechste,
         umkreis=orte.umkreis,
         gefahrstoffe=gefahrstoffe.mit_warntafel(gefahrstoffe_geladen()),
+        beschwerden=beschwerdekatalog(),
     )
 
     def erzeugen(erzeugung: Erzeugung) -> Szenario:

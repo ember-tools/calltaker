@@ -29,6 +29,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
 from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
+from beschwerden import Lage, gefuellt, lage_fuer
 from beziehungen import OBERRAHMEN, beziehung_ziehen
 from gefahrstoffe import Stoff, tafel
 from generator import festnetznummer, mobilnummer, zufallsname
@@ -246,6 +247,7 @@ class Quellen:
     naechste: Callable[[float, float], dict | None] = lambda *_: None
     umkreis: Callable[[float, float, float], list[dict]] = lambda *_: []
     gefahrstoffe: list[Stoff] = field(default_factory=list)
+    beschwerden: list[Lage] = field(default_factory=list)
 
 
 def disziplin_von(endpunkt: Endpunkt) -> Disziplin:
@@ -1159,7 +1161,13 @@ def generieren(
         betroffener=Betroffener(name=betroffen) if rd else None,
         antworten=antworten,
         ziel=Ziel(knoten=endpunkt.knoten, code=endpunkt.code),
-        rolle=Rolle(stimmung=stimmung, notizen=notizen),
+        rolle=Rolle(
+            stimmung=stimmung,
+            notizen=notizen,
+            beschwerden=beschwerden_ziehen(
+                quellen.beschwerden, endpunkt, text, person, antworten, zufall
+            ),
+        ),
     )
 
 
@@ -1192,3 +1200,40 @@ def geschoss_fuer(endpunkt: Endpunkt, zufall: random.Random) -> str:
         unten = zufall.randint(1, 6)
         return f"zwischen {unten}. und {unten + 1}. OG"
     return zufall.choice(GESCHOSSE)
+
+
+def beschwerden_ziehen(
+    lagen: list[Lage],
+    endpunkt: Endpunkt,
+    text: str,
+    person: Person,
+    antworten: dict[str, Wahl],
+    zufall: random.Random,
+) -> list[str]:
+    """Draw two or three complaints the caller can describe when asked.
+
+    The person describes what they feel; someone beside them what they see. Only complaints that
+    fit the code's path and agree with the opening's reaction and breathing are drawn, since what
+    the caller says decides the trainee's answers. A caller who is not there has nothing first-hand
+    to describe, and a person found dead nothing to complain of.
+    """
+    if endpunkt.fachrichtung != "rd" or endpunkt.code.startswith(TODESZEICHEN):
+        return []
+    lage = lage_fuer(lagen, endpunkt, text, person.alter)
+    if lage is None:
+        return []
+    if person.anrufer_selbst:
+        auswahl = lage.selbst
+    elif person.hand == BEIM_BETROFFENEN and person.vor_ort:
+        auswahl = lage.beobachtet
+    else:
+        return []
+    reaktion = (antworten.get("rd.reaktion") or Wahl()).antwort
+    atmung = (antworten.get("rd.atmung") or Wahl()).antwort
+    passende = [
+        beschwerde
+        for beschwerde in auswahl
+        if beschwerde.passt(endpunkt, text) and beschwerde.stimmt(reaktion, atmung)
+    ]
+    anzahl = min(len(passende), zufall.randint(2, 3))
+    return [gefuellt(b.text, person.weiblich) for b in zufall.sample(passende, anzahl)]

@@ -1,0 +1,287 @@
+{
+  "lagen": [
+    {
+      "id": "stillstand",
+      "protokolle": ["rd.09"],
+      "alter": [13, 120],
+      "nicht": ["bis 30 tage|bis 12 jahre"],
+      "selbst": [],
+      "beobachtet": [
+        "{Er} reagiert nicht, auch nicht, wenn ich {ihn} an den Schultern rüttle.",
+        "{Er} atmet nicht, nur ab und zu so ein Schnappen.",
+        "Die Lippen sind ganz blau.",
+        "{Er} ist einfach umgekippt und liegt jetzt da.",
+        "Die Augen sind halb offen, {er} schaut ins Leere.",
+        "{Er} ist ganz grau im Gesicht."
+      ]
+    },
+    {
+      "id": "stillstand-kind",
+      "protokolle": ["rd.09"],
+      "alter": [0, 12],
+      "selbst": [],
+      "beobachtet": [
+        "{Er} ist ganz schlaff.",
+        "{Er} reagiert nicht, wenn ich {ihn} anspreche oder an den Füßen kitzle.",
+        "Die Lippen sind blau.",
+        "Die Brust bewegt sich nicht.",
+        "{Er} ist ganz blass und fühlt sich kühl an."
+      ]
+    },
+    {
+      "id": "schlaganfall",
+      "protokolle": ["rd.28"],
+      "selbst": [
+        "Mein linker Arm fühlt sich taub an, ich kann ihn kaum heben.",
+        "Mir ist schwindlig, alles dreht sich.",
+        "Ich sehe auf einem Auge nur verschwommen.",
+        "Mir fallen die Wörter nicht ein.",
+        "Mein Bein knickt immer weg."
+      ],
+      "beobachtet": [
+        "{Er} redet ganz verwaschen.",
+        "Der Mundwinkel hängt auf einer Seite.",
+        "{Er} kann den rechten Arm nicht mehr hochheben.",
+        "Vor zehn Minuten war {er} noch ganz normal.",
+        {"text": "{Er} versteht mich, kann aber nicht richtig antworten.", "zeigt": ["wach"]},
+        {"text": "{Er} ist auf einer Seite weggesackt und reagiert kaum.", "zeigt": ["eingetruebt"]}
+      ]
+    },
+    {
+      "id": "brustschmerz",
+      "protokolle": ["rd.10", "rd.19"],
+      "selbst": [
+        "Es drückt so in der Brust, wie ein Stein.",
+        "Der Schmerz zieht in den linken Arm.",
+        "Mir ist übel und ich schwitze kalt.",
+        {"text": "Ich bekomme schlecht Luft.", "zeigt": ["atemnot"]},
+        "Es hat beim Treppensteigen angefangen."
+      ],
+      "beobachtet": [
+        "{Er} hält sich die ganze Zeit die Brust.",
+        "{Er} ist ganz blass und schwitzt.",
+        "{Er} sagt, es drückt auf der Brust.",
+        "{Er} hat sich hingesetzt und will nicht mehr aufstehen.",
+        "{Er} hatte schon mal einen Herzinfarkt."
+      ]
+    },
+    {
+      "id": "atemnot",
+      "protokolle": ["rd.06"],
+      "selbst": [
+        {"text": "Ich krieg keine Luft.", "zeigt": ["atemnot"]},
+        {"text": "Es pfeift beim Ausatmen.", "zeigt": ["atemnot"]},
+        "Mein Spray hilft nicht mehr.",
+        "Ich kann nicht flach liegen, nur sitzen.",
+        "Ich habe schon länger Asthma.",
+        {"text": "Ich muss nach jedem Satz Luft holen.", "zeigt": ["atemnot"], "wenn": ["sprachschwierigkeiten"]}
+      ],
+      "beobachtet": [
+        {"text": "{Er} ringt nach Luft.", "zeigt": ["atemnot"]},
+        {"text": "Man hört es beim Atmen pfeifen.", "zeigt": ["atemnot"]},
+        "{Er} sitzt vornübergebeugt und stützt sich ab.",
+        "{Er} hat schon länger Asthma.",
+        {"text": "Die Lippen werden bläulich.", "zeigt": ["atemnot"], "codes": ["06D03"]},
+        {"text": "{Er} kann nur ein paar Wörter am Stück sagen.", "zeigt": ["atemnot"], "wenn": ["sprachschwierigkeiten"]}
+      ]
+    },
+    {
+      "id": "bewusstlosigkeit",
+      "protokolle": ["rd.31"],
+      "selbst": [
+        "Mir wurde schwarz vor Augen und ich bin umgekippt.",
+        "Ich war kurz weg, jetzt geht es wieder ein bisschen.",
+        "Mir ist noch ganz schummrig.",
+        "Ich habe heute kaum etwas gegessen."
+      ],
+      "beobachtet": [
+        "{Er} ist einfach umgekippt.",
+        "{Er} ist ganz blass.",
+        "{Er} sagt, {er} hat heute kaum getrunken.",
+        {"text": "{Er} sitzt jetzt und ist wieder wach.", "zeigt": ["wach"]},
+        {"text": "{Er} reagiert kaum, wenn ich {ihn} anspreche.", "zeigt": ["eingetruebt"]},
+        {"text": "{Er} atmet, aber {er} wacht nicht richtig auf.", "zeigt": ["eingetruebt"]}
+      ]
+    },
+    {
+      "id": "krampfanfall-vorbei",
+      "protokolle": ["rd.12"],
+      "codes": ["12A01", "12A02", "12A03", "12C04"],
+      "selbst": [
+        "Ich habe mir auf die Zunge gebissen.",
+        "Ich weiß nicht, was passiert ist, ich lag plötzlich auf dem Boden.",
+        "Ich bin noch ganz müde und durcheinander."
+      ],
+      "beobachtet": [
+        "{Er} hat am ganzen Körper gezuckt.",
+        "{Er} hatte Schaum vor dem Mund.",
+        "Das Zucken hat etwa zwei Minuten gedauert.",
+        {"text": "{Er} hat sich eingenässt.", "codes": ["12A01", "12A02", "12C04"]},
+        {"text": "Jetzt liegt {er} da und ist ganz benommen.", "zeigt": ["eingetruebt"]}
+      ]
+    },
+    {
+      "id": "krampfanfall-anhaltend",
+      "protokolle": ["rd.12"],
+      "codes": ["12B00", "12C00", "12D00", "12B01", "12D02", "12D04"],
+      "selbst": [],
+      "beobachtet": [
+        "{Er} zuckt am ganzen Körper und hört nicht auf.",
+        "{Er} hat Schaum vor dem Mund.",
+        "Es geht schon seit ein paar Minuten so.",
+        {"text": "{Er} reagiert überhaupt nicht auf mich.", "zeigt": ["eingetruebt"]}
+      ]
+    },
+    {
+      "id": "krampfanfall-fokal",
+      "protokolle": ["rd.12"],
+      "codes": ["12A04", "12A05"],
+      "selbst": [
+        {"text": "Ich habe dieses komische Gefühl, das ich vor einem Anfall immer habe.", "codes": ["12A05"]},
+        {"text": "Ich rieche plötzlich etwas Verbranntes, das kenne ich vor Anfällen.", "codes": ["12A05"]},
+        {"text": "Meine Hand zuckt, aber ich bin wach.", "codes": ["12A04"]},
+        {"text": "Ich war kurz weg, sagen die anderen; gemerkt habe ich nichts.", "codes": ["12A04"]}
+      ],
+      "beobachtet": [
+        {"text": "{Er} starrt ins Leere und reagiert kurz nicht.", "codes": ["12A04"]},
+        {"text": "Nur die Hand zuckt.", "codes": ["12A04"]},
+        {"text": "{Er} schmatzt und nestelt an der Kleidung.", "codes": ["12A04"]},
+        {"text": "{Er} sagt, {er} hat dieses komische Gefühl wie vor einem Anfall.", "codes": ["12A05"]},
+        {"text": "{Er} ist unruhig und will sich hinlegen, bevor es losgeht.", "codes": ["12A05"]}
+      ]
+    },
+    {
+      "id": "sturz",
+      "protokolle": ["rd.17"],
+      "selbst": [
+        {"text": "Ich bin gestolpert und komme nicht mehr hoch.", "nicht": ["ohnmacht|krampf"]},
+        {"text": "Mir wurde schwarz vor Augen, dann lag ich auf dem Boden.", "wenn": ["ohnmacht"]},
+        "Die Hüfte tut furchtbar weh.",
+        "Ich kann das Bein nicht bewegen.",
+        "Ich liege schon eine Weile hier.",
+        {"text": "Ich habe mir den Kopf angeschlagen, mir ist übel.", "codes": ["17B06"]}
+      ],
+      "beobachtet": [
+        {"text": "{Er} ist die Treppe runtergefallen.", "codes": ["17B03"]},
+        {"text": "Das Bein liegt ganz komisch verdreht.", "codes": ["17A01"]},
+        {"text": "{Er} blutet stark.", "codes": ["17B02"]},
+        {"text": "{Er} ist wach und redet mit mir.", "zeigt": ["wach"]},
+        "{Er} will nicht, dass ich {ihn} anfasse, weil es so wehtut.",
+        {"text": "{Er} ist ausgerutscht und hingefallen.", "nicht": ["ohnmacht|krampf"]},
+        {"text": "{Er} ist plötzlich zusammengesackt und dann hingefallen.", "wenn": ["ohnmacht"]}
+      ]
+    },
+    {
+      "id": "allergie",
+      "protokolle": ["rd.02"],
+      "nicht": ["spinnenbiss"],
+      "selbst": [
+        {"text": "Mein Hals wird ganz eng.", "zeigt": ["atemnot"], "nicht": ["keine atem|asymptomatisch"]},
+        {"text": "Ich habe überall rote Quaddeln, es juckt fürchterlich.", "nicht": ["asymptomatisch"]},
+        {"text": "Meine Lippen schwellen an.", "nicht": ["keine atem|asymptomatisch"]},
+        "Ich bin gegen Wespen allergisch und wurde eben gestochen.",
+        "Ich habe mein Notfallset dabei, weiß aber nicht, ob ich es nehmen soll."
+      ],
+      "beobachtet": [
+        {"text": "Das Gesicht schwillt immer mehr an.", "nicht": ["keine atem|asymptomatisch"]},
+        {"text": "{Er} hat überall rote Flecken.", "nicht": ["asymptomatisch"]},
+        {"text": "{Er} bekommt schlecht Luft und röchelt.", "zeigt": ["atemnot"], "nicht": ["keine atem|asymptomatisch"]},
+        "{Er} hat ein Notfallset, weiß aber nicht, wo es ist.",
+        "{Er} hat vorhin Nüsse gegessen und ist allergisch dagegen."
+      ]
+    },
+    {
+      "id": "unterzucker",
+      "protokolle": ["rd.13"],
+      "selbst": [
+        "Ich zittere und schwitze.",
+        "Ich habe Diabetes und heute kaum gegessen.",
+        "Mir ist ganz komisch, ich kann nicht klar denken.",
+        "Ich habe einen riesigen Hunger."
+      ],
+      "beobachtet": [
+        "{Er} hat Diabetes.",
+        "{Er} ist nass geschwitzt.",
+        "{Er} hat sich vorhin Insulin gespritzt.",
+        {"text": "{Er} ist ganz verwirrt und redet wirres Zeug.", "zeigt": ["eingetruebt"]},
+        {"text": "{Er} wird immer schläfriger.", "zeigt": ["eingetruebt"]}
+      ]
+    },
+    {
+      "id": "wehen",
+      "protokolle": ["rd.24"],
+      "codes": ["24B01", "24D02", "24D03", "24C00", "24D00", "24B00"],
+      "selbst": [
+        "Die Wehen kommen alle drei Minuten.",
+        "Es ist mein zweites Kind, das erste ging ganz schnell.",
+        {"text": "Ich habe das Gefühl, ich muss pressen.", "codes": ["24D02", "24D03"]}
+      ],
+      "beobachtet": [
+        "Die Wehen kommen immer schneller.",
+        "Sie hat starke Schmerzen bei jeder Wehe.",
+        {"text": "Sie sagt, sie muss pressen.", "codes": ["24D02", "24D03"]},
+        {"text": "Man sieht schon den Kopf.", "codes": ["24D02"]}
+      ]
+    },
+    {
+      "id": "fruchtwasser",
+      "protokolle": ["rd.24"],
+      "codes": ["24A00", "24O01"],
+      "selbst": [
+        "Die Fruchtblase ist geplatzt.",
+        "Es läuft die ganze Zeit Wasser.",
+        "Wehen habe ich noch keine."
+      ],
+      "beobachtet": [
+        "Das Fruchtwasser ist abgegangen.",
+        "Sie hat noch keine Wehen.",
+        "Sie ist ganz ruhig, aber unsicher."
+      ]
+    },
+    {
+      "id": "blutung-schwangerschaft",
+      "protokolle": ["rd.24"],
+      "codes": ["24A01", "24C01", "24C02", "24C03", "24D04"],
+      "selbst": [
+        "Ich bin schwanger und blute.",
+        "Ich habe Krämpfe im Unterleib.",
+        "Mir ist schwindlig."
+      ],
+      "beobachtet": [
+        "Sie blutet und ist schwanger.",
+        "Sie ist ganz blass.",
+        "Sie hat Krämpfe im Bauch."
+      ]
+    },
+    {
+      "id": "bauchschmerz-schwangerschaft",
+      "protokolle": ["rd.24"],
+      "codes": ["24C04"],
+      "selbst": [
+        "Ich bin schwanger und habe starke Bauchschmerzen.",
+        "Der Bauch ist ganz hart.",
+        "Die Schmerzen kommen nicht in Wellen, sie bleiben."
+      ],
+      "beobachtet": [
+        "Sie hält sich den Bauch und krümmt sich.",
+        "Sie sagt, der Bauch ist ganz hart.",
+        "Sie ist schwanger und hat starke Schmerzen."
+      ]
+    },
+    {
+      "id": "geboren",
+      "protokolle": ["rd.24"],
+      "codes": ["24C05"],
+      "selbst": [
+        "Das Baby ist da, es schreit.",
+        "Die Nabelschnur hängt noch dran.",
+        "Die Nachgeburt ist noch nicht raus."
+      ],
+      "beobachtet": [
+        "Das Baby ist da und schreit.",
+        "Die Nabelschnur ist noch nicht durch.",
+        "Mutter und Kind sind beide wach."
+      ]
+    }
+  ]
+}

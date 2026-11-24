@@ -100,6 +100,7 @@ export default {
         tipptSuche: 'Adresssuche: „{text}“',
     },
     wahrheit: {
+        beschwerden: 'Beschwerden, die der Anrufer beschreiben sollte',
         titel: 'Lösung',
         stimmung: 'Stimmung: {stimmung}',
         sprache: 'Sprache: {sprache}',
@@ -226,6 +227,7 @@ export default {
             automatisch: 'Du gibst durch, was die Anlage meldet.',
         },
         notizen: 'Was du weißt: {notizen}',
+        wennGefragt: 'Wenn gefragt: {beschwerde}',
         todeszeichen: {
             kalt: 'Die Person ist kalt und steif. Du sagst es, wenn nach Lebenszeichen gefragt wird.',
             verwesung: 'Die Person ist kalt und steif, es riecht stark nach Verwesung. Du sagst es, wenn nach Lebenszeichen gefragt wird.',
@@ -425,6 +427,8 @@ export default {
         stimmungen: {ruhig: 'ruhig', aufgeregt: 'aufgeregt', panisch: 'panisch', verwirrt: 'verwirrt'},
         sprache: 'Sprache',
         notizen: 'Notizen',
+        beschwerden: 'Beschwerden, die der Anrufer beschreibt',
+        beschwerdenHinweis: 'eine je Zeile, höchstens 8, z. B. „Der Mundwinkel hängt.“',
         pfad: 'Lösungsweg',
         codeSuche: 'Code suchen',
         codeSucheHinweis: 'Code oder Anlass, z. B. 17D oder Sturz',

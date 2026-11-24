@@ -154,6 +154,9 @@ class Rolle(Modell):
     stimmung: Literal["ruhig", "aufgeregt", "panisch", "verwirrt"] | None = None
     sprache: str = ""
     notizen: str = ""
+    beschwerden: list[Annotated[str, Field(max_length=200)]] = Field(
+        default_factory=list, max_length=8
+    )
 
 
 class Herkunft(StrEnum):

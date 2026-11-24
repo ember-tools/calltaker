@@ -56,6 +56,8 @@ export interface Rolle {
     stimmung?: 'ruhig' | 'aufgeregt' | 'panisch' | 'verwirrt'
     sprache: string
     notizen: string
+    /** Complaints the caller describes when asked, in their own view or an onlooker's. */
+    beschwerden?: string[]
 }
 
 /** The truth behind one call, as the server hands it over. */
