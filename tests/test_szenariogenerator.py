@@ -491,3 +491,12 @@ def test_himmelsrichtungen():
     assert himmelsrichtung(mitte, (52.51, 13.4)) == "Norden"
     assert himmelsrichtung(mitte, (52.5, 13.42)) == "Osten"
     assert himmelsrichtung(mitte, (52.49, 13.385)) == "Südwesten"
+
+
+def test_eine_gewaehlte_lage_wird_unabhaengig_von_den_gewichten_gezogen(graph):
+    nur_vu = Erzeugung(protokoll="fw.th.verkehrsunfall", gewicht_th=0, anteil_ohne_adresse=0)
+    szenarien = viele(graph, 30, nur_vu)
+    endpunkte = {e.knoten: e for e in graph.endpunkte}
+    assert {endpunkte[s.ziel.knoten].protokoll for s in szenarien} == {"fw.th.verkehrsunfall"}
+    with pytest.raises(NichtsZuZiehen):
+        viele(graph, 1, Erzeugung(protokoll="gibt.es.nicht"))

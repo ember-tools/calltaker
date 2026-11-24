@@ -49,6 +49,7 @@ const tafel = computed(() => tafelDerWahrheit(props.graph, szenario.value.antwor
 const stichpunkte = computed(() => leitfaden(props.graph, szenario.value))
 const jetzt = computed(() => {
     const hier = vergleich.value.schritte.find(schritt => schritt.stand === 'hier')
+    if (hier?.knoten === props.graph.meta.wurzel) return {frage: hier.frage, soll: t('leitfaden.wurzel')}
     return hier ? {frage: hier.frage, soll: hier.soll} : vergleich.value.abseits
 })
 const erreichbar = computed(() => {
