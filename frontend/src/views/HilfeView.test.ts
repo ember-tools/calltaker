@@ -29,6 +29,7 @@ describe('HilfeView', () => {
         for (const titel of ['Einsatzmaske', 'SNA-Fenster', 'Hinweise an den Anrufer', 'Telefonreanimation', 'Lösung']) {
             expect(ansicht.find(`figure [aria-label^="${titel}"]`).exists(), titel).toBe(true)
         }
+        expect(ansicht.find('figure [aria-label="So sprichst du als Anrufer"]').text()).toContain('Du bist selbst betroffen.')
         expect(ansicht.text()).toContain('Kräfte unterwegs')
         expect(ansicht.text()).toContain('Tasten')
     })

@@ -29,7 +29,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
 from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
-from beziehungen import beziehung_ziehen
+from beziehungen import OBERRAHMEN, beziehung_ziehen
 from gefahrstoffe import Stoff, tafel
 from generator import festnetznummer, mobilnummer, zufallsname
 from geo import METER_JE_GRAD, entfernung
@@ -485,14 +485,13 @@ RAHMEN_JE_ART = {
             "Friedhof",
             "Kleingartenanlage",
             "Spielplatz",
-            "Sportplatz",
-            "Sportanlage",
-            "Sporthalle",
             "Brunnen",
         ),
         "draussen",
     ),
-    **dict.fromkeys((*AM_WASSER, "Schwimmbad"), "gewaesser"),
+    **dict.fromkeys(("Sportplatz", "Sportanlage", "Sporthalle"), "sport"),
+    **dict.fromkeys(("Gewässer", "Fluss", "Kanal", "Ufer"), "gewaesser"),
+    **dict.fromkeys(("Strand", "Schwimmbad"), "bad"),
     **dict.fromkeys(("Pflegeheim", "Klinik"), "einrichtung"),
 }
 SCHWANGER = re.compile(r"schwanger|geburt|wehen|fehlgeburt|trimester|ssw")
@@ -617,7 +616,7 @@ def hergang(endpunkt: Endpunkt, person: Person, schauplatz: str, zufall: random.
     passende = [
         text
         for text, unten, oben, ort in HERGAENGE
-        if unten <= person.alter <= oben and ort in (None, schauplatz)
+        if unten <= person.alter <= oben and ort in (None, schauplatz, OBERRAHMEN.get(schauplatz))
     ]
     return zufall.choice(passende) if passende else ""
 
@@ -913,8 +912,8 @@ def draussen_ziehen(
             objekt=platz["name"],
             ohne_adresse=OhneAdresse(wo=wo, umgebung=umgebung),
         )
-        rahmen = "gewaesser" if art in AM_WASSER else "draussen"
-        return Schauplatz(ort, platz["ortsteil"], rahmen, rahmen)
+        rahmen = RAHMEN_JE_ART.get(art, "draussen")
+        return Schauplatz(ort, platz["ortsteil"], OBERRAHMEN.get(rahmen, rahmen), rahmen)
     return None
 
 

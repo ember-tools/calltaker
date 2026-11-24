@@ -718,6 +718,12 @@ def test_beziehungen_passen_zum_schauplatz(graph):
             assert not zuhause
         if art in ("Park", "Spielplatz", "Sportplatz", "Friedhof", "Schwimmbad"):
             assert not beziehung.startswith(("Kunde", "Kundin", "Kolleg"))
+        if beziehung.startswith("Trainer"):
+            assert RAHMEN_JE_ART.get(art) == "sport"
+        if beziehung.startswith(("Rettungsschwimmer", "Angler")):
+            assert RAHMEN_JE_ART.get(art) == (
+                "bad" if beziehung.startswith("Rett") else "gewaesser"
+            )
     assert gesetzt > 800
 
 
@@ -734,7 +740,7 @@ def test_hergaenge_kennen_den_schauplatz(graph):
             assert szenario.ort.objekt in BETRIEBE
         if "beim Sport" in notizen:
             gesehen["sport"] += 1
-            assert RAHMEN_JE_ART[art] == "draussen"
+            assert RAHMEN_JE_ART[art] in ("draussen", "sport")
         if "im Bett" in notizen:
             assert szenario.ort.objekt == ""
     assert set(gesehen) == {"wasser", "strom", "sport"}

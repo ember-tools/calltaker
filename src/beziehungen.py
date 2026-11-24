@@ -75,12 +75,20 @@ ZWEITE_HAND = {
     "draussen": (
         b("Passant", "Passantin", 45),
         b("Begleiter", "Begleiterin", 25),
-        b("Vater", "Mutter", 20, 0, 17, vertraut=True),
-        b("Trainer", "Trainerin", 10),
+        b("Vater", "Mutter", 30, 0, 17, vertraut=True),
+    ),
+    "sport": (
+        b("Trainer", "Trainerin", 40),
+        b("Mitspieler", "Mitspielerin", 35),
+        b("Vater", "Mutter", 25, 0, 17, vertraut=True),
     ),
     "gewaesser": (
-        b("Spaziergänger", "Spaziergängerin", 45),
-        b("Rettungsschwimmer", "Rettungsschwimmerin", 30),
+        b("Spaziergänger", "Spaziergängerin", 65),
+        b("Vater", "Mutter", 35, 0, 17, vertraut=True),
+    ),
+    "bad": (
+        b("Rettungsschwimmer", "Rettungsschwimmerin", 50),
+        b("Badegast", "Badegast", 25),
         b("Vater", "Mutter", 25, 0, 17, vertraut=True),
     ),
     "kultur": (
@@ -223,8 +231,11 @@ FEUERWEHR_ZWEITE = {
         b("Anwohner", "Anwohnerin", 15),
     ),
     "draussen": (b("Spaziergänger", "Spaziergängerin", 60), b("Anwohner", "Anwohnerin", 40)),
+    "sport": (b("Trainer", "Trainerin", 50), b("Anwohner", "Anwohnerin", 50)),
     "gewaesser": (b("Spaziergänger", "Spaziergängerin", 60), b("Angler", "Anglerin", 40)),
+    "bad": (b("Bademeister", "Bademeisterin", 60), b("Badegast", "Badegast", 40)),
 }
+OBERRAHMEN = {"sport": "draussen", "bad": "gewaesser"}
 FEUERWEHR_DRITTE = {
     "wohnung": (
         b(

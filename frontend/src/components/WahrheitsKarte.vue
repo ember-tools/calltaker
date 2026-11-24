@@ -66,11 +66,11 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
             <h2 class="m-0 text-base font-bold">{{ szenario.titel }}</h2>
             <p class="m-0"><b class="font-mono">{{ szenario.ziel.code }}</b> · {{ ziel?.kategorie }} · {{ ziel?.anlass }}</p>
             <p v-if="rolle" class="m-0">{{ rolle }}</p>
-            <p v-if="szenario.rolle.notizen" class="m-0 whitespace-pre-line rounded bg-amber-50 p-2">{{ szenario.rolle.notizen }}</p>
+            <p v-if="szenario.rolle.notizen && anruf.zustand === 'beendet'" class="m-0 whitespace-pre-line rounded bg-amber-50 p-2">{{ szenario.rolle.notizen }}</p>
             <section v-if="anruf.zustand !== 'beendet'" :aria-label="t('leitfaden.titel')" class="flex flex-col gap-1 rounded border border-sky-200 bg-sky-50 p-2">
                 <h3 class="m-0 text-sm font-bold text-sky-900"><FontAwesomeIcon :icon="faComments" class="mr-1.5" aria-hidden="true"/>{{ t('leitfaden.titel') }}</h3>
                 <ul class="m-0 flex flex-col gap-0.5 pl-5">
-                    <li v-for="punkt in stichpunkte" :key="punkt.schluessel">{{ t(punkt.schluessel, punkt.werte ?? {}) }}</li>
+                    <li v-for="punkt in stichpunkte" :key="punkt.schluessel" class="whitespace-pre-line">{{ t(punkt.schluessel, punkt.werte ?? {}) }}</li>
                 </ul>
                 <p v-if="jetzt" class="m-0 rounded bg-amber-100 px-2 py-1" role="status">{{ t('leitfaden.jetzt', {frage: jetzt.frage}) }} <b>{{ jetzt.soll ?? t('wahrheit.improvisieren') }}</b></p>
             </section>
