@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import {faCheck, faComments, faXmark} from '@fortawesome/free-solid-svg-icons'
+import {faCheck, faComments, faTruckMedical, faXmark} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import {mitKorrektur} from '../modell/eintraege'
-import {dauer} from '../composables/useUhr'
+import {dauer, useUhr} from '../composables/useUhr'
 import {anzeigen} from '../modell/rufnummer'
 import {leitfaden} from '../modell/leitfaden'
 import {nachtraege} from '../modell/uebergabe'
@@ -20,7 +20,7 @@ import PfadVergleichListe from './PfadVergleichListe.vue'
 import WarntafelAnzeige from './WarntafelAnzeige.vue'
 
 const props = defineProps<{graph: Abfragegraph, anruf: Anruf, ziele?: Zielzeiten}>()
-const emit = defineEmits<{korrigieren: [anleitung: string, gegeben: boolean]}>()
+const emit = defineEmits<{korrigieren: [anleitung: string, gegeben: boolean], eintreffen: []}>()
 
 const {t} = useI18n()
 const szenario = computed(() => props.anruf.szenario)
@@ -44,6 +44,7 @@ const ortsangaben = computed(() => (['objekt', 'geschoss', 'klingel', 'anfahrt',
     .filter(feld => szenario.value.ort[feld])
     .map(feld => ({feld, wert: szenario.value.ort[feld]})))
 const nachgetragen = computed(() => [...nachtraege(props.graph, props.anruf.eintraege)].map(teil => t(`uebergabe.teil.${teil}`)))
+const jetztUhr = useUhr()
 const tafel = computed(() => tafelDerWahrheit(props.graph, szenario.value.antworten))
 const stichpunkte = computed(() => leitfaden(props.graph, szenario.value))
 const jetzt = computed(() => {
@@ -74,6 +75,12 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
             </section>
             <p v-if="anruf.eintraege.zeiten.uebergabe" class="m-0 font-semibold text-ok">{{ t('uebergabe.erfolgt', {dauer: dauer(anruf.eintraege.zeiten.uebergabe - (anruf.angenommenUm ?? anruf.eintraege.zeiten.uebergabe))}) }}<span v-if="nachgetragen.length" class="font-normal text-akzent"> · {{ t('uebergabe.nachgetragen', {teile: nachgetragen.join(', ')}) }}</span></p>
             <p v-else-if="anruf.zustand === 'gespraech' || anruf.zustand === 'beendet'" class="m-0 text-gedaempft">{{ t('uebergabe.nicht') }}</p>
+            <p v-if="anruf.eintreffenUm !== undefined" class="m-0 flex flex-wrap items-center gap-2">
+                <FontAwesomeIcon :icon="faTruckMedical" aria-hidden="true"/>
+                <span v-if="jetztUhr < anruf.eintreffenUm">{{ t('kraefte.unterwegs', {dauer: dauer(anruf.eintreffenUm - jetztUhr)}) }}</span>
+                <span v-else class="font-semibold text-ok">{{ t('kraefte.eingetroffen') }}</span>
+                <button v-if="anruf.zustand === 'gespraech' && jetztUhr < anruf.eintreffenUm" type="button" class="rounded border border-slate-400 px-2 py-0.5 text-xs font-semibold" @click="emit('eintreffen')">{{ t('kraefte.jetzt') }}</button>
+            </p>
         </header>
         <dl class="m-0 grid grid-cols-[max-content_1fr] gap-x-3 gap-y-1">
             <dt class="text-gedaempft">{{ t('wahrheit.anrufer') }}</dt>

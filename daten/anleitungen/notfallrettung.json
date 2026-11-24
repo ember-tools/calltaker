@@ -17,6 +17,10 @@
               "knoten": "rd.atmung",
               "antwort": "atmet-nicht"
             }
+          ],
+          "nichtKategorien": [
+            "RD1NC REA",
+            "RD1NC NNAD"
           ]
         }
       ],
@@ -39,6 +43,10 @@
               "knoten": "rd.atmung",
               "antwort": "atmet-nicht"
             }
+          ],
+          "nichtKategorien": [
+            "RD1NC REA",
+            "RD1NC NNAD"
           ]
         }
       ],
@@ -255,6 +263,10 @@
               "knoten": "rd.atmung",
               "antwort": "atmet-nicht"
             }
+          ],
+          "nichtKategorien": [
+            "RD1NC REA",
+            "RD1NC NNAD"
           ]
         }
       ],

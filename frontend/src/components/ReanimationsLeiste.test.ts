@@ -55,3 +55,14 @@ describe('ReanimationsLeiste nach dem Zurückgehen', () => {
         ansicht.unmount()
     })
 })
+
+describe('ReanimationsLeiste bis zum Eintreffen', () => {
+    it('sagt, ob die Kräfte noch unterwegs oder schon da sind', async () => {
+        const eintraege = reactive({...leereEintraege(), abfrage: {pfad: [{knoten: 'rd.09.todeszeichen', antwort: 'keine'}]}, zeiten: {reanimation: Date.now() / 1000}})
+        const ansicht = mount(ReanimationsLeiste, {props: {graph: testgraph(), modelValue: eintraege, ruhig: true, eintreffenUm: Date.now() / 1000 + 60}, global: {plugins: [i18n]}})
+        expect(ansicht.text()).toContain('Kräfte unterwegs')
+        await ansicht.setProps({eintreffenUm: Date.now() / 1000 - 1})
+        expect(ansicht.text()).toContain('Kräfte vor Ort')
+        ansicht.unmount()
+    })
+})

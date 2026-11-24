@@ -23,6 +23,8 @@ export interface AnrufSicht {
     rufnummerUnterdrueckt: boolean
     angenommenUm?: number
     beendetUm?: number
+    /** When the crews reach a cardiac arrest, once CPR guidance has started. */
+    eintreffenUm?: number
     eintraege?: Eintraege
     szenario?: Szenario
     /** The trainer's corrections of which instructions were given, once the call has ended. */
@@ -37,6 +39,8 @@ export interface Anruf {
     klingeltSeit: number
     angenommenUm?: number
     beendetUm?: number
+    /** When the crews reach a cardiac arrest, once CPR guidance has started. */
+    eintreffenUm?: number
     eintraege: Eintraege
     /** The trainer's corrections of which instructions to the caller were given. */
     korrektur?: Record<string, boolean>
@@ -129,5 +133,6 @@ export function sichtVon(anruf: Anruf): AnrufSicht {
         beendetUm: anruf.beendetUm,
         eintraege: anruf.eintraege,
         korrektur: anruf.korrektur,
+        eintreffenUm: anruf.eintreffenUm,
     }
 }

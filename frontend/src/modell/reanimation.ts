@@ -1,6 +1,6 @@
 import type {Abfragegraph} from './abfragegraph'
 import {endergebnis, istStillstand} from './abfrageweg'
-import type {Abfrageeintrag} from './eintraege'
+import type {Abfrageeintrag, Eintraege} from './eintraege'
 
 const TODESZEICHEN = {knoten: 'rd.09.todeszeichen', antwort: 'keine'}
 
@@ -16,4 +16,17 @@ export function reanimationFaellig(graph: Abfragegraph, abfrage: Abfrageeintrag)
     if (abfrage.pfad.some(s => s.knoten === TODESZEICHEN.knoten && s.antwort === TODESZEICHEN.antwort)) return true
     const ende = endergebnis(graph, abfrage)
     return Boolean(ende && istStillstand(ende.kategorie))
+}
+
+/**
+ * Whether the trainee has to stay on the line: CPR guidance has started and the crews have not
+ * arrived yet.
+ *
+ * @param eintraege the entries
+ * @param eintreffenUm when the crews arrive, as the server says
+ * @param jetzt the present
+ * @returns true while the crews are on their way
+ */
+export function wartetAufKraefte(eintraege: Eintraege, eintreffenUm: number | undefined, jetzt: number): boolean {
+    return eintraege.zeiten.reanimation !== undefined && (eintreffenUm === undefined || jetzt < eintreffenUm)
 }

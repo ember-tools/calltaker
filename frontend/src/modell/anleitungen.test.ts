@@ -63,3 +63,12 @@ describe('faellige ohne Anrufer vor Ort', () => {
         expect(faellige(graph, BIS_SITUATION.slice(0, 2)).map(a => a.id)).toEqual(['immer'])
     })
 })
+
+describe('faellige mit ausgeschlossenen Kategorien', () => {
+    it('lässt Hinweise weg, wenn das Ergebnis eine ausgeschlossene Kategorie hat', () => {
+        const graph = mit(anleitung('nachher', [{fachrichtung: 'rd', nichtKategorien: ['RD1NC REA']}]))
+        expect(faellige(graph, BIS_SITUATION).map(a => a.id)).toEqual(['nachher'])
+        expect(faellige(graph, BIS_SITUATION, 'RD1NC REA.').map(a => a.id)).toEqual([])
+        expect(faellige(graph, BIS_SITUATION, 'RD2NC.').map(a => a.id)).toEqual(['nachher'])
+    })
+})

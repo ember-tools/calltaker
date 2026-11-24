@@ -2,6 +2,7 @@ import pytest
 from fastapi.testclient import TestClient
 from pydantic import ValidationError
 
+from anruf import Anruf
 from eintraege import (
     Abfrageeintrag,
     Eintraege,
@@ -170,3 +171,54 @@ def test_die_antwort_bringt_zeiten_und_uebergabestand(gespraech):
     danach = eintragen(client, t, anruf_id, {"hinweise": "Tür offen", "uebergabe": True}).json()
     assert danach["ergebnis"]["zeiten"]["uebergabe"] > 0
     assert danach["ergebnis"]["uebergeben"]["hinweise"] == "Tür offen"
+
+
+def test_bei_einer_reanimation_treffen_die_kraefte_nach_der_anfahrt_ein(gespraech):
+    client, a, t, anruf_id = gespraech
+    eintragen(client, t, anruf_id, {"hinweise": "x"})
+    assert (
+        "eintreffenUm" not in client.get(f"/api/uebung/{t}/zustand").json()["zustand"]["anrufe"][0]
+    )
+    eintragen(client, t, anruf_id, {"reanimation": {"laeuft": True, "takt": 100}})
+    anruf = client.get(f"/api/uebung/{a}/zustand").json()["zustand"]["anrufe"][0]
+    start = anruf["eintraege"]["zeiten"]["reanimation"]
+    assert 60 <= anruf["eintreffenUm"] - start <= 180
+    eintragen(
+        client, t, anruf_id, {"reanimation": {"laeuft": True, "takt": 100}, "uebergabe": True}
+    )
+    anruf = client.get(f"/api/uebung/{a}/zustand").json()["zustand"]["anrufe"][0]
+    uebergabe = anruf["eintraege"]["zeiten"]["uebergabe"]
+    assert 60 <= anruf["eintreffenUm"] - uebergabe <= 180
+    sicht = client.get(f"/api/uebung/{t}/zustand").json()["zustand"]["anrufe"][0]
+    assert sicht["eintreffenUm"] == anruf["eintreffenUm"]
+
+
+def test_der_ausbilder_laesst_die_kraefte_vorzeitig_eintreffen(gespraech):
+    client, a, t, anruf_id = gespraech
+    eintragen(client, t, anruf_id, {"reanimation": {"laeuft": True, "takt": 100}})
+    vorher = client.get(f"/api/uebung/{a}/zustand").json()["zustand"]["anrufe"][0]["eintreffenUm"]
+    absicht = {"art": "anruf.eintreffen", "anrufId": anruf_id}
+    assert client.post(f"/api/uebung/{t}/absicht", json=absicht).status_code == 403
+    assert client.post(f"/api/uebung/{a}/absicht", json=absicht).status_code == 200
+    jetzt = client.get(f"/api/uebung/{a}/zustand").json()["zustand"]["anrufe"][0]["eintreffenUm"]
+    assert jetzt < vorher
+    falsch = {"art": "anruf.eintreffen", "anrufId": "x"}
+    assert client.post(f"/api/uebung/{a}/absicht", json=falsch).status_code == 409
+
+
+def test_ohne_reanimation_treffen_keine_kraefte_ein(gespraech):
+    client, a, _, anruf_id = gespraech
+    absicht = {"art": "anruf.eintreffen", "anrufId": anruf_id}
+    antwort = client.post(f"/api/uebung/{a}/absicht", json=absicht)
+    assert antwort.status_code == 409
+    assert antwort.json()["detail"] == "Hier läuft keine Reanimation."
+
+
+def test_eingetroffene_kraefte_bleiben_trotz_spaeter_uebergabe(szenario_daten):
+    anruf = Anruf.model_validate({"szenario": szenario_daten, "klingeltSeit": 0, "anfahrt": 60.0})
+    anruf.eintraege.zeiten.reanimation = 100.0
+    assert anruf.eintreffen_um == 160.0
+    anruf.eintraege.zeiten.uebergabe = 190.0
+    assert anruf.eintreffen_um == 160.0
+    anruf.eintraege.zeiten.uebergabe = 130.0
+    assert anruf.eintreffen_um == 190.0

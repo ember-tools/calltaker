@@ -163,6 +163,8 @@ export default {
         sekunden: '{sekunden} s',
     },
     bewertung: {
+        vorEintreffen: 'Vor dem Eintreffen der Kräfte aufgelegt',
+        bisEintreffen: 'Bis zum Eintreffen am Telefon',
         reanimation: 'Start der Reanimation',
         reanimationUnnoetig: 'Reanimation ohne Stillstand',
         uebergabe: 'Übergabe an die Disposition',
@@ -190,6 +192,11 @@ export default {
         unbekannt: 'Diese UN-Nummer steht nicht in der Liste.',
         mehrere: 'Gefahrenzahl je nach Stoff:',
         name: 'Stoff nach Namen suchen',
+    },
+    kraefte: {
+        unterwegs: 'Kräfte treffen in {dauer} ein',
+        eingetroffen: 'Kräfte sind eingetroffen',
+        jetzt: 'Jetzt eintreffen lassen',
     },
     leitfaden: {
         titel: 'So sprichst du als Anrufer',
@@ -256,6 +263,8 @@ export default {
         tonAus: 'Ton aus, zum Einschalten einmal klicken',
         schlaege: '{anzahl} Kompressionen',
         seit: 'seit {dauer}',
+        unterwegs: 'Kräfte unterwegs: bleib am Telefon und leite weiter an.',
+        eingetroffen: 'Kräfte vor Ort: Anrufer an die Kräfte übergeben lassen, dann auflegen.',
         schritt: {
             lage: 'Legen Sie die Person flach auf den Rücken, auf harten Untergrund, am besten auf den Boden.',
             frei: 'Machen Sie den Oberkörper frei.',
@@ -355,6 +364,7 @@ export default {
         uebergabe: 'Übergabe',
     },
     fehlt: {
+        eintreffen: 'Kräfte noch nicht vor Ort (Reanimation läuft)',
         anleitung: 'Pflichthinweise an den Anrufer',
         einsatzort: 'Einsatzort als Punkt',
         code: 'Code der Abfrage',

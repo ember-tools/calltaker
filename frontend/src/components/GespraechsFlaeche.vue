@@ -63,7 +63,7 @@ defineExpose({snaZeigen, maskeZeigen, hinweiseZeigen, uebergeben})
         <div class="flex flex-wrap gap-4">
             <EinsatzMaske ref="maske" v-model="eintraege" v-model:suche="suche" class="max-w-lg min-w-0 flex-[1_1_26rem]" :anruf="anruf" :ruhig="ruhig" :stichwort="ergebnis ? `${ergebnis.code} · ${ergebnis.kategorie}` : ''" :alter="alter" :warntafel="warntafel" :nachgetragen="nachgetragen" @sna="snaZeigen" @sofort="emit('sofort')"/>
             <div class="flex min-w-0 flex-[999_1_36rem] flex-col gap-3">
-                <ReanimationsLeiste v-model="eintraege" :graph="graph" :ruhig="ruhig" @sofort="emit('sofort')"/>
+                <ReanimationsLeiste v-model="eintraege" :graph="graph" :ruhig="ruhig" :eintreffen-um="anruf.eintreffenUm" @sofort="emit('sofort')"/>
                 <SnaFenster ref="sna" v-model="eintraege.abfrage" v-model:ui="ui" :graph="graph" :schwerste="schwerste" :gesperrt="!eintraege.ort.koordinaten" :seit="anruf.angenommenUm" :uebergabe="uebergabe" :uebergeben-um="eintraege.zeiten.uebergabe" @sofort="emit('sofort')" @uebergeben="uebergeben"/>
                 <HinweisListe ref="hinweise" v-model="eintraege" :graph="graph" @sofort="emit('sofort')"/>
             </div>

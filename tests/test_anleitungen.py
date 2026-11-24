@@ -83,5 +83,22 @@ def test_der_rettungsdienst_endet_mit_dem_hinweis_erneut_anzurufen():
     assert hinweis["pflicht"] is True
     assert hinweis["auchOhneVorOrt"] is True
     assert hinweis["wenn"] == [
-        {"fachrichtung": "rd", "nicht": [{"knoten": "rd.atmung", "antwort": "atmet-nicht"}]}
+        {
+            "fachrichtung": "rd",
+            "nicht": [{"knoten": "rd.atmung", "antwort": "atmet-nicht"}],
+            "nichtKategorien": ["RD1NC REA", "RD1NC NNAD"],
+        }
     ]
+
+
+def test_unbekannte_ausgeschlossene_kategorien_fallen_auf(tmp_path, graph):
+    eintrag = {
+        "id": "x",
+        "titel": "X",
+        "saetze": ["S"],
+        "wenn": [{"fachrichtung": "rd", "nichtKategorien": ["GIBTSNICHT"]}],
+        "quelle": "Q",
+    }
+    (tmp_path / "a.json").write_text(json.dumps({"anleitungen": [eintrag]}), "utf-8")
+    with pytest.raises(ValueError, match="keine Kategorie beginnt mit GIBTSNICHT"):
+        anleitungen.laden(tmp_path, graph)

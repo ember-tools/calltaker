@@ -40,6 +40,7 @@ function gilt(wenn: Wenn, stand: Stand): boolean {
         && (wenn.antworten ?? []).every(antwort => stand.gegeben.get(antwort.knoten) === antwort.antwort)
         && !(wenn.nicht ?? []).some(antwort => stand.gegeben.get(antwort.knoten) === antwort.antwort)
         && (!wenn.kategorien?.length || wenn.kategorien.some(kategorie => stand.kategorie?.startsWith(kategorie)))
+        && !(wenn.nichtKategorien ?? []).some(kategorie => stand.kategorie?.startsWith(kategorie))
 }
 
 /**
