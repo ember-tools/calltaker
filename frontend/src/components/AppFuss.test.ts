@@ -9,6 +9,7 @@ describe('AppFuss', () => {
         expect(ansicht.get('a').attributes('href')).toBe('https://github.com/rainbowdashlabs/calltaker')
         expect(ansicht.text()).toContain('© 2026 RainbowDashLabs and Contributor')
         expect(ansicht.text()).toContain('Licensed under AGPL-3.0')
+        expect(ansicht.text()).toContain('Kein offizielles Angebot')
         expect(ansicht.text()).toMatch(/Calltaker \S+ · built /)
         expect(ansicht.getComponent(RouterLinkStub).props('to')).toEqual({name: 'hilfe'})
     })
