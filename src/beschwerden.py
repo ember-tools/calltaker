@@ -6,9 +6,10 @@ covers, a list in the person's own words (`selbst`) and a list in the words of s
 the scenario's own path or opening. A situation and each complaint can be narrowed: to codes
 starting with given prefixes (`codes`), to paths whose text matches every pattern of `wenn` and
 none of `nicht`, and a situation to an age range. A complaint can also name what it shows
-(`zeigt`): a clouded mind, shortness of breath, or a person awake and talking; it is left out where
-the opening says otherwise. Texts about the person use `{Er}`, `{er}`, `{ihn}` and `{ihm}`, filled
-in for the person's sex. The server checks the catalogue against the graph when it starts.
+(`zeigt`): a clouded mind, shortness of breath, a person awake and talking, or a person who
+still reacts, speaks or moves on purpose; it is left out where the opening says otherwise. Texts
+about the person use `{Er}`, `{er}`, `{ihn}` and `{ihm}`, filled in for the person's sex. The
+server checks the catalogue against the graph when it starts.
 """
 
 import json
@@ -26,7 +27,8 @@ from stimmigkeit import pfadtext
 PRONOMEN = {"Er": "Sie", "er": "sie", "ihn": "sie", "ihm": "ihr"}
 PLATZHALTER = re.compile(r"\{(\w+)\}")
 NORMALE_ATMUNG = "ja-normale-atmung"
-Zeichen = Literal["eingetruebt", "atemnot", "wach"]
+Zeichen = Literal["eingetruebt", "atemnot", "wach", "reagiert"]
+REAGIERT_NICHT = "reagiert-nicht"
 
 
 class Modell(BaseModel):
@@ -68,6 +70,8 @@ class Beschwerde(Eingrenzung):
         if "eingetruebt" in self.zeigt and reaktion == WACH:
             return False
         if "wach" in self.zeigt and reaktion not in (None, WACH):
+            return False
+        if "reagiert" in self.zeigt and reaktion == REAGIERT_NICHT:
             return False
         return not ("atemnot" in self.zeigt and atmung == NORMALE_ATMUNG)
 
