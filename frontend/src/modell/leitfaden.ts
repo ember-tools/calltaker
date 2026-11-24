@@ -27,7 +27,7 @@ const VOR_ORT: Record<string, string> = {
 
 /**
  * What the trainer, playing the caller, needs at hand, in the order the call goes: the call-taker
- * opens with "Notruf Berliner Feuerwehr, wo ist der Notfallort?", so the place comes first, then
+ * opens with "Notruf Feuerwehr und Rettungsdienst, wo ist der Notfallort?", so the place comes first, then
  * what happened in the caller's own words (the caller never names the Fachrichtung, the call-taker
  * decides it), the name when asked, what the caller knows and does not, who is affected, the plate,
  * a call-back number and how to sound. Built from the scenario alone.

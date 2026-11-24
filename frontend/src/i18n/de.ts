@@ -2,7 +2,7 @@
 export default {
     app: {
         name: 'Calltaker',
-        untertitel: 'Notrufabfrage-Training für die Berliner Feuerwehr',
+        untertitel: 'Notrufabfrage-Training für die Leitstelle',
     },
     start: {
         anlegenTitel: 'Neue Übung',
@@ -316,6 +316,7 @@ export default {
         laden: 'Neu laden',
     },
     fuss: {
+        hinweis: 'Kein offizielles Angebot einer Feuerwehr oder Leitstelle. Berlin dient nur als Beispielstadt; Adressen, Orte und Codes stammen aus offenen Daten.',
         quelle: 'GitHub',
         urheber: '© 2026 RainbowDashLabs and Contributor',
         gemacht: 'Made with ❤️ and 🏳️‍🌈',
