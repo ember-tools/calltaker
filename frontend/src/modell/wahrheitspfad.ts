@@ -1,5 +1,6 @@
 import type {Abfragegraph} from './abfragegraph'
 import {aktuellerKnoten} from './abfrageweg'
+import {alterAus} from './eingrenzung'
 import type {Schritteintrag} from './eintraege'
 import {pfadAusAntworten} from './szenarioentwurf'
 import type {Wahl} from './szenario'
@@ -52,10 +53,13 @@ function lesbar(graph: Abfragegraph, knoten: string, wahl: {antwort?: string, we
  * @param b the other
  * @param b.antwort its answer id
  * @param b.wert its typed value
+ * @param alter whether the values are ages, which agree when they name the same number of years
  * @returns true when they agree
  */
-function stimmt(a: {antwort?: string, wert?: string}, b: {antwort?: string, wert?: string}): boolean {
+function stimmt(a: {antwort?: string, wert?: string}, b: {antwort?: string, wert?: string}, alter = false): boolean {
     if (a.antwort || b.antwort) return a.antwort === b.antwort
+    const jahre = [alterAus(a.wert ?? ''), alterAus(b.wert ?? '')]
+    if (alter && jahre[0] !== undefined && jahre[1] !== undefined) return jahre[0] === jahre[1]
     return (a.wert ?? '').trim().toLowerCase() === (b.wert ?? '').trim().toLowerCase()
 }
 
@@ -74,6 +78,7 @@ function stimmt(a: {antwort?: string, wert?: string}, b: {antwort?: string, wert
  * @returns the comparison
  */
 export function vergleichePfad(graph: Abfragegraph, antworten: Record<string, Wahl>, pfad: Schritteintrag[]): Pfadvergleich {
+    const alterKnoten = graph.meta.person?.alter_knoten
     const wahrheit = pfadAusAntworten(graph, antworten)
     const imPfad = new Map(pfad.map(schritt => [schritt.knoten, schritt]))
     const aktuell = aktuellerKnoten(graph, pfad).knoten
@@ -82,10 +87,10 @@ export function vergleichePfad(graph: Abfragegraph, antworten: Record<string, Wa
         const soll = lesbar(graph, schritt.knoten, schritt)
         const getan = imPfad.get(schritt.knoten)
         if (!getan) return {knoten: schritt.knoten, frage, soll, stand: schritt.knoten === aktuell ? 'hier' : 'offen'}
-        return {knoten: schritt.knoten, frage, soll, ist: lesbar(graph, schritt.knoten, getan), stand: stimmt(schritt, getan) ? 'gleich' : 'anders', automatisch: getan.automatisch}
+        return {knoten: schritt.knoten, frage, soll, ist: lesbar(graph, schritt.knoten, getan), stand: stimmt(schritt, getan, schritt.knoten === alterKnoten) ? 'gleich' : 'anders', automatisch: getan.automatisch}
     })
     const imSoll = new Map(wahrheit.map(schritt => [schritt.knoten, schritt]))
-    const weg = pfad.find(schritt => !imSoll.has(schritt.knoten) || !stimmt(imSoll.get(schritt.knoten)!, schritt))
+    const weg = pfad.find(schritt => !imSoll.has(schritt.knoten) || !stimmt(imSoll.get(schritt.knoten)!, schritt, schritt.knoten === alterKnoten))
     const abzweigung = weg && {knoten: weg.knoten, frage: graph.knoten[weg.knoten]?.frage ?? weg.knoten, ist: lesbar(graph, weg.knoten, weg)}
     const knoten = graph.knoten[aktuell]
     const abseits = !imSoll.has(aktuell) && knoten?.frage

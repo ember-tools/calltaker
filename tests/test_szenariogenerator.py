@@ -5,6 +5,7 @@ import pytest
 
 from gefahrstoffe import Stoff
 from geo import entfernung
+from stimmigkeit import FUER_ANDERE, GEHOERT
 from szenario import Szenario, Wahl, pruefen
 from szenariogenerator import (
     ATEMNOT,
@@ -12,6 +13,7 @@ from szenariogenerator import (
     DRAUSSEN_ARTEN_FUER,
     DRAUSSEN_PROTOKOLLE,
     DRAUSSEN_VERSATZ,
+    SCHWANGER,
     SELBST,
     STILLSTAND,
     VOR_ORT,
@@ -24,6 +26,7 @@ from szenariogenerator import (
     anzahl_gewichte,
     disziplin_von,
     generieren,
+    geschaetztes_alter,
     himmelsrichtung,
     person_ziehen,
     pfadtext,
@@ -80,8 +83,10 @@ def test_die_eroeffnung_widerspricht_dem_code_nicht(graph):
             or endpunkt.kategorie.startswith("RD1NC REA")
             or STILLSTAND.search(text)
         )
+        nicht_dabei = antworten["eroeffnung.hand"].antwort in (FUER_ANDERE, GEHOERT)
         if ATEMNOT.search(text) and not stillstand:
-            assert atmung == "atmung-auffaellig", endpunkt.code
+            erlaubt = ("atmung-auffaellig", "unbekannt") if nicht_dabei else ("atmung-auffaellig",)
+            assert atmung in erlaubt, endpunkt.code
         if antworten["eroeffnung.hand"].antwort == SELBST:
             assert reaktion == "ja-wach-und-ansprechbar"
 
@@ -500,3 +505,89 @@ def test_eine_gewaehlte_lage_wird_unabhaengig_von_den_gewichten_gezogen(graph):
     assert {endpunkte[s.ziel.knoten].protokoll for s in szenarien} == {"fw.th.verkehrsunfall"}
     with pytest.raises(NichtsZuZiehen):
         viele(graph, 1, Erzeugung(protokoll="gibt.es.nicht"))
+
+
+def eroeffnungen(graph, erzeugung, anzahl=600):
+    endpunkte = {e.knoten: e for e in graph.endpunkte}
+    for szenario in viele(graph, anzahl, erzeugung):
+        yield endpunkte[szenario.ziel.knoten], szenario
+
+
+def test_stillstaende_haben_immer_die_zweite_hand_vor_ort(graph):
+    gesehen = 0
+    for _, szenario in eroeffnungen(
+        graph, Erzeugung(kategorie="RD1NC", anteil_ohne_adresse=0), 300
+    ):
+        if szenario.antworten["rd.atmung"].antwort == "atmet-nicht":
+            gesehen += 1
+            assert (
+                szenario.antworten["eroeffnung.hand"].antwort
+                == "2-hand-der-anrufer-ist-beim-betroffenen"
+            )
+            assert szenario.antworten["eroeffnung.vor-ort"].antwort == "ja-der-anrufer-ist-vor-ort"
+    assert gesehen
+
+
+def test_die_erste_hand_kennt_ihre_atmung(graph):
+    for _, szenario in eroeffnungen(graph, Erzeugung(gewicht_brand=0, gewicht_th=0)):
+        if szenario.antworten["eroeffnung.hand"].antwort == SELBST:
+            assert szenario.antworten["rd.atmung"].antwort in (
+                "ja-normale-atmung",
+                "atmung-auffaellig",
+            )
+
+
+def test_die_vierte_hand_kennt_kein_genaues_alter(graph):
+    gesehen = 0
+    for _, szenario in eroeffnungen(graph, Erzeugung(gewicht_brand=0, gewicht_th=0), 1500):
+        if szenario.antworten["eroeffnung.hand"].antwort == "4-hand-der-anrufer-hat-es-nur-gehoert":
+            gesehen += 1
+            wert = szenario.antworten["rd.alter"].wert or ""
+            assert wert == "" or wert.startswith("etwa ")
+    assert gesehen
+
+
+def test_feuerwehr_kennt_alle_haende_und_die_anlage_meldet_selbst(graph):
+    haende = Counter()
+    bma = Counter()
+    for endpunkt, szenario in eroeffnungen(
+        graph, Erzeugung(gewicht_rd=0, gewicht_brand=50, gewicht_th=50), 800
+    ):
+        hand = szenario.antworten["eroeffnung.hand"].antwort
+        haende[hand] += 1
+        if endpunkt.protokoll == "fw.brand.brandmeldeanlage":
+            bma[hand] += 1
+    assert haende[SELBST] and haende["2-hand-der-anrufer-ist-beim-betroffenen"]
+    assert bma["automatische-meldung"] > 0
+
+
+def test_der_code_29a01_ist_erste_hand(graph):
+    gesehen = 0
+    for endpunkt, szenario in eroeffnungen(graph, Erzeugung(protokoll="rd.29"), 600):
+        if endpunkt.code == "29A01":
+            gesehen += 1
+            assert szenario.antworten["eroeffnung.hand"].antwort == SELBST
+    assert gesehen
+
+
+def test_geburt_zwischen_16_und_45_und_krankheit_allein(graph):
+    geburten = 0
+    for endpunkt, szenario in eroeffnungen(graph, Erzeugung(protokoll="rd.24"), 300):
+        wert = szenario.antworten["rd.alter"].wert
+        if SCHWANGER.search(pfadtext(graph, endpunkt)) and wert:
+            geburten += 1
+            assert 16 <= int(wert.split()[-1]) <= 45
+    assert geburten
+    schlaganfaelle = list(eroeffnungen(graph, Erzeugung(protokoll="rd.28"), 100))
+    assert schlaganfaelle
+    for _, szenario in schlaganfaelle:
+        if "rd.anzahl" in szenario.antworten:
+            assert szenario.antworten["rd.anzahl"].antwort == "eine-person"
+
+
+def test_geschaetztes_alter_bleibt_im_rahmen():
+    assert geschaetztes_alter(0, 0, 12) == 1
+    assert geschaetztes_alter(7, 0, 12) == 8
+    assert geschaetztes_alter(63, 18, 90) == 60
+    assert geschaetztes_alter(33, 0, 34) == 30
+    assert geschaetztes_alter(88, 18, 90) == 90

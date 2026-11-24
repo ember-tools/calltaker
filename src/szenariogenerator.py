@@ -32,6 +32,21 @@ from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
 from gefahrstoffe import Stoff, tafel
 from generator import festnetznummer, mobilnummer, zufallsname
 from geo import METER_JE_GRAD, entfernung
+from stimmigkeit import (
+    AUTOMATISCH,
+    BEIM_BETROFFENEN,
+    BESTAETIGT,
+    FUER_ANDERE,
+    GEHOERT,
+    NENNT_SELBST,
+    NENNT_SELBST_ODER_DABEI,
+    NIEMAND_DA,
+    OHNE_SELBST,
+    SELBST,
+    VOR_ORT_JA,
+    WACH,
+    pfadtext,
+)
 from szenario import (
     Adresse,
     Anrufer,
@@ -157,10 +172,6 @@ GESCHOSSE = (
     "Seitenflügel, 1. OG",
 )
 
-SELBST = "1-hand-der-anrufer-ist-selbst-betroffen"
-BEIM_BETROFFENEN = "2-hand-der-anrufer-ist-beim-betroffenen"
-FUER_ANDERE = "3-hand-der-anrufer-meldet-fuer-andere"
-GEHOERT = "4-hand-der-anrufer-hat-es-nur-gehoert"
 
 Disziplin = Literal["rd", "brand", "th"]
 
@@ -332,6 +343,12 @@ class Person:
     atemnot: bool = False
     alter_bekannt: bool = True
     vor_ort: bool = True
+    hand: str = BEIM_BETROFFENEN
+    alter_geschaetzt: bool = False
+
+    def alter_text(self) -> str:
+        """Return the age as the caller says it: in years, or roughly, when only guessed."""
+        return f"etwa {self.alter}" if self.alter_geschaetzt else str(self.alter)
 
 
 STILLSTAND = re.compile(
@@ -339,13 +356,31 @@ STILLSTAND = re.compile(
 )
 ATEMNOT = re.compile(r"ineffektiv|atemnot|schnappatmung|atmung (auffällig|erschwert)")
 BEWUSSTLOS = re.compile(r"(?<!nicht )bewusstlos|reagiert nicht|nicht ansprechbar|krampf|nicht wach")
-WACH = "ja-wach-und-ansprechbar"
 VOR_ORT = {
-    SELBST: {"ja-der-anrufer-ist-vor-ort": 1},
-    BEIM_BETROFFENEN: {"ja-der-anrufer-ist-vor-ort": 1},
-    FUER_ANDERE: {"ja-der-anrufer-ist-vor-ort": 60, "nein-war-nicht-vor-ort": 40},
-    GEHOERT: {"nein-war-nicht-vor-ort": 70, "unbekannt": 30},
+    SELBST: {VOR_ORT_JA: 1},
+    BEIM_BETROFFENEN: {VOR_ORT_JA: 1},
+    FUER_ANDERE: {"nein-nicht-mehr-vor-ort": 20, "nein-war-nicht-vor-ort": 75, "unbekannt": 5},
+    GEHOERT: {"nein-war-nicht-vor-ort": 90, "unbekannt": 10},
+    AUTOMATISCH: {"nein-war-nicht-vor-ort": 1},
 }
+HAND_RD = {SELBST: 25, BEIM_BETROFFENEN: 60, FUER_ANDERE: 10, GEHOERT: 5}
+HAND_BRAND = {SELBST: 25, BEIM_BETROFFENEN: 35, FUER_ANDERE: 25, GEHOERT: 15}
+HAND_TH = {SELBST: 25, BEIM_BETROFFENEN: 40, FUER_ANDERE: 25, GEHOERT: 10}
+HAND_JE_PROTOKOLL = {
+    "rd.33": {BEIM_BETROFFENEN: 70, FUER_ANDERE: 30},
+    "rd.34": {AUTOMATISCH: 1},
+    "rd.39": {SELBST: 30, BEIM_BETROFFENEN: 40, FUER_ANDERE: 10, GEHOERT: 20},
+    "rd.24": {SELBST: 40, BEIM_BETROFFENEN: 60},
+    "fw.brand.brandmeldeanlage": {BEIM_BETROFFENEN: 20, FUER_ANDERE: 30, AUTOMATISCH: 50},
+    "fw.th.tueroeffnung": {SELBST: 10, BEIM_BETROFFENEN: 20, FUER_ANDERE: 60, GEHOERT: 10},
+    "fw.th.aufzugnotbefreiung": {SELBST: 50, BEIM_BETROFFENEN: 40, FUER_ANDERE: 10},
+}
+KRANKHEITSPROTOKOLLE = frozenset(
+    f"rd.{n:02d}" for n in (1, 5, 6, 10, 12, 13, 18, 19, 24, 25, 26, 28, 31, 33)
+)
+MIT_ADRESSE = frozenset({"rd.33", "rd.34"})
+SCHWANGER = re.compile(r"schwanger|geburt|wehen|fehlgeburt|trimester|ssw")
+ALTERSSCHWER = frozenset({"rd.10", "rd.19", "rd.28"})
 
 
 def stillstand_wahl(graph: Abfragegraph) -> str:
@@ -385,20 +420,6 @@ def stillstand_von(graph: Abfragegraph, endpunkt: Endpunkt) -> bool:
     )
 
 
-def pfadtext(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
-    """Return the reason and the answer labels after the protocol choice, lower-cased, to read it.
-
-    The protocol's own name is left out: "Bewusstlosigkeit / Ohnmacht" names the topic, not the
-    person's state.
-    """
-    labels = [
-        antwort.label
-        for schritt in endpunkt.pfad[1:]
-        if (antwort := graph.antwort(schritt.knoten, schritt.antwort or "")) is not None
-    ]
-    return " ".join([endpunkt.anlass, *labels]).lower()
-
-
 def zustand_gewichte(endpunkt: Endpunkt, person: Person) -> dict[str, dict[str, float]]:
     """Return how the person reacts and breathes, so the opening never contradicts the code.
 
@@ -413,7 +434,19 @@ def zustand_gewichte(endpunkt: Endpunkt, person: Person) -> dict[str, dict[str, 
     gewichte = zustand_ohne_atemnot(endpunkt, person)
     if person.atemnot:
         gewichte["rd.atmung"] = {"atmung-auffaellig": 1}
-    return gewichte
+    if endpunkt.kategorie.startswith(("RD4", "RD5")):
+        return gewichte
+    unbekannt = {FUER_ANDERE: 0.3, GEHOERT: 0.7}.get(person.hand)
+    if unbekannt is None:
+        return gewichte
+    return {knoten: unsicher(werte, unbekannt) for knoten, werte in gewichte.items()}
+
+
+def unsicher(gewichte: dict[str, float], anteil: float) -> dict[str, float]:
+    """Return weights where "unbekannt" makes up the given share, as for a caller not on site."""
+    rest = {a: g for a, g in gewichte.items() if a != "unbekannt"}
+    summe = sum(rest.values()) or 1
+    return {**{a: g / summe * (1 - anteil) for a, g in rest.items()}, "unbekannt": anteil}
 
 
 def zustand_ohne_atemnot(endpunkt: Endpunkt, person: Person) -> dict[str, dict[str, float]]:
@@ -432,7 +465,11 @@ def zustand_ohne_atemnot(endpunkt: Endpunkt, person: Person) -> dict[str, dict[s
     )
     return {
         "rd.reaktion": reaktion,
-        "rd.atmung": {"ja-normale-atmung": 60, "atmung-auffaellig": 35, "unbekannt": 5},
+        "rd.atmung": (
+            {"ja-normale-atmung": 60, "atmung-auffaellig": 35}
+            if person.anrufer_selbst
+            else {"ja-normale-atmung": 60, "atmung-auffaellig": 35, "unbekannt": 5}
+        ),
     }
 
 
@@ -440,24 +477,62 @@ def regeln(endpunkt: Endpunkt, person: Person) -> dict[str, dict[str, float]]:
     """Return the weights of the opening answers that fit the code, by node.
 
     A node not named here, or an answer not weighted, is chosen with equal chance among the rest.
-    Whether the caller is on site follows from who reports, see `VOR_ORT`.
+    Who reports is drawn before (`hand_ziehen`); whether they are on site follows from that, see
+    `VOR_ORT`.
     """
-    if endpunkt.fachrichtung != "rd":
-        hand = {SELBST: 40, FUER_ANDERE: 50, GEHOERT: 10}
-    elif person.anrufer_selbst:
-        hand = {SELBST: 1}
-    else:
-        hand = {BEIM_BETROFFENEN: 75, FUER_ANDERE: 20, GEHOERT: 5}
     return {
-        "eroeffnung.hand": hand,
+        "eroeffnung.hand": {person.hand: 1},
         "rd.anzahl": anzahl_gewichte(endpunkt),
         "rd.geschlecht": {"frau": 1} if person.weiblich else {"mann": 1},
         **zustand_gewichte(endpunkt, person),
     }
 
 
+def mit_hand(person: Person, endpunkt: Endpunkt, text: str, zufall: random.Random) -> Person:
+    """Draw who reports and mark whether that is the affected person."""
+    person.hand = hand_ziehen(endpunkt, person, text, zufall)
+    person.anrufer_selbst = person.hand == SELBST
+    return person
+
+
+def hand_ziehen(endpunkt: Endpunkt, person: Person, text: str, zufall: random.Random) -> str:
+    """Draw who reports, so that it fits the code.
+
+    A cardiac arrest is reported by someone with the person, who can be guided through CPR. A
+    path that names the caller, or says nobody has looked, decides it. Some protocols have their
+    own callers (`HAND_JE_PROTOKOLL`). Nobody reports themselves when unconscious, trapped, in the
+    water, under 14, or in a first-priority medical case; the least urgent codes are not reported
+    by someone who only heard of them.
+    """
+    if person.stillstand:
+        return BEIM_BETROFFENEN
+    if NENNT_SELBST.search(text) and (endpunkt.fachrichtung != "rd" or person.alter >= 14):
+        return SELBST
+    standard = {"rd": HAND_RD, "brand": HAND_BRAND}.get(endpunkt.fachrichtung, HAND_TH)
+    gewichte = dict(HAND_JE_PROTOKOLL.get(endpunkt.protokoll, standard))
+    if NIEMAND_DA.search(text):
+        gewichte = {h: g for h, g in gewichte.items() if h in (FUER_ANDERE, AUTOMATISCH)}
+        gewichte = gewichte or {FUER_ANDERE: 1}
+    if BESTAETIGT.search(text) or NENNT_SELBST_ODER_DABEI.search(text):
+        gewichte = {h: g for h, g in gewichte.items() if h in (SELBST, BEIM_BETROFFENEN)}
+    medizinisch = endpunkt.fachrichtung == "rd"
+    if OHNE_SELBST.search(text) or (
+        medizinisch
+        and (person.bewusstlos or person.alter < 14 or endpunkt.kategorie.startswith("RD1"))
+    ):
+        gewichte.pop(SELBST, None)
+    if endpunkt.kategorie.startswith(("RD4", "RD5")):
+        gewichte.pop(GEHOERT, None)
+    if not gewichte:
+        return BEIM_BETROFFENEN
+    return zufall.choices(list(gewichte), weights=list(gewichte.values()))[0]
+
+
 def anzahl_gewichte(endpunkt: Endpunkt) -> dict[str, float]:
-    """Return how many people the code speaks of, read from its category and reason."""
+    """Return how many people the code speaks of, read from its category and reason.
+
+    Illnesses strike one person; gas and smoke often more than one.
+    """
     if endpunkt.kategorie.startswith("RD_Mehrere"):
         return {"drei-oder-mehr": 1}
     treffer = re.search(r"(mehr als )?(\d+) (Patienten|Personen|Verletzte)", endpunkt.anlass)
@@ -468,6 +543,10 @@ def anzahl_gewichte(endpunkt: Endpunkt) -> dict[str, float]:
         r"mehrere[nm]? (Verletz|Patienten|Betroffene|eingeklemmt|Personen)", endpunkt.anlass, re.I
     ):
         return {"zwei-personen": 1, "drei-oder-mehr": 2}
+    if endpunkt.protokoll in KRANKHEITSPROTOKOLLE:
+        return {"eine-person": 1}
+    if endpunkt.protokoll == "rd.08":
+        return {"eine-person": 60, "zwei-personen": 30, "drei-oder-mehr": 10}
     return {"eine-person": 93, "zwei-personen": 7}
 
 
@@ -496,7 +575,7 @@ def eroeffnung(
             vorher = antworten[knoten.weiche.knoten].antwort or ""
             id_ = knoten.weiche.ziele[vorher]
         elif knoten.eingabe is not None:
-            antworten[id_] = Wahl(wert=str(person.alter)) if person.alter_bekannt else Wahl()
+            antworten[id_] = Wahl(wert=person.alter_text()) if person.alter_bekannt else Wahl()
             id_ = knoten.ziel or ""
         else:
             if id_ == graph.meta.wurzel:
@@ -672,8 +751,12 @@ def mit_funkzelle(anrufer: Anrufer, ort: Ort, zufall: random.Random) -> Anrufer:
 def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random) -> Person:
     """Return the affected person: an age the code allows, a sex, and whether they call."""
     unten, oben = altersspanne(graph, endpunkt)
-    alter = zufall.randint(unten, oben)
     text = pfadtext(graph, endpunkt)
+    if SCHWANGER.search(text):
+        unten, oben = max(unten, 16), max(max(unten, 16), min(oben, 45))
+    if endpunkt.protokoll in ALTERSSCHWER and oben >= 45 and unten < 45:
+        unten, oben = (45, oben) if zufall.random() < 0.8 else (unten, 44)
+    alter = zufall.randint(unten, oben)
     vorgegeben = {
         antwort.geschlecht
         for schritt in endpunkt.pfad
@@ -686,12 +769,6 @@ def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random
         weiblich = weiblich or zufall.random() < 0.5
     stillstand = stillstand_von(graph, endpunkt)
     bewusstlos = stillstand or bool(BEWUSSTLOS.search(text))
-    anrufer_selbst = (
-        alter >= 14
-        and not bewusstlos
-        and not endpunkt.kategorie.startswith("RD1")
-        and zufall.random() < 0.3
-    )
     atemnot = bool(ATEMNOT.search(text))
     alter_bekannt = not any(
         (antwort := graph.antwort(s.knoten, s.antwort or ""))
@@ -699,7 +776,24 @@ def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random
         and antwort.alter.unbekannt
         for s in endpunkt.pfad
     )
-    return Person(alter, weiblich, anrufer_selbst, stillstand, bewusstlos, atemnot, alter_bekannt)
+    person = Person(alter, weiblich, False, stillstand, bewusstlos, atemnot, alter_bekannt)
+    mit_hand(person, endpunkt, text, zufall)
+    if person.hand == GEHOERT:
+        begrenzt = altersspanne(graph, endpunkt) != ERWACHSEN
+        person.alter_bekannt = person.alter_bekannt and begrenzt
+        if begrenzt:
+            person.alter, person.alter_geschaetzt = geschaetztes_alter(alter, unten, oben), True
+    return person
+
+
+def geschaetztes_alter(alter: int, unten: int, oben: int) -> int:
+    """Return an age as someone guesses it from afar: to 10 years, children to 2, at least 1.
+
+    The guess stays within the ages the code allows.
+    """
+    schritt = 2 if alter <= 12 else 10
+    geschaetzt = max(1, round(alter / schritt) * schritt)
+    return min(max(geschaetzt, max(unten, 1)), max(oben, 1))
 
 
 def titel_von(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
@@ -747,10 +841,13 @@ def generieren(
     endpunkt = endpunkt_ziehen(graph, erzeugung, zufall)
     ort, ortsteil = ort_ziehen(quellen, erzeugung, zufall)
     rd = endpunkt.fachrichtung == "rd"
-    person = person_ziehen(graph, endpunkt, zufall) if rd else Person(0, False, False)
+    if rd:
+        person = person_ziehen(graph, endpunkt, zufall)
+    else:
+        person = mit_hand(Person(0, False, False), endpunkt, pfadtext(graph, endpunkt), zufall)
     antworten = eroeffnung(graph, endpunkt, person, zufall)
     vor_ort = antworten.get("eroeffnung.vor-ort")
-    person.vor_ort = vor_ort is None or vor_ort.antwort == "ja-der-anrufer-ist-vor-ort"
+    person.vor_ort = vor_ort is None or vor_ort.antwort == VOR_ORT_JA
     for schritt in endpunkt.pfad:
         eingabe = graph.knoten[schritt.knoten].eingabe
         if eingabe is not None and eingabe.art == "warntafel":
@@ -762,10 +859,12 @@ def generieren(
             label=antwort.label if antwort else None,
         )
     betroffen = zufallsname(zufall, person.weiblich) if rd else ""
-    anrufer_name = betroffen if person.anrufer_selbst else zufallsname(zufall)
+    anrufer_name = betroffen if person.anrufer_selbst and betroffen else zufallsname(zufall)
     anrufer = anrufer_ziehen(zufall, anrufer_name)
     if (
         anrufer.mobil_angezeigt()
+        and person.vor_ort
+        and endpunkt.protokoll not in MIT_ADRESSE
         and (rd or endpunkt.protokoll in DRAUSSEN_PROTOKOLLE)
         and not erzeugung.bezirk
         and zufall.random() * 100 < erzeugung.anteil_ohne_adresse
@@ -786,6 +885,8 @@ def generieren(
             ort.haustier = zufall.choice(HAUSTIERE)
     stimmungen = STIMMUNGEN[stufe(endpunkt.kategorie)]
     stimmung = zufall.choices(list(stimmungen), weights=list(stimmungen.values()))[0]
+    if stimmung == "panisch" and person.hand in (GEHOERT, AUTOMATISCH):
+        stimmung = "aufgeregt"
     return Szenario(
         abfrage_version=graph.meta.version,
         titel=f"{titel_von(graph, endpunkt)}, {ortsteil}",
