@@ -1,4 +1,5 @@
 import random
+import re
 from collections import Counter
 
 import pytest
@@ -10,6 +11,7 @@ from szenario import Szenario, Wahl, pruefen
 from szenariogenerator import (
     AM_WASSER,
     ATEMNOT,
+    BELASTENDE,
     BETRIEBE,
     BEWUSSTLOS,
     DRAUSSEN_ARTEN_FUER,
@@ -31,15 +33,18 @@ from szenariogenerator import (
     Quellen,
     altersspanne,
     anzahl_gewichte,
+    belastungen,
     disziplin_von,
     generieren,
     geschaetztes_alter,
+    gleichwertige,
     himmelsrichtung,
     person_ziehen,
     pfadtext,
     stufe,
     titel_von,
     warntafel_ziehen,
+    ziehbare,
 )
 
 ADRESSE = {
@@ -785,3 +790,71 @@ def test_saeuglinge_und_neugeborene_haben_ein_alter_in_monaten_oder_tagen(graph)
             gesehen.add("monate")
         assert wert != "0"
     assert gesehen == {"tage", "monate"}
+
+
+def gezogene_belastungen(graph, erzeugung):
+    belastet = belastungen(graph)
+    return {
+        name
+        for protokolle in ziehbare(graph, erzeugung).values()
+        for endpunkte in protokolle.values()
+        for endpunkt in endpunkte
+        for name in belastet[id(endpunkt)]
+    }
+
+
+def test_belastende_lagen_sind_ohne_freigabe_ausgeschlossen(graph):
+    assert gezogene_belastungen(graph, Erzeugung()) == set()
+    alle = set(BELASTENDE)
+    assert gezogene_belastungen(graph, Erzeugung(belastende=sorted(alle))) == alle
+
+
+@pytest.mark.parametrize("kategorie", sorted(BELASTENDE))
+def test_eine_freigegebene_kategorie_laesst_nur_diese_zu(graph, kategorie):
+    gezogen = gezogene_belastungen(graph, Erzeugung(belastende=[kategorie]))
+    assert kategorie in gezogen
+    belastet = belastungen(graph)
+    for protokolle in ziehbare(graph, Erzeugung(belastende=[kategorie])).values():
+        for endpunkte in protokolle.values():
+            for endpunkt in endpunkte:
+                assert belastet[id(endpunkt)] <= {kategorie}
+
+
+def test_die_kategorien_treffen_was_sie_sollen(graph):
+    belastet = belastungen(graph)
+    nach_code = {e.code: belastet[id(e)] for e in graph.endpunkte}
+    assert "todeszeichen" in nach_code["09B01b"]
+    assert nach_code["09B01a"] == frozenset()
+    assert any("sexualdelikt" in k for c, k in nach_code.items() if c.startswith("04"))
+    assert any("suizid" in k for c, k in nach_code.items() if c.startswith("25"))
+    assert all("gewalt" in nach_code[c] for c in nach_code if c.startswith("27"))
+    for code in ("25B04", "25D06", "25C00T"):
+        assert "suizid" in nach_code[code], code
+    assert "gewalt" in nach_code["04A01T"]
+    assert any("todeszeichen" in belastet[id(e)] for e in graph.endpunkte if e.protokoll == "rd.14")
+    assert not any(belastet[id(e)] for e in graph.endpunkte if e.protokoll in ("rd.02", "rd.03"))
+
+
+def test_gleichwertige_antworten_meiden_ausgeschlossene_belastungen(graph):
+    for knoten_id, knoten in graph.knoten.items():
+        antworten = knoten.antworten or []
+        if len(antworten) < 2 or len({a.ziel for a in antworten}) != 1:
+            continue
+        muster = [re.compile(re.escape(antworten[0].label.lower()))]
+        person = Person(40, False, False)
+        for saat in range(30):
+            gezogen = gleichwertige(
+                graph, knoten_id, antworten[1].id, person, random.Random(saat), muster
+            )
+            assert gezogen.id != antworten[0].id
+        return
+    pytest.skip("kein Knoten mit gleichwertigen Antworten")
+
+
+def test_eine_einzige_belastende_lage_meldet_nichts_zu_ziehen(graph):
+    with pytest.raises(NichtsZuZiehen):
+        generieren(graph, QUELLEN, Erzeugung(protokoll="rd.39"), random.Random(1))
+    szenario = generieren(
+        graph, QUELLEN, Erzeugung(protokoll="rd.39", belastende=["gewalt"]), random.Random(1)
+    )
+    assert szenario.ziel.code.startswith("39")

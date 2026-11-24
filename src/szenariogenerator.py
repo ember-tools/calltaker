@@ -106,6 +106,8 @@ NEUGEBORENEN_HERGAENGE = (
     "Wenige Tage alt, atmet seit eben nicht mehr und ist ganz schlaff.",
 )
 UMWEGE_SCHLUESSEL = "_nur_ueber_stillstand"
+BELASTUNG_SCHLUESSEL = "_belastungen"
+BELASTENDE_PROTOKOLLE = {"rd.27": "gewalt", "rd.39": "gewalt"}
 EINSATZORTE = frozenset(
     {
         "Bahnhof",
@@ -214,8 +216,29 @@ GESCHOSSE = (
 Disziplin = Literal["rd", "brand", "th"]
 
 
+Belastend = Literal["todeszeichen", "suizid", "sexualdelikt", "gewalt"]
+BELASTENDE: dict[str, re.Pattern[str]] = {
+    "todeszeichen": re.compile(
+        r"enthauptung|verwesung|verkohlung|unterwasserzeit|6 std unter wasser"
+    ),
+    "suizid": re.compile(
+        r"suizid|erhäng|strangul|droht zu springen|gerade gesprungen|selbstverbrennung"
+        r"|blutung - psychiatrie"
+    ),
+    "sexualdelikt": re.compile(r"sexual|vergewaltig"),
+    "gewalt": re.compile(
+        r"gewalttätig|bewaffnet|waffe|stich|schuss|überfall|körperverletzung|amok|messer"
+        r"|elektroschock"
+    ),
+}
+
+
 class Erzeugung(BaseModel):
-    """What the trainer sets for made-up scenarios: weights, a category filter and an area."""
+    """What the trainer sets for made-up scenarios: weights, filters and an area.
+
+    Distressing situations are left out unless their category is listed in `belastende`, so a
+    group of young trainees does not meet a decapitation or a suicide by chance.
+    """
 
     model_config = ConfigDict(alias_generator=to_camel, populate_by_name=True, extra="forbid")
 
@@ -228,6 +251,7 @@ class Erzeugung(BaseModel):
     bezirk: str = Field("", max_length=80)
     anteil_orte: int = Field(30, ge=0, le=100)
     anteil_ohne_adresse: int = Field(5, ge=0, le=100)
+    belastende: list[Belastend] = Field(default_factory=list, max_length=4)
 
     def gewichte(self) -> dict[Disziplin, int]:
         """Return the weight of each discipline."""
@@ -267,7 +291,8 @@ def ziehbare(
     A person who does not breathe is a cardiac arrest whatever else happened, and the questioning
     goes straight there from "atmet nicht". So an arrest is only drawn as such: the endpoints
     reached through that shortcut. Codes of other protocols that would need a person who does not
-    breathe are left out; their cause can go into the role notes.
+    breathe are left out; their cause can go into the role notes. Distressing codes the settings
+    do not allow are left out too.
     """
     filter_ = erzeugung.kategorie.strip().lower()
     nach: dict[Disziplin, dict[str, list[Endpunkt]]] = {}
@@ -280,10 +305,45 @@ def ziehbare(
             continue
         if erzeugung.protokoll and endpunkt.protokoll != erzeugung.protokoll:
             continue
+        if belastungen(graph)[id(endpunkt)] - set(erzeugung.belastende):
+            continue
         nach.setdefault(disziplin_von(endpunkt), {}).setdefault(endpunkt.protokoll, []).append(
             endpunkt
         )
     return nach
+
+
+def ausgeschlossen(erzeugung: Erzeugung) -> list[re.Pattern[str]]:
+    """Return the patterns of the distressing categories the settings do not allow."""
+    return [muster for name, muster in BELASTENDE.items() if name not in erzeugung.belastende]
+
+
+def belastungen(graph: Abfragegraph) -> dict[int, frozenset[str]]:
+    """Return, per code (by identity), the distressing categories it falls in.
+
+    The answers after the protocol choice and the code's reason are read; the protocol's own
+    label is not, since it lists several situations at once ("Körperverletzung / Sexualdelikt").
+    Protocols that are violent as a whole (`BELASTENDE_PROTOKOLLE`) count for every code. Worked
+    out once per graph and kept on it, like the arrest shortcut.
+    """
+    gemerkt = graph.__dict__.get(BELASTUNG_SCHLUESSEL)
+    if gemerkt is None:
+        gemerkt = {}
+        for endpunkt in graph.endpunkte:
+            texte = [
+                antwort.label.lower()
+                for schritt in endpunkt.pfad[1:]
+                if (antwort := graph.antwort(schritt.knoten, schritt.antwort or "")) is not None
+            ]
+            texte.append((endpunkt.anlass or "").lower())
+            gemerkt[id(endpunkt)] = frozenset(
+                name
+                for name, muster in BELASTENDE.items()
+                if any(muster.search(text) for text in texte)
+                or BELASTENDE_PROTOKOLLE.get(endpunkt.protokoll) == name
+            )
+        graph.__dict__[BELASTUNG_SCHLUESSEL] = gemerkt
+    return gemerkt
 
 
 def endpunkt_ziehen(graph: Abfragegraph, erzeugung: Erzeugung, zufall: random.Random) -> Endpunkt:
@@ -1046,13 +1106,19 @@ def titel_von(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
 
 
 def gleichwertige(
-    graph: Abfragegraph, knoten_id: str, antwort_id: str, person: Person, zufall: random.Random
+    graph: Abfragegraph,
+    knoten_id: str,
+    antwort_id: str,
+    person: Person,
+    zufall: random.Random,
+    muster: list[re.Pattern[str]] | None = None,
 ) -> Antwort | None:
     """Return the answer at a node, or by chance another one when the node does not decide the way.
 
     Some questions do not change the code but what the caller is told, such as whether the way
     out of a burning building is clear: all their answers lead on to the same question. Drawing
-    among them varies the scenarios. A caller who is not on site is not in the building either.
+    among them varies the scenarios, leaving out answers that are distressing in a way the
+    settings do not allow. A caller who is not on site is not in the building either.
     """
     gewaehlt = graph.antwort(knoten_id, antwort_id)
     antworten = graph.knoten[knoten_id].antworten or []
@@ -1060,7 +1126,12 @@ def gleichwertige(
         return gewaehlt
     if knoten_id in NICHT_VOR_ORT_ANTWORT and not person.vor_ort:
         return graph.antwort(knoten_id, NICHT_VOR_ORT_ANTWORT[knoten_id])
-    return zufall.choice(antworten)
+    erlaubt = [
+        antwort
+        for antwort in antworten
+        if not any(m.search(antwort.label.lower()) for m in muster or [])
+    ]
+    return zufall.choice(erlaubt or [gewaehlt])
 
 
 def warntafel_ziehen(quellen: Quellen, person: Person, zufall: random.Random) -> Wahl:
@@ -1097,7 +1168,9 @@ def generieren(
         if eingabe is not None and eingabe.art == "warntafel":
             antworten[schritt.knoten] = warntafel_ziehen(quellen, person, zufall)
             continue
-        antwort = gleichwertige(graph, schritt.knoten, schritt.antwort or "", person, zufall)
+        antwort = gleichwertige(
+            graph, schritt.knoten, schritt.antwort or "", person, zufall, ausgeschlossen(erzeugung)
+        )
         antworten[schritt.knoten] = Wahl(
             antwort=antwort.id if antwort else schritt.antwort,
             label=antwort.label if antwort else None,

@@ -29,6 +29,18 @@ describe('GeneratorPanel', () => {
         expect(ansicht.text()).toContain('2 Szenarien generiert.')
     })
 
+    it('lässt belastende Lagen einzeln zu und schließt sie wieder aus', async () => {
+        const {absicht, ansicht} = panel()
+        const haken = (name: string) => ansicht.findAll('fieldset label').find(l => l.text() === name)!.get('input')
+        expect(ansicht.findAll('fieldset input[type=checkbox]').every(h => !(h.element as HTMLInputElement).checked)).toBe(true)
+        await haken('Suizid und Erhängen').setValue(true)
+        expect(absicht).toHaveBeenLastCalledWith('erzeugung.einstellen', {erzeugung: {...ERZEUGUNG, belastende: ['suizid']}})
+        await haken('Gewalt und Waffen').setValue(true)
+        expect(absicht).toHaveBeenLastCalledWith('erzeugung.einstellen', {erzeugung: {...ERZEUGUNG, belastende: ['suizid', 'gewalt']}})
+        await haken('Suizid und Erhängen').setValue(false)
+        expect(absicht).toHaveBeenLastCalledWith('erzeugung.einstellen', {erzeugung: {...ERZEUGUNG, belastende: ['gewalt']}})
+    })
+
     it('schickt geänderte Einstellungen und das Gebiet', async () => {
         const {absicht, ansicht} = panel()
         await ansicht.get('input[max="100"]').setValue(50)
@@ -52,7 +64,7 @@ describe('GeneratorPanel', () => {
     it('schaltet die Auto-Generierung und zeigt Ablehnungen', async () => {
         const absicht = vi.fn().mockRejectedValue(new Error('Kein Code passt zu diesen Einstellungen.'))
         const {ansicht} = panel(absicht)
-        await ansicht.get('input[type=checkbox]').setValue(false)
+        await ansicht.findAll('label').find(l => l.text() === 'Generieren, wenn der Pool leer ist')!.get('input').setValue(false)
         expect(absicht).toHaveBeenCalledWith('engine.parameter', {parameter: {autoGenerieren: false}})
         await flushPromises()
         expect(ansicht.get('[role=alert]').text()).toBe('Kein Code passt zu diesen Einstellungen.')
