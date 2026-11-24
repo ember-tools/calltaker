@@ -104,7 +104,14 @@ export interface Erzeugung {
     anteilOrte: number
     /** The share of mobile callers outside who do not know the address, in percent. */
     anteilOhneAdresse: number
+    /** The distressing categories allowed in made-up scenarios; left out, all are excluded. */
+    belastende?: Belastend[]
 }
+
+/** Categories of distressing situations a trainer can allow one by one. */
+export type Belastend = 'todeszeichen' | 'suizid' | 'sexualdelikt' | 'gewalt'
+
+export const BELASTENDE: readonly Belastend[] = ['todeszeichen', 'suizid', 'sexualdelikt', 'gewalt']
 
 /** The queue engine's state as the trainee sees it. */
 export interface EngineSicht {

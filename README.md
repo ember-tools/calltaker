@@ -58,6 +58,10 @@ for training from general public guidance: the fire brigades' fire safety advice
 guidelines 2021 for first aid and basic life support. They have not been checked by a medical or
 fire service authority and are shown as written.
 
+The complaints callers describe in `daten/beschwerden/` (what a person feels, what someone beside
+them sees) are written in everyday language for training. They are not checked by a medical
+authority either and are shown as written.
+
 The list of UN numbers in `daten/gefahrstoffe/` is taken from
 [chemie.de](https://www.chemie.de/lexikon/Liste_der_UN-Nummern.html), which carries the German
 Wikipedia's [Liste der UN-Nummern](https://de.wikipedia.org/wiki/Liste_der_UN-Nummern) under the

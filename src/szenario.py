@@ -5,7 +5,6 @@ trainee also visits stay valid when the trainee takes another turn. Field names 
 frontend's camel case on the wire.
 """
 
-import re
 import uuid
 from enum import StrEnum
 from typing import Annotated, Any, Literal, Self
@@ -17,6 +16,7 @@ from abfrage import Abfragegraph, Antwort
 from gefahrstoffe import TAFEL
 from geo import entfernung
 from rufnummer import normalisieren
+from stimmigkeit import VOR_ORT_JA, alter_aus, stimmigkeitsmeldungen
 
 SZENARIO_VERSION = 1
 
@@ -95,6 +95,7 @@ class Anrufer(Modell):
     rufnummer_unterdrueckt: bool = False
     rueckrufnummer: str | None = None
     funkzelle: Funkzelle | None = None
+    beziehung: str = Field("", max_length=80)
 
     @field_validator("rufnummer", "rueckrufnummer")
     @classmethod
@@ -153,6 +154,9 @@ class Rolle(Modell):
     stimmung: Literal["ruhig", "aufgeregt", "panisch", "verwirrt"] | None = None
     sprache: str = ""
     notizen: str = ""
+    beschwerden: list[Annotated[str, Field(max_length=200)]] = Field(
+        default_factory=list, max_length=8
+    )
 
 
 class Herkunft(StrEnum):
@@ -195,17 +199,20 @@ class Szenario(Modell):
     def passende_funkzelle(self) -> Self:
         """Drop a cell that does not fit: no shown mobile number, or the place lies outside it.
 
+        A caller who is not on site calls through a cell around where they are, not around the
+        place; for them the place need not lie inside.
+
         A scenario edited after it was made can change the number or the place; the cell then
         no longer tells the truth and is left out rather than misleading the trainee.
         """
         zelle = self.anrufer.funkzelle
         if zelle is None:
             return self
+        vor_ort = self.antworten.get("eroeffnung.vor-ort")
+        nicht_dort = vor_ort is not None and vor_ort.antwort != VOR_ORT_JA
         punkt = self.ort.koordinaten
-        if (
-            not self.anrufer.mobil_angezeigt()
-            or punkt is None
-            or entfernung(zelle.mitte, punkt) > zelle.radius
+        if not self.anrufer.mobil_angezeigt() or (
+            not nicht_dort and (punkt is None or entfernung(zelle.mitte, punkt) > zelle.radius)
         ):
             self.anrufer.funkzelle = None
         return self
@@ -244,15 +251,10 @@ def pruefen(szenario: Szenario, graph: Abfragegraph) -> list[Befund]:
         befunde.extend(wahlbefunde(graph, knoten_id, wahl))
     befunde.extend(zielbefunde(graph, szenario.ziel))
     befunde.extend(personbefunde(graph, szenario.antworten))
+    befunde.extend(
+        Befund(art="warnung", meldung=meldung) for meldung in stimmigkeitsmeldungen(graph, szenario)
+    )
     return befunde
-
-
-def alter_aus(text: str) -> int | None:
-    """Return an age in years from typed text: its first number, months, weeks or days as 0."""
-    zahl = re.search(r"\d+", text)
-    if zahl is None:
-        return None
-    return 0 if re.search(r"\b(monat|woche|tag)", text, re.IGNORECASE) else int(zahl.group())
 
 
 def personbefunde(graph: Abfragegraph, antworten: dict[str, Wahl]) -> list[Befund]:

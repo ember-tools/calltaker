@@ -33,4 +33,15 @@ describe('vergleichePfad mit automatischen Schritten', () => {
         expect(vergleich.schritte[3]).toMatchObject({stand: 'gleich', automatisch: true})
         expect(vergleich.schritte[2]!.automatisch).toBeUndefined()
     })
+
+    it('wertet ein geschätztes Alter als gleich, wenn die Zahl stimmt', () => {
+        const graph = {...testgraph(), meta: {...testgraph().meta, person: {alter_knoten: 'rd.alter', geschlecht_knoten: 'x', geschlecht: {}}}}
+        const antworten = antwortenAusPfad(graph, [...BIS_SITUATION.map(s => (s.knoten === 'rd.alter' ? {knoten: 'rd.alter', wert: 'etwa 80'} : s))])
+        const gleich = vergleichePfad(graph, antworten, BIS_SITUATION.map(s => (s.knoten === 'rd.alter' ? {knoten: 'rd.alter', wert: '80'} : s)))
+        expect(gleich.schritte.find(s => s.knoten === 'rd.alter')?.stand).toBe('gleich')
+        const anders = vergleichePfad(graph, antworten, BIS_SITUATION.map(s => (s.knoten === 'rd.alter' ? {knoten: 'rd.alter', wert: '60'} : s)))
+        expect(anders.schritte.find(s => s.knoten === 'rd.alter')?.stand).toBe('anders')
+        const ohneZahl = vergleichePfad(graph, antworten, BIS_SITUATION.map(s => (s.knoten === 'rd.alter' ? {knoten: 'rd.alter', wert: 'alt'} : s)))
+        expect(ohneZahl.schritte.find(s => s.knoten === 'rd.alter')?.stand).toBe('anders')
+    })
 })

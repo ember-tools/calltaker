@@ -4,7 +4,7 @@ import {useI18n} from 'vue-i18n'
 import type {Gebiet} from '../api/gebiete'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import {lagen} from '../modell/lagen'
-import type {Erzeugung} from '../modell/uebung'
+import {BELASTENDE, type Belastend, type Erzeugung} from '../modell/uebung'
 import {BESCHRIFTUNG, FELD} from './formular'
 import GebietWahl from './GebietWahl.vue'
 
@@ -60,6 +60,18 @@ async function einstellen(): Promise<void> {
     if (await senden('erzeugung.einstellen', {erzeugung: einstellung.value})) meldung.value = ''
 }
 
+/**
+ * Allows or excludes one category of distressing situations.
+ *
+ * @param kategorie the category
+ * @param erlaubt whether it may be drawn
+ */
+async function belastendSetzen(kategorie: Belastend, erlaubt: boolean): Promise<void> {
+    const bisher = (einstellung.value.belastende ?? []).filter(k => k !== kategorie)
+    einstellung.value = {...einstellung.value, belastende: erlaubt ? [...bisher, kategorie] : bisher}
+    await einstellen()
+}
+
 async function gebietSetzen(gebiet: Gebiet): Promise<void> {
     einstellung.value = {...einstellung.value, ...gebiet}
     await einstellen()
@@ -92,6 +104,13 @@ async function automatisch(an: boolean): Promise<void> {
                     </optgroup>
                 </select>
             </label>
+            <fieldset class="m-0 flex flex-wrap gap-x-4 gap-y-1 rounded border border-rand p-2">
+                <legend class="px-1 text-sm font-bold">{{ t('generator.belastende') }}</legend>
+                <label v-for="kategorie in BELASTENDE" :key="kategorie" class="flex items-center gap-2 text-sm">
+                    <input :checked="einstellung.belastende?.includes(kategorie)" type="checkbox" @change="belastendSetzen(kategorie, ($event.target as HTMLInputElement).checked)"/>{{ t(`generator.belastend.${kategorie}`) }}
+                </label>
+                <p class="m-0 w-full text-xs text-gedaempft">{{ t('generator.belastendeHinweis') }}</p>
+            </fieldset>
             <GebietWahl :model-value="{bezirk: einstellung.bezirk, ortsteil: einstellung.ortsteil}" @update:model-value="gebietSetzen"/>
             <label class="flex items-center gap-2 text-sm">
                 <input :checked="autoGenerieren" type="checkbox" @change="automatisch(($event.target as HTMLInputElement).checked)"/>{{ t('generator.automatisch') }}

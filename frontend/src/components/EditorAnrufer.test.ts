@@ -19,3 +19,30 @@ describe('EditorAnrufer', () => {
         expect(ansicht.findAll('input[type=tel]')).toHaveLength(1)
     })
 })
+
+describe('EditorAnrufer mit Beziehung', () => {
+    it('nimmt die Beziehung des Anrufers zum Betroffenen auf', async () => {
+        const entwurf = reactive(leererEntwurf(1))
+        const ansicht = mount(EditorAnrufer, {props: {modelValue: entwurf}, global: {plugins: [i18n]}})
+        await ansicht.get('input[placeholder^="z. B. Tochter"]').setValue('Tochter')
+        expect(entwurf.anrufer.beziehung).toBe('Tochter')
+    })
+})
+
+describe('EditorAnrufer mit Beschwerden', () => {
+    it('nimmt eine Beschwerde je Zeile auf und lässt leere Zeilen weg', async () => {
+        const entwurf = reactive(leererEntwurf(1))
+        const ansicht = mount(EditorAnrufer, {props: {modelValue: entwurf}, global: {plugins: [i18n]}})
+        await ansicht.get('textarea[placeholder^="eine je Zeile"]').setValue('Der Mundwinkel hängt.\n\n  Sie redet verwaschen. ')
+        expect(entwurf.rolle.beschwerden).toEqual(['Der Mundwinkel hängt.', 'Sie redet verwaschen.'])
+    })
+
+    it('nimmt höchstens acht Beschwerden mit je 200 Zeichen', async () => {
+        const entwurf = reactive(leererEntwurf(1))
+        const ansicht = mount(EditorAnrufer, {props: {modelValue: entwurf}, global: {plugins: [i18n]}})
+        await ansicht.get('textarea[placeholder^="eine je Zeile"]').setValue([...Array.from({length: 10}, (_, i) => `B${i}`), 'x'.repeat(300)].join('\n'))
+        expect(entwurf.rolle.beschwerden).toHaveLength(8)
+        await ansicht.get('textarea[placeholder^="eine je Zeile"]').setValue('x'.repeat(300))
+        expect(entwurf.rolle.beschwerden![0]).toHaveLength(200)
+    })
+})

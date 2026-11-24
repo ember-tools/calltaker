@@ -83,7 +83,7 @@ onBeforeUnmount(() => {
             <HilfeThema v-if="graph && eintraege" :titel="t('hilfe.trainee.hinweiseTitel')" :texte="texte('trainee.hinweise')" :mockup="t('hilfe.trainee.hinweiseMockup')">
                 <HinweisListe :model-value="eintraege" :graph="graph"/>
             </HilfeThema>
-            <HilfeThema v-if="graph" :titel="t('hilfe.trainee.reanimationTitel')" :texte="texte('trainee.reanimation')" :mockup="t('hilfe.trainee.reanimationMockup')">
+            <HilfeThema v-if="graph" :titel="t('hilfe.trainee.reanimationTitel')" :texte="texte('trainee.reanimation', 'trainee.reanimationGruppen')" :mockup="t('hilfe.trainee.reanimationMockup')">
                 <ReanimationsLeiste v-model="reanimation" :graph="graph" :eintreffen-um="jetzt + 3600" ruhig/>
             </HilfeThema>
             <HilfeThema :titel="t('hilfe.trainee.tafelTitel')" :texte="texte('trainee.tafel')" :mockup="t('hilfe.trainee.tafelMockup')">
@@ -105,8 +105,9 @@ onBeforeUnmount(() => {
             <HilfeThema v-if="graph && wahrheit" :titel="t('hilfe.ausbilder.liveTitel')" :texte="texte('ausbilder.live', 'ausbilder.wahrheit')" :mockup="t('hilfe.ausbilder.wahrheitMockup')">
                 <WahrheitsKarte :graph="graph" :anruf="wahrheit" class="max-w-md"/>
             </HilfeThema>
+            <HilfeThema :titel="t('hilfe.ausbilder.anruferTitel')" :texte="texte('ausbilder.hand', 'ausbilder.beziehung', 'ausbilder.beschwerden', 'ausbilder.beobachtet')"/>
             <HilfeThema :titel="t('hilfe.ausbilder.schlangeTitel')" :texte="texte('ausbilder.schlange')"/>
-            <HilfeThema :titel="t('hilfe.ausbilder.poolTitel')" :texte="texte('ausbilder.pool', 'ausbilder.generator')"/>
+            <HilfeThema :titel="t('hilfe.ausbilder.poolTitel')" :texte="texte('ausbilder.pool', 'ausbilder.generator', 'ausbilder.belastende')"/>
         </HilfeAbschnitt>
         <HilfeAbschnitt :titel="t('hilfe.auswertung.titel')">
             <HilfeThema :texte="texte('auswertung.debrief', 'auswertung.uebersicht')"/>

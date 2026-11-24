@@ -6,6 +6,7 @@ from anruf import Anruf
 from eintraege import (
     Abfrageeintrag,
     Eintraege,
+    Reanimationseintrag,
     Schritteintrag,
     uebernehmen,
 )
@@ -222,3 +223,10 @@ def test_eingetroffene_kraefte_bleiben_trotz_spaeter_uebergabe(szenario_daten):
     assert anruf.eintreffen_um == 160.0
     anruf.eintraege.zeiten.uebergabe = 130.0
     assert anruf.eintreffen_um == 190.0
+
+
+def test_die_reanimation_merkt_sich_die_gewaehlte_altersgruppe():
+    assert Reanimationseintrag.model_validate({"gruppe": "saeugling"}).gruppe == "saeugling"
+    assert Reanimationseintrag().gruppe is None
+    with pytest.raises(ValidationError):
+        Reanimationseintrag.model_validate({"gruppe": "greis"})

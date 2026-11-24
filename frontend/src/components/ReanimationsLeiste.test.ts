@@ -65,4 +65,35 @@ describe('ReanimationsLeiste bis zum Eintreffen', () => {
         expect(ansicht.text()).toContain('Kräfte vor Ort')
         ansicht.unmount()
     })
+
+    it('zeigt die Schritte der Altersgruppe und lässt sie umschalten', async () => {
+        const graph = testgraph()
+        const eintraege = reactive(leereEintraege())
+        eintraege.abfrage = {pfad: [{knoten: 'rd.09.todeszeichen', antwort: 'keine'}]}
+        const ansicht = mount(ReanimationsLeiste, {props: {graph, modelValue: eintraege, ruhig: true}, global: {plugins: [i18n]}})
+        await nextTick()
+        expect(ansicht.text()).toContain('Schritte für: Erwachsener')
+        expect(ansicht.text()).toContain('Alter unbekannt')
+        expect(ansicht.text()).toContain('Entwurf nach den ERC-Leitlinien 2021')
+        const knopf = (name: string) => ansicht.findAll('[role=group] button').find(b => b.text() === name)!
+        await knopf('Säugling').trigger('click')
+        expect(eintraege.reanimation.gruppe).toBe('saeugling')
+        expect(knopf('Säugling').attributes('aria-pressed')).toBe('true')
+        expect(ansicht.text()).toContain('zwei Finger')
+        expect(ansicht.text()).not.toContain('Alter unbekannt')
+        await knopf('Neugeborenes').trigger('click')
+        expect(ansicht.text()).toContain('dreimal drücken, einmal beatmen')
+        expect(ansicht.text()).toContain('3 : 1')
+        expect(ansicht.find('input[type=number]').exists()).toBe(false)
+    })
+
+    it('nennt das Alter, aus dem es die Gruppe nimmt', async () => {
+        const graph = testgraph()
+        const eintraege = reactive(leereEintraege())
+        eintraege.abfrage = {pfad: [{knoten: 'rd.alter', wert: '8 Monate'}, {knoten: 'rd.09.todeszeichen', antwort: 'keine'}]}
+        const ansicht = mount(ReanimationsLeiste, {props: {graph, modelValue: eintraege, ruhig: true}, global: {plugins: [i18n]}})
+        await nextTick()
+        expect(ansicht.text()).toContain('Schritte für: Säugling, 8 Monate')
+        expect(ansicht.text()).toContain('etwa 4 Zentimeter')
+    })
 })

@@ -34,6 +34,8 @@ export interface Anrufer {
     rueckrufnummer?: string
     /** The made-up cell a mobile call comes through. */
     funkzelle?: Funkzelle
+    /** Who the caller is to the affected person, such as "Tochter"; empty when they call for themselves. */
+    beziehung?: string
 }
 
 /** What the caller answers at one node: an answer id with its label when written, or a typed value. */
@@ -54,6 +56,8 @@ export interface Rolle {
     stimmung?: 'ruhig' | 'aufgeregt' | 'panisch' | 'verwirrt'
     sprache: string
     notizen: string
+    /** Complaints the caller describes when asked, in their own view or an onlooker's. */
+    beschwerden?: string[]
 }
 
 /** The truth behind one call, as the server hands it over. */
