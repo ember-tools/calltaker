@@ -286,6 +286,9 @@ export default {
             snaTitel: 'Notrufabfrage (SNA)',
             sna: 'Rechts führt das SNA-Fenster Frage für Frage zum Einsatzcode. Kacheln wählen, tippen filtert sie. „Zurück“ nimmt die letzte Antwort zurück, „Aufwertung“ hebt auf einen dringlicheren Code, „Abbruch“ beendet mit Begründung. Das Zwischenergebnis steht immer oben.',
             snaMockup: 'Der Einstieg der Abfrage: Notfallrettung, Brand oder Technische Hilfeleistung.',
+            leitfragenTitel: 'Leitfragen',
+            leitfragen: 'Wo viele Kacheln zur Wahl stehen, etwa bei der Hauptbeschwerde, bei „Welche Situation trifft zu?“ oder bei Brand und Technischer Hilfe, bietet die Spalte „Leitfragen“ Fragen an den Anrufer an. Jede Antwort grenzt die Kacheln ein: ausgeschlossene werden blass, bleiben aber wählbar. Am Ende werden meist bis zu drei Kacheln hervorgehoben und als Knöpfe in der Spalte vorgeschlagen; bleiben mehr übrig, wähle selbst. Wer sich sicher ist, wählt die Kachel direkt.',
+            leitfragenSicherheit: 'Rot markierte Sicherheitsfragen gehen vor, etwa ob beim Wasserschaden Strom im Spiel ist; ihr Hinweis sagt, was der Anrufer tun soll. Antworten mit Alt und der Ziffer, mit „ändern“ zurück, mit „Neu beginnen“ von vorn. Bei der Hauptbeschwerde kommen die lebensbedrohlichen Zeichen zuerst. Bei „Welche Situation trifft zu?“ gehen die Fragen nach der Schwere: zuerst die schweren Anzeichen, denn die schwerste zutreffende Situation zählt.',
             hinweiseTitel: 'Hinweise an den Anrufer',
             hinweise: 'Unter der Abfrage stehen die Hinweise, die gerade fällig sind, zum Vorlesen. Pflichthinweise sind markiert und fehlen sonst beim Beenden. Gegebene Hinweise abhaken.',
             hinweiseMockup: 'Fällige Hinweise in einem Rettungsdiensteinsatz.',
@@ -305,6 +308,7 @@ export default {
                 F3: 'Abfrage',
                 F4: 'Hinweise an den Anrufer',
                 F9: 'An die Disposition übergeben',
+                'Alt+Ziffer': 'Leitfrage beantworten',
             },
         },
         ausbilder: {
@@ -313,6 +317,7 @@ export default {
             live: 'Im Reiter „Live“ spiegelt die Seite, was der Trainee gerade eingibt, ohne dass du eingreifen musst.',
             wahrheit: 'Daneben steht die Lösungskarte: Code, Stimmung, ein Leitfaden „So sprichst du als Anrufer“, die Frage, die gerade gestellt wird, mit ihrer Antwort, und der Abgleich mit den Eingaben. Hier lassen sich Hinweise als gegeben werten und bei einer Reanimation die Kräfte vorzeitig eintreffen lassen.',
             wahrheitMockup: 'Lösungskarte mit Leitfaden während eines Gesprächs.',
+            leitfragen: 'Stellt der Trainee eine Leitfrage, nennt die Lösungskarte die Antwort des Anrufers aus der Lösung oder „frei antworten“, wenn die Lösung keine Antwort vorgibt.',
             anruferTitel: 'Den Anrufer spielen',
             hand: 'Der erste Punkt nach dem Namen sagt in einem Satz, wer du bist: selbst betroffen (1. Hand), bei der betroffenen Person (2. Hand), für andere meldend, ohne dort zu sein (3. Hand), nur gehört oder gesehen (4. Hand) oder eine Anlage, die meldet. Wer vor Ort ist, kann nachsehen, wenn der Calltaker darum bittet; wer nicht dort ist, kann es nicht und sagt das. Ist offen, ob du vor Ort bist, weichst du aus, bis der Calltaker nachhakt.',
             beziehung: 'Wer nicht selbst betroffen ist, hat eine Beziehung zur Person, die zur Lage und zum Ort passt: die Tochter in der Wohnung, der Passant auf der Straße, die Pflegerin im Heim. Unter „Was du weißt“ steht, wie du davon erfahren hast oder wie es passiert ist.',
@@ -328,6 +333,7 @@ export default {
         auswertung: {
             titel: 'Debrief und Übersicht',
             debrief: 'Nach jedem Anruf vergleicht der Debrief Einsatzort, Abfrage, Personalien, Hinweise, Reanimation und Übergabe mit der Lösung und zeigt die Zeiten.',
+            leitfragen: 'Wählte der Trainee eine andere Kachel als die korrekte, zeigt der Debrief, wo die Leitfragen dorthin führen, den Weg über sie; nicht gestellte Sicherheitsfragen nennt er ebenfalls. Beides sind Hinweise, keine Fehler.',
             uebersicht: 'Die Übersicht fasst alle Anrufe der Übung zusammen. Der Ausbilder kann das Protokoll als Datei herunterladen.',
         },
         tipps: {

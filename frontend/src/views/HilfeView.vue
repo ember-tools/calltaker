@@ -28,7 +28,7 @@ const tafel = ref({un: '1203', gefahrenzahl: '33'})
 const wahrheit = computed(() => (graph.value ? beispielWahrheit(graph.value, jetzt) : undefined))
 const staende = computed(() => (graph.value && eintraege.value ? phasenstand(eintraege.value, {graph: graph.value, anruf}) : []))
 const aktivePhase = computed(() => staende.value.find(stand => stand.fehlend.length > 0)?.phase.id ?? '')
-const TASTEN = ['F2', 'F3', 'F4', 'F9'] as const
+const TASTEN = ['F2', 'F3', 'F4', 'F9', 'Alt+Ziffer'] as const
 
 /**
  * The texts of a topic, by their catalogue keys under `hilfe`.
@@ -80,6 +80,7 @@ onBeforeUnmount(() => {
             <HilfeThema v-if="graph" :titel="t('hilfe.trainee.snaTitel')" :texte="texte('trainee.sna')" :mockup="t('hilfe.trainee.snaMockup')">
                 <SnaFenster :model-value="{pfad: []}" :graph="graph" :schwerste="schwerste" :gesperrt="false" :seit="anruf.angenommenUm" uebergabe="gesperrt"/>
             </HilfeThema>
+            <HilfeThema :titel="t('hilfe.trainee.leitfragenTitel')" :texte="texte('trainee.leitfragen', 'trainee.leitfragenSicherheit')"/>
             <HilfeThema v-if="graph && eintraege" :titel="t('hilfe.trainee.hinweiseTitel')" :texte="texte('trainee.hinweise')" :mockup="t('hilfe.trainee.hinweiseMockup')">
                 <HinweisListe :model-value="eintraege" :graph="graph"/>
             </HilfeThema>
@@ -102,7 +103,7 @@ onBeforeUnmount(() => {
             </HilfeThema>
         </HilfeAbschnitt>
         <HilfeAbschnitt :titel="t('hilfe.ausbilder.titel')">
-            <HilfeThema v-if="graph && wahrheit" :titel="t('hilfe.ausbilder.liveTitel')" :texte="texte('ausbilder.live', 'ausbilder.wahrheit')" :mockup="t('hilfe.ausbilder.wahrheitMockup')">
+            <HilfeThema v-if="graph && wahrheit" :titel="t('hilfe.ausbilder.liveTitel')" :texte="texte('ausbilder.live', 'ausbilder.wahrheit', 'ausbilder.leitfragen')" :mockup="t('hilfe.ausbilder.wahrheitMockup')">
                 <WahrheitsKarte :graph="graph" :anruf="wahrheit" class="max-w-md"/>
             </HilfeThema>
             <HilfeThema :titel="t('hilfe.ausbilder.anruferTitel')" :texte="texte('ausbilder.hand', 'ausbilder.beziehung', 'ausbilder.beschwerden', 'ausbilder.beobachtet')"/>
@@ -110,7 +111,7 @@ onBeforeUnmount(() => {
             <HilfeThema :titel="t('hilfe.ausbilder.poolTitel')" :texte="texte('ausbilder.pool', 'ausbilder.generator', 'ausbilder.belastende')"/>
         </HilfeAbschnitt>
         <HilfeAbschnitt :titel="t('hilfe.auswertung.titel')">
-            <HilfeThema :texte="texte('auswertung.debrief', 'auswertung.uebersicht')"/>
+            <HilfeThema :texte="texte('auswertung.debrief', 'auswertung.leitfragen', 'auswertung.uebersicht')"/>
         </HilfeAbschnitt>
         <HilfeAbschnitt :titel="t('hilfe.tipps.titel')">
             <HilfeThema :texte="texte('tipps.zwei', 'tipps.ton', 'tipps.version', 'tipps.daten')"/>
