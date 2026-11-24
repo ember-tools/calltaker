@@ -1,0 +1,864 @@
+{
+  "knoten": [
+    {
+      "knoten": "fw.grund",
+      "fragen": [
+        {
+          "id": "bma",
+          "frage": "Hat eine Brandmeldeanlage ausgelöst?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "brandmeldeanlage"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "brandmeldeanlage"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "hinweis": "Gemeint ist eine Anlage in einem Betrieb oder öffentlichen Gebäude, kein Rauchmelder in der Wohnung."
+        },
+        {
+          "id": "explosion",
+          "frage": "Ist etwas explodiert?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "explosion"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "explosion"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "melder",
+          "frage": "Piept ein Rauchmelder oder Kohlenmonoxid-Warner, ohne dass Feuer zu sehen ist?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "rauchentwicklung-brandgeruch",
+                "gebaeudebrand"
+              ]
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "flammen",
+          "frage": "Sind Flammen zu sehen?",
+          "antworten": [
+            {
+              "label": "Ja, Flammen",
+              "nimmt": [
+                "rauchentwicklung-brandgeruch"
+              ]
+            },
+            {
+              "label": "Nein, nur Rauch oder Geruch"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "was-brennt",
+          "frage": "Was brennt oder raucht?",
+          "antworten": [
+            {
+              "label": "Ein Gebäude oder eine Wohnung",
+              "behaelt": [
+                "gebaeudebrand",
+                "brand-in-sonderobjekt",
+                "industrie-und-gewerbebrand",
+                "rauchentwicklung-brandgeruch"
+              ]
+            },
+            {
+              "label": "Ein Fahrzeug",
+              "behaelt": [
+                "fahrzeugbrand",
+                "brand-in-verkehrsanlagen"
+              ]
+            },
+            {
+              "label": "Etwas im Freien: Müll, Hecke, Laube, Wiese",
+              "behaelt": [
+                "brand-im-freien",
+                "rauchentwicklung-brandgeruch"
+              ]
+            },
+            {
+              "label": "In einem Tunnel, Bahnhof oder Parkhaus",
+              "behaelt": [
+                "brand-in-verkehrsanlagen",
+                "fahrzeugbrand"
+              ]
+            },
+            {
+              "label": "Nichts zu sehen, es riecht nur nach Brand",
+              "behaelt": [
+                "rauchentwicklung-brandgeruch",
+                "gebaeudebrand"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "sonderobjekt",
+          "frage": "Ist es ein Krankenhaus, Pflegeheim, eine Schule, Kita, Versammlungsstätte, ein Hochhaus oder Wohnheim?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "brand-in-sonderobjekt"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "brand-in-sonderobjekt"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "betrieb",
+          "frage": "Ist es eine Fabrik, eine Halle oder ein Lager?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "industrie-und-gewerbebrand"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "industrie-und-gewerbebrand"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "verkehrsanlage",
+          "frage": "Brennt es in einem Tunnel, Bahnhof oder Parkhaus?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "brand-in-verkehrsanlagen",
+                "fahrzeugbrand"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "brand-in-verkehrsanlagen"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "knoten": "fw.th.grund",
+      "fragen": [
+        {
+          "id": "was-passiert",
+          "frage": "Was ist passiert?",
+          "antworten": [
+            {
+              "label": "Unfall mit einem Fahrzeug",
+              "behaelt": [
+                "verkehrsunfall"
+              ]
+            },
+            {
+              "label": "Eine Tür muss geöffnet werden, oder jemand steckt im Aufzug fest",
+              "behaelt": [
+                "tueroeffnung",
+                "aufzugnotbefreiung"
+              ]
+            },
+            {
+              "label": "Wasser im Gebäude oder Überflutung",
+              "behaelt": [
+                "wasserschaden",
+                "tueroeffnung"
+              ]
+            },
+            {
+              "label": "Sturm: Baum, Dach oder Bauteil",
+              "behaelt": [
+                "sturmschaden",
+                "einsturz-gebaeudeschaden"
+              ]
+            },
+            {
+              "label": "Jemand ist in Gefahr: in der Höhe, Tiefe oder im Wasser",
+              "behaelt": [
+                "person-in-notlage"
+              ]
+            },
+            {
+              "label": "Gas, Öl oder ein anderer Stoff tritt aus",
+              "behaelt": [
+                "gefahrstoffe"
+              ]
+            },
+            {
+              "label": "Ein Tier ist in Not",
+              "behaelt": [
+                "tierrettung"
+              ]
+            },
+            {
+              "label": "Etwas ist eingestürzt oder droht einzustürzen",
+              "behaelt": [
+                "einsturz-gebaeudeschaden",
+                "person-in-notlage"
+              ]
+            },
+            {
+              "label": "Der Rettungsdienst braucht Hilfe",
+              "behaelt": [
+                "unterstuetzung-rettungsdienst"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "aufzug",
+          "frage": "Steckt jemand in einem Aufzug fest?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "aufzugnotbefreiung"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "aufzugnotbefreiung"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "tuer",
+          "frage": "Muss eine Tür geöffnet werden, etwa weil jemand drinnen nicht öffnet?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "tueroeffnung"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "tueroeffnung"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "verschuettet",
+          "frage": "Ist jemand verschüttet oder eingeklemmt?",
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "person-in-notlage"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "knoten": "fw.brand.gebaeudebrand.fluchtweg",
+      "fragen": [
+        {
+          "id": "menschen-im-haus",
+          "frage": "Sind noch Menschen in der Wohnung oder im Haus?",
+          "hinweis": "Wer draußen ist, bleibt draußen. Wer drinnen ist: Tür zur Brandwohnung schließen, nicht durch Rauch gehen, am Fenster bemerkbar machen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "nicht-im-gebaeude",
+        "weg-frei",
+        "weg-verraucht",
+        "unklar"
+      ]
+    },
+    {
+      "knoten": "fw.brand.brand-in-sonderobjekt.k0",
+      "fragen": [
+        {
+          "id": "hilflose",
+          "frage": "Sind Menschen im Gebäude, die sich nicht selbst retten können?",
+          "hinweis": "Personal: nach Plan räumen, Türen schließen, Feuerwehr einweisen. Bewohner: bei verrauchtem Flur in der Wohnung bleiben, Tür schließen, am Fenster bemerkbar machen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "krankenhaus-pflegeheim",
+        "schule-kindertagesstaette",
+        "versammlungsstaette-diskothek",
+        "hochhaus",
+        "unterkunft-wohnheim"
+      ]
+    },
+    {
+      "knoten": "fw.brand.brand-im-freien.k0",
+      "fragen": [
+        {
+          "id": "uebergreifen",
+          "frage": "Droht das Feuer auf Gebäude, Fahrzeuge oder Bäume überzugreifen?",
+          "hinweis": "Abstand halten; nur löschen, wenn es gefahrlos geht.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "muelltonne-container",
+        "abfall-sperrmuell-im-freien",
+        "gartenlaube-schuppen",
+        "hecke-gebuesch-gruenflaeche",
+        "unklar-was-brennt"
+      ]
+    },
+    {
+      "knoten": "fw.brand.brand-in-verkehrsanlagen.k0",
+      "fragen": [
+        {
+          "id": "eingeschlossen",
+          "frage": "Sind Menschen im Tunnel, Bahnhof oder Parkhaus eingeschlossen?",
+          "hinweis": "Vom Rauch weg zum nächsten Notausgang gehen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "u-bahn-tunnel-oder-bahnhof",
+        "eisenbahntunnel-oder-bahnhof",
+        "strassentunnel",
+        "parkhaus-tiefgarage"
+      ]
+    },
+    {
+      "knoten": "fw.brand.fahrzeugbrand.k0",
+      "fragen": [
+        {
+          "id": "person-im-fahrzeug",
+          "frage": "Sitzt noch jemand im Fahrzeug?",
+          "hinweis": "Nur helfen, wenn es gefahrlos geht; sonst Abstand halten.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "antrieb",
+          "frage": "Hat das Fahrzeug einen Elektro- oder Gasantrieb?",
+          "hinweis": "Großen Abstand halten, mindestens 30 Meter, bei Gas mehr. Nicht selbst löschen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "pkw",
+        "lkw-bus",
+        "schienenfahrzeug",
+        "boot-schiff"
+      ]
+    },
+    {
+      "knoten": "fw.brand.industrie-und-gewerbebrand.k0",
+      "fragen": [
+        {
+          "id": "menschen",
+          "frage": "Sind noch Menschen im Gebäude?",
+          "hinweis": "Nach Plan räumen, Feuerwehr einweisen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "gefahrstoffe",
+          "frage": "Lagern dort Gefahrstoffe, Gasflaschen oder Akkus?",
+          "hinweis": "Abstand halten, nicht in den Rauch, quer zum Wind weggehen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "knoten": "fw.brand.explosion.k0",
+      "fragen": [
+        {
+          "id": "gas",
+          "frage": "Riecht es nach Gas, oder droht eine weitere Explosion?",
+          "hinweis": "Bereich verlassen, kein Licht schalten, nicht im Gasgeruch telefonieren.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "knoten": "fw.brand.rauchentwicklung-brandgeruch.k0",
+      "fragen": [
+        {
+          "id": "beschwerden",
+          "frage": "Haben Personen Kopfschmerzen, Schwindel oder Übelkeit?",
+          "hinweis": "Ins Freie gehen, wenn der Weg rauchfrei ist, sonst Fenster öffnen. Bei einem Kohlenmonoxid-Warner alle ins Freie, auch ohne Beschwerden.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "brandgeruch-im-gebaeude",
+        "rauch-aus-einem-gebaeude",
+        "kohlenmonoxid-warner",
+        "rauch-im-freien-ursache-unklar"
+      ]
+    },
+    {
+      "knoten": "fw.brand.brandmeldeanlage.k0",
+      "fragen": [
+        {
+          "id": "rauch",
+          "frage": "Sieht oder riecht jemand Rauch oder Feuer?",
+          "hinweis": "Gebäude nach Alarmplan räumen, Feuerwehr einweisen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "automatischer-melder-ausgeloest",
+        "handfeuermelder-ausgeloest",
+        "sprinkleranlage-ausgeloest",
+        "anlage-in-einem-sonderbau"
+      ]
+    },
+    {
+      "knoten": "fw.th.verkehrsunfall.k0",
+      "fragen": [
+        {
+          "id": "auslaufen",
+          "frage": "Läuft Kraftstoff aus oder brennt etwas?",
+          "hinweis": "Warnblinker an, Warndreieck aufstellen, Motor aus, Abstand zu auslaufenden Stoffen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "keine-person-eingeklemmt",
+        "person-eingeklemmt",
+        "lkw-oder-bus-beteiligt",
+        "schienenfahrzeug-beteiligt"
+      ]
+    },
+    {
+      "knoten": "fw.th.wasserschaden.k0",
+      "fragen": [
+        {
+          "id": "strom",
+          "frage": "Stehen Steckdosen, Geräte oder der Sicherungskasten unter Wasser?",
+          "hinweis": "Nicht ins Wasser treten. Die Sicherung nur aus dem Trockenen ausschalten.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "gas",
+          "frage": "Riecht es nach Gas?",
+          "hinweis": "Kein Licht schalten, Gebäude verlassen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "knoten": "fw.th.gefahrstoffe.k0",
+      "fragen": [
+        {
+          "id": "zuendquellen",
+          "frage": "Gibt es Zündquellen in der Nähe: raucht jemand, läuft ein Motor?",
+          "hinweis": "Im Gebäude: kein Licht schalten, nicht klingeln, Fenster öffnen, Gebäude verlassen. Im Freien: Abstand halten, Fenster und Türen geschlossen halten.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "wind",
+          "frage": "Treibt der Wind Gas oder Dämpfe zu Menschen oder Häusern hin?",
+          "hinweis": "Quer zum Wind weggehen, nicht mit dem Wind; Fenster und Türen geschlossen halten.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "beschwerden",
+          "frage": "Haben Personen Beschwerden?",
+          "hinweis": "Betroffene aus dem Bereich bringen, wenn es gefahrlos geht.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "knoten": "fw.th.person-in-notlage.k0",
+      "fragen": [
+        {
+          "id": "wasser-eis",
+          "frage": "Ist die Person im Wasser oder auf dem Eis?",
+          "hinweis": "Nicht selbst aufs Eis oder ins Wasser gehen; am Ufer bleiben, auf Strömung achten, etwas Schwimmfähiges zuwerfen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "schacht",
+          "frage": "Ist die Person in einem Schacht, einer Grube oder einem Silo?",
+          "hinweis": "Nicht hinterhersteigen: dort können Gase oder Einsturz drohen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "in-der-hoehe",
+        "in-der-tiefe",
+        "im-wasser",
+        "verschuettet-oder-eingeschlossen"
+      ]
+    },
+    {
+      "knoten": "fw.th.einsturz-gebaeudeschaden.k0",
+      "fragen": [
+        {
+          "id": "weiterer-einsturz",
+          "frage": "Droht weiterer Einsturz?",
+          "hinweis": "Bereich verlassen und niemanden hineinlassen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        },
+        {
+          "id": "gas",
+          "frage": "Riecht es nach Gas?",
+          "hinweis": "Kein Licht schalten, nicht telefonieren im Gasgeruch, Bereich verlassen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ],
+      "nurDirekt": [
+        "gebaeude-oder-gebaeudeteil",
+        "decke-balkon-treppe",
+        "baugeruest-kran",
+        "einsturz-droht"
+      ]
+    },
+    {
+      "knoten": "fw.th.sturmschaden.k0",
+      "fragen": [
+        {
+          "id": "leitungen",
+          "frage": "Hängen Stromleitungen herunter?",
+          "hinweis": "Mindestens 20 Meter Abstand halten.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "knoten": "fw.th.tueroeffnung.k0",
+      "fragen": [
+        {
+          "id": "gas-rauch",
+          "frage": "Riecht es nach Gas oder Rauch?",
+          "hinweis": "Bei Gasgeruch nicht klingeln und kein Licht schalten. Bei Rauch die Tür nicht selbst öffnen.",
+          "sicherheit": true,
+          "antworten": [
+            {
+              "label": "Ja"
+            },
+            {
+              "label": "Nein"
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
