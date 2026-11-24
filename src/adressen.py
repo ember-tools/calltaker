@@ -64,6 +64,7 @@ AEHNLICHE_UNTER = 3
 NAECHSTE_METER = 150
 STRASSE_KURZ = re.compile(r"(?<=.)(str\.?|strasse)$", re.IGNORECASE)
 MINDESTANTEIL = 0.5
+WORTANFANG_HOECHSTENS = 200
 
 
 class Adressen:
@@ -135,10 +136,14 @@ class Adressen:
         ("Sieg 25 bies" finds Siegmarstraße 25 in Biesdorf), after a comma ("Siegmarstr,
         Biesdorf"), or as the last word when the whole text finds no street ("Sieg bies"). Every
         word of the place must begin a word of the postcode, Ortsteil or Bezirk.
+
+        Several words also find a street whose words they begin in the same order, as callers
+        shorten long names: "Gott v Cra" finds Gottfried-von-Cramm-Weg.
         """
         lesarten = lesarten_von(text)
         for name, hnr, ort in lesarten:
             treffer = self._suchen(praefix(suchformen(name)), name, hnr, ort, grenze)
+            treffer += self._wortanfaenge(name, hnr, ort, grenze - len(treffer), treffer)
             if len(treffer) >= AEHNLICHE_UNTER:
                 return treffer
             if treffer:
@@ -165,6 +170,24 @@ class Adressen:
                 else strassen(verbindung, bedingung, vorrat)
             )
         return [eintrag for eintrag in gefunden if passt_zum_ort(eintrag, ort)][:grenze]
+
+    def _wortanfaenge(
+        self, name: str, hnr: str, ort: str, grenze: int, schon: list[dict]
+    ) -> list[dict]:
+        """Return the streets whose words the typed words begin, in order, after those found."""
+        teile = WORT.sub(" ", name.lower()).split()
+        if grenze <= 0 or len(teile) < 2 or not self.datei.is_file():
+            return []
+        vorhanden = {eintrag["strasse"] for eintrag in schon}
+        kandidaten = [
+            eintrag.name
+            for eintrag in self._gemerkt("namen", self._namen)
+            if eintrag.name not in vorhanden and beginnt_woerter(teile, eintrag.name)
+        ][:WORTANFANG_HOECHSTENS]
+        if not kandidaten:
+            return []
+        bedingung = (f"strasse IN ({', '.join('?' * len(kandidaten))})", kandidaten)
+        return self._suchen(bedingung, name, hnr, ort, grenze)
 
     def _aehnliche(
         self, name: str, hnr: str, ort: str, grenze: int, schon: list[dict]
@@ -386,6 +409,15 @@ def zerlegen(text: str) -> tuple[str, str, str]:
         treffer.group("hnr"),
         (treffer.group("ort") or "").strip(),
     )
+
+
+def beginnt_woerter(teile: list[str], strasse: str) -> bool:
+    """Tell whether the typed words begin words of the street in the same order.
+
+    Words of the street may be left out in between, so "Karl Allee" finds Karl-Marx-Allee.
+    """
+    woerter = iter(WORT.sub(" ", strasse.lower()).split())
+    return all(any(wort.startswith(teil) for wort in woerter) for teil in teile)
 
 
 def passt_zum_ort(eintrag: dict, ort: str) -> bool:

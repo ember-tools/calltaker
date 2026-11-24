@@ -300,6 +300,20 @@ def test_tippfehler_finden_aehnliche_strassen_als_ungefaehr(adressen):
     assert [t["strasse"] for t in adressen.suchen("Kral-Marx-Allee")] == ["Karl-Marx-Allee"]
 
 
+def test_wortanfaenge_finden_lange_strassennamen(tmp_path):
+    cramm = merkmal(
+        "Gottfried-von-Cramm-Weg", 5, None, "14193", "Grunewald", "Wilmersdorf", 13.27, 52.48
+    )
+    client, _ = wfs_mit([[*MERKMALE, cramm]])
+    adressen = Adressen(tmp_path / "adressen.sqlite")
+    adressen.laden(client)
+    assert [t["strasse"] for t in adressen.suchen("Gott v Cra")] == ["Gottfried-von-Cramm-Weg"]
+    assert [t["hausnummer"] for t in adressen.suchen("gott von cramm 5")] == ["5"]
+    assert [t["strasse"] for t in adressen.suchen("Karl Allee")] == ["Karl-Marx-Allee"]
+    assert "ungefaehr" not in adressen.suchen("Gott v Cra")[0]
+    assert adressen.suchen("Cra Gott") == []
+
+
 def test_die_naechste_tuer_liegt_im_umkreis(adressen):
     assert adressen.naechste(52.4793, 13.4386)["beschriftung"].startswith("Karl-Marx-Straße 92")
     assert adressen.naechste(52.5663, 13.2125)["strasse"] == "Werderstraße"
