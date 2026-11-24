@@ -6,12 +6,23 @@ import time
 import pytest
 from fastapi.testclient import TestClient
 
+import beschwerden
 import leitfragen
 import leitfragen_situationen
 from einstellungen import einstellungen
 from main import anwendung_bauen
+from szenariogenerator import BELASTENDE, Erzeugung, Quellen, generieren, situationstext
 
 KNOTEN = "rd.hauptbeschwerde"
+ADRESSE_FUER_BESCHWERDEN = {
+    "strasse": "Karl-Marx-Straße",
+    "hausnummer": "92",
+    "plz": "12043",
+    "ortsteil": "Neukölln",
+    "bezirk": "Neukölln",
+    "breite": 52.48,
+    "laenge": 13.44,
+}
 BRUST = "brustschmerzen-andere-beschwerden-in-der"
 HERZ = "herzbeschwerden-implantierter"
 ATEM = "atembeschwerden"
@@ -515,3 +526,95 @@ def test_ehrliche_anrufe_bei_brand_und_technischer_hilfe_fuehren_zur_korrekten_k
     alle = frozenset(a.id for a in graph.knoten[knoten].antworten)
     rest = gefuehrt(katalog[knoten], alle, antworten)
     assert korrekt in rest and len(rest) <= leitfragen.HOECHSTENS_VORGESCHLAGEN, rest
+
+
+def test_eine_loesungsverknuepfung_muss_es_im_graphen_geben(tmp_path, graph):
+    frage_ = {
+        "id": "s",
+        "frage": "Strom?",
+        "sicherheit": True,
+        "antworten": [{"label": "Ja"}, {"label": "Nein"}],
+        "loesung": {
+            "knoten": ["fw.th.wasserschaden.k0"],
+            "ja": ["gibt-es-nicht"],
+        },
+    }
+    with pytest.raises(
+        ValueError, match="Lösung gibt-es-nicht gibt es an fw.th.wasserschaden.k0 nicht"
+    ):
+        geladen(tmp_path, graph, {"knoten": "fw.th.wasserschaden.k0", "fragen": [frage_]})
+
+
+GEGENTEIL = {
+    "atemnot": r"normaler? atmung",
+    "wach": r"\bbewusstlos\b|bewusstlosigkeit:",
+    "reagiert": r"\bbewusstlos\b|bewusstlosigkeit:",
+    "eingetruebt": r"verhält sich normal",
+}
+
+
+def test_keine_beschwerde_widerspricht_der_leitfragen_antwort_aus_der_loesung(graph):
+    katalog = {e.knoten: e for e in leitfragen.laden(einstellungen().leitfragen_verzeichnis, graph)}
+    alle = frozenset(a.id for a in graph.knoten[KNOTEN].antworten)
+    luft_ja = next(f for f in katalog[KNOTEN].fragen if f.id == "luft").antworten[0]
+    lagen = beschwerden.laden(einstellungen().beschwerden_verzeichnis, graph)
+    texte = {
+        beschwerden.gefuellt(b.text, w): b
+        for lage in lagen
+        for b in [*lage.selbst, *lage.beobachtet]
+        for w in (False, True)
+    }
+    quellen = Quellen(
+        adresse=lambda *_: dict(ADRESSE_FUER_BESCHWERDEN), ort=lambda *_: None, beschwerden=lagen
+    )
+    endpunkte = {e.knoten: e for e in graph.endpunkte}
+    zufall = random.Random(11)
+    erzeugung = Erzeugung(gewicht_brand=0, gewicht_th=0, belastende=sorted(BELASTENDE))
+    geprueft = 0
+    for _ in range(800):
+        szenario = generieren(graph, quellen, erzeugung, zufall)
+        wahl = szenario.antworten.get(KNOTEN)
+        korrekt = wahl.antwort if wahl else None
+        situation = situationstext(graph, endpunkte[szenario.ziel.knoten])
+        for satz in szenario.rolle.beschwerden:
+            beschwerde = texte[satz]
+            geprueft += 1
+            if korrekt and "atemnot" in beschwerde.zeigt:
+                assert korrekt in luft_ja.rest(alle), (korrekt, satz)
+            for zeichen, muster in GEGENTEIL.items():
+                if zeichen in beschwerde.zeigt:
+                    assert not re.search(muster, situation), (satz, situation)
+    assert geprueft > 100
+
+
+@pytest.mark.parametrize(
+    ("loesung", "antworten", "meldung"),
+    [
+        ({"knoten": [], "ja": ["a"]}, ["Ja", "Nein"], "Lösung ohne Knoten"),
+        ({"knoten": ["fw.th.wasserschaden.k0"]}, ["Ja", "Nein"], "Lösung ohne Antworten"),
+        (
+            {
+                "knoten": ["fw.th.wasserschaden.k0"],
+                "ja": ["rohrbruch-im-gebaeude"],
+                "nein": ["rohrbruch-im-gebaeude"],
+            },
+            ["Ja", "Nein"],
+            "für Ja und Nein",
+        ),
+        (
+            {"knoten": ["fw.th.wasserschaden.k0"], "ja": ["rohrbruch-im-gebaeude"]},
+            ["Ja, sicher", "Nein"],
+            "braucht die Antwort „Ja“",
+        ),
+    ],
+)
+def test_eine_loesungsverknuepfung_wird_ganz_geprueft(tmp_path, graph, loesung, antworten, meldung):
+    frage_ = {
+        "id": "s",
+        "frage": "?",
+        "sicherheit": True,
+        "antworten": [{"label": label} for label in antworten],
+        "loesung": loesung,
+    }
+    with pytest.raises(ValueError, match=meldung):
+        geladen(tmp_path, graph, {"knoten": "fw.th.wasserschaden.k0", "fragen": [frage_]})

@@ -579,6 +579,9 @@ export default {
         aendernFrage: 'Antwort auf „{frage}“ ändern',
         neu: 'Neu beginnen',
         direkt: 'Bist du dir sicher, wähle die Kachel direkt.',
+        loesungFrage: 'Leitfrage: {frage}',
+        oder: ' oder ',
+        frei: 'frei antworten, passend zur Lage',
     },
     sna: {
         weitere: 'Weitere Antworten ({anzahl})',

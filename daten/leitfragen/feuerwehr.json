@@ -476,7 +476,15 @@
             {
               "label": "Weiß nicht"
             }
-          ]
+          ],
+          "loesung": {
+            "knoten": [
+              "fw.brand.fahrzeugbrand.k1"
+            ],
+            "ja": [
+              "fahrzeug-mit-hochvoltbatterie"
+            ]
+          }
         }
       ],
       "nurDirekt": [
@@ -565,7 +573,18 @@
             {
               "label": "Weiß nicht"
             }
-          ]
+          ],
+          "loesung": {
+            "knoten": [
+              "fw.brand.rauchentwicklung-brandgeruch.k3"
+            ],
+            "ja": [
+              "mit-beschwerden"
+            ],
+            "nein": [
+              "ohne-beschwerden"
+            ]
+          }
         }
       ],
       "nurDirekt": [
@@ -593,7 +612,18 @@
             {
               "label": "Weiß nicht"
             }
-          ]
+          ],
+          "loesung": {
+            "knoten": [
+              "fw.brand.brandmeldeanlage.k1"
+            ],
+            "ja": [
+              "rauch-oder-feuer-erkennbar"
+            ],
+            "nein": [
+              "kein-brandereignis-erkennbar"
+            ]
+          }
         }
       ],
       "nurDirekt": [
@@ -649,7 +679,20 @@
             {
               "label": "Weiß nicht"
             }
-          ]
+          ],
+          "loesung": {
+            "knoten": [
+              "fw.th.wasserschaden.strom-einzelne-wohnung",
+              "fw.th.wasserschaden.strom-mehrere-geschosse",
+              "fw.th.wasserschaden.strom-keller"
+            ],
+            "ja": [
+              "ja-strom-im-spiel"
+            ],
+            "nein": [
+              "nein-kein-strom"
+            ]
+          }
         },
         {
           "id": "gas",
@@ -744,7 +787,20 @@
             {
               "label": "Weiß nicht"
             }
-          ]
+          ],
+          "loesung": {
+            "knoten": [
+              "fw.th.person-in-notlage.k0"
+            ],
+            "ja": [
+              "im-wasser"
+            ],
+            "nein": [
+              "in-der-hoehe",
+              "in-der-tiefe",
+              "verschuettet-oder-eingeschlossen"
+            ]
+          }
         },
         {
           "id": "schacht",

@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest'
-import {angeboten, leitfragenAn, leitstand, naechste, offen, rest, type Knotenleitfragen, type Leitfrage} from './leitfragen'
+import {angeboten, antwortAusLoesung, leitfragenAn, leitstand, naechste, offen, rest, type Knotenleitfragen, type Leitfrage} from './leitfragen'
 import {testgraph} from './testgraph.test-hilfe'
 
 const jaNein = (id: string, kachel: string, mehr: Partial<Leitfrage> = {}): Leitfrage => ({
@@ -74,5 +74,35 @@ describe('leitfragen', () => {
         expect(leitfragenAn(graph, 'x')).toBe(KNOTEN)
         expect(leitfragenAn(graph, 'leer')).toBeUndefined()
         expect(leitfragenAn(testgraph(), 'x')).toBeUndefined()
+    })
+})
+
+describe('antwortAusLoesung', () => {
+    const frage: Leitfrage = {id: 'a', frage: 'Atmet?', antworten: [{label: 'Ja', nimmt: ['1']}, {label: 'Nein', behaelt: ['1']}, {label: 'Weiß nicht'}]}
+    const alle = new Set(['1', '2', '3'])
+    const wahl = (antwort: string) => ({x: {antwort}})
+    const x: Knotenleitfragen = {knoten: 'x', fragen: [], nurDirekt: ['9']}
+    const w: Knotenleitfragen = {knoten: 'w.k0', fragen: []}
+
+    it('nennt die Antwort, die die korrekte Kachel behält, und lässt bei mehreren die Wahl', () => {
+        expect(antwortAusLoesung(x, frage, alle, wahl('1'))).toEqual(['Nein'])
+        expect(antwortAusLoesung(x, frage, alle, wahl('2'))).toEqual(['Ja'])
+        const beide: Leitfrage = {id: 'b', frage: '?', antworten: [{label: 'Ja', behaelt: ['1', '2']}, {label: 'Nein', behaelt: ['2', '3']}, {label: 'Anders', behaelt: ['1']}]}
+        expect(antwortAusLoesung(x, beide, alle, wahl('2'))).toEqual(['Ja', 'Nein'])
+    })
+
+    it('lässt frei antworten, wenn jede Antwort passt oder die Lösung nichts sagt', () => {
+        const egal: Leitfrage = {id: 'c', frage: '?', antworten: [{label: 'Ja'}, {label: 'Nein'}]}
+        expect(antwortAusLoesung(x, egal, alle, wahl('2'))).toEqual([])
+        expect(antwortAusLoesung(x, frage, new Set(['2', '3']), wahl('1'))).toEqual([])
+        expect(antwortAusLoesung(x, frage, alle, {})).toEqual([])
+        expect(antwortAusLoesung(x, frage, new Set(['1', '9']), wahl('9'))).toEqual([])
+    })
+
+    it('liest eine Sicherheitsfrage aus den verknüpften Antworten des Graphen', () => {
+        const strom: Leitfrage = {id: 's', frage: 'Strom?', sicherheit: true, antworten: [{label: 'Ja'}, {label: 'Nein'}], loesung: {knoten: ['w.s1', 'w.s2'], ja: ['ja'], nein: ['nein', 'nie']}}
+        expect(antwortAusLoesung(w, strom, alle, {'w.s2': {antwort: 'ja'}})).toEqual(['Ja'])
+        expect(antwortAusLoesung(w, strom, alle, {'w.s1': {antwort: 'nie'}})).toEqual(['Nein'])
+        expect(antwortAusLoesung(w, strom, alle, {})).toEqual([])
     })
 })

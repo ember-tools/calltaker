@@ -1,11 +1,22 @@
 import type {Abfragegraph} from './abfragegraph'
 import type {Leitfrageneintrag} from './eintraege'
+import type {Wahl} from './szenario'
 
 /** One answer to a guidance question: the tiles it keeps, or the tiles it takes out. */
 export interface Leitantwort {
     label: string
     behaelt?: string[]
     nimmt?: string[]
+}
+
+/**
+ * Where a question that narrows no tile finds its answer in the solution: the solution's answer
+ * at one of the `knoten` among `ja` means "Ja", among `nein` "Nein", any other leaves it free.
+ */
+export interface Loesungsbezug {
+    knoten: string[]
+    ja?: string[]
+    nein?: string[]
 }
 
 /** One guidance question, when it is offered, and its answers. */
@@ -16,6 +27,7 @@ export interface Leitfrage {
     sicherheit?: boolean
     wenn?: string[]
     antworten: Leitantwort[]
+    loesung?: Loesungsbezug
 }
 
 /** The guidance questions of one graph node, and tiles meant to be picked only directly. */
@@ -131,4 +143,33 @@ export function leitstand(eintrag: Knotenleitfragen, alle: readonly string[], ge
  */
 export function leitfragenAn(graph: Abfragegraph, knoten: string): Knotenleitfragen | undefined {
     return graph.leitfragen?.find(eintrag => eintrag.knoten === knoten && eintrag.fragen.length > 0)
+}
+
+/**
+ * How the caller answers a guidance question, by the solution: the answers that keep the correct
+ * tile while others would take it out. A question linked to graph answers (`loesung`) is
+ * answered "Ja" or "Nein" from those. Where every answer keeps the correct tile, the correct tile
+ * is one chosen only directly, or the solution does not tell, the caller answers freely.
+ *
+ * @param eintrag the node's guidance questions
+ * @param frage the question offered
+ * @param kacheln the tiles still in the running
+ * @param antworten the solution's answers, by node
+ * @returns the labels that fit, empty when the caller answers freely
+ */
+export function antwortAusLoesung(eintrag: Knotenleitfragen, frage: Leitfrage, kacheln: ReadonlySet<string>, antworten: Record<string, Wahl>): string[] {
+    const bezug = frage.loesung
+    if (bezug) {
+        const gegeben = bezug.knoten.map(k => antworten[k]?.antwort).find(Boolean) ?? ''
+        if (bezug.ja?.includes(gegeben)) return ['Ja']
+        if (bezug.nein?.includes(gegeben)) return ['Nein']
+        return []
+    }
+    const korrekt = antworten[eintrag.knoten]?.antwort
+    if (!korrekt || !kacheln.has(korrekt) || eintrag.nurDirekt?.includes(korrekt)) return []
+    const angebot = angeboten(frage, kacheln)
+    const passend = angebot.filter(antwort => rest(antwort, kacheln).has(korrekt))
+    const eingrenzend = passend.filter(antwort => rest(antwort, kacheln).size < kacheln.size)
+    if (passend.length === angebot.length) return []
+    return (eingrenzend.length ? eingrenzend : passend).map(antwort => antwort.label)
 }

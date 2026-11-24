@@ -57,8 +57,24 @@ class Leitantwort(Modell):
         return kacheln - set(self.nimmt)
 
 
+class Loesungsbezug(Modell):
+    """Where a question that narrows no tile finds its answer in the solution: graph answers.
+
+    The solution's answer at one of the `knoten` that is among `ja` means "Ja", among `nein`
+    "Nein"; any other leaves the caller free. One side may stay empty.
+    """
+
+    knoten: list[str]
+    ja: list[str] = Field(default_factory=list)
+    nein: list[str] = Field(default_factory=list)
+
+
 class Leitfrage(Modell):
-    """One guidance question, when it is offered, and its answers."""
+    """One guidance question, when it is offered, and its answers.
+
+    A question that narrows no tile, such as a safety question, can name in `loesung` the graph
+    answers that settle it, so the solution card can say how the caller answers.
+    """
 
     id: str
     frage: str
@@ -66,6 +82,7 @@ class Leitfrage(Modell):
     sicherheit: bool = False
     wenn: list[str] = Field(default_factory=list)
     antworten: list[Leitantwort]
+    loesung: Loesungsbezug | None = None
 
     def angeboten(self, kacheln: frozenset[str]) -> list[Leitantwort]:
         """Return the answers offered for these remaining tiles: those that leave some tile."""
@@ -159,12 +176,47 @@ def katalogfehler(eintraege: list[Knotenleitfragen], graph: Abfragegraph) -> lis
             fehler.append(f"{eintrag.knoten}: kein Frageknoten im Graphen")
             continue
         kacheln = frozenset(antwort.id for antwort in graphknoten.antworten)
-        fehler.extend(knotenfehler(eintrag, kacheln))
+        fehler.extend(knotenfehler(eintrag, kacheln, graph))
     return fehler
 
 
-def knotenfehler(eintrag: Knotenleitfragen, kacheln: frozenset[str]) -> list[str]:
-    """Return the faults of the questions at one node with these tiles."""
+def loesungsfehler(name: str, frage: Leitfrage, graph: Abfragegraph) -> list[str]:
+    """Return what is wrong with a question's link to the solution.
+
+    Every linked answer must exist at one of the linked nodes, the link must name nodes and
+    answers, no answer may stand for both, and the question must offer "Ja" or "Nein" as the link
+    answers it.
+    """
+    bezug = frage.loesung
+    if bezug is None:
+        return []
+    if not bezug.knoten:
+        return [f"{name} {frage.id}: Lösung ohne Knoten"]
+    fehler = [
+        f"{name} {frage.id}: Lösung {antwort} gibt es an {', '.join(bezug.knoten)} nicht"
+        for antwort in [*bezug.ja, *bezug.nein]
+        if not any(graph.antwort(knoten, antwort) for knoten in bezug.knoten)
+    ]
+    if not bezug.ja and not bezug.nein:
+        fehler.append(f"{name} {frage.id}: Lösung ohne Antworten")
+    if set(bezug.ja) & set(bezug.nein):
+        fehler.append(f"{name} {frage.id}: Lösung nennt eine Antwort für Ja und Nein")
+    labels = {antwort.label for antwort in frage.antworten}
+    fehler.extend(
+        f"{name} {frage.id}: Lösung braucht die Antwort „{label}“"
+        for label, seite in (("Ja", bezug.ja), ("Nein", bezug.nein))
+        if seite and label not in labels
+    )
+    return fehler
+
+
+def knotenfehler(
+    eintrag: Knotenleitfragen, kacheln: frozenset[str], graph: Abfragegraph | None = None
+) -> list[str]:
+    """Return the faults of the questions at one node with these tiles.
+
+    With the graph, a question's link to the solution is checked as well.
+    """
     name = eintrag.knoten
     ids = [frage.id for frage in eintrag.fragen]
     fehler = [f"{name} {i}: gibt es doppelt" for i in sorted({i for i in ids if ids.count(i) > 1})]
@@ -182,6 +234,8 @@ def knotenfehler(eintrag: Knotenleitfragen, kacheln: frozenset[str]) -> list[str
         )
         if len(frage.antworten) < 2:
             fehler.append(f"{name} {frage.id}: weniger als zwei Antworten")
+        if graph is not None:
+            fehler.extend(loesungsfehler(name, frage, graph))
         labels = [antwort.label for antwort in frage.antworten]
         fehler.extend(
             f"{name} {frage.id}: Antwort „{label}“ gibt es doppelt"
