@@ -172,9 +172,9 @@ defineExpose({fokussieren})
             </template>
             <template v-else-if="knoten">
                 <h3 class="m-0 text-2xl font-semibold text-sky-950">{{ knoten.frage }} <i v-if="knoten.hinweis" class="font-medium text-akzent">[{{ knoten.hinweis }}]</i></h3>
-                <div v-if="knoten.antworten" :class="['grid gap-4', leitung ? 'lg:grid-cols-[minmax(0,1fr)_18rem]' : '']">
-                    <LeitfragenSpalte v-if="leitung && leitStand" v-model="leitfragen" :eintrag="leitung" :antworten="leitAntworten" :stand="leitStand" :ruhig="ruhig" class="lg:order-2" @sofort="emit('sofort')" @waehlen="antwort => schritt({antwort})"/>
-                    <SnaKacheln v-model:suche="kachelsuche" v-model:weitere-offen="weitereOffen" data-antworten :antworten="ordnung.vorn" :weitere="ordnung.weitere" :zusaetze="zusaetze" :farbe="fachrichtung" :passend="leitStand?.beantwortet.length ? leitStand.kacheln : undefined" :vorgeschlagen="leitStand?.vorschlag" class="lg:order-1" @waehlen="antwort => schritt({antwort})"/>
+                <div v-if="knoten.antworten" class="flex flex-col gap-4">
+                    <LeitfragenSpalte v-if="leitung && leitStand" v-model="leitfragen" :eintrag="leitung" :antworten="leitAntworten" :stand="leitStand" :ruhig="ruhig" @sofort="emit('sofort')" @waehlen="antwort => schritt({antwort})"/>
+                    <SnaKacheln v-model:suche="kachelsuche" v-model:weitere-offen="weitereOffen" data-antworten :antworten="ordnung.vorn" :weitere="ordnung.weitere" :zusaetze="zusaetze" :farbe="fachrichtung" :passend="leitStand?.beantwortet.length ? leitStand.kacheln : undefined" :vorgeschlagen="leitStand?.vorschlag" @waehlen="antwort => schritt({antwort})"/>
                 </div>
                 <form v-else-if="knoten.eingabe?.art === 'warntafel'" class="flex flex-col gap-2" @submit.prevent="schritt({wert: wertAusTafel(tafel)})">
                     <WarntafelFeld v-model="tafel"/>
