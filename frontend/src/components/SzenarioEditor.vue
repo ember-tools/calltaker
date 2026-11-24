@@ -18,7 +18,7 @@ const emit = defineEmits<{speichern: [], abbrechen: []}>()
 
 const {t} = useI18n()
 const suche = ref('')
-const ORTSFELDER: (keyof Pick<Ort, 'geschoss' | 'klingel' | 'anfahrt' | 'gefahren'>)[] = ['geschoss', 'klingel', 'anfahrt', 'gefahren']
+const ORTSFELDER: (keyof Pick<Ort, 'geschoss' | 'klingel' | 'anfahrt' | 'gefahren' | 'haustier'>)[] = ['geschoss', 'klingel', 'anfahrt', 'gefahren', 'haustier']
 
 const ort = computed<Ortsangabe>({
     get: () => entwurf.value.ort,

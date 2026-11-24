@@ -17,6 +17,10 @@
               "knoten": "rd.atmung",
               "antwort": "atmet-nicht"
             }
+          ],
+          "nichtKategorien": [
+            "RD1NC REA",
+            "RD1NC NNAD"
           ]
         }
       ],
@@ -39,6 +43,10 @@
               "knoten": "rd.atmung",
               "antwort": "atmet-nicht"
             }
+          ],
+          "nichtKategorien": [
+            "RD1NC REA",
+            "RD1NC NNAD"
           ]
         }
       ],
@@ -238,6 +246,32 @@
         }
       ],
       "quelle": "ERC-Leitlinien 2021, Erste Hilfe und Basismaßnahmen für Laien"
+    },
+    {
+      "id": "rd.erneut-anrufen",
+      "titel": "Bei Verschlimmerung erneut anrufen",
+      "saetze": [
+        "Wenn es schlimmer wird oder neue Beschwerden dazukommen, rufen Sie sofort wieder die 112 an.",
+        "Halten Sie das Telefon bereit, falls wir zurückrufen."
+      ],
+      "pflicht": true,
+      "wenn": [
+        {
+          "fachrichtung": "rd",
+          "nicht": [
+            {
+              "knoten": "rd.atmung",
+              "antwort": "atmet-nicht"
+            }
+          ],
+          "nichtKategorien": [
+            "RD1NC REA",
+            "RD1NC NNAD"
+          ]
+        }
+      ],
+      "auchOhneVorOrt": true,
+      "quelle": "Üblicher Abschluss eines Notrufs in der Leitstelle"
     }
   ]
 }

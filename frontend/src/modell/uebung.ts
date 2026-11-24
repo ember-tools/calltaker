@@ -1,4 +1,5 @@
 import type {Eintraege} from './eintraege'
+import type {Funkzelle} from './karte'
 import type {Befund, Szenario} from './szenario'
 import type {Zielzeiten} from './zeit'
 
@@ -23,6 +24,10 @@ export interface AnrufSicht {
     rufnummerUnterdrueckt: boolean
     angenommenUm?: number
     beendetUm?: number
+    /** When the crews reach a cardiac arrest, once CPR guidance has started. */
+    eintreffenUm?: number
+    /** The cell a mobile call comes through, once the call is answered. */
+    funkzelle?: Funkzelle
     eintraege?: Eintraege
     szenario?: Szenario
     /** The trainer's corrections of which instructions were given, once the call has ended. */
@@ -37,6 +42,8 @@ export interface Anruf {
     klingeltSeit: number
     angenommenUm?: number
     beendetUm?: number
+    /** When the crews reach a cardiac arrest, once CPR guidance has started. */
+    eintreffenUm?: number
     eintraege: Eintraege
     /** The trainer's corrections of which instructions to the caller were given. */
     korrektur?: Record<string, boolean>
@@ -93,6 +100,8 @@ export interface Erzeugung {
     bezirk: string
     /** The share of scenarios, in percent, that happen at a named place rather than a door. */
     anteilOrte: number
+    /** The share of mobile callers outside who do not know the address, in percent. */
+    anteilOhneAdresse: number
 }
 
 /** The queue engine's state as the trainee sees it. */
@@ -129,5 +138,7 @@ export function sichtVon(anruf: Anruf): AnrufSicht {
         beendetUm: anruf.beendetUm,
         eintraege: anruf.eintraege,
         korrektur: anruf.korrektur,
+        eintreffenUm: anruf.eintreffenUm,
+        funkzelle: anruf.zustand === 'gespraech' || anruf.zustand === 'beendet' ? anrufer.funkzelle : undefined,
     }
 }

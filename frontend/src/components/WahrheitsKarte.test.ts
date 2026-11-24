@@ -90,3 +90,15 @@ describe('WahrheitsKarte als Sprechhilfe', () => {
         expect(beendet.text()).not.toContain('So sprichst du als Anrufer')
     })
 })
+
+describe('WahrheitsKarte bei laufender Reanimation', () => {
+    it('zeigt die Anfahrt und lässt die Kräfte vorzeitig eintreffen', async () => {
+        const anruf = {...anrufMit('k'), eintreffenUm: Date.now() / 1000 + 90}
+        const ansicht = mount(WahrheitsKarte, {props: {graph: GRAPH, anruf}, global: {plugins: [i18n]}})
+        expect(ansicht.text()).toMatch(/Kräfte treffen in 1:(29|30) ein/)
+        await ansicht.findAll('button').find(b => b.text() === 'Jetzt eintreffen lassen')!.trigger('click')
+        expect(ansicht.emitted('eintreffen')).toHaveLength(1)
+        await ansicht.setProps({anruf: {...anruf, eintreffenUm: Date.now() / 1000 - 1}})
+        expect(ansicht.text()).toContain('Kräfte sind eingetroffen')
+    })
+})

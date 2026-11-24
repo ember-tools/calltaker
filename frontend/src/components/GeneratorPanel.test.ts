@@ -7,7 +7,7 @@ import GeneratorPanel from './GeneratorPanel.vue'
 
 vi.mock('../api/gebiete', () => ({ladeGebiete: vi.fn().mockResolvedValue({Neukölln: ['Britz', 'Neukölln']})}))
 
-const ERZEUGUNG: Erzeugung = {gewichtRd: 80, gewichtBrand: 12, gewichtTh: 8, kategorie: '', ortsteil: '', bezirk: '', anteilOrte: 30}
+const ERZEUGUNG: Erzeugung = {gewichtRd: 80, gewichtBrand: 12, gewichtTh: 8, kategorie: '', ortsteil: '', bezirk: '', anteilOrte: 30, anteilOhneAdresse: 5}
 
 /**
  * Mounts the panel with an intent sender.

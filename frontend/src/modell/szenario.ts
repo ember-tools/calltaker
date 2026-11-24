@@ -1,3 +1,5 @@
+import type {Funkzelle} from './karte'
+
 /** A postal address in Berlin. */
 export interface Adresse {
     strasse: string
@@ -18,6 +20,10 @@ export interface Ort {
     klingel: string
     anfahrt: string
     gefahren: string
+    /** A pet at the place, as the caller would mention it, such as "ein Hund". */
+    haustier?: string
+    /** For a caller outside who does not know the address: how they name the place and what they see. */
+    ohneAdresse?: {wo: string, umgebung: {name: string, art: string, richtung: string, meter: number}[]}
 }
 
 /** Who calls: the name, the number shown, and the number the caller is reachable under. */
@@ -26,6 +32,8 @@ export interface Anrufer {
     rufnummer?: string
     rufnummerUnterdrueckt: boolean
     rueckrufnummer?: string
+    /** The made-up cell a mobile call comes through. */
+    funkzelle?: Funkzelle
 }
 
 /** What the caller answers at one node: an answer id with its label when written, or a typed value. */

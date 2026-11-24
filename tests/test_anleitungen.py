@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 import anleitungen
 from einstellungen import einstellungen
 from main import anwendung_bauen
+from szenariogenerator import WOHNUNGSPROTOKOLLE
 
 
 def katalog(tmp_path, *eintraege):
@@ -74,3 +75,37 @@ def test_eine_kaputte_datei_wird_genannt(tmp_path, graph):
     (tmp_path / "kaputt.json").write_text(json.dumps({"anleitungen": [{"id": "x"}]}))
     with pytest.raises(ValueError, match="kaputt.json"):
         anleitungen.laden(tmp_path, graph)
+
+
+def test_der_rettungsdienst_endet_mit_dem_hinweis_erneut_anzurufen():
+    with TestClient(anwendung_bauen()) as client:
+        buendel = client.get("/api/abfrage").json()
+    hinweis = next(a for a in buendel["anleitungen"] if a["id"] == "rd.erneut-anrufen")
+    assert hinweis["pflicht"] is True
+    assert hinweis["auchOhneVorOrt"] is True
+    assert hinweis["wenn"] == [
+        {
+            "fachrichtung": "rd",
+            "nicht": [{"knoten": "rd.atmung", "antwort": "atmet-nicht"}],
+            "nichtKategorien": ["RD1NC REA", "RD1NC NNAD"],
+        }
+    ]
+
+
+def test_unbekannte_ausgeschlossene_kategorien_fallen_auf(tmp_path, graph):
+    eintrag = {
+        "id": "x",
+        "titel": "X",
+        "saetze": ["S"],
+        "wenn": [{"fachrichtung": "rd", "nichtKategorien": ["GIBTSNICHT"]}],
+        "quelle": "Q",
+    }
+    (tmp_path / "a.json").write_text(json.dumps({"anleitungen": [eintrag]}), "utf-8")
+    with pytest.raises(ValueError, match="keine Kategorie beginnt mit GIBTSNICHT"):
+        anleitungen.laden(tmp_path, graph)
+
+
+def test_die_wohnungsprotokolle_kommen_mit_dem_graphen():
+    with TestClient(anwendung_bauen()) as client:
+        buendel = client.get("/api/abfrage").json()
+    assert buendel["wohnungsprotokolle"] == sorted(WOHNUNGSPROTOKOLLE)

@@ -70,7 +70,20 @@ export function reanimationBewerten(graph: Abfragegraph, anruf: AnrufSicht, szen
     }
     const soll = `≤ ${dauer(ziele.reanimation)}`
     if (start === undefined) return [{feld: 'bewertung.reanimation', soll, ist: '', urteil: anruf.zustand === 'beendet' ? 'falsch' : 'offen'}]
-    return [{feld: 'bewertung.reanimation', soll, ist: dauer(start), urteil: start <= ziele.reanimation ? 'richtig' : 'teilweise'}]
+    return [{feld: 'bewertung.reanimation', soll, ist: dauer(start), urteil: start <= ziele.reanimation ? 'richtig' : 'teilweise'}, ...amTelefon(anruf)]
+}
+
+/**
+ * Whether the trainee stayed on the line until the crews arrived, once the call has ended.
+ *
+ * @param anruf the call
+ * @returns the comparison, or nothing while the call runs
+ */
+function amTelefon(anruf: AnrufSicht): Bewertung[] {
+    if (anruf.zustand !== 'beendet' || anruf.beendetUm === undefined || anruf.eintreffenUm === undefined) return []
+    return anruf.beendetUm < anruf.eintreffenUm
+        ? [{feld: 'bewertung.vorEintreffen', soll: '', ist: '', urteil: 'falsch'}]
+        : [{feld: 'bewertung.bisEintreffen', soll: '', ist: '', urteil: 'richtig'}]
 }
 
 /**

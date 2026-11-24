@@ -12,8 +12,10 @@ import {useAbfragegraph} from '../composables/useAbfragegraph'
 import {useGespraech} from '../composables/useGespraech'
 import {useSpiegel} from '../composables/useSpiegel'
 import {useUebung} from '../composables/useUebung'
+import {useUhr} from '../composables/useUhr'
 import {endergebnis} from '../modell/abfrageweg'
 import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
+import {wartetAufKraefte} from '../modell/reanimation'
 import {nochOffen} from '../phasen/register'
 
 const props = defineProps<{code: string}>()
@@ -28,7 +30,12 @@ const fenster = ref<Fensterzustand>(leererFensterzustand())
 useSpiegel(computed(() => ({suche: suche.value, ...fenster.value})), absicht)
 
 const kontext = computed(() => (graph.value && anruf.value ? {graph: graph.value, anruf: anruf.value} : undefined))
-const offen = computed(() => (kontext.value ? nochOffen(eintraege.value, kontext.value) : []))
+const jetzt = useUhr()
+const offen = computed(() => {
+    if (!kontext.value) return []
+    const kraefte = wartetAufKraefte(eintraege.value, anruf.value?.eintreffenUm, jetzt.value) ? ['fehlt.eintreffen'] : []
+    return [...nochOffen(eintraege.value, kontext.value), ...kraefte]
+})
 const ergebnis = computed(() => (graph.value ? endergebnis(graph.value, eintraege.value.abfrage) : undefined))
 const zuletzt = computed(() => zustand.value?.anrufe.filter(a => a.zustand === 'beendet').at(-1))
 const flaeche = ref<InstanceType<typeof GespraechsFlaeche> | null>(null)

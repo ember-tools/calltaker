@@ -18,6 +18,7 @@ The age is drawn within the age bounds of the answers on the code's path, so a c
 gets a child.
 """
 
+import math
 import random
 import re
 from collections.abc import Callable
@@ -30,14 +31,18 @@ from pydantic.alias_generators import to_camel
 from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
 from gefahrstoffe import Stoff, tafel
 from generator import festnetznummer, mobilnummer, zufallsname
+from geo import METER_JE_GRAD, entfernung
 from szenario import (
     Adresse,
     Anrufer,
     Betroffener,
+    Funkzelle,
     Herkunft,
+    OhneAdresse,
     Ort,
     Rolle,
     Szenario,
+    Umgebungsort,
     Wahl,
     Ziel,
 )
@@ -91,6 +96,56 @@ EINSATZORTE = frozenset(
         "Kulturzentrum",
     }
 )
+WOHNUNGSPROTOKOLLE = frozenset(
+    {
+        "fw.brand.gebaeudebrand",
+        "fw.brand.rauchentwicklung-brandgeruch",
+        "fw.th.tueroeffnung",
+        "fw.th.wasserschaden",
+        "fw.th.unterstuetzung-rettungsdienst",
+    }
+)
+HAUSTIER_ANTEIL = 0.15
+FUNKZELLE_RADIUS = (500.0, 1500.0)
+DRAUSSEN_PROTOKOLLE = frozenset(
+    {
+        "fw.brand.brand-im-freien",
+        "fw.th.verkehrsunfall",
+        "fw.th.tierrettung",
+        "fw.th.person-in-notlage",
+    }
+)
+DRAUSSEN_ARTEN = {
+    "Park": "ein Park",
+    "Wald": "ein Wald",
+    "Gewässer": "am Wasser",
+    "Friedhof": "ein Friedhof",
+    "Kleingartenanlage": "eine Kleingartenanlage",
+    "Spielplatz": "ein Spielplatz",
+    "Sportplatz": "ein Sportplatz",
+    "Brunnen": "ein Brunnen auf einem Platz",
+}
+DRAUSSEN_ARTEN_FUER = {
+    "rd": ("Park", "Wald", "Friedhof", "Kleingartenanlage", "Spielplatz", "Sportplatz", "Brunnen"),
+    "fw.brand.brand-im-freien": ("Park", "Wald", "Kleingartenanlage", "Friedhof", "Sportplatz"),
+    "fw.th.verkehrsunfall": ("Park", "Wald"),
+    "fw.th.tierrettung": ("Park", "Wald", "Gewässer", "Friedhof", "Kleingartenanlage"),
+    "fw.th.person-in-notlage": ("Park", "Wald", "Gewässer"),
+}
+DRAUSSEN_VERSATZ = (15.0, 60.0)
+UMGEBUNG_RADIUS = 400.0
+HIMMELSRICHTUNGEN = (
+    "Norden",
+    "Nordosten",
+    "Osten",
+    "Südosten",
+    "Süden",
+    "Südwesten",
+    "Westen",
+    "Nordwesten",
+)
+FUNKZELLE_VERSATZ = (100.0, 800.0)
+HAUSTIERE = ("ein Hund", "ein großer Hund", "zwei Katzen", "eine Schlange im Terrarium")
 GESCHOSSE = (
     "EG",
     "1. OG",
@@ -122,6 +177,7 @@ class Erzeugung(BaseModel):
     ortsteil: str = Field("", max_length=80)
     bezirk: str = Field("", max_length=80)
     anteil_orte: int = Field(30, ge=0, le=100)
+    anteil_ohne_adresse: int = Field(5, ge=0, le=100)
 
     def gewichte(self) -> dict[Disziplin, int]:
         """Return the weight of each discipline."""
@@ -139,6 +195,7 @@ class Quellen:
     adresse: Callable[[random.Random, str, str], dict | None]
     ort: Callable[..., dict | None]
     naechste: Callable[[float, float], dict | None] = lambda *_: None
+    umkreis: Callable[[float, float, float], list[dict]] = lambda *_: []
     gefahrstoffe: list[Stoff] = field(default_factory=list)
 
 
@@ -517,6 +574,93 @@ def anrufer_ziehen(zufall: random.Random, name: str) -> Anrufer:
     return Anrufer(name=name, rufnummer=nummer)
 
 
+def draussen_ziehen(
+    quellen: Quellen, erzeugung: Erzeugung, protokoll: str, zufall: random.Random
+) -> tuple[Ort, str] | None:
+    """Return a place outside for a caller who does not know the address, if one turns up.
+
+    People in a building usually know its address; outside, in a park or by the water, they
+    often do not. The kind of place fits the situation (`DRAUSSEN_ARTEN_FUER`). The point lies a
+    little off the place's centre, close enough that choosing the place counts as the right point,
+    the caller names the place only half the time, and describes two or three other named places
+    nearby by direction and distance. A place with fewer than two such neighbours is not taken.
+    """
+    arten = DRAUSSEN_ARTEN_FUER.get(protokoll, DRAUSSEN_ARTEN_FUER["rd"])
+    for _ in range(PLATZ_VERSUCHE):
+        platz = quellen.ort(zufall, erzeugung.ortsteil, arten)
+        if platz is None:
+            return None
+        richtung = zufall.uniform(0, 2 * math.pi)
+        abstand = zufall.uniform(*DRAUSSEN_VERSATZ)
+        hier = (
+            platz["breite"] + abstand * math.cos(richtung) / METER_JE_GRAD,
+            platz["laenge"]
+            + abstand
+            * math.sin(richtung)
+            / (METER_JE_GRAD * math.cos(math.radians(platz["breite"]))),
+        )
+        nahe = list(
+            {
+                o["name"]: o
+                for o in reversed(quellen.umkreis(*hier, UMGEBUNG_RADIUS))
+                if o["name"] != platz["name"]
+            }.values()
+        )
+        nahe.sort(key=lambda o: entfernung(hier, (o["breite"], o["laenge"])))
+        if len(nahe) < 2:
+            continue
+        gesehen = zufall.sample(nahe[:8], min(len(nahe[:8]), zufall.randint(2, 3)))
+        umgebung = sorted((umgebungsort(hier, o) for o in gesehen), key=lambda o: o.meter)
+        art = platz.get("art", "")
+        wo = platz["name"] if zufall.random() < 0.5 else DRAUSSEN_ARTEN.get(art, "draußen")
+        ort = Ort(
+            adresse=Adresse(ortsteil=platz["ortsteil"]),
+            koordinaten=hier,
+            objekt=platz["name"],
+            ohne_adresse=OhneAdresse(wo=wo, umgebung=umgebung),
+        )
+        return ort, platz["ortsteil"]
+    return None
+
+
+def umgebungsort(hier: tuple[float, float], anderer: dict) -> Umgebungsort:
+    """Describe a nearby place as the caller sees it: direction, and distance to 50 metres."""
+    dort = (anderer["breite"], anderer["laenge"])
+    return Umgebungsort(
+        name=anderer["name"],
+        art=anderer["art"],
+        richtung=himmelsrichtung(hier, dort),
+        meter=max(50, round(entfernung(hier, dort) / 50) * 50),
+    )
+
+
+def himmelsrichtung(von: tuple[float, float], nach: tuple[float, float]) -> str:
+    """Return the compass direction from one point to another, in eight steps."""
+    dy = nach[0] - von[0]
+    dx = (nach[1] - von[1]) * math.cos(math.radians(von[0]))
+    winkel = (math.degrees(math.atan2(dx, dy)) + 360) % 360
+    return HIMMELSRICHTUNGEN[round(winkel / 45) % 8]
+
+
+def mit_funkzelle(anrufer: Anrufer, ort: Ort, zufall: random.Random) -> Anrufer:
+    """Give a caller on a shown mobile number the cell their call comes through.
+
+    The cell is made up, not a real mast: its radius lies in `FUNKZELLE_RADIUS`, and its centre
+    sits off the true point by a fraction of it, so the point is always inside.
+    """
+    if not anrufer.mobil_angezeigt() or ort.koordinaten is None:
+        return anrufer
+    radius = zufall.uniform(*FUNKZELLE_RADIUS)
+    abstand = zufall.uniform(FUNKZELLE_VERSATZ[0], min(FUNKZELLE_VERSATZ[1], radius * 0.8))
+    richtung = zufall.uniform(0, 2 * math.pi)
+    breite, laenge = ort.koordinaten
+    mitte = (
+        breite + abstand * math.cos(richtung) / METER_JE_GRAD,
+        laenge + abstand * math.sin(richtung) / (METER_JE_GRAD * math.cos(math.radians(breite))),
+    )
+    return anrufer.model_copy(update={"funkzelle": Funkzelle(mitte=mitte, radius=round(radius))})
+
+
 def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random) -> Person:
     """Return the affected person: an age the code allows, a sex, and whether they call."""
     unten, oben = altersspanne(graph, endpunkt)
@@ -611,10 +755,27 @@ def generieren(
         )
     betroffen = zufallsname(zufall, person.weiblich) if rd else ""
     anrufer_name = betroffen if person.anrufer_selbst else zufallsname(zufall)
-    if rd:
-        an_tuer = bool(ort.adresse.hausnummer) and not ort.objekt
-        ort.geschoss = zufall.choice(GESCHOSSE) if an_tuer else ""
-        ort.klingel = betroffen.split()[-1] if an_tuer else ""
+    anrufer = anrufer_ziehen(zufall, anrufer_name)
+    if (
+        anrufer.mobil_angezeigt()
+        and (rd or endpunkt.protokoll in DRAUSSEN_PROTOKOLLE)
+        and not erzeugung.bezirk
+        and zufall.random() * 100 < erzeugung.anteil_ohne_adresse
+    ):
+        draussen = draussen_ziehen(
+            quellen, erzeugung, endpunkt.protokoll if not rd else "rd", zufall
+        )
+        if draussen is not None:
+            ort, ortsteil = draussen
+    if (
+        (rd or endpunkt.protokoll in WOHNUNGSPROTOKOLLE)
+        and ort.adresse.hausnummer
+        and not ort.objekt
+    ):
+        ort.geschoss = zufall.choice(GESCHOSSE)
+        ort.klingel = (betroffen or anrufer_name).split()[-1]
+        if zufall.random() < HAUSTIER_ANTEIL:
+            ort.haustier = zufall.choice(HAUSTIERE)
     stimmungen = STIMMUNGEN[stufe(endpunkt.kategorie)]
     stimmung = zufall.choices(list(stimmungen), weights=list(stimmungen.values()))[0]
     return Szenario(
@@ -622,7 +783,7 @@ def generieren(
         titel=f"{titel_von(graph, endpunkt)}, {ortsteil}",
         herkunft=Herkunft.GENERIERT,
         ort=ort,
-        anrufer=anrufer_ziehen(zufall, anrufer_name),
+        anrufer=mit_funkzelle(anrufer, ort, zufall),
         betroffener=Betroffener(name=betroffen) if rd else None,
         antworten=antworten,
         ziel=Ziel(knoten=endpunkt.knoten, code=endpunkt.code),

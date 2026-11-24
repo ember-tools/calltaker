@@ -199,6 +199,7 @@ def eintragen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
     uebernommen = uebernehmen(anruf.eintraege, neu, uebung.uhr())
     if uebernommen != anruf.eintraege:
         anruf.eintraege = uebernommen
+        anruf.anfahrt_ziehen(uebung.engine.zufall)
         uebung.geaendert()
     aussen = uebernommen.nach_aussen()
     return {"zeiten": aussen["zeiten"], "uebergeben": aussen.get("uebergeben")}
@@ -229,6 +230,20 @@ def auflegen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
         uebung.engine.auflegen(absicht.anruf_id or "")
     except KeyError as fehler:
         raise AbsichtAbgelehnt("Dieser Anruf wartet nicht.", status=404) from fehler
+    return {}
+
+
+def eintreffen(uebung: Uebung, absicht: Absicht, _: Abfragegraph) -> dict:
+    """Let the trainer have the crews arrive now at the call in conversation."""
+    anruf = uebung.engine.im_gespraech()
+    if anruf is None or anruf.id != absicht.anruf_id:
+        raise AbsichtAbgelehnt("Dieses Gespräch läuft nicht.", status=409)
+    if anruf.anfahrt is None:
+        raise AbsichtAbgelehnt("Hier läuft keine Reanimation.", status=409)
+    jetzt = uebung.uhr()
+    if anruf.eintreffen_um is None or anruf.eintreffen_um > jetzt:
+        anruf.eingetroffen_um = jetzt
+        uebung.geaendert()
     return {}
 
 
@@ -316,4 +331,5 @@ ABSICHTEN: dict[str, tuple[set[Rolle], Ausfuehrung]] = {
     "engine.parameter": ({Rolle.AUSBILDER}, parameter_setzen),
     "anruf.auflegen": ({Rolle.AUSBILDER}, auflegen),
     "anleitung.korrigieren": ({Rolle.AUSBILDER}, anleitung_korrigieren),
+    "anruf.eintreffen": ({Rolle.AUSBILDER}, eintreffen),
 }

@@ -77,3 +77,13 @@ describe('uebergabeBewerten', () => {
         expect(urteile(uebergabeBewerten(GRAPH, sichtVon(anruf), anruf.szenario, STANDARDZIELE))).toEqual([['bewertung.uebergabe', 'teilweise', '1:40']])
     })
 })
+
+describe('reanimationBewerten am Ende', () => {
+    it('wertet Auflegen vor dem Eintreffen der Kräfte als Fehler', () => {
+        const anruf = mitWahrheit(anrufMit('e', 'beendet'), [...BIS_SITUATION, {knoten: 'p.k0', antwort: 'schwer-2'}], 'p.e3', '17E01')
+        anruf.eintraege.zeiten = {reanimation: 1040}
+        const sicht = (eintreffenUm: number) => ({...sichtVon(anruf), eintreffenUm})
+        expect(urteile(reanimationBewerten(GRAPH, sicht(1150), anruf.szenario, STANDARDZIELE)).at(-1)).toEqual(['bewertung.vorEintreffen', 'falsch', ''])
+        expect(urteile(reanimationBewerten(GRAPH, sicht(1090), anruf.szenario, STANDARDZIELE)).at(-1)).toEqual(['bewertung.bisEintreffen', 'richtig', ''])
+    })
+})

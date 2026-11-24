@@ -196,3 +196,12 @@ def test_zufaellige_orte_nach_art_und_ortsteil(verzeichnis):
     zufall = random.Random(1)
     assert {orte.zufall(zufall, arten={"Rathaus"})["art"] for _ in range(20)} == {"Rathaus"}
     assert orte.zufall(zufall, "Buckow", {"Rathaus"}) is None
+
+
+def test_der_umkreis_liefert_nahe_orte_naechste_zuerst(verzeichnis):
+    orte = Orte(verzeichnis)
+    alle = [(o.name, o.breite, o.laenge) for o in orte.orte]
+    name, breite, laenge = alle[0]
+    nahe = orte.umkreis(breite, laenge, 50)
+    assert nahe[0]["name"] == name
+    assert all(o["name"] != name for o in orte.umkreis(breite + 0.1, laenge, 50))

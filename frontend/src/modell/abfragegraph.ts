@@ -111,6 +111,8 @@ export interface Wenn {
     /** None of these answers may have been given. */
     nicht?: {knoten: string, antwort: string}[]
     kategorien?: string[]
+    /** The result's category may start with none of these. */
+    nichtKategorien?: string[]
 }
 
 /** An instruction to the caller: sentences to read out, whether it must be given, when it is due. */
@@ -132,4 +134,6 @@ export interface Abfragegraph {
     knoten: Record<string, Knoten>
     endpunkte: Endpunkt[]
     anleitungen?: Anleitung[]
+    /** The fire and rescue protocols that play inside a home, where floor and doorbell matter. */
+    wohnungsprotokolle?: string[]
 }

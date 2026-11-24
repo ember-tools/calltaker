@@ -8,13 +8,14 @@ frontend's camel case on the wire.
 import re
 import uuid
 from enum import StrEnum
-from typing import Any, Literal, Self
+from typing import Annotated, Any, Literal, Self
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from pydantic.alias_generators import to_camel
 
 from abfrage import Abfragegraph, Antwort
 from gefahrstoffe import TAFEL
+from geo import entfernung
 from rufnummer import normalisieren
 
 SZENARIO_VERSION = 1
@@ -40,6 +41,25 @@ class Adresse(Modell):
     ortsteil: str = ""
 
 
+class Umgebungsort(Modell):
+    """A named place a caller without an address can see: where it lies from them, and how far."""
+
+    name: str = Field(max_length=200)
+    art: str = Field(max_length=80)
+    richtung: str = Field(max_length=20)
+    meter: int = Field(ge=0, le=5000)
+
+
+class OhneAdresse(Modell):
+    """A caller outside who does not know the address: what they are at and what they can see.
+
+    `wo` is how they name the place they are at, by its name only when they know it.
+    """
+
+    wo: str = Field(max_length=200)
+    umgebung: list[Umgebungsort] = Field(default_factory=list, max_length=5)
+
+
 class Ort(Modell):
     """Where the emergency is: address, point and what a crew needs to find it.
 
@@ -53,6 +73,18 @@ class Ort(Modell):
     klingel: str = ""
     anfahrt: str = ""
     gefahren: str = ""
+    haustier: str = ""
+    ohne_adresse: OhneAdresse | None = None
+
+
+class Funkzelle(Modell):
+    """The area the mobile cell a call comes through covers: a centre and a radius in metres."""
+
+    mitte: tuple[
+        Annotated[float, Field(ge=-90, le=90, allow_inf_nan=False)],
+        Annotated[float, Field(ge=-180, le=180, allow_inf_nan=False)],
+    ]
+    radius: float = Field(gt=0, le=5000)
 
 
 class Anrufer(Modell):
@@ -62,6 +94,7 @@ class Anrufer(Modell):
     rufnummer: str | None = None
     rufnummer_unterdrueckt: bool = False
     rueckrufnummer: str | None = None
+    funkzelle: Funkzelle | None = None
 
     @field_validator("rufnummer", "rueckrufnummer")
     @classmethod
@@ -79,6 +112,10 @@ class Anrufer(Modell):
         if not self.rufnummer_unterdrueckt and not self.rufnummer:
             raise ValueError("ohne Unterdrückung ist eine Rufnummer Pflicht")
         return self
+
+    def mobil_angezeigt(self) -> bool:
+        """Tell whether the call shows a mobile number, which a cell can be given for."""
+        return not self.rufnummer_unterdrueckt and (self.rufnummer or "").startswith("491")
 
     def erreichbar_unter(self) -> str:
         """Return the number the caller can actually be called back on."""
@@ -140,6 +177,38 @@ class Szenario(Modell):
     ziel: Ziel
     rolle: Rolle = Field(default_factory=Rolle)
     erweiterungen: dict[str, Any] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def passende_ortsangabe(self) -> Self:
+        """Drop the description of a caller without an address once the place has an address.
+
+        An edited scenario that gets a street, or loses its point, no longer fits what the caller
+        was made up to see.
+        """
+        if self.ort.ohne_adresse is not None and (
+            self.ort.adresse.strasse or self.ort.koordinaten is None
+        ):
+            self.ort.ohne_adresse = None
+        return self
+
+    @model_validator(mode="after")
+    def passende_funkzelle(self) -> Self:
+        """Drop a cell that does not fit: no shown mobile number, or the place lies outside it.
+
+        A scenario edited after it was made can change the number or the place; the cell then
+        no longer tells the truth and is left out rather than misleading the trainee.
+        """
+        zelle = self.anrufer.funkzelle
+        if zelle is None:
+            return self
+        punkt = self.ort.koordinaten
+        if (
+            not self.anrufer.mobil_angezeigt()
+            or punkt is None
+            or entfernung(zelle.mitte, punkt) > zelle.radius
+        ):
+            self.anrufer.funkzelle = None
+        return self
 
     def nach_aussen(self) -> dict:
         """Return the scenario as the frontend and the pool file carry it."""

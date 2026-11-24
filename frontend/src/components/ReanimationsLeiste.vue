@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {faPause, faPlay, faVolumeHigh, faVolumeXmark} from '@fortawesome/free-solid-svg-icons'
+import {faCircleCheck, faPause, faPlay, faTruckMedical, faVolumeHigh, faVolumeXmark} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, nextTick, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
@@ -7,9 +7,9 @@ import {useTaktgeber} from '../composables/useTaktgeber'
 import {dauer, useUhr} from '../composables/useUhr'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import type {Eintraege} from '../modell/eintraege'
-import {reanimationFaellig} from '../modell/reanimation'
+import {reanimationFaellig, wartetAufKraefte} from '../modell/reanimation'
 
-const props = defineProps<{graph: Abfragegraph, ruhig?: boolean}>()
+const props = defineProps<{graph: Abfragegraph, ruhig?: boolean, eintreffenUm?: number}>()
 const eintraege = defineModel<Eintraege>({required: true})
 const emit = defineEmits<{sofort: []}>()
 
@@ -21,6 +21,7 @@ const faellig = computed(() => reanimationFaellig(props.graph, eintraege.value.a
 const reanimation = computed(() => eintraege.value.reanimation)
 const {schlaege, hoerbar, freischalten} = useTaktgeber(() => faellig.value && reanimation.value.laeuft, () => reanimation.value.takt, () => Boolean(props.ruhig))
 const knopf = ref<HTMLButtonElement | null>(null)
+const unterwegs = computed(() => wartetAufKraefte(eintraege.value, props.eintreffenUm, jetzt.value))
 
 function setzen(aenderung: Partial<Eintraege['reanimation']>): void {
     eintraege.value.reanimation = {...reanimation.value, ...aenderung}
@@ -66,6 +67,9 @@ watch(faellig, an => {
                 <input type="number" min="100" max="120" step="1" :value="reanimation.takt" class="h-8 w-16 rounded border border-slate-400 px-1" @change="taktSetzen($event.target as HTMLInputElement)"/>
             </label>
         </div>
+        <p v-if="eintraege.zeiten.reanimation" role="status" :class="['m-0 rounded px-2 py-1 text-sm font-semibold', unterwegs ? 'bg-white text-red-900' : 'bg-green-100 text-ok']">
+            <FontAwesomeIcon :icon="unterwegs ? faTruckMedical : faCircleCheck" class="mr-1.5" aria-hidden="true"/>{{ unterwegs ? t('reanimation.unterwegs') : t('reanimation.eingetroffen') }}
+        </p>
         <ol class="m-0 flex flex-col gap-0.5 pl-6 text-sm">
             <li v-for="schritt in SCHRITTE" :key="schritt">{{ t(`reanimation.schritt.${schritt}`) }}</li>
         </ol>

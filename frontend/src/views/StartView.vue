@@ -54,5 +54,6 @@ async function beitreten(): Promise<void> {
             </form>
         </div>
         <p v-if="fehler" role="alert" class="m-0 font-semibold text-fehler">{{ fehler }}</p>
+        <p class="m-0 text-center text-sm"><RouterLink :to="{name: 'hilfe'}" class="font-semibold text-akzent underline">{{ t('hilfe.link') }}</RouterLink></p>
     </main>
 </template>

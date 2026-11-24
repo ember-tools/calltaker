@@ -23,6 +23,7 @@ async function seite() {
             {path: '/', name: 'start', component: StartView},
             {path: '/a/:code', name: 'ausbilder', component: {render: () => null}},
             {path: '/t/:code', name: 'trainee', component: {render: () => null}},
+            {path: '/hilfe', name: 'hilfe', component: {render: () => null}},
         ],
     })
     await router.push('/')
@@ -62,5 +63,12 @@ describe('StartView', () => {
         await ansicht.get('form').trigger('submit')
         await flushPromises()
         expect(ansicht.get('[role=alert]').text()).toBe('Diesen Code gibt es nicht.')
+    })
+})
+
+describe('StartView für Neue', () => {
+    it('verweist auf die Hilfe', async () => {
+        const {ansicht} = await seite()
+        expect(ansicht.get('a[href="/hilfe"]').text()).toBe('Neu hier? Hilfe & Anleitung')
     })
 })

@@ -5,8 +5,9 @@ so its texts can be kept without touching the graph. Each instruction says when 
 of alternatives, each a set of conditions on the questioning that must all hold. An alternative
 holds when the Fachrichtung matches, a protocol of `protokolle` was chosen, every answer of
 `antworten` was given, none of `nicht` was given and the result's category starts with one of
-`kategorien`; conditions left out do not count. An instruction is not due while the caller is
-not on site, as the graph's `abwesend` answers tell, unless it is marked `auch_ohne_vor_ort`.
+`kategorien` and with none of `nicht_kategorien`; conditions left out do not count. An
+instruction is not due while the caller is not on site, as the graph's `abwesend` answers tell,
+unless it is marked `auch_ohne_vor_ort`.
 Which instructions are due is worked out in the browser from the trainee's path, by the same
 rules; the server only checks the catalogue against the graph when it starts.
 """
@@ -34,6 +35,7 @@ class Wenn(Modell):
     antworten: list[Gegebene] = Field(default_factory=list)
     nicht: list[Gegebene] = Field(default_factory=list)
     kategorien: list[str] = Field(default_factory=list)
+    nicht_kategorien: list[str] = Field(default_factory=list)
 
     def leer(self) -> bool:
         """Tell whether the set names no condition at all, and so would always hold."""
@@ -107,7 +109,7 @@ def katalogfehler(anleitungen: list[Anleitung], graph: Abfragegraph) -> list[str
             )
             fehler.extend(
                 f"{anleitung.id}: keine Kategorie beginnt mit {kategorie}"
-                for kategorie in wenn.kategorien
+                for kategorie in [*wenn.kategorien, *wenn.nicht_kategorien]
                 if not any(k.startswith(kategorie) for k in kategorien)
             )
         fehler.extend(

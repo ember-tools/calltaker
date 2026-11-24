@@ -1,11 +1,14 @@
 """Calls: a scenario on its way through queue and conversation, and who may see what of it."""
 
+import random
 from enum import StrEnum
 
-from pydantic import Field
+from pydantic import Field, computed_field
 
 from eintraege import Eintraege
 from szenario import Modell, Szenario, neue_id
+
+ANFAHRT = (60.0, 180.0)
 
 
 class Anrufzustand(StrEnum):
@@ -22,7 +25,9 @@ class Anruf(Modell):
 
     Times are seconds of the server's clock (`time.time()`), which the views count from.
     `korrektur` holds the trainer's corrections of which instructions to the caller were given,
-    kept apart from the trainee's entries so the trainee's next save does not undo them.
+    kept apart from the trainee's entries so the trainee's next save does not undo them. During CPR
+    the trainee stays on the line until the crews arrive, `ANFAHRT` seconds after the handover
+    or, failing that, the start of CPR, unless the trainer lets them arrive earlier.
     """
 
     id: str = Field(default_factory=neue_id)
@@ -33,6 +38,32 @@ class Anruf(Modell):
     beendet_um: float | None = None
     eintraege: Eintraege = Field(default_factory=Eintraege)
     korrektur: dict[str, bool] = Field(default_factory=dict)
+    anfahrt: float | None = None
+    eingetroffen_um: float | None = None
+
+    @computed_field
+    @property
+    def eintreffen_um(self) -> float | None:
+        """Return when the crews reach a cardiac arrest, if CPR guidance has started.
+
+        The trainer's word counts first; otherwise the drawn drive time after the handover, or
+        after the start of CPR while the call is not handed over yet. Crews that arrived before
+        a late handover stay arrived.
+        """
+        if self.eingetroffen_um is not None:
+            return self.eingetroffen_um
+        zeiten = self.eintraege.zeiten
+        if self.anfahrt is None or zeiten.reanimation is None:
+            return None
+        ab_reanimation = zeiten.reanimation + self.anfahrt
+        if zeiten.uebergabe is None or ab_reanimation <= zeiten.uebergabe:
+            return ab_reanimation
+        return zeiten.uebergabe + self.anfahrt
+
+    def anfahrt_ziehen(self, zufall: random.Random) -> None:
+        """Draw the crews' drive time once CPR guidance has started."""
+        if self.anfahrt is None and self.eintraege.zeiten.reanimation is not None:
+            self.anfahrt = zufall.uniform(*ANFAHRT)
 
     def fuer_ausbilder(self) -> dict:
         """Return the whole call, truth included."""
@@ -59,6 +90,10 @@ class Anruf(Modell):
             sicht["beendetUm"] = self.beendet_um
         if self.zustand in (Anrufzustand.GESPRAECH, Anrufzustand.BEENDET):
             sicht["eintraege"] = self.eintraege.nach_aussen()
+            if self.eintreffen_um is not None:
+                sicht["eintreffenUm"] = self.eintreffen_um
+            if anrufer.funkzelle is not None:
+                sicht["funkzelle"] = anrufer.funkzelle.model_dump(by_alias=True)
         if self.zustand == Anrufzustand.BEENDET:
             sicht["szenario"] = self.szenario.nach_aussen()
             sicht["korrektur"] = self.korrektur

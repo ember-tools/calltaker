@@ -2,10 +2,11 @@
 import L from 'leaflet'
 import {onBeforeUnmount, onMounted, shallowRef, useTemplateRef, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
-import {BERLIN_GRENZEN, BERLIN_MITTE, KACHEL_ADRESSE, type Kartenpunkt, ZOOM_MAX, ZOOM_MIN} from '../modell/karte'
+import {BERLIN_GRENZEN, BERLIN_MITTE, type Funkzelle, KACHEL_ADRESSE, type Kartenpunkt, ZOOM_MAX, ZOOM_MIN} from '../modell/karte'
 
-const props = withDefaults(defineProps<{punkte?: Kartenpunkt[], setzbar?: boolean, beschriftung: string}>(), {
+const props = withDefaults(defineProps<{punkte?: Kartenpunkt[], funkzelle?: Funkzelle, setzbar?: boolean, beschriftung: string}>(), {
     punkte: () => [],
+    funkzelle: undefined,
     setzbar: false,
 })
 const emit = defineEmits<{gesetzt: [breite: number, laenge: number]}>()
@@ -19,6 +20,9 @@ const FARBEN: Record<Kartenpunkt['art'], string> = {erfasst: '#c4361c', wahrheit
 
 function zeichnen(): void {
     ebene.clearLayers()
+    if (props.funkzelle) {
+        L.circle(props.funkzelle.mitte, {radius: props.funkzelle.radius, color: '#b45309', weight: 2, dashArray: '6 6', fillOpacity: 0.08, interactive: false}).addTo(ebene)
+    }
     for (const punkt of props.punkte) {
         L.circleMarker([punkt.breite, punkt.laenge], {
             radius: punkt.art === 'wahrheit' ? 11 : 7,
@@ -33,14 +37,27 @@ function zeichnen(): void {
 
 let letzteMitte = ''
 
-/** Brings the points into view: one point close up, several all at once. */
+/**
+ * Brings the points into view: one point close up, several all at once; a cell area is always
+ * shown whole, with the points.
+ */
 function mitteSetzen(): void {
     const erster = props.punkte[0]
-    const mitte = props.punkte.map(p => `${p.breite},${p.laenge}`).join(';')
-    if (!karte.value || !erster || mitte === letzteMitte) return
+    const zelle = props.funkzelle
+    const mitte = [...props.punkte.map(p => `${p.breite},${p.laenge}`), zelle ? `${zelle.mitte.join(',')},${zelle.radius}` : ''].join(';')
+    if (!karte.value || mitte === letzteMitte) return
+    if (!erster) {
+        if (zelle) {
+            letzteMitte = mitte
+            karte.value.fitBounds(L.latLng(zelle.mitte).toBounds(zelle.radius * 2), {padding: [10, 10]})
+        }
+        return
+    }
     letzteMitte = mitte
-    if (props.punkte.length > 1) {
-        karte.value.fitBounds(L.latLngBounds(props.punkte.map(p => [p.breite, p.laenge])), {padding: [30, 30], maxZoom: 17})
+    if (props.punkte.length > 1 || zelle) {
+        const grenzen = L.latLngBounds(props.punkte.map(p => [p.breite, p.laenge]))
+        if (zelle) grenzen.extend(L.latLng(zelle.mitte).toBounds(zelle.radius * 2))
+        karte.value.fitBounds(grenzen, {padding: [30, 30], maxZoom: 17})
         return
     }
     karte.value.setView([erster.breite, erster.laenge], Math.max(karte.value.getZoom(), 16))
@@ -70,7 +87,7 @@ onMounted(() => {
 
 let groesse: ResizeObserver | undefined
 
-watch(() => props.punkte, zeichnen, {deep: true})
+watch(() => [props.punkte, props.funkzelle], zeichnen, {deep: true})
 
 onBeforeUnmount(() => {
     groesse?.disconnect()
