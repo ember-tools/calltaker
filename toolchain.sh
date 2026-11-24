@@ -74,6 +74,7 @@ Data
   data-un [page.html]   Take the list of UN numbers from chemie.de into daten/gefahrstoffe/
   data-orte [extract.shp.zip]
                         Derive the named places of Berlin from OpenStreetMap into daten/orte/
+  data-leitfragen       Derive the guidance questions for the medical situations into daten/leitfragen/
 
 Docker
   docker-build          Build the production image from docker/app.Dockerfile
@@ -160,6 +161,7 @@ case "$cmd" in
     data-adressen)       be; run env PYTHONPATH=src pipenv run python tools/adressen_laden.py laden ;;
     data-adressen-stand) be; run env PYTHONPATH=src pipenv run python tools/adressen_laden.py stand ;;
     data-orte)           be; run pipenv run python tools/orte_uebernehmen.py "$@" ;;
+    data-leitfragen)     be; run env PYTHONPATH=src pipenv run python tools/leitfragen_situationen.py ;;
     data-un)             be; run pipenv run python tools/un_nummern_uebernehmen.py "$@" ;;
     data-abfrage-uebernehmen)
         be; run pipenv run python tools/abfrage_uebernehmen.py "$@"

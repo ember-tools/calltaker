@@ -1,11 +1,13 @@
 import json
 import random
+import re
 import time
 
 import pytest
 from fastapi.testclient import TestClient
 
 import leitfragen
+import leitfragen_situationen
 from einstellungen import einstellungen
 from main import anwendung_bauen
 
@@ -283,3 +285,56 @@ def test_jede_hauptbeschwerde_ist_in_wenigen_fragen_vorgeschlagen(graph):
         anzahl, rest = fragen_bis(eintrag, alle, kachel)
         assert anzahl <= 12, kachel
         assert kachel in rest and len(rest) <= leitfragen.HOECHSTENS_VORGESCHLAGEN
+
+
+def test_jede_situation_der_notfallrettung_hat_leitfragen_in_ertraeglicher_laenge(graph):
+    katalog = {e.knoten: e for e in leitfragen.laden(einstellungen().leitfragen_verzeichnis, graph)}
+    situationen = leitfragen_situationen.situationsknoten(graph)
+    assert situationen and set(situationen) <= set(katalog)
+    mittel = []
+    for knoten in situationen:
+        eintrag = katalog[knoten]
+        alle = frozenset(a.id for a in graph.knoten[knoten].antworten)
+        gefragt = [fragen_bis(eintrag, alle, k)[0] for k in alle - set(eintrag.nur_direkt)]
+        mittel.append(sum(gefragt) / len(gefragt))
+        assert mittel[-1] <= 18, knoten
+    assert sum(mittel) / len(mittel) <= 8
+
+
+def test_die_situationsfragen_sind_frisch_erzeugt(graph):
+    werkzeug = leitfragen_situationen
+    gespeichert = json.loads(werkzeug.ZIEL.read_text("utf-8"))
+    assert werkzeug.katalog(graph) == gespeichert
+
+
+def test_ein_ja_nimmt_nie_eine_schwerere_situation_heraus(graph):
+    werkzeug = leitfragen_situationen
+    inhaltlich = {werkzeug.kennung(z.frage) for z in werkzeug.ZUSATZ} | {
+        v.id for vorab in werkzeug.VORAB.values() for v in vorab
+    }
+    for eintrag in werkzeug.katalog(graph)["knoten"]:
+        stufe = werkzeug.stufen(graph, eintrag["knoten"])
+        direkt = set(eintrag.get("nurDirekt", []))
+        for frage in eintrag["fragen"]:
+            ja, nein = frage["antworten"][0], frage["antworten"][1]
+            if ja["label"] != "Ja" or "behaelt" in ja or not nein.get("nimmt"):
+                continue
+            gruppe = set(nein["nimmt"])
+            if frage["id"] in inhaltlich:
+                continue
+            unterste = min(stufe[k] for k in gruppe)
+            herausgenommen = set(ja.get("nimmt", [])) - direkt
+            assert all(stufe[k] <= unterste for k in herausgenommen), (
+                eintrag["knoten"],
+                frage["id"],
+            )
+
+
+def test_die_situationsfragen_schreiben_nomen_gross():
+    graph = leitfragen_situationen.laden(leitfragen_situationen.WURZEL / "daten" / "abfrage")
+    texte = [
+        f["frage"] for e in leitfragen_situationen.katalog(graph)["knoten"] for f in e["fragen"]
+    ]
+    kleine_nomen = {nomen.lower() for nomen in leitfragen_situationen.NOMEN}
+    for text in texte:
+        assert not kleine_nomen & set(re.findall(r"[a-zäöüß]+", text)), text
