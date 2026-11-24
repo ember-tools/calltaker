@@ -18,6 +18,7 @@ function unterdruecken(an: boolean): void {
         <legend class="px-1 text-sm font-bold">{{ t('editor.anrufer') }}</legend>
         <label :class="BESCHRIFTUNG">{{ t('maske.name') }}<input v-model="entwurf.anrufer.name" :class="FELD"/></label>
         <label :class="BESCHRIFTUNG">{{ t('editor.betroffener') }}<input v-model="entwurf.betroffener!.name" :class="FELD"/></label>
+        <label :class="['col-span-2', BESCHRIFTUNG]">{{ t('editor.beziehung') }}<input v-model="entwurf.anrufer.beziehung" :placeholder="t('editor.beziehungHinweis')" :class="FELD"/></label>
         <label class="col-span-2 flex items-center gap-2 text-sm"><input :checked="entwurf.anrufer.rufnummerUnterdrueckt" type="checkbox" @change="unterdruecken(($event.target as HTMLInputElement).checked)"/>{{ t('editor.unterdrueckt') }}</label>
         <label v-if="!entwurf.anrufer.rufnummerUnterdrueckt" :class="BESCHRIFTUNG">{{ t('editor.rufnummer') }}<input v-model="entwurf.anrufer.rufnummer" type="tel" :class="FELD"/></label>
         <label :class="BESCHRIFTUNG">{{ t('editor.rueckrufnummer') }}<input v-model="entwurf.anrufer.rueckrufnummer" type="tel" :placeholder="entwurf.anrufer.rufnummerUnterdrueckt ? '' : t('editor.wieAngezeigt')" :class="FELD"/></label>

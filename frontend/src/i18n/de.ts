@@ -390,6 +390,8 @@ export default {
         nichtErreichbar: 'Der Server ist nicht erreichbar.',
     },
     editor: {
+        beziehung: 'Beziehung zum Betroffenen',
+        beziehungHinweis: 'z. B. Tochter, Nachbar, Passantin; leer, wenn der Anrufer selbst betroffen ist',
         titel: 'Szenario-Editor',
         neu: 'Neues Szenario',
         bearbeiten: 'Szenario bearbeiten',

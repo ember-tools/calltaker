@@ -5,17 +5,23 @@ import pytest
 
 from gefahrstoffe import Stoff
 from geo import entfernung
-from stimmigkeit import FUER_ANDERE, GEHOERT
+from stimmigkeit import BEIM_BETROFFENEN, FUER_ANDERE, GEHOERT, VOR_ORT_JA, alter_aus
 from szenario import Szenario, Wahl, pruefen
 from szenariogenerator import (
+    AM_WASSER,
     ATEMNOT,
+    BETRIEBE,
     BEWUSSTLOS,
     DRAUSSEN_ARTEN_FUER,
     DRAUSSEN_PROTOKOLLE,
     DRAUSSEN_VERSATZ,
+    EINRICHTUNGEN,
+    OEFFENTLICH_FUER,
+    RAHMEN_JE_ART,
     SCHWANGER,
     SELBST,
     STILLSTAND,
+    STRASSENSTELLEN,
     VOR_ORT,
     WOHNUNGSPROTOKOLLE,
     Erzeugung,
@@ -199,16 +205,16 @@ def test_ein_anteil_der_szenarien_spielt_an_orten_mit_naechster_tuer(graph):
         return {**PLATZ, "name": "U Hermannplatz", "art": "Bahnhof"}
 
     quellen = Quellen(adresse=lambda *_: dict(ADRESSE), ort=ort, naechste=lambda *_: dict(ADRESSE))
-    am_platz = viele(graph, 20, Erzeugung(anteil_orte=100, anteil_ohne_adresse=0), quellen=quellen)
+    nur_rd = {"protokoll": "rd.10", "anteil_ohne_adresse": 0}
+    am_platz = viele(graph, 20, Erzeugung(anteil_orte=100, **nur_rd), quellen=quellen)
     assert {s.ort.objekt for s in am_platz} == {"U Hermannplatz (Bahnhof)"}
     assert {s.ort.adresse.strasse for s in am_platz} == {"Karl-Marx-Straße"}
     assert {s.ort.koordinaten for s in am_platz} == {(52.47, 13.4)}
     assert all(s.ort.geschoss == "" for s in am_platz)
     assert "Supermarkt" in gefragt[0] and "Fluss" not in gefragt[0]
-    assert all(
-        s.ort.objekt == ""
-        for s in viele(graph, 20, Erzeugung(anteil_orte=0, anteil_ohne_adresse=0), quellen=quellen)
-    )
+    gefragt.clear()
+    viele(graph, 40, Erzeugung(anteil_orte=0, **nur_rd), quellen=quellen)
+    assert not any("Supermarkt" in arten for arten in gefragt)
 
 
 def test_ein_ort_ausserhalb_des_bezirks_wird_nicht_genommen(graph):
@@ -218,7 +224,7 @@ def test_ein_ort_ausserhalb_des_bezirks_wird_nicht_genommen(graph):
         naechste=lambda *_: dict(ADRESSE, bezirk="Spandau"),
     )
     szenario = viele(graph, 1, Erzeugung(anteil_orte=100, bezirk="Neukölln"), quellen=quellen)[0]
-    assert szenario.ort.objekt == ""
+    assert "(Park)" not in szenario.ort.objekt
 
 
 def test_neugeborene_sind_unter_den_stillstaenden_selten(graph):
@@ -381,8 +387,9 @@ def test_wohnungen_haben_geschoss_klingel_und_manchmal_ein_haustier(graph):
         szenario = generieren(graph, QUELLEN, erzeugung, random.Random(seed))
         endpunkt = endpunkte[szenario.ziel.knoten]
         wohnung = endpunkt.fachrichtung == "rd" or endpunkt.protokoll in WOHNUNGSPROTOKOLLE
-        assert bool(szenario.ort.geschoss) == wohnung
-        if wohnung:
+        if szenario.ort.geschoss:
+            assert wohnung
+            assert not szenario.ort.objekt
             wohnungen += 1
             gesehen.add(endpunkt.protokoll)
             person = szenario.betroffener.name if szenario.betroffener else szenario.anrufer.name
@@ -390,6 +397,7 @@ def test_wohnungen_haben_geschoss_klingel_und_manchmal_ein_haustier(graph):
             mit_tier += bool(szenario.ort.haustier)
         else:
             assert not szenario.ort.haustier
+    assert wohnungen > 100
     assert 0 < mit_tier < wohnungen * 0.3
     assert gesehen & {"fw.th.tueroeffnung", "fw.th.wasserschaden"}
 
@@ -405,8 +413,10 @@ def test_mobil_anrufer_bekommen_eine_funkzelle_um_den_wahren_punkt(graph):
         szenario = generieren(graph, QUELLEN, Erzeugung(anteil_orte=0), random.Random(seed))
         anrufer = szenario.anrufer
         mobil = anrufer.mobil_angezeigt()
-        assert (anrufer.funkzelle is not None) == mobil
-        if anrufer.funkzelle:
+        wo = szenario.antworten["eroeffnung.vor-ort"].antwort
+        assert (anrufer.funkzelle is not None) == (mobil and wo != "unbekannt")
+        vor_ort = wo == VOR_ORT_JA
+        if anrufer.funkzelle and vor_ort:
             mit_zelle += 1
             zelle = anrufer.funkzelle
             assert 500 <= zelle.radius <= 1500
@@ -618,3 +628,138 @@ def test_geschaetztes_alter_bleibt_im_rahmen():
     assert geschaetztes_alter(63, 18, 90) == 60
     assert geschaetztes_alter(33, 0, 34) == 30
     assert geschaetztes_alter(88, 18, 90) == 90
+
+
+def test_beziehung_passt_zu_hand_und_alter(graph):
+    erzeugung = Erzeugung(gewicht_brand=0, gewicht_th=0, anteil_ohne_adresse=0)
+    gesetzt = 0
+    for _, szenario in eroeffnungen(graph, erzeugung, 800):
+        hand = szenario.antworten["eroeffnung.hand"].antwort
+        beziehung = szenario.anrufer.beziehung
+        if hand in (SELBST, "automatische-meldung"):
+            assert beziehung == ""
+            continue
+        assert beziehung
+        gesetzt += 1
+        alter = int((szenario.antworten["rd.alter"].wert or "0").split()[-1] or 0)
+        if beziehung in ("Ehemann", "Ehefrau"):
+            assert alter >= 20 or not szenario.antworten["rd.alter"].wert
+        if beziehung in ("Sohn", "Tochter"):
+            assert alter >= 38 or not szenario.antworten["rd.alter"].wert
+        if szenario.ort.geschoss:
+            assert beziehung not in ("Passant", "Passantin")
+    assert gesetzt > 300
+
+
+def passende_quellen():
+    zufall = random.Random(3)
+
+    def ort(_, ortsteil="", arten=()):
+        art = zufall.choice(sorted(arten)) if arten else "Park"
+        return {**PLATZ, "name": "Ort", "art": art}
+
+    return Quellen(adresse=lambda *_: dict(ADRESSE), ort=ort, naechste=lambda *_: dict(ADRESSE))
+
+
+def platzart(szenario):
+    objekt = szenario.ort.objekt
+    return objekt[objekt.index("(") + 1 : -1] if objekt.endswith(")") else ""
+
+
+def mit_quellen(graph, anzahl, **einstellungen):
+    endpunkte = {e.knoten: e for e in graph.endpunkte}
+    erzeugung = Erzeugung(anteil_ohne_adresse=0, **einstellungen)
+    for szenario in viele(graph, anzahl, erzeugung, quellen=passende_quellen()):
+        yield endpunkte[szenario.ziel.knoten], szenario
+
+
+def test_schauplaetze_folgen_der_lage(graph):
+    for _, vu in mit_quellen(graph, 60, protokoll="rd.29"):
+        assert not vu.ort.geschoss and vu.ort.objekt in STRASSENSTELLEN
+    for _, bma in mit_quellen(graph, 60, protokoll="fw.brand.brandmeldeanlage"):
+        assert platzart(bma) in OEFFENTLICH_FUER["fw.brand.brandmeldeanlage"]
+        assert not bma.ort.geschoss
+    wanne = 0
+    for _, wasser in mit_quellen(graph, 300, protokoll="rd.14"):
+        if wasser.ort.geschoss:
+            wanne += 1
+            assert alter_aus(wasser.antworten["rd.alter"].wert or "") <= 5
+        else:
+            assert platzart(wasser) in AM_WASSER | {"Schwimmbad"}
+    assert wanne < 300 * 0.15
+
+
+HAUSNOTIZEN = ("durch die Wand", "Hausnotruf", "Mieter", "aus der Wohnung", "Treppenhaus")
+
+
+def test_beziehungen_passen_zum_schauplatz(graph):
+    gesetzt = 0
+    for endpunkt, szenario in mit_quellen(
+        graph, 1500, gewicht_rd=50, gewicht_brand=25, gewicht_th=25
+    ):
+        beziehung = szenario.anrufer.beziehung
+        notizen = szenario.rolle.notizen
+        zuhause = szenario.ort.objekt == ""
+        art = platzart(szenario)
+        rd = endpunkt.fachrichtung == "rd"
+        gesetzt += bool(beziehung)
+        if any(notiz in notizen for notiz in HAUSNOTIZEN):
+            assert zuhause, (beziehung, notizen, szenario.ort.objekt)
+        if "Aufschaltung" in notizen:
+            assert endpunkt.protokoll == "fw.brand.brandmeldeanlage"
+        if not rd:
+            assert "jemanden liegen" not in notizen
+        if rd and beziehung.startswith("Pfleger"):
+            alter = alter_aus(szenario.antworten["rd.alter"].wert or "")
+            einrichtung = szenario.ort.objekt in EINRICHTUNGEN or art in ("Pflegeheim", "Klinik")
+            assert einrichtung or (zuhause and (alter is None or alter >= 65))
+        hand = szenario.antworten["eroeffnung.hand"].antwort
+        if rd and hand == BEIM_BETROFFENEN and beziehung.startswith("Passant"):
+            assert not zuhause
+        if art in ("Park", "Spielplatz", "Sportplatz", "Friedhof", "Schwimmbad"):
+            assert not beziehung.startswith(("Kunde", "Kundin", "Kolleg"))
+    assert gesetzt > 800
+
+
+def test_hergaenge_kennen_den_schauplatz(graph):
+    gesehen = Counter()
+    for _, szenario in mit_quellen(graph, 2500, protokoll="rd.09"):
+        notizen = szenario.rolle.notizen
+        art = platzart(szenario)
+        if "aus dem Wasser" in notizen:
+            gesehen["wasser"] += 1
+            assert art in AM_WASSER | {"Schwimmbad"}
+        if "Stromschlag" in notizen:
+            gesehen["strom"] += 1
+            assert szenario.ort.objekt in BETRIEBE
+        if "beim Sport" in notizen:
+            gesehen["sport"] += 1
+            assert RAHMEN_JE_ART[art] == "draussen"
+        if "im Bett" in notizen:
+            assert szenario.ort.objekt == ""
+    assert set(gesehen) == {"wasser", "strom", "sport"}
+
+
+def test_die_funkzelle_liegt_um_den_anrufer(graph):
+    breiten = iter(52.40 + 0.03 * i for i in range(100000))
+
+    def adresse(*_):
+        return {**ADRESSE, "breite": next(breiten), "laenge": 13.4}
+
+    quellen = Quellen(adresse=adresse, ort=lambda *_: None)
+    gesehen = Counter()
+    for i in range(600):
+        szenario = generieren(graph, quellen, Erzeugung(anteil_orte=0), random.Random(i))
+        zelle = szenario.anrufer.funkzelle
+        wo = szenario.antworten["eroeffnung.vor-ort"].antwort
+        if wo == "unbekannt":
+            assert zelle is None
+        if zelle is None:
+            continue
+        abstand = entfernung(zelle.mitte, szenario.ort.koordinaten)
+        gesehen[wo] += 1
+        if wo == VOR_ORT_JA:
+            assert abstand <= zelle.radius
+        else:
+            assert abstand > zelle.radius
+    assert gesehen[VOR_ORT_JA] and gesehen["nein-war-nicht-vor-ort"]

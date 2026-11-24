@@ -16,7 +16,7 @@ from abfrage import Abfragegraph, Antwort
 from gefahrstoffe import TAFEL
 from geo import entfernung
 from rufnummer import normalisieren
-from stimmigkeit import alter_aus, stimmigkeitsmeldungen
+from stimmigkeit import VOR_ORT_JA, alter_aus, stimmigkeitsmeldungen
 
 SZENARIO_VERSION = 1
 
@@ -95,6 +95,7 @@ class Anrufer(Modell):
     rufnummer_unterdrueckt: bool = False
     rueckrufnummer: str | None = None
     funkzelle: Funkzelle | None = None
+    beziehung: str = Field("", max_length=80)
 
     @field_validator("rufnummer", "rueckrufnummer")
     @classmethod
@@ -195,17 +196,20 @@ class Szenario(Modell):
     def passende_funkzelle(self) -> Self:
         """Drop a cell that does not fit: no shown mobile number, or the place lies outside it.
 
+        A caller who is not on site calls through a cell around where they are, not around the
+        place; for them the place need not lie inside.
+
         A scenario edited after it was made can change the number or the place; the cell then
         no longer tells the truth and is left out rather than misleading the trainee.
         """
         zelle = self.anrufer.funkzelle
         if zelle is None:
             return self
+        vor_ort = self.antworten.get("eroeffnung.vor-ort")
+        nicht_dort = vor_ort is not None and vor_ort.antwort != VOR_ORT_JA
         punkt = self.ort.koordinaten
-        if (
-            not self.anrufer.mobil_angezeigt()
-            or punkt is None
-            or entfernung(zelle.mitte, punkt) > zelle.radius
+        if not self.anrufer.mobil_angezeigt() or (
+            not nicht_dort and (punkt is None or entfernung(zelle.mitte, punkt) > zelle.radius)
         ):
             self.anrufer.funkzelle = None
         return self

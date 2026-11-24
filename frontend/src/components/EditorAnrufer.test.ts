@@ -19,3 +19,12 @@ describe('EditorAnrufer', () => {
         expect(ansicht.findAll('input[type=tel]')).toHaveLength(1)
     })
 })
+
+describe('EditorAnrufer mit Beziehung', () => {
+    it('nimmt die Beziehung des Anrufers zum Betroffenen auf', async () => {
+        const entwurf = reactive(leererEntwurf(1))
+        const ansicht = mount(EditorAnrufer, {props: {modelValue: entwurf}, global: {plugins: [i18n]}})
+        await ansicht.get('input[placeholder^="z. B. Tochter"]').setValue('Tochter')
+        expect(entwurf.anrufer.beziehung).toBe('Tochter')
+    })
+})

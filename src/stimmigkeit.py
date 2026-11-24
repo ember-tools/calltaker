@@ -10,17 +10,20 @@ import re
 from typing import TYPE_CHECKING
 
 from abfrage import Abfragegraph, Endpunkt
+from beziehungen import ALTERSBEDINGUNGEN
+from meldehand import (
+    AUTOMATISCH,
+    BEIM_BETROFFENEN,
+    FUER_ANDERE,
+    GEHOERT,
+    SELBST,
+    VOR_ORT_JA,
+    WACH,
+)
 
 if TYPE_CHECKING:
     from szenario import Szenario
 
-SELBST = "1-hand-der-anrufer-ist-selbst-betroffen"
-BEIM_BETROFFENEN = "2-hand-der-anrufer-ist-beim-betroffenen"
-FUER_ANDERE = "3-hand-der-anrufer-meldet-fuer-andere"
-GEHOERT = "4-hand-der-anrufer-hat-es-nur-gehoert"
-AUTOMATISCH = "automatische-meldung"
-VOR_ORT_JA = "ja-der-anrufer-ist-vor-ort"
-WACH = "ja-wach-und-ansprechbar"
 
 NICHT_DABEI = frozenset({FUER_ANDERE, GEHOERT, AUTOMATISCH})
 AUTOMATISCHE_PROTOKOLLE = frozenset({"rd.34", "fw.brand.brandmeldeanlage"})
@@ -94,6 +97,12 @@ def stimmigkeitsmeldungen(graph: Abfragegraph, szenario: Szenario) -> list[str]:
         meldungen.append("Geschoss oder Klingel bei einer Lage auf der Straße oder am Wasser")
     if hand == AUTOMATISCH and protokoll not in AUTOMATISCHE_PROTOKOLLE:
         meldungen.append("automatische Meldung bei einer Lage, die keine Anlage meldet")
+    beziehung = szenario.anrufer.beziehung
+    if beziehung and hand in (SELBST, AUTOMATISCH):
+        meldungen.append("Beziehung zum Betroffenen, obwohl er selbst oder eine Anlage meldet")
+    spanne = ALTERSBEDINGUNGEN.get(beziehung)
+    if spanne and alter is not None and not spanne[0] <= alter <= spanne[1]:
+        meldungen.append(f"„{beziehung}“ passt nicht zum Alter des Betroffenen")
     return meldungen
 
 

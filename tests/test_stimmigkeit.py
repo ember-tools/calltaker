@@ -139,7 +139,6 @@ def test_der_generator_erzeugt_stimmige_szenarien(graph):
     assert [m for m in generierte_meldungen(graph) if m != STRASSE] == []
 
 
-@pytest.mark.xfail(strict=True, reason="Strassenlagen haben noch Geschoss und Klingel")
 def test_der_generator_gibt_strassenlagen_kein_geschoss(graph):
     assert STRASSE not in generierte_meldungen(graph)
 
@@ -229,3 +228,17 @@ def test_monate_zaehlen_als_kind(graph, szenario_daten):
         }
     )
     assert "1. Hand bei einer Lage, in der niemand selbst anruft" in meldungen(graph, kind)
+
+
+def test_die_beziehung_passt_zu_hand_und_alter(graph, szenario_daten):
+    def mit_beziehung(beziehung, hand=BEIM_BETROFFENEN):
+        daten = mit(szenario_daten, hand).model_dump(by_alias=True)
+        daten["anrufer"]["beziehung"] = beziehung
+        return Szenario.model_validate(daten)
+
+    assert meldungen(graph, mit_beziehung("Tochter")) == []
+    assert "„Mutter“ passt nicht zum Alter des Betroffenen" in meldungen(
+        graph, mit_beziehung("Mutter")
+    )
+    selbst = meldungen(graph, mit_beziehung("Tochter", SELBST))
+    assert "Beziehung zum Betroffenen, obwohl er selbst oder eine Anlage meldet" in selbst
