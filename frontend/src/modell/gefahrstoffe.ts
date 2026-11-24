@@ -75,6 +75,17 @@ export function stoffeZu(stoffe: Stoff[], un: string): Stoff[] {
 }
 
 /**
+ * The hazard numbers a UN number can carry on a plate, by the list.
+ *
+ * @param stoffe the list
+ * @param un the UN number
+ * @returns each distinct plate number, in list order
+ */
+export function gefahrenzahlenZu(stoffe: Stoff[], un: string): string[] {
+    return [...new Set(stoffeZu(stoffe, un).map(stoff => stoff.gefahrenzahl).filter(zahl => GEFAHRENZAHL.test(zahl)))]
+}
+
+/**
  * Entries whose name contains the text, for typing a name instead of a number.
  *
  * @param stoffe the list
@@ -84,7 +95,7 @@ export function stoffeZu(stoffe: Stoff[], un: string): Stoff[] {
  */
 export function stoffeSuchen(stoffe: Stoff[], text: string, hoechstens = 8): Stoff[] {
     const suche = text.trim().toLowerCase()
-    if (suche.length < 3) return []
+    if (suche.length < 2) return []
     const treffer = stoffe.filter(stoff => stoff.bezeichnung.toLowerCase().includes(suche))
     const vorn = (stoff: Stoff) => (stoff.bezeichnung.toLowerCase().startsWith(suche) ? 0 : 1)
     return [...treffer].sort((a, b) => vorn(a) - vorn(b)).slice(0, hoechstens)

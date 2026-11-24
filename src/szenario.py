@@ -14,6 +14,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 from pydantic.alias_generators import to_camel
 
 from abfrage import Abfragegraph, Antwort
+from gefahrstoffe import TAFEL
 from rufnummer import normalisieren
 
 SZENARIO_VERSION = 1
@@ -39,13 +40,6 @@ class Adresse(Modell):
     ortsteil: str = ""
 
 
-class Gefahrgut(Modell):
-    """The orange plate on a vehicle or tank: hazard number on top, UN number below."""
-
-    un: str = Field(pattern=r"^\d{4}$")
-    gefahrenzahl: str = Field("", max_length=8)
-
-
 class Ort(Modell):
     """Where the emergency is: address, point and what a crew needs to find it.
 
@@ -59,7 +53,6 @@ class Ort(Modell):
     klingel: str = ""
     anfahrt: str = ""
     gefahren: str = ""
-    gefahrgut: Gefahrgut | None = None
 
 
 class Anrufer(Modell):
@@ -274,6 +267,9 @@ def wahlbefunde(graph: Abfragegraph, knoten_id: str, wahl: Wahl) -> list[Befund]
             ]
         if not wahl.wert and knoten.eingabe.leer is None:
             return [Befund(art="fehler", knoten=knoten_id, meldung="hier fehlt der getippte Wert")]
+        if knoten.eingabe.art == "warntafel" and wahl.wert and not TAFEL.match(wahl.wert):
+            meldung = "eine Warntafel lautet Gefahrenzahl/UN-Nummer, z. B. 33/1203"
+            return [Befund(art="fehler", knoten=knoten_id, meldung=meldung)]
         return []
     if knoten.antworten is None:
         return [

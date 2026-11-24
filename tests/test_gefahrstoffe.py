@@ -2,14 +2,11 @@ import importlib.util
 import json
 from pathlib import Path
 
-import pytest
 from fastapi.testclient import TestClient
-from pydantic import ValidationError
 
 import gefahrstoffe
-from eintraege import Eintraege
 from main import anwendung_bauen
-from szenario import Gefahrgut
+from szenario import Wahl, wahlbefunde
 
 WERKZEUG = Path(__file__).resolve().parent.parent / "tools" / "un_nummern_uebernehmen.py"
 _spec = importlib.util.spec_from_file_location("un_nummern_uebernehmen", WERKZEUG)
@@ -73,31 +70,29 @@ def test_gezogen_werden_nur_tafeln_mit_einer_gefahrenzahl():
     assert gefahrstoffe.mit_warntafel([zusammen, verboten]) == []
 
 
-def test_regeln_der_warntafel_passen_zu_graph_und_hinweis(graph):
-    for knoten, antwort in gefahrstoffe.GEFAHRGUT_ANTWORTEN:
-        assert graph.antwort(knoten, antwort) is not None
-    katalog = json.loads(
-        (DATEN.parent / "anleitungen" / "technische-hilfe.json").read_text("utf-8")
-    )
-    hinweis = next(a for a in katalog["anleitungen"] if a["id"] == "th.gefahrstoffe")
-    antworten = {
-        (g["knoten"], g["antwort"]) for wenn in hinweis["wenn"] for g in wenn.get("antworten", [])
+def test_die_tafelfrage_steht_in_den_vier_protokollen_hinter_dem_gefahrgut(graph):
+    tafelfragen = {
+        kid for kid, k in graph.knoten.items() if k.eingabe and k.eingabe.art == "warntafel"
     }
-    assert set(gefahrstoffe.GEFAHRGUT_ANTWORTEN) <= antworten
-    assert any(
-        gefahrstoffe.GEFAHRGUT_PROTOKOLL in wenn.get("protokolle", []) for wenn in hinweis["wenn"]
+    assert tafelfragen == {
+        "fw.th.gefahrstoffe.warntafel",
+        "fw.th.verkehrsunfall.warntafel",
+        "fw.brand.fahrzeugbrand.warntafel",
+        "fw.brand.industrie-und-gewerbebrand.warntafel",
+    }
+    assert (
+        graph.antwort("fw.th.verkehrsunfall.k3", "gefahrgut").ziel
+        == "fw.th.verkehrsunfall.warntafel"
+    )
+    assert (
+        graph.antwort("fw.th.verkehrsunfall.k3", "kein-gefahrgut").ziel
+        != "fw.th.verkehrsunfall.warntafel"
     )
 
 
-def test_die_regeln_kommen_mit_dem_graphen():
-    with TestClient(anwendung_bauen()) as client:
-        regeln = client.get("/api/abfrage").json()["warntafel"]
-    assert "fw.th.verkehrsunfall" in regeln["protokolle"]
-    assert {"knoten": "fw.brand.fahrzeugbrand.k2", "antwort": "gefahrgut"} in regeln["antworten"]
-
-
-def test_warntafel_und_gefahrgut_sind_begrenzt():
-    with pytest.raises(ValidationError):
-        Eintraege.model_validate({"ort": {"gefahrgut": {"un": "123456789"}}})
-    with pytest.raises(ValidationError):
-        Gefahrgut(un="12a4")
+def test_eine_tafel_im_szenario_braucht_die_richtige_form(graph):
+    knoten = "fw.th.verkehrsunfall.warntafel"
+    assert wahlbefunde(graph, knoten, Wahl(wert="33/1203")) == []
+    assert wahlbefunde(graph, knoten, Wahl(wert="/0004")) == []
+    assert wahlbefunde(graph, knoten, Wahl()) == []
+    assert wahlbefunde(graph, knoten, Wahl(wert="Benzin"))[0].art == "fehler"

@@ -3,8 +3,8 @@ from collections import Counter
 
 import pytest
 
-from gefahrstoffe import GEFAHRGUT_ANTWORTEN, Stoff
-from szenario import Gefahrgut, Wahl, pruefen
+from gefahrstoffe import Stoff
+from szenario import Wahl, pruefen
 from szenariogenerator import (
     ATEMNOT,
     BEWUSSTLOS,
@@ -18,11 +18,11 @@ from szenariogenerator import (
     anzahl_gewichte,
     disziplin_von,
     generieren,
-    mit_gefahrgut,
     person_ziehen,
     pfadtext,
     stufe,
     titel_von,
+    warntafel_ziehen,
 )
 
 ADRESSE = {
@@ -303,28 +303,22 @@ def test_antworten_die_den_weg_bestimmen_bleiben_wie_im_pfad(graph):
                 assert szenario.antworten[schritt.knoten].antwort == schritt.antwort
 
 
-def test_gefahrgut_szenarien_tragen_eine_warntafel(graph):
+def test_die_frage_nach_der_warntafel_beantwortet_der_generator(graph):
     stoff = Stoff(un="1203", gefahrenzahl="33", klasse="3", bezeichnung="Benzin")
     quellen = Quellen(
         adresse=lambda *_: dict(ADRESSE), ort=lambda *_: dict(PLATZ), gefahrstoffe=[stoff]
     )
     nur_fw = Erzeugung(gewicht_rd=0, gewicht_brand=50, gewicht_th=50)
-    endpunkte = {endpunkt.knoten: endpunkt for endpunkt in graph.endpunkte}
-    mit_tafel = 0
+    tafelfragen = {
+        kid for kid, k in graph.knoten.items() if k.eingabe and k.eingabe.art == "warntafel"
+    }
+    gesehen = 0
     for seed in range(300):
         szenario = generieren(graph, quellen, nur_fw, random.Random(seed))
-        erwartet = endpunkte[szenario.ziel.knoten].protokoll == "fw.th.gefahrstoffe" or any(
-            (knoten, wahl.antwort) in GEFAHRGUT_ANTWORTEN
-            for knoten, wahl in szenario.antworten.items()
-        )
-        assert (szenario.ort.gefahrgut is not None) == erwartet
-        if erwartet:
-            assert szenario.ort.gefahrgut == Gefahrgut(un="1203", gefahrenzahl="33")
-            mit_tafel += 1
-    assert mit_tafel > 0
-
-
-def test_gefahrgut_im_rettungsdienst_bekommt_keine_tafel(graph):
-    endpunkt = next(e for e in graph.endpunkte if e.protokoll == "rd.29")
-    antworten = {"rd.29.k0": Wahl(antwort="gefahrgut")}
-    assert not mit_gefahrgut(endpunkt, antworten)
+        for kid in tafelfragen & set(szenario.antworten):
+            assert szenario.antworten[kid].wert == "33/1203"
+            gesehen += 1
+        assert not [b for b in pruefen(szenario, graph) if b.art == "fehler"]
+    assert gesehen > 0
+    ohne = Quellen(adresse=lambda *_: dict(ADRESSE), ort=lambda *_: dict(PLATZ))
+    assert warntafel_ziehen(ohne, random.Random(1)) == Wahl()

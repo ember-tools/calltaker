@@ -20,13 +20,6 @@ ANLEITUNGEN_HOECHSTENS = 100
 PFAD_HOECHSTENS = 200
 
 
-class Warntafel(Modell):
-    """An orange plate as entered: hazard number on top, UN number below."""
-
-    un: str = Field("", max_length=8)
-    gefahrenzahl: str = Field("", max_length=8)
-
-
 class Ortseintrag(Modell):
     """The location as entered."""
 
@@ -37,7 +30,6 @@ class Ortseintrag(Modell):
     klingel: str = Field("", max_length=TEXT)
     anfahrt: str = Field("", max_length=TEXT)
     gefahren: str = Field("", max_length=TEXT)
-    gefahrgut: Warntafel = Field(default_factory=Warntafel)
 
 
 class Anrufereintrag(Modell):

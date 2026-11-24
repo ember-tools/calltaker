@@ -57,8 +57,14 @@ class Leer(Modell):
 
 
 class Eingabe(Modell):
-    """A question answered by typing; `{wert}` in the template stands for what was typed."""
+    """A question answered by typing; `{wert}` in the template stands for what was typed.
 
+    `art` says how it is typed: as plain text, or as an orange plate, whose answer reads
+    "hazard number/UN number", such as "33/1203", with the hazard number left out when the plate
+    has none.
+    """
+
+    art: Literal["text", "warntafel"] = "text"
     vorlage: str
     platzhalter: str
     leer: Leer | None = None

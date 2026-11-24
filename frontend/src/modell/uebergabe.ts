@@ -40,8 +40,8 @@ export function nachtraege(graph: Abfragegraph, eintraege: Eintraege): Set<Nacht
     const geaendert = new Set<Nachtrag>()
     if (!stand) return geaendert
     const gleich = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b)
-    const ort = ({koordinaten, adresse, objekt, geschoss, klingel, anfahrt, gefahren, gefahrgut}: Eintraege['ort']) =>
-        ({koordinaten, adresse, objekt, geschoss, klingel, anfahrt, gefahren, gefahrgut: gefahrgut?.un || gefahrgut?.gefahrenzahl ? gefahrgut : undefined})
+    const ort = ({koordinaten, adresse, objekt, geschoss, klingel, anfahrt, gefahren}: Eintraege['ort']) =>
+        ({koordinaten, adresse, objekt, geschoss, klingel, anfahrt, gefahren})
     if (!gleich(ort(stand.ort), ort(eintraege.ort))) geaendert.add('ort')
     if (!gleich(stand.anrufer, eintraege.anrufer)) geaendert.add('anrufer')
     if (stand.betroffener !== eintraege.betroffener) geaendert.add('betroffener')

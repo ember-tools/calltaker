@@ -298,6 +298,19 @@
       "kategorie": "TH 3",
       "anlass": "Beschädigte Gasleitung - Betroffenheit unbekannt",
       "stichwort": "TH 3"
+    },
+    "fw.th.gefahrstoffe.warntafel": {
+      "frage": "Ist eine orange Warntafel zu sehen? Lesen Sie mir die Zahlen oben und unten vor.",
+      "eingabe": {
+        "art": "warntafel",
+        "vorlage": "Warntafel: {wert}.",
+        "platzhalter": "Gefahrenzahl oben / UN-Nummer unten",
+        "leer": {
+          "label": "Keine Tafel oder nicht lesbar",
+          "aussage": "Eine Warntafel ist nicht zu sehen oder nicht lesbar."
+        }
+      },
+      "ziel": "fw.th.gefahrstoffe.k0"
     }
   }
 }

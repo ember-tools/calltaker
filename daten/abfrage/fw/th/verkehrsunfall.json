@@ -75,7 +75,7 @@
         {
           "id": "gefahrgut",
           "label": "Gefahrgut",
-          "ziel": "fw.th.verkehrsunfall.29e13",
+          "ziel": "fw.th.verkehrsunfall.warntafel",
           "aussage": "Das Fahrzeug führt Gefahrgut mit."
         }
       ]
@@ -144,6 +144,19 @@
       "kategorie": "TH 2",
       "anlass": "Verkehrsunfall an Bahnanlage",
       "stichwort": "TH 2"
+    },
+    "fw.th.verkehrsunfall.warntafel": {
+      "frage": "Ist eine orange Warntafel zu sehen? Lesen Sie mir die Zahlen oben und unten vor.",
+      "eingabe": {
+        "art": "warntafel",
+        "vorlage": "Warntafel: {wert}.",
+        "platzhalter": "Gefahrenzahl oben / UN-Nummer unten",
+        "leer": {
+          "label": "Keine Tafel oder nicht lesbar",
+          "aussage": "Eine Warntafel ist nicht zu sehen oder nicht lesbar."
+        }
+      },
+      "ziel": "fw.th.verkehrsunfall.29e13"
     }
   }
 }

@@ -26,6 +26,8 @@ export interface Leer {
 
 /** A question answered by typing; `{wert}` in the template stands for what was typed. */
 export interface Eingabe {
+    /** How it is typed: plain text, or an orange plate answered as "hazard number/UN number". */
+    art?: 'text' | 'warntafel'
     vorlage: string
     platzhalter: string
     leer?: Leer
@@ -130,6 +132,4 @@ export interface Abfragegraph {
     knoten: Record<string, Knoten>
     endpunkte: Endpunkt[]
     anleitungen?: Anleitung[]
-    /** When a call can involve an orange plate: by protocol, or by an answer saying so. */
-    warntafel?: {protokolle: string[], antworten: {knoten: string, antwort: string}[]}
 }

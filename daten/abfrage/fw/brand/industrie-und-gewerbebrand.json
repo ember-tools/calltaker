@@ -12,7 +12,7 @@
         {
           "id": "anlage-mit-gefahrstoffen",
           "label": "Anlage mit Gefahrstoffen",
-          "ziel": "fw.brand.industrie-und-gewerbebrand.k2",
+          "ziel": "fw.brand.industrie-und-gewerbebrand.warntafel",
           "aussage": "Eine Anlage mit Gefahrstoffen ist betroffen."
         },
         {
@@ -251,6 +251,19 @@
       "kategorie": "BRAND 10",
       "anlass": "Hallenbrand in voller Ausdehnung - Betroffenheit unbekannt",
       "stichwort": "BRAND 10"
+    },
+    "fw.brand.industrie-und-gewerbebrand.warntafel": {
+      "frage": "Ist eine orange Warntafel zu sehen? Lesen Sie mir die Zahlen oben und unten vor.",
+      "eingabe": {
+        "art": "warntafel",
+        "vorlage": "Warntafel: {wert}.",
+        "platzhalter": "Gefahrenzahl oben / UN-Nummer unten",
+        "leer": {
+          "label": "Keine Tafel oder nicht lesbar",
+          "aussage": "Eine Warntafel ist nicht zu sehen oder nicht lesbar."
+        }
+      },
+      "ziel": "fw.brand.industrie-und-gewerbebrand.k2"
     }
   }
 }
