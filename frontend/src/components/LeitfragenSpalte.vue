@@ -14,7 +14,7 @@ const emit = defineEmits<{sofort: [], waehlen: [antwortId: string]}>()
 const {t} = useI18n()
 const spalte = ref<HTMLElement | null>(null)
 const angebot = computed(() => (props.stand.frage ? angeboten(props.stand.frage, props.stand.kacheln) : []))
-const nummer = computed(() => new Map(props.antworten.map((antwort, stelle) => [antwort.id, stelle])))
+const nummer = computed(() => new Map(props.antworten.map((antwort, stelle) => [antwort.id, stelle + 1])))
 const label = computed(() => new Map(props.antworten.map(antwort => [antwort.id, antwort.label])))
 const fragen = computed(() => new Map(props.eintrag.fragen.map(frage => [frage.id, frage.frage])))
 const zeile = computed(() => {
