@@ -47,6 +47,7 @@ UNTERDRUECKT_ANTEIL = 0.05
 ANDERE_RUECKRUF_ANTEIL = 0.05
 ERWACHSEN = (18, 90)
 PLATZ_VERSUCHE = 5
+TAFEL_UNLESBAR = 0.15
 STILLSTAND_PROTOKOLL = "rd.09"
 NICHT_VOR_ORT_ANTWORT = {"fw.brand.gebaeudebrand.fluchtweg": "nicht-im-gebaeude"}
 GEWICHT_NEUGEBORENE = 0.1
@@ -576,9 +577,13 @@ def gleichwertige(
     return zufall.choice(antworten)
 
 
-def warntafel_ziehen(quellen: Quellen, zufall: random.Random) -> Wahl:
-    """Draw the plate the caller reads out; without a list of goods, there is none to read."""
-    if not quellen.gefahrstoffe:
+def warntafel_ziehen(quellen: Quellen, person: Person, zufall: random.Random) -> Wahl:
+    """Draw the plate the caller reads out.
+
+    Only a caller on site can read one, and even then smoke or distance sometimes keep them from
+    it (`TAFEL_UNLESBAR`); without a list of goods there is none to read.
+    """
+    if not quellen.gefahrstoffe or not person.vor_ort or zufall.random() < TAFEL_UNLESBAR:
         return Wahl()
     return Wahl(wert=tafel(zufall.choice(quellen.gefahrstoffe)))
 
@@ -597,7 +602,7 @@ def generieren(
     for schritt in endpunkt.pfad:
         eingabe = graph.knoten[schritt.knoten].eingabe
         if eingabe is not None and eingabe.art == "warntafel":
-            antworten[schritt.knoten] = warntafel_ziehen(quellen, zufall)
+            antworten[schritt.knoten] = warntafel_ziehen(quellen, person, zufall)
             continue
         antwort = gleichwertige(graph, schritt.knoten, schritt.antwort or "", person, zufall)
         antworten[schritt.knoten] = Wahl(
