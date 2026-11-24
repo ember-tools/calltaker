@@ -16,7 +16,7 @@ describe('DebriefAnsicht', () => {
         const ansicht = mount(DebriefAnsicht, {props: {graph: GRAPH, anruf: sichtVon(anruf), szenario: anruf.szenario}, global: {plugins: [i18n]}})
         const zeile = (feld: string) => ansicht.findAll('tbody tr').find(tr => tr.get('th').text() === feld)!
         expect(zeile('Adresse').text()).toContain('richtig')
-        expect(zeile('Punkt').text()).toContain('0 m vom wahren Punkt')
+        expect(zeile('Punkt').text()).toContain('0 m vom richtigen Punkt')
         expect(zeile('Geschoss').text()).toContain('falsch')
         expect(zeile('Code').text()).toContain('nah dran (gleiches Protokoll)')
         expect(zeile('Rückrufnummer').classes()).toContain('text-fehler')

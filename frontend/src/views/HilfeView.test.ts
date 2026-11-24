@@ -26,7 +26,7 @@ describe('HilfeView', () => {
         const beispiele = ansicht.findAll('figure [inert]')
         expect(beispiele).toHaveLength(8)
         expect(beispiele.every(b => b.element.children.length > 0)).toBe(true)
-        for (const titel of ['Einsatzmaske', 'SNA-Fenster', 'Hinweise an den Anrufer', 'Telefonreanimation', 'Wahrheit']) {
+        for (const titel of ['Einsatzmaske', 'SNA-Fenster', 'Hinweise an den Anrufer', 'Telefonreanimation', 'Lösung']) {
             expect(ansicht.find(`figure [aria-label^="${titel}"]`).exists(), titel).toBe(true)
         }
         expect(ansicht.text()).toContain('Kräfte unterwegs')
