@@ -16,6 +16,7 @@ from szenariogenerator import (
     DRAUSSEN_PROTOKOLLE,
     DRAUSSEN_VERSATZ,
     EINRICHTUNGEN,
+    NEUGEBORENES,
     OEFFENTLICH_FUER,
     RAHMEN_JE_ART,
     SCHWANGER,
@@ -641,7 +642,7 @@ def test_beziehung_passt_zu_hand_und_alter(graph):
             continue
         assert beziehung
         gesetzt += 1
-        alter = int((szenario.antworten["rd.alter"].wert or "0").split()[-1] or 0)
+        alter = alter_aus(szenario.antworten["rd.alter"].wert or "") or 0
         if beziehung in ("Ehemann", "Ehefrau"):
             assert alter >= 20 or not szenario.antworten["rd.alter"].wert
         if beziehung in ("Sohn", "Tochter"):
@@ -769,3 +770,18 @@ def test_die_funkzelle_liegt_um_den_anrufer(graph):
         else:
             assert abstand > zelle.radius
     assert gesehen[VOR_ORT_JA] and gesehen["nein-war-nicht-vor-ort"]
+
+
+def test_saeuglinge_und_neugeborene_haben_ein_alter_in_monaten_oder_tagen(graph):
+    gesehen = set()
+    for szenario in viele(graph, 600, Erzeugung(protokoll="rd.09", anteil_ohne_adresse=0)):
+        wert = (szenario.antworten.get("rd.alter") or Wahl()).wert or ""
+        if szenario.ziel.knoten == NEUGEBORENES:
+            assert wert.endswith(" Tage") and 1 <= int(wert.split()[0]) <= 20
+            gesehen.add("tage")
+        elif wert.endswith(" Monate"):
+            assert 1 <= int(wert.split()[0]) <= 11
+            assert alter_aus(wert) == 0
+            gesehen.add("monate")
+        assert wert != "0"
+    assert gesehen == {"tage", "monate"}

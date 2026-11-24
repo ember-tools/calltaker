@@ -8,7 +8,7 @@ Whether the questioning has reached a code is decided by the view, with the same
 decide whether the call is complete, and sent as `codeErreicht`; the server only times it.
 """
 
-from typing import Annotated
+from typing import Annotated, Literal
 
 from pydantic import Field
 
@@ -86,10 +86,14 @@ class Zeiten(Modell):
 
 
 class Reanimationseintrag(Modell):
-    """The CPR guidance: whether its beat runs, and at how many beats a minute."""
+    """The CPR guidance: whether its beat runs, its beats a minute, and a chosen age group.
+
+    The group is set only when the trainee chose one over the group the age suggests.
+    """
 
     laeuft: bool = False
     takt: int = Field(100, ge=100, le=120)
+    gruppe: Literal["neugeborenes", "saeugling", "kind", "erwachsener"] | None = None
 
 
 class Anleitungseintrag(Modell):

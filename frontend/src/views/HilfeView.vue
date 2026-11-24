@@ -83,7 +83,7 @@ onBeforeUnmount(() => {
             <HilfeThema v-if="graph && eintraege" :titel="t('hilfe.trainee.hinweiseTitel')" :texte="texte('trainee.hinweise')" :mockup="t('hilfe.trainee.hinweiseMockup')">
                 <HinweisListe :model-value="eintraege" :graph="graph"/>
             </HilfeThema>
-            <HilfeThema v-if="graph" :titel="t('hilfe.trainee.reanimationTitel')" :texte="texte('trainee.reanimation')" :mockup="t('hilfe.trainee.reanimationMockup')">
+            <HilfeThema v-if="graph" :titel="t('hilfe.trainee.reanimationTitel')" :texte="texte('trainee.reanimation', 'trainee.reanimationGruppen')" :mockup="t('hilfe.trainee.reanimationMockup')">
                 <ReanimationsLeiste v-model="reanimation" :graph="graph" :eintreffen-um="jetzt + 3600" ruhig/>
             </HilfeThema>
             <HilfeThema :titel="t('hilfe.trainee.tafelTitel')" :texte="texte('trainee.tafel')" :mockup="t('hilfe.trainee.tafelMockup')">

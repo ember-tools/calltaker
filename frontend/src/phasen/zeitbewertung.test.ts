@@ -32,6 +32,16 @@ describe('reanimationBewerten', () => {
         expect(urteile(reanimationBewerten(GRAPH, sichtVon(anruf), anruf.szenario, STANDARDZIELE))).toEqual([['bewertung.reanimation', 'offen', '']])
     })
 
+    it('weist auf Schritte einer anderen Altersgruppe hin', () => {
+        const anruf = mitWahrheit(anrufMit('r', 'beendet'), [...BIS_SITUATION.map(s => s.knoten === 'rd.alter' ? {...s, wert: '8 Monate'} : s), {knoten: 'p.k0', antwort: 'schwer-2'}], 'p.e3', '17E01')
+        anruf.eintraege.zeiten = {reanimation: 1030 + 60}
+        anruf.eintraege.abfrage = {pfad: BIS_SITUATION}
+        const hinweis = reanimationBewerten(GRAPH, sichtVon(anruf), anruf.szenario, STANDARDZIELE).find(b => b.feld === 'bewertung.reanimationGruppe')
+        expect(hinweis).toMatchObject({soll: 'Säugling', ist: 'Erwachsener', urteil: 'hinweis'})
+        anruf.eintraege.reanimation = {...anruf.eintraege.reanimation, gruppe: 'saeugling'}
+        expect(reanimationBewerten(GRAPH, sichtVon(anruf), anruf.szenario, STANDARDZIELE).some(b => b.feld === 'bewertung.reanimationGruppe')).toBe(false)
+    })
+
     it('nennt einen Start ohne Stillstand als Hinweis', () => {
         const anruf = anrufMit('n', 'beendet')
         expect(reanimationBewerten(GRAPH, sichtVon(anruf), anruf.szenario, STANDARDZIELE)).toEqual([])

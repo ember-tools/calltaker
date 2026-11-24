@@ -1,6 +1,7 @@
 import type {Abfragegraph} from '../modell/abfragegraph'
 import {endergebnis, istStillstand, schwere} from '../modell/abfrageweg'
-import {reanimationFaellig} from '../modell/reanimation'
+import {i18n} from '../i18n'
+import {altersgruppe, reanimationFaellig, type Altersgruppe} from '../modell/reanimation'
 import type {Szenario} from '../modell/szenario'
 import {pfadAusAntworten} from '../modell/szenarioentwurf'
 import type {AnrufSicht} from '../modell/uebung'
@@ -70,7 +71,35 @@ export function reanimationBewerten(graph: Abfragegraph, anruf: AnrufSicht, szen
     }
     const soll = `≤ ${dauer(ziele.reanimation)}`
     if (start === undefined) return [{feld: 'bewertung.reanimation', soll, ist: '', urteil: anruf.zustand === 'beendet' ? 'falsch' : 'offen'}]
-    return [{feld: 'bewertung.reanimation', soll, ist: dauer(start), urteil: start <= ziele.reanimation ? 'richtig' : 'teilweise'}, ...amTelefon(anruf)]
+    return [{feld: 'bewertung.reanimation', soll, ist: dauer(start), urteil: start <= ziele.reanimation ? 'richtig' : 'teilweise'}, ...gruppeBewerten(graph, anruf, szenario), ...amTelefon(anruf)]
+}
+
+/**
+ * A hint, not a fault, when the CPR steps were for another age group than the affected person's:
+ * adult steps for an infant, say. Silent when the truth does not settle the age.
+ *
+ * @param graph the graph
+ * @param anruf the call as the trainer sees it
+ * @param szenario the scenario
+ * @returns the hint, or nothing
+ */
+function gruppeBewerten(graph: Abfragegraph, anruf: AnrufSicht, szenario: Szenario): Bewertung[] {
+    const wahr = altersgruppe(pfadAusAntworten(graph, szenario.antworten), graph.knoten[szenario.ziel.knoten]?.kategorie)
+    const eintraege = anruf.eintraege
+    if (!wahr.sicher || !eintraege) return []
+    const genutzt = eintraege.reanimation.gruppe ?? altersgruppe(eintraege.abfrage.pfad, endergebnis(graph, eintraege.abfrage)?.kategorie).gruppe
+    if (genutzt === wahr.gruppe) return []
+    return [{feld: 'bewertung.reanimationGruppe', soll: gruppenname(wahr.gruppe), ist: gruppenname(genutzt), urteil: 'hinweis'}]
+}
+
+/**
+ * An age group's name, as the bar shows it.
+ *
+ * @param gruppe the group
+ * @returns its name
+ */
+function gruppenname(gruppe: Altersgruppe): string {
+    return i18n.global.t(`reanimation.gruppen.${gruppe}`)
 }
 
 /**

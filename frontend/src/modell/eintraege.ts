@@ -42,7 +42,7 @@ export interface Eintraege {
     /** The instructions to the caller ticked as given, by id. */
     anleitung: {gegeben: string[]}
     /** The CPR guidance: whether its beat runs, and at how many beats a minute. */
-    reanimation: {laeuft: boolean, takt: number}
+    reanimation: {laeuft: boolean, takt: number, gruppe?: 'neugeborenes' | 'saeugling' | 'kind' | 'erwachsener'}
     /** Whether the call was handed over to dispatch; once set, the server keeps it. */
     uebergabe?: boolean
     /** The entries as they were handed over, kept by the server. */

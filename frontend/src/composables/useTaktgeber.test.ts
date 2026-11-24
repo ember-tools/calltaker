@@ -31,6 +31,35 @@ describe('useTaktgeber', () => {
         expect(schlaege.value).toBe(13)
     })
 
+    it('lässt beim Neugeborenen jeden vierten Schlag als Beatmung aus', async () => {
+        const laeuft = ref(false)
+        const {schlaege, beatmung} = useTaktgeber(() => laeuft.value, () => 120, () => true, () => 4)
+        laeuft.value = true
+        await nextTick()
+        vi.advanceTimersByTime(1500)
+        expect(schlaege.value).toBe(3)
+        expect(beatmung.value).toBe(true)
+        vi.advanceTimersByTime(500)
+        expect(beatmung.value).toBe(false)
+        vi.advanceTimersByTime(57500)
+        expect(schlaege.value).toBe(90)
+    })
+
+    it('beginnt den Zyklus neu, wenn die Gruppe zur Beatmung wechselt', async () => {
+        const laeuft = ref(false)
+        const alle = ref(0)
+        const {beatmung} = useTaktgeber(() => laeuft.value, () => 120, () => true, () => alle.value)
+        laeuft.value = true
+        await nextTick()
+        vi.advanceTimersByTime(2500)
+        alle.value = 4
+        await nextTick()
+        vi.advanceTimersByTime(1500)
+        expect(beatmung.value).toBe(false)
+        vi.advanceTimersByTime(500)
+        expect(beatmung.value).toBe(true)
+    })
+
     it('holt verpasste Schläge nicht im Schwall nach', async () => {
         const laeuft = ref(false)
         const {schlaege} = useTaktgeber(() => laeuft.value, () => 100, () => true)

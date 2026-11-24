@@ -390,10 +390,18 @@ class Person:
     vor_ort: bool = True
     hand: str = BEIM_BETROFFENEN
     alter_geschaetzt: bool = False
+    saeuglingsalter: str = ""
 
     def alter_text(self) -> str:
-        """Return the age as the caller says it: in years, or roughly, when only guessed."""
-        return f"etwa {self.alter}" if self.alter_geschaetzt else str(self.alter)
+        """Return the age as the caller says it: in years, or roughly when only guessed.
+
+        A baby's age is said in days or months, so the trainee can tell a newborn from an infant.
+        """
+        if self.alter_geschaetzt:
+            return f"etwa {self.alter}"
+        if self.alter == 0 and self.saeuglingsalter:
+            return self.saeuglingsalter
+        return str(self.alter)
 
 
 STILLSTAND = re.compile(
@@ -1010,6 +1018,11 @@ def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random
         person.alter_bekannt = person.alter_bekannt and begrenzt
         if begrenzt:
             person.alter, person.alter_geschaetzt = geschaetztes_alter(alter, unten, oben), True
+    if person.alter == 0:
+        neugeboren = endpunkt.knoten == NEUGEBORENES
+        person.saeuglingsalter = (
+            f"{zufall.randint(1, 20)} Tage" if neugeboren else f"{zufall.randint(1, 11)} Monate"
+        )
     return person
 
 
