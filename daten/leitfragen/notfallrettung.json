@@ -1,0 +1,1076 @@
+{
+  "knoten": [
+    {
+      "knoten": "rd.hauptbeschwerde",
+      "fragen": [
+        {
+          "id": "atmet-nicht",
+          "frage": "Atmet die Person nicht oder nur ganz selten und schnappend?",
+          "antworten": [
+            {
+              "label": "Ja, atmet nicht",
+              "behaelt": [
+                "kreislauf-atemstillstand-tote-person"
+              ]
+            },
+            {
+              "label": "Nein, atmet",
+              "nimmt": [
+                "kreislauf-atemstillstand-tote-person"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "hinweis": "Schnappatmung zählt als „atmet nicht“: dann sofort Kreislaufstillstand."
+        },
+        {
+          "id": "einrichtung",
+          "frage": "Rufen Sie aus einer Praxis, Klinik oder Pflegeeinrichtung an und fordern einen Transport an?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "anforderung-von-rettungsmittel-durch"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "anforderung-von-rettungsmittel-durch"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "anforderung-von-rettungsmittel-durch"
+          ]
+        },
+        {
+          "id": "art",
+          "frage": "Ist etwas passiert, etwa ein Unfall, ein Sturz oder Gewalt, oder ist die Person krank geworden?",
+          "antworten": [
+            {
+              "label": "Etwas ist passiert",
+              "behaelt": [
+                "allergie-ueberreaktion-kontakt-mit",
+                "tierbiss-tierangriff",
+                "koerperverletzung-sexualdelikt",
+                "verbrennungen-verbruehungen-explosion",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn",
+                "atemwegsverlegung-durch-fremdkoerper",
+                "ertrinken-beinahe-ertrinken-kopfsprung",
+                "stromunfall-blitzschlag",
+                "augenprobleme-verletzungen",
+                "sturz-absturz",
+                "hitze-kaelteprobleme",
+                "blutung-wunden",
+                "unzugaengliche-verschuettete",
+                "ueberdosis-vergiftung-einnahme",
+                "stich-schuss-pfaehlungsverletzung",
+                "verkehrsunfall",
+                "verletzungen",
+                "bewusstlosigkeit-ohnmacht-beinahe",
+                "unklares-geschehen-person-in-notlage",
+                "anforderung-von-rettungsmittel-durch",
+                "aum-automatische-unfallmeldung",
+                "amoklage"
+              ]
+            },
+            {
+              "label": "Krank geworden",
+              "behaelt": [
+                "bauchschmerzen-beschwerden",
+                "allergie-ueberreaktion-kontakt-mit",
+                "rueckenschmerzen-nicht-traumatische",
+                "atembeschwerden",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn",
+                "kreislauf-atemstillstand-tote-person",
+                "brustschmerzen-andere-beschwerden-in-der",
+                "atemwegsverlegung-durch-fremdkoerper",
+                "krampfanfall",
+                "blutzuckerentgleisungen",
+                "augenprobleme-verletzungen",
+                "kopfschmerzen",
+                "herzbeschwerden-implantierter",
+                "hitze-kaelteprobleme",
+                "blutung-wunden",
+                "ueberdosis-vergiftung-einnahme",
+                "schwangerschaft-geburt-fehlgeburt",
+                "psychiatrie-abnormales-verhalten",
+                "kranke-person-spezielle-krankheitsbilder",
+                "schlaganfall-transitorische-ischaemische",
+                "bewusstlosigkeit-ohnmacht-beinahe",
+                "unklares-geschehen-person-in-notlage",
+                "anforderung-von-rettungsmittel-durch"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "hinweis": "Sturz nach Umkippen, Vergiftung oder Verschlucken: beides ist möglich."
+        },
+        {
+          "id": "was-passiert",
+          "frage": "Was ist passiert?",
+          "antworten": [
+            {
+              "label": "Verkehrsunfall",
+              "behaelt": [
+                "verkehrsunfall",
+                "aum-automatische-unfallmeldung"
+              ]
+            },
+            {
+              "label": "Angriff oder Gewalt",
+              "behaelt": [
+                "koerperverletzung-sexualdelikt",
+                "stich-schuss-pfaehlungsverletzung",
+                "amoklage"
+              ]
+            },
+            {
+              "label": "Tier oder Stich",
+              "behaelt": [
+                "tierbiss-tierangriff",
+                "allergie-ueberreaktion-kontakt-mit"
+              ]
+            },
+            {
+              "label": "Feuer, Explosion, Strom, Gas, Hitze oder Kälte",
+              "behaelt": [
+                "verbrennungen-verbruehungen-explosion",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn",
+                "stromunfall-blitzschlag",
+                "hitze-kaelteprobleme"
+              ]
+            },
+            {
+              "label": "Etwas verschluckt oder eingenommen",
+              "behaelt": [
+                "atemwegsverlegung-durch-fremdkoerper",
+                "ueberdosis-vergiftung-einnahme",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn"
+              ]
+            },
+            {
+              "label": "Wasser",
+              "behaelt": [
+                "ertrinken-beinahe-ertrinken-kopfsprung"
+              ]
+            },
+            {
+              "label": "Sturz",
+              "behaelt": [
+                "sturz-absturz",
+                "bewusstlosigkeit-ohnmacht-beinahe",
+                "stich-schuss-pfaehlungsverletzung"
+              ]
+            },
+            {
+              "label": "Eingeklemmt oder verschüttet",
+              "behaelt": [
+                "unzugaengliche-verschuettete"
+              ]
+            },
+            {
+              "label": "Blutung oder andere Verletzung",
+              "behaelt": [
+                "blutung-wunden",
+                "verletzungen",
+                "augenprobleme-verletzungen",
+                "stich-schuss-pfaehlungsverletzung"
+              ]
+            },
+            {
+              "label": "Unklar, jemand liegt hilflos da",
+              "behaelt": [
+                "unklares-geschehen-person-in-notlage"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "tierbiss-tierangriff",
+            "koerperverletzung-sexualdelikt",
+            "verbrennungen-verbruehungen-explosion",
+            "ertrinken-beinahe-ertrinken-kopfsprung",
+            "stromunfall-blitzschlag",
+            "sturz-absturz",
+            "unzugaengliche-verschuettete",
+            "stich-schuss-pfaehlungsverletzung",
+            "verkehrsunfall",
+            "verletzungen",
+            "aum-automatische-unfallmeldung",
+            "amoklage"
+          ]
+        },
+        {
+          "id": "hauptproblem",
+          "frage": "Was ist das Hauptproblem?",
+          "antworten": [
+            {
+              "label": "Atemnot",
+              "behaelt": [
+                "atembeschwerden",
+                "allergie-ueberreaktion-kontakt-mit",
+                "brustschmerzen-andere-beschwerden-in-der",
+                "herzbeschwerden-implantierter",
+                "atemwegsverlegung-durch-fremdkoerper",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn"
+              ]
+            },
+            {
+              "label": "Schmerzen",
+              "behaelt": [
+                "bauchschmerzen-beschwerden",
+                "rueckenschmerzen-nicht-traumatische",
+                "brustschmerzen-andere-beschwerden-in-der",
+                "kopfschmerzen",
+                "herzbeschwerden-implantierter",
+                "augenprobleme-verletzungen",
+                "schwangerschaft-geburt-fehlgeburt"
+              ]
+            },
+            {
+              "label": "Bewusstlos, Krampf, Lähmung oder Sprachstörung",
+              "behaelt": [
+                "bewusstlosigkeit-ohnmacht-beinahe",
+                "krampfanfall",
+                "blutzuckerentgleisungen",
+                "schlaganfall-transitorische-ischaemische",
+                "ueberdosis-vergiftung-einnahme"
+              ]
+            },
+            {
+              "label": "Verhalten oder Vergiftung",
+              "behaelt": [
+                "psychiatrie-abnormales-verhalten",
+                "ueberdosis-vergiftung-einnahme",
+                "blutzuckerentgleisungen",
+                "schlaganfall-transitorische-ischaemische"
+              ]
+            },
+            {
+              "label": "Blutung",
+              "behaelt": [
+                "blutung-wunden",
+                "schwangerschaft-geburt-fehlgeburt"
+              ]
+            },
+            {
+              "label": "Herzrasen oder Herzstolpern",
+              "behaelt": [
+                "herzbeschwerden-implantierter",
+                "brustschmerzen-andere-beschwerden-in-der"
+              ]
+            },
+            {
+              "label": "Schwangerschaft",
+              "behaelt": [
+                "schwangerschaft-geburt-fehlgeburt"
+              ]
+            },
+            {
+              "label": "Allgemein krank oder anderes",
+              "behaelt": [
+                "kranke-person-spezielle-krankheitsbilder",
+                "unklares-geschehen-person-in-notlage",
+                "anforderung-von-rettungsmittel-durch",
+                "hitze-kaelteprobleme",
+                "augenprobleme-verletzungen",
+                "allergie-ueberreaktion-kontakt-mit",
+                "blutzuckerentgleisungen",
+                "schlaganfall-transitorische-ischaemische",
+                "herzbeschwerden-implantierter"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "bauchschmerzen-beschwerden",
+            "rueckenschmerzen-nicht-traumatische",
+            "atembeschwerden",
+            "brustschmerzen-andere-beschwerden-in-der",
+            "krampfanfall",
+            "blutzuckerentgleisungen",
+            "kopfschmerzen",
+            "herzbeschwerden-implantierter",
+            "schwangerschaft-geburt-fehlgeburt",
+            "psychiatrie-abnormales-verhalten",
+            "kranke-person-spezielle-krankheitsbilder",
+            "schlaganfall-transitorische-ischaemische"
+          ]
+        },
+        {
+          "id": "verkehr",
+          "frage": "Ist es ein Verkehrsunfall?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "verkehrsunfall",
+                "aum-automatische-unfallmeldung"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "verkehrsunfall",
+                "aum-automatische-unfallmeldung"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "verkehrsunfall",
+            "aum-automatische-unfallmeldung"
+          ]
+        },
+        {
+          "id": "gewalt",
+          "frage": "Wurde die Person angegriffen oder bedroht?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "koerperverletzung-sexualdelikt",
+                "stich-schuss-pfaehlungsverletzung",
+                "amoklage"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "koerperverletzung-sexualdelikt",
+                "stich-schuss-pfaehlungsverletzung",
+                "amoklage"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "koerperverletzung-sexualdelikt",
+            "stich-schuss-pfaehlungsverletzung",
+            "amoklage"
+          ]
+        },
+        {
+          "id": "amok",
+          "frage": "Greift gerade jemand viele Menschen an?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "amoklage"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "amoklage"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "hinweis": "Eigene Sicherheit zuerst: Anrufer soll sich verstecken.",
+          "wenn": [
+            "amoklage"
+          ]
+        },
+        {
+          "id": "waffe",
+          "frage": "Gibt es eine Stich- oder Schusswunde oder steckt etwas in der Wunde?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "stich-schuss-pfaehlungsverletzung"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "stich-schuss-pfaehlungsverletzung"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "stich-schuss-pfaehlungsverletzung"
+          ]
+        },
+        {
+          "id": "tier",
+          "frage": "Hat ein Tier gebissen oder angegriffen, etwa ein Hund oder eine Katze?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "tierbiss-tierangriff"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "tierbiss-tierangriff"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "tierbiss-tierangriff"
+          ],
+          "hinweis": "Stiche von Insekten oder giftigen Tieren gehören zu Allergie."
+        },
+        {
+          "id": "feuer",
+          "frage": "Ist es durch Feuer, eine Explosion, Strom, Rauch, Gas, Hitze oder Kälte passiert?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "verbrennungen-verbruehungen-explosion",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn",
+                "stromunfall-blitzschlag",
+                "hitze-kaelteprobleme"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "verbrennungen-verbruehungen-explosion",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn",
+                "stromunfall-blitzschlag"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "verbrennungen-verbruehungen-explosion",
+            "kohlenmonoxid-inhalation-gefahrgut-cbrn",
+            "stromunfall-blitzschlag"
+          ]
+        },
+        {
+          "id": "strom",
+          "frage": "War Strom oder ein Blitz im Spiel?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "stromunfall-blitzschlag"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "stromunfall-blitzschlag"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "hinweis": "Erst fragen, ob die Person noch mit der Stromquelle verbunden ist. Ein Elektroschocker gehört zu Körperverletzung.",
+          "wenn": [
+            "stromunfall-blitzschlag"
+          ]
+        },
+        {
+          "id": "verbrannt",
+          "frage": "Ist die Haut verbrannt oder verbrüht, oder gab es eine Explosion?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "verbrennungen-verbruehungen-explosion"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "verbrennungen-verbruehungen-explosion"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "verbrennungen-verbruehungen-explosion"
+          ]
+        },
+        {
+          "id": "gas",
+          "frage": "Hat die Person Rauch, Gas oder Chemikalien eingeatmet?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "kohlenmonoxid-inhalation-gefahrgut-cbrn"
+          ]
+        },
+        {
+          "id": "temperatur",
+          "frage": "Ist die Person überhitzt oder stark unterkühlt?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "hitze-kaelteprobleme"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "hitze-kaelteprobleme"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "hitze-kaelteprobleme"
+          ]
+        },
+        {
+          "id": "wasser",
+          "frage": "Ist es im oder am Wasser passiert?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "ertrinken-beinahe-ertrinken-kopfsprung"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "ertrinken-beinahe-ertrinken-kopfsprung"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "ertrinken-beinahe-ertrinken-kopfsprung"
+          ]
+        },
+        {
+          "id": "eingeklemmt",
+          "frage": "Ist die Person eingeklemmt, verschüttet oder kommt nicht heraus?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "unzugaengliche-verschuettete"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "unzugaengliche-verschuettete"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "unzugaengliche-verschuettete"
+          ]
+        },
+        {
+          "id": "bewusstlos",
+          "frage": "Ist die Person bewusstlos oder war sie kurz weg?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "bewusstlosigkeit-ohnmacht-beinahe",
+                "krampfanfall",
+                "blutzuckerentgleisungen",
+                "ueberdosis-vergiftung-einnahme",
+                "sturz-absturz",
+                "schlaganfall-transitorische-ischaemische",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn",
+                "allergie-ueberreaktion-kontakt-mit",
+                "atemwegsverlegung-durch-fremdkoerper",
+                "hitze-kaelteprobleme"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "bewusstlosigkeit-ohnmacht-beinahe"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "bewusstlosigkeit-ohnmacht-beinahe"
+          ]
+        },
+        {
+          "id": "gestuerzt",
+          "frage": "Ist die Person gestürzt oder abgestürzt?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "sturz-absturz",
+                "bewusstlosigkeit-ohnmacht-beinahe"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "sturz-absturz"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "sturz-absturz"
+          ],
+          "hinweis": "Nach Umkippen passen Sturz und Bewusstlosigkeit; der Sturz hat eigene Situationen mit Ohnmacht."
+        },
+        {
+          "id": "krampf",
+          "frage": "Hat die Person gekrampft oder gezuckt?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "krampfanfall"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "krampfanfall"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "krampfanfall"
+          ]
+        },
+        {
+          "id": "verschluckt",
+          "frage": "Hat sich die Person verschluckt, steckt etwas im Hals?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "atemwegsverlegung-durch-fremdkoerper"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "atemwegsverlegung-durch-fremdkoerper"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "atemwegsverlegung-durch-fremdkoerper"
+          ]
+        },
+        {
+          "id": "luft",
+          "frage": "Bekommt die Person schlecht Luft?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "atembeschwerden",
+                "allergie-ueberreaktion-kontakt-mit",
+                "brustschmerzen-andere-beschwerden-in-der",
+                "herzbeschwerden-implantierter",
+                "atemwegsverlegung-durch-fremdkoerper",
+                "kohlenmonoxid-inhalation-gefahrgut-cbrn"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "atembeschwerden"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "atembeschwerden"
+          ]
+        },
+        {
+          "id": "allergie",
+          "frage": "Hat die Person eine allergische Reaktion oder wurde sie gestochen?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "allergie-ueberreaktion-kontakt-mit"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "allergie-ueberreaktion-kontakt-mit"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "allergie-ueberreaktion-kontakt-mit"
+          ]
+        },
+        {
+          "id": "brust",
+          "frage": "Hat die Person Schmerzen oder Druck in der Brust oder Herzbeschwerden?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "brustschmerzen-andere-beschwerden-in-der",
+                "herzbeschwerden-implantierter"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "brustschmerzen-andere-beschwerden-in-der",
+                "herzbeschwerden-implantierter"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "hinweis": "Auch Ziehen in Arm, Kiefer oder Rücken zählt.",
+          "wenn": [
+            "brustschmerzen-andere-beschwerden-in-der",
+            "herzbeschwerden-implantierter"
+          ]
+        },
+        {
+          "id": "herz",
+          "frage": "Hat die Person einen Herzschrittmacher oder Defibrillator, oder spürt sie Herzrasen oder Herzstolpern?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "herzbeschwerden-implantierter"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "herzbeschwerden-implantierter"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "herzbeschwerden-implantierter"
+          ]
+        },
+        {
+          "id": "schlaganfall",
+          "frage": "Hängt ein Mundwinkel, ist ein Arm schwach oder spricht die Person plötzlich verwaschen?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "schlaganfall-transitorische-ischaemische"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "schlaganfall-transitorische-ischaemische"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "hinweis": "Wann haben die Beschwerden angefangen? Die Zeit ist wichtig.",
+          "wenn": [
+            "schlaganfall-transitorische-ischaemische"
+          ]
+        },
+        {
+          "id": "zucker",
+          "frage": "Hat die Person Diabetes (Zucker)?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "blutzuckerentgleisungen"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "blutzuckerentgleisungen"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "hinweis": "Typisch: verwirrt, zittrig, verschwitzt oder nicht mehr ansprechbar.",
+          "wenn": [
+            "blutzuckerentgleisungen"
+          ]
+        },
+        {
+          "id": "einnahme",
+          "frage": "Hat die Person zu viel von etwas genommen: Medikamente, Drogen, Alkohol oder etwas Giftiges?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "ueberdosis-vergiftung-einnahme"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "ueberdosis-vergiftung-einnahme"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "ueberdosis-vergiftung-einnahme"
+          ]
+        },
+        {
+          "id": "schwanger",
+          "frage": "Ist die Person schwanger oder hat sie gerade entbunden?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "schwangerschaft-geburt-fehlgeburt"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "schwangerschaft-geburt-fehlgeburt"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "schwangerschaft-geburt-fehlgeburt"
+          ]
+        },
+        {
+          "id": "psyche",
+          "frage": "Verhält sich die Person seltsam, hat sie große Angst oder spricht sie davon, sich etwas anzutun?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "psychiatrie-abnormales-verhalten"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "psychiatrie-abnormales-verhalten"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "psychiatrie-abnormales-verhalten"
+          ]
+        },
+        {
+          "id": "blutung",
+          "frage": "Blutet die Person stark?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "blutung-wunden"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "blutung-wunden"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "blutung-wunden"
+          ]
+        },
+        {
+          "id": "auge",
+          "frage": "Ist vor allem ein Auge betroffen?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "augenprobleme-verletzungen"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "augenprobleme-verletzungen"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "augenprobleme-verletzungen"
+          ]
+        },
+        {
+          "id": "schmerz-wo",
+          "frage": "Wo hat die Person Schmerzen?",
+          "antworten": [
+            {
+              "label": "Bauch",
+              "behaelt": [
+                "bauchschmerzen-beschwerden"
+              ]
+            },
+            {
+              "label": "Rücken",
+              "behaelt": [
+                "rueckenschmerzen-nicht-traumatische"
+              ]
+            },
+            {
+              "label": "Kopf",
+              "behaelt": [
+                "kopfschmerzen"
+              ]
+            },
+            {
+              "label": "Eine Verletzung",
+              "behaelt": [
+                "verletzungen"
+              ]
+            },
+            {
+              "label": "Keine klaren Schmerzen",
+              "nimmt": [
+                "bauchschmerzen-beschwerden",
+                "rueckenschmerzen-nicht-traumatische",
+                "kopfschmerzen"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "bauchschmerzen-beschwerden",
+            "rueckenschmerzen-nicht-traumatische",
+            "kopfschmerzen",
+            "verletzungen"
+          ]
+        },
+        {
+          "id": "unklar",
+          "frage": "Liegt jemand hilflos da, und es ist unklar, was passiert ist?",
+          "antworten": [
+            {
+              "label": "Ja",
+              "behaelt": [
+                "unklares-geschehen-person-in-notlage"
+              ]
+            },
+            {
+              "label": "Nein",
+              "nimmt": [
+                "unklares-geschehen-person-in-notlage"
+              ]
+            },
+            {
+              "label": "Weiß nicht"
+            }
+          ],
+          "wenn": [
+            "unklares-geschehen-person-in-notlage"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -3,7 +3,7 @@ import {computed, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Antwort} from '../modell/abfragegraph'
 
-const props = withDefaults(defineProps<{antworten: Antwort[], weitere?: Antwort[], zusaetze: Map<string, string>, farbe?: string}>(), {weitere: () => [], farbe: 'rd'})
+const props = withDefaults(defineProps<{antworten: Antwort[], weitere?: Antwort[], zusaetze: Map<string, string>, farbe?: string, passend?: ReadonlySet<string>, vorgeschlagen?: readonly string[]}>(), {weitere: () => [], farbe: 'rd', passend: undefined, vorgeschlagen: () => []})
 const emit = defineEmits<{waehlen: [antwortId: string]}>()
 
 /** How long a typed digit waits for a second one, so "1" then "0" picks tile 10. */
@@ -21,6 +21,18 @@ const FARBEN: Record<string, {kachel: string, nummer: string}> = {
     brand: {kachel: 'border-red-300 bg-red-100 text-red-950', nummer: 'bg-red-300'},
     fw: {kachel: 'border-red-300 bg-red-100 text-red-950', nummer: 'bg-red-300'},
     th: {kachel: 'border-amber-300 bg-amber-100 text-amber-950', nummer: 'bg-amber-300'},
+}
+
+/**
+ * How the guidance questions mark a tile: suggested ones stand out, ones they ruled out are
+ * dimmed but stay clickable.
+ *
+ * @param antwort the answer
+ * @returns the classes for its state
+ */
+function leitklasse(antwort: Antwort): string {
+    if (props.vorgeschlagen.includes(antwort.id)) return 'ring-3 ring-sky-600 ring-offset-1'
+    return props.passend && !props.passend.has(antwort.id) ? 'opacity-40' : ''
 }
 
 /**
@@ -65,11 +77,13 @@ function fokussieren(): void {
 defineExpose({fokussieren})
 
 /**
- * Reads digits and Enter while the tiles have the focus; a full match picks at once.
+ * Reads digits and Enter while the tiles have the focus; a full match picks at once. Keys with
+ * Alt, Ctrl or Cmd belong to others, such as the guidance questions.
  *
  * @param ereignis the key pressed
  */
 function taste(ereignis: KeyboardEvent): void {
+    if (ereignis.altKey || ereignis.ctrlKey || ereignis.metaKey) return
     if (ereignis.target instanceof HTMLInputElement && !/^\d$/.test(ereignis.key)) {
         if (ereignis.key !== 'Enter') return
         ereignis.preventDefault()
@@ -102,7 +116,7 @@ function taste(ereignis: KeyboardEvent): void {
                 v-for="{antwort, nummer} in sichtbar"
                 :key="antwort.id"
                 type="button"
-                :class="['flex min-h-16 items-stretch overflow-hidden rounded-md border p-0 text-left font-semibold', farbeVon(antwort).kachel, nummer === markiert ? 'outline-3 outline-offset-1 outline-slate-900' : '']"
+                :class="['flex min-h-16 items-stretch overflow-hidden rounded-md border p-0 text-left font-semibold', farbeVon(antwort).kachel, nummer === markiert ? 'outline-3 outline-offset-1 outline-slate-900' : '', leitklasse(antwort)]"
                 @click="waehlen(nummer)"
                 @keydown="taste"
             >

@@ -23,20 +23,14 @@
         {
           "id": "einzelne-wohnung",
           "label": "Einzelne Wohnung",
-          "ziel": "fw.th.wasserschaden.k3",
+          "ziel": "fw.th.wasserschaden.strom-einzelne-wohnung",
           "aussage": "Betroffen ist eine einzelne Wohnung."
         },
         {
           "id": "mehrere-geschosse",
           "label": "Mehrere Geschosse",
-          "ziel": "fw.th.wasserschaden.k4",
+          "ziel": "fw.th.wasserschaden.strom-mehrere-geschosse",
           "aussage": "Mehrere Geschosse sind betroffen."
-        },
-        {
-          "id": "elektroanlage-betroffen",
-          "label": "Elektroanlage betroffen",
-          "ziel": "fw.th.wasserschaden.k5",
-          "aussage": "Die Elektroanlage ist betroffen."
         }
       ]
     },
@@ -46,7 +40,7 @@
         {
           "id": "keller",
           "label": "Keller",
-          "ziel": "fw.th.wasserschaden.k6",
+          "ziel": "fw.th.wasserschaden.strom-keller",
           "aussage": "Ein Keller steht unter Wasser."
         },
         {
@@ -54,6 +48,60 @@
           "label": "Tiefgarage oder Unterführung",
           "ziel": "fw.th.wasserschaden.k7",
           "aussage": "Eine Tiefgarage oder Unterführung steht unter Wasser."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.strom-einzelne-wohnung": {
+      "frage": "Ist Strom im Spiel: stehen Steckdosen, Geräte oder der Sicherungskasten unter Wasser?",
+      "hinweis": "Nicht ins Wasser treten. Die Sicherung nur aus dem Trockenen ausschalten.",
+      "antworten": [
+        {
+          "id": "ja-strom-im-spiel",
+          "label": "Ja, Strom im Spiel",
+          "ziel": "fw.th.wasserschaden.k5",
+          "aussage": "Elektrische Anlagen stehen unter Wasser."
+        },
+        {
+          "id": "nein-kein-strom",
+          "label": "Nein, kein Strom im Spiel",
+          "ziel": "fw.th.wasserschaden.k3",
+          "aussage": "Elektrische Anlagen sind nicht betroffen."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.strom-mehrere-geschosse": {
+      "frage": "Ist Strom im Spiel: stehen Steckdosen, Geräte oder der Sicherungskasten unter Wasser?",
+      "hinweis": "Nicht ins Wasser treten. Die Sicherung nur aus dem Trockenen ausschalten.",
+      "antworten": [
+        {
+          "id": "ja-strom-im-spiel",
+          "label": "Ja, Strom im Spiel",
+          "ziel": "fw.th.wasserschaden.k5",
+          "aussage": "Elektrische Anlagen stehen unter Wasser."
+        },
+        {
+          "id": "nein-kein-strom",
+          "label": "Nein, kein Strom im Spiel",
+          "ziel": "fw.th.wasserschaden.k4",
+          "aussage": "Elektrische Anlagen sind nicht betroffen."
+        }
+      ]
+    },
+    "fw.th.wasserschaden.strom-keller": {
+      "frage": "Ist Strom im Spiel: stehen Steckdosen, Geräte oder der Sicherungskasten unter Wasser?",
+      "hinweis": "Nicht ins Wasser treten. Die Sicherung nur aus dem Trockenen ausschalten.",
+      "antworten": [
+        {
+          "id": "ja-strom-im-spiel",
+          "label": "Ja, Strom im Spiel",
+          "ziel": "fw.th.wasserschaden.k5",
+          "aussage": "Elektrische Anlagen stehen unter Wasser."
+        },
+        {
+          "id": "nein-kein-strom",
+          "label": "Nein, kein Strom im Spiel",
+          "ziel": "fw.th.wasserschaden.k6",
+          "aussage": "Elektrische Anlagen sind nicht betroffen."
         }
       ]
     },

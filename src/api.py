@@ -9,6 +9,7 @@ from fastapi.responses import Response
 import anleitungen
 import beschwerden
 import gefahrstoffe
+import leitfragen
 from abfrage import Abfragegraph, laden
 from einstellungen import einstellungen
 from pool import Pool, PoolVoll, UngueltigeDatei, befunde_nach_aussen
@@ -26,7 +27,7 @@ async def gesundheit() -> dict[str, str]:
 
 @router.get("/abfrage")
 async def abfrage() -> Response:
-    """Return the question graph with its code index, as the frontend loads it."""
+    """Return the question graph with its code index, instructions and guidance questions."""
     return Response(content=abfragebuendel(), media_type="application/json")
 
 
@@ -79,6 +80,12 @@ def beschwerdekatalog() -> list[beschwerden.Lage]:
 
 
 @lru_cache
+def leitfragenkatalog() -> list[leitfragen.Knotenleitfragen]:
+    """Load and check the guidance questions once per process."""
+    return leitfragen.laden(einstellungen().leitfragen_verzeichnis, abfragegraph())
+
+
+@lru_cache
 def gefahrstoffe_geladen() -> list[gefahrstoffe.Stoff]:
     """Load the hazardous goods once per process."""
     return gefahrstoffe.laden(einstellungen().gefahrstoffe_verzeichnis)
@@ -96,10 +103,11 @@ def gefahrstoffbuendel() -> bytes:
 
 @lru_cache
 def abfragebuendel() -> bytes:
-    """Serialise the question graph and the instructions for the frontend once per process."""
+    """Serialise the graph, the instructions and the guidance questions once per process."""
     buendel = {
         **abfragegraph().buendel(),
         "anleitungen": anleitungen.nach_aussen(anleitungskatalog()),
+        "leitfragen": leitfragen.nach_aussen(leitfragenkatalog()),
         "wohnungsprotokolle": sorted(WOHNUNGSPROTOKOLLE),
     }
     return json.dumps(buendel, ensure_ascii=False, separators=(",", ":")).encode()

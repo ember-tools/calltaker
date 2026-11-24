@@ -8,6 +8,8 @@ import {mitKorrektur} from '../modell/eintraege'
 import {dauer, useUhr} from '../composables/useUhr'
 import {anzeigen} from '../modell/rufnummer'
 import {leitfaden} from '../modell/leitfaden'
+import {antwortAusLoesung, leitfragenAn, leitstand} from '../modell/leitfragen'
+import {aktuellerKnoten} from '../modell/abfrageweg'
 import {nachtraege} from '../modell/uebergabe'
 import {tafelDerWahrheit} from '../modell/warntafel'
 import {sichtVon, type Anruf} from '../modell/uebung'
@@ -52,6 +54,16 @@ const jetzt = computed(() => {
     if (hier?.knoten === props.graph.meta.wurzel) return {frage: hier.frage, soll: t('leitfaden.wurzel')}
     return hier ? {frage: hier.frage, soll: hier.soll} : vergleich.value.abseits
 })
+const leitfrage = computed(() => {
+    const eintraege = props.anruf.eintraege
+    const knotenId = aktuellerKnoten(props.graph, eintraege.abfrage.pfad).knoten
+    const eintrag = leitfragenAn(props.graph, knotenId)
+    const kacheln = (props.graph.knoten[knotenId]?.antworten ?? []).map(antwort => antwort.id)
+    if (!eintrag || props.anruf.zustand === 'beendet') return undefined
+    const stand = leitstand(eintrag, kacheln, eintraege.leitfragen ?? [])
+    if (!stand.frage) return undefined
+    return {frage: stand.frage.frage, antworten: antwortAusLoesung(eintrag, stand.frage, stand.kacheln, szenario.value.antworten)}
+})
 const erreichbar = computed(() => {
     const anrufer = szenario.value.anrufer
     return anrufer.rueckrufnummer && anrufer.rueckrufnummer !== anrufer.rufnummer ? anzeigen(anrufer.rueckrufnummer) : ''
@@ -78,6 +90,7 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
                     <li v-for="(punkt, nummer) in stichpunkte" :key="`${nummer}-${punkt.schluessel}`" class="whitespace-pre-line">{{ t(punkt.schluessel, punkt.werte ?? {}) }}</li>
                 </ul>
                 <p v-if="jetzt" class="m-0 rounded bg-amber-100 px-2 py-1" role="status">{{ t('leitfaden.jetzt', {frage: jetzt.frage}) }} <b>{{ jetzt.soll ?? t('wahrheit.improvisieren') }}</b></p>
+                <p v-if="leitfrage" class="m-0 rounded bg-sky-100 px-2 py-1">{{ t('leitfragen.loesungFrage', {frage: leitfrage.frage}) }} <b>{{ leitfrage.antworten.length ? leitfrage.antworten.join(t('leitfragen.oder')) : t('leitfragen.frei') }}</b></p>
             </section>
             <p v-if="anruf.eintraege.zeiten.uebergabe" class="m-0 font-semibold text-ok">{{ t('uebergabe.erfolgt', {dauer: dauer(anruf.eintraege.zeiten.uebergabe - (anruf.angenommenUm ?? anruf.eintraege.zeiten.uebergabe))}) }}<span v-if="nachgetragen.length" class="font-normal text-akzent"> · {{ t('uebergabe.nachgetragen', {teile: nachgetragen.join(', ')}) }}</span></p>
             <p v-else-if="anruf.zustand === 'gespraech' || anruf.zustand === 'beendet'" class="m-0 text-gedaempft">{{ t('uebergabe.nicht') }}</p>
@@ -111,7 +124,7 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
                 <span class="w-32 shrink-0">{{ bewertung.beschriftung ?? t(bewertung.feld) }}</span>
                 <span v-if="bewertung.abstand !== undefined">{{ t('wahrheit.abstand', {meter: bewertung.abstand}) }}</span>
                 <span v-else-if="bewertung.urteil === 'offen'">{{ t('wahrheit.offen') }}</span>
-                <span v-else>{{ bewertung.ist }}<template v-if="bewertung.urteil === 'falsch' || bewertung.urteil === 'teilweise'"> · {{ t('wahrheit.soll', {soll: bewertung.soll}) }}</template><template v-if="bewertung.stufe && bewertung.stufe !== 'exakt'"> ({{ t(`stufe.${bewertung.stufe}`) }})</template></span>
+                <span v-else>{{ bewertung.ist }}<template v-if="bewertung.urteil === 'falsch' || bewertung.urteil === 'teilweise' || (bewertung.urteil === 'hinweis' && bewertung.soll)"> · {{ t('wahrheit.soll', {soll: bewertung.soll}) }}</template><template v-if="bewertung.stufe && bewertung.stufe !== 'exakt'"> ({{ t(`stufe.${bewertung.stufe}`) }})</template></span>
                 <button v-if="bewertung.anleitung" type="button" class="ml-auto shrink-0 text-xs underline" @click="emit('korrigieren', bewertung.anleitung, !bewertung.gegeben)"><FontAwesomeIcon :icon="bewertung.gegeben ? faXmark : faCheck" class="mr-1" aria-hidden="true"/>{{ bewertung.gegeben ? t('wahrheit.nichtGegeben') : t('wahrheit.gegeben') }}</button>
             </li>
         </ul>

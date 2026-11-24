@@ -27,6 +27,13 @@ from stimmigkeit import pfadtext
 PRONOMEN = {"Er": "Sie", "er": "sie", "ihn": "sie", "ihm": "ihr"}
 PLATZHALTER = re.compile(r"\{(\w+)\}")
 NORMALE_ATMUNG = "ja-normale-atmung"
+BEWUSSTLOS = r"\bbewusstlos\b|bewusstlosigkeit:"
+WIDERSPRUECHE = (
+    ("atemnot", r"normaler? atmung"),
+    ("wach", BEWUSSTLOS),
+    ("reagiert", BEWUSSTLOS),
+    ("eingetruebt", r"verhält sich normal"),
+)
 Zeichen = Literal["eingetruebt", "atemnot", "wach", "reagiert"]
 REAGIERT_NICHT = "reagiert-nicht"
 
@@ -74,6 +81,18 @@ class Beschwerde(Eingrenzung):
         if "reagiert" in self.zeigt and reaktion == REAGIERT_NICHT:
             return False
         return not ("atemnot" in self.zeigt and atmung == NORMALE_ATMUNG)
+
+    def passt_zur_situation(self, situation: str) -> bool:
+        """Tell whether the complaint agrees with the situation the code's path names.
+
+        `situation` is the text of the answers after the protocol choice: no shortness of breath
+        where it says the breathing is normal, nobody awake or reacting where it says unconscious,
+        no clouded mind where it says the person behaves normally.
+        """
+        for zeichen, muster in WIDERSPRUECHE:
+            if zeichen in self.zeigt and re.search(muster, situation):
+                return False
+        return True
 
 
 class Lage(Eingrenzung):

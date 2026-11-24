@@ -12,11 +12,15 @@ import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustan
 import type {Uebergabebereitschaft} from '../modell/uebergabe'
 import {GEFAHRENZAHL, type Warntafel} from '../modell/gefahrstoffe'
 import {wertAusTafel} from '../modell/warntafel'
+import type {Leitfrageneintrag} from '../modell/eintraege'
+import {leitfragenAn, leitstand} from '../modell/leitfragen'
+import LeitfragenSpalte from './LeitfragenSpalte.vue'
 import SnaKacheln from './SnaKacheln.vue'
 import WarntafelFeld from './WarntafelFeld.vue'
 
-const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, gesperrt: boolean, seit?: number, uebergabe?: Uebergabebereitschaft, uebergebenUm?: number}>()
+const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, gesperrt: boolean, seit?: number, uebergabe?: Uebergabebereitschaft, uebergebenUm?: number, ruhig?: boolean}>()
 const abfrage = defineModel<Abfrageeintrag>({required: true})
+const leitfragen = defineModel<Leitfrageneintrag[]>('leitfragen', {default: () => []})
 const emit = defineEmits<{sofort: [], uebergeben: []}>()
 
 const {t} = useI18n()
@@ -49,6 +53,9 @@ const ende = computed(() => endergebnis(props.graph, abfrage.value))
 const zwischen = computed(() => zwischenergebnis(props.graph, abfrage.value, props.schwerste))
 const protokoll = computed(() => gewaehltesProtokoll(props.graph, abfrage.value.pfad))
 const fachrichtung = computed(() => fachrichtungImPfad(props.graph, abfrage.value.pfad))
+const leitung = computed(() => (knoten.value?.antworten ? leitfragenAn(props.graph, stand.value.knoten) : undefined))
+const leitAntworten = computed(() => [...ordnung.value.vorn, ...ordnung.value.weitere])
+const leitStand = computed(() => (leitung.value ? leitstand(leitung.value, leitAntworten.value.map(a => a.id), leitfragen.value) : undefined))
 const zusaetze = computed(() => (knoten.value ? unterscheidungen(knoten.value, props.schwerste, props.graph) : new Map<string, string>()))
 const hoeher = computed(() => (protokoll.value?.protokoll ? hoehereEndpunkte(props.graph, protokoll.value.protokoll, zwischen.value?.kategorie ?? '', zwischen.value?.code) : []))
 const pfadText = computed(() => abfrage.value.pfad.map(schritt => {
@@ -100,9 +107,15 @@ function beginnen(): void {
     void nextTick(fokussieren)
 }
 
-/** Puts the focus on the first tile or field of the question, so the trainee can type at once. */
+/**
+ * Puts the focus on the first tile or field of the question, so the trainee can type at once;
+ * the guidance questions answer with Alt and a digit from anywhere and need no focus.
+ */
 function fokussieren(): void {
-    koerper.value?.querySelector<HTMLElement>('[data-antworten] button, [data-antworten] input, form input, button')?.focus()
+    const koerperElement = koerper.value
+    const ziel = koerperElement?.querySelector<HTMLElement>('[data-antworten] button, [data-antworten] input')
+        ?? koerperElement?.querySelector<HTMLElement>('form input, button')
+    ziel?.focus()
 }
 
 watch(() => stand.value.knoten, () => void nextTick(fokussieren))
@@ -159,7 +172,10 @@ defineExpose({fokussieren})
             </template>
             <template v-else-if="knoten">
                 <h3 class="m-0 text-2xl font-semibold text-sky-950">{{ knoten.frage }} <i v-if="knoten.hinweis" class="font-medium text-akzent">[{{ knoten.hinweis }}]</i></h3>
-                <SnaKacheln v-if="knoten.antworten" v-model:suche="kachelsuche" v-model:weitere-offen="weitereOffen" data-antworten :antworten="ordnung.vorn" :weitere="ordnung.weitere" :zusaetze="zusaetze" :farbe="fachrichtung" @waehlen="antwort => schritt({antwort})"/>
+                <div v-if="knoten.antworten" :class="['grid gap-4', leitung ? 'lg:grid-cols-[minmax(0,1fr)_18rem]' : '']">
+                    <LeitfragenSpalte v-if="leitung && leitStand" v-model="leitfragen" :eintrag="leitung" :antworten="leitAntworten" :stand="leitStand" :ruhig="ruhig" class="lg:order-2" @sofort="emit('sofort')" @waehlen="antwort => schritt({antwort})"/>
+                    <SnaKacheln v-model:suche="kachelsuche" v-model:weitere-offen="weitereOffen" data-antworten :antworten="ordnung.vorn" :weitere="ordnung.weitere" :zusaetze="zusaetze" :farbe="fachrichtung" :passend="leitStand?.beantwortet.length ? leitStand.kacheln : undefined" :vorgeschlagen="leitStand?.vorschlag" class="lg:order-1" @waehlen="antwort => schritt({antwort})"/>
+                </div>
                 <form v-else-if="knoten.eingabe?.art === 'warntafel'" class="flex flex-col gap-2" @submit.prevent="schritt({wert: wertAusTafel(tafel)})">
                     <WarntafelFeld v-model="tafel"/>
                     <div class="flex flex-wrap gap-2">

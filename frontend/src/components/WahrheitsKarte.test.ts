@@ -91,6 +91,24 @@ describe('WahrheitsKarte als Sprechhilfe', () => {
         expect(beendet.text()).not.toContain('So sprichst du als Anrufer')
     })
 
+    it('nennt die Antwort des Anrufers auf die offene Leitfrage aus der Lösung', () => {
+        const graph = {...GRAPH, leitfragen: [{knoten: 'p.k0', fragen: [{id: 'a', frage: 'Atmet die Person?', antworten: [{label: 'Ja', nimmt: ['schwer-2']}, {label: 'Nein', behaelt: ['schwer-2']}, {label: 'Weiß nicht'}]}]}]}
+        const anruf = anrufMit('l')
+        anruf.eintraege.abfrage.pfad = BIS_SITUATION
+        anruf.szenario = {...anruf.szenario, antworten: {...anruf.szenario.antworten, 'p.k0': {antwort: 'schwer-2'}}}
+        const ansicht = mount(WahrheitsKarte, {props: {graph, anruf}, global: {plugins: [i18n]}})
+        expect(ansicht.text()).toContain('Leitfrage: Atmet die Person? Nein')
+        anruf.szenario = {...anruf.szenario, antworten: {...anruf.szenario.antworten, 'p.k0': {antwort: 'leicht'}}}
+        const anders = mount(WahrheitsKarte, {props: {graph, anruf}, global: {plugins: [i18n]}})
+        expect(anders.text()).toContain('Leitfrage: Atmet die Person? Ja')
+        anruf.szenario = {...anruf.szenario, antworten: {...anruf.szenario.antworten, 'p.k0': {}}}
+        expect(mount(WahrheitsKarte, {props: {graph, anruf}, global: {plugins: [i18n]}}).text()).toContain('Leitfrage: Atmet die Person? frei antworten, passend zur Lage')
+        anruf.eintraege.leitfragen = [{knoten: 'p.k0', frage: 'a', antwort: 'Ja'}]
+        expect(mount(WahrheitsKarte, {props: {graph, anruf}, global: {plugins: [i18n]}}).text()).not.toContain('Leitfrage:')
+        anruf.eintraege.leitfragen = []
+        expect(mount(WahrheitsKarte, {props: {graph, anruf: {...anruf, zustand: 'beendet'}}, global: {plugins: [i18n]}}).text()).not.toContain('Leitfrage:')
+    })
+
     it('zeigt Notizen und Beschwerden im Leitfaden, nach dem Anruf darunter', () => {
         const laufend = anrufMit('n')
         laufend.szenario.rolle = {...laufend.szenario.rolle, beschwerden: ['Der Mundwinkel hängt.', 'Sie redet verwaschen.']}

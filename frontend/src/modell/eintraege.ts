@@ -24,6 +24,13 @@ export interface Abfrageeintrag {
     codeErreicht?: boolean
 }
 
+/** One guidance question the trainee asked: the node, the question by id, the answer by label. */
+export interface Leitfrageneintrag {
+    knoten: string
+    frage: string
+    antwort: string
+}
+
 /** Everything the trainee entered during one call. */
 export interface Eintraege {
     ort: {
@@ -41,6 +48,12 @@ export interface Eintraege {
     hinweise: string
     /** The instructions to the caller ticked as given, by id. */
     anleitung: {gegeben: string[]}
+    /**
+     * The guidance questions asked, in order, with the node and the answer chosen. A node's entries
+     * are its current state, not a history: changing an answer or starting the node over replaces
+     * them.
+     */
+    leitfragen?: Leitfrageneintrag[]
     /** The CPR guidance: whether its beat runs, and at how many beats a minute. */
     reanimation: {laeuft: boolean, takt: number, gruppe?: 'neugeborenes' | 'saeugling' | 'kind' | 'erwachsener'}
     /** Whether the call was handed over to dispatch; once set, the server keeps it. */

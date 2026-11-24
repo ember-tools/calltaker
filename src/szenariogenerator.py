@@ -1252,7 +1252,7 @@ def generieren(
             stimmung=stimmung,
             notizen=notizen,
             beschwerden=beschwerden_ziehen(
-                quellen.beschwerden, endpunkt, text, person, antworten, zufall
+                graph, quellen.beschwerden, endpunkt, text, person, antworten, zufall
             ),
         ),
     )
@@ -1289,7 +1289,17 @@ def geschoss_fuer(endpunkt: Endpunkt, zufall: random.Random) -> str:
     return zufall.choice(GESCHOSSE)
 
 
+def situationstext(graph: Abfragegraph, endpunkt: Endpunkt) -> str:
+    """Return the labels of a code's answers after the protocol choice, lower case."""
+    return " ".join(
+        antwort.label.lower()
+        for schritt in endpunkt.pfad[1:]
+        if (antwort := graph.antwort(schritt.knoten, schritt.antwort or "")) is not None
+    )
+
+
 def beschwerden_ziehen(
+    graph: Abfragegraph,
     lagen: list[Lage],
     endpunkt: Endpunkt,
     text: str,
@@ -1300,9 +1310,10 @@ def beschwerden_ziehen(
     """Draw two or three complaints the caller can describe when asked.
 
     The person describes what they feel; someone beside them what they see. Only complaints that
-    fit the code's path and agree with the opening's reaction and breathing are drawn, since what
-    the caller says decides the trainee's answers. A caller who is not there has nothing first-hand
-    to describe, and a person found dead nothing to complain of.
+    fit the code's path and agree with the opening's reaction and breathing and with the situation
+    the path names are drawn, since what the caller says decides the trainee's answers. A caller
+    who is not there has nothing first-hand to describe, and a person found dead nothing to
+    complain of.
     """
     if endpunkt.fachrichtung != "rd" or endpunkt.code.startswith(TODESZEICHEN):
         return []
@@ -1317,10 +1328,13 @@ def beschwerden_ziehen(
         return []
     reaktion = (antworten.get("rd.reaktion") or Wahl()).antwort
     atmung = (antworten.get("rd.atmung") or Wahl()).antwort
+    situation = situationstext(graph, endpunkt)
     passende = [
         beschwerde
         for beschwerde in auswahl
-        if beschwerde.passt(endpunkt, text) and beschwerde.stimmt(reaktion, atmung)
+        if beschwerde.passt(endpunkt, text)
+        and beschwerde.stimmt(reaktion, atmung)
+        and beschwerde.passt_zur_situation(situation)
     ]
     anzahl = min(len(passende), zufall.randint(2, 3))
     return [gefuellt(b.text, person.weiblich) for b in zufall.sample(passende, anzahl)]

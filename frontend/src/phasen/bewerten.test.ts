@@ -2,8 +2,8 @@ import {describe, expect, it} from 'vitest'
 import {leereEintraege} from '../modell/eintraege'
 import {leererEntwurf} from '../modell/szenarioentwurf'
 import type {Szenario} from '../modell/szenario'
-import {testgraph} from '../modell/testgraph.test-hilfe'
-import {codestufe} from './abfrage'
+import {BIS_SITUATION, testgraph} from '../modell/testgraph.test-hilfe'
+import {abfrage, codestufe} from './abfrage'
 import {bewerten} from './register'
 
 const graph = testgraph()
@@ -133,5 +133,37 @@ describe('codestufe bei Kreislaufstillstand', () => {
         expect(codestufe(rea, {knoten: 'p.e3', code: '17E01'}, stillstand)).toBe('exakt')
         expect(codestufe(rea, {knoten: 'p.e2', code: '17D01'}, stillstand)).not.toBe('exakt')
         expect(codestufe(rea, {knoten: 'p.e3', code: '09E04'}, {...stillstand, code: '09E03'})).not.toBe('exakt')
+    })
+})
+
+describe('Leitfragen im Debrief', () => {
+    it('gibt den Weg zur korrekten Kachel und eine fehlende Sicherheitsfrage als Hinweis', () => {
+        const graph = {
+            ...testgraph(),
+            leitfragen: [{knoten: 'p.k0', fragen: [
+                {id: 'strom', frage: 'Strom?', sicherheit: true, antworten: [{label: 'Ja'}, {label: 'Nein'}]},
+                {id: 'blut', frage: 'Blutet es stark?', antworten: [{label: 'Ja', nimmt: ['leicht']}, {label: 'Nein', behaelt: ['leicht']}, {label: 'Weiß nicht'}]},
+            ]}],
+        }
+        const eintraege = leereEintraege()
+        eintraege.abfrage = {pfad: [...BIS_SITUATION, {knoten: 'p.k0', antwort: 'leicht'}]}
+        const szenario = {...leererEntwurf(1), antworten: {'p.k0': {antwort: 'schwer'}}, ziel: {knoten: 'p.e2', code: '17D01'}} as unknown as Szenario
+        const hinweise = abfrage.bewerten(eintraege, szenario, graph).filter(b => b.urteil === 'hinweis')
+        expect(hinweise.map(b => [b.feld, b.soll, b.ist])).toEqual([
+            ['bewertung.sicherheitsfrage', '', 'Strom?'],
+            ['bewertung.leitfragenWeg', 'Blutet es stark? Ja → Schwer', 'Leicht'],
+        ])
+    })
+})
+
+describe('Leitfragen im Debrief bei veraltetem Pfad', () => {
+    it('wertet nur den Teil des Pfads aus, der zum Graphen passt', () => {
+        const graph = {...testgraph(), leitfragen: [{knoten: 'p.k0', fragen: [
+            {id: 'strom', frage: 'Strom?', sicherheit: true, antworten: [{label: 'Ja'}, {label: 'Nein'}]},
+        ]}]}
+        const eintraege = leereEintraege()
+        eintraege.abfrage = {pfad: [...BIS_SITUATION.slice(0, 2), {knoten: 'rd.wahl', antwort: 'gibt-es-nicht'}, {knoten: 'p.k0', antwort: 'leicht'}]}
+        const szenario = {...leererEntwurf(1), antworten: {}, ziel: {knoten: 'p.e2', code: '17D01'}} as unknown as Szenario
+        expect(abfrage.bewerten(eintraege, szenario, graph).some(b => b.feld === 'bewertung.sicherheitsfrage')).toBe(false)
     })
 })
