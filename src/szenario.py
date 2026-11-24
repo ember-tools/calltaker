@@ -5,7 +5,6 @@ trainee also visits stay valid when the trainee takes another turn. Field names 
 frontend's camel case on the wire.
 """
 
-import re
 import uuid
 from enum import StrEnum
 from typing import Annotated, Any, Literal, Self
@@ -17,6 +16,7 @@ from abfrage import Abfragegraph, Antwort
 from gefahrstoffe import TAFEL
 from geo import entfernung
 from rufnummer import normalisieren
+from stimmigkeit import alter_aus, stimmigkeitsmeldungen
 
 SZENARIO_VERSION = 1
 
@@ -244,15 +244,10 @@ def pruefen(szenario: Szenario, graph: Abfragegraph) -> list[Befund]:
         befunde.extend(wahlbefunde(graph, knoten_id, wahl))
     befunde.extend(zielbefunde(graph, szenario.ziel))
     befunde.extend(personbefunde(graph, szenario.antworten))
+    befunde.extend(
+        Befund(art="warnung", meldung=meldung) for meldung in stimmigkeitsmeldungen(graph, szenario)
+    )
     return befunde
-
-
-def alter_aus(text: str) -> int | None:
-    """Return an age in years from typed text: its first number, months, weeks or days as 0."""
-    zahl = re.search(r"\d+", text)
-    if zahl is None:
-        return None
-    return 0 if re.search(r"\b(monat|woche|tag)", text, re.IGNORECASE) else int(zahl.group())
 
 
 def personbefunde(graph: Abfragegraph, antworten: dict[str, Wahl]) -> list[Befund]:
