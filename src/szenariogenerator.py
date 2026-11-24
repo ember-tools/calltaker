@@ -71,6 +71,36 @@ TAFEL_UNLESBAR = 0.15
 STILLSTAND_PROTOKOLL = "rd.09"
 NICHT_VOR_ORT_ANTWORT = {"fw.brand.gebaeudebrand.fluchtweg": "nicht-im-gebaeude"}
 GEWICHT_NEUGEBORENE = 0.1
+SELTENE_CODES = {"09B01": 0.0526}
+VARIANTEN = {"09B01a": 25, "09B01b": 2, "09B01c": 25, "09B01d": 3, "09B01e": 35, "09B01f": 10}
+TODESZEICHEN_ALTER = {
+    "09B01a": (50, 90),
+    "09B01c": (50, 90),
+    "09B01e": (50, 90),
+    "09B01b": (16, 80),
+    "09B01f": (16, 80),
+    "09B01d": (18, 90),
+}
+TODESZEICHEN = "09B01"
+LIEGEZEIT = frozenset({"09B01a", "09B01c", "09B01e"})
+NEUGEBORENES = "rd.09.09e01-2"
+HERGAENGE = (
+    ("Hat über Brustschmerzen geklagt und ist dann zusammengesackt.", 45, 90, False),
+    ("Lag beim Aufwachen reglos im Bett.", 50, 90, True),
+    ("Ist ohne Vorwarnung umgefallen.", 16, 90, False),
+    ("Ist beim Sport zusammengebrochen.", 16, 60, False),
+    ("Hat sich beim Essen verschluckt und ist blau angelaufen.", 60, 90, False),
+    ("Hat sich beim Essen verschluckt und ist blau angelaufen.", 1, 5, False),
+    ("Lag plötzlich schlaff und reglos im Bett.", 1, 12, True),
+    ("Lag morgens reglos im Bettchen und atmet nicht.", 0, 0, True),
+    ("Hat beim Trinken aufgehört zu atmen und ist blau angelaufen.", 0, 0, False),
+    ("Ist beim Spielen plötzlich zusammengebrochen.", 1, 15, False),
+    ("Ist plötzlich zusammengebrochen.", 1, 90, False),
+)
+NEUGEBORENEN_HERGAENGE = (
+    "Wenige Tage alt, lag nach dem Stillen schlaff und blau im Arm.",
+    "Wenige Tage alt, atmet seit eben nicht mehr und ist ganz schlaff.",
+)
 UMWEGE_SCHLUESSEL = "_nur_ueber_stillstand"
 EINSATZORTE = frozenset(
     {
@@ -269,14 +299,20 @@ def gewichte_der_codes(kandidaten: list[Endpunkt]) -> list[float]:
 
     A code with variants (09B01a to f for the signs of death; adult, child and newborn of 09E01)
     is drawn as often as a code without, so variants do not crowd out the rest. Newborns get a
-    tenth of a variant's share, since they are rare among the calls.
+    tenth of a variant's share, since they are rare among the calls. Some codes are rare in
+    themselves (`SELTENE_CODES`): a person found clearly dead is about one in twenty of those who
+    do not breathe. Their variants are weighted by how often each sign is the one reported
+    (`VARIANTEN`).
     """
-    roh = [GEWICHT_NEUGEBORENE if "NNAD" in e.kategorie else 1.0 for e in kandidaten]
+    roh = [
+        (GEWICHT_NEUGEBORENE if "NNAD" in e.kategorie else 1.0) * VARIANTEN.get(e.code, 1.0)
+        for e in kandidaten
+    ]
     summe: dict[str, float] = {}
     for endpunkt, gewicht in zip(kandidaten, roh, strict=True):
         summe[endpunkt.code[:5]] = summe.get(endpunkt.code[:5], 0.0) + gewicht
     return [
-        gewicht / summe[endpunkt.code[:5]]
+        gewicht / summe[endpunkt.code[:5]] * SELTENE_CODES.get(endpunkt.code[:5], 1.0)
         for endpunkt, gewicht in zip(kandidaten, roh, strict=True)
     ]
 
@@ -486,6 +522,25 @@ def regeln(endpunkt: Endpunkt, person: Person) -> dict[str, dict[str, float]]:
         "rd.geschlecht": {"frau": 1} if person.weiblich else {"mann": 1},
         **zustand_gewichte(endpunkt, person),
     }
+
+
+def hergang(endpunkt: Endpunkt, person: Person, ort: Ort, zufall: random.Random) -> str:
+    """Return how the arrest came about, for the trainer to tell: fitting the age and the place.
+
+    A person found clearly dead has no story beyond being found; for them nothing is told here.
+    A newborn has its own stories, since the age alone does not tell a newborn from an infant.
+    """
+    if endpunkt.code.startswith(TODESZEICHEN):
+        return ""
+    if endpunkt.knoten == NEUGEBORENES:
+        return zufall.choice(NEUGEBORENEN_HERGAENGE)
+    in_wohnung = bool(ort.adresse.hausnummer) and not ort.objekt
+    passende = [
+        text
+        for text, unten, oben, wohnung in HERGAENGE
+        if unten <= person.alter <= oben and (in_wohnung or not wohnung)
+    ]
+    return zufall.choice(passende) if passende else ""
 
 
 def mit_hand(person: Person, endpunkt: Endpunkt, text: str, zufall: random.Random) -> Person:
@@ -750,7 +805,9 @@ def mit_funkzelle(anrufer: Anrufer, ort: Ort, zufall: random.Random) -> Anrufer:
 
 def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random) -> Person:
     """Return the affected person: an age the code allows, a sex, and whether they call."""
-    unten, oben = altersspanne(graph, endpunkt)
+    unten, oben = TODESZEICHEN_ALTER.get(endpunkt.code, altersspanne(graph, endpunkt))
+    if endpunkt.code in LIEGEZEIT and zufall.random() < 0.7:
+        unten = 65
     text = pfadtext(graph, endpunkt)
     if SCHWANGER.search(text):
         unten, oben = max(unten, 16), max(max(unten, 16), min(oben, 45))
@@ -887,6 +944,7 @@ def generieren(
     stimmung = zufall.choices(list(stimmungen), weights=list(stimmungen.values()))[0]
     if stimmung == "panisch" and person.hand in (GEHOERT, AUTOMATISCH):
         stimmung = "aufgeregt"
+    notizen = hergang(endpunkt, person, ort, zufall) if person.stillstand else ""
     return Szenario(
         abfrage_version=graph.meta.version,
         titel=f"{titel_von(graph, endpunkt)}, {ortsteil}",
@@ -896,5 +954,5 @@ def generieren(
         betroffener=Betroffener(name=betroffen) if rd else None,
         antworten=antworten,
         ziel=Ziel(knoten=endpunkt.knoten, code=endpunkt.code),
-        rolle=Rolle(stimmung=stimmung),
+        rolle=Rolle(stimmung=stimmung, notizen=notizen),
     )

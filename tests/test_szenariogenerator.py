@@ -248,9 +248,36 @@ def test_varianten_eines_codes_teilen_sich_seine_chance(graph):
     gewichte = dict(zip([e.knoten for e in neunzehn], gewichte_der_codes(neunzehn), strict=True))
     tod = sum(g for k, g in gewichte.items() if "09b01" in k)
     stillstand = sum(g for k, g in gewichte.items() if "09e01" in k)
-    assert tod == pytest.approx(1.0)
+    assert tod / (tod + stillstand) == pytest.approx(0.05, abs=0.001)
     assert stillstand == pytest.approx(1.0)
     assert gewichte["rd.09.09e01-2"] < gewichte["rd.09.09e01"] / 5
+    assert gewichte["rd.09.09b01e"] > gewichte["rd.09.09b01f"] > gewichte["rd.09.09b01b"]
+
+
+def test_todeszeichen_sind_selten_und_ein_stillstand_hat_einen_hergang(graph):
+    szenarien = viele(graph, 1500, Erzeugung(protokoll="rd.09", anteil_ohne_adresse=0))
+    tot = [s for s in szenarien if s.ziel.code.startswith("09B01")]
+    assert 0.02 <= len(tot) / len(szenarien) <= 0.09
+    for szenario in tot:
+        alter = int(szenario.antworten["rd.alter"].wert or 0)
+        if szenario.ziel.code in ("09B01a", "09B01c", "09B01e"):
+            assert alter >= 50
+        assert szenario.rolle.stimmung != "panisch"
+    stillstaende = [s for s in szenarien if s.ziel.code == "09E01"]
+    assert {s.ziel.knoten for s in stillstaende} >= {"rd.09.09e01", "rd.09.09e01-3"}
+    assert all(s.rolle.notizen for s in stillstaende)
+    for szenario in stillstaende:
+        if szenario.ziel.knoten != "rd.09.09e01-2":
+            assert "Wenige Tage alt" not in szenario.rolle.notizen
+
+
+def test_jeder_stillstand_hat_einen_hergang_auch_draussen(graph):
+    quellen = Quellen(adresse=lambda *_: dict(ADRESSE), ort=lambda *_: dict(PLATZ))
+    erzeugung = Erzeugung(protokoll="rd.09", anteil_orte=100)
+    for i in range(400):
+        szenario = generieren(graph, quellen, erzeugung, random.Random(i))
+        if szenario.ziel.code == "09E01":
+            assert szenario.rolle.notizen, szenario.ziel.knoten
 
 
 def test_das_geschlecht_folgt_geschlechtsbezogenen_antworten(graph):
