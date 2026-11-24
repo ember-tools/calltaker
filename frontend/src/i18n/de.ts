@@ -24,6 +24,8 @@ export default {
         ausbilder: 'Ausbilder-Code',
         trainee: 'Trainee-Code',
         kopieren: '{code} kopieren',
+        kopiert: 'Kopiert',
+        fehler: 'Nicht kopiert',
     },
     ausbilder: {
         titel: 'Ausbilder',
