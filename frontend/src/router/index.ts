@@ -3,6 +3,7 @@ import {rolleVon} from '../api/uebung'
 import AusbilderView from '../views/AusbilderView.vue'
 import StartView from '../views/StartView.vue'
 import DebriefView from '../views/DebriefView.vue'
+import HilfeView from '../views/HilfeView.vue'
 import TraineeView from '../views/TraineeView.vue'
 import UebersichtView from '../views/UebersichtView.vue'
 import type {Rolle} from '../modell/uebung'
@@ -40,11 +41,12 @@ function routenFuer(rolle: Rolle, kuerzel: string) {
     ]
 }
 
-/** The application's routes: the start page, and per role the view, the debriefs and the overview. */
+/** The application's routes: the start and help pages, and per role the view, the debriefs and the overview. */
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
         {path: '/', name: 'start', component: StartView},
+        {path: '/hilfe', name: 'hilfe', component: HilfeView},
         ...routenFuer('ausbilder', 'a'),
         ...routenFuer('trainee', 't'),
     ],

@@ -21,6 +21,7 @@ function gebaut(): string {
                 <FontAwesomeIcon :icon="faGithub" aria-hidden="true"/>
                 {{ t('fuss.quelle') }}
             </a>
+            <RouterLink :to="{name: 'hilfe'}" class="text-tinte hover:underline">{{ t('hilfe.fuss') }}</RouterLink>
             <span>{{ t('fuss.urheber') }}</span>
             <span>{{ t('fuss.gemacht') }}</span>
             <span>{{ t('fuss.lizenz') }}</span>
