@@ -230,3 +230,11 @@ def test_die_reanimation_merkt_sich_die_gewaehlte_altersgruppe():
     assert Reanimationseintrag().gruppe is None
     with pytest.raises(ValidationError):
         Reanimationseintrag.model_validate({"gruppe": "greis"})
+
+
+def test_gestellte_leitfragen_werden_gemerkt_und_begrenzt():
+    eintrag = {"knoten": "rd.hauptbeschwerde", "frage": "brust", "antwort": "Ja"}
+    eintraege = Eintraege.model_validate({"leitfragen": [eintrag]})
+    assert eintraege.leitfragen[0].antwort == "Ja"
+    with pytest.raises(ValidationError):
+        Eintraege.model_validate({"leitfragen": [eintrag] * 201})

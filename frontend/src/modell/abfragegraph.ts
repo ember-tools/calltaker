@@ -1,3 +1,5 @@
+import type {Knotenleitfragen} from './leitfragen'
+
 /** The ages an answer applies to, both bounds inclusive, or that it is for an unknown age. */
 export interface Altersgrenze {
     min?: number
@@ -134,6 +136,8 @@ export interface Abfragegraph {
     knoten: Record<string, Knoten>
     endpunkte: Endpunkt[]
     anleitungen?: Anleitung[]
+    /** Guidance questions that help pick a tile, per node. */
+    leitfragen?: Knotenleitfragen[]
     /** The fire and rescue protocols that play inside a home, where floor and doorbell matter. */
     wohnungsprotokolle?: string[]
 }

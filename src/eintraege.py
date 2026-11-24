@@ -17,6 +17,7 @@ from szenario import Adresse, Modell
 TEXT = 500
 LANGER_TEXT = 4000
 ANLEITUNGEN_HOECHSTENS = 100
+LEITFRAGEN_HOECHSTENS = 200
 PFAD_HOECHSTENS = 200
 
 
@@ -104,6 +105,18 @@ class Anleitungseintrag(Modell):
     )
 
 
+class Leitfrageneintrag(Modell):
+    """One guidance question the trainee asked: the node, the question by id, the answer by label.
+
+    A node's entries in `Eintraege.leitfragen` are its current state, not a history: changing an
+    answer or starting the node over replaces them.
+    """
+
+    knoten: str = Field(max_length=200)
+    frage: str = Field(max_length=200)
+    antwort: str = Field(max_length=200)
+
+
 class Uebergabestand(Modell):
     """The entries as they were handed over to dispatch; later changes count as additions."""
 
@@ -126,6 +139,9 @@ class Eintraege(Modell):
     abfrage: Abfrageeintrag = Field(default_factory=Abfrageeintrag)
     hinweise: str = Field("", max_length=LANGER_TEXT)
     anleitung: Anleitungseintrag = Field(default_factory=Anleitungseintrag)
+    leitfragen: list[Leitfrageneintrag] = Field(
+        default_factory=list, max_length=LEITFRAGEN_HOECHSTENS
+    )
     reanimation: Reanimationseintrag = Field(default_factory=Reanimationseintrag)
     uebergabe: bool = False
     uebergeben: Uebergabestand | None = None
