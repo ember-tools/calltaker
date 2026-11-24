@@ -204,6 +204,8 @@ export default {
         titel: 'So sprichst du als Anrufer',
         einstieg: '„Hallo, hier ist {name}.“ Es geht um: {anlass}',
         ort: 'Ort: {ort}',
+        ohneAdresse: 'Du kennst die Adresse nicht. Du bist draußen: {wo}.',
+        umgebung: 'Du siehst {name} ({art}), im {richtung} etwa {meter} m.',
         hand: {
             selbst: 'Du bist selbst betroffen.',
             dabei: 'Du bist bei der betroffenen Person.',
@@ -291,6 +293,7 @@ export default {
         brand: 'Brand (%)',
         th: 'Techn. Hilfe (%)',
         anteilOrte: 'An Orten wie Bahnhof, Supermarkt (%)',
+        anteilOhneAdresse: 'Anrufer kennt die Adresse nicht (%)',
         kategorie: 'Nur Kategorie',
         kategorieHinweis: 'z. B. RD1 oder BRAND',
         treffer: '{anzahl} Codes',

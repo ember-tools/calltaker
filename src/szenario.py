@@ -41,6 +41,25 @@ class Adresse(Modell):
     ortsteil: str = ""
 
 
+class Umgebungsort(Modell):
+    """A named place a caller without an address can see: where it lies from them, and how far."""
+
+    name: str = Field(max_length=200)
+    art: str = Field(max_length=80)
+    richtung: str = Field(max_length=20)
+    meter: int = Field(ge=0, le=5000)
+
+
+class OhneAdresse(Modell):
+    """A caller outside who does not know the address: what they are at and what they can see.
+
+    `wo` is how they name the place they are at, by its name only when they know it.
+    """
+
+    wo: str = Field(max_length=200)
+    umgebung: list[Umgebungsort] = Field(default_factory=list, max_length=5)
+
+
 class Ort(Modell):
     """Where the emergency is: address, point and what a crew needs to find it.
 
@@ -55,6 +74,7 @@ class Ort(Modell):
     anfahrt: str = ""
     gefahren: str = ""
     haustier: str = ""
+    ohne_adresse: OhneAdresse | None = None
 
 
 class Funkzelle(Modell):
@@ -157,6 +177,19 @@ class Szenario(Modell):
     ziel: Ziel
     rolle: Rolle = Field(default_factory=Rolle)
     erweiterungen: dict[str, Any] = Field(default_factory=dict)
+
+    @model_validator(mode="after")
+    def passende_ortsangabe(self) -> Self:
+        """Drop the description of a caller without an address once the place has an address.
+
+        An edited scenario that gets a street, or loses its point, no longer fits what the caller
+        was made up to see.
+        """
+        if self.ort.ohne_adresse is not None and (
+            self.ort.adresse.strasse or self.ort.koordinaten is None
+        ):
+            self.ort.ohne_adresse = None
+        return self
 
     @model_validator(mode="after")
     def passende_funkzelle(self) -> Self:

@@ -22,6 +22,8 @@ export interface Ort {
     gefahren: string
     /** A pet at the place, as the caller would mention it, such as "ein Hund". */
     haustier?: string
+    /** For a caller outside who does not know the address: how they name the place and what they see. */
+    ohneAdresse?: {wo: string, umgebung: {name: string, art: string, richtung: string, meter: number}[]}
 }
 
 /** Who calls: the name, the number shown, and the number the caller is reachable under. */

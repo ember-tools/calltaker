@@ -22,4 +22,14 @@ describe('leitfaden', () => {
         expect(leitfaden(graph, {...szenario, antworten: {'p.tafel': {wert: '33/1203'}}}).find(p => p.schluessel === 'leitfaden.tafel')?.werte).toEqual({oben: '33', unten: '1203'})
         expect(leitfaden(graph, {...szenario, antworten: {'p.tafel': {}}}).some(p => p.schluessel === 'leitfaden.keineTafel')).toBe(true)
     })
+
+    it('lässt einen Anrufer ohne Adresse die Umgebung beschreiben statt den Ort zu nennen', () => {
+        const szenario = anrufMit('d').szenario
+        szenario.ort = {...szenario.ort, adresse: {strasse: '', hausnummer: '', plz: '', ortsteil: 'Neukölln'}, objekt: 'Volkspark Hasenheide (Park)', geschoss: '', klingel: '',
+            ohneAdresse: {wo: 'ein Park', umgebung: [{name: 'U Hermannplatz', art: 'Bahnhof', richtung: 'Nordosten', meter: 250}]}}
+        const punkte = leitfaden(GRAPH, szenario)
+        expect(punkte.map(p => p.schluessel)).toContain('leitfaden.ohneAdresse')
+        expect(punkte.map(p => p.schluessel)).not.toContain('leitfaden.ort')
+        expect(punkte.find(p => p.schluessel === 'leitfaden.umgebung')?.werte).toEqual({name: 'U Hermannplatz', art: 'Bahnhof', richtung: 'Nordosten', meter: '250'})
+    })
 })

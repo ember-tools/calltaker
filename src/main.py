@@ -114,6 +114,7 @@ def erzeuger(adressen: Adressen, orte: Orte) -> Callable[[Erzeugung], Szenario]:
         adresse=adressen.zufall,
         ort=orte.zufall,
         naechste=adressen.naechste,
+        umkreis=orte.umkreis,
         gefahrstoffe=gefahrstoffe.mit_warntafel(gefahrstoffe_geladen()),
     )
 

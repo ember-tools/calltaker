@@ -45,7 +45,7 @@ export function zustandMit(anrufe: Anruf[]): AusbilderZustand {
         pool: [anrufMit('p').szenario],
         poolBefunde: {},
         poolStand: 0,
-        erzeugung: {gewichtRd: 80, gewichtBrand: 12, gewichtTh: 8, kategorie: '', ortsteil: '', bezirk: '', anteilOrte: 30},
+        erzeugung: {gewichtRd: 80, gewichtBrand: 12, gewichtTh: 8, kategorie: '', ortsteil: '', bezirk: '', anteilOrte: 30, anteilOhneAdresse: 5},
         anrufe,
         spiegel: {},
     }

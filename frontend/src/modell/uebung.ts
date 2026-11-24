@@ -100,6 +100,8 @@ export interface Erzeugung {
     bezirk: string
     /** The share of scenarios, in percent, that happen at a named place rather than a door. */
     anteilOrte: number
+    /** The share of mobile callers outside who do not know the address, in percent. */
+    anteilOhneAdresse: number
 }
 
 /** The queue engine's state as the trainee sees it. */

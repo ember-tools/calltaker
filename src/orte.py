@@ -19,6 +19,8 @@ from dataclasses import dataclass
 from functools import lru_cache
 from pathlib import Path
 
+from geo import entfernung
+
 WORT = re.compile(r"[^\w]+")
 
 logger = logging.getLogger(__name__)
@@ -92,6 +94,13 @@ class Orte:
             if (not ortsteil or ort.ortsteil == ortsteil) and (not arten or ort.art in arten)
         ]
         return zufall.choice(auswahl).nach_aussen() if auswahl else None
+
+    def umkreis(self, breite: float, laenge: float, radius: float) -> list[dict]:
+        """Return the places within a radius in metres of a point, nearest first."""
+        nahe = [(entfernung((breite, laenge), (ort.breite, ort.laenge)), ort) for ort in self.orte]
+        nahe = [(abstand, ort) for abstand, ort in nahe if abstand <= radius]
+        nahe.sort(key=lambda paar: paar[0])
+        return [ort.nach_aussen() for _, ort in nahe]
 
 
 def lesen(datei: Path) -> list:

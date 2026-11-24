@@ -21,6 +21,7 @@ const GEWICHTE = [
     {feld: 'gewichtBrand', schluessel: 'generator.brand'},
     {feld: 'gewichtTh', schluessel: 'generator.th'},
     {feld: 'anteilOrte', schluessel: 'generator.anteilOrte'},
+    {feld: 'anteilOhneAdresse', schluessel: 'generator.anteilOhneAdresse'},
 ] as const
 const anzahl = ref(5)
 const vorschlaege = computed(() => (props.graph ? kategorievorschlaege(props.graph) : []))
@@ -68,7 +69,7 @@ async function automatisch(an: boolean): Promise<void> {
     <details class="rounded border border-rand p-3">
         <summary class="cursor-pointer text-sm font-bold">{{ t('generator.titel') }}</summary>
         <div class="mt-2 flex flex-col gap-2">
-            <div class="grid grid-cols-2 gap-2 sm:grid-cols-4">
+            <div class="grid grid-cols-2 gap-2 sm:grid-cols-5">
                 <label v-for="gewicht in GEWICHTE" :key="gewicht.feld" :class="[BESCHRIFTUNG, 'justify-between']">{{ t(gewicht.schluessel) }}
                     <input v-model.number="einstellung[gewicht.feld]" type="number" min="0" max="100" :class="FELD" @change="einstellen"/>
                 </label>

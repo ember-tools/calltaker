@@ -5,10 +5,13 @@ import pytest
 
 from gefahrstoffe import Stoff
 from geo import entfernung
-from szenario import Wahl, pruefen
+from szenario import Szenario, Wahl, pruefen
 from szenariogenerator import (
     ATEMNOT,
     BEWUSSTLOS,
+    DRAUSSEN_ARTEN_FUER,
+    DRAUSSEN_PROTOKOLLE,
+    DRAUSSEN_VERSATZ,
     SELBST,
     STILLSTAND,
     VOR_ORT,
@@ -21,6 +24,7 @@ from szenariogenerator import (
     anzahl_gewichte,
     disziplin_von,
     generieren,
+    himmelsrichtung,
     person_ziehen,
     pfadtext,
     stufe,
@@ -43,7 +47,8 @@ QUELLEN = Quellen(adresse=lambda *_: dict(ADRESSE), ort=lambda *_: dict(PLATZ))
 
 def viele(graph, anzahl=400, erzeugung=None, quellen=QUELLEN, saat=7):
     zufall = random.Random(saat)
-    return [generieren(graph, quellen, erzeugung or Erzeugung(), zufall) for _ in range(anzahl)]
+    standard = Erzeugung(anteil_ohne_adresse=0)
+    return [generieren(graph, quellen, erzeugung or standard, zufall) for _ in range(anzahl)]
 
 
 def test_generierte_szenarien_passen_zum_graphen(graph):
@@ -189,14 +194,15 @@ def test_ein_anteil_der_szenarien_spielt_an_orten_mit_naechster_tuer(graph):
         return {**PLATZ, "name": "U Hermannplatz", "art": "Bahnhof"}
 
     quellen = Quellen(adresse=lambda *_: dict(ADRESSE), ort=ort, naechste=lambda *_: dict(ADRESSE))
-    am_platz = viele(graph, 20, Erzeugung(anteil_orte=100), quellen=quellen)
+    am_platz = viele(graph, 20, Erzeugung(anteil_orte=100, anteil_ohne_adresse=0), quellen=quellen)
     assert {s.ort.objekt for s in am_platz} == {"U Hermannplatz (Bahnhof)"}
     assert {s.ort.adresse.strasse for s in am_platz} == {"Karl-Marx-Straße"}
     assert {s.ort.koordinaten for s in am_platz} == {(52.47, 13.4)}
     assert all(s.ort.geschoss == "" for s in am_platz)
     assert "Supermarkt" in gefragt[0] and "Fluss" not in gefragt[0]
     assert all(
-        s.ort.objekt == "" for s in viele(graph, 20, Erzeugung(anteil_orte=0), quellen=quellen)
+        s.ort.objekt == ""
+        for s in viele(graph, 20, Erzeugung(anteil_orte=0, anteil_ohne_adresse=0), quellen=quellen)
     )
 
 
@@ -213,7 +219,7 @@ def test_ein_ort_ausserhalb_des_bezirks_wird_nicht_genommen(graph):
 def test_neugeborene_sind_unter_den_stillstaenden_selten(graph):
     endpunkte = {e.knoten: e for e in graph.endpunkte}
     stillstand = [
-        s for s in viele(graph, 600, Erzeugung(kategorie="RD1NC")) if s.ziel.code == "09E01"
+        s for s in viele(graph, 2000, Erzeugung(kategorie="RD1NC")) if s.ziel.code == "09E01"
     ]
     neugeboren = sum("NNAD" in endpunkte[s.ziel.knoten].kategorie for s in stillstand)
     assert stillstand
@@ -333,7 +339,9 @@ def test_die_frage_nach_der_warntafel_beantwortet_der_generator(graph):
 
 
 def test_wohnungen_haben_geschoss_klingel_und_manchmal_ein_haustier(graph):
-    erzeugung = Erzeugung(gewicht_rd=34, gewicht_brand=33, gewicht_th=33, anteil_orte=0)
+    erzeugung = Erzeugung(
+        gewicht_rd=34, gewicht_brand=33, gewicht_th=33, anteil_orte=0, anteil_ohne_adresse=0
+    )
     endpunkte = {endpunkt.knoten: endpunkt for endpunkt in graph.endpunkte}
     mit_tier = wohnungen = 0
     gesehen = set()
@@ -373,3 +381,113 @@ def test_mobil_anrufer_bekommen_eine_funkzelle_um_den_wahren_punkt(graph):
             abstand = entfernung(zelle.mitte, szenario.ort.koordinaten)
             assert 90 <= abstand <= zelle.radius
     assert mit_zelle > 0
+
+
+PARK = {
+    "name": "Volkspark Hasenheide",
+    "art": "Park",
+    "ortsteil": "Neukölln",
+    "breite": 52.484,
+    "laenge": 13.414,
+}
+NAHE = [
+    dict(PARK),
+    {
+        "name": "U Hermannplatz",
+        "art": "Bahnhof",
+        "ortsteil": "Neukölln",
+        "breite": 52.4867,
+        "laenge": 13.4244,
+    },
+    {
+        "name": "Edeka",
+        "art": "Supermarkt",
+        "ortsteil": "Neukölln",
+        "breite": 52.4825,
+        "laenge": 13.4140,
+    },
+    {"name": "Edeka", "art": "Kiosk", "ortsteil": "Neukölln", "breite": 52.4825, "laenge": 13.4140},
+    {
+        "name": "Spielplatz Jahnstraße",
+        "art": "Spielplatz",
+        "ortsteil": "Neukölln",
+        "breite": 52.4851,
+        "laenge": 13.4105,
+    },
+]
+
+
+def draussen_quellen(nahe, gefragt=None):
+    def ort(_, ortsteil="", arten=()):
+        if gefragt is not None:
+            gefragt.append(set(arten))
+        return dict(PARK)
+
+    return Quellen(
+        adresse=lambda *_: dict(ADRESSE), ort=ort, umkreis=lambda *_: [dict(o) for o in nahe]
+    )
+
+
+def test_anrufer_ohne_adresse_stehen_draussen_und_beschreiben_die_umgebung(graph):
+    gefragt = []
+    quellen = draussen_quellen(NAHE, gefragt)
+    endpunkte = {endpunkt.knoten: endpunkt for endpunkt in graph.endpunkte}
+    erzeugung = Erzeugung(
+        anteil_ohne_adresse=100, anteil_orte=0, gewicht_rd=40, gewicht_brand=30, gewicht_th=30
+    )
+    szenarien = [generieren(graph, quellen, erzeugung, random.Random(i)) for i in range(300)]
+    draussen = [s for s in szenarien if s.ort.ohne_adresse]
+    assert draussen
+    assert any(not s.ort.ohne_adresse for s in szenarien if s.anrufer.mobil_angezeigt())
+    assert set(DRAUSSEN_ARTEN_FUER["rd"]) in gefragt
+    for szenario in draussen:
+        endpunkt = endpunkte[szenario.ziel.knoten]
+        assert endpunkt.fachrichtung == "rd" or endpunkt.protokoll in DRAUSSEN_PROTOKOLLE
+        assert szenario.anrufer.mobil_angezeigt()
+        assert szenario.ort.adresse.strasse == ""
+        assert szenario.ort.objekt == "Volkspark Hasenheide"
+        assert 14 <= entfernung(szenario.ort.koordinaten, (52.484, 13.414)) <= 61
+        ohne = szenario.ort.ohne_adresse
+        assert ohne.wo in ("Volkspark Hasenheide", "ein Park")
+        namen = [o.name for o in ohne.umgebung]
+        assert 2 <= len(namen) <= 3
+        assert len(set(namen)) == len(namen)
+        assert "Volkspark Hasenheide" not in namen
+        assert [o.meter for o in ohne.umgebung] == sorted(o.meter for o in ohne.umgebung)
+        assert szenario.anrufer.funkzelle is not None
+        assert not [b for b in pruefen(szenario, graph) if b.art == "fehler"]
+
+
+def test_draussen_nur_mit_anteil_ohne_bezirk_und_mit_genug_umgebung(graph):
+    def keiner(erzeugung, nahe=NAHE):
+        quellen = draussen_quellen(nahe)
+        return not any(
+            generieren(graph, quellen, erzeugung, random.Random(i)).ort.ohne_adresse
+            for i in range(150)
+        )
+
+    assert keiner(Erzeugung(anteil_ohne_adresse=0, anteil_orte=0))
+    assert keiner(Erzeugung(anteil_ohne_adresse=100, anteil_orte=0, bezirk="Neukölln"))
+    assert keiner(Erzeugung(anteil_ohne_adresse=100, anteil_orte=0), nahe=[dict(PARK), NAHE[1]])
+
+
+def test_der_versatz_bleibt_unter_der_genauigkeit_des_punkts():
+    assert DRAUSSEN_VERSATZ[1] < 75
+
+
+def test_eine_adresse_verdraengt_die_beschreibung_ohne_adresse(szenario_daten):
+    ohne = {"wo": "ein Park", "umgebung": []}
+    daten = {**szenario_daten, "ort": {**szenario_daten["ort"], "ohneAdresse": ohne}}
+    assert Szenario.model_validate(daten).ort.ohne_adresse is None
+    draussen = {
+        **daten,
+        "ort": {**daten["ort"], "adresse": {"ortsteil": "Neukölln"}, "koordinaten": [52.48, 13.41]},
+    }
+    assert Szenario.model_validate(draussen).ort.ohne_adresse is not None
+
+
+def test_himmelsrichtungen():
+    mitte = (52.5, 13.4)
+    assert himmelsrichtung(mitte, (52.51, 13.4)) == "Norden"
+    assert himmelsrichtung(mitte, (52.5, 13.42)) == "Osten"
+    assert himmelsrichtung(mitte, (52.49, 13.385)) == "Südwesten"

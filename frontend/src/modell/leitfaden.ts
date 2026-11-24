@@ -39,8 +39,16 @@ export function leitfaden(graph: Abfragegraph, szenario: Szenario): Stichpunkt[]
     const punkte: Stichpunkt[] = []
     const anlass = graph.knoten[szenario.ziel.knoten]?.anlass ?? szenario.titel
     punkte.push({schluessel: 'leitfaden.einstieg', werte: {name: szenario.anrufer.name, anlass}})
-    const ort = [zeile(szenario.ort.adresse), szenario.ort.objekt].filter(Boolean).join(', ')
-    if (ort) punkte.push({schluessel: 'leitfaden.ort', werte: {ort}})
+    const ohneAdresse = szenario.ort.ohneAdresse
+    if (ohneAdresse) {
+        punkte.push({schluessel: 'leitfaden.ohneAdresse', werte: {wo: ohneAdresse.wo}})
+        for (const sicht of ohneAdresse.umgebung) {
+            punkte.push({schluessel: 'leitfaden.umgebung', werte: {name: sicht.name, art: sicht.art, richtung: sicht.richtung, meter: String(sicht.meter)}})
+        }
+    } else {
+        const ort = [zeile(szenario.ort.adresse), szenario.ort.objekt].filter(Boolean).join(', ')
+        if (ort) punkte.push({schluessel: 'leitfaden.ort', werte: {ort}})
+    }
     const hand = HAND[antworten['eroeffnung.hand']?.antwort ?? '']
     if (hand) punkte.push({schluessel: hand})
     const vorOrt = VOR_ORT[antworten['eroeffnung.vor-ort']?.antwort ?? '']
