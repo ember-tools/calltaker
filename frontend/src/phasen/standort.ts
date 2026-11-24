@@ -1,23 +1,15 @@
+import {zeile} from '../modell/adresse'
 import type {Eintraege} from '../modell/eintraege'
 import {abstandGerundet} from '../modell/karte'
 import {tafelDerWahrheit, tafelImPfad} from '../modell/warntafel'
-import type {Adresse, Szenario} from '../modell/szenario'
+import type {Szenario} from '../modell/szenario'
 import type {Bewertung, Phase} from './typen'
 import {vergleich, vergleichsform} from './vergleich'
 
+export {zeile}
+
 /** An entered point this close to the true one counts as right. */
 export const PUNKT_GENAU_METER = 75
-
-/**
- * An address as one line.
- *
- * @param adresse the address
- * @returns street and number, postcode and Ortsteil
- */
-export function zeile(adresse: Adresse): string {
-    const strasse = `${adresse.strasse} ${adresse.hausnummer}`.trim()
-    return [strasse, `${adresse.plz} ${adresse.ortsteil}`.trim()].filter(Boolean).join(', ')
-}
 
 /**
  * The entered point compared with the true one, by distance.
