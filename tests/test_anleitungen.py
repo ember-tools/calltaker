@@ -74,3 +74,14 @@ def test_eine_kaputte_datei_wird_genannt(tmp_path, graph):
     (tmp_path / "kaputt.json").write_text(json.dumps({"anleitungen": [{"id": "x"}]}))
     with pytest.raises(ValueError, match="kaputt.json"):
         anleitungen.laden(tmp_path, graph)
+
+
+def test_der_rettungsdienst_endet_mit_dem_hinweis_erneut_anzurufen():
+    with TestClient(anwendung_bauen()) as client:
+        buendel = client.get("/api/abfrage").json()
+    hinweis = next(a for a in buendel["anleitungen"] if a["id"] == "rd.erneut-anrufen")
+    assert hinweis["pflicht"] is True
+    assert hinweis["auchOhneVorOrt"] is True
+    assert hinweis["wenn"] == [
+        {"fachrichtung": "rd", "nicht": [{"knoten": "rd.atmung", "antwort": "atmet-nicht"}]}
+    ]
