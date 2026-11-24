@@ -134,4 +134,6 @@ export interface Abfragegraph {
     knoten: Record<string, Knoten>
     endpunkte: Endpunkt[]
     anleitungen?: Anleitung[]
+    /** The fire and rescue protocols that play inside a home, where floor and doorbell matter. */
+    wohnungsprotokolle?: string[]
 }

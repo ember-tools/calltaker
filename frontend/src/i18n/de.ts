@@ -163,6 +163,8 @@ export default {
         sekunden: '{sekunden} s',
     },
     bewertung: {
+        klingel: 'Klingel',
+        haustier: 'Haustier bei den Gefahren',
         vorEintreffen: 'Vor dem Eintreffen der Kräfte aufgelegt',
         bisEintreffen: 'Bis zum Eintreffen am Telefon',
         reanimation: 'Start der Reanimation',
@@ -216,6 +218,8 @@ export default {
             unklar: 'Ob du vor Ort bist, bleibt unklar; weiche aus.',
         },
         betroffen: 'Betroffen: {person}',
+        wohnung: 'Geschoss: {geschoss}, Klingel: {klingel}',
+        haustier: 'Im Haus ist {haustier}; erwähne es nur, wenn danach gefragt wird.',
         tafel: 'Warntafel: oben {oben}, unten {unten}. Nur vorlesen, wenn danach gefragt wird.',
         keineTafel: 'Eine Warntafel kannst du nicht lesen.',
         rueckruf: 'Erreichbar bist du unter {nummer}.',
@@ -364,6 +368,7 @@ export default {
         uebergabe: 'Übergabe',
     },
     fehlt: {
+        geschossKlingel: 'Geschoss oder Klingel',
         eintreffen: 'Kräfte noch nicht vor Ort (Reanimation läuft)',
         anleitung: 'Pflichthinweise an den Anrufer',
         einsatzort: 'Einsatzort als Punkt',
@@ -396,6 +401,7 @@ export default {
         objekt: 'Objekt',
         geschoss: 'Geschoss',
         klingel: 'Name am Klingelschild',
+        haustier: 'Haustier',
         anfahrt: 'Anfahrt',
         gefahren: 'Gefahren an der Einsatzstelle',
         ereignis: 'Ereignis und Patient',

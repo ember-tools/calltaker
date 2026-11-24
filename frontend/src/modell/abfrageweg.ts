@@ -283,3 +283,14 @@ export function erreichbar(graph: Abfragegraph, von: string, ziel: string): bool
     }
     return false
 }
+
+/**
+ * The Fachrichtung the trainee chose at the root, if any.
+ *
+ * @param graph the graph
+ * @param pfad the trainee's path
+ * @returns the root answer, such as "rd"
+ */
+export function fachrichtungImPfad(graph: Abfragegraph, pfad: Schritteintrag[]): string | undefined {
+    return pfad.find(schritt => schritt.knoten === graph.meta.wurzel)?.antwort
+}

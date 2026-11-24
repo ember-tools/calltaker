@@ -91,6 +91,17 @@ EINSATZORTE = frozenset(
         "Kulturzentrum",
     }
 )
+WOHNUNGSPROTOKOLLE = frozenset(
+    {
+        "fw.brand.gebaeudebrand",
+        "fw.brand.rauchentwicklung-brandgeruch",
+        "fw.th.tueroeffnung",
+        "fw.th.wasserschaden",
+        "fw.th.unterstuetzung-rettungsdienst",
+    }
+)
+HAUSTIER_ANTEIL = 0.15
+HAUSTIERE = ("ein Hund", "ein großer Hund", "zwei Katzen", "eine Schlange im Terrarium")
 GESCHOSSE = (
     "EG",
     "1. OG",
@@ -611,10 +622,15 @@ def generieren(
         )
     betroffen = zufallsname(zufall, person.weiblich) if rd else ""
     anrufer_name = betroffen if person.anrufer_selbst else zufallsname(zufall)
-    if rd:
-        an_tuer = bool(ort.adresse.hausnummer) and not ort.objekt
-        ort.geschoss = zufall.choice(GESCHOSSE) if an_tuer else ""
-        ort.klingel = betroffen.split()[-1] if an_tuer else ""
+    if (
+        (rd or endpunkt.protokoll in WOHNUNGSPROTOKOLLE)
+        and ort.adresse.hausnummer
+        and not ort.objekt
+    ):
+        ort.geschoss = zufall.choice(GESCHOSSE)
+        ort.klingel = (betroffen or anrufer_name).split()[-1]
+        if zufall.random() < HAUSTIER_ANTEIL:
+            ort.haustier = zufall.choice(HAUSTIERE)
     stimmungen = STIMMUNGEN[stufe(endpunkt.kategorie)]
     stimmung = zufall.choices(list(stimmungen), weights=list(stimmungen.values()))[0]
     return Szenario(

@@ -718,6 +718,23 @@
       "schliesstAus": [
         "th.gefahrstoffe"
       ]
+    },
+    {
+      "id": "haustiere.wegsperren",
+      "titel": "Haustiere wegsperren",
+      "saetze": [
+        "Sperren Sie Haustiere in ein Zimmer, bevor die Einsatzkräfte kommen."
+      ],
+      "wenn": [
+        {
+          "protokolle": [
+            "fw.th.tueroeffnung",
+            "fw.th.wasserschaden",
+            "fw.th.unterstuetzung-rettungsdienst"
+          ]
+        }
+      ],
+      "quelle": "Übliche Hinweise der Leitstellen"
     }
   ]
 }

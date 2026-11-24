@@ -6,6 +6,7 @@ from fastapi.testclient import TestClient
 import anleitungen
 from einstellungen import einstellungen
 from main import anwendung_bauen
+from szenariogenerator import WOHNUNGSPROTOKOLLE
 
 
 def katalog(tmp_path, *eintraege):
@@ -102,3 +103,9 @@ def test_unbekannte_ausgeschlossene_kategorien_fallen_auf(tmp_path, graph):
     (tmp_path / "a.json").write_text(json.dumps({"anleitungen": [eintrag]}), "utf-8")
     with pytest.raises(ValueError, match="keine Kategorie beginnt mit GIBTSNICHT"):
         anleitungen.laden(tmp_path, graph)
+
+
+def test_die_wohnungsprotokolle_kommen_mit_dem_graphen():
+    with TestClient(anwendung_bauen()) as client:
+        buendel = client.get("/api/abfrage").json()
+    assert buendel["wohnungsprotokolle"] == sorted(WOHNUNGSPROTOKOLLE)

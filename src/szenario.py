@@ -53,6 +53,7 @@ class Ort(Modell):
     klingel: str = ""
     anfahrt: str = ""
     gefahren: str = ""
+    haustier: str = ""
 
 
 class Anrufer(Modell):

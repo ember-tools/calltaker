@@ -12,6 +12,7 @@ from abfrage import Abfragegraph, laden
 from einstellungen import einstellungen
 from pool import Pool, PoolVoll, UngueltigeDatei, befunde_nach_aussen
 from szenario import Szenario, pruefen
+from szenariogenerator import WOHNUNGSPROTOKOLLE
 
 router = APIRouter(prefix="/api")
 
@@ -92,5 +93,6 @@ def abfragebuendel() -> bytes:
     buendel = {
         **abfragegraph().buendel(),
         "anleitungen": anleitungen.nach_aussen(anleitungskatalog()),
+        "wohnungsprotokolle": sorted(WOHNUNGSPROTOKOLLE),
     }
     return json.dumps(buendel, ensure_ascii=False, separators=(",", ":")).encode()

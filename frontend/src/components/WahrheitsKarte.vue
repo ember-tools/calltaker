@@ -40,7 +40,7 @@ const rolle = computed(() => {
     const {stimmung, sprache} = szenario.value.rolle
     return [stimmung ? t('wahrheit.stimmung', {stimmung: t(`editor.stimmungen.${stimmung}`)}) : '', sprache ? t('wahrheit.sprache', {sprache}) : ''].filter(Boolean).join(' · ')
 })
-const ortsangaben = computed(() => (['objekt', 'geschoss', 'klingel', 'anfahrt', 'gefahren'] as const)
+const ortsangaben = computed(() => (['objekt', 'geschoss', 'klingel', 'anfahrt', 'gefahren', 'haustier'] as const)
     .filter(feld => szenario.value.ort[feld])
     .map(feld => ({feld, wert: szenario.value.ort[feld]})))
 const nachgetragen = computed(() => [...nachtraege(props.graph, props.anruf.eintraege)].map(teil => t(`uebergabe.teil.${teil}`)))

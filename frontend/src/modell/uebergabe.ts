@@ -1,5 +1,5 @@
 import type {Abfragegraph} from './abfragegraph'
-import {endergebnis, gewaehltesProtokoll} from './abfrageweg'
+import {endergebnis, fachrichtungImPfad, gewaehltesProtokoll} from './abfrageweg'
 import type {Eintraege} from './eintraege'
 import {reanimationFaellig} from './reanimation'
 
@@ -24,7 +24,7 @@ export function uebergabestand(graph: Abfragegraph, eintraege: Eintraege): Ueber
     const ende = endergebnis(graph, eintraege.abfrage)
     if (!eintraege.ort.koordinaten || (!gewaehltesProtokoll(graph, pfad) && !ende)) return 'gesperrt'
     if (reanimationFaellig(graph, eintraege.abfrage)) return eintraege.reanimation.laeuft || ende ? 'faellig' : 'bereit'
-    const medizinisch = pfad.find(schritt => schritt.knoten === graph.meta.wurzel)?.antwort === 'rd'
+    const medizinisch = fachrichtungImPfad(graph, pfad) === 'rd'
     return !medizinisch || ende ? 'faellig' : 'bereit'
 }
 

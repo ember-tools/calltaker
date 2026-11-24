@@ -5,7 +5,7 @@ import {computed, nextTick, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import {dauer, useUhr} from '../composables/useUhr'
-import {aktuellerKnoten, endergebnis, gewaehltesProtokoll, hoehereEndpunkte, unterscheidungen, zwischenergebnis, type Ergebnis} from '../modell/abfrageweg'
+import {aktuellerKnoten, endergebnis, fachrichtungImPfad, gewaehltesProtokoll, hoehereEndpunkte, unterscheidungen, zwischenergebnis, type Ergebnis} from '../modell/abfrageweg'
 import type {Abfrageeintrag} from '../modell/eintraege'
 import {einenZurueck, mitAutomatik, ordnen} from '../modell/eingrenzung'
 import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
@@ -48,7 +48,7 @@ const ordnung = computed(() => ordnen(props.graph, stand.value.knoten, abfrage.v
 const ende = computed(() => endergebnis(props.graph, abfrage.value))
 const zwischen = computed(() => zwischenergebnis(props.graph, abfrage.value, props.schwerste))
 const protokoll = computed(() => gewaehltesProtokoll(props.graph, abfrage.value.pfad))
-const fachrichtung = computed(() => abfrage.value.pfad.find(s => s.knoten === props.graph.meta.wurzel)?.antwort)
+const fachrichtung = computed(() => fachrichtungImPfad(props.graph, abfrage.value.pfad))
 const zusaetze = computed(() => (knoten.value ? unterscheidungen(knoten.value, props.schwerste, props.graph) : new Map<string, string>()))
 const hoeher = computed(() => (protokoll.value?.protokoll ? hoehereEndpunkte(props.graph, protokoll.value.protokoll, zwischen.value?.kategorie ?? '', zwischen.value?.code) : []))
 const pfadText = computed(() => abfrage.value.pfad.map(schritt => {

@@ -11,6 +11,7 @@ from szenariogenerator import (
     SELBST,
     STILLSTAND,
     VOR_ORT,
+    WOHNUNGSPROTOKOLLE,
     Erzeugung,
     NichtsZuZiehen,
     Person,
@@ -328,3 +329,30 @@ def test_die_frage_nach_der_warntafel_beantwortet_der_generator(graph):
     assert gelesen > unlesbar > 0
     ohne = Quellen(adresse=lambda *_: dict(ADRESSE), ort=lambda *_: dict(PLATZ))
     assert warntafel_ziehen(ohne, Person(40, True, False), random.Random(1)) == Wahl()
+
+
+def test_wohnungen_haben_geschoss_klingel_und_manchmal_ein_haustier(graph):
+    erzeugung = Erzeugung(gewicht_rd=34, gewicht_brand=33, gewicht_th=33, anteil_orte=0)
+    endpunkte = {endpunkt.knoten: endpunkt for endpunkt in graph.endpunkte}
+    mit_tier = wohnungen = 0
+    gesehen = set()
+    for seed in range(400):
+        szenario = generieren(graph, QUELLEN, erzeugung, random.Random(seed))
+        endpunkt = endpunkte[szenario.ziel.knoten]
+        wohnung = endpunkt.fachrichtung == "rd" or endpunkt.protokoll in WOHNUNGSPROTOKOLLE
+        assert bool(szenario.ort.geschoss) == wohnung
+        if wohnung:
+            wohnungen += 1
+            gesehen.add(endpunkt.protokoll)
+            person = szenario.betroffener.name if szenario.betroffener else szenario.anrufer.name
+            assert szenario.ort.klingel == person.split()[-1]
+            mit_tier += bool(szenario.ort.haustier)
+        else:
+            assert not szenario.ort.haustier
+    assert 0 < mit_tier < wohnungen * 0.3
+    assert gesehen & {"fw.th.tueroeffnung", "fw.th.wasserschaden"}
+
+
+def test_wohnungsprotokolle_gibt_es_im_graphen(graph):
+    protokolle = {endpunkt.protokoll for endpunkt in graph.endpunkte}
+    assert WOHNUNGSPROTOKOLLE.issubset(protokolle)

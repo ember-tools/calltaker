@@ -45,6 +45,9 @@ export function leitfaden(graph: Abfragegraph, szenario: Szenario): Stichpunkt[]
     if (hand) punkte.push({schluessel: hand})
     const vorOrt = VOR_ORT[antworten['eroeffnung.vor-ort']?.antwort ?? '']
     if (vorOrt) punkte.push({schluessel: vorOrt})
+    const {geschoss, klingel, haustier} = szenario.ort
+    if (geschoss || klingel) punkte.push({schluessel: 'leitfaden.wohnung', werte: {geschoss: geschoss || '-', klingel: klingel || '-'}})
+    if (haustier) punkte.push({schluessel: 'leitfaden.haustier', werte: {haustier}})
     const person = [szenario.betroffener?.name, alterText(antworten['rd.alter']?.wert), antworten['rd.geschlecht']?.label].filter(Boolean).join(', ')
     if (person) punkte.push({schluessel: 'leitfaden.betroffen', werte: {person}})
     const tafel = tafelDerWahrheit(graph, antworten)

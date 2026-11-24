@@ -18,6 +18,8 @@ export interface Ort {
     klingel: string
     anfahrt: string
     gefahren: string
+    /** A pet at the place, as the caller would mention it, such as "ein Hund". */
+    haustier?: string
 }
 
 /** Who calls: the name, the number shown, and the number the caller is reachable under. */

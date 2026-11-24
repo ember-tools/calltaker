@@ -7,11 +7,13 @@ describe('leitfaden', () => {
         const szenario = anrufMit('l').szenario
         szenario.antworten = {...szenario.antworten, 'eroeffnung.hand': {antwort: '3-hand-der-anrufer-meldet-fuer-andere'}, 'eroeffnung.vor-ort': {antwort: 'nein-war-nicht-vor-ort'}}
         szenario.betroffener = {name: 'Aylin Kaya'}
+        szenario.ort.haustier = 'ein Hund'
         const punkte = leitfaden(GRAPH, szenario)
-        expect(punkte.map(p => p.schluessel)).toEqual(['leitfaden.einstieg', 'leitfaden.ort', 'leitfaden.hand.fuerAndere', 'leitfaden.vorOrt.nie', 'leitfaden.betroffen', 'leitfaden.rueckruf', 'leitfaden.stimmung.panisch'])
+        expect(punkte.map(p => p.schluessel)).toEqual(['leitfaden.einstieg', 'leitfaden.ort', 'leitfaden.hand.fuerAndere', 'leitfaden.vorOrt.nie', 'leitfaden.wohnung', 'leitfaden.haustier', 'leitfaden.betroffen', 'leitfaden.rueckruf', 'leitfaden.stimmung.panisch'])
         expect(punkte[0]!.werte).toEqual({name: 'Mehmet Kaya', anlass: 'Sturz l'})
         expect(punkte[1]!.werte?.ort).toBe('Werderstraße 20, 13587 Hakenfelde')
-        expect(punkte[4]!.werte?.person).toBe('Aylin Kaya, 81 Jahre')
+        expect(punkte[4]!.werte).toEqual({geschoss: '2. OG', klingel: 'Kaya'})
+        expect(punkte[6]!.werte?.person).toBe('Aylin Kaya, 81 Jahre')
     })
 
     it('nennt die Warntafel, oder dass keine lesbar ist', () => {
