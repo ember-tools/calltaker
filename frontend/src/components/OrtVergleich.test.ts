@@ -16,6 +16,6 @@ describe('OrtVergleich', () => {
         mitPunkt.eintraege.ort.koordinaten = [52.5672, 13.2122]
         await ansicht.setProps({anruf: mitPunkt})
         expect(ansicht.get('[data-karte]').text()).toBe('wahrheit,erfasst')
-        expect(ansicht.text()).toContain('100 m vom wahren Punkt')
+        expect(ansicht.text()).toContain('100 m vom richtigen Punkt')
     })
 })
