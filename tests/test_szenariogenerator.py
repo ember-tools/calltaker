@@ -13,6 +13,7 @@ from szenariogenerator import (
     VOR_ORT,
     Erzeugung,
     NichtsZuZiehen,
+    Person,
     Quellen,
     altersspanne,
     anzahl_gewichte,
@@ -312,13 +313,18 @@ def test_die_frage_nach_der_warntafel_beantwortet_der_generator(graph):
     tafelfragen = {
         kid for kid, k in graph.knoten.items() if k.eingabe and k.eingabe.art == "warntafel"
     }
-    gesehen = 0
-    for seed in range(300):
+    gelesen = unlesbar = 0
+    for seed in range(600):
         szenario = generieren(graph, quellen, nur_fw, random.Random(seed))
+        vor_ort = szenario.antworten["eroeffnung.vor-ort"].antwort == "ja-der-anrufer-ist-vor-ort"
         for kid in tafelfragen & set(szenario.antworten):
-            assert szenario.antworten[kid].wert == "33/1203"
-            gesehen += 1
+            wert = szenario.antworten[kid].wert
+            assert wert in ("33/1203", None)
+            assert vor_ort or wert is None
+            if vor_ort:
+                gelesen += wert is not None
+                unlesbar += wert is None
         assert not [b for b in pruefen(szenario, graph) if b.art == "fehler"]
-    assert gesehen > 0
+    assert gelesen > unlesbar > 0
     ohne = Quellen(adresse=lambda *_: dict(ADRESSE), ort=lambda *_: dict(PLATZ))
-    assert warntafel_ziehen(ohne, random.Random(1)) == Wahl()
+    assert warntafel_ziehen(ohne, Person(40, True, False), random.Random(1)) == Wahl()

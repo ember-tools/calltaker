@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {faCheck, faXmark} from '@fortawesome/free-solid-svg-icons'
+import {faCheck, faComments, faXmark} from '@fortawesome/free-solid-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
@@ -7,6 +7,7 @@ import type {Abfragegraph} from '../modell/abfragegraph'
 import {mitKorrektur} from '../modell/eintraege'
 import {dauer} from '../composables/useUhr'
 import {anzeigen} from '../modell/rufnummer'
+import {leitfaden} from '../modell/leitfaden'
 import {nachtraege} from '../modell/uebergabe'
 import {tafelDerWahrheit} from '../modell/warntafel'
 import {sichtVon, type Anruf} from '../modell/uebung'
@@ -44,6 +45,11 @@ const ortsangaben = computed(() => (['objekt', 'geschoss', 'klingel', 'anfahrt',
     .map(feld => ({feld, wert: szenario.value.ort[feld]})))
 const nachgetragen = computed(() => [...nachtraege(props.graph, props.anruf.eintraege)].map(teil => t(`uebergabe.teil.${teil}`)))
 const tafel = computed(() => tafelDerWahrheit(props.graph, szenario.value.antworten))
+const stichpunkte = computed(() => leitfaden(props.graph, szenario.value))
+const jetzt = computed(() => {
+    const hier = vergleich.value.schritte.find(schritt => schritt.stand === 'hier')
+    return hier ? {frage: hier.frage, soll: hier.soll} : vergleich.value.abseits
+})
 const erreichbar = computed(() => {
     const anrufer = szenario.value.anrufer
     return anrufer.rueckrufnummer && anrufer.rueckrufnummer !== anrufer.rufnummer ? anzeigen(anrufer.rueckrufnummer) : ''
@@ -59,6 +65,13 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
             <p class="m-0"><b class="font-mono">{{ szenario.ziel.code }}</b> · {{ ziel?.kategorie }} · {{ ziel?.anlass }}</p>
             <p v-if="rolle" class="m-0">{{ rolle }}</p>
             <p v-if="szenario.rolle.notizen" class="m-0 whitespace-pre-line rounded bg-amber-50 p-2">{{ szenario.rolle.notizen }}</p>
+            <section v-if="anruf.zustand !== 'beendet'" :aria-label="t('leitfaden.titel')" class="flex flex-col gap-1 rounded border border-sky-200 bg-sky-50 p-2">
+                <h3 class="m-0 text-sm font-bold text-sky-900"><FontAwesomeIcon :icon="faComments" class="mr-1.5" aria-hidden="true"/>{{ t('leitfaden.titel') }}</h3>
+                <ul class="m-0 flex flex-col gap-0.5 pl-5">
+                    <li v-for="punkt in stichpunkte" :key="punkt.schluessel">{{ t(punkt.schluessel, punkt.werte ?? {}) }}</li>
+                </ul>
+                <p v-if="jetzt" class="m-0 rounded bg-amber-100 px-2 py-1" role="status">{{ t('leitfaden.jetzt', {frage: jetzt.frage}) }} <b>{{ jetzt.soll ?? t('wahrheit.improvisieren') }}</b></p>
+            </section>
             <p v-if="anruf.eintraege.zeiten.uebergabe" class="m-0 font-semibold text-ok">{{ t('uebergabe.erfolgt', {dauer: dauer(anruf.eintraege.zeiten.uebergabe - (anruf.angenommenUm ?? anruf.eintraege.zeiten.uebergabe))}) }}<span v-if="nachgetragen.length" class="font-normal text-akzent"> · {{ t('uebergabe.nachgetragen', {teile: nachgetragen.join(', ')}) }}</span></p>
             <p v-else-if="anruf.zustand === 'gespraech' || anruf.zustand === 'beendet'" class="m-0 text-gedaempft">{{ t('uebergabe.nicht') }}</p>
         </header>

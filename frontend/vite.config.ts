@@ -1,3 +1,4 @@
+import type {Plugin} from 'vite'
 import {defineConfig} from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
@@ -20,11 +21,28 @@ function commit(): string {
     }
 }
 
+const gebaut = process.env.CALLTAKER_GEBAUT || new Date().toISOString()
+
+/**
+ * Writes `fassung.json` next to the built page, naming the build, so open pages can notice that
+ * a newer one is being served.
+ *
+ * @returns the plugin
+ */
+function fassung(): Plugin {
+    return {
+        name: 'calltaker-fassung',
+        generateBundle() {
+            this.emitFile({type: 'asset', fileName: 'fassung.json', source: JSON.stringify({commit: commit(), gebaut})})
+        },
+    }
+}
+
 export default defineConfig({
-    plugins: [vue(), tailwindcss()],
+    plugins: [vue(), tailwindcss(), fassung()],
     define: {
         __COMMIT__: JSON.stringify(commit()),
-        __GEBAUT__: JSON.stringify(process.env.CALLTAKER_GEBAUT || new Date().toISOString()),
+        __GEBAUT__: JSON.stringify(gebaut),
     },
     build: {
         outDir: '../src/frontend_dist',

@@ -78,3 +78,15 @@ describe('WahrheitsKarte zur Übergabe', () => {
         expect(ansicht.text()).toContain('Nachgetragen: Hinweise')
     })
 })
+
+describe('WahrheitsKarte als Sprechhilfe', () => {
+    it('zeigt den Leitfaden und die gerade gestellte Frage, solange das Gespräch läuft', () => {
+        const anruf = anrufMit('s')
+        const ansicht = mount(WahrheitsKarte, {props: {graph: GRAPH, anruf}, global: {plugins: [i18n]}})
+        expect(ansicht.text()).toContain('So sprichst du als Anrufer')
+        expect(ansicht.text()).toContain('„Hallo, hier ist Mehmet Kaya.“')
+        expect(ansicht.get('[aria-label="So sprichst du als Anrufer"] [role=status]').text()).toContain('Jetzt gefragt:')
+        const beendet = mount(WahrheitsKarte, {props: {graph: GRAPH, anruf: anrufMit('b', 'beendet')}, global: {plugins: [i18n]}})
+        expect(beendet.text()).not.toContain('So sprichst du als Anrufer')
+    })
+})
