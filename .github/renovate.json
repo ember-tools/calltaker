@@ -1,0 +1,56 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard"
+  ],
+  "timezone": "Europe/Berlin",
+  "schedule": ["before 6am on monday"],
+  "automergeSchedule": ["before 6am on monday"],
+  "updateNotScheduled": false,
+  "minimumReleaseAge": "14 days",
+  "internalChecksFilter": "strict",
+  "packageRules": [
+    {
+      "description": "Auto-merge minor and patch updates (non-major)",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "automergeType": "branch",
+      "platformAutomerge": true
+    },
+    {
+      "description": "Major updates require PR and manual approval",
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "description": "Group all non-major dependency updates",
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
+    },
+    {
+      "description": "TypeScript stays below 7 until typescript-eslint accepts it: its parser asks for a TypeScript below 6.1, so npm cannot install 7 and the whole group of major updates fails with it",
+      "matchDepNames": ["typescript"],
+      "allowedVersions": "<7"
+    },
+    {
+      "description": "Group all major updates per package manager",
+      "matchUpdateTypes": ["major"],
+      "groupName": "major updates"
+    },
+    {
+      "description": "The Python image moves only together with shell.nix and the ruff target, so a new Python version comes as its own PR without auto-merge",
+      "matchDatasources": ["docker"],
+      "matchDepNames": ["python"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": false,
+      "groupName": "python",
+      "groupSlug": "python"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"]
+  }
+}
