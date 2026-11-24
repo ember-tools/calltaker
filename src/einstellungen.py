@@ -24,6 +24,7 @@ class Einstellungen(BaseSettings):
     orte_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "orte"
     anleitungen_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "anleitungen"
     beschwerden_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "beschwerden"
+    leitfragen_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "leitfragen"
     gefahrstoffe_verzeichnis: Path = QUELLVERZEICHNIS.parent / "daten" / "gefahrstoffe"
 
     def adressen_datei(self) -> Path:
