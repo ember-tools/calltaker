@@ -52,7 +52,7 @@ const sichtbar = computed(() => {
     if (text) return nummeriert.value.filter(({antwort}) => antwort.label.toLowerCase().includes(text))
     return weitereOffen.value ? nummeriert.value : nummeriert.value.slice(0, props.antworten.length)
 })
-const markiert = computed(() => (ziffern.value ? Number(ziffern.value) : sichtbar.value.length === 1 ? sichtbar.value[0]!.nummer : -1))
+const markiert = computed(() => (ziffern.value ? Number(ziffern.value) - 1 : sichtbar.value.length === 1 ? sichtbar.value[0]!.nummer : -1))
 
 watch(() => alle.value.map(antwort => antwort.id).join('|'), () => {
     suche.value = ''
@@ -77,8 +77,9 @@ function fokussieren(): void {
 defineExpose({fokussieren})
 
 /**
- * Reads digits and Enter while the tiles have the focus; a full match picks at once. Keys with
- * Alt, Ctrl or Cmd belong to others, such as the guidance questions.
+ * Reads digits and Enter while the tiles have the focus; a full match picks at once. Tiles are
+ * numbered from 1, so a leading 0 is ignored. Keys with Alt, Ctrl or Cmd belong to others, such as
+ * the guidance questions.
  *
  * @param ereignis the key pressed
  */
@@ -92,11 +93,12 @@ function taste(ereignis: KeyboardEvent): void {
     }
     if (/^\d$/.test(ereignis.key)) {
         ereignis.preventDefault()
+        if (!ziffern.value && ereignis.key === '0') return
         ziffern.value += ereignis.key
         clearTimeout(zeitgeber)
         const nummer = Number(ziffern.value)
-        if (ziffern.value === '0' || nummer * 10 >= alle.value.length) waehlen(nummer)
-        else zeitgeber = setTimeout(() => waehlen(nummer), ZIFFER_WARTEN_MS)
+        if (nummer * 10 > alle.value.length) waehlen(nummer - 1)
+        else zeitgeber = setTimeout(() => waehlen(nummer - 1), ZIFFER_WARTEN_MS)
     } else if (ereignis.key === 'Enter' && markiert.value >= 0) {
         ereignis.preventDefault()
         waehlen(markiert.value)
@@ -120,7 +122,7 @@ function taste(ereignis: KeyboardEvent): void {
                 @click="waehlen(nummer)"
                 @keydown="taste"
             >
-                <span :class="['flex w-11 flex-none items-center justify-center font-mono', farbeVon(antwort).nummer]">{{ nummer }}</span>
+                <span :class="['flex w-11 flex-none items-center justify-center font-mono', farbeVon(antwort).nummer]">{{ nummer + 1 }}</span>
                 <span class="flex flex-1 flex-col justify-center px-3 py-2 leading-tight">
                     {{ antwort.label }}
                     <small v-if="zusaetze.get(antwort.id)" class="font-mono font-normal opacity-75">{{ zusaetze.get(antwort.id) }}</small>

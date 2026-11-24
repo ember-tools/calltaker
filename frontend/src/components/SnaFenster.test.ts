@@ -93,10 +93,10 @@ describe('SnaFenster mit der Tastatur', () => {
             attachTo: document.body,
         })
         ;(ansicht.vm as unknown as {fokussieren: () => void}).fokussieren()
-        await (document.activeElement as HTMLElement).dispatchEvent(new KeyboardEvent('keydown', {key: '0', bubbles: true}))
+        await (document.activeElement as HTMLElement).dispatchEvent(new KeyboardEvent('keydown', {key: '1', bubbles: true}))
         await nextTick()
         await nextTick()
-        document.activeElement!.dispatchEvent(new KeyboardEvent('keydown', {key: '0', bubbles: true}))
+        document.activeElement!.dispatchEvent(new KeyboardEvent('keydown', {key: '1', bubbles: true}))
         await nextTick()
         await nextTick()
         expect((ansicht.props('modelValue') as Abfrageeintrag).pfad).toEqual([{knoten: 'fachrichtung', antwort: 'rd'}, {knoten: 'hand', antwort: 'eins'}])
@@ -151,7 +151,7 @@ describe('SnaFenster bei der Frage nach der Warntafel', () => {
         vi.unstubAllGlobals()
     })
 
-    it('bietet Leitfragen neben den Kacheln an und blendet ausgeschlossene Kacheln ab', async () => {
+    it('bietet Leitfragen über den Kacheln an und blendet ausgeschlossene Kacheln ab', async () => {
         const mitLeitfragen = {...graph, leitfragen: [{knoten: 'p.k0', fragen: [{id: 'a', frage: 'Atmet die Person?', antworten: [{label: 'Ja', nimmt: ['schwer-2']}, {label: 'Nein', behaelt: ['schwer-2']}]}]}]}
         const ansicht = mount(SnaFenster, {
             props: {graph: mitLeitfragen, schwerste, gesperrt: false, modelValue: {pfad: BIS_SITUATION}, leitfragen: [], 'onUpdate:leitfragen': (wert: unknown) => ansicht.setProps({leitfragen: wert as never})},
@@ -163,7 +163,7 @@ describe('SnaFenster bei der Frage nach der Warntafel', () => {
         expect(ansicht.emitted('sofort')).toBeTruthy()
         expect(ansicht.findAll('[data-antworten] .opacity-40')).toHaveLength(1)
         expect(ansicht.findAll('[data-antworten] .ring-3')).toHaveLength(2)
-        expect(ansicht.findAll('[data-vorschlag]').map(b => b.text())).toEqual(['0Leicht', '1Schwer'])
+        expect(ansicht.findAll('[data-vorschlag]').map(b => b.text())).toEqual(['1Leicht', '2Schwer'])
         const ohne = mount(SnaFenster, {props: {graph, schwerste, gesperrt: false, modelValue: {pfad: BIS_SITUATION}}, global: {plugins: [i18n]}})
         expect(ohne.find('aside').exists()).toBe(false)
     })
