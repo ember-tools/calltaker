@@ -513,7 +513,7 @@ export default {
         beendet: 'Gespräch beendet.',
         graphFehlt: 'Der Abfragegraph lädt nicht: {fehler}',
         debrief: 'Debrief des Gesprächs ansehen',
-        tasten: 'F2: Einsatzmaske · F3: Abfrage · F4: Hinweise an den Anrufer · F9: An Disposition übergeben',
+        tasten: 'F2: Einsatzmaske · F3: Abfrage · F4: Hinweise an den Anrufer · F9: An Disposition übergeben · Alt+Ziffer: Leitfrage beantworten',
     },
     phase: {
         leiste: 'Phasen des Gesprächs',
@@ -567,6 +567,18 @@ export default {
         alter: 'Alter (aus der Abfrage)',
         hinweise: 'Hinweise',
         sna: 'SNA',
+    },
+    leitfragen: {
+        titel: 'Leitfragen',
+        sicherheit: 'Sicherheitsfrage',
+        taste: 'Alt+{nummer}',
+        vorschlag: 'Vorschlag: eine dieser Kacheln',
+        keineFrage: 'Keine weitere Leitfrage. Wähle die passende Kachel.',
+        bisher: 'Bisher gefragt',
+        aendern: 'ändern',
+        aendernFrage: 'Antwort auf „{frage}“ ändern',
+        neu: 'Neu beginnen',
+        direkt: 'Bist du dir sicher, wähle die Kachel direkt.',
     },
     sna: {
         weitere: 'Weitere Antworten ({anzahl})',

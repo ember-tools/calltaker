@@ -150,4 +150,49 @@ describe('SnaFenster bei der Frage nach der Warntafel', () => {
         expect(ansicht.text()).toContain('Situation?')
         vi.unstubAllGlobals()
     })
+
+    it('bietet Leitfragen neben den Kacheln an und blendet ausgeschlossene Kacheln ab', async () => {
+        const mitLeitfragen = {...graph, leitfragen: [{knoten: 'p.k0', fragen: [{id: 'a', frage: 'Atmet die Person?', antworten: [{label: 'Ja', nimmt: ['schwer-2']}, {label: 'Nein', behaelt: ['schwer-2']}]}]}]}
+        const ansicht = mount(SnaFenster, {
+            props: {graph: mitLeitfragen, schwerste, gesperrt: false, modelValue: {pfad: BIS_SITUATION}, leitfragen: [], 'onUpdate:leitfragen': (wert: unknown) => ansicht.setProps({leitfragen: wert as never})},
+            global: {plugins: [i18n]},
+        })
+        expect(ansicht.get('aside').text()).toContain('Atmet die Person?')
+        expect(ansicht.findAll('[data-antworten] .opacity-40')).toHaveLength(0)
+        await ansicht.get('aside').findAll('button').find(b => b.text().startsWith('Ja'))!.trigger('click')
+        expect(ansicht.emitted('sofort')).toBeTruthy()
+        expect(ansicht.findAll('[data-antworten] .opacity-40')).toHaveLength(1)
+        expect(ansicht.findAll('[data-antworten] .ring-3')).toHaveLength(2)
+        expect(ansicht.findAll('[data-vorschlag]').map(b => b.text())).toEqual(['0Leicht', '1Schwer'])
+        const ohne = mount(SnaFenster, {props: {graph, schwerste, gesperrt: false, modelValue: {pfad: BIS_SITUATION}}, global: {plugins: [i18n]}})
+        expect(ohne.find('aside').exists()).toBe(false)
+    })
+
+    it('lässt Alt und Ziffer auf einer Kachel die Leitfrage beantworten, nicht die Kachel wählen', async () => {
+        const mitLeitfragen = {...graph, leitfragen: [{knoten: 'p.k0', fragen: [{id: 'a', frage: 'Atmet die Person?', antworten: [{label: 'Ja', nimmt: ['schwer-2']}, {label: 'Nein', behaelt: ['schwer-2']}]}]}]}
+        const ansicht = mount(SnaFenster, {
+            props: {graph: mitLeitfragen, schwerste, gesperrt: false, modelValue: {pfad: BIS_SITUATION}, leitfragen: [], 'onUpdate:leitfragen': (wert: unknown) => ansicht.setProps({leitfragen: wert as never}), 'onUpdate:modelValue': (wert: Abfrageeintrag) => ansicht.setProps({modelValue: wert})},
+            global: {plugins: [i18n]},
+            attachTo: document.body,
+        })
+        const kachel = ansicht.get('[data-antworten] button')
+        ;(kachel.element as HTMLElement).focus()
+        vi.useFakeTimers()
+        kachel.element.dispatchEvent(new KeyboardEvent('keydown', {key: '1', code: 'Digit1', altKey: true, bubbles: true}))
+        vi.advanceTimersByTime(700)
+        vi.useRealTimers()
+        await nextTick()
+        expect(ansicht.props('modelValue')).toEqual({pfad: BIS_SITUATION})
+        expect(ansicht.props('leitfragen')).toEqual([{knoten: 'p.k0', frage: 'a', antwort: 'Ja'}])
+        expect(document.activeElement).toBe(kachel.element)
+        ansicht.unmount()
+    })
+
+    it('legt den Fokus auch bei Leitfragen auf die erste Kachel', async () => {
+        const mitLeitfragen = {...graph, leitfragen: [{knoten: 'p.k0', fragen: [{id: 'a', frage: 'Atmet die Person?', antworten: [{label: 'Ja', nimmt: ['schwer-2']}, {label: 'Nein', behaelt: ['schwer-2']}]}]}]}
+        const ansicht = mount(SnaFenster, {props: {graph: mitLeitfragen, schwerste, gesperrt: false, modelValue: {pfad: BIS_SITUATION}, leitfragen: []}, global: {plugins: [i18n]}, attachTo: document.body})
+        ;(ansicht.vm as unknown as {fokussieren: () => void}).fokussieren()
+        expect(document.activeElement).toBe(ansicht.get('[data-antworten] button').element)
+        ansicht.unmount()
+    })
 })
