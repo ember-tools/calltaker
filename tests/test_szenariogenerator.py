@@ -858,3 +858,12 @@ def test_eine_einzige_belastende_lage_meldet_nichts_zu_ziehen(graph):
         graph, QUELLEN, Erzeugung(protokoll="rd.39", belastende=["gewalt"]), random.Random(1)
     )
     assert szenario.ziel.code.startswith("39")
+
+
+def test_stillstaende_ausserhalb_des_stillstandsprotokolls_werden_nicht_gezogen(graph):
+    alle = Erzeugung(belastende=sorted(BELASTENDE))
+    for protokolle in ziehbare(graph, alle).values():
+        for endpunkte in protokolle.values():
+            for endpunkt in endpunkte:
+                if endpunkt.protokoll != "rd.09":
+                    assert "stillstand" not in (endpunkt.anlass or "").lower(), endpunkt.code

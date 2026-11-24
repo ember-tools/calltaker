@@ -1,5 +1,6 @@
 import json
 import random
+import re
 
 import pytest
 
@@ -8,7 +9,7 @@ from einstellungen import einstellungen
 from meldehand import BEIM_BETROFFENEN, SELBST, VOR_ORT_JA, WACH
 from stimmigkeit import alter_aus, pfadtext
 from szenario import Wahl
-from szenariogenerator import Erzeugung, Quellen, generieren
+from szenariogenerator import BELASTENDE, Erzeugung, Quellen, generieren
 
 ADRESSE = {
     "strasse": "Karl-Marx-Straße",
@@ -105,6 +106,9 @@ def test_eine_beschwerde_widerspricht_der_eroeffnung_nicht():
     assert wach.stimmt(WACH, None)
     assert not luft.stimmt(None, "ja-normale-atmung")
     assert luft.stimmt(None, "atmung-auffaellig")
+    reagiert = beschwerden.Beschwerde(text="x", zeigt=["reagiert"])
+    assert not reagiert.stimmt("reagiert-nicht", None)
+    assert reagiert.stimmt("reagiert-aber-nicht-normal", None)
 
 
 def test_die_pronomen_folgen_dem_geschlecht():
@@ -129,18 +133,20 @@ def herkunft(katalog):
     return woher
 
 
-PROTOKOLLE = (
-    "rd.02",
-    "rd.06",
-    "rd.09",
-    "rd.10",
-    "rd.12",
-    "rd.13",
-    "rd.17",
-    "rd.24",
-    "rd.28",
-    "rd.31",
-)
+OHNE_BESCHWERDEN = {"rd.34", "rd.39"}
+ANSPRECHBAR = re.compile(r"\b(sagt|redet|hält|schreit|spricht|wach|versteht|krümmt|hustet)\b")
+ALLE_BELASTENDEN = sorted(BELASTENDE)
+
+
+def rd_protokolle(graph):
+    return sorted(
+        {e.protokoll for e in graph.endpunkte if e.protokoll.startswith("rd.")} - OHNE_BESCHWERDEN
+    )
+
+
+def test_jede_lage_der_notfallrettung_hat_beschwerden(graph, katalog):
+    abgedeckt = {protokoll for eintrag in katalog for protokoll in eintrag.protokolle}
+    assert set(rd_protokolle(graph)) <= abgedeckt
 
 
 def test_gezogene_beschwerden_passen_zu_pfad_eroeffnung_und_sicht(graph, katalog):
@@ -149,10 +155,13 @@ def test_gezogene_beschwerden_passen_zu_pfad_eroeffnung_und_sicht(graph, katalog
     woher = herkunft(katalog)
     endpunkte = {e.knoten: e for e in graph.endpunkte}
     gesehen = set()
-    for protokoll in PROTOKOLLE:
-        for _ in range(120):
+    for protokoll in rd_protokolle(graph):
+        for _ in range(60):
             szenario = generieren(
-                graph, quellen, Erzeugung(protokoll=protokoll, anteil_orte=0), zufall
+                graph,
+                quellen,
+                Erzeugung(protokoll=protokoll, anteil_orte=0, belastende=ALLE_BELASTENDEN),
+                zufall,
             )
             endpunkt = endpunkte[szenario.ziel.knoten]
             text = pfadtext(graph, endpunkt)
@@ -182,6 +191,8 @@ def test_gezogene_beschwerden_passen_zu_pfad_eroeffnung_und_sicht(graph, katalog
                     and beschwerde.stimmt(reaktion, atmung)
                 ]
                 assert moeglich, (satz, endpunkt.code, reaktion, atmung)
+                if reaktion == "reagiert-nicht":
+                    assert not ANSPRECHBAR.search(satz), (satz, endpunkt.code)
                 gesehen.add(moeglich[0][0].id)
             if alter is not None and alter <= 12 and protokoll == "rd.09":
                 assert not any("Schultern" in satz or "umgekippt" in satz for satz in gezogen)

@@ -465,7 +465,8 @@ class Person:
 
 
 STILLSTAND = re.compile(
-    r"\btote?\b|leblos|atemstillstand|atmet nicht|keine atmung|nicht atmend|reanimation"
+    r"\btote?\b|leblos|atemstillstand|kreislaufstillstand|atmet nicht|keine atmung|nicht atmend"
+    r"|reanimation"
 )
 ATEMNOT = re.compile(r"ineffektiv|atemnot|schnappatmung|atmung (auffällig|erschwert)")
 BEWUSSTLOS = re.compile(r"(?<!nicht )bewusstlos|reagiert nicht|nicht ansprechbar|krampf|nicht wach")
