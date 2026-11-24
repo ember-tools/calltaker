@@ -171,6 +171,8 @@ export default {
         reanimation: 'Start der Reanimation',
         reanimationUnnoetig: 'Reanimation ohne Stillstand',
         reanimationGruppe: 'Reanimationsschritte für die Altersgruppe',
+        leitfragenWeg: 'Mit den Leitfragen zur korrekten Kachel',
+        sicherheitsfrage: 'Sicherheitsfrage nicht gestellt',
         uebergabe: 'Übergabe an die Disposition',
         uebergabeOhne: 'Nicht übergeben, das Ende des Gesprächs zählt als Übergabe',
         uebergabeOhnePunkt: 'Bei der Übergabe fehlte der Einsatzort',

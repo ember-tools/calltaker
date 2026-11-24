@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest'
-import {angeboten, antwortAusLoesung, leitfragenAn, leitstand, naechste, offen, rest, type Knotenleitfragen, type Leitfrage} from './leitfragen'
+import {angeboten, antwortAusLoesung, leitfragenAn, leithinweise, leitstand, naechste, offen, rest, wegZurLoesung, type Knotenleitfragen, type Leitfrage} from './leitfragen'
 import {testgraph} from './testgraph.test-hilfe'
 
 const jaNein = (id: string, kachel: string, mehr: Partial<Leitfrage> = {}): Leitfrage => ({
@@ -104,5 +104,61 @@ describe('antwortAusLoesung', () => {
         expect(antwortAusLoesung(w, strom, alle, {'w.s2': {antwort: 'ja'}})).toEqual(['Ja'])
         expect(antwortAusLoesung(w, strom, alle, {'w.s1': {antwort: 'nie'}})).toEqual(['Nein'])
         expect(antwortAusLoesung(w, strom, alle, {})).toEqual([])
+    })
+})
+
+describe('leithinweise', () => {
+    const graph = {
+        ...testgraph(),
+        leitfragen: [{knoten: 'p.k0', fragen: [
+            {id: 'strom', frage: 'Strom?', sicherheit: true, hinweis: 'Abstand.', antworten: [{label: 'Ja'}, {label: 'Nein'}]},
+            {id: 'atmet', frage: 'Atmet die Person?', antworten: [{label: 'Ja', nimmt: ['schwer-2']}, {label: 'Nein', behaelt: ['schwer-2']}, {label: 'Weiß nicht'}]},
+            {id: 'blut', frage: 'Blutet es stark?', antworten: [{label: 'Ja', behaelt: ['schwer']}, {label: 'Nein', behaelt: ['leicht']}, {label: 'Weiß nicht'}]},
+        ]}],
+    }
+    const loesung = {'p.k0': {antwort: 'schwer'}}
+
+    it('zeigt bei einer anderen Kachel den Weg über die Leitfragen zur korrekten', () => {
+        expect(wegZurLoesung(graph.leitfragen[0]!, ['leicht', 'schwer', 'schwer-2'], 'schwer', loesung).weg).toEqual([
+            {frage: 'Atmet die Person?', antwort: 'Ja'},
+            {frage: 'Blutet es stark?', antwort: 'Ja'},
+        ])
+        const hinweise = leithinweise(graph, [{knoten: 'p.k0', antwort: 'leicht'}], [{knoten: 'p.k0', frage: 'strom', antwort: 'Nein'}], loesung)
+        expect(hinweise).toEqual([{art: 'weg', knoten: 'p.k0', soll: 'Atmet die Person? Ja → Blutet es stark? Ja → Schwer', ist: 'Leicht'}])
+    })
+
+    it('nennt eine nicht gestellte Sicherheitsfrage, sonst nichts bei der korrekten Kachel', () => {
+        expect(leithinweise(graph, [{knoten: 'p.k0', antwort: 'schwer'}], [], loesung)).toEqual([{art: 'sicherheit', knoten: 'p.k0', soll: '', ist: 'Strom?'}])
+        expect(leithinweise(graph, [{knoten: 'p.k0', antwort: 'schwer', automatisch: true}], [], loesung)).toEqual([])
+        expect(leithinweise(graph, [{knoten: 'p.k0', antwort: 'schwer'}], [{knoten: 'p.k0', frage: 'strom', antwort: 'Ja'}], loesung)).toEqual([])
+        expect(leithinweise(graph, [{knoten: 'rd.wahl', antwort: 'sturz'}], [], loesung)).toEqual([])
+    })
+})
+
+describe('wegZurLoesung bei offenen Fragen und Direktkacheln', () => {
+    it('nimmt bei einer Frage, die die Lösung offen lässt, die engste Antwort, die die korrekte Kachel behält', () => {
+        const eintrag: Knotenleitfragen = {knoten: 'k', fragen: [
+            {id: 'grob', frage: 'Grob?', antworten: [{label: 'A', behaelt: ['1', '2']}, {label: 'B', behaelt: ['1', '2', '3']}, {label: 'C', behaelt: ['4']}]},
+        ]}
+        const {weg, kacheln} = wegZurLoesung(eintrag, ['1', '2', '3', '4'], '1', {k: {antwort: '1'}})
+        expect(weg).toEqual([{frage: 'Grob?', antwort: 'A'}])
+        expect([...kacheln]).toEqual(['1', '2'])
+    })
+
+    it('gibt keinen Weg für eine Direktkachel oder an einem Knoten nur mit Sicherheitsfragen', () => {
+        const graph = {...testgraph(), leitfragen: [{knoten: 'p.k0', nurDirekt: ['schwer-2'], fragen: [
+            {id: 'strom', frage: 'Strom?', sicherheit: true, antworten: [{label: 'Ja'}, {label: 'Nein'}], loesung: {knoten: ['p.k0'], ja: ['schwer']}},
+        ]}]}
+        expect(leithinweise(graph, [{knoten: 'p.k0', antwort: 'leicht'}], [{knoten: 'p.k0', frage: 'strom', antwort: 'Ja'}], {'p.k0': {antwort: 'schwer'}})).toEqual([])
+        expect(leithinweise(graph, [{knoten: 'p.k0', antwort: 'leicht'}], [{knoten: 'p.k0', frage: 'strom', antwort: 'Ja'}], {'p.k0': {antwort: 'schwer-2'}})).toEqual([])
+    })
+})
+
+describe('leithinweise mit Bedingungen', () => {
+    it('übergeht Sicherheitsfragen, deren Kacheln am Knoten nicht vorkommen', () => {
+        const graph = {...testgraph(), leitfragen: [{knoten: 'p.k0', fragen: [
+            {id: 'strom', frage: 'Strom?', sicherheit: true, wenn: ['gibt-es-hier-nicht'], antworten: [{label: 'Ja'}, {label: 'Nein'}]},
+        ]}]}
+        expect(leithinweise(graph, [{knoten: 'p.k0', antwort: 'schwer'}], [], {})).toEqual([])
     })
 })

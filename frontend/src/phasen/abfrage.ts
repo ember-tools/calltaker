@@ -1,5 +1,6 @@
 import type {Abfragegraph} from '../modell/abfragegraph'
-import {endergebnis, istStillstand, type Ergebnis} from '../modell/abfrageweg'
+import {aktuellerKnoten, endergebnis, istStillstand, type Ergebnis} from '../modell/abfrageweg'
+import {leithinweise} from '../modell/leitfragen'
 import type {Ziel} from '../modell/szenario'
 import type {Bewertung, Codestufe, Phase, Urteil} from './typen'
 
@@ -61,6 +62,10 @@ export const abfrage: Phase = {
         const ohne = aufwertung ? endergebnis(graph, {pfad}) : undefined
         if (ohne) zusaetze.push({feld: 'bewertung.codeVorAufwertung', soll: '', ist: anzeige(ohne.code, ohne.knoten), urteil: 'hinweis'})
         if (abbruch) zusaetze.push({feld: 'bewertung.abbruch', soll: '', ist: abbruch.grund, urteil: 'hinweis'})
+        const gueltig = pfad.slice(0, aktuellerKnoten(graph, pfad).passend)
+        for (const hinweis of leithinweise(graph, gueltig, eintraege.leitfragen ?? [], szenario.antworten)) {
+            zusaetze.push({feld: hinweis.art === 'weg' ? 'bewertung.leitfragenWeg' : 'bewertung.sicherheitsfrage', soll: hinweis.soll, ist: hinweis.ist, urteil: 'hinweis'})
+        }
         if (!erreicht) return [{feld: 'bewertung.code', soll, ist: '', urteil: 'offen'}, ...zusaetze]
         const stufe = codestufe(graph, ziel, erreicht)
         return [{feld: 'bewertung.code', soll, ist: anzeige(erreicht.code, erreicht.knoten), urteil: URTEIL_JE_STUFE[stufe], stufe}, ...zusaetze]

@@ -124,7 +124,7 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
                 <span class="w-32 shrink-0">{{ bewertung.beschriftung ?? t(bewertung.feld) }}</span>
                 <span v-if="bewertung.abstand !== undefined">{{ t('wahrheit.abstand', {meter: bewertung.abstand}) }}</span>
                 <span v-else-if="bewertung.urteil === 'offen'">{{ t('wahrheit.offen') }}</span>
-                <span v-else>{{ bewertung.ist }}<template v-if="bewertung.urteil === 'falsch' || bewertung.urteil === 'teilweise'"> · {{ t('wahrheit.soll', {soll: bewertung.soll}) }}</template><template v-if="bewertung.stufe && bewertung.stufe !== 'exakt'"> ({{ t(`stufe.${bewertung.stufe}`) }})</template></span>
+                <span v-else>{{ bewertung.ist }}<template v-if="bewertung.urteil === 'falsch' || bewertung.urteil === 'teilweise' || (bewertung.urteil === 'hinweis' && bewertung.soll)"> · {{ t('wahrheit.soll', {soll: bewertung.soll}) }}</template><template v-if="bewertung.stufe && bewertung.stufe !== 'exakt'"> ({{ t(`stufe.${bewertung.stufe}`) }})</template></span>
                 <button v-if="bewertung.anleitung" type="button" class="ml-auto shrink-0 text-xs underline" @click="emit('korrigieren', bewertung.anleitung, !bewertung.gegeben)"><FontAwesomeIcon :icon="bewertung.gegeben ? faXmark : faCheck" class="mr-1" aria-hidden="true"/>{{ bewertung.gegeben ? t('wahrheit.nichtGegeben') : t('wahrheit.gegeben') }}</button>
             </li>
         </ul>

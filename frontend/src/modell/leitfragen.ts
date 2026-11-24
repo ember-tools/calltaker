@@ -1,5 +1,5 @@
 import type {Abfragegraph} from './abfragegraph'
-import type {Leitfrageneintrag} from './eintraege'
+import type {Leitfrageneintrag, Schritteintrag} from './eintraege'
 import type {Wahl} from './szenario'
 
 /** One answer to a guidance question: the tiles it keeps, or the tiles it takes out. */
@@ -172,4 +172,78 @@ export function antwortAusLoesung(eintrag: Knotenleitfragen, frage: Leitfrage, k
     const eingrenzend = passend.filter(antwort => rest(antwort, kacheln).size < kacheln.size)
     if (passend.length === angebot.length) return []
     return (eingrenzend.length ? eingrenzend : passend).map(antwort => antwort.label)
+}
+
+/** A debrief hint from the guidance questions, ready to show as an assessment. */
+export interface Leithinweis {
+    art: 'weg' | 'sicherheit'
+    knoten: string
+    soll: string
+    ist: string
+}
+
+/**
+ * The way the guidance questions take to the correct tile, answering as the solution does. Where
+ * the solution leaves a question open, the narrowest answer that keeps the correct tile is taken,
+ * as a trainee could; only answers that narrow the tiles count as steps.
+ *
+ * @param eintrag the node's guidance questions
+ * @param alle the node's tiles
+ * @param korrekt the correct tile
+ * @param antworten the solution's answers, by node
+ * @returns the narrowing questions with their answers, and the tiles left at the end
+ */
+export function wegZurLoesung(eintrag: Knotenleitfragen, alle: readonly string[], korrekt: string, antworten: Record<string, Wahl>): {weg: {frage: string, antwort: string}[], kacheln: Set<string>} {
+    let kacheln: Set<string> = new Set(alle)
+    let ab = 0
+    const weg: {frage: string, antwort: string}[] = []
+    for (let naechsteFrage = naechste(eintrag, kacheln, ab); naechsteFrage; naechsteFrage = naechste(eintrag, kacheln, ab)) {
+        const {stelle, frage} = naechsteFrage
+        ab = stelle + 1
+        const angebot = angeboten(frage, kacheln)
+        const laut = antwortAusLoesung(eintrag, frage, kacheln, antworten)
+        const reste = angebot
+            .filter(a => (laut.length ? laut.includes(a.label) : true))
+            .map(antwort => ({antwort, uebrig: rest(antwort, kacheln)}))
+            .filter(({uebrig}) => uebrig.has(korrekt) && uebrig.size < kacheln.size)
+            .sort((a, b) => a.uebrig.size - b.uebrig.size)
+        const engste = reste[0]
+        if (!engste) continue
+        kacheln = engste.uebrig
+        weg.push({frage: frage.frage, antwort: engste.antwort.label})
+    }
+    return {weg, kacheln}
+}
+
+/**
+ * What the debrief points out about the guidance questions, as hints, never as faults: where the
+ * trainee picked another tile than the correct one at a node whose guidance questions lead to it,
+ * the way they would have taken; and safety questions at a node the trainee went through but did
+ * not ask. Steps the questioning took by itself are passed over.
+ *
+ * @param graph the graph with its catalogue
+ * @param pfad the trainee's answers
+ * @param gestellt the guidance questions the trainee asked
+ * @param antworten the solution's answers, by node
+ * @returns the hints, in the order of the path
+ */
+export function leithinweise(graph: Abfragegraph, pfad: readonly Schritteintrag[], gestellt: readonly Leitfrageneintrag[], antworten: Record<string, Wahl>): Leithinweis[] {
+    const hinweise: Leithinweis[] = []
+    for (const schritt of pfad) {
+        const eintrag = leitfragenAn(graph, schritt.knoten)
+        if (!eintrag || schritt.automatisch) continue
+        const kacheln = graph.knoten[schritt.knoten]?.antworten ?? []
+        const ids = kacheln.map(k => k.id)
+        const label = (id?: string) => kacheln.find(k => k.id === id)?.label ?? ''
+        for (const frage of eintrag.fragen.filter(f => f.sicherheit && offen(f, new Set(ids)))) {
+            if (!gestellt.some(g => g.knoten === schritt.knoten && g.frage === frage.id)) hinweise.push({art: 'sicherheit', knoten: schritt.knoten, soll: '', ist: frage.frage})
+        }
+        const korrekt = antworten[schritt.knoten]?.antwort
+        if (!korrekt || !schritt.antwort || schritt.antwort === korrekt || !ids.includes(korrekt) || eintrag.nurDirekt?.includes(korrekt)) continue
+        const {weg, kacheln: rest} = wegZurLoesung(eintrag, ids, korrekt, antworten)
+        if (!weg.length || !rest.has(korrekt) || rest.size > HOECHSTENS_VORGESCHLAGEN) continue
+        const soll = [...weg.map(w => `${w.frage} ${w.antwort}`), label(korrekt)].join(' → ')
+        hinweise.push({art: 'weg', knoten: schritt.knoten, soll, ist: label(schritt.antwort)})
+    }
+    return hinweise
 }
