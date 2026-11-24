@@ -44,7 +44,6 @@ describe('nachtraege', () => {
         eintraege.uebergeben = {ort, anrufer, betroffener, abfrage, hinweise}
         expect([...nachtraege(graph, eintraege)]).toEqual([])
         eintraege.hinweise = 'Hund im Haus'
-        eintraege.ort.gefahrgut = {un: '', gefahrenzahl: ''}
         eintraege.abfrage = {pfad: [...BIS_SITUATION, {knoten: 'p.k0', antwort: 'schwer'}]}
         expect([...nachtraege(graph, eintraege)].sort()).toEqual(['code', 'hinweise'])
     })

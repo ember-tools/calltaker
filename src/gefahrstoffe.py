@@ -10,18 +10,7 @@ from pathlib import Path
 
 from pydantic import BaseModel, ConfigDict, Field
 
-GEFAHRGUT_PROTOKOLL = "fw.th.gefahrstoffe"
-WARNTAFEL_PROTOKOLLE = (
-    GEFAHRGUT_PROTOKOLL,
-    "fw.th.verkehrsunfall",
-    "fw.brand.fahrzeugbrand",
-    "fw.brand.industrie-und-gewerbebrand",
-)
-GEFAHRGUT_ANTWORTEN = (
-    ("fw.th.verkehrsunfall.k3", "gefahrgut"),
-    ("fw.brand.fahrzeugbrand.k2", "gefahrgut"),
-    ("fw.brand.industrie-und-gewerbebrand.k0", "anlage-mit-gefahrstoffen"),
-)
+TAFEL = re.compile(r"^(X?\d{2,3})?/\d{4}$")
 GEFAHRENZAHL = re.compile(r"^X?\d{2,3}$")
 
 
@@ -50,6 +39,11 @@ def herkunft(verzeichnis: Path) -> dict:
     return json.loads(datei.read_text("utf-8")) if datei.exists() else {}
 
 
+def tafel(stoff: Stoff) -> str:
+    """Return a plate as the plate question records it: "hazard number/UN number"."""
+    return f"{stoff.gefahrenzahl}/{stoff.un}"
+
+
 def mit_warntafel(stoffe: list[Stoff]) -> list[Stoff]:
     """Return the entries a vehicle can carry an orange plate with numbers for.
 
@@ -57,13 +51,3 @@ def mit_warntafel(stoffe: list[Stoff]) -> list[Stoff]:
     carried, and combined values such as "30 + 33" that no plate shows.
     """
     return [stoff for stoff in stoffe if GEFAHRENZAHL.match(stoff.gefahrenzahl)]
-
-
-def warntafel_regeln() -> dict:
-    """Return when a call can involve an orange plate, as the frontend shows its field."""
-    return {
-        "protokolle": list(WARNTAFEL_PROTOKOLLE),
-        "antworten": [
-            {"knoten": knoten, "antwort": antwort} for knoten, antwort in GEFAHRGUT_ANTWORTEN
-        ],
-    }

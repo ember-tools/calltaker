@@ -186,6 +186,7 @@ export default {
         un: 'UN-Nummer (unten)',
         klasse: 'Klasse {klasse}',
         unbekannt: 'Diese UN-Nummer steht nicht in der Liste.',
+        mehrere: 'Gefahrenzahl je nach Stoff:',
         name: 'Stoff nach Namen suchen',
     },
     fuss: {

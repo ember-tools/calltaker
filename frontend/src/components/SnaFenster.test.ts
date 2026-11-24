@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils'
-import {describe, expect, it} from 'vitest'
+import {describe, expect, it, vi} from 'vitest'
 import {nextTick} from 'vue'
 import {i18n} from '../i18n'
 import {schwersteErreichbare} from '../modell/abfrageweg'
@@ -127,5 +127,27 @@ describe('SnaFenster mit Eingrenzung', () => {
         expect(ansicht.text()).toContain('(automatisch)')
         await ansicht.findAll('button').find(b => b.text() === 'Zurück')!.trigger('click')
         expect((ansicht.props('modelValue') as Abfrageeintrag).pfad).toHaveLength(3)
+    })
+})
+
+describe('SnaFenster bei der Frage nach der Warntafel', () => {
+    it('nimmt die Tafel auf und erlaubt „keine Tafel“', async () => {
+        vi.stubGlobal('fetch', vi.fn(() => Promise.resolve(new Response(JSON.stringify({herkunft: {}, stoffe: []})))))
+        const mitTafel = testgraph()
+        mitTafel.knoten['rd.wahl'] = {frage: 'Beschwerde?', antworten: [{id: 'sturz', label: 'Sturz', ziel: 'p.tafel', protokoll: 'rd.17', nr: '17'}]}
+        mitTafel.knoten['p.tafel'] = {frage: 'Warntafel?', eingabe: {art: 'warntafel', vorlage: '{wert}', platzhalter: 'oben/unten', leer: {label: 'Keine Tafel', aussage: ''}}, ziel: 'p.k0'}
+        const ansicht = mount(SnaFenster, {
+            props: {graph: mitTafel, schwerste: schwersteErreichbare(mitTafel), gesperrt: false, modelValue: {pfad: BIS_SITUATION}, 'onUpdate:modelValue': (wert: Abfrageeintrag) => ansicht.setProps({modelValue: wert})},
+            global: {plugins: [i18n]},
+        })
+        expect(ansicht.text()).toContain('Warntafel?')
+        const weiter = () => ansicht.findAll('button').find(b => b.text() === 'Weiter')!
+        expect(weiter().attributes('disabled')).toBeDefined()
+        await ansicht.get('input[aria-label="Gefahrenzahl (oben)"]').setValue('33')
+        await ansicht.get('input[aria-label="UN-Nummer (unten)"]').setValue('1203')
+        await weiter().trigger('submit')
+        expect((ansicht.props('modelValue') as Abfrageeintrag).pfad.at(-1)).toEqual({knoten: 'p.tafel', wert: '33/1203'})
+        expect(ansicht.text()).toContain('Situation?')
+        vi.unstubAllGlobals()
     })
 })

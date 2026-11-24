@@ -11,9 +11,9 @@ import {anzeigen} from '../modell/rufnummer'
 import type {AnrufSicht} from '../modell/uebung'
 import NachtragMarke from './NachtragMarke.vue'
 import OrtWahl from './OrtWahl.vue'
-import WarntafelFeld from './WarntafelFeld.vue'
+import WarntafelAnzeige from './WarntafelAnzeige.vue'
 
-const props = defineProps<{anruf: AnrufSicht, stichwort?: string, alter?: string, ruhig?: boolean, warntafel?: boolean, nachgetragen?: Set<Nachtrag>}>()
+const props = defineProps<{anruf: AnrufSicht, stichwort?: string, alter?: string, ruhig?: boolean, warntafel?: Warntafel, nachgetragen?: Set<Nachtrag>}>()
 const eintraege = defineModel<Eintraege>({required: true})
 const suche = defineModel<string>('suche', {default: ''})
 const emit = defineEmits<{sna: [], sofort: []}>()
@@ -32,13 +32,6 @@ const ort = computed<Ortsangabe>({
     set: wert => {
         eintraege.value.ort = {...eintraege.value.ort, ...wert}
         if (wert.koordinaten) emit('sofort')
-    },
-})
-
-const tafel = computed<Warntafel>({
-    get: () => eintraege.value.ort.gefahrgut ?? {un: '', gefahrenzahl: ''},
-    set: wert => {
-        eintraege.value.ort = {...eintraege.value.ort, gefahrgut: wert}
     },
 })
 
@@ -108,7 +101,7 @@ defineExpose({fokussieren})
                 </label>
             </div>
         </fieldset>
-        <WarntafelFeld v-if="warntafel || tafel.un || tafel.gefahrenzahl" v-model="tafel"/>
+        <p v-if="warntafel" class="m-0 flex flex-wrap items-center gap-2 text-sm"><span class="text-xs font-semibold text-gedaempft">{{ t('warntafel.titel') }}</span><WarntafelAnzeige :tafel="warntafel"/></p>
         <fieldset class="m-0 min-w-0 flex flex-col gap-1.5 border-0 p-0">
             <legend class="mb-1 font-bold">{{ t('maske.ereignis') }}</legend>
             <div class="grid grid-cols-[minmax(0,2fr)_minmax(0,1fr)_auto] items-end gap-2">

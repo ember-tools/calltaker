@@ -3,7 +3,7 @@ import {computed, ref} from 'vue'
 import type {Abfragegraph} from '../modell/abfragegraph'
 import {endergebnis, type Ergebnis} from '../modell/abfrageweg'
 import {nachtraege, uebergabestand} from '../modell/uebergabe'
-import {mitWarntafel} from '../modell/warntafel'
+import {tafelImPfad} from '../modell/warntafel'
 import type {Eintraege} from '../modell/eintraege'
 import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
 import type {AnrufSicht} from '../modell/uebung'
@@ -23,7 +23,7 @@ const emit = defineEmits<{sofort: []}>()
 const staende = computed(() => phasenstand(eintraege.value, {graph: props.graph, anruf: props.anruf}))
 const aktivePhase = computed(() => staende.value.find(stand => stand.fehlend.length > 0)?.phase.id ?? '')
 const ergebnis = computed(() => endergebnis(props.graph, eintraege.value.abfrage))
-const warntafel = computed(() => mitWarntafel(props.graph, eintraege.value.abfrage.pfad))
+const warntafel = computed(() => tafelImPfad(props.graph, eintraege.value.abfrage.pfad))
 const alter = computed(() => eintraege.value.abfrage.pfad.find(schritt => schritt.knoten === 'rd.alter')?.wert)
 const sna = ref<InstanceType<typeof SnaFenster> | null>(null)
 const maske = ref<InstanceType<typeof EinsatzMaske> | null>(null)

@@ -28,13 +28,12 @@ from pydantic import BaseModel, ConfigDict, Field
 from pydantic.alias_generators import to_camel
 
 from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
-from gefahrstoffe import GEFAHRGUT_ANTWORTEN, GEFAHRGUT_PROTOKOLL, Stoff
+from gefahrstoffe import Stoff, tafel
 from generator import festnetznummer, mobilnummer, zufallsname
 from szenario import (
     Adresse,
     Anrufer,
     Betroffener,
-    Gefahrgut,
     Herkunft,
     Ort,
     Rolle,
@@ -577,11 +576,11 @@ def gleichwertige(
     return zufall.choice(antworten)
 
 
-def mit_gefahrgut(endpunkt: Endpunkt, antworten: dict[str, Wahl]) -> bool:
-    """Tell whether a scenario carries hazardous goods, by its protocol or an answer saying so."""
-    if endpunkt.protokoll == GEFAHRGUT_PROTOKOLL:
-        return True
-    return any((knoten, wahl.antwort) in GEFAHRGUT_ANTWORTEN for knoten, wahl in antworten.items())
+def warntafel_ziehen(quellen: Quellen, zufall: random.Random) -> Wahl:
+    """Draw the plate the caller reads out; without a list of goods, there is none to read."""
+    if not quellen.gefahrstoffe:
+        return Wahl()
+    return Wahl(wert=tafel(zufall.choice(quellen.gefahrstoffe)))
 
 
 def generieren(
@@ -596,6 +595,10 @@ def generieren(
     vor_ort = antworten.get("eroeffnung.vor-ort")
     person.vor_ort = vor_ort is None or vor_ort.antwort == "ja-der-anrufer-ist-vor-ort"
     for schritt in endpunkt.pfad:
+        eingabe = graph.knoten[schritt.knoten].eingabe
+        if eingabe is not None and eingabe.art == "warntafel":
+            antworten[schritt.knoten] = warntafel_ziehen(quellen, zufall)
+            continue
         antwort = gleichwertige(graph, schritt.knoten, schritt.antwort or "", person, zufall)
         antworten[schritt.knoten] = Wahl(
             antwort=antwort.id if antwort else schritt.antwort,
@@ -607,9 +610,6 @@ def generieren(
         an_tuer = bool(ort.adresse.hausnummer) and not ort.objekt
         ort.geschoss = zufall.choice(GESCHOSSE) if an_tuer else ""
         ort.klingel = betroffen.split()[-1] if an_tuer else ""
-    if quellen.gefahrstoffe and mit_gefahrgut(endpunkt, antworten):
-        stoff = zufall.choice(quellen.gefahrstoffe)
-        ort.gefahrgut = Gefahrgut(un=stoff.un, gefahrenzahl=stoff.gefahrenzahl)
     stimmungen = STIMMUNGEN[stufe(endpunkt.kategorie)]
     stimmung = zufall.choices(list(stimmungen), weights=list(stimmungen.values()))[0]
     return Szenario(

@@ -10,7 +10,10 @@ import type {Abfrageeintrag} from '../modell/eintraege'
 import {einenZurueck, mitAutomatik, ordnen} from '../modell/eingrenzung'
 import {leererFensterzustand, type Fensterzustand} from '../modell/fensterzustand'
 import type {Uebergabebereitschaft} from '../modell/uebergabe'
+import {GEFAHRENZAHL, type Warntafel} from '../modell/gefahrstoffe'
+import {wertAusTafel} from '../modell/warntafel'
 import SnaKacheln from './SnaKacheln.vue'
+import WarntafelFeld from './WarntafelFeld.vue'
 
 const props = defineProps<{graph: Abfragegraph, schwerste: Map<string, Ergebnis>, gesperrt: boolean, seit?: number, uebergabe?: Uebergabebereitschaft, uebergebenUm?: number}>()
 const abfrage = defineModel<Abfrageeintrag>({required: true})
@@ -54,7 +57,11 @@ const pfadText = computed(() => abfrage.value.pfad.map(schritt => {
     return schritt.automatisch ? `${text} ${t('sna.automatisch')}` : text
 }))
 
+const tafel = ref<Warntafel>({un: '', gefahrenzahl: ''})
+const tafelGueltig = computed(() => /^\d{4}$/.test(tafel.value.un) && (!tafel.value.gefahrenzahl || GEFAHRENZAHL.test(tafel.value.gefahrenzahl)))
+
 function schritt(eintrag: {antwort?: string, wert?: string}): void {
+    tafel.value = {un: '', gefahrenzahl: ''}
     const pfad = [...abfrage.value.pfad.slice(0, stand.value.passend), {knoten: stand.value.knoten, ...eintrag}]
     abfrage.value = {...abfrage.value, pfad: mitAutomatik(props.graph, pfad)}
     wert.value = ''
@@ -153,6 +160,13 @@ defineExpose({fokussieren})
             <template v-else-if="knoten">
                 <h3 class="m-0 text-2xl font-semibold text-sky-950">{{ knoten.frage }} <i v-if="knoten.hinweis" class="font-medium text-akzent">[{{ knoten.hinweis }}]</i></h3>
                 <SnaKacheln v-if="knoten.antworten" v-model:suche="kachelsuche" v-model:weitere-offen="weitereOffen" data-antworten :antworten="ordnung.vorn" :weitere="ordnung.weitere" :zusaetze="zusaetze" :farbe="fachrichtung" @waehlen="antwort => schritt({antwort})"/>
+                <form v-else-if="knoten.eingabe?.art === 'warntafel'" class="flex flex-col gap-2" @submit.prevent="schritt({wert: wertAusTafel(tafel)})">
+                    <WarntafelFeld v-model="tafel"/>
+                    <div class="flex flex-wrap gap-2">
+                        <button type="submit" class="h-9 rounded bg-akzent px-4 font-semibold text-white" :disabled="!tafelGueltig">{{ t('sna.weiter') }}</button>
+                        <button v-if="knoten.eingabe.leer" type="button" class="h-9 rounded border border-slate-400 px-3 text-sm" @click="schritt({})">{{ knoten.eingabe.leer.label }}</button>
+                    </div>
+                </form>
                 <form v-else-if="knoten.eingabe" class="flex flex-wrap items-end gap-2" @submit.prevent="schritt({wert: wert.trim()})">
                     <label class="flex flex-1 flex-col gap-1 text-xs font-semibold text-gedaempft">
                         {{ knoten.eingabe.platzhalter }}

@@ -92,6 +92,5 @@ def abfragebuendel() -> bytes:
     buendel = {
         **abfragegraph().buendel(),
         "anleitungen": anleitungen.nach_aussen(anleitungskatalog()),
-        "warntafel": gefahrstoffe.warntafel_regeln(),
     }
     return json.dumps(buendel, ensure_ascii=False, separators=(",", ":")).encode()

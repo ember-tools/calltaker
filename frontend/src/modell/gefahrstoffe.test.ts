@@ -1,5 +1,5 @@
 import {describe, expect, it} from 'vitest'
-import {gefahrenzahlDeuten, stoffeSuchen, stoffeZu, type Stoff} from './gefahrstoffe'
+import {gefahrenzahlDeuten, gefahrenzahlenZu, stoffeSuchen, stoffeZu, type Stoff} from './gefahrstoffe'
 
 const STOFFE: Stoff[] = [
     {un: '1203', gefahrenzahl: '33', klasse: '3', bezeichnung: 'Benzin oder Ottokraftstoffe'},
@@ -25,6 +25,14 @@ describe('stoffeZu und stoffeSuchen', () => {
         expect(stoffeZu(STOFFE, '12')).toEqual([])
         expect(stoffeSuchen(STOFFE, 'chl').map(s => s.un)).toEqual(['1017'])
         expect(stoffeSuchen(STOFFE, 'was').map(s => s.un)).toEqual(['2014'])
-        expect(stoffeSuchen(STOFFE, 'st').map(s => s.un)).toEqual([])
+        expect(stoffeSuchen(STOFFE, 's').map(s => s.un)).toEqual([])
+    })
+})
+
+describe('gefahrenzahlenZu', () => {
+    it('nennt jede gültige Gefahrenzahl einer UN-Nummer einmal', () => {
+        const liste: Stoff[] = [...STOFFE, {un: '1203', gefahrenzahl: '33', klasse: '3', bezeichnung: 'Benzin, anders'}, {un: '1203', gefahrenzahl: '?', klasse: '3', bezeichnung: 'x'}]
+        expect(gefahrenzahlenZu(liste, '1203')).toEqual(['33'])
+        expect(gefahrenzahlenZu(liste, '9999')).toEqual([])
     })
 })

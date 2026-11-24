@@ -116,7 +116,7 @@
         {
           "id": "gefahrstoffe",
           "label": "Gefahrstoffe",
-          "ziel": "fw.th.gefahrstoffe.k0",
+          "ziel": "fw.th.gefahrstoffe.warntafel",
           "protokoll": "fw.th.gefahrstoffe",
           "nr": "55"
         },

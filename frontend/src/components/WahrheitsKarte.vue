@@ -8,6 +8,7 @@ import {mitKorrektur} from '../modell/eintraege'
 import {dauer} from '../composables/useUhr'
 import {anzeigen} from '../modell/rufnummer'
 import {nachtraege} from '../modell/uebergabe'
+import {tafelDerWahrheit} from '../modell/warntafel'
 import {sichtVon, type Anruf} from '../modell/uebung'
 import {vergleichePfad} from '../modell/wahrheitspfad'
 import {bewerten} from '../phasen/register'
@@ -42,6 +43,7 @@ const ortsangaben = computed(() => (['objekt', 'geschoss', 'klingel', 'anfahrt',
     .filter(feld => szenario.value.ort[feld])
     .map(feld => ({feld, wert: szenario.value.ort[feld]})))
 const nachgetragen = computed(() => [...nachtraege(props.graph, props.anruf.eintraege)].map(teil => t(`uebergabe.teil.${teil}`)))
+const tafel = computed(() => tafelDerWahrheit(props.graph, szenario.value.antworten))
 const erreichbar = computed(() => {
     const anrufer = szenario.value.anrufer
     return anrufer.rueckrufnummer && anrufer.rueckrufnummer !== anrufer.rufnummer ? anzeigen(anrufer.rueckrufnummer) : ''
@@ -69,9 +71,9 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
             </template>
             <dt class="text-gedaempft">{{ t('wahrheit.ort') }}</dt>
             <dd class="m-0">{{ adresse }}</dd>
-            <template v-if="szenario.ort.gefahrgut">
+            <template v-if="tafel">
                 <dt class="text-gedaempft">{{ t('warntafel.titel') }}</dt>
-                <dd class="m-0"><WarntafelAnzeige :tafel="szenario.ort.gefahrgut"/></dd>
+                <dd class="m-0"><WarntafelAnzeige :tafel="tafel"/></dd>
             </template>
             <template v-for="angabe in ortsangaben" :key="angabe.feld">
                 <dt class="text-gedaempft">{{ t(`maske.${angabe.feld}`) }}</dt>

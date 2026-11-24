@@ -1,5 +1,6 @@
 import type {Eintraege} from '../modell/eintraege'
 import {abstandGerundet} from '../modell/karte'
+import {tafelDerWahrheit, tafelImPfad} from '../modell/warntafel'
 import type {Adresse, Szenario} from '../modell/szenario'
 import type {Bewertung, Phase} from './typen'
 import {vergleich, vergleichsform} from './vergleich'
@@ -40,7 +41,7 @@ export const standort: Phase = {
     titel: 'phase.standort',
     aktiv: () => true,
     fehlend: eintraege => (eintraege.ort.koordinaten ? [] : ['fehlt.einsatzort']),
-    bewerten: (eintraege, szenario) => {
+    bewerten: (eintraege, szenario, graph) => {
         const wahr = szenario.ort
         const bewertungen: Bewertung[] = []
         if (wahr.adresse.strasse) {
@@ -51,7 +52,8 @@ export const standort: Phase = {
             bewertungen.push(vergleich('bewertung.objekt', wahr.objekt, eintraege.ort.objekt, ist => vergleichsform(ist).includes(vergleichsform(wahr.objekt))))
         }
         bewertungen.push(...punkt(eintraege, szenario))
-        if (wahr.gefahrgut) bewertungen.push(vergleich('bewertung.gefahrgut', wahr.gefahrgut.un, eintraege.ort.gefahrgut?.un ?? '', ist => ist.trim() === wahr.gefahrgut?.un))
+        const tafel = tafelDerWahrheit(graph, szenario.antworten)
+        if (tafel) bewertungen.push(vergleich('bewertung.gefahrgut', tafel.un, tafelImPfad(graph, eintraege.abfrage.pfad)?.un ?? '', ist => ist === tafel.un))
         if (wahr.geschoss) bewertungen.push(vergleich('bewertung.geschoss', wahr.geschoss, eintraege.ort.geschoss, ist => vergleichsform(ist) === vergleichsform(wahr.geschoss)))
         return bewertungen
     },
