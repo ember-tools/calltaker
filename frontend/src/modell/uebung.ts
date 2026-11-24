@@ -96,6 +96,8 @@ export interface Erzeugung {
     gewichtBrand: number
     gewichtTh: number
     kategorie: string
+    /** The one protocol made-up scenarios are drawn from, or empty for all. */
+    protokoll: string
     ortsteil: string
     bezirk: string
     /** The share of scenarios, in percent, that happen at a named place rather than a door. */

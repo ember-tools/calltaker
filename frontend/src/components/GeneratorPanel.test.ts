@@ -7,7 +7,7 @@ import GeneratorPanel from './GeneratorPanel.vue'
 
 vi.mock('../api/gebiete', () => ({ladeGebiete: vi.fn().mockResolvedValue({Neukölln: ['Britz', 'Neukölln']})}))
 
-const ERZEUGUNG: Erzeugung = {gewichtRd: 80, gewichtBrand: 12, gewichtTh: 8, kategorie: '', ortsteil: '', bezirk: '', anteilOrte: 30, anteilOhneAdresse: 5}
+const ERZEUGUNG: Erzeugung = {gewichtRd: 80, gewichtBrand: 12, gewichtTh: 8, kategorie: '', protokoll: '', ortsteil: '', bezirk: '', anteilOrte: 30, anteilOhneAdresse: 5}
 
 /**
  * Mounts the panel with an intent sender.
@@ -35,17 +35,18 @@ describe('GeneratorPanel', () => {
         await ansicht.get('input[max="100"]').trigger('change')
         expect(absicht).toHaveBeenLastCalledWith('erzeugung.einstellen', {erzeugung: {...ERZEUGUNG, gewichtRd: 50}})
         await flushPromises()
-        await ansicht.get('select').setValue('o:Britz')
+        await ansicht.findAll('select').find(auswahl => auswahl.html().includes('o:Britz'))!.setValue('o:Britz')
         expect(absicht).toHaveBeenLastCalledWith('erzeugung.einstellen', {erzeugung: {...ERZEUGUNG, gewichtRd: 50, ortsteil: 'Britz'}})
     })
 
     it('behält Getipptes, wenn der Zustand ohne Änderung neu kommt', async () => {
         const {ansicht} = panel()
-        await ansicht.get('input[placeholder="z. B. RD1 oder BRAND"]').setValue('RD1')
+        const feld = () => ansicht.get('input[max="100"]').element as HTMLInputElement
+        await ansicht.get('input[max="100"]').setValue(50)
         await ansicht.setProps({erzeugung: {...ERZEUGUNG}})
-        expect((ansicht.get('input[placeholder="z. B. RD1 oder BRAND"]').element as HTMLInputElement).value).toBe('RD1')
-        await ansicht.setProps({erzeugung: {...ERZEUGUNG, kategorie: 'BRAND'}})
-        expect((ansicht.get('input[placeholder="z. B. RD1 oder BRAND"]').element as HTMLInputElement).value).toBe('BRAND')
+        expect(feld().value).toBe('50')
+        await ansicht.setProps({erzeugung: {...ERZEUGUNG, gewichtRd: 60}})
+        expect(feld().value).toBe('60')
     })
 
     it('schaltet die Auto-Generierung und zeigt Ablehnungen', async () => {
@@ -58,16 +59,14 @@ describe('GeneratorPanel', () => {
     })
 })
 
-describe('GeneratorPanel mit Kategorien', () => {
-    it('schlägt Kategorien vor und sagt, wie viele Codes ein Filter übrig lässt', async () => {
-        const ansicht = mount(GeneratorPanel, {props: {erzeugung: ERZEUGUNG, autoGenerieren: true, absicht: vi.fn().mockResolvedValue({}), graph: testgraph()}, global: {plugins: [i18n]}})
-        const optionen = ansicht.findAll('datalist option').map(o => o.attributes('value'))
-        expect(optionen).toContain('RD1')
-        expect(optionen).toContain('BRAND 2')
-        const feld = ansicht.get('input[list=generator-kategorien]')
-        await feld.setValue('rd')
-        expect(ansicht.text()).toContain('3 Codes')
-        await feld.setValue('xyz')
-        expect(ansicht.text()).toContain('Passt zu keinem Code')
+describe('GeneratorPanel mit Lagen', () => {
+    it('bietet die Lagen je Fachrichtung an und schickt die gewählte ohne Kategorie', async () => {
+        const absicht = vi.fn().mockResolvedValue({})
+        const ansicht = mount(GeneratorPanel, {props: {erzeugung: {...ERZEUGUNG, kategorie: 'RD1'}, autoGenerieren: true, absicht, graph: testgraph()}, global: {plugins: [i18n]}})
+        const auswahl = ansicht.findAll('select').find(s => s.html().includes('alle Lagen'))!
+        expect(auswahl.findAll('optgroup').map(g => g.attributes('label'))).toEqual(['Med', 'Feuer'])
+        expect(auswahl.text()).toContain('Sturz (3 Codes)')
+        await auswahl.setValue('rd.17')
+        expect(absicht).toHaveBeenLastCalledWith('erzeugung.einstellen', {erzeugung: {...ERZEUGUNG, kategorie: '', protokoll: 'rd.17'}})
     })
 })

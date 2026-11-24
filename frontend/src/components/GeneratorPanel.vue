@@ -3,7 +3,7 @@ import {computed, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Gebiet} from '../api/gebiete'
 import type {Abfragegraph} from '../modell/abfragegraph'
-import {kategorievorschlaege, passendeCodes} from '../modell/kategorien'
+import {lagen} from '../modell/lagen'
 import type {Erzeugung} from '../modell/uebung'
 import {BESCHRIFTUNG, FELD} from './formular'
 import GebietWahl from './GebietWahl.vue'
@@ -24,8 +24,18 @@ const GEWICHTE = [
     {feld: 'anteilOhneAdresse', schluessel: 'generator.anteilOhneAdresse'},
 ] as const
 const anzahl = ref(5)
-const vorschlaege = computed(() => (props.graph ? kategorievorschlaege(props.graph) : []))
-const treffer = computed(() => (props.graph && einstellung.value.kategorie.trim() ? passendeCodes(props.graph, einstellung.value.kategorie) : undefined))
+const gruppen = computed(() => (props.graph ? lagen(props.graph) : []))
+
+/**
+ * Limits made-up scenarios to one protocol, or lifts the limit; a category filter from before is
+ * cleared with it.
+ *
+ * @param protokoll the protocol, or empty for all
+ */
+function lageSetzen(protokoll: string): void {
+    einstellung.value = {...einstellung.value, protokoll, kategorie: ''}
+    void einstellen()
+}
 const einstellung = ref<Erzeugung>({...props.erzeugung})
 const meldung = ref('')
 const fehler = ref(false)
@@ -74,13 +84,14 @@ async function automatisch(an: boolean): Promise<void> {
                     <input v-model.number="einstellung[gewicht.feld]" type="number" min="0" max="100" :class="FELD" @change="einstellen"/>
                 </label>
             </div>
-            <label :class="BESCHRIFTUNG">{{ t('generator.kategorie') }}
-                <input v-model="einstellung.kategorie" list="generator-kategorien" :placeholder="t('generator.kategorieHinweis')" :class="FELD" @change="einstellen"/>
-                <span v-if="treffer !== undefined" :class="['font-normal', treffer ? 'text-gedaempft' : 'text-fehler']">{{ treffer ? t('generator.treffer', {anzahl: treffer}) : t('generator.keinTreffer') }}</span>
+            <label :class="BESCHRIFTUNG">{{ t('generator.lage') }}
+                <select :value="einstellung.protokoll" :class="FELD" @change="lageSetzen(($event.target as HTMLSelectElement).value)">
+                    <option value="">{{ t('generator.alleLagen') }}</option>
+                    <optgroup v-for="gruppe in gruppen" :key="gruppe.fachrichtung" :label="gruppe.name">
+                        <option v-for="lage in gruppe.lagen" :key="lage.protokoll" :value="lage.protokoll">{{ t('generator.lageMitCodes', {name: lage.name, anzahl: lage.anzahl}) }}</option>
+                    </optgroup>
+                </select>
             </label>
-            <datalist id="generator-kategorien">
-                <option v-for="vorschlag in vorschlaege" :key="vorschlag.wert" :value="vorschlag.wert">{{ t('generator.treffer', {anzahl: vorschlag.anzahl}) }}</option>
-            </datalist>
             <GebietWahl :model-value="{bezirk: einstellung.bezirk, ortsteil: einstellung.ortsteil}" @update:model-value="gebietSetzen"/>
             <label class="flex items-center gap-2 text-sm">
                 <input :checked="autoGenerieren" type="checkbox" @change="automatisch(($event.target as HTMLInputElement).checked)"/>{{ t('generator.automatisch') }}

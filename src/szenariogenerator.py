@@ -174,6 +174,7 @@ class Erzeugung(BaseModel):
     gewicht_brand: int = Field(12, ge=0, le=100)
     gewicht_th: int = Field(8, ge=0, le=100)
     kategorie: str = Field("", max_length=40)
+    protokoll: str = Field("", max_length=80)
     ortsteil: str = Field("", max_length=80)
     bezirk: str = Field("", max_length=80)
     anteil_orte: int = Field(30, ge=0, le=100)
@@ -227,6 +228,8 @@ def ziehbare(
             continue
         if filter_ and not endpunkt.kategorie.lower().startswith(filter_):
             continue
+        if erzeugung.protokoll and endpunkt.protokoll != erzeugung.protokoll:
+            continue
         nach.setdefault(disziplin_von(endpunkt), {}).setdefault(endpunkt.protokoll, []).append(
             endpunkt
         )
@@ -234,9 +237,14 @@ def ziehbare(
 
 
 def endpunkt_ziehen(graph: Abfragegraph, erzeugung: Erzeugung, zufall: random.Random) -> Endpunkt:
-    """Draw a discipline by weight, then a protocol, then a code by `gewichte_der_codes`."""
+    """Draw a discipline by weight, then a protocol, then a code by `gewichte_der_codes`.
+
+    A chosen protocol overrides the weights: its discipline is drawn whatever its weight.
+    """
     nach = ziehbare(graph, erzeugung)
     gewichte = {d: g for d, g in erzeugung.gewichte().items() if g > 0 and d in nach}
+    if erzeugung.protokoll:
+        gewichte = dict.fromkeys(nach, 1)
     if not gewichte:
         raise NichtsZuZiehen("Kein Code passt zu diesen Einstellungen.")
     disziplin = zufall.choices(list(gewichte), weights=list(gewichte.values()))[0]
