@@ -263,3 +263,23 @@ def test_ein_unerreichbarer_katalog_in_echter_groesse_scheitert_schnell():
     fehler = leitfragen.knotenfehler(knoten(*fragen), frozenset(kacheln))
     assert time.perf_counter() - beginn < 10
     assert any("k0" in f for f in fehler)
+
+
+def fragen_bis(eintrag, alle, kachel):
+    kacheln, ab, anzahl = alle, 0, 0
+    while (naechste := leitfragen.naechste(eintrag, kacheln, ab)) is not None:
+        stelle, frage = naechste
+        reste = [antwort.rest(kacheln) for antwort in frage.angeboten(kacheln)]
+        kacheln = min((rest for rest in reste if kachel in rest), key=len)
+        ab, anzahl = stelle + 1, anzahl + 1
+    return anzahl, kacheln
+
+
+def test_jede_hauptbeschwerde_ist_in_wenigen_fragen_vorgeschlagen(graph):
+    katalog = leitfragen.laden(einstellungen().leitfragen_verzeichnis, graph)
+    eintrag = next(e for e in katalog if e.knoten == KNOTEN)
+    alle = frozenset(a.id for a in graph.knoten[KNOTEN].antworten)
+    for kachel in alle:
+        anzahl, rest = fragen_bis(eintrag, alle, kachel)
+        assert anzahl <= 12, kachel
+        assert kachel in rest and len(rest) <= leitfragen.HOECHSTENS_VORGESCHLAGEN
