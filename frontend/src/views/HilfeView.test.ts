@@ -31,6 +31,12 @@ describe('HilfeView', () => {
         }
         expect(ansicht.find('figure [aria-label="So sprichst du als Anrufer"]').text()).toContain('Du bist selbst betroffen.')
         expect(ansicht.text()).toContain('Neugeborenes, Säugling, Kind und Erwachsener')
+        expect(ansicht.text()).toContain('Den Anrufer spielen')
+        expect(ansicht.text()).toContain('Wenn gefragt')
+        expect(ansicht.text()).toContain('Belastende Lagen bleiben ausgeschlossen')
+        expect(ansicht.text()).toContain('liegt der Kreis dort, wo der Anrufer ist')
+        expect(ansicht.text()).toContain('weichst du aus, bis der Calltaker nachhakt')
+        expect(ansicht.text()).toContain('warnt die Seite vor Teilen, die nicht zusammenpassen')
         expect(ansicht.text()).toContain('Kräfte unterwegs')
         expect(ansicht.text()).toContain('Tasten')
     })

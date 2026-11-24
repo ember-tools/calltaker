@@ -105,8 +105,9 @@ onBeforeUnmount(() => {
             <HilfeThema v-if="graph && wahrheit" :titel="t('hilfe.ausbilder.liveTitel')" :texte="texte('ausbilder.live', 'ausbilder.wahrheit')" :mockup="t('hilfe.ausbilder.wahrheitMockup')">
                 <WahrheitsKarte :graph="graph" :anruf="wahrheit" class="max-w-md"/>
             </HilfeThema>
+            <HilfeThema :titel="t('hilfe.ausbilder.anruferTitel')" :texte="texte('ausbilder.hand', 'ausbilder.beziehung', 'ausbilder.beschwerden', 'ausbilder.beobachtet')"/>
             <HilfeThema :titel="t('hilfe.ausbilder.schlangeTitel')" :texte="texte('ausbilder.schlange')"/>
-            <HilfeThema :titel="t('hilfe.ausbilder.poolTitel')" :texte="texte('ausbilder.pool', 'ausbilder.generator')"/>
+            <HilfeThema :titel="t('hilfe.ausbilder.poolTitel')" :texte="texte('ausbilder.pool', 'ausbilder.generator', 'ausbilder.belastende')"/>
         </HilfeAbschnitt>
         <HilfeAbschnitt :titel="t('hilfe.auswertung.titel')">
             <HilfeThema :texte="texte('auswertung.debrief', 'auswertung.uebersicht')"/>
