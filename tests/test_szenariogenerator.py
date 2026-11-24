@@ -4,6 +4,7 @@ from collections import Counter
 import pytest
 
 from gefahrstoffe import Stoff
+from geo import entfernung
 from szenario import Wahl, pruefen
 from szenariogenerator import (
     ATEMNOT,
@@ -356,3 +357,19 @@ def test_wohnungen_haben_geschoss_klingel_und_manchmal_ein_haustier(graph):
 def test_wohnungsprotokolle_gibt_es_im_graphen(graph):
     protokolle = {endpunkt.protokoll for endpunkt in graph.endpunkte}
     assert WOHNUNGSPROTOKOLLE.issubset(protokolle)
+
+
+def test_mobil_anrufer_bekommen_eine_funkzelle_um_den_wahren_punkt(graph):
+    mit_zelle = 0
+    for seed in range(200):
+        szenario = generieren(graph, QUELLEN, Erzeugung(anteil_orte=0), random.Random(seed))
+        anrufer = szenario.anrufer
+        mobil = anrufer.mobil_angezeigt()
+        assert (anrufer.funkzelle is not None) == mobil
+        if anrufer.funkzelle:
+            mit_zelle += 1
+            zelle = anrufer.funkzelle
+            assert 500 <= zelle.radius <= 1500
+            abstand = entfernung(zelle.mitte, szenario.ort.koordinaten)
+            assert 90 <= abstand <= zelle.radius
+    assert mit_zelle > 0

@@ -1,10 +1,11 @@
 import re
 
 import pytest
+from pydantic import ValidationError
 
 from anruf import Anruf, Anrufzustand
 from rolle import Rolle
-from szenario import Szenario
+from szenario import Funkzelle, Szenario
 from uebung import ONLINE_FRIST, UNBESUCHT_FRIST, Uebungen, UebungenVoll
 
 
@@ -142,3 +143,28 @@ def test_der_zustand_ist_nach_rolle_gefiltert(anruf, uhr):
     assert ausbilder["codes"]["trainee"] == uebung.trainee_code
     assert ausbilder["anrufe"][0]["szenario"]["titel"]
     assert ausbilder["spiegel"] == {"strasse": "Karl"}
+
+
+def test_die_funkzelle_sieht_der_trainee_erst_im_gespraech(anruf):
+    zelle = Funkzelle(mitte=(52.5, 13.4), radius=900)
+    anruf.szenario.anrufer.funkzelle = zelle
+    assert "funkzelle" not in anruf.fuer_trainee()
+    anruf.zustand = Anrufzustand.GESPRAECH
+    assert anruf.fuer_trainee()["funkzelle"] == {"mitte": (52.5, 13.4), "radius": 900}
+
+
+def test_eine_unpassende_funkzelle_faellt_weg(szenario_daten):
+    daten = {**szenario_daten, "ort": {**szenario_daten["ort"], "koordinaten": [52.5, 13.4]}}
+    mobil = {**daten["anrufer"], "rufnummer": "4915112345678", "rufnummerUnterdrueckt": False}
+    nah = {"mitte": [52.502, 13.4], "radius": 900}
+    fern = {"mitte": [52.6, 13.4], "radius": 900}
+    passt = Szenario.model_validate({**daten, "anrufer": {**mobil, "funkzelle": nah}})
+    assert passt.anrufer.funkzelle is not None
+    ausserhalb = Szenario.model_validate({**daten, "anrufer": {**mobil, "funkzelle": fern}})
+    assert ausserhalb.anrufer.funkzelle is None
+    festnetz = {**mobil, "rufnummer": "493012345678", "funkzelle": nah}
+    assert Szenario.model_validate({**daten, "anrufer": festnetz}).anrufer.funkzelle is None
+    with pytest.raises(ValidationError):
+        Szenario.model_validate(
+            {**daten, "anrufer": {**mobil, "funkzelle": {"mitte": [95, 13.4], "radius": 900}}}
+        )

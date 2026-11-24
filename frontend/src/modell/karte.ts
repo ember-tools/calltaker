@@ -11,6 +11,12 @@ export const ZOOM_MAX = 18
 /** Where the tiles come from: the backend's cache of OpenStreetMap. */
 export const KACHEL_ADRESSE = '/kacheln/{z}/{x}/{y}.png'
 
+/** The area a mobile cell covers: its centre (latitude, longitude) and radius in metres. */
+export interface Funkzelle {
+    mitte: [number, number]
+    radius: number
+}
+
 /** A point on the map: where it is, and whether it is what was entered or the truth. */
 export interface Kartenpunkt {
     breite: number

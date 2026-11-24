@@ -2,7 +2,7 @@
 import {computed, onMounted, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {adresslisteVerfuegbar} from '../api/adressen'
-import type {Kartenpunkt} from '../modell/karte'
+import type {Funkzelle, Kartenpunkt} from '../modell/karte'
 import {ausAdresse, ausOrt, type Adressvorschlag, type Ortsangabe, type Ortsvorschlag} from '../modell/ort'
 import type {Adresse} from '../modell/szenario'
 import AdressSuche from './AdressSuche.vue'
@@ -10,7 +10,7 @@ import KarteLeaflet from './KarteLeaflet.vue'
 
 const ort = defineModel<Ortsangabe>({required: true})
 const text = defineModel<string>('text', {default: ''})
-defineProps<{ruhig?: boolean}>()
+defineProps<{ruhig?: boolean, funkzelle?: Funkzelle}>()
 
 const {t} = useI18n()
 const listeDa = ref(true)
@@ -63,8 +63,9 @@ function feldGeaendert(feld: keyof Adresse, wert: string): void {
             </label>
         </div>
         <div :class="['overflow-hidden rounded border border-rand', gross ? 'h-96' : 'h-40']">
-            <KarteLeaflet :punkte="punkte" setzbar :beschriftung="t('ort.karte')" @gesetzt="gesetzt"/>
+            <KarteLeaflet :punkte="punkte" :funkzelle="funkzelle" setzbar :beschriftung="t('ort.karte')" @gesetzt="gesetzt"/>
         </div>
+        <p v-if="funkzelle" class="m-0 text-xs font-semibold text-amber-800">{{ t('ort.funkzelle', {km: (funkzelle.radius / 1000).toLocaleString('de-DE', {maximumFractionDigits: 1})}) }}</p>
         <div class="flex items-center gap-2">
             <p class="m-0 flex-1 text-xs text-gedaempft">{{ t('ort.karteHinweis') }}</p>
             <button type="button" class="text-xs underline" :aria-pressed="gross" @click="gross = !gross">{{ gross ? t('ort.karteKlein') : t('ort.karteGross') }}</button>

@@ -1,5 +1,6 @@
 import {mount} from '@vue/test-utils'
 import {describe, expect, it, vi} from 'vitest'
+import L from 'leaflet'
 import {i18n} from '../i18n'
 import KarteLeaflet from './KarteLeaflet.vue'
 
@@ -53,5 +54,30 @@ describe('KarteLeaflet mit mehreren Punkten', () => {
         expect(zentrieren.mock.calls[0]![1]).toBeGreaterThanOrEqual(16)
         ansicht.unmount()
         vi.restoreAllMocks()
+    })
+
+    it('zeichnet die Funkzelle gestrichelt und nicht anklickbar', async () => {
+        const ansicht = karte({funkzelle: {mitte: [52.5, 13.4], radius: 900}})
+        const kreis = ansicht.findAll('path').filter(p => p.attributes('stroke-dasharray') === '6 6')
+        expect(kreis).toHaveLength(1)
+        expect(kreis[0]!.classes()).not.toContain('leaflet-interactive')
+        await ansicht.setProps({funkzelle: undefined})
+        expect(ansicht.findAll('path').filter(p => p.attributes('stroke-dasharray') === '6 6')).toHaveLength(0)
+        ansicht.unmount()
+    })
+
+    it('zeigt die Funkzelle ganz, mit den Punkten, und rückt nur bei einer neuen Zelle nach', async () => {
+        const passen = vi.spyOn(L.Map.prototype, 'fitBounds')
+        const zelle = {mitte: [52.5, 13.4] as [number, number], radius: 900}
+        const ansicht = karte({funkzelle: zelle})
+        expect(passen).toHaveBeenCalledTimes(1)
+        await ansicht.setProps({funkzelle: {...zelle}})
+        expect(passen).toHaveBeenCalledTimes(1)
+        await ansicht.setProps({punkte: [{breite: 52.501, laenge: 13.401, art: 'wahrheit'}]})
+        expect(passen).toHaveBeenCalledTimes(2)
+        const grenzen = passen.mock.calls[1]![0] as L.LatLngBounds
+        expect(grenzen.contains(L.latLng(52.5, 13.4).toBounds(1800))).toBe(true)
+        passen.mockRestore()
+        ansicht.unmount()
     })
 })

@@ -26,6 +26,7 @@ from typing import Any
 import httpx
 
 import ungefaehr
+from geo import METER_JE_GRAD
 
 DIENST = "https://gdi.berlin.de/services/wfs/adressen_berlin"
 TYPNAME = "adressen_berlin:adressen_berlin"
@@ -234,8 +235,8 @@ class Adressen:
 
     def naechste(self, breite: float, laenge: float, radius: float = NAECHSTE_METER) -> dict | None:
         """Return the address closest to a point within a radius in metres, or None."""
-        grad_breite = radius / 111_320
-        grad_laenge = radius / (111_320 * math.cos(math.radians(breite)))
+        grad_breite = radius / METER_JE_GRAD
+        grad_laenge = radius / (METER_JE_GRAD * math.cos(math.radians(breite)))
         with self._lesen() as verbindung:
             if verbindung is None:
                 return None

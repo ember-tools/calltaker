@@ -47,3 +47,14 @@ describe('OrtWahl mit großer Karte', () => {
         ansicht.unmount()
     })
 })
+
+describe('OrtWahl mit Funkzelle', () => {
+    it('nennt die Genauigkeit der Funkzelle in Kilometern', () => {
+        const ohne = mount(OrtWahl, {props: {modelValue: leer}, global: {plugins: [i18n]}, attachTo: document.body})
+        expect(ohne.text()).not.toContain('Funkzelle')
+        ohne.unmount()
+        const mit = mount(OrtWahl, {props: {modelValue: leer, funkzelle: {mitte: [52.5, 13.4], radius: 1200}}, global: {plugins: [i18n]}, attachTo: document.body})
+        expect(mit.text()).toContain('Genauigkeit etwa 1,2 km')
+        mit.unmount()
+    })
+})

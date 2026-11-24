@@ -1,4 +1,5 @@
 import type {Eintraege} from './eintraege'
+import type {Funkzelle} from './karte'
 import type {Befund, Szenario} from './szenario'
 import type {Zielzeiten} from './zeit'
 
@@ -25,6 +26,8 @@ export interface AnrufSicht {
     beendetUm?: number
     /** When the crews reach a cardiac arrest, once CPR guidance has started. */
     eintreffenUm?: number
+    /** The cell a mobile call comes through, once the call is answered. */
+    funkzelle?: Funkzelle
     eintraege?: Eintraege
     szenario?: Szenario
     /** The trainer's corrections of which instructions were given, once the call has ended. */
@@ -134,5 +137,6 @@ export function sichtVon(anruf: Anruf): AnrufSicht {
         eintraege: anruf.eintraege,
         korrektur: anruf.korrektur,
         eintreffenUm: anruf.eintreffenUm,
+        funkzelle: anruf.zustand === 'gespraech' || anruf.zustand === 'beendet' ? anrufer.funkzelle : undefined,
     }
 }

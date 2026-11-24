@@ -92,6 +92,8 @@ class Anruf(Modell):
             sicht["eintraege"] = self.eintraege.nach_aussen()
             if self.eintreffen_um is not None:
                 sicht["eintreffenUm"] = self.eintreffen_um
+            if anrufer.funkzelle is not None:
+                sicht["funkzelle"] = anrufer.funkzelle.model_dump(by_alias=True)
         if self.zustand == Anrufzustand.BEENDET:
             sicht["szenario"] = self.szenario.nach_aussen()
             sicht["korrektur"] = self.korrektur

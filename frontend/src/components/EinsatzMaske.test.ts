@@ -66,3 +66,11 @@ describe('EinsatzMaske bei der Rückrufnummer', () => {
         ansicht.unmount()
     })
 })
+
+describe('EinsatzMaske mit Funkzelle', () => {
+    it('gibt die Funkzelle des Anrufs an die Karte', () => {
+        const funkzelle = {mitte: [52.5, 13.4] as [number, number], radius: 900}
+        const ansicht = mount(EinsatzMaske, {props: {modelValue: leereEintraege(), anruf: {id: 'a', zustand: 'gespraech', klingeltSeit: 0, rufnummerUnterdrueckt: false, rufnummer: '4915112345678', funkzelle}}, global: {plugins: [i18n], stubs: {OrtWahl: true}}})
+        expect(ansicht.findComponent({name: 'OrtWahl'}).props('funkzelle')).toEqual(funkzelle)
+    })
+})

@@ -18,6 +18,7 @@ The age is drawn within the age bounds of the answers on the code's path, so a c
 gets a child.
 """
 
+import math
 import random
 import re
 from collections.abc import Callable
@@ -30,10 +31,12 @@ from pydantic.alias_generators import to_camel
 from abfrage import Abfragegraph, Antwort, Endpunkt, Knoten
 from gefahrstoffe import Stoff, tafel
 from generator import festnetznummer, mobilnummer, zufallsname
+from geo import METER_JE_GRAD
 from szenario import (
     Adresse,
     Anrufer,
     Betroffener,
+    Funkzelle,
     Herkunft,
     Ort,
     Rolle,
@@ -101,6 +104,8 @@ WOHNUNGSPROTOKOLLE = frozenset(
     }
 )
 HAUSTIER_ANTEIL = 0.15
+FUNKZELLE_RADIUS = (500.0, 1500.0)
+FUNKZELLE_VERSATZ = (100.0, 800.0)
 HAUSTIERE = ("ein Hund", "ein großer Hund", "zwei Katzen", "eine Schlange im Terrarium")
 GESCHOSSE = (
     "EG",
@@ -528,6 +533,25 @@ def anrufer_ziehen(zufall: random.Random, name: str) -> Anrufer:
     return Anrufer(name=name, rufnummer=nummer)
 
 
+def mit_funkzelle(anrufer: Anrufer, ort: Ort, zufall: random.Random) -> Anrufer:
+    """Give a caller on a shown mobile number the cell their call comes through.
+
+    The cell is made up, not a real mast: its radius lies in `FUNKZELLE_RADIUS`, and its centre
+    sits off the true point by a fraction of it, so the point is always inside.
+    """
+    if not anrufer.mobil_angezeigt() or ort.koordinaten is None:
+        return anrufer
+    radius = zufall.uniform(*FUNKZELLE_RADIUS)
+    abstand = zufall.uniform(FUNKZELLE_VERSATZ[0], min(FUNKZELLE_VERSATZ[1], radius * 0.8))
+    richtung = zufall.uniform(0, 2 * math.pi)
+    breite, laenge = ort.koordinaten
+    mitte = (
+        breite + abstand * math.cos(richtung) / METER_JE_GRAD,
+        laenge + abstand * math.sin(richtung) / (METER_JE_GRAD * math.cos(math.radians(breite))),
+    )
+    return anrufer.model_copy(update={"funkzelle": Funkzelle(mitte=mitte, radius=round(radius))})
+
+
 def person_ziehen(graph: Abfragegraph, endpunkt: Endpunkt, zufall: random.Random) -> Person:
     """Return the affected person: an age the code allows, a sex, and whether they call."""
     unten, oben = altersspanne(graph, endpunkt)
@@ -638,7 +662,7 @@ def generieren(
         titel=f"{titel_von(graph, endpunkt)}, {ortsteil}",
         herkunft=Herkunft.GENERIERT,
         ort=ort,
-        anrufer=anrufer_ziehen(zufall, anrufer_name),
+        anrufer=mit_funkzelle(anrufer_ziehen(zufall, anrufer_name), ort, zufall),
         betroffener=Betroffener(name=betroffen) if rd else None,
         antworten=antworten,
         ziel=Ziel(knoten=endpunkt.knoten, code=endpunkt.code),

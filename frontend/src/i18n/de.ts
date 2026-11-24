@@ -450,6 +450,7 @@ export default {
         zurueck: 'Zur Startseite',
     },
     ort: {
+        funkzelle: 'Funkzelle des Anrufers (gestrichelt), Genauigkeit etwa {km} km',
         suche: 'Straße und Hausnummer, oder ein Ort',
         ort: 'Ort',
         aehnlich: 'ähnlich',

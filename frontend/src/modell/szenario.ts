@@ -1,3 +1,5 @@
+import type {Funkzelle} from './karte'
+
 /** A postal address in Berlin. */
 export interface Adresse {
     strasse: string
@@ -28,6 +30,8 @@ export interface Anrufer {
     rufnummer?: string
     rufnummerUnterdrueckt: boolean
     rueckrufnummer?: string
+    /** The made-up cell a mobile call comes through. */
+    funkzelle?: Funkzelle
 }
 
 /** What the caller answers at one node: an answer id with its label when written, or a typed value. */
