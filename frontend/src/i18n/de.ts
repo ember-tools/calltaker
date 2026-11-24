@@ -191,6 +191,10 @@ export default {
         mehrere: 'Gefahrenzahl je nach Stoff:',
         name: 'Stoff nach Namen suchen',
     },
+    fassung: {
+        neu: 'Eine neue Version ist da. Bitte neu laden, damit alles zusammenpasst.',
+        laden: 'Neu laden',
+    },
     fuss: {
         quelle: 'GitHub',
         urheber: '© 2026 RainbowDashLabs and Contributor',
