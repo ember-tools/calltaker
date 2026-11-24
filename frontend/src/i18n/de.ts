@@ -121,7 +121,7 @@ export default {
         improvisieren: 'steht nicht im Szenario, frei antworten',
         gegeben: 'als gegeben werten',
         nichtGegeben: 'als nicht gegeben werten',
-        karte: 'Wahrer und erfasster Einsatzort',
+        karte: 'Korrekter und erfasster Einsatzort',
         keinPunkt: 'Noch kein erfasster Punkt',
         legende: 'blau: Lösung, rot: erfasst',
     },
