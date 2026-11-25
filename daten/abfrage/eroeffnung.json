@@ -33,7 +33,7 @@
         {
           "id": "1-hand-der-anrufer-ist-selbst-betroffen",
           "label": "1. Hand: der Anrufer ist selbst betroffen",
-          "ziel": "eroeffnung.vor-ort",
+          "ziel": "eroeffnung.selbst",
           "aussage": "Meldung aus erster Hand: der Anrufer ist selbst betroffen."
         },
         {
@@ -61,6 +61,16 @@
           "aussage": "Die Meldung stammt aus einer automatischen Anlage."
         }
       ]
+    },
+    "eroeffnung.selbst": {
+      "weiche": {
+        "knoten": "fachrichtung",
+        "ziele": {
+          "rd": "rd.anzahl",
+          "brand": "eroeffnung.vor-ort",
+          "th": "eroeffnung.vor-ort"
+        }
+      }
     },
     "eroeffnung.vor-ort": {
       "frage": "Ist der Anrufer vor Ort?",
