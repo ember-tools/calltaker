@@ -26,6 +26,12 @@ def suche(request: Request, q: str = "") -> list[dict]:
     return adressen(request).suchen(q[:100])
 
 
+@router.get("/naechste")
+def naechste(request: Request, breite: float, laenge: float) -> dict | None:
+    """Return the door nearest to a point, such as a picked place, or nothing when none is near."""
+    return adressen(request).naechste(breite, laenge)
+
+
 @router.get("/zufall")
 def zufall(request: Request, ortsteil: str = "", bezirk: str = "") -> dict:
     """Return a random address, optionally within an Ortsteil or a Bezirk."""

@@ -34,14 +34,15 @@ export type Ortsangabe = Pick<Ort, 'adresse' | 'koordinaten' | 'objekt'>
  *
  * @param vorschlag the suggestion
  * @param bisher the location so far
+ * @param ortsname the name of the place picked last, which gives way like one without a street
  * @returns the new location
  */
-export function ausAdresse(vorschlag: Adressvorschlag, bisher: Ortsangabe): Ortsangabe {
+export function ausAdresse(vorschlag: Adressvorschlag, bisher: Ortsangabe, ortsname = ''): Ortsangabe {
     const gleicheStrasse = vorschlag.strasse === bisher.adresse.strasse && vorschlag.plz === bisher.adresse.plz
     const punkt: [number, number] | undefined = vorschlag.breite !== undefined && vorschlag.laenge !== undefined
         ? [vorschlag.breite, vorschlag.laenge]
         : gleicheStrasse ? bisher.koordinaten : undefined
-    const warOrt = !bisher.adresse.strasse && Boolean(bisher.objekt) && Boolean(bisher.koordinaten)
+    const warOrt = Boolean(bisher.objekt) && (bisher.objekt === ortsname || (!bisher.adresse.strasse && Boolean(bisher.koordinaten)))
     return {
         ...bisher,
         objekt: warOrt ? '' : bisher.objekt,
@@ -51,16 +52,20 @@ export function ausAdresse(vorschlag: Adressvorschlag, bisher: Ortsangabe): Orts
 }
 
 /**
- * A location from a named place: no street, the place's name as the object.
+ * A location from a named place: the place's name as the object, its point, and the address of
+ * the nearest door when one is known, else no street.
  *
  * @param vorschlag the suggestion
  * @param bisher the location so far
+ * @param tuer the door nearest to the place
  * @returns the new location
  */
-export function ausOrt(vorschlag: Ortsvorschlag, bisher: Ortsangabe): Ortsangabe {
+export function ausOrt(vorschlag: Ortsvorschlag, bisher: Ortsangabe, tuer?: Adressvorschlag): Ortsangabe {
     return {
         ...bisher,
-        adresse: {strasse: '', hausnummer: '', plz: '', ortsteil: vorschlag.ortsteil},
+        adresse: tuer
+            ? {strasse: tuer.strasse, hausnummer: tuer.hausnummer, plz: tuer.plz, ortsteil: tuer.ortsteil}
+            : {strasse: '', hausnummer: '', plz: '', ortsteil: vorschlag.ortsteil},
         koordinaten: [vorschlag.breite, vorschlag.laenge],
         objekt: vorschlag.name,
     }
