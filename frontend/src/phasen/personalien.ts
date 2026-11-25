@@ -1,6 +1,6 @@
 import {anzeigen, gleich, normalisieren} from '../modell/rufnummer'
 import type {Phase} from './typen'
-import {vergleich, vergleichsform} from './vergleich'
+import {nameGleich, vergleich} from './vergleich'
 
 /** A callback number needs at least this many digits to count as taken down. */
 const ZIFFERN_MINDESTENS = 5
@@ -21,10 +21,9 @@ export const personalien: Phase = {
     },
     bewerten: (eintraege, szenario) => {
         const wahrerName = szenario.anrufer.name
-        const nachname = vergleichsform(wahrerName.split(' ').at(-1) ?? '')
         const erreichbar = szenario.anrufer.rueckrufnummer || szenario.anrufer.rufnummer || ''
         const name = wahrerName.trim()
-            ? [vergleich('bewertung.name', wahrerName, eintraege.anrufer.name, ist => vergleichsform(ist) === vergleichsform(wahrerName) || vergleichsform(ist).includes(nachname))]
+            ? [vergleich('bewertung.name', wahrerName, eintraege.anrufer.name, ist => nameGleich(ist, wahrerName))]
             : []
         return [
             ...name,
