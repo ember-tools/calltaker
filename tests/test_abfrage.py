@@ -35,11 +35,23 @@ def test_der_graph_beginnt_mit_der_fachrichtung(graph):
 
 
 def test_die_eroeffnung_ist_gemeinsam_und_verzweigt_ueber_die_weiche(graph):
-    assert graph.knoten["eroeffnung.hand"].antworten[0].ziel == "eroeffnung.vor-ort"
+    hand = {a.id: a.ziel for a in graph.knoten["eroeffnung.hand"].antworten}
+    assert hand.pop("1-hand-der-anrufer-ist-selbst-betroffen") == "eroeffnung.selbst"
+    assert set(hand.values()) == {"eroeffnung.vor-ort"}
     assert {a.ziel for a in graph.knoten["eroeffnung.vor-ort"].antworten} == {"eroeffnung.weiche"}
     weiche = graph.knoten["eroeffnung.weiche"].weiche
     assert weiche.knoten == "fachrichtung"
     assert weiche.ziele == {"rd": "rd.anzahl", "brand": "fw.grund", "th": "fw.th.grund"}
+
+
+def test_wer_selbst_betroffen_ist_wird_im_rettungsdienst_nicht_nach_dem_ort_gefragt(graph):
+    weiche = graph.knoten["eroeffnung.selbst"].weiche
+    assert weiche.knoten == "fachrichtung"
+    assert weiche.ziele == {
+        "rd": "rd.anzahl",
+        "brand": "eroeffnung.vor-ort",
+        "th": "eroeffnung.vor-ort",
+    }
     assert graph.knoten["rd.alter"].eingabe is not None
 
 

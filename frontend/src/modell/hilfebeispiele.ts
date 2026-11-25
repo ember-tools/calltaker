@@ -90,7 +90,6 @@ export function beispielWahrheit(graph: Abfragegraph, jetzt: number): Anruf {
         betroffener: {name: 'Ines Wagner'},
         antworten: {
             'eroeffnung.hand': {antwort: '1-hand-der-anrufer-ist-selbst-betroffen'},
-            'eroeffnung.vor-ort': {antwort: 'ja-der-anrufer-ist-vor-ort'},
             'rd.alter': {wert: '78'},
         },
         ziel: {knoten: ziel?.knoten ?? '', code: ziel?.code ?? ''},

@@ -60,6 +60,12 @@ PLATZ = {"name": "Tempelhofer Feld", "ortsteil": "Tempelhof", "breite": 52.47, "
 QUELLEN = Quellen(adresse=lambda *_: dict(ADRESSE), ort=lambda *_: dict(PLATZ))
 
 
+def vor_ort_antwort(antworten) -> str:
+    """Return where the caller is; unasked, as for a medical caller who is the patient, on site."""
+    wahl = antworten.get("eroeffnung.vor-ort")
+    return wahl.antwort if wahl is not None else "ja-der-anrufer-ist-vor-ort"
+
+
 def viele(graph, anzahl=400, erzeugung=None, quellen=QUELLEN, saat=7):
     zufall = random.Random(saat)
     standard = Erzeugung(anteil_ohne_adresse=0)
@@ -106,8 +112,11 @@ def test_die_eroeffnung_widerspricht_dem_code_nicht(graph):
 def test_meldehand_und_vor_ort_passen_zusammen(graph):
     for szenario in viele(graph, 800):
         hand = szenario.antworten["eroeffnung.hand"].antwort
-        vor_ort = szenario.antworten["eroeffnung.vor-ort"].antwort
-        assert vor_ort in VOR_ORT[hand]
+        if "eroeffnung.vor-ort" not in szenario.antworten:
+            assert hand == SELBST
+            assert szenario.antworten["fachrichtung"].antwort == "rd"
+            continue
+        assert szenario.antworten["eroeffnung.vor-ort"].antwort in VOR_ORT[hand]
 
 
 def test_stillstaende_kommen_nur_ueber_atmet_nicht_zu_09e01(graph):
@@ -342,7 +351,7 @@ def test_gleichwertige_antworten_werden_gestreut(graph):
     wege = {s.antworten[flucht].antwort for s in mit}
     assert {"weg-frei", "weg-verraucht"} <= wege
     for szenario in mit:
-        if szenario.antworten["eroeffnung.vor-ort"].antwort != "ja-der-anrufer-ist-vor-ort":
+        if vor_ort_antwort(szenario.antworten) != "ja-der-anrufer-ist-vor-ort":
             assert szenario.antworten[flucht].antwort == "nicht-im-gebaeude"
 
 
@@ -368,7 +377,7 @@ def test_die_frage_nach_der_warntafel_beantwortet_der_generator(graph):
     gelesen = unlesbar = 0
     for seed in range(600):
         szenario = generieren(graph, quellen, nur_fw, random.Random(seed))
-        vor_ort = szenario.antworten["eroeffnung.vor-ort"].antwort == "ja-der-anrufer-ist-vor-ort"
+        vor_ort = vor_ort_antwort(szenario.antworten) == "ja-der-anrufer-ist-vor-ort"
         for kid in tafelfragen & set(szenario.antworten):
             wert = szenario.antworten[kid].wert
             assert wert in ("33/1203", None)
@@ -419,7 +428,7 @@ def test_mobil_anrufer_bekommen_eine_funkzelle_um_den_wahren_punkt(graph):
         szenario = generieren(graph, QUELLEN, Erzeugung(anteil_orte=0), random.Random(seed))
         anrufer = szenario.anrufer
         mobil = anrufer.mobil_angezeigt()
-        wo = szenario.antworten["eroeffnung.vor-ort"].antwort
+        wo = vor_ort_antwort(szenario.antworten)
         assert (anrufer.funkzelle is not None) == (mobil and wo != "unbekannt")
         vor_ort = wo == VOR_ORT_JA
         if anrufer.funkzelle and vor_ort:
@@ -567,7 +576,7 @@ def test_stillstaende_haben_immer_die_zweite_hand_vor_ort(graph):
                 szenario.antworten["eroeffnung.hand"].antwort
                 == "2-hand-der-anrufer-ist-beim-betroffenen"
             )
-            assert szenario.antworten["eroeffnung.vor-ort"].antwort == "ja-der-anrufer-ist-vor-ort"
+            assert vor_ort_antwort(szenario.antworten) == "ja-der-anrufer-ist-vor-ort"
     assert gesehen
 
 
@@ -763,7 +772,7 @@ def test_die_funkzelle_liegt_um_den_anrufer(graph):
     for i in range(600):
         szenario = generieren(graph, quellen, Erzeugung(anteil_orte=0), random.Random(i))
         zelle = szenario.anrufer.funkzelle
-        wo = szenario.antworten["eroeffnung.vor-ort"].antwort
+        wo = vor_ort_antwort(szenario.antworten)
         if wo == "unbekannt":
             assert zelle is None
         if zelle is None:

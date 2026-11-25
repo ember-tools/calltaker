@@ -22,6 +22,12 @@ ADRESSE = {
 }
 
 
+def vor_ort_antwort(antworten) -> str:
+    """Return where the caller is; unasked, as for a medical caller who is the patient, on site."""
+    wahl = antworten.get("eroeffnung.vor-ort")
+    return wahl.antwort if wahl is not None else "ja-der-anrufer-ist-vor-ort"
+
+
 @pytest.fixture(scope="module")
 def katalog(graph):
     return beschwerden.laden(einstellungen().beschwerden_verzeichnis, graph)
@@ -168,7 +174,7 @@ def test_gezogene_beschwerden_passen_zu_pfad_eroeffnung_und_sicht(graph, katalog
             antworten = szenario.antworten
             gezogen = szenario.rolle.beschwerden
             hand = antworten["eroeffnung.hand"].antwort
-            vor_ort = antworten["eroeffnung.vor-ort"].antwort == VOR_ORT_JA
+            vor_ort = vor_ort_antwort(antworten) == VOR_ORT_JA
             alter = alter_aus(antworten["rd.alter"].wert or "")
             if szenario.ziel.code.startswith("09B01") or not (
                 hand == SELBST or (hand == BEIM_BETROFFENEN and vor_ort)
