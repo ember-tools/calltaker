@@ -26,3 +26,20 @@ export async function adresslisteVerfuegbar(): Promise<boolean> {
         return false
     }
 }
+
+/**
+ * Asks the address list for the door nearest to a point, such as a picked place.
+ *
+ * @param breite the latitude
+ * @param laenge the longitude
+ * @returns the door, or nothing when none is near or the list cannot be asked
+ */
+export async function naechsteTuer(breite: number, laenge: number): Promise<Adressvorschlag | undefined> {
+    try {
+        const antwort = await fetch(`/api/adressen/naechste?breite=${breite}&laenge=${laenge}`)
+        if (!antwort.ok) return undefined
+        return (await antwort.json() as Adressvorschlag | null) ?? undefined
+    } catch {
+        return undefined
+    }
+}

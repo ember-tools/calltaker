@@ -174,6 +174,15 @@ def test_die_routen_fragen_die_liste(adressen):
     assert treffer[0]["beschriftung"] == "Werderstraße 20, 13587 Hakenfelde"
 
 
+def test_die_naechste_tuer_ueber_die_route(adressen):
+    with TestClient(anwendung_bauen()) as client:
+        client.app.state.adressen = adressen
+        nah = client.get("/api/adressen/naechste", params={"breite": 52.5664, "laenge": 13.2123})
+        fern = client.get("/api/adressen/naechste", params={"breite": 52.0, "laenge": 13.0})
+    assert nah.json()["beschriftung"] == "Werderstraße 20, 13587 Hakenfelde"
+    assert fern.json() is None
+
+
 def test_str_am_anfang_findet_weiter_alle_strassen(adressen):
     assert [t["strasse"] for t in adressen.suchen("Str")] == ["Stralauer Allee"]
     assert [t["strasse"] for t in adressen.suchen("Werderstr")] == ["Werderstraße"]

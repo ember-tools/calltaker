@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed, onMounted, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
-import {adresslisteVerfuegbar} from '../api/adressen'
+import {adresslisteVerfuegbar, naechsteTuer} from '../api/adressen'
 import type {Funkzelle, Kartenpunkt} from '../modell/karte'
 import {ausAdresse, ausOrt, type Adressvorschlag, type Ortsangabe, type Ortsvorschlag} from '../modell/ort'
 import type {Adresse} from '../modell/szenario'
@@ -15,6 +15,7 @@ defineProps<{ruhig?: boolean, funkzelle?: Funkzelle}>()
 const {t} = useI18n()
 const listeDa = ref(true)
 const gross = ref(false)
+const letzterOrt = ref('')
 
 onMounted(async () => {
     listeDa.value = await adresslisteVerfuegbar()
@@ -32,11 +33,22 @@ const FELDER: {feld: keyof Adresse, schluessel: string, breit: boolean}[] = [
 ]
 
 function adresse(vorschlag: Adressvorschlag): void {
-    ort.value = ausAdresse(vorschlag, ort.value)
+    ort.value = ausAdresse(vorschlag, ort.value, letzterOrt.value)
 }
 
-function platz(vorschlag: Ortsvorschlag): void {
+/**
+ * Takes a picked place at once, then fills in the address of the door nearest to it, unless the
+ * location was changed in the meantime.
+ *
+ * @param vorschlag the place
+ */
+async function platz(vorschlag: Ortsvorschlag): Promise<void> {
+    letzterOrt.value = vorschlag.name
     ort.value = ausOrt(vorschlag, ort.value)
+    const tuer = await naechsteTuer(vorschlag.breite, vorschlag.laenge)
+    const [breite, laenge] = ort.value.koordinaten ?? []
+    const unveraendert = ort.value.objekt === vorschlag.name && !ort.value.adresse.strasse && breite === vorschlag.breite && laenge === vorschlag.laenge
+    if (tuer && unveraendert) ort.value = ausOrt(vorschlag, ort.value, tuer)
 }
 
 function gesetzt(breite: number, laenge: number): void {

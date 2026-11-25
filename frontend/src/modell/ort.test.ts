@@ -31,6 +31,14 @@ describe('ort beim Wechsel', () => {
         expect(neu.koordinaten).toBeUndefined()
     })
 
+    it('übernimmt die Adresse der nächsten Tür zu einem Ort und behält seinen Namen', () => {
+        const tuer = {beschriftung: '', strasse: 'Ruthstraße', hausnummer: '6', plz: '12247', ortsteil: 'Lankwitz', bezirk: 'Steglitz-Zehlendorf', breite: 52.43, laenge: 13.34}
+        const kita = ausOrt({beschriftung: '', name: 'Kita Ruthstraße', art: 'Kita', ortsteil: 'Lankwitz', breite: 52.4301, laenge: 13.3401}, neukoelln, tuer)
+        expect(kita).toEqual({adresse: {strasse: 'Ruthstraße', hausnummer: '6', plz: '12247', ortsteil: 'Lankwitz'}, koordinaten: [52.4301, 13.3401], objekt: 'Kita Ruthstraße'})
+        const danach = ausAdresse({beschriftung: '', strasse: 'Werderstraße', hausnummer: '20', plz: '13587', ortsteil: 'Hakenfelde', bezirk: 'Spandau', breite: 52.56, laenge: 13.21}, kita, 'Kita Ruthstraße')
+        expect(danach.objekt).toBe('')
+    })
+
     it('ersetzt den Namen eines Ortes durch die gewählte Adresse', () => {
         const feld = ausOrt({beschriftung: '', name: 'Tempelhofer Feld', art: 'Park', ortsteil: 'Tempelhof', breite: 52.47, laenge: 13.4}, neukoelln)
         const danach = ausAdresse({beschriftung: '', strasse: 'Werderstraße', hausnummer: '20', plz: '13587', ortsteil: 'Hakenfelde', bezirk: 'Spandau', breite: 52.56, laenge: 13.21}, feld)
