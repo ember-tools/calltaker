@@ -26,7 +26,7 @@ async function ziehen(): Promise<void> {
 <template>
     <div class="flex flex-wrap items-end gap-2">
         <GebietWahl v-model="gebiet" @geladen="vorhanden => listeDa = vorhanden"/>
-        <button type="button" class="h-8 rounded border border-slate-400 px-3 text-sm font-semibold" @click="ziehen">{{ t('gebiet.zufall') }}</button>
-        <p v-if="fehler" class="m-0 text-xs text-fehler" role="alert">{{ fehler }}</p>
+        <UButton color="neutral" variant="outline" @click="ziehen">{{ t('gebiet.zufall') }}</UButton>
+        <p v-if="fehler" class="m-0 text-xs text-error" role="alert">{{ fehler }}</p>
     </div>
 </template>

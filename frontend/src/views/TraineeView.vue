@@ -4,7 +4,7 @@ import {useI18n} from 'vue-i18n'
 import GespraechAbschluss from '../components/GespraechAbschluss.vue'
 import GespraechsFlaeche from '../components/GespraechsFlaeche.vue'
 import GetrenntHinweis from '../components/GetrenntHinweis.vue'
-import KopfLeiste from '../components/KopfLeiste.vue'
+import ToolHeader from '../components/ToolHeader.vue'
 import UnbekannteUebung from '../components/UnbekannteUebung.vue'
 import VerbindungsZeichen from '../components/VerbindungsZeichen.vue'
 import WarteschlangeLeiste from '../components/WarteschlangeLeiste.vue'
@@ -83,20 +83,20 @@ onBeforeUnmount(() => window.removeEventListener('keydown', fTaste))
 
 <template>
     <div class="flex min-h-screen flex-col">
-        <KopfLeiste :rolle="t('trainee.titel')">
+        <ToolHeader :role="t('trainee.titel')">
             <WarteschlangeLeiste v-if="zustand" class="flex-1" :zustand="zustand" @bereit="absicht('bereit')" @annehmen="id => absicht('annehmen', {anrufId: id})"/>
             <VerbindungsZeichen v-if="zustand" :name="t('verbindung.ausbilder')" :verbunden="zustand.verbunden.ausbilder"/>
-        </KopfLeiste>
+        </ToolHeader>
         <GetrenntHinweis v-if="!erreichbar"/>
         <UnbekannteUebung v-if="unbekannt"/>
-        <p v-else-if="fehler" role="alert" class="m-0 p-5 text-fehler">{{ t('trainee.graphFehlt', {fehler}) }}</p>
+        <p v-else-if="fehler" role="alert" class="m-0 p-5 text-error">{{ t('trainee.graphFehlt', {fehler}) }}</p>
         <main v-else-if="anruf && graph" class="flex flex-1 flex-col gap-3 p-4">
             <GespraechsFlaeche ref="flaeche" v-model="eintraege" v-model:suche="suche" v-model:ui="fenster" :graph="graph" :schwerste="schwerste" :anruf="anruf" @sofort="jetztSenden"/>
             <GespraechAbschluss :offen="offen" @beenden="beenden"/>
-            <p class="m-0 text-xs text-gedaempft">{{ t('trainee.tasten') }}</p>
+            <p class="m-0 text-xs text-muted">{{ t('trainee.tasten') }}</p>
         </main>
         <main v-else class="flex flex-col gap-2 p-5">
-            <p class="m-0 text-gedaempft">{{ !zustand ? t('allgemein.laden') : zuletzt ? t('trainee.beendet') : t('trainee.warten') }}</p>
+            <p class="m-0 text-muted">{{ !zustand ? t('allgemein.laden') : zuletzt ? t('trainee.beendet') : t('trainee.warten') }}</p>
             <nav v-if="zuletzt" :aria-label="t('auswertung.navigation')" class="flex gap-4 text-sm">
                 <RouterLink :to="{name: 'trainee-debrief', params: {code, anrufId: zuletzt.id}}" class="font-semibold underline">{{ t('trainee.debrief') }}</RouterLink>
                 <RouterLink :to="{name: 'trainee-uebersicht', params: {code}}" class="underline">{{ t('auswertung.uebersicht') }}</RouterLink>

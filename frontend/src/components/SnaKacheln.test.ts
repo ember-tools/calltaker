@@ -93,9 +93,9 @@ describe('SnaKacheln in den Farben der Fachrichtungen', () => {
             {id: 'th', label: 'Technische Hilfeleistung', ziel: 'x', farbe: 'th'},
         ], zusaetze: new Map(), farbe: 'th'}, global: {plugins: [i18n]}})
         const kacheln = ansicht.findAll('button')
-        expect(kacheln[0]!.classes()).toContain('bg-sky-100')
-        expect(kacheln[1]!.classes()).toContain('bg-red-100')
-        expect(kacheln[2]!.classes()).toContain('bg-amber-100')
+        expect(kacheln[0]!.classes()).toContain('bg-info/15')
+        expect(kacheln[1]!.classes()).toContain('bg-error/15')
+        expect(kacheln[2]!.classes()).toContain('bg-warning/15')
     })
 })
 

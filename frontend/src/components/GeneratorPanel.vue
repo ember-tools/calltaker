@@ -88,7 +88,7 @@ async function automatisch(an: boolean): Promise<void> {
 </script>
 
 <template>
-    <details class="rounded border border-rand p-3">
+    <details class="rounded border border-default p-3">
         <summary class="cursor-pointer text-sm font-bold">{{ t('generator.titel') }}</summary>
         <div class="mt-2 flex flex-col gap-2">
             <div class="grid grid-cols-2 gap-2 sm:grid-cols-5">
@@ -104,12 +104,12 @@ async function automatisch(an: boolean): Promise<void> {
                     </optgroup>
                 </select>
             </label>
-            <fieldset class="m-0 flex flex-wrap gap-x-4 gap-y-1 rounded border border-rand p-2">
+            <fieldset class="m-0 flex flex-wrap gap-x-4 gap-y-1 rounded border border-default p-2">
                 <legend class="px-1 text-sm font-bold">{{ t('generator.belastende') }}</legend>
                 <label v-for="kategorie in BELASTENDE" :key="kategorie" class="flex items-center gap-2 text-sm">
                     <input :checked="einstellung.belastende?.includes(kategorie)" type="checkbox" @change="belastendSetzen(kategorie, ($event.target as HTMLInputElement).checked)"/>{{ t(`generator.belastend.${kategorie}`) }}
                 </label>
-                <p class="m-0 w-full text-xs text-gedaempft">{{ t('generator.belastendeHinweis') }}</p>
+                <p class="m-0 w-full text-xs text-muted">{{ t('generator.belastendeHinweis') }}</p>
             </fieldset>
             <GebietWahl :model-value="{bezirk: einstellung.bezirk, ortsteil: einstellung.ortsteil}" @update:model-value="gebietSetzen"/>
             <label class="flex items-center gap-2 text-sm">
@@ -117,9 +117,9 @@ async function automatisch(an: boolean): Promise<void> {
             </label>
             <div class="flex items-end gap-2">
                 <label :class="BESCHRIFTUNG">{{ t('generator.anzahl') }}<input v-model.number="anzahl" type="number" min="1" max="20" :class="['w-20', FELD]"/></label>
-                <button type="button" class="h-8 rounded bg-tinte px-3 text-sm font-semibold text-white" @click="generieren">{{ t('generator.los') }}</button>
+                <UButton size="sm" @click="generieren">{{ t('generator.los') }}</UButton>
             </div>
-            <p v-if="meldung" :role="fehler ? 'alert' : 'status'" :class="['m-0 text-sm', fehler ? 'text-fehler' : 'text-ok']">{{ meldung }}</p>
+            <p v-if="meldung" :role="fehler ? 'alert' : 'status'" :class="['m-0 text-sm', fehler ? 'text-error' : 'text-success']">{{ meldung }}</p>
         </div>
     </details>
 </template>

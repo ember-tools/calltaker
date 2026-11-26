@@ -17,10 +17,10 @@ let zeitgeber: ReturnType<typeof setTimeout> | undefined
 
 /** The colours of the tiles per discipline: medical blue, fire red, technical rescue amber. */
 const FARBEN: Record<string, {kachel: string, nummer: string}> = {
-    rd: {kachel: 'border-sky-300 bg-sky-100 text-sky-950', nummer: 'bg-sky-300'},
-    brand: {kachel: 'border-red-300 bg-red-100 text-red-950', nummer: 'bg-red-300'},
-    fw: {kachel: 'border-red-300 bg-red-100 text-red-950', nummer: 'bg-red-300'},
-    th: {kachel: 'border-amber-300 bg-amber-100 text-amber-950', nummer: 'bg-amber-300'},
+    rd: {kachel: 'border-info/50 bg-info/15 text-info', nummer: 'bg-info/30'},
+    brand: {kachel: 'border-error/40 bg-error/15 text-error', nummer: 'bg-error/30'},
+    fw: {kachel: 'border-error/40 bg-error/15 text-error', nummer: 'bg-error/30'},
+    th: {kachel: 'border-warning/50 bg-warning/15 text-warning', nummer: 'bg-warning/30'},
 }
 
 /**
@@ -31,7 +31,7 @@ const FARBEN: Record<string, {kachel: string, nummer: string}> = {
  * @returns the classes for its state
  */
 function leitklasse(antwort: Antwort): string {
-    if (props.vorgeschlagen.includes(antwort.id)) return 'ring-3 ring-sky-600 ring-offset-1'
+    if (props.vorgeschlagen.includes(antwort.id)) return 'ring-3 ring-info ring-offset-1'
     return props.passend && !props.passend.has(antwort.id) ? 'opacity-40' : ''
 }
 
@@ -108,17 +108,17 @@ function taste(ereignis: KeyboardEvent): void {
 
 <template>
     <div ref="raster" class="flex flex-col gap-3">
-        <label v-if="antworten.length + weitere.length > 9" class="flex items-center gap-2 text-xs font-semibold text-gedaempft">
+        <label v-if="antworten.length + weitere.length > 9" class="flex items-center gap-2 text-xs font-semibold text-muted">
             {{ t('sna.suche') }}
-            <input v-model="suche" :placeholder="t('sna.sucheHinweis')" class="h-8 max-w-sm flex-1 rounded border border-slate-400 px-2 text-sm text-tinte" @keydown="taste"/>
+            <input v-model="suche" :placeholder="t('sna.sucheHinweis')" class="native-field max-w-sm flex-1" @keydown="taste"/>
         </label>
-        <p v-else class="m-0 text-xs text-gedaempft">{{ t('sna.sucheHinweis') }}</p>
+        <p v-else class="m-0 text-xs text-muted">{{ t('sna.sucheHinweis') }}</p>
         <div class="grid grid-cols-1 gap-2.5 md:grid-cols-2 xl:grid-cols-3">
             <button
                 v-for="{antwort, nummer} in sichtbar"
                 :key="antwort.id"
                 type="button"
-                :class="['flex min-h-16 items-stretch overflow-hidden rounded-md border p-0 text-left font-semibold', farbeVon(antwort).kachel, nummer === markiert ? 'outline-3 outline-offset-1 outline-slate-900' : '', leitklasse(antwort)]"
+                :class="['flex min-h-16 items-stretch overflow-hidden rounded-md border p-0 text-left font-semibold', farbeVon(antwort).kachel, nummer === markiert ? 'outline-3 outline-offset-1 outline-(--ui-text-highlighted)' : '', leitklasse(antwort)]"
                 @click="waehlen(nummer)"
                 @keydown="taste"
             >
@@ -129,8 +129,8 @@ function taste(ereignis: KeyboardEvent): void {
                 </span>
             </button>
         </div>
-        <button v-if="weitere.length && !suche.trim()" type="button" class="self-start text-sm underline" :aria-expanded="weitereOffen" @click="weitereOffen = !weitereOffen" @keydown="taste">
+        <UButton v-if="weitere.length && !suche.trim()" color="neutral" variant="link" size="sm" class="self-start" :aria-expanded="weitereOffen" @click="weitereOffen = !weitereOffen" @keydown="taste">
             {{ weitereOffen ? t('sna.weitereZu') : t('sna.weitere', {anzahl: weitere.length}) }}
-        </button>
+        </UButton>
     </div>
 </template>

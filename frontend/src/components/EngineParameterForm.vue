@@ -29,7 +29,7 @@ async function setzen(): Promise<void> {
 </script>
 
 <template>
-    <details class="rounded border border-rand p-3 text-sm">
+    <details class="rounded border border-default p-3 text-sm">
         <summary class="cursor-pointer font-bold">{{ t('parameter.titel') }}</summary>
         <div class="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-4">
             <label v-for="feld in ZAHLEN" :key="feld" :class="BESCHRIFTUNG">{{ t(`parameter.${feld}`) }}
@@ -37,6 +37,6 @@ async function setzen(): Promise<void> {
             </label>
             <label class="col-span-2 flex items-center gap-2"><input v-model="werte.zurueckInPool" type="checkbox" @change="setzen"/>{{ t('parameter.zurueckInPool') }}</label>
         </div>
-        <p v-if="fehler" class="m-0 mt-2 text-fehler" role="alert">{{ fehler }}</p>
+        <p v-if="fehler" class="m-0 mt-2 text-error" role="alert">{{ fehler }}</p>
     </details>
 </template>

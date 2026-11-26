@@ -37,11 +37,11 @@ const allgemein = computed(() => props.befunde.filter(b => !b.knoten))
 
 <template>
     <form class="flex flex-col gap-3" :aria-label="t('editor.titel')" @submit.prevent="fehlt.length === 0 && emit('speichern')">
-        <ul v-if="allgemein.length" class="m-0 pl-5 text-sm text-warnung" role="alert">
+        <ul v-if="allgemein.length" class="m-0 pl-5 text-sm text-warning" role="alert">
             <li v-for="befund in allgemein" :key="befund.meldung">{{ befund.meldung }}</li>
         </ul>
         <label :class="BESCHRIFTUNG">{{ t('editor.szenarioTitel') }}<input v-model="entwurf.titel" :placeholder="t('editor.titelBeispiel')" :class="FELD"/></label>
-        <fieldset class="m-0 min-w-0 flex flex-col gap-2 rounded border border-rand p-3">
+        <fieldset class="m-0 min-w-0 flex flex-col gap-2 rounded border border-default p-3">
             <legend class="px-1 text-sm font-bold">{{ t('editor.ort') }}</legend>
             <ZufallsAdresse @adresse="zufaellig"/>
             <OrtWahl v-model="ort" v-model:text="suche"/>
@@ -51,16 +51,16 @@ const allgemein = computed(() => props.befunde.filter(b => !b.knoten))
             </div>
         </fieldset>
         <EditorAnrufer v-model="entwurf"/>
-        <fieldset class="m-0 min-w-0 flex flex-col gap-2 rounded border border-rand p-3">
+        <fieldset class="m-0 min-w-0 flex flex-col gap-2 rounded border border-default p-3">
             <legend class="px-1 text-sm font-bold">{{ t('editor.pfad') }}</legend>
             <PfadWahl v-model:antworten="entwurf.antworten" v-model:ziel="entwurf.ziel" :graph="graph" :schwerste="schwerste" :befunde="befunde"/>
         </fieldset>
-        <p v-if="hinweis" class="m-0 text-sm text-warnung" role="status">{{ hinweis }}</p>
-        <p v-if="fehler" class="m-0 text-sm text-fehler" role="alert">{{ fehler }}</p>
-        <p v-if="fehlt.length" class="m-0 text-sm text-gedaempft">{{ t('editor.nochOffen', {liste: fehlt.map(schluessel => t(schluessel)).join(', ')}) }}</p>
+        <p v-if="hinweis" class="m-0 text-sm text-warning" role="status">{{ hinweis }}</p>
+        <p v-if="fehler" class="m-0 text-sm text-error" role="alert">{{ fehler }}</p>
+        <p v-if="fehlt.length" class="m-0 text-sm text-muted">{{ t('editor.nochOffen', {liste: fehlt.map(schluessel => t(schluessel)).join(', ')}) }}</p>
         <div class="flex gap-2">
-            <button type="submit" :disabled="fehlt.length > 0" class="rounded bg-tinte px-4 py-1.5 text-sm font-semibold text-white disabled:opacity-40">{{ t('editor.speichern') }}</button>
-            <button type="button" class="rounded border border-slate-400 px-4 py-1.5 text-sm font-semibold" @click="emit('abbrechen')">{{ t('editor.abbrechen') }}</button>
+            <UButton type="submit" :disabled="fehlt.length > 0">{{ t('editor.speichern') }}</UButton>
+            <UButton color="neutral" variant="outline" size="sm" @click="emit('abbrechen')">{{ t('editor.abbrechen') }}</UButton>
         </div>
     </form>
 </template>

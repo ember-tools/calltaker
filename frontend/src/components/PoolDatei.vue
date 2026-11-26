@@ -49,19 +49,19 @@ function zeige(text: string, istFehler: boolean): void {
 <template>
     <div class="flex flex-col gap-2">
         <div class="flex flex-wrap items-center gap-2">
-            <a :href="`/api/uebung/${encodeURIComponent(code)}/pool`" download="calltaker-pool.json" class="rounded border border-slate-400 px-3 py-1.5 text-sm font-semibold no-underline" @click="emit('exportiert')">{{ t('ausbilder.export') }}</a>
-            <label class="cursor-pointer rounded border border-slate-400 px-3 py-1.5 text-sm font-semibold">
+            <a :href="`/api/uebung/${encodeURIComponent(code)}/pool`" download="calltaker-pool.json" class="rounded border border-accented px-3 py-1.5 text-sm font-semibold no-underline" @click="emit('exportiert')">{{ t('ausbilder.export') }}</a>
+            <label class="cursor-pointer rounded border border-accented px-3 py-1.5 text-sm font-semibold">
                 {{ t('ausbilder.import') }}
                 <input type="file" accept="application/json,.json" class="sr-only" @change="hochladen"/>
             </label>
             <label class="flex items-center gap-1.5 text-sm">
                 {{ t('ausbilder.modus') }}
-                <select v-model="modus" class="rounded border border-slate-400 px-1.5 py-1">
+                <select v-model="modus" class="native-field">
                     <option value="anhaengen">{{ t('ausbilder.anhaengen') }}</option>
                     <option value="ersetzen">{{ t('ausbilder.ersetzen') }}</option>
                 </select>
             </label>
         </div>
-        <p v-if="meldung" :role="fehler ? 'alert' : 'status'" :class="['m-0 whitespace-pre-line text-sm', fehler ? 'text-fehler' : 'text-ok']">{{ meldung }}</p>
+        <p v-if="meldung" :role="fehler ? 'alert' : 'status'" :class="['m-0 whitespace-pre-line text-sm', fehler ? 'text-error' : 'text-success']">{{ meldung }}</p>
     </div>
 </template>

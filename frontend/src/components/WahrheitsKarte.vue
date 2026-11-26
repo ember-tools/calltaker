@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {faCheck, faComments, faTruckMedical, faXmark} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
@@ -69,53 +67,53 @@ const erreichbar = computed(() => {
     return anrufer.rueckrufnummer && anrufer.rueckrufnummer !== anrufer.rufnummer ? anzeigen(anrufer.rueckrufnummer) : ''
 })
 
-const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-warnung', falsch: 'font-semibold text-fehler', offen: 'text-gedaempft', hinweis: ''}
+const URTEIL: Record<Urteil, string> = {richtig: 'text-success', teilweise: 'text-warning', falsch: 'font-semibold text-error', offen: 'text-muted', hinweis: ''}
 </script>
 
 <template>
-    <section :aria-label="t('wahrheit.titel')" class="flex flex-col gap-3 rounded-lg border border-rand bg-flaeche p-4 text-sm">
+    <section :aria-label="t('wahrheit.titel')" class="flex flex-col gap-3 rounded-lg border border-default bg-default p-4 text-sm">
         <header class="flex flex-col gap-1">
             <h2 class="m-0 text-base font-bold">{{ szenario.titel }}</h2>
             <p class="m-0"><b class="font-mono">{{ szenario.ziel.code }}</b> · {{ ziel?.kategorie }} · {{ ziel?.anlass }}</p>
             <p v-if="rolle" class="m-0">{{ rolle }}</p>
-            <div v-if="anruf.zustand === 'beendet' && (szenario.rolle.notizen || szenario.rolle.beschwerden?.length)" class="m-0 flex flex-col gap-1 rounded bg-amber-50 p-2">
+            <div v-if="anruf.zustand === 'beendet' && (szenario.rolle.notizen || szenario.rolle.beschwerden?.length)" class="m-0 flex flex-col gap-1 rounded bg-warning/10 p-2">
                 <p v-if="szenario.rolle.notizen" class="m-0 whitespace-pre-line">{{ szenario.rolle.notizen }}</p>
                 <ul v-if="szenario.rolle.beschwerden?.length" :aria-label="t('wahrheit.beschwerden')" class="m-0 pl-5">
                     <li v-for="(beschwerde, nummer) in szenario.rolle.beschwerden" :key="nummer">{{ beschwerde }}</li>
                 </ul>
             </div>
-            <section v-if="anruf.zustand !== 'beendet'" :aria-label="t('leitfaden.titel')" class="flex flex-col gap-1 rounded border border-sky-200 bg-sky-50 p-2">
-                <h3 class="m-0 text-sm font-bold text-sky-900"><FontAwesomeIcon :icon="faComments" class="mr-1.5" aria-hidden="true"/>{{ t('leitfaden.titel') }}</h3>
+            <section v-if="anruf.zustand !== 'beendet'" :aria-label="t('leitfaden.titel')" class="flex flex-col gap-1 rounded border border-info/40 bg-info/10 p-2">
+                <h3 class="m-0 text-sm font-bold text-info"><UIcon name="i-lucide-messages-square" class="mr-1.5" aria-hidden="true"/>{{ t('leitfaden.titel') }}</h3>
                 <ul class="m-0 flex flex-col gap-0.5 pl-5">
                     <li v-for="(punkt, nummer) in stichpunkte" :key="`${nummer}-${punkt.schluessel}`" class="whitespace-pre-line">{{ t(punkt.schluessel, punkt.werte ?? {}) }}</li>
                 </ul>
-                <p v-if="jetzt" class="m-0 rounded bg-amber-100 px-2 py-1" role="status">{{ t('leitfaden.jetzt', {frage: jetzt.frage}) }} <b>{{ jetzt.soll ?? t('wahrheit.improvisieren') }}</b></p>
-                <p v-if="leitfrage" class="m-0 rounded bg-sky-100 px-2 py-1">{{ t('leitfragen.loesungFrage', {frage: leitfrage.frage}) }} <b>{{ leitfrage.antworten.length ? leitfrage.antworten.join(t('leitfragen.oder')) : t('leitfragen.frei') }}</b></p>
+                <p v-if="jetzt" class="m-0 rounded bg-warning/15 px-2 py-1" role="status">{{ t('leitfaden.jetzt', {frage: jetzt.frage}) }} <b>{{ jetzt.soll ?? t('wahrheit.improvisieren') }}</b></p>
+                <p v-if="leitfrage" class="m-0 rounded bg-info/15 px-2 py-1">{{ t('leitfragen.loesungFrage', {frage: leitfrage.frage}) }} <b>{{ leitfrage.antworten.length ? leitfrage.antworten.join(t('leitfragen.oder')) : t('leitfragen.frei') }}</b></p>
             </section>
-            <p v-if="anruf.eintraege.zeiten.uebergabe" class="m-0 font-semibold text-ok">{{ t('uebergabe.erfolgt', {dauer: dauer(anruf.eintraege.zeiten.uebergabe - (anruf.angenommenUm ?? anruf.eintraege.zeiten.uebergabe))}) }}<span v-if="nachgetragen.length" class="font-normal text-akzent"> · {{ t('uebergabe.nachgetragen', {teile: nachgetragen.join(', ')}) }}</span></p>
-            <p v-else-if="anruf.zustand === 'gespraech' || anruf.zustand === 'beendet'" class="m-0 text-gedaempft">{{ t('uebergabe.nicht') }}</p>
+            <p v-if="anruf.eintraege.zeiten.uebergabe" class="m-0 font-semibold text-success">{{ t('uebergabe.erfolgt', {dauer: dauer(anruf.eintraege.zeiten.uebergabe - (anruf.angenommenUm ?? anruf.eintraege.zeiten.uebergabe))}) }}<span v-if="nachgetragen.length" class="font-normal text-primary"> · {{ t('uebergabe.nachgetragen', {teile: nachgetragen.join(', ')}) }}</span></p>
+            <p v-else-if="anruf.zustand === 'gespraech' || anruf.zustand === 'beendet'" class="m-0 text-muted">{{ t('uebergabe.nicht') }}</p>
             <p v-if="anruf.eintreffenUm !== undefined" class="m-0 flex flex-wrap items-center gap-2">
-                <FontAwesomeIcon :icon="faTruckMedical" aria-hidden="true"/>
+                <UIcon name="i-lucide-ambulance" aria-hidden="true"/>
                 <span v-if="jetztUhr < anruf.eintreffenUm">{{ t('kraefte.unterwegs', {dauer: dauer(anruf.eintreffenUm - jetztUhr)}) }}</span>
-                <span v-else class="font-semibold text-ok">{{ t('kraefte.eingetroffen') }}</span>
-                <button v-if="anruf.zustand === 'gespraech' && jetztUhr < anruf.eintreffenUm" type="button" class="rounded border border-slate-400 px-2 py-0.5 text-xs font-semibold" @click="emit('eintreffen')">{{ t('kraefte.jetzt') }}</button>
+                <span v-else class="font-semibold text-success">{{ t('kraefte.eingetroffen') }}</span>
+                <UButton v-if="anruf.zustand === 'gespraech' && jetztUhr < anruf.eintreffenUm" color="neutral" variant="outline" size="xs" @click="emit('eintreffen')">{{ t('kraefte.jetzt') }}</UButton>
             </p>
         </header>
         <dl class="m-0 grid grid-cols-[max-content_1fr] gap-x-3 gap-y-1">
-            <dt class="text-gedaempft">{{ t('wahrheit.anrufer') }}</dt>
+            <dt class="text-muted">{{ t('wahrheit.anrufer') }}</dt>
             <dd class="m-0">{{ szenario.anrufer.name }} · {{ szenario.anrufer.rufnummerUnterdrueckt ? t('wahrheit.unterdrueckt') : anzeigen(szenario.anrufer.rufnummer ?? '') }}<span v-if="erreichbar"> · {{ t('wahrheit.erreichbar', {nummer: erreichbar}) }}</span></dd>
             <template v-if="szenario.betroffener?.name">
-                <dt class="text-gedaempft">{{ t('wahrheit.betroffener') }}</dt>
+                <dt class="text-muted">{{ t('wahrheit.betroffener') }}</dt>
                 <dd class="m-0">{{ szenario.betroffener.name }}</dd>
             </template>
-            <dt class="text-gedaempft">{{ t('wahrheit.ort') }}</dt>
+            <dt class="text-muted">{{ t('wahrheit.ort') }}</dt>
             <dd class="m-0">{{ adresse }}</dd>
             <template v-if="tafel">
-                <dt class="text-gedaempft">{{ t('warntafel.titel') }}</dt>
+                <dt class="text-muted">{{ t('warntafel.titel') }}</dt>
                 <dd class="m-0"><WarntafelAnzeige :tafel="tafel"/></dd>
             </template>
             <template v-for="angabe in ortsangaben" :key="angabe.feld">
-                <dt class="text-gedaempft">{{ t(`maske.${angabe.feld}`) }}</dt>
+                <dt class="text-muted">{{ t(`maske.${angabe.feld}`) }}</dt>
                 <dd class="m-0">{{ angabe.wert }}</dd>
             </template>
         </dl>
@@ -125,7 +123,7 @@ const URTEIL: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-war
                 <span v-if="bewertung.abstand !== undefined">{{ t('wahrheit.abstand', {meter: bewertung.abstand}) }}</span>
                 <span v-else-if="bewertung.urteil === 'offen'">{{ t('wahrheit.offen') }}</span>
                 <span v-else>{{ bewertung.ist }}<template v-if="bewertung.urteil === 'falsch' || bewertung.urteil === 'teilweise' || (bewertung.urteil === 'hinweis' && bewertung.soll)"> · {{ t('wahrheit.soll', {soll: bewertung.soll}) }}</template><template v-if="bewertung.stufe && bewertung.stufe !== 'exakt'"> ({{ t(`stufe.${bewertung.stufe}`) }})</template></span>
-                <button v-if="bewertung.anleitung" type="button" class="ml-auto shrink-0 text-xs underline" @click="emit('korrigieren', bewertung.anleitung, !bewertung.gegeben)"><FontAwesomeIcon :icon="bewertung.gegeben ? faXmark : faCheck" class="mr-1" aria-hidden="true"/>{{ bewertung.gegeben ? t('wahrheit.nichtGegeben') : t('wahrheit.gegeben') }}</button>
+                <UButton v-if="bewertung.anleitung" color="neutral" variant="link" size="xs" class="ml-auto shrink-0" @click="emit('korrigieren', bewertung.anleitung, !bewertung.gegeben)"><UIcon :name="bewertung.gegeben ? 'i-lucide-x' : 'i-lucide-check'" class="mr-1" aria-hidden="true"/>{{ bewertung.gegeben ? t('wahrheit.nichtGegeben') : t('wahrheit.gegeben') }}</UButton>
             </li>
         </ul>
         <PfadVergleichListe :vergleich="vergleich" live/>

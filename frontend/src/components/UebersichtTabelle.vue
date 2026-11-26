@@ -9,7 +9,7 @@ defineProps<{zeilen: Uebersichtszeile[], code: string, rolle: Rolle}>()
 
 const {t} = useI18n()
 const TEXTFELDER = new Set(['bewertung.reanimation', 'bewertung.uebergabe', 'bewertung.anleitung'])
-const FARBE: Record<Urteil, string> = {richtig: 'text-ok', teilweise: 'text-warnung', falsch: 'text-fehler', offen: 'text-fehler', hinweis: ''}
+const FARBE: Record<Urteil, string> = {richtig: 'text-success', teilweise: 'text-warning', falsch: 'text-error', offen: 'text-error', hinweis: ''}
 
 /**
  * A comparison as a short mark for the table: a distance, a code's closeness, a time or a count, or
@@ -38,10 +38,10 @@ function zeit(sekunden?: number): string {
 </script>
 
 <template>
-    <p v-if="zeilen.length === 0" class="m-0 text-sm text-gedaempft">{{ t('auswertung.keine') }}</p>
+    <p v-if="zeilen.length === 0" class="m-0 text-sm text-muted">{{ t('auswertung.keine') }}</p>
     <table v-else class="w-full border-collapse text-sm">
         <thead>
-            <tr class="text-left text-xs text-gedaempft">
+            <tr class="text-left text-xs text-muted">
                 <th class="py-1 pr-2">{{ t('auswertung.anruf') }}</th>
                 <th class="py-1 pr-2">{{ t('bewertung.code') }}</th>
                 <th class="py-1 pr-2">{{ t('bewertung.adresse') }}</th>
@@ -55,7 +55,7 @@ function zeit(sekunden?: number): string {
             </tr>
         </thead>
         <tbody>
-            <tr v-for="zeile in zeilen" :key="zeile.id" class="border-t border-rand">
+            <tr v-for="zeile in zeilen" :key="zeile.id" class="border-t border-default">
                 <th scope="row" class="py-1 pr-2 text-left font-normal">
                     <RouterLink :to="{name: `${rolle}-debrief`, params: {code, anrufId: zeile.id}}" class="underline">{{ zeile.titel }}</RouterLink>
                 </th>

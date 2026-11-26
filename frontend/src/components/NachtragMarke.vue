@@ -5,5 +5,5 @@ const {t} = useI18n()
 </script>
 
 <template>
-    <span class="ml-1.5 rounded bg-sky-100 px-1.5 text-xs font-semibold text-akzent">{{ t('uebergabe.nachtrag') }}</span>
+    <span class="ml-1.5 rounded-sm bg-info/15 px-1.5 text-xs font-semibold text-info">{{ t('uebergabe.nachtrag') }}</span>
 </template>

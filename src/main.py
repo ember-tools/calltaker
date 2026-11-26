@@ -22,7 +22,7 @@ from adressen import Adressen
 from api import abfragebuendel, abfragegraph, beschwerdekatalog, gefahrstoffe_geladen, router
 from einstellungen import einstellungen
 from fehlermeldung import deutsch
-from frontend import frontend_einbinden
+from frontend import mount_frontend
 from grenzen import KoerperGrenze
 from orte import Orte, orte_laden
 from szenario import Szenario
@@ -150,7 +150,7 @@ def anwendung_bauen() -> FastAPI:
     app.include_router(kacheln.router)
     app.include_router(adressen_api.router)
     app.include_router(orte_api.router)
-    frontend_einbinden(app, einstellungen().frontend_verzeichnis)
+    mount_frontend(app, einstellungen().frontend_verzeichnis)
     return app
 
 

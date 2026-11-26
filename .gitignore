@@ -6,3 +6,6 @@ __pycache__/
 .ruff_cache/
 src/frontend_dist/
 .daten/
+node_modules/
+frontend/auto-imports.d.ts
+frontend/components.d.ts

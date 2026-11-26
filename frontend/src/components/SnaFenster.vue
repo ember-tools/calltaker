@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {faCheck, faShareFromSquare} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, nextTick, ref, watch} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Abfragegraph} from '../modell/abfragegraph'
@@ -124,54 +122,54 @@ defineExpose({fokussieren})
 </script>
 
 <template>
-    <section :aria-label="t('sna.titel')" class="flex min-w-0 flex-col overflow-hidden rounded-lg border border-rand bg-flaeche">
-        <div role="toolbar" :aria-label="t('sna.werkzeuge')" class="flex flex-wrap items-center gap-2 border-b border-rand bg-slate-100 px-3 py-2.5">
-            <span class="flex h-10 items-center rounded bg-leiste px-3 font-mono text-white">{{ dauer(jetzt - (seit ?? jetzt)) }}</span>
-            <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" :disabled="abfrage.pfad.length === 0 && !abfrage.aufwertung && !abfrage.abbruch" @click="zurueck">{{ t('sna.zurueck') }}</button>
-            <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" @click="umschalten('hilfe')">{{ t('sna.ersteHilfe') }}</button>
-            <button type="button" class="h-10 rounded border border-slate-400 bg-white px-3 text-sm font-semibold" :disabled="!protokoll || Boolean(ende && !abfrage.abbruch && !abfrage.aufwertung && hoeher.length === 0)" @click="umschalten('aufwertung')">{{ t('sna.aufwertung') }}</button>
-            <button v-if="uebergabe" type="button" :disabled="uebergabe === 'gesperrt' || uebergabe === 'erfolgt'" :class="['h-10 rounded border px-3 text-sm font-semibold', uebergabe === 'faellig' ? 'border-amber-500 bg-amber-300 text-amber-950' : uebergabe === 'erfolgt' ? 'border-green-600 bg-green-50 text-ok' : 'border-slate-400 bg-white']" @click="emit('uebergeben')">
-                <FontAwesomeIcon :icon="uebergabe === 'erfolgt' ? faCheck : faShareFromSquare" class="mr-1.5" aria-hidden="true"/>
+    <section :aria-label="t('sna.titel')" class="flex min-w-0 flex-col overflow-hidden rounded-lg border border-default bg-default">
+        <div role="toolbar" :aria-label="t('sna.werkzeuge')" class="flex flex-wrap items-center gap-2 border-b border-default bg-elevated px-3 py-2.5">
+            <span class="flex h-10 items-center rounded bg-inverted px-3 font-mono text-inverted">{{ dauer(jetzt - (seit ?? jetzt)) }}</span>
+            <UButton color="neutral" variant="outline" size="lg" :disabled="abfrage.pfad.length === 0 && !abfrage.aufwertung && !abfrage.abbruch" @click="zurueck">{{ t('sna.zurueck') }}</UButton>
+            <UButton color="neutral" variant="outline" size="lg" @click="umschalten('hilfe')">{{ t('sna.ersteHilfe') }}</UButton>
+            <UButton color="neutral" variant="outline" size="lg" :disabled="!protokoll || Boolean(ende && !abfrage.abbruch && !abfrage.aufwertung && hoeher.length === 0)" @click="umschalten('aufwertung')">{{ t('sna.aufwertung') }}</UButton>
+            <UButton v-if="uebergabe" size="lg" :disabled="uebergabe === 'gesperrt' || uebergabe === 'erfolgt'" :color="uebergabe === 'faellig' ? 'warning' : uebergabe === 'erfolgt' ? 'success' : 'neutral'" :variant="uebergabe === 'faellig' ? 'solid' : uebergabe === 'erfolgt' ? 'soft' : 'outline'" @click="emit('uebergeben')">
+                <UIcon :name="uebergabe === 'erfolgt' ? 'i-lucide-check' : 'i-lucide-share'" class="mr-1.5" aria-hidden="true"/>
                 {{ uebergabe === 'erfolgt' ? t('uebergabe.erfolgt', {dauer: dauer((uebergebenUm ?? jetzt) - (seit ?? uebergebenUm ?? jetzt))}) : t('uebergabe.knopf') }}
-            </button>
-            <span v-if="uebergabe === 'faellig'" role="status" class="text-sm font-semibold text-amber-900">{{ t('uebergabe.jetzt') }}</span>
-            <button type="button" class="ml-auto h-10 rounded border border-red-300 bg-white px-3 text-sm font-semibold text-red-800" :disabled="Boolean(ende) || !zwischen" @click="umschalten('abbruch')">{{ t('sna.abbruch') }}</button>
+            </UButton>
+            <span v-if="uebergabe === 'faellig'" role="status" class="text-sm font-semibold text-warning">{{ t('uebergabe.jetzt') }}</span>
+            <UButton class="ml-auto" size="lg" color="error" variant="outline" :disabled="Boolean(ende) || !zwischen" @click="umschalten('abbruch')">{{ t('sna.abbruch') }}</UButton>
         </div>
-        <div class="flex flex-wrap items-center gap-3 border-b border-amber-200 bg-amber-50 px-4 py-2 text-sm">
-            <span class="font-bold text-amber-900">{{ t('sna.zwischenergebnis') }}</span>
+        <div class="flex flex-wrap items-center gap-3 border-b border-warning/40 bg-warning/10 px-4 py-2 text-sm">
+            <span class="font-bold text-warning">{{ t('sna.zwischenergebnis') }}</span>
             <template v-if="zwischen">
                 <span class="font-mono font-semibold">{{ protokoll?.label ?? '' }} · {{ zwischen.code }}</span>
-                <span class="rounded border border-amber-400 bg-white px-2 font-mono">{{ zwischen.kategorie }}</span>
+                <span class="rounded border border-warning/60 bg-default px-2 font-mono">{{ zwischen.kategorie }}</span>
             </template>
-            <span v-else class="text-amber-900">{{ t('sna.offen') }}</span>
+            <span v-else class="text-warning">{{ t('sna.offen') }}</span>
         </div>
-        <div v-if="offen" class="border-b border-rand bg-white px-4 py-3 text-sm">
+        <div v-if="offen" class="border-b border-default bg-default px-4 py-3 text-sm">
             <p v-if="offen === 'hilfe'" class="m-0">{{ knoten?.hinweis ?? t('sna.keineHinweise') }}</p>
             <div v-else-if="offen === 'aufwertung'" class="flex flex-col gap-1">
                 <span class="font-semibold">{{ t('sna.aufwertungTitel') }}</span>
-                <span v-if="hoeher.length === 0" class="text-gedaempft">{{ t('sna.keineAufwertung') }}</span>
-                <button v-for="ziel in hoeher" :key="ziel.knoten" type="button" class="rounded border border-slate-300 px-2 py-1 text-left font-mono" @click="aufwerten(ziel.knoten, ziel.code)">{{ ziel.code }} · {{ ziel.kategorie }} · {{ ziel.anlass }}</button>
+                <span v-if="hoeher.length === 0" class="text-muted">{{ t('sna.keineAufwertung') }}</span>
+                <UButton v-for="ziel in hoeher" :key="ziel.knoten" color="neutral" variant="outline" size="sm" @click="aufwerten(ziel.knoten, ziel.code)">{{ ziel.code }} · {{ ziel.kategorie }} · {{ ziel.anlass }}</UButton>
             </div>
             <form v-else class="flex flex-wrap items-end gap-2" @submit.prevent="abbrechen">
-                <label class="flex flex-1 flex-col gap-1 text-xs font-semibold text-gedaempft">
+                <label class="flex flex-1 flex-col gap-1 text-xs font-semibold text-muted">
                     {{ t('sna.abbruchGrund') }}
-                    <input v-model="grund" required class="h-8 rounded border border-slate-400 px-2 text-sm text-tinte"/>
+                    <input v-model="grund" required class="native-field"/>
                 </label>
-                <button type="submit" class="h-8 rounded bg-red-700 px-3 text-sm font-semibold text-white">{{ t('sna.abbruchBestaetigen') }}</button>
-                <button type="button" class="h-8 rounded border border-slate-400 px-3 text-sm" @click="offen = null">{{ t('sna.schliessen') }}</button>
+                <UButton color="error" size="sm" type="submit">{{ t('sna.abbruchBestaetigen') }}</UButton>
+                <UButton color="neutral" variant="outline" size="sm" @click="offen = null">{{ t('sna.schliessen') }}</UButton>
             </form>
         </div>
         <div ref="koerper" class="flex flex-col gap-3 px-6 py-5">
             <template v-if="gesperrt && abfrage.pfad.length === 0 && !trotzdem">
-                <p class="m-0 text-gedaempft">{{ t('sna.erstOrt') }}</p>
-                <button type="button" class="self-start rounded border border-slate-400 px-3 py-1.5 text-sm font-semibold" @click="beginnen">{{ t('sna.trotzdem') }}</button>
+                <p class="m-0 text-muted">{{ t('sna.erstOrt') }}</p>
+                <UButton color="neutral" variant="outline" size="sm" class="self-start" @click="beginnen">{{ t('sna.trotzdem') }}</UButton>
             </template>
             <template v-else-if="ende">
-                <p class="m-0 text-lg font-semibold text-ok">{{ abfrage.aufwertung ? t('sna.aufgewertet', {code: ende.code}) : t('sna.fertig', {code: `${ende.code} · ${ende.kategorie}`}) }}</p>
-                <p v-if="abfrage.abbruch" class="m-0 text-sm text-gedaempft">{{ t('sna.abgebrochen', {grund: abfrage.abbruch.grund}) }}</p>
+                <p class="m-0 text-lg font-semibold text-success">{{ abfrage.aufwertung ? t('sna.aufgewertet', {code: ende.code}) : t('sna.fertig', {code: `${ende.code} · ${ende.kategorie}`}) }}</p>
+                <p v-if="abfrage.abbruch" class="m-0 text-sm text-muted">{{ t('sna.abgebrochen', {grund: abfrage.abbruch.grund}) }}</p>
             </template>
             <template v-else-if="knoten">
-                <h3 class="m-0 text-2xl font-semibold text-sky-950">{{ knoten.frage }} <i v-if="knoten.hinweis" class="font-medium text-akzent">[{{ knoten.hinweis }}]</i></h3>
+                <h3 class="m-0 text-2xl font-semibold text-highlighted">{{ knoten.frage }} <i v-if="knoten.hinweis" class="font-medium text-info">[{{ knoten.hinweis }}]</i></h3>
                 <div v-if="knoten.antworten" class="flex flex-col gap-4">
                     <LeitfragenSpalte v-if="leitung && leitStand" v-model="leitfragen" :eintrag="leitung" :antworten="leitAntworten" :stand="leitStand" :ruhig="ruhig" @sofort="emit('sofort')" @waehlen="antwort => schritt({antwort})"/>
                     <SnaKacheln v-model:suche="kachelsuche" v-model:weitere-offen="weitereOffen" data-antworten :antworten="ordnung.vorn" :weitere="ordnung.weitere" :zusaetze="zusaetze" :farbe="fachrichtung" :passend="leitStand?.beantwortet.length ? leitStand.kacheln : undefined" :vorgeschlagen="leitStand?.vorschlag" @waehlen="antwort => schritt({antwort})"/>
@@ -179,20 +177,20 @@ defineExpose({fokussieren})
                 <form v-else-if="knoten.eingabe?.art === 'warntafel'" class="flex flex-col gap-2" @submit.prevent="schritt({wert: wertAusTafel(tafel)})">
                     <WarntafelFeld v-model="tafel"/>
                     <div class="flex flex-wrap gap-2">
-                        <button type="submit" class="h-9 rounded bg-akzent px-4 font-semibold text-white" :disabled="!tafelGueltig">{{ t('sna.weiter') }}</button>
-                        <button v-if="knoten.eingabe.leer" type="button" class="h-9 rounded border border-slate-400 px-3 text-sm" @click="schritt({})">{{ knoten.eingabe.leer.label }}</button>
+                        <UButton type="submit" :disabled="!tafelGueltig">{{ t('sna.weiter') }}</UButton>
+                        <UButton v-if="knoten.eingabe.leer" color="neutral" variant="outline" @click="schritt({})">{{ knoten.eingabe.leer.label }}</UButton>
                     </div>
                 </form>
                 <form v-else-if="knoten.eingabe" class="flex flex-wrap items-end gap-2" @submit.prevent="schritt({wert: wert.trim()})">
-                    <label class="flex flex-1 flex-col gap-1 text-xs font-semibold text-gedaempft">
+                    <label class="flex flex-1 flex-col gap-1 text-xs font-semibold text-muted">
                         {{ knoten.eingabe.platzhalter }}
-                        <input v-model="wert" class="h-9 rounded border border-slate-400 px-2 text-base text-tinte"/>
+                        <input v-model="wert" class="native-field"/>
                     </label>
-                    <button type="submit" class="h-9 rounded bg-akzent px-4 font-semibold text-white" :disabled="!wert.trim()">{{ t('sna.weiter') }}</button>
-                    <button v-if="knoten.eingabe.leer" type="button" class="h-9 rounded border border-slate-400 px-3 text-sm" @click="schritt({})">{{ knoten.eingabe.leer.label }}</button>
+                    <UButton type="submit" :disabled="!wert.trim()">{{ t('sna.weiter') }}</UButton>
+                    <UButton v-if="knoten.eingabe.leer" color="neutral" variant="outline" @click="schritt({})">{{ knoten.eingabe.leer.label }}</UButton>
                 </form>
             </template>
-            <details v-if="abfrage.pfad.length" class="rounded border border-rand">
+            <details v-if="abfrage.pfad.length" class="rounded border border-default">
                 <summary class="cursor-pointer px-3 py-2 text-sm font-semibold">{{ t('sna.pfad', {anzahl: abfrage.pfad.length}) }}</summary>
                 <ol class="m-0 py-1 pl-9 pr-3 text-sm leading-relaxed">
                     <li v-for="(zeile, stelle) in pfadText" :key="stelle">{{ zeile }}</li>

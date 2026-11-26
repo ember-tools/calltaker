@@ -16,7 +16,7 @@ const {t} = useI18n()
 const ergebnis = computed(() => debrief(props.graph, props.anruf, props.szenario, props.ziele))
 const ziel = computed(() => props.graph.knoten[props.szenario.ziel.knoten])
 const ZEITEN = ['annahme', 'adresse', 'code', 'reanimation', 'uebergabe', 'gespraech'] as const
-const URTEIL: Record<Urteil, string> = {richtig: 'bg-green-50 text-ok', teilweise: 'bg-amber-50 text-warnung', falsch: 'bg-red-50 text-fehler', offen: 'bg-red-50 text-fehler', hinweis: ''}
+const URTEIL: Record<Urteil, string> = {richtig: 'bg-success/10 text-success', teilweise: 'bg-warning/10 text-warning', falsch: 'bg-error/10 text-error', offen: 'bg-error/10 text-error', hinweis: ''}
 
 /**
  * What the trainee entered, as the table shows it.
@@ -52,7 +52,7 @@ function urteil(bewertung: Bewertung): string {
             <h2 class="m-0 text-base font-bold">{{ t(phase.phase.titel) }}</h2>
             <table class="w-full border-collapse text-sm">
                 <thead>
-                    <tr class="text-left text-xs text-gedaempft"><th class="py-1 pr-2">{{ t('debrief.feld') }}</th><th class="py-1 pr-2">{{ t('debrief.erfasst') }}</th><th class="py-1 pr-2">{{ t('debrief.wahrheit') }}</th><th class="py-1">{{ t('debrief.ergebnis') }}</th></tr>
+                    <tr class="text-left text-xs text-muted"><th class="py-1 pr-2">{{ t('debrief.feld') }}</th><th class="py-1 pr-2">{{ t('debrief.erfasst') }}</th><th class="py-1 pr-2">{{ t('debrief.wahrheit') }}</th><th class="py-1">{{ t('debrief.ergebnis') }}</th></tr>
                 </thead>
                 <tbody>
                     <tr v-for="(bewertung, stelle) in phase.bewertungen" :key="stelle" :class="URTEIL[bewertung.urteil]">
@@ -68,17 +68,17 @@ function urteil(bewertung: Bewertung): string {
             <h2 class="m-0 text-base font-bold">{{ t('debrief.zeiten') }}</h2>
             <dl class="m-0 grid grid-cols-[max-content_1fr] gap-x-3 text-sm">
                 <template v-for="zeit in ZEITEN" :key="zeit">
-                    <dt class="text-gedaempft">{{ t(`debrief.zeit.${zeit}`) }}</dt>
+                    <dt class="text-muted">{{ t(`debrief.zeit.${zeit}`) }}</dt>
                     <dd class="m-0 font-mono">{{ ergebnis.zeiten[zeit] === undefined ? t('debrief.nichtErreicht') : dauer(ergebnis.zeiten[zeit]!) }}</dd>
                 </template>
             </dl>
         </section>
-        <section v-if="ergebnis.fehlend.length" :aria-label="t('debrief.fehlte')" class="rounded bg-red-50 p-3 text-sm text-fehler" role="status">
+        <section v-if="ergebnis.fehlend.length" :aria-label="t('debrief.fehlte')" class="rounded bg-error/10 p-3 text-sm text-error" role="status">
             <b>{{ t('debrief.fehlte') }}</b> {{ ergebnis.fehlend.map(schluessel => t(schluessel)).join(', ') }}
         </section>
         <section :aria-label="t('debrief.pfad')" class="flex flex-col gap-1 text-sm">
             <h2 class="m-0 text-base font-bold">{{ t('debrief.pfad') }}</h2>
-            <p v-if="!ergebnis.pfad.abzweigung" class="m-0 text-ok">{{ t('debrief.ohneAbzweigung') }}</p>
+            <p v-if="!ergebnis.pfad.abzweigung" class="m-0 text-success">{{ t('debrief.ohneAbzweigung') }}</p>
             <PfadVergleichListe :vergleich="ergebnis.pfad"/>
         </section>
     </article>

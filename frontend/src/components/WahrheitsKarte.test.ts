@@ -24,12 +24,12 @@ describe('WahrheitsKarte', () => {
         anruf.eintraege.abfrage.pfad = [...BIS_SITUATION, {knoten: 'p.k0', antwort: 'leicht'}]
         anruf.eintraege.anrufer = {name: 'Kaya', rufnummerBestaetigt: true, rueckrufnummer: '491761234567'}
         const ansicht = mount(WahrheitsKarte, {props: {graph: GRAPH, anruf}, global: {plugins: [i18n]}})
-        expect(ansicht.get('ol li.text-fehler').text()).toContain('Trainee: Leicht')
+        expect(ansicht.get('ol li.text-error').text()).toContain('Trainee: Leicht')
         expect(ansicht.text()).toContain('Abzweigung')
         const nummer = ansicht.findAll('ul li').find(li => li.text().startsWith('Rückrufnummer'))!
-        expect(nummer.classes()).toContain('text-fehler')
+        expect(nummer.classes()).toContain('text-error')
         expect(nummer.text()).toContain('richtig: 030 12345678')
-        expect(ansicht.findAll('ul li').find(li => li.text().startsWith('Name'))!.classes()).toContain('text-ok')
+        expect(ansicht.findAll('ul li').find(li => li.text().startsWith('Name'))!.classes()).toContain('text-success')
     })
 })
 

@@ -19,7 +19,7 @@ describe('DebriefAnsicht', () => {
         expect(zeile('Punkt').text()).toContain('0 m vom richtigen Punkt')
         expect(zeile('Geschoss').text()).toContain('falsch')
         expect(zeile('Code').text()).toContain('nah dran (gleiches Protokoll)')
-        expect(zeile('Rückrufnummer').classes()).toContain('text-fehler')
+        expect(zeile('Rückrufnummer').classes()).toContain('text-error')
         expect(ansicht.text()).toContain('Klingeln bis Annahme0:30')
         expect(ansicht.text()).toContain('Annahme bis Code0:50')
         expect(ansicht.text()).toContain('Abzweigung')

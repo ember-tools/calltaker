@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {faBell, faHeadset, faPause, faPhone, faPhoneVolume, faUserSecret} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {gespraechsdauer, useUhr, wartezeit} from '../composables/useUhr'
@@ -25,27 +23,27 @@ function nummer(anruf: AnrufSicht): string {
 
 <template>
     <div class="flex flex-wrap items-center gap-3">
-        <button v-if="!zustand.engine.gestartet" type="button" class="h-9 rounded bg-green-600 px-4 font-semibold text-white" @click="emit('bereit')">{{ t('warteschlange.bereit') }}</button>
-        <span v-if="!zustand.engine.gestartet" class="text-sm text-slate-300">{{ t('warteschlange.bereitText') }}</span>
-        <span class="text-xs font-semibold tracking-wider text-slate-300">{{ t('warteschlange.titel') }}</span>
-        <span v-if="wartend.length === 0" class="text-sm text-slate-400">{{ t('warteschlange.leer') }}</span>
-        <div v-for="(anruf, stelle) in wartend" :key="anruf.id" :class="['flex items-center gap-2.5 rounded-md border px-3 py-1', stelle === 0 ? 'border-amber-400 bg-amber-950' : 'border-slate-600 bg-slate-800']">
-            <FontAwesomeIcon :icon="anruf.rufnummer ? faPhoneVolume : faUserSecret" class="text-amber-300" aria-hidden="true"/>
+        <UButton v-if="!zustand.engine.gestartet" color="success" @click="emit('bereit')">{{ t('warteschlange.bereit') }}</UButton>
+        <span v-if="!zustand.engine.gestartet" class="text-sm text-muted">{{ t('warteschlange.bereitText') }}</span>
+        <span class="text-xs font-semibold tracking-wider text-muted">{{ t('warteschlange.titel') }}</span>
+        <span v-if="wartend.length === 0" class="text-sm text-dimmed">{{ t('warteschlange.leer') }}</span>
+        <div v-for="(anruf, stelle) in wartend" :key="anruf.id" :class="['flex items-center gap-2.5 rounded-md border px-3 py-1', stelle === 0 ? 'border-warning/60 bg-warning/15' : 'border-default bg-elevated']">
+            <UIcon :name="anruf.rufnummer ? 'i-lucide-phone-incoming' : 'i-lucide-eye-off'" class="text-warning" aria-hidden="true"/>
             <span class="font-mono text-sm">{{ nummer(anruf) }}</span>
-            <span class="font-mono text-sm text-amber-300">{{ wartezeit(anruf.klingeltSeit, jetzt, zustand.engine.pausiertSeit) }}</span>
-            <button v-if="stelle === 0 && !gespraech" type="button" class="h-7 rounded bg-amber-500 px-2.5 text-sm font-semibold text-slate-900" @click="emit('annehmen', anruf.id)"><FontAwesomeIcon :icon="faPhone" class="mr-1" aria-hidden="true"/>{{ t('warteschlange.annehmen') }}</button>
+            <span class="font-mono text-sm text-warning">{{ wartezeit(anruf.klingeltSeit, jetzt, zustand.engine.pausiertSeit) }}</span>
+            <UButton v-if="stelle === 0 && !gespraech" size="xs" color="warning" icon="i-lucide-phone" @click="emit('annehmen', anruf.id)">{{ t('warteschlange.annehmen') }}</UButton>
         </div>
-        <span v-if="zustand.engine.pausiert" class="rounded bg-slate-600 px-2 py-0.5 text-xs font-semibold"><FontAwesomeIcon :icon="faPause" class="mr-1" aria-hidden="true"/>{{ t(zustand.engine.automatischPausiert ? 'warteschlange.automatisch' : 'warteschlange.pausiert') }}</span>
-        <label class="ml-auto flex items-center gap-1.5 text-xs text-slate-300">
+        <span v-if="zustand.engine.pausiert" class="rounded bg-accented px-2 py-0.5 text-xs font-semibold"><UIcon name="i-lucide-pause" class="mr-1" aria-hidden="true"/>{{ t(zustand.engine.automatischPausiert ? 'warteschlange.automatisch' : 'warteschlange.pausiert') }}</span>
+        <label class="ml-auto flex items-center gap-1.5 text-xs text-muted">
             <input v-model="klingelton" type="checkbox"/>
-            <FontAwesomeIcon :icon="faBell" aria-hidden="true"/>
+            <UIcon name="i-lucide-bell" aria-hidden="true"/>
             {{ t('warteschlange.klingelton') }}
         </label>
-        <div v-if="gespraech" class="flex items-center gap-2.5 rounded-md border border-green-400 bg-green-950 px-3 py-1">
-            <FontAwesomeIcon :icon="faHeadset" class="text-green-300" aria-hidden="true"/>
-            <span class="text-xs font-bold text-green-300">{{ t('warteschlange.imGespraech') }}</span>
+        <div v-if="gespraech" class="flex items-center gap-2.5 rounded-md border border-success/60 bg-success/15 px-3 py-1">
+            <UIcon name="i-lucide-headset" class="text-success" aria-hidden="true"/>
+            <span class="text-xs font-bold text-success">{{ t('warteschlange.imGespraech') }}</span>
             <span class="font-mono">{{ nummer(gespraech) }}</span>
-            <span class="font-mono text-green-300">{{ gespraechsdauer(gespraech.angenommenUm, jetzt) }}</span>
+            <span class="font-mono text-success">{{ gespraechsdauer(gespraech.angenommenUm, jetzt) }}</span>
         </div>
     </div>
 </template>

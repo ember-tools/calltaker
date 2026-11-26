@@ -1,19 +1,28 @@
-import {getCurrentInstance, onBeforeUnmount, ref} from 'vue'
+import {getCurrentInstance, onBeforeUnmount, onMounted, ref} from 'vue'
 import {dauer} from '../modell/zeit'
 
 export {dauer}
 
 /**
- * The present in seconds, as the server counts, ticking once a second for counting waits.
+ * The present in seconds, as the server counts, ticking once a second for counting waits. In a
+ * component it ticks only while mounted, so a page rendered ahead of time leaves no timer behind.
  *
  * @returns the present
  */
 export function useUhr() {
     const jetzt = ref(Date.now() / 1000)
-    const zeitgeber = setInterval(() => {
-        jetzt.value = Date.now() / 1000
-    }, 1000)
-    if (getCurrentInstance()) onBeforeUnmount(() => clearInterval(zeitgeber))
+    let zeitgeber: ReturnType<typeof setInterval> | undefined
+    const starten = () => {
+        zeitgeber = setInterval(() => {
+            jetzt.value = Date.now() / 1000
+        }, 1000)
+    }
+    if (!getCurrentInstance()) {
+        starten()
+        return jetzt
+    }
+    onMounted(starten)
+    onBeforeUnmount(() => clearInterval(zeitgeber))
     return jetzt
 }
 
