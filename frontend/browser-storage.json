@@ -4,6 +4,12 @@
       "key": "calltaker.klingelton",
       "purpose": "Ob der Klingelton für wartende Anrufe an oder aus ist.",
       "kind": "LOCAL_STORAGE"
+    },
+    {
+      "key": "vueuse-color-scheme",
+      "purpose": "Ob die Seite hell oder dunkel erscheint.",
+      "kind": "LOCAL_STORAGE",
+      "source": "@emberbox/ui"
     }
   ]
 }
