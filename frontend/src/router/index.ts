@@ -2,6 +2,7 @@ import {createRouter, type RouteLocationNormalized, type RouteLocationRaw, type 
 import {rolleVon} from '../api/uebung'
 import StartView from '../views/StartView.vue'
 import HilfeView from '../views/HilfeView.vue'
+import {HELP_TOPICS} from '../helpTopics'
 import type {Rolle} from '../modell/uebung'
 
 /**
@@ -38,22 +39,27 @@ function routenFuer(rolle: Rolle, kuerzel: string) {
 }
 
 /**
- * The application's router: the public start and help pages, and per role the view, the debriefs and
- * the overview. The browser passes web history, the prerender memory history.
+ * The application's router: the public start page, the help overview and its topics, and per role the
+ * view, the debriefs and the overview. The browser passes web history, the prerender memory history. An
+ * unknown help topic leads to the overview, also from another topic, and a new page starts at the top.
  *
  * @param history the history to navigate in
  * @returns the router
  */
 export function createAppRouter(history: RouterHistory) {
-    return createRouter({
+    const router = createRouter({
         history,
         routes: [
             {path: '/', name: 'start', component: StartView, meta: {public: true}},
             {path: '/hilfe', name: 'hilfe', component: HilfeView, meta: {public: true}},
+            {path: '/hilfe/:slug', name: 'helpTopic', component: () => import('../views/HelpTopicView.vue'), props: true, meta: {public: true}},
             ...routenFuer('ausbilder', 'a'),
             ...routenFuer('trainee', 't'),
         ],
+        scrollBehavior: (_to, _from, saved) => saved ?? {top: 0},
     })
+    router.beforeEach(to => to.name !== 'helpTopic' || HELP_TOPICS.some(topic => topic.slug === to.params.slug) || {name: 'hilfe'})
+    return router
 }
 
 /** How browsers word a view's code that could not be loaded. */

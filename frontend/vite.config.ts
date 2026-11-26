@@ -1,6 +1,7 @@
-import {emberbox} from '@emberbox/ui/vite'
+import {emberbox, helpPaths} from '@emberbox/ui/vite'
 import vue from '@vitejs/plugin-vue'
 import {defineConfig} from 'vitest/config'
+import {HELP_TOPICS} from './src/helpTopics'
 
 const backend = process.env.BACKEND_URL ?? 'http://localhost:8000'
 
@@ -11,7 +12,7 @@ export default defineConfig({
             url: 'https://calltaker.emberbox.app',
             logo: 'calltaker',
             app: {name: 'Calltaker', description: 'Notrufannahme für die Leitstelle üben.'},
-            prerender: {entry: 'src/prerender.ts', paths: ['/', '/hilfe']},
+            prerender: {entry: 'src/prerender.ts', paths: ['/', ...helpPaths(HELP_TOPICS)]},
         }),
     ],
     build: {

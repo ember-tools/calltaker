@@ -268,20 +268,54 @@ export default {
         description: 'So funktioniert der Calltaker: Übung anlegen, Notrufe annehmen und abfragen, als Ausbilder Anrufer spielen und Anrufe auswerten.',
         titel: 'Hilfe & Anleitung',
         link: 'Neu hier? Hilfe & Anleitung',
+        breadcrumb: 'Hilfe',
+        topicPageTitle: '{topic} – Hilfe – Calltaker',
+        topics: {
+            firstSteps: {
+                title: 'Erste Schritte',
+                description: 'Übung anlegen, den Trainee-Code weitergeben und als Trainee beitreten.',
+            },
+            takingCalls: {
+                title: 'Notrufe annehmen',
+                description: 'Warteschlange, Einsatzmaske, Funkzelle, Warntafel und die Übergabe an die Disposition.',
+            },
+            structuredQuery: {
+                title: 'Notrufabfrage',
+                description: 'Mit der strukturierten Notrufabfrage Frage für Frage zum Einsatzcode, mit Leitfragen und Hinweisen an den Anrufer.',
+            },
+            telephoneCpr: {
+                title: 'Telefonreanimation',
+                description: 'Wie die Reanimationsleiste durch die Anleitung führt und den Takt für die Herzdruckmassage vorgibt.',
+            },
+            trainer: {
+                title: 'Als Ausbilder',
+                description: 'Mitlesen, die Lösungskarte nutzen, die Warteschlange steuern und Szenarien zusammenstellen.',
+            },
+            playingTheCaller: {
+                title: 'Den Anrufer spielen',
+                description: 'Wie der Ausbilder aus der Lösungskarte einen glaubwürdigen Anrufer macht: wer er ist, was er sieht und was er sagt.',
+            },
+            debrief: {
+                title: 'Debrief und Übersicht',
+                description: 'Was der Debrief nach jedem Anruf vergleicht und wie die Übersicht die ganze Übung zusammenfasst.',
+            },
+            tips: {
+                title: 'Tipps für die Übung',
+                description: 'Geräte, Ton, neue Versionen und was nach einem Neustart des Servers passiert.',
+            },
+        },
         ueberblick: {
             titel: 'Was ist der Calltaker?',
             text: 'Der Calltaker ist ein Trainingssimulator für die Notrufannahme. Notrufe klingeln in einer Warteschlange, der Trainee nimmt sie an, erfasst Einsatzort und Anrufer, fragt mit der strukturierten Notrufabfrage (SNA) bis zum Einsatzcode, gibt Hinweise an den Anrufer und übergibt an die Disposition. Am Ende vergleicht der Debrief alles mit der Lösung des Szenarios.',
             rollen: 'Es gibt zwei Rollen. Der Ausbilder steuert die Warteschlange, spielt den Anrufer und sieht die Lösung. Der Trainee nimmt die Anrufe an. Beide treten mit eigenem Code bei, am besten an zwei Geräten.',
         },
         start: {
-            titel: 'Erste Schritte',
             anlegen: 'Übung anlegen: Auf der Startseite „Übung anlegen“ wählen. Die Seite des Ausbilders öffnet sich.',
             codes: 'Codes verteilen: Oben stehen der Ausbilder-Code und der Trainee-Code. Den Trainee-Code an den Trainee geben; der Knopf daneben kopiert ihn.',
             beitreten: 'Beitreten: Der Trainee gibt den Code auf der Startseite ein und meldet sich „bereit“. Ab dann klingeln Anrufe nach den Einstellungen der Warteschlange.',
             mockup: 'Die Codes oben auf der Ausbilder-Seite, mit Kopierknopf.',
         },
         trainee: {
-            titel: 'Als Trainee',
             schlangeTitel: 'Warteschlange',
             schlange: 'Wartende Anrufe stehen oben mit Nummer und Wartezeit. Der älteste ist hervorgehoben und wird mit „Annehmen“ angenommen. Unterdrückte Nummern sind markiert.',
             schlangeMockup: 'Zwei wartende Anrufe, einer mit unterdrückter Nummer.',
@@ -289,7 +323,6 @@ export default {
             maske: 'Links steht die Einsatzmaske: Mitteiler mit Rückrufnummer, Einsatzort über die Suche (Adresse oder Ort wie Bahnhof, Park) oder per Klick in die Karte, Geschoss, Klingel, Anfahrt und Gefahren. Darüber zeigt die Phasenleiste, was noch fehlt.',
             funkzelle: 'Ruft jemand von einem Handy an, zeigt die Karte den Bereich der Funkzelle als gestrichelten Kreis. Wer seine Adresse nicht kennt, beschreibt, was er sieht; der Kreis grenzt die Suche ein. Ruft jemand an, der nicht vor Ort ist, liegt der Kreis dort, wo der Anrufer ist, nicht am Notfallort; frag dann nach der Adresse.',
             maskeMockup: 'Phasenleiste und Einsatzmaske mitten in einem Rettungsdiensteinsatz, mit Funkzelle in der Karte.',
-            snaTitel: 'Notrufabfrage (SNA)',
             sna: 'Rechts führt das SNA-Fenster Frage für Frage zum Einsatzcode. Kacheln wählen, tippen filtert sie. „Zurück“ nimmt die letzte Antwort zurück, „Aufwertung“ hebt auf einen dringlicheren Code, „Abbruch“ beendet mit Begründung. Das Zwischenergebnis steht immer oben.',
             snaMockup: 'Der Einstieg der Abfrage: Notfallrettung, Brand oder Technische Hilfeleistung.',
             leitfragenTitel: 'Leitfragen',
@@ -298,7 +331,6 @@ export default {
             hinweiseTitel: 'Hinweise an den Anrufer',
             hinweise: 'Unter der Abfrage stehen die Hinweise, die gerade fällig sind, zum Vorlesen. Pflichthinweise sind markiert und fehlen sonst beim Beenden. Gegebene Hinweise abhaken.',
             hinweiseMockup: 'Fällige Hinweise in einem Rettungsdiensteinsatz.',
-            reanimationTitel: 'Telefonreanimation',
             reanimation: 'Atmet die Person nicht und gibt es keine sicheren Todeszeichen, erscheint die rote Leiste. „Takt starten“ gibt einen hörbaren Takt von 100 pro Minute vor; die Schritte stehen darunter. Bleib am Telefon, bis die Kräfte eingetroffen sind.',
             reanimationGruppen: 'Die Schritte gibt es für vier Altersgruppen: Neugeborenes, Säugling, Kind und Erwachsener. Die Leiste wählt die Gruppe aus den Altersantworten der Abfrage oder dem eingetippten Alter; ist es unbekannt, zeigt sie die Schritte für Erwachsene und erinnert daran, nach dem Alter zu fragen. Die Knöpfe oben schalten jederzeit um. Beim Neugeborenen gibt der Takt dreimal Drücken und einmal Beatmen vor. Die Texte sind ein Entwurf nach den ERC-Leitlinien 2021 und nicht ärztlich freigegeben.',
             reanimationMockup: 'Die Reanimationsleiste mit laufendem Takt, die Kräfte sind unterwegs.',
@@ -318,13 +350,11 @@ export default {
             },
         },
         ausbilder: {
-            titel: 'Als Ausbilder',
             liveTitel: 'Live: Spiegel und Lösungskarte',
             live: 'Im Reiter „Live“ spiegelt die Seite, was der Trainee gerade eingibt, ohne dass du eingreifen musst.',
             wahrheit: 'Daneben steht die Lösungskarte: Code, Stimmung, ein Leitfaden „So sprichst du als Anrufer“, die Frage, die gerade gestellt wird, mit ihrer Antwort, und der Abgleich mit den Eingaben. Hier lassen sich Hinweise als gegeben werten und bei einer Reanimation die Kräfte vorzeitig eintreffen lassen.',
             wahrheitMockup: 'Lösungskarte mit Leitfaden während eines Gesprächs.',
             leitfragen: 'Stellt der Trainee eine Leitfrage, nennt die Lösungskarte die Antwort des Anrufers aus der Lösung oder „frei antworten“, wenn die Lösung keine Antwort vorgibt.',
-            anruferTitel: 'Den Anrufer spielen',
             hand: 'Der erste Punkt nach dem Namen sagt in einem Satz, wer du bist: selbst betroffen (1. Hand), bei der betroffenen Person (2. Hand), für andere meldend, ohne dort zu sein (3. Hand), nur gehört oder gesehen (4. Hand) oder eine Anlage, die meldet. Wer vor Ort ist, kann nachsehen, wenn der Calltaker darum bittet; wer nicht dort ist, kann es nicht und sagt das. Ist offen, ob du vor Ort bist, weichst du aus, bis der Calltaker nachhakt.',
             beziehung: 'Wer nicht selbst betroffen ist, hat eine Beziehung zur Person, die zur Lage und zum Ort passt: die Tochter in der Wohnung, der Passant auf der Straße, die Pflegerin im Heim. Unter „Was du weißt“ steht, wie du davon erfahren hast oder wie es passiert ist.',
             beschwerden: 'Die Punkte „Wenn gefragt“ sind Beschwerden, die du beschreibst, sobald der Calltaker danach fragt: als Betroffener, was du spürst, daneben, was du siehst. Sie passen zum Code und zu den Antworten der Eröffnung; erzähl sie nicht ungefragt.',
@@ -337,13 +367,11 @@ export default {
             belastende: 'Belastende Lagen bleiben ausgeschlossen, bis du sie einzeln zulässt: grausame Todeszeichen, Suizid und Erhängen, Sexualdelikte, Gewalt und Waffen. So eignet sich die Übung auch für junge Gruppen. Handgeschriebene Szenarien im Pool bleiben, wie sie sind.',
         },
         auswertung: {
-            titel: 'Debrief und Übersicht',
             debrief: 'Nach jedem Anruf vergleicht der Debrief Einsatzort, Abfrage, Personalien, Hinweise, Reanimation und Übergabe mit der Lösung und zeigt die Zeiten.',
             leitfragen: 'Wählte der Trainee eine andere Kachel als die korrekte, zeigt der Debrief, wo die Leitfragen dorthin führen, den Weg über sie; nicht gestellte Sicherheitsfragen nennt er ebenfalls. Beides sind Hinweise, keine Fehler.',
             uebersicht: 'Die Übersicht fasst alle Anrufe der Übung zusammen. Der Ausbilder kann das Protokoll als Datei herunterladen.',
         },
         tipps: {
-            titel: 'Tipps',
             zwei: 'Ausbilder und Trainee an getrennten Geräten oder Fenstern, damit der Trainee die Lösung nicht sieht.',
             ton: 'Für den Takt der Reanimation einmal in die Seite klicken, sonst bleibt der Browser stumm.',
             version: 'Erscheint „Eine neue Version ist da“, die Seite neu laden.',

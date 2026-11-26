@@ -22,6 +22,10 @@ def _frontend_app(tmp_path: Path) -> TestClient:
     (verzeichnis / "pages" / "hilfe" / "index.html").write_text(
         "<!doctype html><title>hilfe</title>"
     )
+    (verzeichnis / "pages" / "hilfe" / "erste-schritte").mkdir()
+    (verzeichnis / "pages" / "hilfe" / "erste-schritte" / "index.html").write_text(
+        "<!doctype html><title>thema</title>"
+    )
     (verzeichnis / "build.json").write_text("{}")
     (verzeichnis / "manifest.webmanifest").write_text("{}")
     (verzeichnis / "assets" / "app.js").write_text("console.info(1)")
@@ -91,3 +95,15 @@ def test_frontend_serves_build_json_uncached(tmp_path):
 def test_frontend_answers_a_missing_asset_with_404(tmp_path):
     client = _frontend_app(tmp_path)
     assert client.get("/assets/old-build-1234.js").status_code == 404
+
+
+def test_frontend_serves_help_topics_and_keeps_unknown_ones_out(tmp_path):
+    client = _frontend_app(tmp_path)
+    for path in ("/hilfe/erste-schritte", "/hilfe/erste-schritte/"):
+        response = client.get(path)
+        assert "<title>thema</title>" in response.text, path
+        assert "x-robots-tag" not in response.headers, path
+    for path in ("/hilfe/unbekannt", "/pages/hilfe/erste-schritte/index.html"):
+        response = client.get(path)
+        assert "<title>index</title>" in response.text, path
+        assert response.headers["x-robots-tag"] == "noindex, nofollow", path
