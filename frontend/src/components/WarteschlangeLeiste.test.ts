@@ -1,5 +1,5 @@
 import {mount} from '@vue/test-utils'
-import {describe, expect, it} from 'vitest'
+import {afterEach, describe, expect, it, vi} from 'vitest'
 import {i18n} from '../i18n'
 import type {TraineeZustand} from '../modell/uebung'
 import WarteschlangeLeiste from './WarteschlangeLeiste.vue'
@@ -15,6 +15,28 @@ const anruf = (id: string, seit: number) => ({id, zustand: 'wartet' as const, kl
 const leiste = (zustand: TraineeZustand) => mount(WarteschlangeLeiste, {props: {zustand}, global: {plugins: [i18n]}})
 
 describe('WarteschlangeLeiste', () => {
+    afterEach(() => {
+        vi.unstubAllGlobals()
+    })
+
+    it('klingelt, solange ein Anruf wartet, und schweigt im Beispiel der Hilfe', () => {
+        const tonquelle = vi.fn(function (this: object) {
+            Object.assign(this, {
+                currentTime: 0, destination: {},
+                createOscillator: () => ({frequency: {}, connect: (ziel: object) => ziel, start: vi.fn(), stop: vi.fn()}),
+                createGain: () => ({gain: {}, connect: (ziel: object) => ziel}),
+                close: vi.fn(),
+            })
+        })
+        vi.stubGlobal('AudioContext', tonquelle)
+        const jetzt = Date.now() / 1000
+        const zustand: TraineeZustand = {verbunden: {ausbilder: true, trainee: true}, engine: {gestartet: true, pausiert: false, automatischPausiert: false}, anrufe: [anruf('alt', jetzt - 5)]}
+        mount(WarteschlangeLeiste, {props: {zustand, quiet: true}, global: {plugins: [i18n]}}).unmount()
+        expect(tonquelle).not.toHaveBeenCalled()
+        mount(WarteschlangeLeiste, {props: {zustand}, global: {plugins: [i18n]}}).unmount()
+        expect(tonquelle).toHaveBeenCalled()
+    })
+
     it('bietet vor dem Start nur Bereit an', async () => {
         const ansicht = leiste({verbunden: {ausbilder: true, trainee: true}, engine: {gestartet: false, pausiert: false, automatischPausiert: false}, anrufe: []})
         await ansicht.findAll('button').find(b => b.text() === 'Bereit')!.trigger('click')

@@ -62,7 +62,7 @@ usePage({
         </HelpSection>
         <HelpSection :title="t('hilfe.trainee.titel')">
             <HelpTopic :title="t('hilfe.trainee.schlangeTitel')" :paragraphs="texte('trainee.schlange')" :mockup="t('hilfe.trainee.schlangeMockup')">
-                <div class="rounded-sm bg-default p-3"><WarteschlangeLeiste :zustand="schlange"/></div>
+                <div class="rounded-sm bg-default p-3"><WarteschlangeLeiste :zustand="schlange" quiet/></div>
             </HelpTopic>
             <HelpTopic :title="t('hilfe.trainee.maskeTitel')" :paragraphs="texte('trainee.maske', 'trainee.funkzelle')" :mockup="eintraege ? t('hilfe.trainee.maskeMockup') : undefined">
                 <template v-if="eintraege">

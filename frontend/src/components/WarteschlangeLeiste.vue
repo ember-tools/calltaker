@@ -6,14 +6,18 @@ import {useKlingelton} from '../composables/useKlingelton'
 import {anzeigen} from '../modell/rufnummer'
 import type {AnrufSicht, TraineeZustand} from '../modell/uebung'
 
-const props = defineProps<{zustand: TraineeZustand}>()
+/**
+ * The queue of waiting calls. It rings while a call waits, nobody is on the phone and the exercise
+ * runs; with `quiet`, as in the help page's example, it never makes a sound.
+ */
+const props = defineProps<{zustand: TraineeZustand, quiet?: boolean}>()
 const emit = defineEmits<{bereit: [], annehmen: [anrufId: string]}>()
 
 const {t} = useI18n()
 const jetzt = useUhr()
 const wartend = computed(() => props.zustand.anrufe.filter(anruf => anruf.zustand === 'wartet'))
 const gespraech = computed(() => props.zustand.anrufe.find(anruf => anruf.zustand === 'gespraech'))
-const klingelt = computed(() => wartend.value.length > 0 && !gespraech.value && !props.zustand.engine.pausiert)
+const klingelt = computed(() => !props.quiet && wartend.value.length > 0 && !gespraech.value && !props.zustand.engine.pausiert)
 const klingelton = useKlingelton(klingelt)
 
 function nummer(anruf: AnrufSicht): string {
