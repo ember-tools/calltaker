@@ -23,6 +23,7 @@ def _frontend_app(tmp_path: Path) -> TestClient:
         "<!doctype html><title>hilfe</title>"
     )
     (verzeichnis / "build.json").write_text("{}")
+    (verzeichnis / "manifest.webmanifest").write_text("{}")
     (verzeichnis / "assets" / "app.js").write_text("console.info(1)")
     (tmp_path / "geheim.txt").write_text("geheim")
     app = FastAPI()
@@ -55,6 +56,11 @@ def test_frontend_serves_prerendered_pages_for_indexing(tmp_path):
         response = client.get(path)
         assert title in response.text, path
         assert "x-robots-tag" not in response.headers, path
+
+
+def test_frontend_serves_the_manifest_with_its_media_type(tmp_path):
+    response = _frontend_app(tmp_path).get("/manifest.webmanifest")
+    assert response.headers["content-type"] == "application/manifest+json"
 
 
 def test_frontend_keeps_the_shell_out_of_search_engines(tmp_path):
