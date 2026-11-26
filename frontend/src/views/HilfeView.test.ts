@@ -46,11 +46,8 @@ describe('HilfeView', () => {
         expect(ansicht.text()).toContain('Tasten')
     })
 
-    it('setzt den Seitentitel und gibt ihn beim Verlassen zurück', () => {
-        document.title = 'Calltaker'
-        const ansicht = mount(HilfeView, {global: {plugins: [i18n], stubs: {RouterLink: RouterLinkStub}}})
-        expect(document.title).toBe('Hilfe · Calltaker')
-        ansicht.unmount()
-        expect(document.title).toBe('Calltaker')
+    it('setzt den Seitentitel', async () => {
+        mount(HilfeView, {global: {plugins: [i18n], stubs: {RouterLink: RouterLinkStub}}})
+        await vi.waitFor(() => expect(document.title).toBe('Hilfe – Calltaker'))
     })
 })

@@ -9,7 +9,7 @@ const {t} = useI18n()
 
 <template>
     <nav :aria-label="t('auswertung.navigation')" class="flex gap-3 text-sm">
-        <RouterLink :to="{name: rolle, params: {code}}" class="text-white underline">{{ t('auswertung.zurueck') }}</RouterLink>
-        <RouterLink :to="{name: `${rolle}-uebersicht`, params: {code}}" class="text-white underline">{{ t('auswertung.uebersicht') }}</RouterLink>
+        <RouterLink :to="{name: rolle, params: {code}}" class="underline">{{ t('auswertung.zurueck') }}</RouterLink>
+        <RouterLink :to="{name: `${rolle}-uebersicht`, params: {code}}" class="underline">{{ t('auswertung.uebersicht') }}</RouterLink>
     </nav>
 </template>

@@ -9,8 +9,8 @@ const zustand = computed(() => t(props.verbunden ? 'verbindung.verbunden' : 'ver
 </script>
 
 <template>
-    <span class="flex items-center gap-1.5 text-sm text-slate-300">
-        <span :class="['size-2 rounded-full', verbunden ? 'bg-green-400' : 'bg-slate-500']" aria-hidden="true"/>
+    <span class="flex items-center gap-1.5 text-sm text-muted">
+        <span :class="['size-2 rounded-full', verbunden ? 'bg-success' : 'bg-accented']" aria-hidden="true"/>
         {{ name }}: {{ zustand }}
     </span>
 </template>

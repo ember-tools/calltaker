@@ -1,4 +1,4 @@
-import {mount} from '@vue/test-utils'
+import {flushPromises, mount} from '@vue/test-utils'
 import {describe, expect, it, vi} from 'vitest'
 import {ref, shallowRef} from 'vue'
 import {zustandMit} from '../modell/ausbilder.test-hilfe'
@@ -13,10 +13,13 @@ describe('AusbilderView ohne Abfragegraph', () => {
     it('meldet den Fehler und lässt den Pool pflegen', async () => {
         const ansicht = mount(AusbilderView, {props: {code: 'A-1'}, global: {plugins: [i18n], stubs: {RouterLink: true}}})
         expect(ansicht.get('[role=alert]').text()).toContain('HTTP 500')
-        const pool = ansicht.get('#reiter-pool')
-        await pool.trigger('click')
-        expect(ansicht.get('#tafel-pool').text()).toContain('Sturz p')
-        await pool.trigger('keydown', {key: 'ArrowLeft'})
-        expect(ansicht.get('#reiter-live').attributes('aria-selected')).toBe('true')
+        const reiter = (name: string) => ansicht.findAll('[role=tab]').find(tab => tab.text() === name)!
+        await reiter('Pool').trigger('mousedown', {button: 0})
+        await flushPromises()
+        expect(reiter('Pool').attributes('aria-selected')).toBe('true')
+        expect(ansicht.text()).toContain('Sturz p')
+        await reiter('Live').trigger('mousedown', {button: 0})
+        await flushPromises()
+        expect(reiter('Live').attributes('aria-selected')).toBe('true')
     })
 })

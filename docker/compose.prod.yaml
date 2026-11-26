@@ -5,14 +5,18 @@ services:
     build:
       context: ..
       dockerfile: docker/app.Dockerfile
-    image: ghcr.io/rainbowdashlabs/calltaker:latest
+    image: ghcr.io/ember-tools/calltaker:latest
     restart: unless-stopped
-    ports:
-      - "8000:8000"
     environment:
-      CORS_ORIGINS: https://calltaker.chojo.dev
+      CORS_ORIGINS: https://calltaker.emberbox.app
     volumes:
       - daten:/data
+    labels:
+      traefik.enable: "true"
+      traefik.http.routers.calltaker.rule: "Host(`calltaker.emberbox.app`)"
+      traefik.http.routers.calltaker.entrypoints: websecure
+      traefik.http.routers.calltaker.tls.certresolver: letsencrypt
+      traefik.http.services.calltaker.loadbalancer.server.port: "8000"
 
 volumes:
   daten:

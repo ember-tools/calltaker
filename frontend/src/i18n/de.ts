@@ -5,6 +5,16 @@ export default {
         untertitel: 'Notrufabfrage-Training für die Leitstelle',
     },
     start: {
+        pageTitle: 'Calltaker – Notrufabfrage im Browser üben',
+        description: 'Notrufannahme für die Leitstelle üben: Anrufe aus einer Warteschlange annehmen, Einsatzort erfassen, mit der strukturierten Notrufabfrage zum Einsatzcode kommen und im Debrief mit der Lösung vergleichen. Kostenlos und ohne Anmeldung.',
+        eyebrow: 'Training für die Notrufannahme',
+        title: 'Notrufabfrage im Browser üben',
+        intro: 'Ein Ausbilder legt eine Übung an und spielt die Anrufer, ein Trainee nimmt die Notrufe an. Beide treten mit eigenem Code bei, am besten an zwei Geräten.',
+        features: {
+            queue: {title: 'Anrufe in der Warteschlange', text: 'Notrufe klingeln nacheinander oder gleichzeitig; der Ausbilder steuert Tempo und Szenarien.'},
+            questioning: {title: 'Strukturierte Notrufabfrage', text: 'Einsatzort, Anrufer und die Fragen bis zum Einsatzcode, mit Hinweisen an den Anrufer und Übergabe an die Disposition.'},
+            debrief: {title: 'Debrief nach jedem Anruf', text: 'Vergleich mit der Lösung des Szenarios, Zeiten bis zum Code und zur Übergabe und eine Übersicht über die ganze Übung.'},
+        },
         anlegenTitel: 'Neue Übung',
         anlegenText: 'Als Ausbilder eine Übung anlegen. Du bekommst einen Code für dich und einen für den Trainee.',
         anlegen: 'Übung anlegen',
@@ -23,9 +33,6 @@ export default {
     codes: {
         ausbilder: 'Ausbilder-Code',
         trainee: 'Trainee-Code',
-        kopieren: '{code} kopieren',
-        kopiert: 'Kopiert',
-        fehler: 'Nicht kopiert',
     },
     ausbilder: {
         titel: 'Ausbilder',
@@ -257,11 +264,10 @@ export default {
         jetzt: 'Jetzt gefragt: {frage}',
     },
     hilfe: {
-        seitentitel: 'Hilfe · Calltaker',
+        seitentitel: 'Hilfe – Calltaker',
+        description: 'So funktioniert der Calltaker: Übung anlegen, Notrufe annehmen und abfragen, als Ausbilder Anrufer spielen und Anrufe auswerten.',
         titel: 'Hilfe & Anleitung',
-        zurueck: 'Zurück zur Startseite',
         link: 'Neu hier? Hilfe & Anleitung',
-        fuss: 'Hilfe',
         ueberblick: {
             titel: 'Was ist der Calltaker?',
             text: 'Der Calltaker ist ein Trainingssimulator für die Notrufannahme. Notrufe klingeln in einer Warteschlange, der Trainee nimmt sie an, erfasst Einsatzort und Anrufer, fragt mit der strukturierten Notrufabfrage (SNA) bis zum Einsatzcode, gibt Hinweise an den Anrufer und übergibt an die Disposition. Am Ende vergleicht der Debrief alles mit der Lösung des Szenarios.',
@@ -272,7 +278,7 @@ export default {
             anlegen: 'Übung anlegen: Auf der Startseite „Übung anlegen“ wählen. Die Seite des Ausbilders öffnet sich.',
             codes: 'Codes verteilen: Oben stehen der Ausbilder-Code und der Trainee-Code. Den Trainee-Code an den Trainee geben; der Knopf daneben kopiert ihn.',
             beitreten: 'Beitreten: Der Trainee gibt den Code auf der Startseite ein und meldet sich „bereit“. Ab dann klingeln Anrufe nach den Einstellungen der Warteschlange.',
-            mockup: 'Die Codes im Kopf der Ausbilder-Seite, mit Kopierknopf.',
+            mockup: 'Die Codes oben auf der Ausbilder-Seite, mit Kopierknopf.',
         },
         trainee: {
             titel: 'Als Trainee',
@@ -344,17 +350,8 @@ export default {
             daten: 'Übungen liegen nur im Speicher des Servers; nach einem Neustart ist eine neue Übung nötig.',
         },
     },
-    fassung: {
-        neu: 'Eine neue Version ist da. Bitte neu laden, damit alles zusammenpasst.',
-        laden: 'Neu laden',
-    },
     fuss: {
         hinweis: 'Kein offizielles Angebot einer Feuerwehr oder Leitstelle. Berlin dient nur als Beispielstadt; Adressen, Orte und Codes stammen aus offenen Daten.',
-        quelle: 'GitHub',
-        urheber: '© 2026 RainbowDashLabs and Contributor',
-        gemacht: 'Made with ❤️ and 🏳️‍🌈',
-        lizenz: 'Licensed under AGPL-3.0',
-        fassung: 'Calltaker {commit} · built {gebaut}',
     },
     uebergabe: {
         knopf: 'An Disposition übergeben',

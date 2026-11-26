@@ -41,7 +41,7 @@ describe('StartView', () => {
     it('legt eine Übung an und öffnet die Ausbilder-Ansicht', async () => {
         vi.mocked(anlegen).mockResolvedValue({ausbilderCode: 'A-ABCDEF', traineeCode: 'T-ABCDEF'})
         const {ansicht, router} = await seite()
-        await ansicht.get('button[type=button]').trigger('click')
+        await ansicht.findAll('button').find(button => button.text() === 'Übung anlegen')!.trigger('click')
         await flushPromises()
         expect(router.currentRoute.value.fullPath).toBe('/a/A-ABCDEF')
     })

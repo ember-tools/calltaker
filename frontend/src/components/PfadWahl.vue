@@ -59,8 +59,8 @@ function eingeben(): void {
  * @returns the classes
  */
 function zeilenKlasse(befunde: Befund[]): string {
-    if (befunde.some(b => b.art === 'fehler')) return 'border-fehler bg-red-50'
-    return befunde.length ? 'border-warnung bg-amber-50' : 'border-rand'
+    if (befunde.some(b => b.art === 'fehler')) return 'border-error bg-error/10'
+    return befunde.length ? 'border-warning bg-warning/10' : 'border-default'
 }
 
 function abHier(stelle: number): void {
@@ -81,13 +81,13 @@ function ausserhalbEntfernen(): void {
         <PfadSuche :graph="graph" @endpunkt="springen"/>
         <ol class="m-0 flex list-none flex-col gap-1 p-0 text-sm">
             <li v-for="zeile in zeilen" :key="zeile.knoten" :class="['flex items-start gap-2 rounded border px-2 py-1', zeilenKlasse(zeile.befunde)]">
-                <span class="flex-1"><span class="text-gedaempft">{{ zeile.frage }}</span> · <b>{{ zeile.antwort }}</b>
-                    <span v-for="befund in zeile.befunde" :key="befund.meldung" :class="['block text-xs', befund.art === 'fehler' ? 'text-fehler' : 'text-warnung']">{{ befund.meldung }}</span>
+                <span class="flex-1"><span class="text-muted">{{ zeile.frage }}</span> · <b>{{ zeile.antwort }}</b>
+                    <span v-for="befund in zeile.befunde" :key="befund.meldung" :class="['block text-xs', befund.art === 'fehler' ? 'text-error' : 'text-warning']">{{ befund.meldung }}</span>
                 </span>
-                <button type="button" class="text-xs underline" :aria-label="t('editor.abHierNeu', {frage: zeile.frage})" @click="abHier(zeile.stelle)">{{ t('editor.aendern') }}</button>
+                <UButton color="neutral" variant="link" size="xs" :aria-label="t('editor.abHierNeu', {frage: zeile.frage})" @click="abHier(zeile.stelle)">{{ t('editor.aendern') }}</UButton>
             </li>
         </ol>
-        <p v-if="ziel" :class="['m-0 rounded px-2 py-1 text-sm font-semibold', zielStimmt && !zielBefunde.length ? 'bg-emerald-50' : 'bg-red-50 text-fehler']" role="status">
+        <p v-if="ziel" :class="['m-0 rounded px-2 py-1 text-sm font-semibold', zielStimmt && !zielBefunde.length ? 'bg-success/10' : 'bg-error/10 text-error']" role="status">
             {{ t('editor.ziel', {code: ziel.code, kategorie: graph.knoten[ziel.knoten]?.kategorie ?? ''}) }}
             <span v-if="!erreicht" class="block text-xs">{{ t('editor.zielNichtErreicht') }}</span>
             <span v-else-if="!zielStimmt" class="block text-xs">{{ t('editor.zielAnders', {code: erreicht.code}) }}</span>
@@ -98,15 +98,15 @@ function ausserhalbEntfernen(): void {
             <SnaKacheln v-if="knoten.antworten" :antworten="knoten.antworten" :zusaetze="zusaetze" @waehlen="antwort => schritt({antwort})"/>
             <div v-else-if="knoten.eingabe" class="flex gap-2">
                 <input v-model="wert" :aria-label="knoten.frage" :placeholder="knoten.eingabe.platzhalter" :class="['flex-1', FELD]" @keydown.enter.prevent="eingeben"/>
-                <button type="button" class="rounded border border-slate-400 px-3 text-sm font-semibold" @click="eingeben">{{ t('editor.weiter') }}</button>
+                <UButton color="neutral" variant="outline" size="sm" @click="eingeben">{{ t('editor.weiter') }}</UButton>
             </div>
         </template>
-        <div v-if="ausserhalb.length" class="flex flex-col gap-1 rounded border border-warnung p-2 text-sm" role="alert">
+        <div v-if="ausserhalb.length" class="flex flex-col gap-1 rounded border border-warning p-2 text-sm" role="alert">
             <p class="m-0">{{ t('editor.ausserhalb', {anzahl: ausserhalb.length}) }}</p>
             <ul class="m-0 pl-5 text-xs">
-                <li v-for="id in ausserhalb" :key="id">{{ graph.knoten[id]?.frage ?? id }}<span v-for="befund in befundeNach.get(id) ?? []" :key="befund.meldung" class="text-fehler"> · {{ befund.meldung }}</span></li>
+                <li v-for="id in ausserhalb" :key="id">{{ graph.knoten[id]?.frage ?? id }}<span v-for="befund in befundeNach.get(id) ?? []" :key="befund.meldung" class="text-error"> · {{ befund.meldung }}</span></li>
             </ul>
-            <button type="button" class="self-start text-xs underline" @click="ausserhalbEntfernen">{{ t('editor.ausserhalbEntfernen') }}</button>
+            <UButton color="neutral" variant="link" size="xs" class="self-start" @click="ausserhalbEntfernen">{{ t('editor.ausserhalbEntfernen') }}</UButton>
         </div>
     </div>
 </template>

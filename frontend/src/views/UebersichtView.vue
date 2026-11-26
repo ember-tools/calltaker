@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import {computed} from 'vue'
 import {useI18n} from 'vue-i18n'
-import KopfLeiste from '../components/KopfLeiste.vue'
+import ToolHeader from '../components/ToolHeader.vue'
 import Rueckweg from '../components/Rueckweg.vue'
 import UebersichtTabelle from '../components/UebersichtTabelle.vue'
 import UnbekannteUebung from '../components/UnbekannteUebung.vue'
@@ -37,23 +37,23 @@ function herunterladen(): void {
 
 <template>
     <div class="min-h-screen">
-        <KopfLeiste :rolle="t('auswertung.uebersicht')">
+        <ToolHeader :role="t('auswertung.uebersicht')">
             <Rueckweg :code="code" :rolle="rolle"/>
-        </KopfLeiste>
+        </ToolHeader>
         <UnbekannteUebung v-if="unbekannt"/>
         <main v-else class="mx-auto flex max-w-5xl flex-col gap-4 p-5">
-            <p v-if="fehler" role="alert" class="m-0 text-fehler">{{ t('trainee.graphFehlt', {fehler}) }}</p>
-            <p v-else-if="!zustand || !graph" class="m-0 text-gedaempft">{{ t('allgemein.laden') }}</p>
+            <p v-if="fehler" role="alert" class="m-0 text-error">{{ t('trainee.graphFehlt', {fehler}) }}</p>
+            <p v-else-if="!zustand || !graph" class="m-0 text-muted">{{ t('allgemein.laden') }}</p>
             <template v-else>
                 <dl class="m-0 grid grid-cols-2 gap-3 sm:grid-cols-5" :aria-label="t('auswertung.gesamt')">
-                    <div class="rounded border border-rand p-3"><dt class="text-xs text-gedaempft">{{ t('auswertung.anrufe') }}</dt><dd class="m-0 text-2xl font-bold">{{ gesamt.anrufe }}</dd></div>
-                    <div class="rounded border border-rand p-3"><dt class="text-xs text-gedaempft">{{ t('auswertung.beendetAufgelegt') }}</dt><dd class="m-0 text-2xl font-bold">{{ gesamt.beendet }} / {{ gesamt.aufgelegt }}</dd></div>
-                    <div class="rounded border border-rand p-3"><dt class="text-xs text-gedaempft">{{ t('auswertung.codes') }}</dt><dd class="m-0 text-2xl font-bold">{{ gesamt.codeExakt }} / {{ gesamt.codeNah }}</dd></div>
-                    <div class="rounded border border-rand p-3"><dt class="text-xs text-gedaempft">{{ t('auswertung.bisCode') }}</dt><dd class="m-0 text-2xl font-bold">{{ mittel }}</dd></div>
-                    <div class="rounded border border-rand p-3"><dt class="text-xs text-gedaempft">{{ t('auswertung.bisUebergabe') }}</dt><dd class="m-0 text-2xl font-bold">{{ mittelUebergabe }}</dd></div>
+                    <div class="rounded border border-default p-3"><dt class="text-xs text-muted">{{ t('auswertung.anrufe') }}</dt><dd class="m-0 text-2xl font-bold">{{ gesamt.anrufe }}</dd></div>
+                    <div class="rounded border border-default p-3"><dt class="text-xs text-muted">{{ t('auswertung.beendetAufgelegt') }}</dt><dd class="m-0 text-2xl font-bold">{{ gesamt.beendet }} / {{ gesamt.aufgelegt }}</dd></div>
+                    <div class="rounded border border-default p-3"><dt class="text-xs text-muted">{{ t('auswertung.codes') }}</dt><dd class="m-0 text-2xl font-bold">{{ gesamt.codeExakt }} / {{ gesamt.codeNah }}</dd></div>
+                    <div class="rounded border border-default p-3"><dt class="text-xs text-muted">{{ t('auswertung.bisCode') }}</dt><dd class="m-0 text-2xl font-bold">{{ mittel }}</dd></div>
+                    <div class="rounded border border-default p-3"><dt class="text-xs text-muted">{{ t('auswertung.bisUebergabe') }}</dt><dd class="m-0 text-2xl font-bold">{{ mittelUebergabe }}</dd></div>
                 </dl>
                 <UebersichtTabelle :zeilen="zeilen" :code="code" :rolle="rolle"/>
-                <button v-if="rolle === 'ausbilder'" type="button" class="self-start rounded bg-tinte px-4 py-1.5 text-sm font-semibold text-white" @click="herunterladen">{{ t('auswertung.export') }}</button>
+                <UButton v-if="rolle === 'ausbilder'" size="sm" class="self-start" @click="herunterladen">{{ t('auswertung.export') }}</UButton>
             </template>
         </main>
     </div>

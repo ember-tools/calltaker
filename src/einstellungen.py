@@ -13,7 +13,7 @@ class Einstellungen(BaseSettings):
 
     model_config = SettingsConfigDict(env_file=None, extra="ignore")
 
-    cors_origins: str = "https://calltaker.chojo.dev,http://localhost:5173"
+    cors_origins: str = "https://calltaker.emberbox.app,http://localhost:5173"
     frontend_verzeichnis: Path = QUELLVERZEICHNIS / "frontend_dist"
     daten_verzeichnis: Path = QUELLVERZEICHNIS.parent / ".daten"
     adressen_tage: int = 30

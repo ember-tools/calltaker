@@ -19,9 +19,9 @@ const fenster = computed<Fensterzustand>(() => ({...leererFensterzustand(), ...p
 
 <template>
     <section :aria-label="t('spiegel.titel')" class="flex flex-col gap-2">
-        <h2 class="m-0 font-condensed text-base font-bold tracking-wider text-gedaempft">{{ t('spiegel.titel') }}</h2>
+        <h2 class="section-title m-0">{{ t('spiegel.titel') }}</h2>
         <p v-if="suche" class="m-0 text-sm">{{ t('spiegel.tipptSuche', {text: suche}) }}</p>
-        <div inert class="origin-top-left rounded-lg border border-rand bg-white p-3 opacity-95 [zoom:0.8]">
+        <div inert class="origin-top-left rounded-lg border border-default bg-default p-3 opacity-95 [zoom:0.8]">
             <GespraechsFlaeche :model-value="kopie" :suche="suche" :ui="fenster" ruhig :graph="graph" :schwerste="schwerste" :anruf="sicht"/>
         </div>
     </section>

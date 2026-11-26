@@ -6,11 +6,16 @@ from fastapi.testclient import TestClient
 
 import kacheln
 from kacheln import (
+    CLIENT_MISS_BURST,
+    CLIENT_MISSES_PER_SECOND,
+    GLOBAL_MISS_BURST,
     MINDESTENS,
     WARTEN_NACH_FEHLER,
     Kachelcache,
     KachelNichtErlaubt,
     KachelNichtLadbar,
+    MissBudget,
+    TileRateLimited,
     erlaubt,
     frisch_bis,
     kachelbereich,
@@ -144,8 +149,8 @@ def test_eine_kachel_bleibt_mindestens_sieben_tage_frisch():
 def test_der_client_nennt_sich_wie_verlangt():
     client = kacheln.kachel_client()
     assert client.headers["User-Agent"].startswith("calltaker/")
-    assert "https://calltaker.chojo.dev" in client.headers["User-Agent"]
-    assert client.headers["Referer"] == "https://calltaker.chojo.dev/"
+    assert "https://calltaker.emberbox.app" in client.headers["User-Agent"]
+    assert client.headers["Referer"] == "https://calltaker.emberbox.app/"
 
 
 def test_die_route_liefert_kacheln_und_lehnt_fremde_ab(tmp_path, upstream, uhr):
@@ -230,3 +235,49 @@ def test_schliessen_beendet_laufende_abrufe(tmp_path, uhr):
             await abruf
 
     asyncio.run(ablauf())
+
+
+def test_a_client_fetches_only_a_limited_number_of_new_tiles(tmp_path, upstream, uhr):
+    cache = cache_mit(tmp_path, upstream, uhr)
+    z, x, y = BERLIN_MITTE
+    for step in range(CLIENT_MISS_BURST):
+        holen(cache, z, x + step % 10, y + step // 10, "1.2.3.4")
+    with pytest.raises(TileRateLimited):
+        holen(cache, z, x, y + 7, "1.2.3.4")
+    assert len(upstream.anfragen) == CLIENT_MISS_BURST
+    assert holen(cache, z, x, y + 7, "5.6.7.8") == b"PNG1"
+
+
+def test_a_cached_tile_costs_nothing_from_the_budget(tmp_path, upstream, uhr):
+    cache = cache_mit(tmp_path, upstream, uhr)
+    for _ in range(CLIENT_MISS_BURST + 5):
+        assert holen(cache, *BERLIN_MITTE, "1.2.3.4") == b"PNG1"
+    assert len(upstream.anfragen) == 1
+
+
+def test_the_budget_refills_over_time(uhr):
+    budget = MissBudget(uhr)
+    for _ in range(CLIENT_MISS_BURST):
+        assert budget.take("a")
+    assert not budget.take("a")
+    uhr.jetzt += 1 / CLIENT_MISSES_PER_SECOND
+    assert budget.take("a")
+    assert not budget.take("a")
+
+
+def test_all_clients_share_one_overall_budget(uhr):
+    budget = MissBudget(uhr)
+    for number in range(GLOBAL_MISS_BURST):
+        assert budget.take(f"client-{number}")
+    assert not budget.take("one-more")
+
+
+def test_the_route_answers_429_once_the_budget_is_used_up(tmp_path, upstream, uhr):
+    with TestClient(anwendung_bauen()) as client:
+        cache = cache_mit(tmp_path, upstream, uhr)
+        client.app.state.kachelcache = cache
+        cache._budget.take = lambda client: False
+        response = client.get("/kacheln/{}/{}/{}.png".format(*BERLIN_MITTE))
+    assert response.status_code == 429
+    assert response.headers["retry-after"] == "10"
+    assert upstream.anfragen == []

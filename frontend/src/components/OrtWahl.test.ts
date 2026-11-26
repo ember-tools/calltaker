@@ -31,6 +31,8 @@ describe('OrtWahl', () => {
 
     it('setzt den Punkt per Klick in die Karte', async () => {
         const ansicht = mount(OrtWahl, {props: {modelValue: leer}, global: {plugins: [i18n]}, attachTo: document.body})
+        await vi.dynamicImportSettled()
+        await flushPromises()
         await ansicht.get('[role=region]').trigger('click', {clientX: 20, clientY: 20})
         const neu = ansicht.emitted('update:modelValue')?.[0]?.[0] as Ortsangabe
         expect(neu.koordinaten).toHaveLength(2)

@@ -5,7 +5,10 @@ and interrogates them until everything a dispatch needs is known; a trainer play
 voice and watches the trainee's screen live. After every call a debrief compares what was taken
 with what the scenario held.
 
-The interface is German throughout. It runs at <https://calltaker.chojo.dev>.
+The interface is German throughout. It runs at <https://calltaker.emberbox.app>, one of the
+[Emberbox](https://emberbox.app) tools, and uses the shared Emberbox look from
+[`@emberbox/ui`](https://www.npmjs.com/package/@emberbox/ui). The start page and `/hilfe` are
+prerendered for search engines; every exercise page is kept out of them.
 
 ## Development
 
@@ -29,11 +32,18 @@ The same in Docker, without a local Python or node:
 ./toolchain.sh docker-build     # the production image
 ```
 
+On `main`, CI publishes the image `ghcr.io/ember-tools/calltaker`. `docker/compose.prod.yaml` is a
+template for running it behind Traefik; adapt entrypoint, certificate resolver and network to the
+target server. The `daten` volume at `/data` holds the address list and the tile cache. Behind a
+reverse proxy, the proxy must overwrite `X-Forwarded-For`, since the tile limits per client rely
+on the forwarded address; Traefik does that by default.
+
 ## Map and addresses
 
 Map tiles come from OpenStreetMap through the server's own cache (`/kacheln/…`), as the tile
-usage policy asks. Address completion and the addresses of generated scenarios come from the
-city of Berlin's address list ([Adressen Berlin WFS](https://gdi.berlin.de/services/wfs/adressen_berlin),
+usage policy asks. At most four tiles are fetched upstream at once, and new tiles are
+limited per client and overall (429 beyond that). Address completion and the addresses of
+generated scenarios come from the city of Berlin's address list ([Adressen Berlin WFS](https://gdi.berlin.de/services/wfs/adressen_berlin),
 Datenlizenz Deutschland Zero 2.0), which the server downloads in the background into its data
 folder; `./toolchain.sh data-adressen` loads it on purpose. Places without a house number
 (parks, stations, hospitals, allotment gardens) come from

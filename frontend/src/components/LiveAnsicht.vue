@@ -39,7 +39,7 @@ watch(() => gespraech.value?.id, id => {
                     <WahrheitsKarte :graph="graph" :anruf="anruf" :ziele="zustand.engine.ziele" @korrigieren="(anleitung, gegeben) => absicht('anleitung.korrigieren', {anrufId: anruf!.id, anleitung, gegeben})" @eintreffen="absicht('anruf.eintreffen', {anrufId: anruf!.id})"/>
                     <OrtVergleich :anruf="anruf"/>
                 </template>
-                <p v-else class="m-0 text-sm text-gedaempft">{{ t('live.keinAnruf') }}</p>
+                <p v-else class="m-0 text-sm text-muted">{{ t('live.keinAnruf') }}</p>
                 <ProtokollListe :anrufe="zustand.anrufe" :code="zustand.codes.ausbilder" :gewaehlt="anruf?.id" @waehlen="id => gewaehlt = id"/>
             </div>
         </div>

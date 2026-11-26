@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import {computed, nextTick, ref} from 'vue'
+import {CodeDisplay} from '@emberbox/ui'
+import {computed, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
-import CodeAnzeige from '../components/CodeAnzeige.vue'
 import GetrenntHinweis from '../components/GetrenntHinweis.vue'
-import KopfLeiste from '../components/KopfLeiste.vue'
+import ToolHeader from '../components/ToolHeader.vue'
 import LiveAnsicht from '../components/LiveAnsicht.vue'
 import GeneratorPanel from '../components/GeneratorPanel.vue'
 import PoolDatei from '../components/PoolDatei.vue'
@@ -27,60 +27,53 @@ const poolStand = computed(() => zustand.value?.poolStand)
 const editor = usePoolEditor(pool, poolBefunde, graph, absicht, {gezogen: t('editor.gezogen')})
 const {entwurf, fehler, hinweis, listenFehler, befunde, ungespeichert} = editor
 const {geaendert, exportiert} = useExportErinnerung(poolStand)
-const REITER = ['live', 'pool'] as const
-const reiter = ref<typeof REITER[number]>('live')
-
-/**
- * Moves between the tabs with the arrow keys, as tab lists do.
- *
- * @param ereignis the key pressed on a tab
- */
-function reiterTaste(ereignis: KeyboardEvent): void {
-    if (ereignis.key !== 'ArrowLeft' && ereignis.key !== 'ArrowRight') return
-    const schritt = ereignis.key === 'ArrowRight' ? 1 : -1
-    reiter.value = REITER[(REITER.indexOf(reiter.value) + schritt + REITER.length) % REITER.length]!
-    void nextTick(() => document.getElementById(`reiter-${reiter.value}`)?.focus())
-}
+const TABS = computed(() => [
+    {label: t('reiter.live'), value: 'live', slot: 'live' as const},
+    {label: t('reiter.pool'), value: 'pool', slot: 'pool' as const},
+])
+const tab = ref('live')
+const traineeLink = computed(() => (zustand.value ? `${window.location.origin}/t/${zustand.value.codes.trainee}` : undefined))
 </script>
 
 <template>
     <div class="min-h-screen">
-        <KopfLeiste :rolle="t('ausbilder.titel')">
-            <template v-if="zustand">
-                <CodeAnzeige :titel="t('codes.ausbilder')" :code="zustand.codes.ausbilder"/>
-                <CodeAnzeige :titel="t('codes.trainee')" :code="zustand.codes.trainee"/>
-                <VerbindungsZeichen :name="t('verbindung.trainee')" :verbunden="zustand.verbunden.trainee"/>
-            </template>
-        </KopfLeiste>
+        <ToolHeader :role="t('ausbilder.titel')">
+            <VerbindungsZeichen v-if="zustand" :name="t('verbindung.trainee')" :verbunden="zustand.verbunden.trainee"/>
+        </ToolHeader>
         <GetrenntHinweis v-if="!erreichbar"/>
         <UnbekannteUebung v-if="unbekannt"/>
-        <p v-else-if="!zustand" class="m-0 p-5 text-gedaempft">{{ t('allgemein.laden') }}</p>
-        <div v-else class="flex flex-col gap-3 p-5">
-            <div role="tablist" class="flex gap-1 border-b border-rand">
-                <button v-for="name in REITER" :id="`reiter-${name}`" :key="name" type="button" role="tab" :aria-selected="reiter === name" :aria-controls="`tafel-${name}`" :tabindex="reiter === name ? 0 : -1" :class="['-mb-px rounded-t border px-4 py-1.5 text-sm font-semibold', reiter === name ? 'border-rand border-b-white bg-white' : 'border-transparent text-gedaempft']" @click="reiter = name" @keydown="reiterTaste">{{ t(`reiter.${name}`) }}</button>
+        <p v-else-if="!zustand" class="m-0 p-5 text-muted">{{ t('allgemein.laden') }}</p>
+        <main v-else class="flex flex-col gap-3 p-5">
+            <div class="flex flex-wrap gap-4">
+                <CodeDisplay :title="t('codes.ausbilder')" :code="zustand.codes.ausbilder" hidden/>
+                <CodeDisplay :title="t('codes.trainee')" :code="zustand.codes.trainee" :link="traineeLink" qr/>
             </div>
-            <div v-if="reiter === 'live'" id="tafel-live" role="tabpanel" aria-labelledby="reiter-live">
+            <UTabs v-model="tab" :items="TABS" variant="link" :ui="{content: 'pt-3'}">
+            <template #live>
                 <LiveAnsicht v-if="graph" :zustand="zustand" :graph="graph" :schwerste="schwerste" :absicht="absicht"/>
-                <p v-else-if="graphFehler" role="alert" class="m-0 text-fehler">{{ t('ausbilder.graphFehlt', {fehler: graphFehler}) }}</p>
-                <p v-else class="m-0 text-gedaempft">{{ t('allgemein.laden') }}</p>
-            </div>
-            <main v-else id="tafel-pool" role="tabpanel" aria-labelledby="reiter-pool" class="flex flex-wrap items-start gap-5">
-                <section class="flex min-w-0 flex-[1_1_26rem] flex-col gap-3 rounded-lg border border-rand bg-flaeche p-4">
-                    <h2 class="m-0 font-condensed text-base font-bold tracking-wider text-gedaempft">{{ t('ausbilder.pool') }}</h2>
-                    <p v-if="zustand.pool.length === 0" class="m-0 text-sm text-gedaempft">{{ t('ausbilder.poolLeer') }}</p>
+                <p v-else-if="graphFehler" role="alert" class="m-0 text-error">{{ t('ausbilder.graphFehlt', {fehler: graphFehler}) }}</p>
+                <p v-else class="m-0 text-muted">{{ t('allgemein.laden') }}</p>
+            </template>
+            <template #pool>
+            <div class="flex flex-wrap items-start gap-5">
+                <section class="flex min-w-0 flex-[1_1_26rem] flex-col gap-3 rounded-lg border border-default bg-default p-4">
+                    <h2 class="section-title m-0">{{ t('ausbilder.pool') }}</h2>
+                    <p v-if="zustand.pool.length === 0" class="m-0 text-sm text-muted">{{ t('ausbilder.poolLeer') }}</p>
                     <PoolListe v-else :pool="zustand.pool" :befunde="zustand.poolBefunde" :gewaehlt="entwurf?.id" :gesperrt="ungespeichert" @bearbeiten="editor.bearbeiten" @entfernen="editor.entfernen" @verschieben="editor.verschieben"/>
-                    <p v-if="listenFehler" class="m-0 text-sm text-fehler" role="alert">{{ listenFehler }}</p>
-                    <p v-if="ungespeichert" class="m-0 text-xs text-gedaempft">{{ t('pool.erstSpeichern') }}</p>
-                    <button type="button" :disabled="!graph || ungespeichert" class="self-start rounded bg-tinte px-3 py-1.5 text-sm font-semibold text-white disabled:opacity-40" @click="editor.neu">{{ t('pool.neu') }}</button>
+                    <p v-if="listenFehler" class="m-0 text-sm text-error" role="alert">{{ listenFehler }}</p>
+                    <p v-if="ungespeichert" class="m-0 text-xs text-muted">{{ t('pool.erstSpeichern') }}</p>
+                    <UButton size="sm" class="self-start" :disabled="!graph || ungespeichert" @click="editor.neu">{{ t('pool.neu') }}</UButton>
                     <GeneratorPanel :erzeugung="zustand.erzeugung" :graph="graph ?? undefined" :auto-generieren="zustand.engine.parameter.autoGenerieren" :absicht="absicht"/>
                     <PoolDatei :code="code" :absicht="absicht" @exportiert="exportiert"/>
-                    <p v-if="geaendert" class="m-0 text-xs text-warnung">{{ t('pool.nichtGesichert') }}</p>
+                    <p v-if="geaendert" class="m-0 text-xs text-warning">{{ t('pool.nichtGesichert') }}</p>
                 </section>
-                <section v-if="entwurf && graph" class="flex min-w-0 flex-[2_1_36rem] flex-col gap-3 rounded-lg border border-rand bg-flaeche p-4">
-                    <h2 class="m-0 font-condensed text-base font-bold tracking-wider text-gedaempft">{{ entwurf.id ? t('editor.bearbeiten') : t('editor.neu') }}</h2>
+                <section v-if="entwurf && graph" class="flex min-w-0 flex-[2_1_36rem] flex-col gap-3 rounded-lg border border-default bg-default p-4">
+                    <h2 class="section-title m-0">{{ entwurf.id ? t('editor.bearbeiten') : t('editor.neu') }}</h2>
                     <SzenarioEditor v-model="entwurf" :graph="graph" :schwerste="schwerste" :befunde="befunde" :fehler="fehler" :hinweis="hinweis" @speichern="editor.speichern" @abbrechen="editor.schliessen"/>
                 </section>
-            </main>
-        </div>
+            </div>
+            </template>
+            </UTabs>
+        </main>
     </div>
 </template>

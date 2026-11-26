@@ -72,7 +72,7 @@ const zeigen = computed(() => offen.value && eintraege.value.length > 0)
 
 <template>
     <div class="relative">
-        <label class="flex flex-col gap-1 text-xs font-semibold text-gedaempft">
+        <label class="flex flex-col gap-1 field-label">
             {{ props.beschriftung }}
             <input
                 v-model="text"
@@ -81,13 +81,13 @@ const zeigen = computed(() => offen.value && eintraege.value.length > 0)
                 :aria-controls="`${kennung}-liste`"
                 :aria-activedescendant="markiert >= 0 ? `${kennung}-${markiert}` : undefined"
                 autocomplete="off"
-                class="h-8 rounded border border-slate-400 bg-white px-2 text-sm font-medium text-tinte"
+                class="h-8 rounded border border-accented bg-default px-2 text-sm font-medium text-highlighted"
                 @input="offen = true; markiert = -1"
                 @keydown="taste"
                 @blur="offen = false"
             />
         </label>
-        <ul v-show="zeigen" :id="`${kennung}-liste`" role="listbox" class="absolute z-[1000] m-0 mt-1 w-full list-none rounded border border-rand bg-white p-0 text-sm shadow-lg">
+        <ul v-show="zeigen" :id="`${kennung}-liste`" role="listbox" class="absolute z-[1000] m-0 mt-1 w-full list-none rounded border border-default bg-default p-0 text-sm shadow-lg">
             <li
                 v-for="(eintrag, stelle) in eintraege"
                 :id="`${kennung}-${stelle}`"
@@ -95,13 +95,13 @@ const zeigen = computed(() => offen.value && eintraege.value.length > 0)
                 role="option"
                 tabindex="-1"
                 :aria-selected="stelle === markiert"
-                :class="['cursor-pointer px-2 py-1.5', stelle === markiert ? 'bg-sky-100' : '', stelle > 0 && eintrag.art !== eintraege[stelle - 1]?.art ? 'border-t border-rand' : '']"
+                :class="['cursor-pointer px-2 py-1.5', stelle === markiert ? 'bg-info/15' : '', stelle > 0 && eintrag.art !== eintraege[stelle - 1]?.art ? 'border-t border-default' : '']"
                 @mousedown.prevent="waehlen(eintrag)"
             >
-                <span v-if="eintrag.art === 'ort'" class="mr-1 text-xs font-semibold text-gedaempft">{{ t('ort.ort') }}</span>
-                <span v-else-if="eintrag.vorschlag.ungefaehr" class="mr-1 text-xs font-semibold text-warnung">{{ t('ort.aehnlich') }}</span>{{ eintrag.vorschlag.beschriftung }}
+                <span v-if="eintrag.art === 'ort'" class="mr-1 text-xs font-semibold text-muted">{{ t('ort.ort') }}</span>
+                <span v-else-if="eintrag.vorschlag.ungefaehr" class="mr-1 text-xs font-semibold text-warning">{{ t('ort.aehnlich') }}</span>{{ eintrag.vorschlag.beschriftung }}
             </li>
-            <li v-if="orte.length" role="presentation" class="px-2 py-1 text-xs text-gedaempft">{{ t('ort.orteQuelle') }}</li>
+            <li v-if="orte.length" role="presentation" class="px-2 py-1 text-xs text-muted">{{ t('ort.orteQuelle') }}</li>
         </ul>
     </div>
 </template>

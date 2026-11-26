@@ -7,7 +7,9 @@ volume. A tile is fresh for as long as the server's `Cache-Control` or `Expires`
 less than seven days. A stale tile is served at once while it is revalidated in the background
 with `If-None-Match`. Requests for the same tile that arrive while it is being fetched wait for
 that one fetch. Only zoom levels 10 to 18 inside a box around Berlin are fetched; everything else
-is refused without asking upstream.
+is refused without asking upstream. At most four tiles are fetched upstream at once, and cache
+misses are limited per client and for everyone, so a request loop over the box gets 429 instead of
+turning the server into a bulk downloader.
 """
 
 import asyncio
@@ -36,7 +38,12 @@ MINDESTENS = 7 * 24 * 3600
 BROWSER_CACHE = "public, max-age=86400"
 WARTEN_NACH_FEHLER = 300.0
 logger = logging.getLogger("calltaker")
-HEIMAT = "https://calltaker.chojo.dev"
+HEIMAT = "https://calltaker.emberbox.app"
+MAX_CONCURRENT_FETCHES = 4
+GLOBAL_MISS_BURST = 120
+GLOBAL_MISSES_PER_SECOND = 0.5
+CLIENT_MISS_BURST = 60
+CLIENT_MISSES_PER_SECOND = 0.25
 
 router = APIRouter()
 
@@ -47,6 +54,45 @@ class KachelNichtErlaubt(Exception):
 
 class KachelNichtLadbar(Exception):
     """A tile neither the cache nor the tile server can provide."""
+
+
+class TileRateLimited(Exception):
+    """A missing tile refused because its client or everyone has fetched too many new ones."""
+
+
+class MissBudget:
+    """Token buckets that limit how many tiles may be fetched upstream.
+
+    Every cache miss takes a token from the bucket shared by everyone and one from the bucket of
+    the requesting client. Buckets refill continuously up to their burst size. Maps panning around
+    a few districts stay well inside the budget; a loop walking the whole box does not, so the
+    server never bulk-downloads from OpenStreetMap on anyone's behalf.
+    """
+
+    def __init__(self, clock: Callable[[], float] = time.time) -> None:
+        """Start with full buckets."""
+        self.clock = clock
+        self._buckets: dict[str, tuple[float, float]] = {}
+
+    def take(self, client: str) -> bool:
+        """Take a token for `client` and for everyone, or neither when either bucket is empty."""
+        now = self.clock()
+        everyone = self._level("*", GLOBAL_MISS_BURST, GLOBAL_MISSES_PER_SECOND, now)
+        own = self._level(f"client:{client}", CLIENT_MISS_BURST, CLIENT_MISSES_PER_SECOND, now)
+        if everyone < 1 or own < 1:
+            return False
+        self._buckets["*"] = (everyone - 1, now)
+        self._buckets[f"client:{client}"] = (own - 1, now)
+        if len(self._buckets) > 10_000:
+            self._buckets = {
+                key: value for key, value in self._buckets.items() if now - value[1] < 3600
+            }
+        return True
+
+    def _level(self, key: str, burst: float, rate: float, now: float) -> float:
+        """Return how many tokens a bucket holds right now."""
+        level, since = self._buckets.get(key, (burst, now))
+        return min(burst, level + (now - since) * rate)
 
 
 @dataclass
@@ -117,15 +163,23 @@ class Kachelcache:
         self._laufend: dict[tuple[int, int, int], asyncio.Task[Kachel]] = {}
         self._hintergrund: set[asyncio.Task[None]] = set()
         self._fehlgeschlagen_bis: dict[tuple[int, int, int], float] = {}
+        self._budget = MissBudget(uhr)
+        self._fetching = asyncio.Semaphore(MAX_CONCURRENT_FETCHES)
 
-    async def holen(self, z: int, x: int, y: int) -> bytes:
-        """Return a tile's image from the cache, fetching or revalidating it as needed."""
+    async def holen(self, z: int, x: int, y: int, client: str = "") -> bytes:
+        """Return a tile's image from the cache, fetching or revalidating it as needed.
+
+        A miss is refused with `TileRateLimited` once the miss budget of `client` or of everyone
+        is used up; a tile already being fetched is waited for without taking from the budget.
+        """
         if not erlaubt(z, x, y):
             raise KachelNichtErlaubt
         vorhanden = self._lesen(z, x, y)
         if vorhanden is None:
             if self._fehlgeschlagen_bis.get((z, x, y), 0) > self.uhr():
                 raise KachelNichtLadbar
+            if (z, x, y) not in self._laufend and not self._budget.take(client):
+                raise TileRateLimited
             return (await asyncio.shield(self._einmal_laden(z, x, y, None))).bild
         if vorhanden.frisch_bis < self.uhr():
             aufgabe = asyncio.ensure_future(self._nachpruefen(z, x, y, vorhanden))
@@ -164,7 +218,8 @@ class Kachelcache:
         """Fetch a tile upstream, or confirm the stale copy, and store the result."""
         kopf = {"If-None-Match": alt.etag} if alt and alt.etag else {}
         try:
-            antwort = await self.client.get(UPSTREAM.format(z=z, x=x, y=y), headers=kopf)
+            async with self._fetching:
+                antwort = await self.client.get(UPSTREAM.format(z=z, x=x, y=y), headers=kopf)
         except httpx.HTTPError:
             return self._fehlgeschlagen(z, x, y, alt)
         jetzt = self.uhr()
@@ -239,11 +294,17 @@ async def kachel(z: int, x: int, y: int, request: Request) -> Response:
     """Return a map tile of Berlin from the cache, fetching it from OpenStreetMap when needed."""
     cache: Kachelcache = request.app.state.kachelcache
     try:
-        bild = await cache.holen(z, x, y)
+        bild = await cache.holen(z, x, y, request.client.host if request.client else "")
     except KachelNichtErlaubt as fehler:
         raise HTTPException(status_code=404, detail="Diese Kachel gibt es hier nicht.") from fehler
     except KachelNichtLadbar as fehler:
         raise HTTPException(
             status_code=502, detail="Die Kachel ist gerade nicht ladbar."
+        ) from fehler
+    except TileRateLimited as fehler:
+        raise HTTPException(
+            status_code=429,
+            detail="Zu viele neue Kacheln auf einmal.",
+            headers={"Retry-After": "10"},
         ) from fehler
     return Response(content=bild, media_type="image/png", headers={"Cache-Control": BROWSER_CACHE})

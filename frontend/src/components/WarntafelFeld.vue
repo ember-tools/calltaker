@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {faTriangleExclamation} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import {useGefahrstoffe} from '../composables/useGefahrstoffe'
@@ -84,24 +82,24 @@ function taste(ereignis: KeyboardEvent): void {
                 <p v-for="stoff in stoffe" :key="`${stoff.klasse}-${stoff.bezeichnung}`" class="m-0"><b>{{ stoff.bezeichnung }}</b> · {{ t('warntafel.klasse', {klasse: stoff.klasse}) }}</p>
                 <p v-if="moeglicheZahlen.length > 1 && !tafel.gefahrenzahl" class="m-0 flex flex-wrap items-center gap-1.5">
                     {{ t('warntafel.mehrere') }}
-                    <button v-for="zahl in moeglicheZahlen" :key="zahl" type="button" class="rounded border border-slate-400 px-2 font-mono" @click="zahlWaehlen(zahl)">{{ zahl }}</button>
+                    <UButton v-for="zahl in moeglicheZahlen" :key="zahl" color="neutral" variant="outline" size="sm" @click="zahlWaehlen(zahl)">{{ zahl }}</UButton>
                 </p>
-                <p v-if="tafel.un.length === 4 && liste && !stoffe.length" class="m-0 text-gedaempft">{{ t('warntafel.unbekannt') }}</p>
+                <p v-if="tafel.un.length === 4 && liste && !stoffe.length" class="m-0 text-muted">{{ t('warntafel.unbekannt') }}</p>
                 <ul v-if="deutung.length" class="m-0 pl-5">
-                    <li v-for="gefahr in deutung" :key="gefahr" :class="gefahr.includes('Wasser') ? 'font-semibold text-fehler' : ''"><FontAwesomeIcon v-if="gefahr.includes('Wasser')" :icon="faTriangleExclamation" class="mr-1" aria-hidden="true"/>{{ gefahr }}</li>
+                    <li v-for="gefahr in deutung" :key="gefahr" :class="gefahr.includes('Wasser') ? 'font-semibold text-error' : ''"><UIcon v-if="gefahr.includes('Wasser')" name="i-lucide-triangle-alert" class="mr-1" aria-hidden="true"/>{{ gefahr }}</li>
                 </ul>
-                <label class="relative flex flex-col gap-1 text-xs font-semibold text-gedaempft">
+                <label class="relative flex flex-col gap-1 text-xs font-semibold text-muted">
                     {{ t('warntafel.name') }}
                     <input
                         v-model="name" role="combobox" autocomplete="off" aria-autocomplete="list" aria-controls="warntafel-stoffe"
                         :aria-expanded="offen" :aria-activedescendant="offen && markiert >= 0 ? `warntafel-stoff-${markiert}` : undefined"
-                        class="h-8 rounded border border-slate-400 px-2 text-sm font-normal text-tinte"
+                        class="h-8 rounded border border-accented px-2 text-sm font-normal text-highlighted"
                         @input="markiert = 0; geschlossen = false" @keydown="taste" @blur="geschlossen = true"
                     />
-                    <ul v-if="offen" id="warntafel-stoffe" role="listbox" class="absolute top-full right-0 left-0 z-20 m-0 mt-1 max-h-64 list-none overflow-y-auto rounded border border-slate-300 bg-white p-0 text-sm font-normal text-tinte shadow-lg">
+                    <ul v-if="offen" id="warntafel-stoffe" role="listbox" class="absolute top-full right-0 left-0 z-20 m-0 mt-1 max-h-64 list-none overflow-y-auto rounded border border-accented bg-default p-0 text-sm font-normal text-highlighted shadow-lg">
                         <li
                             v-for="(stoff, stelle) in vorschlaege" :id="`warntafel-stoff-${stelle}`" :key="`${stoff.un}-${stoff.klasse}-${stoff.bezeichnung}`"
-                            role="option" tabindex="-1" :aria-selected="stelle === markiert" :class="['cursor-pointer px-2 py-1', stelle === markiert ? 'bg-sky-100' : '']"
+                            role="option" tabindex="-1" :aria-selected="stelle === markiert" :class="['cursor-pointer px-2 py-1', stelle === markiert ? 'bg-info/15' : '']"
                             @mousedown.prevent="waehlen(stoff)"
                         ><span class="font-mono">{{ stoff.gefahrenzahl || '-' }} / {{ stoff.un }}</span> {{ stoff.bezeichnung }}</li>
                     </ul>

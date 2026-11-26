@@ -73,7 +73,7 @@ describe('PfadWahl', () => {
         const ansicht = wahl(antworten, [{art: 'fehler', knoten: 'weg.knoten', meldung: 'Knoten gibt es nicht mehr'}, {art: 'warnung', knoten: 'hand', meldung: 'Label geändert'}])
         expect(ansicht.text()).toContain('Antworten außerhalb des Pfads: 1')
         expect(ansicht.text()).toContain('Knoten gibt es nicht mehr')
-        expect(ansicht.find('li.border-warnung').text()).toContain('Label geändert')
+        expect(ansicht.find('li.border-warning').text()).toContain('Label geändert')
         await klick(ansicht, 'Diese Antworten entfernen')
         expect(ansicht.props('antworten')['weg.knoten']).toBeUndefined()
     })

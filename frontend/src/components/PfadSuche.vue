@@ -28,15 +28,15 @@ function waehlen(endpunkt: Endpunkt): void {
             {{ t('editor.codeSuche') }}
             <input v-model="text" type="search" :placeholder="t('editor.codeSucheHinweis')" :class="FELD" @keydown.enter.prevent="ersten"/>
         </label>
-        <ul v-if="treffer.length" class="m-0 flex max-h-56 list-none flex-col overflow-auto rounded border border-rand p-0">
+        <ul v-if="treffer.length" class="m-0 flex max-h-56 list-none flex-col overflow-auto rounded border border-default p-0">
             <li v-for="endpunkt in treffer" :key="endpunkt.knoten">
-                <button type="button" class="flex w-full gap-2 border-b border-rand px-2 py-1 text-left text-sm hover:bg-slate-100" @click="waehlen(endpunkt)">
+                <button type="button" class="flex w-full gap-2 border-b border-default px-2 py-1 text-left text-sm hover:bg-elevated" @click="waehlen(endpunkt)">
                     <span class="font-mono font-bold">{{ endpunkt.code }}</span>
                     <span class="flex-1">{{ endpunkt.anlass }}</span>
-                    <span class="text-gedaempft">{{ endpunkt.kategorie }}</span>
+                    <span class="text-muted">{{ endpunkt.kategorie }}</span>
                 </button>
             </li>
         </ul>
-        <p v-else-if="text.trim()" class="m-0 text-xs text-gedaempft">{{ t('editor.keinCode') }}</p>
+        <p v-else-if="text.trim()" class="m-0 text-xs text-muted">{{ t('editor.keinCode') }}</p>
     </div>
 </template>

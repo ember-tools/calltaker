@@ -1,11 +1,7 @@
-import {createRouter, createWebHistory, type RouteLocationNormalized, type RouteLocationRaw} from 'vue-router'
+import {createRouter, type RouteLocationNormalized, type RouteLocationRaw, type Router, type RouterHistory} from 'vue-router'
 import {rolleVon} from '../api/uebung'
-import AusbilderView from '../views/AusbilderView.vue'
 import StartView from '../views/StartView.vue'
-import DebriefView from '../views/DebriefView.vue'
 import HilfeView from '../views/HilfeView.vue'
-import TraineeView from '../views/TraineeView.vue'
-import UebersichtView from '../views/UebersichtView.vue'
 import type {Rolle} from '../modell/uebung'
 
 /**
@@ -35,19 +31,45 @@ export async function passendeRolle(ziel: RouteLocationNormalized): Promise<Rout
 function routenFuer(rolle: Rolle, kuerzel: string) {
     const meta = {rolle}
     return [
-        {path: `/${kuerzel}/:code`, name: rolle, component: rolle === 'ausbilder' ? AusbilderView : TraineeView, props: true, meta, beforeEnter: passendeRolle},
-        {path: `/${kuerzel}/:code/debrief/:anrufId`, name: `${rolle}-debrief`, component: DebriefView, props: (route: RouteLocationNormalized) => ({...route.params, rolle}), meta, beforeEnter: passendeRolle},
-        {path: `/${kuerzel}/:code/uebersicht`, name: `${rolle}-uebersicht`, component: UebersichtView, props: (route: RouteLocationNormalized) => ({...route.params, rolle}), meta, beforeEnter: passendeRolle},
+        {path: `/${kuerzel}/:code`, name: rolle, component: rolle === 'ausbilder' ? () => import('../views/AusbilderView.vue') : () => import('../views/TraineeView.vue'), props: true, meta, beforeEnter: passendeRolle},
+        {path: `/${kuerzel}/:code/debrief/:anrufId`, name: `${rolle}-debrief`, component: () => import('../views/DebriefView.vue'), props: (route: RouteLocationNormalized) => ({...route.params, rolle}), meta, beforeEnter: passendeRolle},
+        {path: `/${kuerzel}/:code/uebersicht`, name: `${rolle}-uebersicht`, component: () => import('../views/UebersichtView.vue'), props: (route: RouteLocationNormalized) => ({...route.params, rolle}), meta, beforeEnter: passendeRolle},
     ]
 }
 
-/** The application's routes: the start and help pages, and per role the view, the debriefs and the overview. */
-export const router = createRouter({
-    history: createWebHistory(),
-    routes: [
-        {path: '/', name: 'start', component: StartView},
-        {path: '/hilfe', name: 'hilfe', component: HilfeView},
-        ...routenFuer('ausbilder', 'a'),
-        ...routenFuer('trainee', 't'),
-    ],
-})
+/**
+ * The application's router: the public start and help pages, and per role the view, the debriefs and
+ * the overview. The browser passes web history, the prerender memory history.
+ *
+ * @param history the history to navigate in
+ * @returns the router
+ */
+export function createAppRouter(history: RouterHistory) {
+    return createRouter({
+        history,
+        routes: [
+            {path: '/', name: 'start', component: StartView, meta: {public: true}},
+            {path: '/hilfe', name: 'hilfe', component: HilfeView, meta: {public: true}},
+            ...routenFuer('ausbilder', 'a'),
+            ...routenFuer('trainee', 't'),
+        ],
+    })
+}
+
+/** How browsers word a view's code that could not be loaded. */
+const STALE_CHUNK = /dynamically imported module|module script failed|Importing a module script/i
+
+/**
+ * Loads the target page anew when its view's code is gone. A tab left open across a deploy still
+ * runs the old build, whose lazily loaded views no longer exist on the server; a full load brings
+ * the current build instead of a navigation that silently does nothing. A page already at the
+ * target is not loaded again, so a deploy missing its own chunks cannot start a reload loop.
+ *
+ * @param router the application's router
+ */
+export function reloadOnStaleChunk(router: Router): void {
+    router.onError((error: unknown, to) => {
+        const here = window.location.pathname + window.location.search + window.location.hash
+        if (to.fullPath !== here && STALE_CHUNK.test(String((error as Error | undefined)?.message))) window.location.assign(to.fullPath)
+    })
+}

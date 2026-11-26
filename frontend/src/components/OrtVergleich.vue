@@ -20,7 +20,7 @@ const abstand = computed(() => (wahr.value && erfasst.value ? abstandGerundet(wa
 <template>
     <figure class="m-0 flex flex-col gap-1">
         <KarteLeaflet :punkte="punkte" :funkzelle="anruf.szenario.anrufer.funkzelle" :beschriftung="t('wahrheit.karte')" class="h-56"/>
-        <figcaption class="text-xs text-gedaempft">
+        <figcaption class="text-xs text-muted">
             {{ abstand === undefined ? t('wahrheit.keinPunkt') : t('wahrheit.abstand', {meter: abstand}) }} · {{ t('wahrheit.legende') }}
         </figcaption>
     </figure>

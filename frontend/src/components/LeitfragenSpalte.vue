@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import {faRotateLeft, faTriangleExclamation} from '@fortawesome/free-solid-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {computed, nextTick, onBeforeUnmount, onMounted, ref} from 'vue'
 import {useI18n} from 'vue-i18n'
 import type {Antwort} from '../modell/abfragegraph'
@@ -88,20 +86,20 @@ onBeforeUnmount(() => window.removeEventListener('keydown', taste))
 </script>
 
 <template>
-    <aside ref="spalte" :aria-label="t('leitfragen.titel')" class="flex flex-col gap-2 rounded-md border border-sky-200 bg-sky-50 p-3 text-sm">
-        <h4 class="m-0 text-sm font-bold text-sky-900">{{ t('leitfragen.titel') }}</h4>
-        <div :class="['flex flex-col gap-2 rounded p-2', stand.frage?.sicherheit ? 'border-2 border-red-600 bg-red-50' : 'bg-white']">
-            <p role="status" :class="['m-0 text-base font-semibold', stand.frage?.sicherheit ? 'text-red-900' : 'text-sky-950']">
-                <span v-if="stand.frage?.sicherheit" role="img" :aria-label="t('leitfragen.sicherheit')" class="mr-1.5"><FontAwesomeIcon :icon="faTriangleExclamation" aria-hidden="true"/></span>{{ zeile }}
+    <aside ref="spalte" :aria-label="t('leitfragen.titel')" class="flex flex-col gap-2 rounded-md border border-info/40 bg-info/10 p-3 text-sm">
+        <h4 class="m-0 text-sm font-bold text-info">{{ t('leitfragen.titel') }}</h4>
+        <div :class="['flex flex-col gap-2 rounded p-2', stand.frage?.sicherheit ? 'border-2 border-error bg-error/10' : 'bg-default']">
+            <p role="status" :class="['m-0 text-base font-semibold', stand.frage?.sicherheit ? 'text-error' : 'text-info']">
+                <span v-if="stand.frage?.sicherheit" role="img" :aria-label="t('leitfragen.sicherheit')" class="mr-1.5"><UIcon name="i-lucide-triangle-alert" aria-hidden="true"/></span>{{ zeile }}
             </p>
-            <p v-if="stand.frage?.hinweis" class="m-0 text-xs text-gedaempft">{{ stand.frage.hinweis }}</p>
+            <p v-if="stand.frage?.hinweis" class="m-0 text-xs text-muted">{{ stand.frage.hinweis }}</p>
             <div v-if="stand.frage" class="flex flex-wrap gap-1.5">
-                <button v-for="(antwort, stelle) in angebot" :key="`${stand.frage.id}-${antwort.label}`" data-leitantwort type="button" :aria-keyshortcuts="`Alt+${stelle + 1}`" class="flex min-h-9 items-center gap-2 rounded border border-slate-400 bg-white px-3 font-semibold" @click="beantworten(antwort.label)">
-                    {{ antwort.label }}<small class="font-mono font-normal text-gedaempft">{{ t('leitfragen.taste', {nummer: stelle + 1}) }}</small>
-                </button>
+                <UButton v-for="(antwort, stelle) in angebot" :key="`${stand.frage.id}-${antwort.label}`" color="neutral" variant="outline" size="sm" data-leitantwort :aria-keyshortcuts="`Alt+${stelle + 1}`" @click="beantworten(antwort.label)">
+                    {{ antwort.label }}<small class="font-mono font-normal text-muted">{{ t('leitfragen.taste', {nummer: stelle + 1}) }}</small>
+                </UButton>
             </div>
             <div v-else-if="stand.vorschlag.length" class="flex flex-col gap-1.5">
-                <button v-for="id in stand.vorschlag" :key="id" data-vorschlag type="button" class="flex min-h-9 items-center gap-2 rounded border-2 border-sky-600 bg-white px-3 text-left font-semibold" @click="emit('waehlen', id)">
+                <button v-for="id in stand.vorschlag" :key="id" data-vorschlag type="button" class="flex min-h-9 items-center gap-2 rounded border-2 border-info bg-default px-3 text-left font-semibold" @click="emit('waehlen', id)">
                     <span class="font-mono">{{ nummer.get(id) }}</span>{{ label.get(id) }}
                 </button>
             </div>
@@ -109,10 +107,10 @@ onBeforeUnmount(() => window.removeEventListener('keydown', taste))
         <ol v-if="stand.beantwortet.length" :aria-label="t('leitfragen.bisher')" class="m-0 flex flex-col gap-0.5 pl-5 text-xs">
             <li v-for="(antwort, stelle) in stand.beantwortet" :key="`${stelle}-${antwort.frage}`">
                 {{ fragen.get(antwort.frage) }} <b>{{ antwort.antwort }}</b>
-                <button type="button" class="ml-1 underline" :aria-label="t('leitfragen.aendernFrage', {frage: fragen.get(antwort.frage)})" @click="zurueckZu(stelle)">{{ t('leitfragen.aendern') }}</button>
+                <UButton color="neutral" variant="link" size="sm" class="ml-1" :aria-label="t('leitfragen.aendernFrage', {frage: fragen.get(antwort.frage)})" @click="zurueckZu(stelle)">{{ t('leitfragen.aendern') }}</UButton>
             </li>
         </ol>
-        <button v-if="stand.beantwortet.length" type="button" class="self-start text-xs underline" @click="zurueckZu(0)"><FontAwesomeIcon :icon="faRotateLeft" class="mr-1" aria-hidden="true"/>{{ t('leitfragen.neu') }}</button>
-        <p class="m-0 text-xs text-gedaempft">{{ t('leitfragen.direkt') }}</p>
+        <UButton v-if="stand.beantwortet.length" color="neutral" variant="link" size="xs" class="self-start" @click="zurueckZu(0)"><UIcon name="i-lucide-rotate-ccw" class="mr-1" aria-hidden="true"/>{{ t('leitfragen.neu') }}</UButton>
+        <p class="m-0 text-xs text-muted">{{ t('leitfragen.direkt') }}</p>
     </aside>
 </template>
