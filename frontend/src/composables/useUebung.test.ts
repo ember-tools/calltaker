@@ -1,6 +1,6 @@
 import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest'
 import {Abgelehnt, holeZustand, sendeAbsicht} from '../api/uebung'
-import {RUECKZUG_MS, TAKT_MS, useUebung} from './useUebung'
+import {HIDDEN_INTERVAL_MS, TAKT_MS, useUebung} from './useUebung'
 
 vi.mock('../api/uebung', async original => ({
     ...await original<typeof import('../api/uebung')>(),
@@ -16,6 +16,7 @@ describe('useUebung', () => {
     afterEach(() => {
         vi.useRealTimers()
         vi.resetAllMocks()
+        vi.restoreAllMocks()
     })
 
     it('fragt mit der gehaltenen Version und behält den Zustand ohne Änderung', async () => {
@@ -34,14 +35,15 @@ describe('useUebung', () => {
         const uebung = useUebung<'trainee'>('T-ABCDEF')
         await vi.advanceTimersByTimeAsync(0)
         expect(uebung.erreichbar.value).toBe(false)
-        for (const [i, pause] of RUECKZUG_MS.entries()) {
+        const backoff = [2000, 4000, 8000, 8000]
+        for (const [i, pause] of backoff.entries()) {
             await vi.advanceTimersByTimeAsync(pause - 1)
             expect(hole).toHaveBeenCalledTimes(i + 1)
             await vi.advanceTimersByTimeAsync(1)
             expect(hole).toHaveBeenCalledTimes(i + 2)
         }
         hole.mockResolvedValue({version: 1, zustand: {anrufe: []}})
-        await vi.advanceTimersByTimeAsync(RUECKZUG_MS.at(-1)!)
+        await vi.advanceTimersByTimeAsync(backoff.at(-1)!)
         expect(uebung.erreichbar.value).toBe(true)
         uebung.beenden()
     })
@@ -56,6 +58,25 @@ describe('useUebung', () => {
         expect(sende).toHaveBeenCalledWith('A-ABCDEF', 'pool.hinzufuegen', {szenario: {}})
         expect(hole).toHaveBeenCalledTimes(2)
         expect(uebung.zustand.value).toEqual({pool: ['x']})
+        uebung.beenden()
+    })
+
+    it('polls less often in a hidden tab and at once when shown again', async () => {
+        let visibility: DocumentVisibilityState = 'visible'
+        vi.spyOn(document, 'visibilityState', 'get').mockImplementation(() => visibility)
+        hole.mockResolvedValue(null)
+        const uebung = useUebung<'trainee'>('T-ABCDEF')
+        await vi.advanceTimersByTimeAsync(0)
+        visibility = 'hidden'
+        document.dispatchEvent(new Event('visibilitychange'))
+        await vi.advanceTimersByTimeAsync(HIDDEN_INTERVAL_MS - 1)
+        expect(hole).toHaveBeenCalledTimes(1)
+        await vi.advanceTimersByTimeAsync(1)
+        expect(hole).toHaveBeenCalledTimes(2)
+        visibility = 'visible'
+        document.dispatchEvent(new Event('visibilitychange'))
+        await vi.advanceTimersByTimeAsync(0)
+        expect(hole).toHaveBeenCalledTimes(3)
         uebung.beenden()
     })
 
