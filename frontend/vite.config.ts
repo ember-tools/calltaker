@@ -10,6 +10,7 @@ export default defineConfig({
         emberbox({
             url: 'https://calltaker.emberbox.app',
             logo: 'calltaker',
+            app: {name: 'Calltaker', description: 'Notrufannahme für die Leitstelle üben.'},
             prerender: {entry: 'src/prerender.ts', paths: ['/', '/hilfe']},
         }),
     ],
