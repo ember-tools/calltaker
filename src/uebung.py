@@ -23,7 +23,7 @@ logger = logging.getLogger(__name__)
 CODE_ZEICHEN = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"
 CODE_LAENGE = 8
 UNBESUCHT_FRIST = 600.0
-ONLINE_FRIST = 5.0
+ONLINE_FRIST = 8.0
 
 
 def neuer_code(praefix: str) -> str:
@@ -36,7 +36,8 @@ class Uebung:
 
     Every change raises `version`, which is what lets a poll that finds nothing new end with an
     empty answer. A role counts as connected while its last poll is at most `ONLINE_FRIST` seconds
-    old.
+    old. Hidden browser tabs poll every five seconds, so the window must stay well above
+    that, or a hidden role would flicker between connected and not connected.
     """
 
     def __init__(
