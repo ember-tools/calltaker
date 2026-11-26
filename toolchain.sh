@@ -48,7 +48,8 @@ Frontend
   fe-test               vitest, once
   fe-test-watch         vitest, watching
   fe-bundle             Production build
-  fe-lint [name] [args] Every linter of the registry in scripts/linters.mjs, failing when one does.
+  fe-lint [name] [args] Every linter of @emberbox/lint, as frontend/emberbox-lint.config.mjs sets
+                        them up, failing when one does.
                         With a name only that one: eslint, duplication, browser-storage,
                         em-dash, comments
   fe-audit              All linters, non-gating; prints everything they find
@@ -131,8 +132,8 @@ case "$cmd" in
     fe-test)          fe; run npx vitest run "$@" ;;
     fe-test-watch)    fe; run npx vitest "$@" ;;
     fe-bundle)        fe; run npx vite build "$@" ;;
-    fe-lint)          fe; run node scripts/lint.mjs "$@" ;;
-    fe-audit)         fe; run node scripts/lint.mjs --audit ;;
+    fe-lint)          fe; run npx emberbox-lint "$@" ;;
+    fe-audit)         fe; run npx emberbox-lint --audit ;;
     fe-eslint)        fe; run npx eslint "$@" ;;
     fe-build)
         "$ROOT/toolchain.sh" fe-lint
