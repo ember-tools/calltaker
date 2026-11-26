@@ -7,8 +7,9 @@ with what the scenario held.
 
 The interface is German throughout. It runs at <https://calltaker.emberbox.app>, one of the
 [Emberbox](https://emberbox.app) tools, and uses the shared Emberbox look from
-[`@emberbox/ui`](https://www.npmjs.com/package/@emberbox/ui). The start page and `/hilfe` are
-prerendered for search engines; every exercise page is kept out of them.
+[`@emberbox/ui`](https://www.npmjs.com/package/@emberbox/ui). The start page, the help overview
+`/hilfe` and one page per help topic below it are prerendered for search engines; every exercise
+page is kept out of them.
 
 ## Development
 

@@ -26,11 +26,12 @@ def mount_frontend(app: FastAPI, directory: Path) -> None:
 def frontend_response(directory: Path, path: str) -> FileResponse:
     """Resolve a path to a prerendered page, a built file or the single-page shell.
 
-    A prerendered page (`/` and `/hilfe`) comes from `pages/<path>/index.html`. A built file is
-    served as it is, except the shell itself and the prerendered pages under their file names,
-    so each page has one address. `build.json` is never cached, so open pages notice a new build. A
-    missing file under `assets/` is a 404 rather than the shell, so a page still running an older
-    build sees its chunk fail to load instead of receiving HTML.
+    A prerendered page (`/`, `/hilfe` and the help topics below it) comes from
+    `pages/<path>/index.html`. A built file is served as it is, except the shell itself and the
+    prerendered pages under their file names, so each page has one address. `build.json` is never
+    cached, so open pages notice a new build. A missing file under `assets/` is a 404 rather than
+    the shell, so a page still running an older build sees its chunk fail to load instead of
+    receiving HTML.
     Every other path gets the shell, which search engines are told not to index: its content
     depends on an exercise code, and only the prerendered pages are meant for them. Paths are
     resolved before they are checked, so dot segments cannot reach around these rules.

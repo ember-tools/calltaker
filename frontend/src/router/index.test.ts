@@ -42,8 +42,26 @@ describe('createAppRouter', () => {
         const isPublic = (path: string) => router.resolve(path).meta.public === true
         expect(isPublic('/')).toBe(true)
         expect(isPublic('/hilfe')).toBe(true)
+        expect(isPublic('/hilfe/notrufabfrage')).toBe(true)
         expect(isPublic('/a/A-ABCDEFGH')).toBe(false)
         expect(isPublic('/t/T-ABCDEFGH/uebersicht')).toBe(false)
+    })
+
+    it('sends an unknown help topic to the overview, also from another topic', async () => {
+        const router = createAppRouter(createMemoryHistory())
+        await router.push('/hilfe/unbekannt')
+        expect(router.currentRoute.value.name).toBe('hilfe')
+        await router.push('/hilfe/notrufabfrage')
+        expect(router.currentRoute.value.name).toBe('helpTopic')
+        await router.push('/hilfe/auch-unbekannt')
+        expect(router.currentRoute.value.name).toBe('hilfe')
+    })
+
+    it('opens a new page at the top and a page from the history where it was left', () => {
+        const scroll = createAppRouter(createMemoryHistory()).options.scrollBehavior!
+        const route = createAppRouter(createMemoryHistory()).currentRoute.value
+        expect(scroll(route, route, null)).toEqual({top: 0})
+        expect(scroll(route, route, {left: 0, top: 240})).toEqual({left: 0, top: 240})
     })
 })
 

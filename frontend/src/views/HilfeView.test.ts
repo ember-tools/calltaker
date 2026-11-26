@@ -4,6 +4,8 @@ import {shallowRef} from 'vue'
 import {i18n} from '../i18n'
 import {schwersteErreichbare} from '../modell/abfrageweg'
 import {testgraph} from '../modell/testgraph.test-hilfe'
+import {HELP_TOPICS} from '../helpTopics'
+import HelpTopicView from './HelpTopicView.vue'
 import HilfeView from './HilfeView.vue'
 
 const GRAPH = {...testgraph(), anleitungen: [{id: 'zugang', titel: 'Tür öffnen', saetze: ['S'], pflicht: true, wenn: [{fachrichtung: 'rd' as const}], quelle: 'Q'}]}
@@ -12,41 +14,56 @@ vi.mock('../composables/useAbfragegraph', () => ({useAbfragegraph: () => ({graph
 vi.mock('../components/KarteLeaflet.vue', () => ({default: {template: '<div/>'}}))
 vi.mock('../api/adressen', () => ({adresslisteVerfuegbar: vi.fn().mockResolvedValue(true), sucheAdressen: vi.fn().mockResolvedValue([])}))
 
-describe('HilfeView', () => {
+describe('help center', () => {
     afterEach(() => {
         vi.unstubAllGlobals()
     })
 
-    it('zeigt jeden Baustein als nicht bedienbares Beispiel', async () => {
-        vi.stubGlobal('fetch', vi.fn(() => Promise.resolve(new Response(JSON.stringify({herkunft: {}, stoffe: []})))))
-        const ansicht = mount(HilfeView, {global: {plugins: [i18n], stubs: {RouterLink: RouterLinkStub}}})
+    it('lists every topic on the overview', async () => {
+        const overview = mount(HilfeView, {global: {plugins: [i18n], stubs: {RouterLink: RouterLinkStub}}})
         await flushPromises()
-        const abschnitte = ansicht.findAll('section[aria-label]').map(s => s.attributes('aria-label'))
-        expect(abschnitte).toEqual(expect.arrayContaining(['Was ist der Calltaker?', 'Erste Schritte', 'Als Trainee', 'Als Ausbilder', 'Debrief und Übersicht', 'Tipps']))
-        const beispiele = ansicht.findAll('figure [inert]')
-        expect(beispiele).toHaveLength(8)
-        expect(beispiele.every(b => b.element.children.length > 0)).toBe(true)
-        for (const titel of ['Einsatzmaske', 'SNA-Fenster', 'Hinweise an den Anrufer', 'Telefonreanimation', 'Lösung']) {
-            expect(ansicht.find(`figure [aria-label^="${titel}"]`).exists(), titel).toBe(true)
-        }
-        expect(ansicht.find('figure [aria-label="So sprichst du als Anrufer"]').text()).toContain('Du bist selbst betroffen.')
-        expect(ansicht.text()).toContain('Neugeborenes, Säugling, Kind und Erwachsener')
-        expect(ansicht.text()).toContain('Den Anrufer spielen')
-        expect(ansicht.text()).toContain('Wenn gefragt')
-        expect(ansicht.text()).toContain('Belastende Lagen bleiben ausgeschlossen')
-        expect(ansicht.text()).toContain('liegt der Kreis dort, wo der Anrufer ist')
-        expect(ansicht.text()).toContain('weichst du aus, bis der Calltaker nachhakt')
-        expect(ansicht.text()).toContain('warnt die Seite vor Teilen, die nicht zusammenpassen')
-        expect(ansicht.text()).toContain('Wer sich sicher ist, wählt die Kachel direkt.')
-        expect(ansicht.text()).toContain('den Weg über sie')
-        expect(ansicht.text()).toContain('Antworten mit Alt und der Ziffer')
-        expect(ansicht.text()).toContain('wenn die Lösung keine Antwort vorgibt')
-        expect(ansicht.text()).toContain('Alt+ZifferLeitfrage beantworten')
-        expect(ansicht.text()).toContain('Kräfte unterwegs')
-        expect(ansicht.text()).toContain('Tasten')
+        expect(overview.find('section[aria-label]').attributes('aria-label')).toBe('Was ist der Calltaker?')
+        expect(overview.findAll('li h2').map(heading => heading.text())).toHaveLength(HELP_TOPICS.length)
+        expect(overview.text()).toContain('Den Anrufer spielen')
     })
 
-    it('setzt den Seitentitel', async () => {
+    it('shows every building block across the topics as an example that cannot be used', async () => {
+        vi.stubGlobal('fetch', vi.fn(() => Promise.resolve(new Response(JSON.stringify({herkunft: {}, stoffe: []})))))
+        const pages: ReturnType<typeof mount>[] = []
+        for (const topic of HELP_TOPICS) {
+            const page = mount(HelpTopicView, {props: {slug: topic.slug}, global: {plugins: [i18n], stubs: {RouterLink: RouterLinkStub}}})
+            await flushPromises()
+            pages.push(page)
+        }
+        const sections = pages.flatMap(page => page.findAll('section[aria-label]').map(s => s.attributes('aria-label')))
+        expect(sections).toEqual(expect.arrayContaining(['Warteschlange', 'Einsatzmaske', 'Leitfragen', 'Live: Spiegel und Lösungskarte', 'Pool und Generator']))
+        expect(pages.every(page => page.findAll('section[aria-label] > h2').every(heading => heading.text() !== page.find('h1').text()))).toBe(true)
+        const examples = pages.flatMap(page => page.findAll('figure [inert]'))
+        expect(examples).toHaveLength(8)
+        expect(examples.every(example => example.element.children.length > 0)).toBe(true)
+        const find = (selector: string) => pages.map(page => page.find(selector)).find(found => found.exists())
+        for (const title of ['Einsatzmaske', 'SNA-Fenster', 'Hinweise an den Anrufer', 'Telefonreanimation', 'Lösung']) {
+            expect(find(`figure [aria-label^="${title}"]`)?.exists(), title).toBe(true)
+        }
+        expect(find('figure [aria-label="So sprichst du als Anrufer"]')?.text()).toContain('Du bist selbst betroffen.')
+        const text = pages.map(page => page.text()).join('\n')
+        for (const expected of [
+            'Neugeborenes, Säugling, Kind und Erwachsener', 'Den Anrufer spielen', 'Wenn gefragt', 'Belastende Lagen bleiben ausgeschlossen',
+            'liegt der Kreis dort, wo der Anrufer ist', 'weichst du aus, bis der Calltaker nachhakt', 'warnt die Seite vor Teilen, die nicht zusammenpassen',
+            'Wer sich sicher ist, wählt die Kachel direkt.', 'den Weg über sie', 'Antworten mit Alt und der Ziffer', 'wenn die Lösung keine Antwort vorgibt',
+            'Alt+ZifferLeitfrage beantworten', 'Kräfte unterwegs', 'Tasten',
+        ]) {
+            expect(text, expected).toContain(expected)
+        }
+    })
+
+    it('names the topic in the title and leads on to the next one', async () => {
+        const page = mount(HelpTopicView, {props: {slug: 'notrufabfrage'}, global: {plugins: [i18n], stubs: {RouterLink: RouterLinkStub}}})
+        await vi.waitFor(() => expect(document.title).toBe('Notrufabfrage – Hilfe – Calltaker'))
+        expect(page.text()).toContain('Weiter: Telefonreanimation')
+    })
+
+    it('sets the overview title', async () => {
         mount(HilfeView, {global: {plugins: [i18n], stubs: {RouterLink: RouterLinkStub}}})
         await vi.waitFor(() => expect(document.title).toBe('Hilfe – Calltaker'))
     })
